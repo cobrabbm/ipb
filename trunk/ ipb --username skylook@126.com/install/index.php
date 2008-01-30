@@ -87,7 +87,7 @@ if ( file_exists( INS_DOC_ROOT_PATH.'conf_global.php.dist') AND ! file_exists( I
 	if ( ! @rename( INS_DOC_ROOT_PATH.'conf_global.php.dist', INS_DOC_ROOT_PATH.'conf_global.php' ) )
 	{
 		$install->template->hide_next = 1;
-		$install->template->warning( array( "<strong>在进行下一步之前您必须重命名 'conf_global.<b style='color:red'>php.dist</b>' 为 'conf_global.<b style='color:red'>php</b>'.</strong>
+		$install->template->warning( array( "<strong>在进行下一步之前您必须重命名文件 'conf_global.<b style='color:red'>php.dist</b>' 为 'conf_global.<b style='color:red'>php</b>'.</strong>
 					  						 这一文件可以通过 FTP 访问在论坛的根目录下找到, 和 'admin.php' 与 'index.php' 在同一个文件夹." ) );
 		$install->template->output( $install->product_name, $install->product_version );
 		exit();
