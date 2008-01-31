@@ -134,7 +134,7 @@ class application_installer extends class_installer
 		$core_conf .= "\n".'?'.'>';
 
 		/* Write Configuration Files */
-		$output[] = 'Writing configuration files...<br />';
+		$output[] = '正在写入设置文件...<br />';
 		
 		$this->write_file( $this->saved_data['install_dir'] . '/conf_global.php'  , $core_conf );
 		
@@ -145,7 +145,7 @@ class application_installer extends class_installer
 		if( !file_exists( $this->saved_data['install_dir'] . '/conf_global.php' ) )
 		{
 			$this->template->hide_next = 1;
-			$this->template->warning( array( "We were unable to write your configuration information to the conf_global.php file.  Please verify that this file has full read and write privileges." ) );
+			$this->template->warning( array( "我们无法写入设置信息到 conf_global.php 文件. 请确认该文件有可读写权限." ) );
 			$this->template->output( $this->product_name, $this->product_version );
 			
 			exit();
@@ -159,7 +159,7 @@ class application_installer extends class_installer
 			if( !is_array($INFO) )
 			{
 				$this->template->hide_next = 1;
-				$this->template->warning( array( "We were unable to write your configuration information to the conf_global.php file.  Please verify that this file has full read and write privileges." ) );
+				$this->template->warning( array( "我们无法写入设置信息到 conf_global.php 文件. 请确认该文件有可读写权限." ) );
 				$this->template->output( $this->product_name, $this->product_version );
 				
 				exit();
@@ -230,7 +230,7 @@ class application_installer extends class_installer
 			define( 'CACHE_PATH', INS_ROOT_PATH."../" );
 		}		
 		
-		$output[] = "Rebuild skin templates...";
+		$output[] = "正在重建论坛模板...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/lib/admin_cache_functions.php' );
 		$acp           =  new admin_cache_functions();
@@ -242,7 +242,7 @@ class application_installer extends class_installer
 		// Forum cache
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding forum cache...";
+		$output[] = "正在重建论坛缓存...";
 		
 		$ignore_me = array( 'redirect_url', 'redirect_loc', 'rules_text', 'permission_custom_error', 'notify_modq_emails' );
 		
@@ -302,7 +302,7 @@ class application_installer extends class_installer
 		// Group Cache
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding group cache...";
+		$output[] = "正在重建用户组缓存...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/groups.php' );
 		$lib           =  new ad_groups();
@@ -314,7 +314,7 @@ class application_installer extends class_installer
 		// Systemvars
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding system variables cache...";
+		$output[] = "正在重建系统变量缓存...";
 		
 		$this->ipsclass->cache['systemvars'] = array();
 
@@ -329,7 +329,7 @@ class application_installer extends class_installer
 		// Stats
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding statistics cache...";
+		$output[] = "正在重建静态变量缓存...";
 		
 		$this->ipsclass->cache['stats'] = array();
 
@@ -352,7 +352,7 @@ class application_installer extends class_installer
 		// Ranks
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding member ranks cache...";
+		$output[] = "正在重建会员等级缓存...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/member.php' );
 		$lib           =  new ad_member();
@@ -364,7 +364,7 @@ class application_installer extends class_installer
 		// SETTINGS
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding settings cache...";
+		$output[] = "正在重建系统设置缓存...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/settings.php' );
 		$lib           =  new ad_settings();
@@ -376,7 +376,7 @@ class application_installer extends class_installer
 		// EMOTICONS
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding emoticons cache...";
+		$output[] = "正在重建表情图标缓存...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/emoticons.php' );
 		$lib           =  new ad_emoticons();
@@ -388,7 +388,7 @@ class application_installer extends class_installer
 		// LANGUAGES
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding languages cache...";
+		$output[] = "正在重建语言文件缓存...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/languages.php' );
 		$lib           =  new ad_languages();
@@ -400,7 +400,7 @@ class application_installer extends class_installer
 		// ATTACHMENT TYPES
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding attachment types cache...";
+		$output[] = "正在重建附件类型缓存...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/attachments.php' );
 		$lib           =  new ad_attachments();
@@ -408,7 +408,7 @@ class application_installer extends class_installer
 		$lib->attach_type_rebuildcache();
 		unset( $lib );
 		
-		$output[] = "All caches rebuilt, click 'Next' below...";
+		$output[] = "所有缓存重建完成, 点击 '下一步' 按钮继续...";
 		
 		$this->saved_data['admin_url'] = $this->saved_data['install_url'] . '/index.php';
 		

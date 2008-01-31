@@ -118,7 +118,7 @@ class action_install
 		$this->install->ipsclass->converge = new class_converge( $this->install->ipsclass->DB );
 				
 		include( INS_ROOT_PATH . 'sql/' . $this->install->saved_data['sql_driver'] . '_tables.php' );
-		$output[] = "Creating SQL Tables...";
+		$output[] = "正在创建数据表...";
 		
 		foreach( $TABLE as $q )
 		{
@@ -150,7 +150,7 @@ class action_install
 		if ( $this->install->ipsclass->DB->sql_can_fulltext() )
 		{
 			include( INS_ROOT_PATH . 'sql/' . $this->install->saved_data['sql_driver'] . '_fulltext.php' );
-			$output[] = "Building indexes...";		
+			$output[] = "正在建立索引项...";		
 			
 			 foreach( $INDEX as $q )
 			 {
@@ -177,7 +177,7 @@ class action_install
 		}
 		
 		include( INS_ROOT_PATH . 'sql/' . $this->install->saved_data['sql_driver'] . '_inserts.php' );
-		$output[] = "Populating SQL Tables...";		
+		$output[] = "正在导入数据内容...";		
 		
 		foreach( $INSERT as $q )
 		{
@@ -204,7 +204,7 @@ class action_install
 		// Create Admin account
 		//-----------------------------------------
 		
-		$output[] = "Creating admin account...";
+		$output[] = "正在创建管理员帐号...";
 		
 		$this->install->create_admin_account();
 		
@@ -243,7 +243,7 @@ class action_install
 		// Install settings
 		//-----------------------------------------
 	
-		$output[] = "Inserting settings...";
+		$output[] = "正在导入系统设置...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -479,7 +479,7 @@ class action_install
 		// Install settings
 		//-----------------------------------------
 	
-		$output[] = "Inserting ACP Permissions...";
+		$output[] = "正在导入 ACP 权限设置...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -549,7 +549,7 @@ class action_install
 		// Install settings
 		//-----------------------------------------
 	
-		$output[] = "Inserting templates...";
+		$output[] = "正在导入论坛模板...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -626,7 +626,7 @@ class action_install
 		
 		if( $safe_mode )
 		{
-			$this->install->template->append( $this->install->template->install_page_refresh( array( 'We detected that safe mode is enabled on your server.  Skipping IP.Board Pro skin insertion...' ) ) );	
+			$this->install->template->append( $this->install->template->install_page_refresh( array( '我们检测到您的服务器开启了安全模式.  正在跳过 IP.Board Pro 模板导入...' ) ) );	
 			$this->install->template->next_action = '?p=install&sub=caches';
 			$this->install->template->hide_next   = 1;
 		}
@@ -656,7 +656,7 @@ class action_install
 		
 		if( !$this->install->ipsclass->input['didskin'] )
 		{
-			$output[] = "Inserting IP.Board Pro skin templates...";
+			$output[] = "正在导入 IP.Board Pro 模板设置...";
 			
 			$api->skin_add_set( ROOT_PATH . 'resources/ipb_skin-pro.xml.gz' );
 			
@@ -666,7 +666,7 @@ class action_install
 		}
 		else
 		{
-			$output[] = "Inserting IP.Board Pro skin images...";
+			$output[] = "正在导入 IP.Board Pro 模板图片...";
 			$api->images_add_set( ROOT_PATH . 'resources/ipb_images-pro.xml.gz', 3 );
 	
 			$this->install->ipsclass->DB->do_update( 'skin_sets', array( 'set_default' => 0 ) );
@@ -708,7 +708,7 @@ class action_install
 		// XML: COMPONENTS
 		//-----------------------------------------
 		
-		$output[] = "Inserting components information...";
+		$output[] = "正在导入组件信息...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -736,7 +736,7 @@ class action_install
 		// XML: LOG IN MODULES
 		//-----------------------------------------
 		
-		$output[] = "Inserting log in modules information...";
+		$output[] = "正在登记组件信息...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -764,7 +764,7 @@ class action_install
 		// XML: GROUPS
 		//-----------------------------------------
 		
-		$output[] = "Inserting groups information...";
+		$output[] = "正在导入用户组信息...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -792,7 +792,7 @@ class action_install
 		// XML: ATTACHMENTS
 		//-----------------------------------------
 		
-		$output[] = "Inserting attachment type information...";
+		$output[] = "正在导入附件类型信息...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -820,7 +820,7 @@ class action_install
 		// XML: SKIN SETS
 		//-----------------------------------------
 	
-		$output[] = "Inserting template set data...";
+		$output[] = "正在导入模板设置数据...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -867,7 +867,7 @@ class action_install
 		// XML: TASKS :D
 		//-----------------------------------------
 		
-		$output[] = "Inserting task manager information...";
+		$output[] = "正在导入任务管理信息...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -905,7 +905,7 @@ class action_install
 		// XML: FAQ
 		//-----------------------------------------
 		
-		$output[] = "Inserting FAQ information...";
+		$output[] = "正在导入系统帮助信息...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -933,7 +933,7 @@ class action_install
 		// XML: BBCode
 		//-----------------------------------------
 		
-		$output[] = "Inserting custom BBCode information...";
+		$output[] = "正在导入自定义 BBCode 信息...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -962,7 +962,7 @@ class action_install
 		// XML: Help Information
 		//-----------------------------------------
 		
-		$output[] = "Inserting ACP help files...";
+		$output[] = "正在导入 ACP 帮助文件...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		

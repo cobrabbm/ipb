@@ -71,7 +71,7 @@ class install_extra
 	function install_form_extra()
 	{
 		$extra = "<tr>
-					<td class='title'><b>MySQL Table Type</b><div style='color:gray'>Use MyISAM if unsure</div></td>
+					<td class='title'><b>MySQL 数据表类型</b><div style='color:gray'>如果您无法确定请选择 MyISAM .</div></td>
 					<td class='content'><select name='mysql_tbl_type' class='sql_form'><option value='MyISAM'>MYISAM</option><option value='INNODB'>INNODB</option></td>
 				  </tr>";
 	
