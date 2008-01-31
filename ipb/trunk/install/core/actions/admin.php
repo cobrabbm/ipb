@@ -20,24 +20,24 @@ class action_admin
 		{
 			if( ! $this->install->ipsclass->input['username'] )
 			{
-				$errors[] = 'You must specify a username for the admin account';	
+				$errors[] = '您必须指定一个管理员用户名称';	
 			}
 			
 			if( ! $this->install->ipsclass->input['password'] )
 			{
-				$errors[] = 'You must specify a password for the admin account';	
+				$errors[] = '您必须指定一个管理员用户密码';	
 			}
 			else 
 			{
 				if( $this->install->ipsclass->input['password'] != $this->install->ipsclass->input['confirm_password']	)
 				{
-					$errors[] = 'The admin passwords did not match';	
+					$errors[] = '管理员密码输入不匹配';	
 				}
 			}
 			
 			if( ! $this->install->ipsclass->input['email'] )
 			{
-				$errors[] = 'You must sepcify an email account for the admin account';	
+				$errors[] = '您必须指定一个管理员邮件地址';	
 			}
 			
 			if( is_array( $errors ) )

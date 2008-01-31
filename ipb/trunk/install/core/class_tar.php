@@ -200,7 +200,7 @@ class tar {
 		
 		if (! is_dir($dir) )
 		{
-			$this->error = "Extract files error: Destination directory ($to_dir) does not exist";
+			$this->error = "??????????: ???????? ($to_dir) ??????";
 			return FALSE;
 		}
 		
@@ -247,13 +247,13 @@ class tar {
 			}
 			else
 			{
-				$this->error = "$dir is not a directory";
+				$this->error = "$dir ????????????";
 				return FALSE;
 			}
 		}
 		else
 		{
-			$this->error = "Could not locate $dir";
+			$this->error = "?????¦Ë????? $dir";
 			return;
 		}
 	}
@@ -277,7 +277,7 @@ class tar {
 		
 		if (! is_dir($to_dir) )
 		{
-			$this->error = "Extract files error: Destination directory ($to_dir) does not exist";
+			$this->error = "??????????: ???????? ($to_dir) ??????";
 			return;
 		}
 		
@@ -353,7 +353,7 @@ class tar {
 					}
 					if ( (file_exists($dir_component)) && (! is_dir($dir_component)) )
 					{
-						$this->warnings[] = "WARNING: $dir_component exists, but is not a directory";
+						$this->warnings[] = "????: $dir_component ????, ??????????????";
 						continue;
 					}
 					if (! is_dir($dir_component))
@@ -364,7 +364,7 @@ class tar {
 					
 					if (! @chdir($dir_component))
 					{
-						$this->warnings[] = "ERROR: CHDIR to $dir_component FAILED!";
+						$this->warnings[] = "????: CHDIR ?? $dir_component ???????!";
 					}
 				}
 			}
@@ -382,14 +382,14 @@ class tar {
 				}
 				else
 				{
-					$this->warnings[] = "Could not write data to $file_name";
+					$this->warnings[] = "????? $file_name ???§Õ??????";
 				}
 			}
 			else if ($file['typeflag'] == 5)
 			{
 				if ( (file_exists($file_name)) && (! is_dir($file_name)) )
 				{
-					$this->warnings[] = "$file_name exists, but is not a directory";
+					$this->warnings[] = "$file_name ????, ??????????????";
 					continue;
 				}
 				if (! is_dir($file_name))
@@ -399,29 +399,29 @@ class tar {
 			}
 			else if ($file['typeflag'] == 6)
 			{
-				$this->warnings[] = "Cannot handle named pipes";
+				$this->warnings[] = "??????????????";
 				continue;
 			}
 			else if ($file['typeflag'] == 1)
 			{
-				$this->warnings[] = "Cannot handle system links";
+				$this->warnings[] = "?????????????";
 			}
 			else if ($file['typeflag'] == 4)
 			{
-				$this->warnings[] = "Cannot handle device files";
+				$this->warnings[] = "???????????????";
 			}	
 			else if ($file['typeflag'] == 3)
 			{
-				$this->warnings[] = "Cannot handle device files";
+				$this->warnings[] = "???????????????";
 			}
 			else
 			{
-				$this->warnings[] = "Unknown typeflag found";
+				$this->warnings[] = "¦Ä?????????";
 			}
 			
 			if (! @chmod( $file_name, $file['mode'] ) )
 			{
-				$this->warnings[] = "ERROR: CHMOD $mode on $file_name FAILED!";
+				$this->warnings[] = "????: ????? $file_name ??? CHMOD $mode ???????!";
 			}
 			
 			@touch( $file_name, $file['mtime'] );
@@ -482,7 +482,7 @@ class tar {
 			
 			if (! is_array($stat) )
 			{
-				$this->warnings[] = "Error: Stat failed on $file";
+				$this->warnings[] = "????: ??? $file ??????";
 				continue;
 			}
 			
@@ -506,7 +506,7 @@ class tar {
 				}
 				else
 				{
-					$this->warnings[] = "ERROR: Failed to open $file";
+					$this->warnings[] = "????: ??? $file ??????";
 					continue;
 				}
 			}
@@ -572,12 +572,12 @@ class tar {
 	function write_tar() {
 	
 		if ($this->tarfile_path_name == "") {
-			$this->error = 'No filename or path was specified to create a new tar file';
+			$this->error = '??????????¡¤???????? tar ???';
 			return;
 		}
 		
 		if ( count($this->tar_in_mem) < 1 ) {
-			$this->error = 'No data to write to the new tar file';
+			$this->error = '???????§Õ?? tar ???';
 			return;
 		}
 		
@@ -598,7 +598,7 @@ class tar {
 				if (is_string($pos) && !$pos)
 				{
 					// filename alone is longer than 99 characters!
-					$this->error[] = "Filename {$file['name']} exceeds the length allowed by GNU Tape ARchives";
+					$this->error[] = "????? {$file['name']} ??????? GNU Tape ARchives ??ÕÇ";
 					continue;
 				}
 				
@@ -607,7 +607,7 @@ class tar {
 				
 				if (strlen($prefix) > 154)
 				{
-					$this->error[] = "File path exceeds the length allowed by GNU Tape ARchives";
+					$this->error[] = "???¡¤????????? GNU Tape ARchives ??ÕÇ";
 					continue;
 				}
 			}
@@ -702,12 +702,12 @@ class tar {
 		$filename = $this->tarfile_path_name;
 	
 		if ($filename == "") {
-			$this->error = 'No filename specified when attempting to read a tar file';
+			$this->error = '????????????? tar ?????';
 			return array();
 		}
 		
 		if (! file_exists($filename) ) {
-			$this->error = 'Cannot locate the file '.$filename;
+			$this->error = '?????¦Ë??? '.$filename;
 			return array();
 		}
 		
@@ -718,7 +718,7 @@ class tar {
 		// Open up the tar file and start the loop
 
 		if (! $FH = fopen( $filename , 'rb' ) ) {
-			$this->error = "Cannot open $filename for reading";
+			$this->error = "???????? $filename ???§Ø?????";
 			return array();
 		}
 		
@@ -792,7 +792,7 @@ class tar {
 			$data = @fread( $FH, $size );
 			
 			if (strlen($data) != $size) {
-				$this->error = "Read error on tar file";
+				$this->error = "???? tar ?????????????";
 				fclose( $FH );
 				return array();
 			}

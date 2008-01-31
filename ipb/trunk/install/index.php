@@ -71,7 +71,7 @@ if ( $ipsclass->input['p'] != 'done' )
 	if ( $got_lock )
 	{
 		$install->template->hide_next = 1;
-		$install->template->warning( array( "This installer is locked. Via FTP please delete the file 'installfiles/lock.php' and then refresh this page." ) );
+		$install->template->warning( array( "该安装系统已经锁定. 如果您想要重新安装, 请通过 FTP 删除 'installfiles/lock.php' 文件然后重新刷新本页." ) );
 		$install->template->output( $install->product_name, $install->product_version );
 		
 		exit();
@@ -87,8 +87,8 @@ if ( file_exists( INS_DOC_ROOT_PATH.'conf_global.php.dist') AND ! file_exists( I
 	if ( ! @rename( INS_DOC_ROOT_PATH.'conf_global.php.dist', INS_DOC_ROOT_PATH.'conf_global.php' ) )
 	{
 		$install->template->hide_next = 1;
-		$install->template->warning( array( "<strong>You MUST rename the file 'conf_global.<b style='color:red'>php.dist</b>' TO 'conf_global.<b style='color:red'>php</b>' before continuing.</strong>
-					  						 This file can be found in the root forum directory on your FTP server, the same directory where 'admin.php' and 'index.php' are stored." ) );
+		$install->template->warning( array( "<strong>在进行下一步之前您必须重命名文件 'conf_global.<b style='color:red'>php.dist</b>' 为 'conf_global.<b style='color:red'>php</b>'.</strong>
+					  						 这一文件可以通过 FTP 访问在论坛的根目录下找到, 和 'admin.php' 与 'index.php' 在同一个文件夹." ) );
 		$install->template->output( $install->product_name, $install->product_version );
 		exit();
 	}

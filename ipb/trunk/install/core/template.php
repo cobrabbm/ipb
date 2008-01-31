@@ -58,7 +58,7 @@ class install_template
 			}
 		}
 		
-		$this->install_pages['done'] = 'Finish';
+		$this->install_pages['done'] = '安装结束';
 	   
 		/* Set Current Page */
 		$this->page_current = ( $this->ipsclass->input['p'] ) ? $this->ipsclass->input['p'] : 'requirements';
@@ -145,7 +145,7 @@ echo <<<EOF
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<title>IPS Installer</title>
+		<title>IPS 安装程序</title>
 		<style type='text/css' media='all'>
 			@import url('install.css');
 		</style>
@@ -156,6 +156,7 @@ echo <<<EOF
 			//]]>
 		</script>
 		<script type="text/javascript" src='ips_xmlhttprequest.js'></script>	
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
 		<p>&nbsp;</p>
@@ -167,7 +168,7 @@ echo <<<EOF
 		<div id='ipswrapper'>
 		    <div class='main_shell'>
 
-		 	    <h1><img src='images/package_icon.gif' align='absmiddle' /> Welcome to the IPS Product Installer</h1>
+		 	    <h1><img src='images/package_icon.gif' align='absmiddle' /> 欢迎来到 IPS 产品安装程序</h1>
 		 	    <div class='content_shell'>
 		 	        <div class='package'>
 		 	            <div>
@@ -194,7 +195,7 @@ echo <<<EOF
     		 	                    </div>
 
     		 	                    <div style='vertical-align: middle'>
-    		 	                        <h2>{$this->product_name} Installation</h2>
+    		 	                        <h2>{$this->product_name} 安装</h2>
     		 	                        <strong>{$this->product_version}</strong>
     		 	                    </div>
     		 	                </div>
@@ -209,7 +210,7 @@ echo <<<EOF
 		 	            <div class='hr'></div>
 		 	            <div style='padding-top: 17px; padding-right: 15px; padding-left: 15px'>
 		 	                <div style='float: left'>
-		 	                    <input type='button' class='nav_button' value='Cancel Installation' onclick="window.location='index.php';return false;" />
+		 	                    <input type='button' class='nav_button' value='取消安装' onclick="window.location='index.php';return false;" />
 		 	                </div>
 
 		 	                <div style='float: right'>
@@ -220,7 +221,7 @@ if( ! $this->hide_next )
 if( $this->next_action == 'disabled' )
 {
 echo <<<EOF
-		 	                    <input type='submit' class='nav_button' value='Install can not continue...' disabled='disabled' />
+		 	                    <input type='submit' class='nav_button' value='安装无法继续...' disabled='disabled' />
 EOF;
 }
 else 
@@ -230,11 +231,11 @@ if( !$this->next_action )
 	$back = $this->ipsclass->my_getenv('HTTP_REFERER');
 	
 echo <<<EOF
-	<input type='button' class='nav_button' value='< Back' onclick="window.location='{$back}';return false;" />
+	<input type='button' class='nav_button' value='< 上一步' onclick="window.location='{$back}';return false;" />
 EOF;
 }
 echo <<<EOF
-		 	                    <input type='submit' class='nav_button' value='Next >' />
+		 	                    <input type='submit' class='nav_button' value='下一步 >' />
 EOF;
 }
 }
@@ -250,7 +251,7 @@ echo <<<EOF
 EOF;
 echo date("Y");
 echo <<<EOF
- Invision Power Services, Inc.
+ IPBChina.COM Team & Invision Power Services, Inc.  
 		 	            </div>
 		 	        </div>
 
@@ -277,16 +278,16 @@ return <<<EOF
         		 	                    <img src='images/wizard.gif' align='absmiddle' />
         		 	                </div>
         		 	                <div>
-        		 	                    Welcome to the installer for {$this->product_name}. This wizard will guide you through the installation process.
+        		 	                    欢迎来到 {$this->product_name} 产品的安装向导. 这一向导程序将引导您完成安装过程.
         		 	                </div>
         		 	            </div>
     <br/><br/>
     		 	            
-    <h3>System Requirements</h3>
+    <h3>系统需求</h3>
 
     <br />
-    <strong>PHP:</strong> v{$php_version} or better<br />
-    <strong>SQL:</strong> mySQL v$sql_version or better
+    <strong>PHP:</strong> v{$php_version} 或更高版本<br />
+    <strong>SQL:</strong> mySQL v$sql_version 或更高版本
     <br /><br />
 EOF;
 	}
@@ -308,7 +309,7 @@ check_eula = function()
 	}
 	else
 	{
-		alert( 'You must agree to the license before continuing' );
+		alert( '您必须同意授权协议才能进行下一步的安装' );
 		return false;
 	}
 }
@@ -317,13 +318,13 @@ document.getElementById( 'install-form' ).onsubmit = check_eula;
 
 </script>
 
-Please read and agree to the End User License Agreement before continuing.<br /><br />
+请在进行下一步之前仔细阅读许可协议并且点击表示同意.<br /><br />
 
         		 	            
         		 	            <div class='eula'>
 									$eula        		 	                
                                 </div>
-                                <input type='checkbox' name='eula' id='eula'><strong> I agree to the license agreement</strong>
+                                <input type='checkbox' name='eula' id='eula'><strong> 我同意许可协议</strong>
 
 
 EOF;
@@ -338,16 +339,16 @@ return <<<EOF
 <div id='warn-message' style='display:none;'><center><div id='warn-message-content'></div></center></div>
 
         		 	            <fieldset>
-        		 	                <legend><img src='images/addresses.gif' align='absmiddle' />&nbsp; Address details</legend>
+        		 	                <legend><img src='images/addresses.gif' align='absmiddle' />&nbsp; 论坛地址设置</legend>
 
         		 	                <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
             		 	                <tr>
-            		 	                    <td width='30%' class='title'>Install Directory:</td>
+            		 	                    <td width='30%' class='title'>安装位置:</td>
             		 	                    <td width='70%' class='content'><input type='text' class='sql_form' name='install_dir' value='{$dir}'></td>
             		 	                </tr>
 
         		 	                	<tr>
-            		 	                    <td width='30%' class='title'>Install Address:</td>
+            		 	                    <td width='30%' class='title'>访问地址:</td>
             		 	                    <td width='70%' class='content'><input type='text' class='sql_form' name='install_url' value='{$url}'></td>
             		 	                </tr>
             		 	            </table>
@@ -376,11 +377,11 @@ return <<<EOF
 <div class='info' style='margin-top: 4px;'>
         		 	                <div class='float_img'><img src='images/help.gif' /></div>
 
-        		 	                <div>Please select which database engine you wish to use.</div>
+        		 	                <div>请选择下面您所使用的数据库引擎.</div>
         		 	            </div>
         		 	            
         		 	            <fieldset>
-        		 	                <legend><img src='images/db.gif' align='absmiddle' />&nbsp; Database Engine</legend>
+        		 	                <legend><img src='images/db.gif' align='absmiddle' />&nbsp; 数据库引擎</legend>
         		 	                <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
 										<tr>
             		 	                    <td width='30%' class='title'>SQL Driver:</td>
@@ -404,39 +405,39 @@ return <<<EOF
 <div class='info' style='margin-top: 4px;'>
     <div class='float_img'><img src='images/help.gif' /></div>
 
-    <div>Ask your webhost if you are unsure about any of these settings. You must create the database before installing..</div>
+    <div>如果您对任何的设置有疑问请您咨询空间服务商. 在进行下一步之前您必须首先创建一个数据库..</div>
 </div>
 
 <fieldset>
-    <legend><img src='images/db.gif' align='absmiddle' />&nbsp; Database details</legend>
+    <legend><img src='images/db.gif' align='absmiddle' />&nbsp; 数据库设置</legend>
     <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
 		<!--{TOP.SQL}-->
         <tr>
-            <td width='30%' class='title'>SQL Host:</td>
+            <td width='30%' class='title'>数据库主机:</td>
             <td width='70%' class='content'>
             	<input type='text' class='sql_form' value='localhost' name='db_host'>
             </td>
         </tr>
         <tr>
-            <td class='title'>Database Name:</td>
+            <td class='title'>数据库名称:</td>
             <td class='content'>
             	<input type='text' class='sql_form' name='db_name' value='{$_REQUEST['db_name']}'>
             </td>
         </tr>
         <tr>
-            <td class='title'>SQL Username:</td>
+            <td class='title'>数据库用户:</td>
             <td class='content'>
             	<input type='text' class='sql_form' name='db_user' value='{$_REQUEST['db_user']}'>
             </td>
         </tr>
         <tr>
-            <td class='title'>SQL Password:</td>
+            <td class='title'>数据库密码:</td>
             <td class='content'>
             	<input type='password' class='sql_form' name='db_pass'>
             </td>
         </tr>
         <tr>
-            <td class='title'>SQL Table Prefix:</td>
+            <td class='title'>数据表前缀:</td>
             <td class='content'>
             	<input type='text' class='sql_form' name='db_pre' value='$prefix'>
             </td>
@@ -455,24 +456,24 @@ EOF;
 	{
 return <<<EOF
 								<fieldset>
-        		 	                <legend><img src='images/admin.gif' align='absmiddle' />&nbsp; Your administrative account</legend>
+        		 	                <legend><img src='images/admin.gif' align='absmiddle' />&nbsp; 管理员账号设置</legend>
         		 	                <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
             		 	                <tr>
-            		 	                    <td width='30%' class='title'>Username:</td>
+            		 	                    <td width='30%' class='title'>会员名称:</td>
 
             		 	                    <td width='70%' class='content'><input type='text' class='sql_form' name='username'></td>
             		 	                </tr>
             		 	                <tr>
-            		 	                    <td class='title'>Password:</td>
+            		 	                    <td class='title'>会员密码:</td>
             		 	                    <td class='content'><input type='password' class='sql_form' name='password'></td>
             		 	                </tr>
             		 	                <tr>
-            		 	                    <td class='title'>Confirm Password:</td>
+            		 	                    <td class='title'>确认密码:</td>
 
             		 	                    <td class='content'><input type='password' class='sql_form' name='confirm_password'></td>
             		 	                </tr>
             		 	                <tr>
-            		 	                    <td class='title'>E-mail Address:</td>
+            		 	                    <td class='title'>邮件地址:</td>
             		 	                    <td class='content'><input type='text' class='sql_form' name='email'></td>
             		 	                </tr>
             		 	            </table>
@@ -487,12 +488,11 @@ EOF;
 	function install_page()
 	{
 return <<<EOF
-The installer is now ready to complete the installation of your {$this->product_name}. Click <strong>Start</strong> to 
-begin the automatic process!<br /><br />
+安装程序已经准备好安装 {$this->product_name} 产品. 请点击 <strong>开始</strong> 来启动自动的安装进程!<br /><br />
 
         		 	            
         		 	            <div style='float: right'>
-        		 	                <input type='submit' class='nav_button' value='Start installation...'>
+        		 	                <input type='submit' class='nav_button' value='开始安装...'>
         		 	            </div>
 EOF;
 	}
@@ -527,7 +527,7 @@ $HTML .= <<<EOF
     		 	                </ul>
 								<br />
 								<div style='float: right'>
-									<input type='submit' class='nav_button' value='Click here if not forwarded' />
+									<input type='submit' class='nav_button' value='点击这里如果跳转没有自动完成' />
 								</div>
 EOF;
 
@@ -568,22 +568,21 @@ EOF;
 		{
 			$extra = "<div class='warning'>
 		        		<div style='float: left; margin-right: 7px; margin-left: 5px'><img src='images/warning.gif' /></div>
-						<p>INSTALLER NOT LOCKED<br />Please disable or remove 'install/index.php' immediately!</p>
+						<p>安装没有锁定<br />请立即删除 'install/index.php' 文件!</p>
 					  </div>";
 		}
 		
 $HTML .= <<<EOF
         		 	            <br />
 
-        		 	            <img src='images/install_done.gif' align='absmiddle' />&nbsp;&nbsp;<span class='done_text'>Installation complete!</span><Br /><Br />
-        		 	            Congratulations, your <a href='$url'>{$this->product_name}</a> is now installed and ready to use! Below are some 
-        		 	            links you may find useful.<br /><br /><br />
+        		 	            <img src='images/install_done.gif' align='absmiddle' />&nbsp;&nbsp;<span class='done_text'>安装成功!</span><br /><br />
+        		 	            祝贺您的 <a href='$url'>{$this->product_name}</a> 已经可以使用了! 下面是一些有用的链接提示.<br /><br /><br />
         		 	            $extra
-        		 	            <h3>Useful Links</h3>
+        		 	            <h3>有用的链接</h3>
         		 	            <ul id='links'>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=clientarea'>Client area</a></li>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=docs-ipb'>Documentation</a></li>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=forums'>IPS Company Forum</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=clientarea'>客户专区</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=docs-ipb'>官方文档</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=forums'>官方论坛</a></li>
         		 	            </ul>
 
 EOF;
