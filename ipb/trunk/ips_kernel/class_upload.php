@@ -325,7 +325,9 @@ class class_upload
 		// Make the uploaded file safe
 		//-------------------------------------------------
 		
-		$FILE_NAME = preg_replace( "/[^\w\.]/", "_", $FILE_NAME );
+		// Fix Chinese Filename issue
+		// If you are running a English board, please uncomment this line
+		//$FILE_NAME = preg_replace( "/[^\w\.]/", "_", $FILE_NAME );
 
 		$this->original_file_name = $FILE_NAME;
 		
