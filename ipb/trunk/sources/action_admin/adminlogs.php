@@ -54,7 +54,7 @@ class ad_adminlogs
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Admin Logs' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理员操作记录' );
 		
 		//-----------------------------------------
 		// Make sure we're a root admin, or else!
@@ -62,7 +62,7 @@ class ad_adminlogs
 		
 		if ($this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'])
 		{
-			//$this->ipsclass->admin->error("Sorry, these functions are for the root admin group only");
+			//$this->ipsclass->admin->error("抱歉, 只有系统管理员才能使用本功能");
 		}
 		
 		$this->colours  = array(
@@ -106,12 +106,12 @@ class ad_adminlogs
 	{
 		$start = intval($this->ipsclass->input['st']) >=0 ? intval($this->ipsclass->input['st']) : 0;
 		
-		$this->ipsclass->admin->page_detail = "Viewing all actions by a administrator";
-		$this->ipsclass->admin->page_title  = "Administration Logs Manager";
+		$this->ipsclass->admin->page_detail = "查看某个管理员的所有记录";
+		$this->ipsclass->admin->page_title  = "管理员操作记录";
 		
 		if ( ( !isset($this->ipsclass->input['search_string']) OR !$this->ipsclass->input['search_string'] ) AND ( !isset($this->ipsclass->input['mid']) OR !$this->ipsclass->input['mid'] ) )
 		{
-			$this->ipsclass->main_msg = "You must enter a search string";
+			$this->ipsclass->main_msg = "您必须输入搜索字串";
 			$this->list_current();
 			return;
 		}
@@ -157,23 +157,23 @@ class ad_adminlogs
 		$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $row_count,
 														  'PER_PAGE'    => 20,
 														  'CUR_ST_VAL'  => $start,
-														  'L_SINGLE'    => "Single Page",
-														  'L_MULTI'     => "Pages: ",
+														  'L_SINGLE'    => "单页",
+														  'L_MULTI'     => "页码: ",
 														  'BASE_URL'    => $this->ipsclass->base_url.$query,
 														)
 												 );
 									  
-		$this->ipsclass->admin->page_detail = "You may view and remove actions performed by your administrators";
-		$this->ipsclass->admin->page_title  = "Administrator Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以查看或删除您的管理员的操作记录";
+		$this->ipsclass->admin->page_title  = "管理员操作记录";
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Member Name"            , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Action Perfomed"        , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "Time of action"         , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP address"             , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "用户名"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "执行操作"        , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作时间"         , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"             , "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Admin Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "保存管理记录" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'center', 'tablesubheader');
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
@@ -195,7 +195,7 @@ class ad_adminlogs
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有结果</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'center', 'tablesubheader');
@@ -235,8 +235,8 @@ class ad_adminlogs
 	{
 		$form_array = array();
 	
-		$this->ipsclass->admin->page_detail = "You may view and remove actions performed by your administrators in mission critical areas of the administration CP (such as forum control, member control, group control, help files and moderator log management).";
-		$this->ipsclass->admin->page_title  = "Administration Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里查看或删除管理员在后台操作记录 (比如版块控制, 会员控制, 用户组控制, 帮助文件以及版主操作记录管理).";
+		$this->ipsclass->admin->page_title  = "管理员操作记录";
 		
 		//-----------------------------------------
 		// LAST FIVE ACTIONS
@@ -245,12 +245,12 @@ class ad_adminlogs
 		$this->ipsclass->DB->cache_add_query( 'adminlogs_view_list_current', array() );
 		$this->ipsclass->DB->cache_exec_query();
 		
-		$this->ipsclass->adskin->td_header[] = array( "Member Name"            , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Action Perfomed"        , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "Time of action"         , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP address"             , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "用户名"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "执行操作"        , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作时间"         , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"             , "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Last 5 Admin Actions" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最近的 5 条管理员操作记录" );
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -278,12 +278,12 @@ class ad_adminlogs
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Member Name"            , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Actions Perfomed"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "View all by member"     , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Remove all by member"   , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "用户名"            , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "执行操作"       , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "查看该会员的所有记录"     , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除该会员的所有记录"   , "30%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Admininstration Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "管理员操作记录统计" );
 		
 		$this->ipsclass->DB->cache_add_query( 'adminlogs_view_list_current_two', array() );
 		$this->ipsclass->DB->cache_exec_query();
@@ -293,8 +293,8 @@ class ad_adminlogs
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>{$r['name']}</b>",
 													  "<center>{$r['act_count']}</center>",
-													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=view&mid={$r['member_id']}'>View</a></center>",
-													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=remove&mid={$r['member_id']}'>Remove</a></center>",
+													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=view&mid={$r['member_id']}'>查看</a></center>",
+													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=remove&mid={$r['member_id']}'>删除</a></center>",
 											 )      );
 		}
 			
@@ -314,27 +314,27 @@ class ad_adminlogs
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search Admin Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索管理员操作记录" );
 		
 		$form_array = array(
-							  0 => array( 'note'      , 'Action Performed' ),
-							  1 => array( 'ip_address',  'IP Address'  ),
-							  2 => array( 'member_id' , 'Member ID' ),
+							  0 => array( 'note'      , '执行操作' ),
+							  1 => array( 'ip_address',  'IP 地址'  ),
+							  2 => array( 'member_id' , '会员 ID' ),
 							  3 => array( 'act'        , 'ACT Setting'  ),
 							  4 => array( 'code'       , 'CODE Setting'  ),
 						   );
 			
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search for...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索字串...</b>" ,
 										  		  $this->ipsclass->adskin->form_input( "search_string")
 								 )      );
 								 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search in...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b>" ,
 										  		  $this->ipsclass->adskin->form_dropdown( "search_type", $form_array)
 								 )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
