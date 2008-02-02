@@ -56,10 +56,10 @@ class ad_attachments {
 	{
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_attachments');
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Attachments Manager' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '附件管理' );
 		
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your member's attachments and attachment permissions";
-		$this->ipsclass->admin->page_title  = "Attachments Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理会员上传的附件以及附件上传许可";
+		$this->ipsclass->admin->page_title  = "附件管理";
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => 'set_image_dir', 'from' => 'skin_sets', 'where' => 'set_default=1' ) );
 		$this->ipsclass->DB->simple_exec();
@@ -339,14 +339,14 @@ class ad_attachments {
 																	)      );
 									                    		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "Attachment", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "附件名称", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Attachments: Search Results" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "附件: 搜索结果" );
 
 		while ( $r = $this->ipsclass->DB->fetch_row() )
 		{
@@ -362,7 +362,7 @@ class ad_attachments {
 													        )      );
 		}
 		
-		$removebutton = "<input type='submit' value='Delete Checked Attachments' class='realdarkbutton'></form>";
+		$removebutton = "<input type='submit' value='删除选中的附件' class='realdarkbutton'></form>";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( $removebutton, "right", "tablesubheader");
 		
@@ -394,70 +394,70 @@ class ad_attachments {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search Attachments" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索附件" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'  , 'attach_search_complete' ),
 																			 2 => array( 'act'   , 'attach'  ),
 																			 3 => array( 'section', $this->ipsclass->section_code ),
 																	)      );
 									                    
-		$gt_array = array( 0 => array( 'gt', 'More Than' ), 1 => array( 'lt', 'Less Than' ) );
+		$gt_array = array( 0 => array( 'gt', '大于' ), 1 => array( 'lt', '小于' ) );
 		
 		//-----------------------------------------
 		// FORM
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Match File Extension</b><div style='color:gray'>Leave blank to omit</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>文件后缀</b><div style='color:gray'>留空忽略</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'extension', isset($_POST['extension']) ? $_POST['extension'] : '', 10 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Match File Size (in kb)</b><div style='color:gray'>Leave blank to omit</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>文件大小 </b><div style='color:gray'>留空忽略</div>",
 																 $this->ipsclass->adskin->form_dropdown( 'filesize_gt', $gt_array, isset($_POST['filesize_gt']) ? $_POST['filesize_gt'] : '' ).' '.
 												 				 $this->ipsclass->adskin->form_simple_input( 'filesize', isset($_POST['filesize']) ? $_POST['filesize'] : '', 10 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Match Posted <em>n</em> Days</b><div style='color:gray'>Leave blank to omit</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发表时间在<div style='color:gray'>留空忽略</div>",
 																 $this->ipsclass->adskin->form_dropdown( 'days_gt', $gt_array, isset($_POST['days_gt']) ? $_POST['days_gt'] : '' ).' '.
-												 				 $this->ipsclass->adskin->form_simple_input( 'days', isset($_POST['days']) ? $_POST['days'] : '', 10 ).' ago',
+												 				 $this->ipsclass->adskin->form_simple_input( 'days', isset($_POST['days']) ? $_POST['days'] : '', 10 ).' 天之前',
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Match Viewed <em>n</em> Times</b><div style='color:gray'>Leave blank to omit</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>下载次数</b><div style='color:gray'>留空忽略</div>",
 																 $this->ipsclass->adskin->form_dropdown( 'hits_gt', $gt_array, isset($_POST['hits_gt']) ? $_POST['hits_gt'] : '' ).' '.
-												 				 $this->ipsclass->adskin->form_simple_input( 'hits', isset($_POST['hits']) ? $_POST['hits'] : '', 10 ).' times',
+												 				 $this->ipsclass->adskin->form_simple_input( 'hits', isset($_POST['hits']) ? $_POST['hits'] : '', 10 ).' 次',
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Match File Name</b><div style='color:gray'>Leave blank to omit</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>文件名</b><div style='color:gray'>留空忽略</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'filename', isset($_POST['filename']) ? $_POST['filename'] : '', 30 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Match Post Author Name</b><div style='color:gray'>Leave blank to omit</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>上传会员</b><div style='color:gray'>留空忽略</div>",
 												 				 $this->ipsclass->adskin->form_input( 'authorname', isset($_POST['authorname']) ? $_POST['authorname'] : '', 'text', "id='authorname'" ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Match Only Images?</b><div style='color:gray'>If 'yes', this search will only return image attachments.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>仅搜索图片?</b><div style='color:gray'>如果 '是', 搜索降之返回图片附件.</div>",
 												 				 $this->ipsclass->adskin->form_yes_no( 'onlyimage', isset($_POST['onlyimage']) ? $_POST['onlyimage'] : '', 30 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Order Results By</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索结果排序</b>",
 																 $this->ipsclass->adskin->form_dropdown( 'orderby', array( 0 => array( 'date'    , 'Attach Date'      ),
 																 										             1 => array( 'hits'    , 'Attach Views'     ),
 																 										             2 => array( 'filesize', 'Attach File Size' ),
 																 										             3 => array( 'file'    , 'Attach File Name' ),
 																 										           ), isset($_POST['orderby']) ? $_POST['orderby'] : '' ).' '.
-																 $this->ipsclass->adskin->form_dropdown( 'sort'   , array( 0 => array( 'desc'   , 'Descending [9-0]'  ),
+																 $this->ipsclass->adskin->form_dropdown( 'sort'   , array( 0 => array( 'desc'   , '倒序 [9-0]'  ),
 																 													 1 => array( 'asc'    , 'Ascending [0-9]'   ),
 																 										           ), isset($_POST['sort']) ? $_POST['sort'] : '' )
 																 										        
 												 				 
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Show <em>n</em> Results</b><div style='color:gray'>Maximum is 100 regardless of your entry</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>显示结果数量</b><div style='color:gray'>最大 100</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'show', isset($_POST['show']) ? $_POST['show'] : 25, 10 ),
 														)      );
 														
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -539,7 +539,7 @@ class ad_attachments {
 			}
 		}
 		
-		$this->ipsclass->main_msg = "Attachments Removed";
+		$this->ipsclass->main_msg = "附件已删除";
 		
 		if ( $this->ipsclass->input['return'] == 'stats' )
 		{
@@ -592,12 +592,12 @@ class ad_attachments {
 		// Get quick stats
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Attachments: Overview" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "附件概况" );
 		
 		$stats = $this->ipsclass->DB->simple_exec_query( array( 'select' => 'count(*) as count, sum(attach_filesize) as sum',
  																'from'   => 'attachments' ) );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Number of Attachments</b>" , $this->ipsclass->do_number_format($stats['count']),
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>附件数量</b>" , $this->ipsclass->do_number_format($stats['count']),
 																 			 "<b>Attachments Disk Usage</b>", $this->ipsclass->size_format($stats['sum']),
 													  				 )      );
 		
@@ -614,14 +614,14 @@ class ad_attachments {
 		//-----------------------------------------
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "Attachment", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "文件名称", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Attachments: Last 5 Attached" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最新的 5 个附件" );
 		
 		$this->ipsclass->DB->build_query( array( 'select'   => 'a.*',
 												 'from'     => array( 'attachments' => 'a' ),
@@ -669,14 +669,14 @@ class ad_attachments {
 		//-----------------------------------------
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "Attachment", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "文件名称", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Attachments: Largest 5 Topic Attachments" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最大的 5 个附件" );
 		
 		$this->ipsclass->DB->build_query( array( 'select'   => 'a.*',
 												 'from'     => array( 'attachments' => 'a' ),
@@ -724,14 +724,14 @@ class ad_attachments {
 		//-----------------------------------------
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "Attachment", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "文件名称", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Viewed"    , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Attachments: Top 5 Most Viewed" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "点击次数最多的 5 个附件" );
 		
 		$this->ipsclass->DB->build_query( array( 'select'   => 'a.*',
 												 'from'     => array( 'attachments' => 'a' ),
@@ -774,7 +774,7 @@ class ad_attachments {
 																		)      );
 		}
 		
-		$removebutton = "<input type='submit' value='Delete Checked Attachments' class='realdarkbutton'></form>";
+		$removebutton = "<input type='submit' value='删除选中的附件' class='realdarkbutton'></form>";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( $removebutton, "right", "tablesubheader");
 		
@@ -803,7 +803,7 @@ class ad_attachments {
 		
 		if ( ! $content )
 		{
-			$this->ipsclass->main_msg = "Upload failed, ipb_attachtypes.xml was either missing or empty";
+			$this->ipsclass->main_msg = "上传失败, 文件 ipb_attachtypes.xml 不存在或文件为空";
 			$this->attach_type_start();
 		}
 		
@@ -861,7 +861,7 @@ class ad_attachments {
 		
 		$this->attach_type_rebuildcache();
                     
-		$this->ipsclass->main_msg = "Attachment Types XML file import completed";
+		$this->ipsclass->main_msg = "附件类型 XML 文件导入完毕";
 		
 		$this->attach_type_start();
 	
@@ -937,7 +937,7 @@ class ad_attachments {
 		
 		$this->attach_type_rebuildcache();
 		
-		$this->ipsclass->main_msg = "Attachment type deleted";
+		$this->ipsclass->main_msg = "附件类型已删除";
 		
 		$this->attach_type_start();
 	}
@@ -958,7 +958,7 @@ class ad_attachments {
 		
 		if ( ! $this->ipsclass->input['atype_extension'] or ! $this->ipsclass->input['atype_mimetype'] )
 		{
-			$this->ipsclass->main_msg = "You must enter at least an extension and mime-type before continuing.";
+			$this->ipsclass->main_msg = "您必须输入至少文件后缀和 mime-type 才能继续.";
 			$this->attach_type_form( $type );
 		}
 		
@@ -979,20 +979,20 @@ class ad_attachments {
 			
 			if ( $attach['atype_id'] )
 			{
-				$this->ipsclass->main_msg = "The extension '{$save_array['atype_extension']}' already exists, please choose another extension.";
+				$this->ipsclass->main_msg = "文件后缀 '{$save_array['atype_extension']}' 已经存在, 请输入另外一个.";
 				$this->attach_type_form($type);
 			}
 			
 			$this->ipsclass->DB->do_insert( 'attachments_type', $save_array );
 			
-			$this->ipsclass->main_msg = "Attachment type added";
+			$this->ipsclass->main_msg = "附件类型已添加";
 			
 		}
 		else
 		{
 			$this->ipsclass->DB->do_update( 'attachments_type', $save_array, 'atype_id='.$this->ipsclass->input['id'] );
 			
-			$this->ipsclass->main_msg = "Attachment type edited";
+			$this->ipsclass->main_msg = "附件类型已编辑";
 		}
 		
 		$this->attach_type_rebuildcache();
@@ -1012,12 +1012,12 @@ class ad_attachments {
 		$this->ipsclass->input['id']     = isset($this->ipsclass->input['id']) ? intval($this->ipsclass->input['id']) : 0;
 		$this->ipsclass->input['baseon'] = isset($this->ipsclass->input['baseon']) ? intval($this->ipsclass->input['baseon']) : 0;
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit Attachment Type' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑附件类型' );
 		
 		if ( $type == 'add' )
 		{
 			$code   = 'attach_doadd';
-			$button = 'Add New Attachment Type';
+			$button = '添加附件类型';
 			
 			if ( $this->ipsclass->input['baseon'] )
 			{
@@ -1043,7 +1043,7 @@ class ad_attachments {
 		
 			while( $r = $this->ipsclass->DB->fetch_row() )
 			{
-				$dd .= "<option value='{$r['atype_id']}'>Base on: {$r['atype_extension']}</option>\n";
+				$dd .= "<option value='{$r['atype_id']}'>新附件类型基于: {$r['atype_extension']}</option>\n";
 			}
 			
 			$title = "
@@ -1058,7 +1058,7 @@ class ad_attachments {
 		else
 		{
 			$code   = 'attach_doedit';
-			$button = 'Edit Attachment Type';
+			$button = '编辑附件类型';
 			$title  = $button;
 			$attach = $this->ipsclass->DB->simple_exec_query( array( 'select' => '*', 'from' => 'attachments_type', 'where' => 'atype_id='.$this->ipsclass->input['id'] ) );
 		
@@ -1088,23 +1088,23 @@ class ad_attachments {
 		// FORM
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Attachment File Extension</b><div style='color:gray'>This is the (usually) three character filename suffix.<br />You don't need to add the '.' before the extension</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>附件文件后缀</b><div style='color:gray'>文件后缀通常为3个字符.<br />您不需要输入 '.' </div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'atype_extension', ( isset($_POST['atype_extension']) AND $_POST['atype_extension'] ) ? $_POST['atype_extension'] : $attach['atype_extension'], 10 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Attachment Mime-Type</b><div style='color:gray'>Unsure what the correct mime-type is?. <a href='http://www.utoronto.ca/webdocs/HTMLdocs/Book/Book-3ed/appb/mimetype.html' target='_blank'>Try looking here</a></div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>附件 Mime-Type</b><div style='color:gray'>不能确定正确的 mime-type? <a href='http://www.utoronto.ca/webdocs/HTMLdocs/Book/Book-3ed/appb/mimetype.html' target='_blank'>在这里找找</a></div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'atype_mimetype', ( isset($_POST['atype_mimetype']) AND $_POST['atype_mimetype'] ) ? $_POST['atype_mimetype'] : $attach['atype_mimetype'], 40 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Allow this attachment in posts?</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许上传此类型的附件?</b>",
 												 				 $this->ipsclass->adskin->form_yes_no( 'atype_post', ( isset($_POST['atype_post']) AND $_POST['atype_post'] ) ? $_POST['atype_post'] : $attach['atype_post'] ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Allow this attachment in avatars / personal photos?</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许此类型的附件作为头像和个人照片?</b>",
 												 				 $this->ipsclass->adskin->form_yes_no( 'atype_photo', ( isset($_POST['atype_photo']) AND $_POST['atype_photo'] ) ? $_POST['atype_photo'] : $attach['atype_photo'] ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Attachment Mini-Image</b><div style='color:gray'>This is the little icon that represents the attachment type in a post.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>附件图标</b><div style='color:gray'>在帖子中表示附件类型的小图标 .</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'atype_img', ( isset($_POST['atype_img']) AND $_POST['atype_img'] ) ? $_POST['atype_img'] : $attach['atype_img'], 40 ),
 														)      );	
 		
@@ -1160,14 +1160,14 @@ class ad_attachments {
 																	) , "uploadform", " enctype='multipart/form-data'"     );
 													
 													  			
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Import an Attachment Types List" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导入附件类型列表" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													 		    "<b>Upload XML Attachment Types List</b><div style='color:gray'>Browse your computer for 'ipb_attachtypes.xml' or 'ipb_attachtypes.xml.gz'. Duplicate entries will not be imported.</div>",
+													 		    "<b>上传 XML 附件类型列表</b><div style='color:gray'>文件名必须是 'ipb_attachtypes.xml' 或 'ipb_attachtypes.xml.gz'. 重复的项目不会被导入.</div>",
 													  		    $this->ipsclass->adskin->form_upload(  )
 													    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Import");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("导入");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

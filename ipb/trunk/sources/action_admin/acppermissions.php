@@ -22,6 +22,9 @@
 |
 |	> Module Version Number: 1.0.0
 |   > DBA Checked: Mon 24th May 2004
+|   > DBA Checked: Mon 24th May 2004
+|   > Localize: Mac @ IPBChina
+|   > Date: 2007-02-19
 +--------------------------------------------------------------------------
 */
 
@@ -78,7 +81,7 @@ class ad_acppermissions
 		
 		if ( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
 		{
-			$this->ipsclass->admin->error("Sorry, these functions are for the root admin group only");
+			$this->ipsclass->admin->error("对不起，只有系统管理员才能访问这里");
 		}
 		
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_admin');
@@ -703,7 +706,7 @@ class ad_acppermissions
 		
 		if ( ! $name )
 		{
-			$this->ipsclass->main_msg = "You must enter a name before submitting the form.";
+			$this->ipsclass->main_msg = "提交表单之前，您必须输入管理员名称.";
 			$this->acpperms_member_add();
 		}
 		
@@ -722,7 +725,7 @@ class ad_acppermissions
 		
 		if ( ! $member['id'] )
 		{
-			$this->ipsclass->main_msg = "{$name} cannot be found.";
+			$this->ipsclass->main_msg = "找不到会员 {$name}.";
 			$this->acpperms_member_add();
 		}
 		
@@ -734,7 +737,7 @@ class ad_acppermissions
 		
 		if ( $test['row_member_id'] )
 		{
-			$this->ipsclass->main_msg = "{$name} already has restrictions in place.";
+			$this->ipsclass->main_msg = "{$name} 的后台访问许可设置完毕.";
 			$this->acpperms_member_add();
 		}
 		
@@ -744,7 +747,7 @@ class ad_acppermissions
 		
 		if ( $this->ipsclass->vars['admin_group'] == $member['mgroup'] )
 		{
-			$this->ipsclass->main_msg = "{$name}'s primary group is the Root Admin group and cannot be restricted.";
+			$this->ipsclass->main_msg = "{$name} 是系统管理员,不能对他的许可进行设置.";
 			$this->acpperms_member_add();
 		}
 		
@@ -777,7 +780,7 @@ class ad_acppermissions
 		
 		if ( ! $isok )
 		{
-			$this->ipsclass->main_msg = "{$member['members_display_name']} does not have access to the ACP and cannot be added.";
+			$this->ipsclass->main_msg = "{$member['members_display_name']} 不能访问后台.";
 			$this->acpperms_member_add();
 		}
 		
@@ -791,7 +794,7 @@ class ad_acppermissions
 																		'row_perm_cache' => serialize( array() ),
 																		'row_updated'	 => time() ) );
 																		
-		$this->ipsclass->main_msg = "{$member['members_display_name']} successfully added and now has no ACP access until you allow it by managing his/her restrictions.";
+		$this->ipsclass->main_msg = "{$member['members_display_name']} 被加入限制列表, 在您对他的访问许可进行设置之前,他不能访问后台.";
 		$this->acpperms_list();
 	}
 	
@@ -808,8 +811,8 @@ class ad_acppermissions
 	*/
 	function acpperms_member_add()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ACP Restrictions' );
-		$this->ipsclass->admin->nav[] = array( ''                        , 'Add an administrator' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理员后台访问许可' );
+		$this->ipsclass->admin->nav[] = array( ''                        , '添加管理员' );
 		
 		//-------------------------------
 		// INIT
@@ -821,8 +824,8 @@ class ad_acppermissions
 		
 		$this->ipsclass->html .= $this->html->acp_perms_add_admin_form();
 		
-		$this->ipsclass->admin->page_title  = "Admin Restrictions";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your admin restriction permissions.";
+		$this->ipsclass->admin->page_title  = "管理员后台访问许可";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理所有管理员的后台访问许可.";
 		$this->ipsclass->admin->output();
 	}
 	
@@ -859,13 +862,13 @@ class ad_acppermissions
 			
 			if ( ! $this->ipsclass->input['file_location'] )
 			{
-				$this->ipsclass->main_msg = "No upload file was found and no filename was specified.";
+				$this->ipsclass->main_msg = "没有指定文件名, 或者没有上传文件.";
 				$this->acpperms_list();
 			}
 			
 			if ( ! file_exists( ROOT_PATH . $this->ipsclass->input['file_location'] ) )
 			{
-				$this->ipsclass->main_msg = "Could not find the file to open at: " . ROOT_PATH . $this->ipsclass->input['file_location'];
+				$this->ipsclass->main_msg = "无法找到文件: " . ROOT_PATH . $this->ipsclass->input['file_location'];
 				$this->acpperms_list();
 			}
 			
@@ -991,7 +994,7 @@ class ad_acppermissions
 	*/
 	function acpperms_dev_report_language()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ACP Permissions: Developer Tools' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理员后台访问许可: 开发工具' );
 		
 		//-------------------------------
 		// INIT
@@ -1059,8 +1062,8 @@ class ad_acppermissions
 		
 		$this->ipsclass->html .= "<textarea style='width:100%;height:400px'><"."?php\n#Don't complete empty sections, they are done automatically\n\$lang = array(\n{$content}\n);\n?"."></textarea>";
 		
-		$this->ipsclass->admin->page_title  = "Admin Permissions";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your admin permissions.";
+		$this->ipsclass->admin->page_title  = "管理员后台访问许可";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您所有的管理员的后台访问许可.";
 		$this->ipsclass->admin->output();
 	}
 	
@@ -1077,7 +1080,7 @@ class ad_acppermissions
 	*/
 	function acpperms_dev_report_missing()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ACP Permissions: Developer Tools' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理员后台访问许可: 开发工具' );
 		
 		//-------------------------------
 		// INIT
@@ -1103,18 +1106,18 @@ class ad_acppermissions
 			
 			if ( ! count($master[ $_name ]['perm_bits']) )
 			{
-				$content .= "<span style='color:red;font-weight:bold'>{$_name}.php has no permission information....</span><br />";
+				$content .= "<span style='color:red;font-weight:bold'>文件 {$_name}.php 没有访问许可信息....</span><br />";
 			}
 			else
 			{
-				$content .= "<span style='color:green'>{$_name}.php has permission information....</span><br />";
+				$content .= "<span style='color:green'>文件 {$_name}.php 含有访问许可信息....</span><br />";
 			}
 		}
 		
 		$this->ipsclass->html .= $content;
 		
-		$this->ipsclass->admin->page_title  = "Admin Permissions";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your admin permissions.";
+		$this->ipsclass->admin->page_title  = "管理员后台访问许可";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您所有的管理员的后台访问许可.";
 		$this->ipsclass->admin->output();
 	}
 	
@@ -1303,7 +1306,7 @@ class ad_acppermissions
 	*/
 	function acpperms_list()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ACP Restrictions' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理员后台访问许可' );
 		
 		//-------------------------------
 		// INIT
@@ -1342,8 +1345,8 @@ class ad_acppermissions
 		
 		$this->ipsclass->html .= $this->html->acp_perms_overview( $content );
 		
-		$this->ipsclass->admin->page_title  = "Admin Restrictions";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your admin restriction permissions.";
+		$this->ipsclass->admin->page_title  = "管理员后台访问许可";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您所有的管理员的后台访问许可.";
 		$this->ipsclass->admin->output();
 	}
 	
