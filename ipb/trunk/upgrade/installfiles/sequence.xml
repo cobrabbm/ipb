@@ -2,22 +2,22 @@
 <installdata>
 	<action>
 		<file>login</file>
-		<menu>Login</menu>
+		<menu>系统登录</menu>
 		<position>0</position>
 	</action>
 	<action>
 		<file>overview</file>
-		<menu>Overview</menu>
+		<menu>系统概览</menu>
 		<position>1</position>
 	</action>
 	<action>
 		<file>eula</file>
-		<menu>EULA</menu>
+		<menu>许可协议</menu>
 		<position>2</position>
 	</action>
 	<action>
 		<file>install</file>
-		<menu>Upgrade</menu>
+		<menu>系统升级</menu>
 		<position>3</position>
 	</action>
 </installdata>

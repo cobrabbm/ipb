@@ -187,11 +187,11 @@ class action_install
 
 		if ( count( $this->install->error ) > 0 )
 		{
-			$this->install->message = count($message) ? implode( "<br />", $message ) : "Proceeding with update";
+			$this->install->message = count($message) ? implode( "<br />", $message ) : "正在执行升级过程";
 
 			$this->install->template->warning( array_merge( array( $this->install->message ),
-															array( 'Error in upgrade '.$this->install->versions[ $this->install->current_upgrade ]. ' (' . $this->install->current_upgrade . ')' ),
-															array( "<span style='color:red'>".count($this->install->error).' errors found</span>' ),
+															array( '在进行 '.$this->install->versions[ $this->install->current_upgrade ]. ' 升级中发生错误 (' . $this->install->current_upgrade . ')' ),
+															array( "<span style='color:red'>总计发现 ".count($this->install->error).' 个错误</span>' ),
 															$this->install->error ) );
 			$this->install->template->in_error   = 1;
 
@@ -202,14 +202,14 @@ class action_install
 
 		if( $this->install->saved_data['man'] AND $output )
 		{
-			$output = "<h3><b>Please run these queries in your MySQL database before continuing..</b></h3><br />".nl2br(htmlspecialchars($output));
+			$output = "<h3><b>请在进行下一步之前执行下面的 MySQL 数据升级语句..</b></h3><br />".nl2br(htmlspecialchars($output));
 
 			$this->install->template->next_action = '?p=install&sub=finish';
 			$this->install->template->append( $output );
 		}
 		else
 		{
-			$output[] = count($message) ? implode( "<br />", $message ) : "No queries, settings, or permissions to import...<br /><br />Proceeding with update";
+			$output[] = count($message) ? implode( "<br />", $message ) : "没有数据、设置或者权限内容写入...<br /><br />正在执行升级过程";
 			$this->install->template->next_action = '?p=install&sub=finish';
 			$this->install->template->append( $this->install->template->install_page_refresh( $output ) );
 			$this->install->template->hide_next = 1;
@@ -272,11 +272,11 @@ class action_install
 
 		if ( count( $this->install->error ) > 0 )
 		{
-			$this->install->message = count($message) ? implode( "<br />", $message ) : "Proceeding with update";
+			$this->install->message = count($message) ? implode( "<br />", $message ) : "正在执行升级过程";
 
 			$this->install->template->warning( array_merge( array( $this->install->message ),
-															array( 'Error in upgrade '.$this->install->versions[ $this->install->current_upgrade ]. ' (' . $this->install->current_upgrade . ')' ),
-															array( "<span style='color:red'>".count($this->install->error).' errors found</span>' ),
+															array( '在进行 '.$this->install->versions[ $this->install->current_upgrade ]. ' 升级过程中出现错误 (' . $this->install->current_upgrade . ')' ),
+															array( "<span style='color:red'>总计发现 ".count($this->install->error).' 个错误</span>' ),
 															$this->install->error ) );
 			$this->install->template->in_error   = 1;
 
@@ -285,7 +285,7 @@ class action_install
 			return;
 		}
 
-		$output[] = count($message) ? implode( "<br />", $message ) : "No settings to import...<br /><br />Proceeding with update";
+		$output[] = count($message) ? implode( "<br />", $message ) : "没有设置需要导入...<br /><br />正在执行升级过程";
 		$this->install->template->next_action = '?p=install&sub=acpperms';
 		$this->install->template->append( $this->install->template->install_page_refresh( $output ) );
 		$this->install->template->hide_next = 1;
@@ -324,7 +324,7 @@ class action_install
 
 		$api->add_task();
 
-		$message[] = $api->error ? "<span style='color:red;'>Could not rebuild tasks.  Please rebuild tasks in the ACP from the Task Manager page</span>" : "Rebuilt Tasks from XML...";
+		$message[] = $api->error ? "<span style='color:red;'>无法重建任务. 请在后台 任务管理 页面进行重建操作</span>" : "从 XML 文件重建任务...";
 
 		//-------------------------------
 		// Load module...
@@ -351,7 +351,7 @@ class action_install
 		//-----------------------------------------
 		// Install FAQ
 		//-----------------------------------------
-		$message[] 	= "Updating FAQ information...";
+		$message[] 	= "正在升级帮助文件信息...";
 		$xml 		= new class_xml();
 		$xml->lite_parser = 1;
 
@@ -399,7 +399,7 @@ class action_install
 		// XML: Help Information
 		//-----------------------------------------
 
-		$message[] = "Inserting ACP help files...";
+		$message[] = "正在加入帮助文件内容...";
 
 		$keys		= array();
 
@@ -465,7 +465,7 @@ class action_install
 
 		if ( count( $this->install->error ) > 0 )
 		{
-			$this->install->message = count($message) ? implode( "<br />", $message ) : "Proceeding with update";
+			$this->install->message = count($message) ? implode( "<br />", $message ) : "正在执行升级过程";
 
 			$this->install->template->warning( array_merge( array( $this->install->message ),
 															array( 'Error in upgrade '.$this->install->versions[ $this->install->current_upgrade ]. ' (' . $this->install->current_upgrade . ')' ),
@@ -515,8 +515,8 @@ class action_install
 			if ( count( $this->install->error ) > 0 )
 			{
 				$this->install->template->warning( array_merge( array( $this->install->message ),
-																array( 'Error in upgrade '.$this->install->versions[ $this->install->current_upgrade ]. ' (' . $this->install->current_upgrade . ')' ),
-																array( "<span style='color:red'>".count($this->install->error).' errors found</span>' ),
+																array( '在升级 '.$this->install->versions[ $this->install->current_upgrade ]. ' 过程中出现错误 (' . $this->install->current_upgrade . ')' ),
+																array( "<span style='color:red'>总计发现 ".count($this->install->error).' 个错误</span>' ),
 																$this->install->error ) );
 				$this->install->template->in_error   = 1;
 
@@ -570,7 +570,7 @@ class action_install
 					$output[] = $this->install->message;
 				}
 
-				$output[] = "Succesfully upgraded to version {$this->install->versions[ $this->install->current_upgrade ]}";
+				$output[] = "系统成功升级到 {$this->install->versions[ $this->install->current_upgrade ]} 版本";
 			}
 			else
 			{
@@ -585,7 +585,7 @@ class action_install
 				}
 				else
 				{
-					$output[] = "Proceeding with update...";
+					$output[] = "正在执行升级过程...";
 				}
 
 				$continue = 1;
@@ -605,7 +605,7 @@ class action_install
 																				  	'upgrade_mid'   		=> $this->install->saved_data['mid'],
 						     						   )                         );
 
-				$output[] = "Succesfully upgraded to version {$this->install->versions[ $this->install->current_upgrade ]}";
+				$output[] = "系统成功升级到 {$this->install->versions[ $this->install->current_upgrade ]} 版本";
 			}
 		}
 
@@ -704,13 +704,13 @@ class action_install
 
 					if ( preg_match( "/^(DROP|FLUSH)/i", trim($sql) ) )
 					{
-						$this->install->ipsclass->main_msg = "Sorry, those queries are not allowed for your safety";
+						$this->install->ipsclass->main_msg = "非常抱歉, 在您的安全设置中不允许执行这些数据升级语句";
 
 						continue;
 					}
 					else if ( preg_match( "/^(DELETE|UPDATE|TRUNCATE)/i", preg_replace( "#\s{1,}#s", "", $sql ) ) and preg_match( "/admin_login_logs/i", preg_replace( "#\s{1,}#s", "", $sql ) ) )
 					{
-						$this->install->ipsclass->main_msg = "Sorry, those queries are not allowed for your safety";
+						$this->install->ipsclass->main_msg = "非常抱歉, 在您的安全设置中不允许执行这些数据升级语句";
 
 						continue;
 					}
@@ -722,11 +722,11 @@ class action_install
 
 						if( $this->install->ipsclass->DB->error != "" )
 						{
-							$this->install->ipsclass->main_msg .= "<span style='color:red;'>SQL Error</span><br />{$this->install->ipsclass->DB->error}<br />";
+							$this->install->ipsclass->main_msg .= "<span style='color:red;'>数据库发生错误</span><br />{$this->install->ipsclass->DB->error}<br />";
 						}
 						else
 						{
-							$this->install->ipsclass->main_msg .= "Query: ".htmlspecialchars($sql)."<br />Executed Successfully<br />";
+							$this->install->ipsclass->main_msg .= "数据命令: ".htmlspecialchars($sql)."<br />成功执行<br />";
 						}
 						
 						$this->install->ipsclass->DB->error  = "";
@@ -772,9 +772,9 @@ class action_install
 
 				$our_output .= "<script type='text/javascript' src='dbchecker.js'></script><script type='text/javascript'>var save_data = '".urlencode(serialize($this->install->saved_data))."';</script>";
 
-				$our_output .= $this->install->ipsclass->adskin->start_table( "WARNING: ERRORS FOUND" );
+				$our_output .= $this->install->ipsclass->adskin->start_table( "警告: 发生错误" );
 
-				$our_output .= $this->install->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-invalid'>There were errors found with your database.  Please review them below, or click <a href='#' onclick='fix_all_dberrors();'>here</a> to correct these errors.", 2 ) ) );
+				$our_output .= $this->install->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-invalid'>在您的数据库中发现错误. 请重新检查, 或者点击 <a href='#' onclick='fix_all_dberrors();'>这里</a> 来检查这些错误.", 2 ) ) );
 
 				$our_output .= $this->install->ipsclass->adskin->end_table();
 			}
@@ -783,9 +783,9 @@ class action_install
 				$this->install->ipsclass->adskin->td_header[] = array( "{none}"    	, "50%" );
 				$this->install->ipsclass->adskin->td_header[] = array( "{none}"    	, "50%" );
 
-				$our_output .= $this->install->ipsclass->adskin->start_table( "No Errors Found" );
+				$our_output .= $this->install->ipsclass->adskin->start_table( "未发现任何错误" );
 
-				$our_output .= $this->install->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-valid'>There were no errors found with your database.", 2 ) ) );
+				$our_output .= $this->install->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-valid'>在您的数据库中未发现任何错误.", 2 ) ) );
 
 				$our_output .= $this->install->ipsclass->adskin->end_table();
 			}
@@ -809,7 +809,7 @@ class action_install
 
 					$our_output .= $this->install->ipsclass->adskin->add_td_row( array( "<span style='color:red'>{$data['table']}</span>",
 																				"<span style='color:red'>{$good_img}</span>",
-																				"<center><script type='text/javascript'>all_queries[{$i}] = '".base64_encode($data['fixsql'])."';</script><a href='index.php?p=install&sub=checkdb&saved_data=".urlencode(serialize($this->install->saved_data))."&query=".urlencode(base64_encode($data['fixsql']))."'><b>Fix Automatically</b></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href'#' onclick=\"toggleview('{$i}');return false;\" style='cursor: pointer;'><b>Fix Manually</b></a><br />{$popup_div}</center>"
+																				"<center><script type='text/javascript'>all_queries[{$i}] = '".base64_encode($data['fixsql'])."';</script><a href='index.php?p=install&sub=checkdb&saved_data=".urlencode(serialize($this->install->saved_data))."&query=".urlencode(base64_encode($data['fixsql']))."'><b>自动修复</b></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href'#' onclick=\"toggleview('{$i}');return false;\" style='cursor: pointer;'><b>手动修复</b></a><br />{$popup_div}</center>"
 																	   ) 	  );
 					$i++;
 				}

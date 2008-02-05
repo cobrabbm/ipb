@@ -61,7 +61,7 @@ class install_template
 			}
 		}
 		
-		$this->install_pages['done'] = 'Finish';
+		$this->install_pages['done'] = '完成升级';
 	   
 		/* Set Current Page */
 		$this->page_current = ( $this->ipsclass->input['p'] ) ? $this->ipsclass->input['p'] : 'login';
@@ -146,7 +146,7 @@ echo <<<EOF
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<title>IPS Upgrader</title>
+		<title>IPS 产品升级系统</title>
 		<style type='text/css' media='all'>
 			@import url('install.css');
 		</style>
@@ -157,6 +157,7 @@ echo <<<EOF
 			//]]>
 		</script>
 		<script type="text/javascript" src='ips_xmlhttprequest.js'></script>	
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
 		<p>&nbsp;</p>
@@ -168,7 +169,7 @@ echo <<<EOF
 		<div id='ipswrapper'>
 		    <div class='main_shell'>
 
-		 	    <h1><img src='images/package_icon.gif' align='absmiddle' /> Welcome to the IPB Upgrader</h1>
+		 	    <h1><img src='images/package_icon.gif' align='absmiddle' />欢迎来到 IPB 产品升级向导</h1>
 		 	    <div class='content_shell'>
 		 	        <div class='package'>
 		 	            <div>
@@ -195,7 +196,7 @@ echo <<<EOF
     		 	                    </div>
 
     		 	                    <div style='vertical-align: middle'>
-    		 	                        <h2>{$this->product_name} Upgrade</h2>
+    		 	                        <h2>{$this->product_name} 升级向导</h2>
     		 	                        <!--<strong>{$this->product_version}</strong>-->
     		 	                    </div>
     		 	                </div>
@@ -210,7 +211,7 @@ echo <<<EOF
 		 	            <div class='hr'></div>
 		 	            <div style='padding-top: 17px; padding-right: 15px; padding-left: 15px'>
 		 	                <div style='float: left'>
-		 	                    <input type='button' class='nav_button' value='Cancel Upgrade' onclick="window.location='index.php';return false;">
+		 	                    <input type='button' class='nav_button' value='取消升级' onclick="window.location='index.php';return false;">
 		 	                </div>
 
 		 	                <div style='float: right'>
@@ -221,19 +222,19 @@ if( ! $this->hide_next )
 if( $this->next_action == 'disabled' )
 {
 echo <<<EOF
-		 	                    <input type='submit' class='nav_button' value='Upgrade can not continue...' disabled='disabled'>
+		 	                    <input type='submit' class='nav_button' value='无法继续升级...' disabled='disabled'>
 EOF;
 }
 else if( $this->in_error == 1 )
 {
 echo <<<EOF
-		 	                    <input type='submit' class='nav_button' value='Continue regardless?'>
+		 	                    <input type='submit' class='nav_button' value='强行升级?'>
 EOF;
 }
 else 
 {
 echo <<<EOF
-		 	                    <input type='submit' class='nav_button' value='Next >'>
+		 	                    <input type='submit' class='nav_button' value='下一步 >'>
 EOF;
 }
 }
@@ -247,7 +248,7 @@ echo <<<EOF
 EOF;
 echo date("Y");
 echo <<<EOF
- Invision Power Services, Inc.
+ IPBChina.COM & Invision Power Services, Inc.
 		 	            </div>
 		 	        </div>
 
@@ -284,28 +285,28 @@ $output .= <<<EOF
         		 	                    <img src='images/wizard.gif' align='absmiddle' />
         		 	                </div>
         		 	                <div>
-        		 	                    Welcome to the upgrade routine for {$this->product_name}. This wizard will guide you through the upgrade process.
+        		 	                    欢迎来到 {$this->product_name} 产品升级向导. 这一智能向导将会因到您完成下面的升级过程.
         		 	                </div>
         		 	            </div>
     <br/>{$extra}
-    <h3>Verification Required - Please Log In</h3>
-    You must log in with your forums administrative log in details to access the upgrade system.<br />
+    <h3>需要进行身份认证 - 请登录系统</h3>
+    您必须以您的管理员身份登录才能进入升级系统.<br />
     <br />
 	<table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
 		<tr>
-			<td width='40%'  valign='middle'>Your Forum 
+			<td width='40%'  valign='middle'> 
 EOF;
 
 if( $this->ipsclass->login_type == 'username' )
 {
 $output .= <<<EOF
-Username
+会员名称
 EOF;
 }
 else
 {
 $output .= <<<EOF
-Email Address
+邮件地址
 EOF;
 }
 $output .= <<<EOF
@@ -313,7 +314,7 @@ $output .= <<<EOF
 			<td width='60%'  valign='middle'><input type='text' style='width:100%' name='username' value='' class='sql_form'></td>
 		</tr>
 		<tr>
-			<td width='40%'  valign='middle'>Your Forum Password:</td>
+			<td width='40%'  valign='middle'>会员密码:</td>
 			<td width='60%'  valign='middle'><input type='password' style='width:100%' name='password' value='' class='sql_form'></td>
 		</tr>
 	</table>
@@ -334,13 +335,13 @@ return <<<EOF
         		 	                    <img src='images/wizard.gif' align='absmiddle' />
         		 	                </div>
         		 	                <div>
-        		 	                    Welcome to the upgrader for {$this->product_name}. This wizard will guide you through the upgrade process.
+        		 	                    欢迎来到 {$this->product_name} 产品的升级向导. 这一智能向导将会因到您完成下面的升级过程.
         		 	                </div>
         		 	            </div>
     <br/>
-    <h3>Upgrade summary</h3>
-    Current version: $current_version.<br />
-    This script will: $summary<br />
+    <h3>升级概况</h3>
+    当前系统版本: $current_version.<br />
+    即将升级版本: $summary<br />
     <br />
 
 EOF;
@@ -363,7 +364,7 @@ check_eula = function()
 	}
 	else
 	{
-		alert( 'You must agree to the license before continuing' );
+		alert( '您必须同意授权协议才能进行下一步的安装' );
 		return false;
 	}
 }
@@ -372,13 +373,13 @@ document.getElementById( 'install-form' ).onsubmit = check_eula;
 
 </script>
 
-Please read and agree to the End User License Agreement before continuing.<br /><br />
+请在进行下一步之前仔细阅读许可协议并且点击表示同意.<br /><br />
 
         		 	            
         		 	            <div class='eula'>
 									$eula        		 	                
                                 </div>
-                                <input type='checkbox' name='eula' id='eula'><strong> I agree to the license agreement</strong>
+                                <input type='checkbox' name='eula' id='eula'><strong> 我同意许可协议</strong>
 
 
 EOF;
@@ -394,16 +395,15 @@ EOF;
 		
 $output = <<<EOF
 <br />
-The upgrader is now ready to complete the upgrade of your {$this->product_name}. Click <strong>Start</strong> to 
-begin the automatic process!<br /><br />
+升级系统已经准备好对您的 {$this->product_name} 产品进行升级. 请点击 <strong>开始</strong> 来启动自动的升级过程!<br /><br />
     <ul id='links'>
-        <li><img src='images/link.gif' align='absmiddle' /> <input type='checkbox' name='helpfile' id='helpfile' value='1' checked='checked' /> Update my help files if changes are found</li>
+        <li><img src='images/link.gif' align='absmiddle' /> <input type='checkbox' name='helpfile' id='helpfile' value='1' checked='checked' /> 升级的同时更新我的帮助文件</li>
 EOF;
 
 if( $show_manual == 1 )
 {
 $output .= <<<EOF
-        <li><img src='images/link.gif' align='absmiddle' /> <input type='checkbox' name='man' id='man' value='1' /> Show me manual upgrade steps for SQL queries to prevent PHP page timeouts. <b>WARNING:</b> If you select this option, you will be shown SQL queries that you must run at your mysql command line.  If you are not comfortable doing this, please submit a ticket and our technicians will assist you, or contact your webhost for assistance.</li>
+        <li><img src='images/link.gif' align='absmiddle' /> <input type='checkbox' name='man' id='man' value='1' /> 向我展示每一步的手动数据升级指令以防升级过程中出现 PHP 页面执行时间超出. <b>警告:</b> 若您选择了这一选项, 系统将会给您展示手动数据升级指令, 这些指令必须在数据库管理软件中执行. 如果您完成这一过程有困难, 请给我们发送一个支持请求, 这样我们的技术人员将会帮助您完成相应的过程, 或者您也可以联系您的主机服务商以寻求帮助.</li>
 EOF;
 }
 
@@ -413,7 +413,7 @@ $output .= <<<EOF
 <br /><br />
         		 	            
         		 	            <div style='float: right'>
-        		 	                <input type='submit' class='nav_button' value='Start upgrade...'>
+        		 	                <input type='submit' class='nav_button' value='执行升级...'>
         		 	            </div>
 EOF;
 
@@ -450,7 +450,7 @@ $HTML .= <<<EOF
     		 	                </ul>
 								<br />
 								<div style='float: right'>
-									<input type='submit' class='nav_button' value='Click here if not forwarded' />
+									<input type='submit' class='nav_button' value='点击这里如果跳转没有自动完成' />
 								</div>
 EOF;
 
@@ -487,20 +487,18 @@ EOF;
 	function install_template_skinrevert( $skin_name="" )
 	{
 $HTML = <<<EOF
-		<br /><h3><b>Revert skin changes?</b></h3><br />
-		During upgrades, there are often changes to the skin templates to fix bugs or add new features.<br /><br />
-		If you do not revert changes you have made to your skin templates, you will not see the changes we have made, however if you have modified
-		your skin templates reverting the skin changes will cause you to <i><b>lose</b></i> the customizations you have made.<br /><br />
-		If you have not made many customizations to your skins, it is recommended that you choose to revert your skin changes.<br /><br />
-		If you have custom skins installed, or have heavily modified your skin templates, it is recommended that you use the skin difference tool
-		available in your admin control panel after the upgrade is complete to apply new changes to your templates instead.<br /><br />
+		<br /><h3><b>还原皮肤更改?</b></h3><br />
+		在系统升级过程中, 经常会有皮肤模板的更改或者添加来修正错误.<br /><br />
+		如果您不对皮肤更改进行还原操作, 您将无法看到新版的皮肤升级, 然而如果您对您的皮肤进行了修改那么执行还原操作将使得您 <i><b>丢失</b></i> 您的定制内容.<br /><br />
+		如果您没有对您的皮肤进行过任何更改, 我们强烈建议您选择还原皮肤更改.<br /><br />
+		如果您曾经安装过其他的皮肤文件, 或者您曾经对皮肤进行过大面积的更改, 我们建议您在系统后台运行皮肤差异比较操作来进行手动的修改.<br /><br />
 		
 		<h3>Do you wish to revert changes made to '<b>{$skin_name}</b>'?</h3>
             <ul id='links'>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='all' /> Revert changes to all of my skins</li>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='1' /> Revert changes to '{$skin_name}'</li>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='none' /> Do not revert changes to any of my skins</li>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='0' /> Do not revert changes to '{$skin_name}'</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='all' /> 还原我所有的皮肤修改</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='1' /> 还原 '{$skin_name}' 的皮肤修改</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='none' /> 不要还原我任何的皮肤修改</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='0' /> 不要还原 '{$skin_name}' 的皮肤修改</li>
             </ul>
 EOF;
 
@@ -514,16 +512,15 @@ EOF;
 	{
 $HTML .= <<<EOF
         		 	            <br />
-        		 	            <img src='images/install_done.gif' align='absmiddle' />&nbsp;&nbsp;<span class='done_text'>Upgrade complete!</span><br /><br />
-        		 	            Congratulations, your <a href='$url'>{$this->product_name}</a> is now up to date and ready to use!<br /><br />
-        		 	            You should now login to your admin control panel and run the 'Rebuild Post Content' tool and the 'Rebuild Attachment Data' tool under Tools &amp; Settings, Recount &amp; Rebuild.  You may
-        		 	            also wish to run the 2.1 -&gt; 2.2 tools found under 'Clean Up Tools'.
-        		 	            <br /><br />Below are some links you may find useful.<br /><br /><br />
-        		 	            <h3>Useful Links</h3>
+        		 	            <img src='images/install_done.gif' align='absmiddle' />&nbsp;&nbsp;<span class='done_text'>系统升级成功!</span><br /><br />
+        		 	            祝贺, 您的 <a href='$url'>{$this->product_name}</a> 产品已经完成了升级可以正常使用了!<br /><br />
+        		 	            您应当登录到管理后台并且运行位于 工具 &amp; 设置 菜单下的 '重建帖子内容' 工具和 统计 &amp; 重建菜单下的 '重建附件数据' 工具. 您也可以执行在 '清理工具' 菜单下的 2.1 -&gt; 2.2 工具来进行清理.
+        		 	            <br /><br />下面是一些有用的链接提示.<br /><br /><br />
+        		 	            <h3>有用的链接</h3>
         		 	            <ul id='links'>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=clientarea'>Client area</a></li>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=docs-ipb'>Documentation</a></li>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=forums'>IPS Company Forum</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=clientarea'>客户专区</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=docs-ipb'>官方文档</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=forums'>官方论坛</a></li>
         		 	            </ul>
 EOF;
 		return $HTML;

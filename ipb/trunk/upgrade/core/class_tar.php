@@ -200,7 +200,7 @@ class tar {
 		
 		if (! is_dir($dir) )
 		{
-			$this->error = "Extract files error: Destination directory ($to_dir) does not exist";
+			$this->error = "提取文件错误: 目标文件夹 ($to_dir) 不存在";
 			return FALSE;
 		}
 		
@@ -247,13 +247,13 @@ class tar {
 			}
 			else
 			{
-				$this->error = "$dir is not a directory";
+				$this->error = "$dir 不是一个文件夹";
 				return FALSE;
 			}
 		}
 		else
 		{
-			$this->error = "Could not locate $dir";
+			$this->error = "无法定位文件夹 $dir";
 			return;
 		}
 	}
@@ -277,7 +277,7 @@ class tar {
 		
 		if (! is_dir($to_dir) )
 		{
-			$this->error = "Extract files error: Destination directory ($to_dir) does not exist";
+			$this->error = "提取文件错误: 目标文件夹 ($to_dir) 不存在";
 			return;
 		}
 		
@@ -352,7 +352,7 @@ class tar {
 					}
 					if ( (file_exists($dir_component)) && (! is_dir($dir_component)) )
 					{
-						$this->warnings[] = "WARNING: $dir_component exists, but is not a directory";
+						$this->warnings[] = "警告: $dir_component 存在, 但不是一个文件夹";
 						continue;
 					}
 					if (! is_dir($dir_component))
@@ -363,7 +363,7 @@ class tar {
 					
 					if (! @chdir($dir_component))
 					{
-						$this->warnings[] = "ERROR: CHDIR to $dir_component FAILED!";
+						$this->warnings[] = "警告: 对 $dir_component 进行 CHDIR 操作失败!";
 					}
 				}
 			}
@@ -381,14 +381,14 @@ class tar {
 				}
 				else
 				{
-					$this->warnings[] = "Could not write data to $file_name";
+					$this->warnings[] = "无法写入数据到下面的文件 $file_name";
 				}
 			}
 			else if ($file['typeflag'] == 5)
 			{
 				if ( (file_exists($file_name)) && (! is_dir($file_name)) )
 				{
-					$this->warnings[] = "$file_name exists, but is not a directory";
+					$this->warnings[] = "$file_name 存在, 但不是一个文件夹";
 					continue;
 				}
 				if (! is_dir($file_name))
@@ -398,29 +398,29 @@ class tar {
 			}
 			else if ($file['typeflag'] == 6)
 			{
-				$this->warnings[] = "Cannot handle named pipes";
+				$this->warnings[] = "无法操作命名管道";
 				continue;
 			}
 			else if ($file['typeflag'] == 1)
 			{
-				$this->warnings[] = "Cannot handle system links";
+				$this->warnings[] = "无法操作系统连接";
 			}
 			else if ($file['typeflag'] == 4)
 			{
-				$this->warnings[] = "Cannot handle device files";
+				$this->warnings[] = "无法操作处理机文件";
 			}	
 			else if ($file['typeflag'] == 3)
 			{
-				$this->warnings[] = "Cannot handle device files";
+				$this->warnings[] = "无法操作处理机文件";
 			}
 			else
 			{
-				$this->warnings[] = "Unknown typeflag found";
+				$this->warnings[] = "发现未知标志类型";
 			}
 			
 			if (! @chmod( $file_name, $file['mode'] ) )
 			{
-				$this->warnings[] = "ERROR: CHMOD $mode on $file_name FAILED!";
+				$this->warnings[] = "警告: 对 $file_name 进行 CHMOD $mode 操作失败!";
 			}
 			
 			@touch( $file_name, $file['mtime'] );
@@ -481,7 +481,7 @@ class tar {
 			
 			if (! is_array($stat) )
 			{
-				$this->warnings[] = "Error: Stat failed on $file";
+				$this->warnings[] = "警告: 对文件 $file 进行统计操作失败";
 				continue;
 			}
 			
@@ -505,7 +505,7 @@ class tar {
 				}
 				else
 				{
-					$this->warnings[] = "ERROR: Failed to open $file";
+					$this->warnings[] = "警告: 对文件 $file 进行打开操作失败";
 					continue;
 				}
 			}
@@ -571,12 +571,12 @@ class tar {
 	function write_tar() {
 	
 		if ($this->tarfile_path_name == "") {
-			$this->error = 'No filename or path was specified to create a new tar file';
+			$this->error = '没有文件名或路径来创建 tar 文件';
 			return;
 		}
 		
 		if ( count($this->tar_in_mem) < 1 ) {
-			$this->error = 'No data to write to the new tar file';
+			$this->error = '没有数据写入 tar 文件';
 			return;
 		}
 		
@@ -597,7 +597,7 @@ class tar {
 				if (is_string($pos) && !$pos)
 				{
 					// filename alone is longer than 99 characters!
-					$this->error[] = "Filename {$file['name']} exceeds the length allowed by GNU Tape ARchives";
+					$this->error[] = "文件名 {$file['name']} 长度超出 GNU Tape ARchives 所规定的最大值";
 					continue;
 				}
 				
@@ -606,7 +606,7 @@ class tar {
 				
 				if (strlen($prefix) > 154)
 				{
-					$this->error[] = "File path exceeds the length allowed by GNU Tape ARchives";
+					$this->error[] = "文件路径长度超出 GNU Tape ARchives 所规定的最大值";
 					continue;
 				}
 			}
@@ -701,12 +701,12 @@ class tar {
 		$filename = $this->tarfile_path_name;
 	
 		if ($filename == "") {
-			$this->error = 'No filename specified when attempting to read a tar file';
+			$this->error = '没有指定所要打开的 tar 文件名';
 			return array();
 		}
 		
 		if (! file_exists($filename) ) {
-			$this->error = 'Cannot locate the file '.$filename;
+			$this->error = '无法定位文件 '.$filename;
 			return array();
 		}
 		
@@ -717,7 +717,7 @@ class tar {
 		// Open up the tar file and start the loop
 
 		if (! $FH = fopen( $filename , 'rb' ) ) {
-			$this->error = "Cannot open $filename for reading";
+			$this->error = "无法打开文件 $filename 进行读操作";
 			return array();
 		}
 		
@@ -791,7 +791,7 @@ class tar {
 			$data = @fread( $FH, $size );
 			
 			if (strlen($data) != $size) {
-				$this->error = "Read error on tar file";
+				$this->error = "对 tar 文件进行读操作错误";
 				fclose( $FH );
 				return array();
 			}

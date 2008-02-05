@@ -105,7 +105,7 @@ class class_installer
 		
 		if ( PHP_VERSION < $this->version_php_min )
 		{
-			$errors[] = 'Your PHP installation is too old to run this product, please upgrade before continuing.';
+			$errors[] = '您的 PHP 版本太低无法运行此程序, 请在继续升级前首先升级 PHP 版本.';
 		}
 	
 		/**
@@ -121,7 +121,7 @@ class class_installer
 			{
 				if( ! ( is_dir( $_d) && is_readable( $_d ) ) )
 				{
-					$errors[] = 'A required directory could not be located: "' . $_d . '"';
+					$errors[] = '无法定位文件夹: "' . $_d . '"';
 				}
 			}
 		}
@@ -132,7 +132,7 @@ class class_installer
 			{
 				if( ! ( file_exists( $_f) && is_readable( $_f ) ) )
 				{
-					$errors[] = 'A required file could not be located: "' . $_f . '"';
+					$errors[] = '无法定位文件: "' . $_f . '"';
 				}
 			}
 		}
@@ -146,7 +146,7 @@ class class_installer
 			{
 				if( ! is_writeable( $_d ) )
 				{
-					$errors[] = 'Can not write to directory: "' . $_d . '", please CHMOD to 777';
+					$errors[] = '无法写入下面的文件夹: "' . $_d . '", 请设置属性为 777';
 				}
 			}
 				
@@ -154,7 +154,7 @@ class class_installer
 			{
 				if( ! is_writeable( $_f ) )
 				{
-					$errors[] = 'Can not write to file: "' . $_f . '", please CHMOD to 777';
+					$errors[] = '无法写入下面的文件: "' . $_f . '", 请设置属性为 777';
 				}
 			}
 		}
