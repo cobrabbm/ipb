@@ -28,19 +28,19 @@ class application_installer extends class_installer
 			if ( ! $this->ipsclass->member['id'] )
 			{
 				$this->template->page_current = 'login';
-				$this->template->message = "You do not have access to this tool.";
+				$this->template->message = "您没有权限进入这一工具.";
 			}
 			
 			if ( $this->ipsclass->return_md5_check() != $this->saved_data['securekey'] )
 			{
 				$this->template->page_current = 'login';
-				$this->template->message = "You do not have access to this tool.";
+				$this->template->message = "您没有权限进入这一工具.";
 			}
 			
 			if ( ! $this->ipsclass->member['g_access_cp'] )
 			{
 				$this->template->page_current = 'login';
-				$this->template->message = "You must be an admin to access this upgrade script.";
+				$this->template->message = "您必须以管理员身份登录才能运行.";
 			}
 			
 			if( $this->ipsclass->DB->field_exists( 'converge_id', 'members_converge' ) )
@@ -212,7 +212,7 @@ class application_installer extends class_installer
 		// BBCODE
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding bbcode cache...";
+		$output[] = "正在重建缓存...";
 		
 		$this->ipsclass->cache['bbcode'] = array();
 		
@@ -230,7 +230,7 @@ class application_installer extends class_installer
 		// Forum cache
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding forum cache...";
+		$output[] = "正在重建论坛缓存...";
 		
 		$this->ipsclass->update_forum_cache();
 			
@@ -238,7 +238,7 @@ class application_installer extends class_installer
 		// Group Cache
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding group cache...";
+		$output[] = "正在重建用户组缓存...";
 		
 		$this->ipsclass->cache['group_cache'] = array();
 	
@@ -259,7 +259,7 @@ class application_installer extends class_installer
 		// Systemvars
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding system cache...";
+		$output[] = "正在重建系统缓存...";
 		
 		$this->ipsclass->cache['systemvars'] = array();
 		
@@ -274,7 +274,7 @@ class application_installer extends class_installer
 		// Moderators
 		//-----------------------------------------
 		
-		$output[] = "Rebuilding moderator cache...";
+		$output[] = "正在重建版主缓存...";
 		
 		$this->ipsclass->cache['moderators'] = array();
 		
@@ -288,7 +288,7 @@ class application_installer extends class_installer
 		// Cal events / Birthdays
 		//-----------------------------------------
 		
-		$output[] = "Rebuilding calendar events/birthdays cache...";
+		$output[] = "正在重建事件/生日缓存...";
 		
 		require_once( ROOT_PATH . 'sources/action_admin/calendars.php' );
 		$calendars           =  new ad_calendars();
@@ -301,7 +301,7 @@ class application_installer extends class_installer
 		// Ranks
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding ranks cache...";
+		$output[] = "正在重建会员等级缓存...";
 		
 		$this->ipsclass->cache['ranks'] = array();
 	
@@ -328,7 +328,7 @@ class application_installer extends class_installer
 		// SETTINGS
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding settings cache...";
+		$output[] = "正在重建设置缓存...";
 		
 		require_once( ROOT_PATH . 'sources/action_admin/settings.php' );
 		$settings           =  new ad_settings();
@@ -340,7 +340,7 @@ class application_installer extends class_installer
 		// EMOTICONS
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding emoticons cache...";
+		$output[] = "正在重建表情图标缓存...";
 		
 		require_once( ROOT_PATH . 'sources/action_admin/emoticons.php' );
 		$emoticons           =  new ad_emoticons();
@@ -352,7 +352,7 @@ class application_installer extends class_installer
 		// LANGUAGES
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding languages cache...";
+		$output[] = "正在重建语言缓存...";
 		
 		$this->ipsclass->cache['languages'] = array();
 	
@@ -370,7 +370,7 @@ class application_installer extends class_installer
 		// ATTACHMENT TYPES
 		//-------------------------------------------------------------
 		
-		$output[] = "Rebuilding attachment types cache...";
+		$output[] = "正在重建附件类型缓存...";
 			
 		$this->ipsclass->cache['attachtypes'] = array();
 	

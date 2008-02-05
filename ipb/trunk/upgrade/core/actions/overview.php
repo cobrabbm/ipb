@@ -40,7 +40,7 @@ class action_overview
 	
 		if ( empty($this->install->ipsclass->input['username']) )
 		{
-			$this->install->template->append( $this->install->template->login_page( "You must enter a username before proceeding" ) );
+			$this->install->template->append( $this->install->template->login_page( "再继续操作前您必须输入一个会员名称" ) );
 			$this->install->template->next_action = '?p=overview';
 			return;
 		}
@@ -49,7 +49,7 @@ class action_overview
 	
 		if ( empty($this->install->ipsclass->input['password']) )
 		{
-			$this->install->template->append( $this->install->template->login_page( "You must enter a password before proceeding" ) );
+			$this->install->template->append( $this->install->template->login_page( "再继续操作前您必须输入一个会员密码" ) );
 			$this->install->template->next_action = '?p=overview';
 			return;
 		}
@@ -75,7 +75,7 @@ class action_overview
         //----------------------------------
         if ( empty($mem['id']) )
         {
-            $this->install->template->append( $this->install->template->login_page( "Could not find a record matching that username, please check the spelling" ) );
+            $this->install->template->append( $this->install->template->login_page( "无法找到匹配的会员, 请检查您的输入" ) );
             $this->install->template->next_action = '?p=overview';
             return;
         }
@@ -91,7 +91,7 @@ class action_overview
             
             if ( $pass != $mem['password'] AND $pass != $mem['legacy_password'] )
             {
-                $this->install->template->append( $this->install->template->login_page( "The password you entered is not correct" ) );
+                $this->install->template->append( $this->install->template->login_page( "您输入的会员密码错误" ) );
                 $this->install->template->next_action = '?p=overview';
                 return;
             }
@@ -99,7 +99,7 @@ class action_overview
             {
                 if ($mem['g_access_cp'] != 1)
                 {
-                    $this->install->template->append( $this->install->template->login_page( "You do not have access to the administrative CP" ) );
+                    $this->install->template->append( $this->install->template->login_page( "您没有进入后台管理的权限" ) );
                     $this->install->template->next_action = '?p=overview';
                     return;
                 }
@@ -118,7 +118,7 @@ class action_overview
     
             if ( ! $this->install->ipsclass->converge->member['converge_id'] )
             {
-                $this->install->template->append( $this->install->template->login_page( "Could not find a record matching that username, please check the spelling" ) );
+                $this->install->template->append( $this->install->template->login_page( "无法找到匹配的会员, 请检查您的输入" ) );
                 $this->install->template->next_action = '?p=overview';
                 return;
             }
@@ -131,7 +131,7 @@ class action_overview
     
             if ( $this->install->ipsclass->converge->converge_authenticate_member( $pass ) != TRUE )
             {
-                $this->install->template->append( $this->install->template->login_page( "The password you entered is not correct" ) );
+                $this->install->template->append( $this->install->template->login_page( "您输入的会员密码错误" ) );
                 $this->install->template->next_action = '?p=overview';
                 return;
             }
@@ -139,7 +139,7 @@ class action_overview
             {
                 if ($mem['g_access_cp'] != 1)
                 {
-                    $this->install->template->append( $this->install->template->login_page( "You do not have access to the administrative CP" ) );
+                    $this->install->template->append( $this->install->template->login_page( "您没有进入后台管理的权限" ) );
                     $this->install->template->next_action = '?p=overview';
                     return;
                 }
@@ -159,15 +159,15 @@ class action_overview
 		$error = array();
 		if ( ! $this->install->last_poss_id )
 		{
-			$error[] = "An error has occured, we are unable to determine the current version or if there are any required upgrade files left to run";
+			$error[] = "发生一个错误, 如果有任何升级步骤未完成则无法确定您当前的系统版本";
 		}
 		if ( count($this->install->versions) == 0 )
 		{
-			$error[] = "Could not locate the required upgrade script: 'upg_{$this->install->last_poss_id}/version_history.php'";
+			$error[] = "无法定位升级文件: 'upg_{$this->install->last_poss_id}/version_history.php'";
 		}
 		if ( ! $this->install->current_version )
 		{
-			$error[] = "An error has occured, we are unable to determine the current version or if there are any required upgrade files left to run";
+			$error[] = "发生一个错误, 如果有任何升级步骤未完成则无法确定您当前的系统版本";
 		}
 		if ( $this->install->last_poss_id <= $this->install->current_version )
 		{
@@ -208,7 +208,7 @@ class action_overview
 		{
 			if ( ! file_exists($cf) )
 			{
-				$error[] = "Cannot locate the file '$cf'.";
+				$error[] = "无法定位文件 '$cf'.";
 			}
 		}
 		
@@ -216,7 +216,7 @@ class action_overview
 		{
 			if ( ! is_writeable($cf) )
 			{
-				$error[] = "Cannot write to the file or folder '$cf'. Please CHMOD to 0777.";
+				$error[] = "无法写入文件或文件夹 '$cf'. 请设置属性为 0777.";
 			}
 		}
 		
@@ -236,14 +236,14 @@ class action_overview
 		}
 		else
 		{
-			$summary .= "Upgrade from ".$this->install->versions[ $this->install->current_version ]." to ".$this->install->versions[ $this->install->last_poss_id ];
+			$summary .= "从 ".$this->install->versions[ $this->install->current_version ]." 升级到 ".$this->install->versions[ $this->install->last_poss_id ];
 		}
 		
 		//-----------------------------------------
 		// Time check...
 		//-----------------------------------------
 		
-		$summary .= "<br /><br /><strong>Checking 'resources' directory files</strong>";
+		$summary .= "<br /><br /><strong>正在检查 'resources' 文件夹</strong>";
 		$_flag    = 0;
 		
 		foreach ( $timecheck as $cf )
@@ -253,17 +253,17 @@ class action_overview
 			if ( $time_to_check AND $_time AND ( ( $time_to_check - (86400 * 7) ) > $_time ) )
 			{
 				$_flag    = 1;
-				$summary .= "<div style='color:red'>&middot;" . str_replace( ROOT_PATH, '', $cf ) . ' may be out of date</div>';
+				$summary .= "<div style='color:red'>&middot;" . str_replace( ROOT_PATH, '', $cf ) . ' 可能已经过时</div>';
 			}
 		}
 		
 		if ( $_flag )
 		{
-			$summary .= "<br /><div>Please check the above files to make sure they have been uploaded from the ".$this->install->versions[ $this->install->last_poss_id ]." download";
+			$summary .= "<br /><div>请检查上面的文件以确认他们已经正确上传来自 ".$this->install->versions[ $this->install->last_poss_id ]." 的下载";
 		}
 		else
 		{
-			$summary .= "<div style='color:green'>All files checked OK</div>";
+			$summary .= "<div style='color:green'>所有文件验证成功</div>";
 		}
 			
 		/* Page Output */
