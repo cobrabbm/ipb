@@ -60,6 +60,7 @@ $INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='Admin Forum Set', perm_i
 $INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='Banned Forum Set', perm_id=5";
 
 $INSERT[] = "INSERT INTO ibf_languages (lid, ldir, lname, lauthor, lemail) VALUES (1, 'en', 'English', 'Invision Power Board', 'languages@invisionboard.com');";
+$INSERT[] = "INSERT INTO ibf_languages (lid, ldir, lname, lauthor, lemail) VALUES (1, 'zh-cn', '简体中文', 'Skylook', 'skylook@126.com');";
 
 $INSERT[] = "INSERT INTO ibf_posts (pid, append_edit, edit_time, author_id, author_name, use_sig, use_emo, ip_address, post_date, icon_id, post, queued, topic_id, post_title, new_topic, edit_name, post_key, post_parent, post_htmlstate) VALUES (1, 0, NULL, 1, 'Invision Power Board Team', 0, 1, '127.0.0.1', <%time%>, 0, 'Welcome to your new Invision Power Board&#33;<br /><br />  <br /><br /> Congratulations on your purchase of our software and setting up your community.  Please take some time and read through the Getting Started Guide and Administrator Documentation.  The Getting Started Guide will walk you through some of the necessary steps to setting up an IP.Board and starting your community. The Administrator Documentation takes you through the details of the capabilities of IP.Board.<br /><br />  <br /><br /> You can remove this message, topic, forum or even category at any time.<br /><br />  <br /><br /> <a href=\"http://external.ipslink.com/ipboard22/landing/?p=docs-ipb\" target=\"_blank\">Go to the documentation now...</a>', 0, 1, NULL, 1, NULL, '0', 0, 0);";
 

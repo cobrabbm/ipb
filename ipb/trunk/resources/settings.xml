@@ -1578,7 +1578,7 @@ smtp=SMTP</conf_extra>
 			<conf_type>input</conf_type>
 			<conf_key>gb_char_set</conf_key>
 			<conf_value></conf_value>
-			<conf_default>iso-8859-1</conf_default>
+			<conf_default>utf-8</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -5009,7 +5009,7 @@ desc=Descending (9-0)</conf_extra>
 			<conf_type>input</conf_type>
 			<conf_key>post_wordwrap</conf_key>
 			<conf_value></conf_value>
-			<conf_default>80</conf_default>
+			<conf_default>0</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
