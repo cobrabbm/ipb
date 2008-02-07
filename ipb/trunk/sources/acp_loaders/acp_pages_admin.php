@@ -32,15 +32,15 @@
 // $PAGES[ $cat_id ][$page_id][3] = URL type: 1 = Board URL 0 = ACP URL
 // $PAGES[ $cat_id ][$page_id][4] = Item icon: 1= redirect 0 = Normal
 			
-$CATS[]  = array( 'Security Center' );
+$CATS[]  = array( '安全中心' );
 
 $PAGES[] = array(
-					1 => array( 'Security Center'		 , 'section=admin&amp;act=security' ),
-					2 => array( 'List All Administrators', 'section=admin&amp;act=security&amp;code=list_admins'  ),
-					3 => array( 'Manage Restrictions' , 'section=admin&amp;act=acpperms&amp;code=acpp_list'   ),
+					1 => array( '安全中心'		 , 'section=admin&amp;act=security' ),
+					2 => array( '列出全部管理员', 'section=admin&amp;act=security&amp;code=list_admins'  ),
+					3 => array( '管理限制项' , 'section=admin&amp;act=acpperms&amp;code=acpp_list'   ),
 			       );
 
-$CATS[]  = array( 'Board Logs' );
+$CATS[]  = array( '论坛日志' );
 
 $PAGES[] = array(
 					1 => array( 'View Moderator Logs'  , 'section=admin&amp;act=modlog'    ),

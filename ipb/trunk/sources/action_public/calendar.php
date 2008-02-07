@@ -1955,7 +1955,8 @@ class calendar
 	    
         foreach ($this->day_words as $day)
         {
-			$day = $this->ipsclass->txt_mbsubstr( $day, 0, 1 );
+			//Chinese UTF-8 calendar display error
+			$day = $this->ipsclass->txt_mbsubstr( $day, 1, 1 );
                        	        
         	$cal_output .= $this->ipsclass->compiled_templates['skin_calendar']->mini_cal_day_bit( $day );
         }

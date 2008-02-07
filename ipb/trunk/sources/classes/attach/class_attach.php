@@ -300,7 +300,17 @@ class class_attach
 				//-----------------------------------------
 				
 				header( "Content-Type: ".$this->ipsclass->cache['attachtypes'][ $attach['attach_ext'] ]['atype_mimetype'] );
-				header( "Content-Disposition: inline; filename=\"".$attach['attach_file']."\"" );
+
+				//Fix IE download attchment name error - Skylook
+                if ( preg_match("/MSIE/", $_SERVER["HTTP_USER_AGENT"]) )
+                 {
+                     header( "Content-Disposition: attachment; filename=\"" . urlencode($attach['attach_file']) . "\"" );
+                 }
+                 else
+                 {
+                     header( "Content-Disposition: inline; filename=\"" . $attach['attach_file'] . "\"" );
+                 }
+
 				header( "Content-Length: ".(string)(filesize( $file ) ) );
 				
 				//print $contents;
