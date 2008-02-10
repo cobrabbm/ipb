@@ -46,7 +46,7 @@ class acp_lookandfeel
 	
 	function auto_run()
 	{
-		$this->ipsclass->html_title = "IPB: Look &amp; Feel";
+		$this->ipsclass->html_title = "IPB: 皮肤模板";
 		
 		$another_choice = array(
 								 'wrap'      => 'skin_wrappers',

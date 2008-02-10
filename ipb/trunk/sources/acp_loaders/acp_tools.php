@@ -46,7 +46,7 @@ class acp_tools
 	
 	function auto_run()
 	{
-		$this->ipsclass->html_title = "IPB: Tools &amp; Settings";
+		$this->ipsclass->html_title = "IPB: 设置工具";
 		
 		$another_choice = array(
 								 

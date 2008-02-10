@@ -44,7 +44,7 @@ class acp_admin
 	*
 	* @var	string
 	*/
-	var $section_title  = "Admin";
+	var $section_title  = "管理中心";
 	
 	/*-------------------------------------------------------------------------*/
 	// CONSTRUCTOR
@@ -61,7 +61,7 @@ class acp_admin
 	
 	function auto_run()
 	{
-		$this->ipsclass->html_title = "IPB: Administration";
+		$this->ipsclass->html_title = "IPB: 管理中心";
 		
 		$another_choice = array(
 								

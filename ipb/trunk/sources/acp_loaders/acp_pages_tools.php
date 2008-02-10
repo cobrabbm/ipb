@@ -32,52 +32,52 @@
 // $PAGES[ $cat_id ][$page_id][3] = URL type: 1 = Board URL 0 = ACP URL
 // $PAGES[ $cat_id ][$page_id][4] = Item icon: 1= redirect 0 = Normal
 
-$CATS[]  = array( 'System Settings' );
+$CATS[]  = array( '系统设置' );
 
 $PAGES[] = array(
-					 1 => array( 'View All General Settings', 'section=tools&amp;act=op' ),
-					 2 => array( 'Add New General Setting'  , 'section=tools&amp;act=op&amp;code=settingnew' ),
-					 3 => array( 'Manage Portal Plug-ins', 'section=tools&amp;act=portal' ),
-					 7 => array( 'Turn Board On / Off'      , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('boardoffline/online'), '', 0, 1 ),
-					 8 => array( 'Board Guidelines'         , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('boardguidelines'), '', 0, 1 ),
-					 9 => array( 'General Configuration'    , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('generalconfiguration'), '', 0, 1 ),
-					 10 => array( 'CPU Saving'              , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('cpusaving'), '', 0, 1 ),
+					 1 => array( '查看所有通用设置', 'section=tools&amp;act=op' ),
+					 2 => array( '添加新的通用设置'  , 'section=tools&amp;act=op&amp;code=settingnew' ),
+					 3 => array( '管理门户插件', 'section=tools&amp;act=portal' ),
+					 7 => array( '论坛打开/关闭'      , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('boardoffline/online'), '', 0, 1 ),
+					 8 => array( '论坛规则设置'         , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('boardguidelines'), '', 0, 1 ),
+					 9 => array( '论坛通用设置'    , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('generalconfiguration'), '', 0, 1 ),
+					 10 => array( '服务器 CPU 降耗'              , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('cpusaving'), '', 0, 1 ),
 					// 11 => array( 'IP Chat'                 , 'section=tools&amp;act=pin&amp;code=ipchat'  ),
 					 //12 => array( 'IPB License'             , 'section=tools&amp;act=pin&amp;code=reg'     ),
 					 //14 => array( 'IPB Copyright Removal'   , 'section=tools&amp;act=pin&amp;code=copy'    ),
 				);
 			       
-$CATS[]  = array( 'Maintenance' );
+$CATS[]  = array( '论坛维护' );
 
 $PAGES[] = array(
-					1 => array( 'Manage Help Files'     , 'section=tools&amp;act=help'                   ),
-					2 => array( 'Cache Control'         , 'section=tools&amp;act=admin&amp;code=cache'       ),
-					3 => array( 'Recount &amp; Rebuild'     , 'section=tools&amp;act=rebuild'                ),
-					4 => array( 'Clean-up Tools'        , 'section=tools&amp;act=rebuild&amp;code=tools'     ),
+					1 => array( '管理帮助文件'     , 'section=tools&amp;act=help'                   ),
+					2 => array( '缓存控制'         , 'section=tools&amp;act=admin&amp;code=cache'       ),
+					3 => array( '重计数 &amp; 重建'     , 'section=tools&amp;act=rebuild'                ),
+					4 => array( '论坛清理工具'        , 'section=tools&amp;act=rebuild&amp;code=tools'     ),
 			       );
 			       
-$CATS[]  = array( 'Post Office' );
+$CATS[]  = array( '邮件中心' );
 
 $PAGES[] = array(
-					1  => array( 'Manage Bulk Mail'      , 'section=tools&amp;act=postoffice'                    ),
-			    	2  => array( 'Create New Email'      , 'section=tools&amp;act=postoffice&amp;code=mail_new'      ),
-			    	3  => array( 'View Email Logs'       , 'section=admin&amp;act=emaillog', '', 0, 1 ),
-			    	4  => array( 'View Email Error Logs' , 'section=admin&amp;act=emailerror', '', 0, 1 ),
-			    	5  => array( 'Email Settings'        , 'section=tools&amp;act=op&amp;code=findsetting&amp;key=emailset-up', '', 0, 1 ),
+					1  => array( '管理群发邮件'      , 'section=tools&amp;act=postoffice'                    ),
+			    	2  => array( '创建新邮件'      , 'section=tools&amp;act=postoffice&amp;code=mail_new'      ),
+			    	3  => array( '查看邮件日志'       , 'section=admin&amp;act=emaillog', '', 0, 1 ),
+			    	4  => array( '查看邮件错误日志' , 'section=admin&amp;act=emailerror', '', 0, 1 ),
+			    	5  => array( '邮件设置'        , 'section=tools&amp;act=op&amp;code=findsetting&amp;key=emailset-up', '', 0, 1 ),
 			       );
 
-$CATS[]  = array( 'Log In Manager' );
+$CATS[]  = array( '登录设置' );
 
 $PAGES[] = array(
-					1 => array( 'Log In Manager'    , 'section=tools&amp;act=loginauth'                    ),
-					2 => array( 'Create New Log In' , 'section=tools&amp;act=loginauth&amp;code=login_add' ),
+					1 => array( '登录入口管理'    , 'section=tools&amp;act=loginauth'                    ),
+					2 => array( '创建新登录入口' , 'section=tools&amp;act=loginauth&amp;code=login_add' ),
 			       );
 			       
-$CATS[]  = array( 'Task Manager' );
+$CATS[]  = array( '任务管理' );
 
 $PAGES[] = array(
-					1 => array( 'Task Manager'        , 'section=tools&amp;act=task'                ),
-					2 => array( 'View Task Logs'      , 'section=tools&amp;act=task&amp;code=log'       ),
+					1 => array( '任务管理器'        , 'section=tools&amp;act=task'                ),
+					2 => array( '查看任务日志'      , 'section=tools&amp;act=task&amp;code=log'       ),
 			       );
 			       
 			  
