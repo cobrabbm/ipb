@@ -46,7 +46,7 @@ class acp_content
 	
 	function auto_run()
 	{
-		$this->ipsclass->html_title = "IPB: Content Management";
+		$this->ipsclass->html_title = "IPB: 内容管理";
 		
 		$another_choice = array(
 								 'forum'        => 'forums',

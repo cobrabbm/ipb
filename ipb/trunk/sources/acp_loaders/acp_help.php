@@ -46,7 +46,7 @@ class acp_help
 	
 	function auto_run()
 	{
-		$this->ipsclass->html_title = "IPB: Help &amp; Support";
+		$this->ipsclass->html_title = "IPB: 支持中心";
 		
 		$another_choice = array(
 								'diag'		=> 'diagnostics',

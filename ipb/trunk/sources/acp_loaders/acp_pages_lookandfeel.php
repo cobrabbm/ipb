@@ -32,30 +32,30 @@
 // $PAGES[ $cat_id ][$page_id][3] = URL type: 1 = Board URL 0 = ACP URL
 // $PAGES[ $cat_id ][$page_id][4] = Item icon: 1= redirect 0 = Normal
 
-$CATS[]  = array( 'Skins & Templates' );
+$CATS[]  = array( '皮肤模板' );
 
 $PAGES[] = array(
-					1 => array( 'Skin Manager'            , 'section=lookandfeel&amp;act=sets'        ),
-					2 => array( 'Skin Tools'              , 'section=lookandfeel&amp;act=skintools'   ),
-					3 => array( 'Skin Search & Replace'   , 'section=lookandfeel&amp;act=skintools&amp;code=searchsplash'   ),
-					4 => array( 'Skin Import/Export'      , 'section=lookandfeel&amp;act=import'      ),
-					5 => array( 'Skin Differences'        , 'section=lookandfeel&amp;act=skindiff'      ),
-					6 => array( 'Skin Remapping'          , 'section=lookandfeel&amp;act=skinremap'      ),
-					7 => array( 'Easy Logo Changer'       , 'section=lookandfeel&amp;act=skintools&amp;code=easylogo'   ),
+					1 => array( '模板管理'            , 'section=lookandfeel&amp;act=sets'        ),
+					2 => array( '模板工具'              , 'section=lookandfeel&amp;act=skintools'   ),
+					3 => array( '模板搜索 & 替换'   , 'section=lookandfeel&amp;act=skintools&amp;code=searchsplash'   ),
+					4 => array( '模板导入/导出'      , 'section=lookandfeel&amp;act=import'      ),
+					5 => array( '模板差异比较'        , 'section=lookandfeel&amp;act=skindiff'      ),
+					6 => array( '模板重测图'          , 'section=lookandfeel&amp;act=skinremap'      ),
+					7 => array( '简易 Logo 更换'       , 'section=lookandfeel&amp;act=skintools&amp;code=easylogo'   ),
 			       );
 			       
-$CATS[]  = array( 'Languages' );
+$CATS[]  = array( '语言管理' );
 
 $PAGES[] = array(
-					 1 => array( 'Manage Languages'        , 'section=lookandfeel&amp;act=lang'             ),
-					 2 => array( 'Import a Language'       , 'section=lookandfeel&amp;act=lang&amp;code=import' ),
+					 1 => array( '管理语言包'        , 'section=lookandfeel&amp;act=lang'             ),
+					 2 => array( '导入语言包'       , 'section=lookandfeel&amp;act=lang&amp;code=import' ),
 			     );
 			       
-$CATS[]  = array( 'Emoticons' );
+$CATS[]  = array( '表情图标' );
 
 $PAGES[] = array(
-					1 => array( 'Emoticon Manager'      , 'section=lookandfeel&amp;act=emoticons&amp;code=emo'               ),
-					2 => array( 'Import/Export Packs'   , 'section=lookandfeel&amp;act=emoticons&amp;code=emo_packsplash'    ),
+					1 => array( '表情图标管理'      , 'section=lookandfeel&amp;act=emoticons&amp;code=emo'               ),
+					2 => array( '图标导入/导出'   , 'section=lookandfeel&amp;act=emoticons&amp;code=emo_packsplash'    ),
 			       );
 			       
 

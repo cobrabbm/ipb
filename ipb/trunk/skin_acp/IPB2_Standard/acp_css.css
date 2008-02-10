@@ -238,7 +238,7 @@ body,
 	background-color: #F3F3F3;
 	color: #000;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Arial, Verdana, "Trebuchet MS";
-	font-size: 11px;
+	font-size: 12px;
 	margin: 0px;
 	padding: 0px;
 	text-align: center; /* centers board in MSIE known bug workaround */
@@ -248,7 +248,7 @@ table, tr, td
 {
 	color: #000;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Arial, Verdana, "Trebuchet MS";
-	font-size: 11px;
+	font-size: 12px;
 }
 
 form
@@ -265,7 +265,7 @@ select
 {
 	border: 1px solid #999999;
 	color: #555;
-	font-size: 11px;
+	font-size: 12px;
 	padding: 2px
 }
 
@@ -278,7 +278,7 @@ select:focus
 
 .minisubmit
 {
-	font-size: 10px;
+	font-size: 12px;
 	border: 1px solid #999;
 }
 
@@ -287,7 +287,7 @@ select:focus
 .inputtextred,
 .inputtextmini
 {
-	font-size: 11px;
+	font-size: 12px;
 	border: 1px solid #999;
 }
 
@@ -480,7 +480,7 @@ img.calendar
 	border-left: 1px solid #5D789C;
 	border-right: 1px solid #5D789C;
 	color: #FFF;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
 	padding: 8px 15px 8px 15px;
 	margin:0px;
@@ -491,7 +491,7 @@ img.calendar
 {
 	vertical-align:middle;
 	color: #FFF;
-	font-size: 11px;
+	font-size: 12px;
 	padding-left:5px;
 	width:auto;
 	float:right;
@@ -514,7 +514,7 @@ img.calendar
 {
 	vertical-align:middle;
 	color: #FFF;
-	font-size: 11px;
+	font-size: 12px;
 	padding-left:5px;
 	float:left;
 }
@@ -926,7 +926,7 @@ img.calendar
 	background-color: #EFF3F7;
 	border: 1px solid #999;
 	text-align: left;
-	font-size: 10px;
+	font-size: 12px;
 	padding: 3px 5px 3px 3px;
 	background-image: url(images/icons_menu/menu-icon-bg.gif);
 	background-repeat: repeat-y;
@@ -937,7 +937,7 @@ img.calendar
 	background-color: #EFF3F7;
 	border: 1px solid #999;
 	text-align: left;
-	font-size: 10px;
+	font-size: 12px;
 	padding: 3px 5px 3px 3px;
 }
 
@@ -1154,7 +1154,7 @@ ins,
 	-moz-border-radius: 3px;
 	padding: 2px 1px 2px 4px;
 	margin:0px;
-	font-size: 11px;
+	font-size: 12px;
 	overflow: hidden;
 	background-color: #FFFFFF;
 	background-image: url('images/folder_rte_images/rte-dd-bg.gif');
@@ -1198,7 +1198,7 @@ ins,
 	background-color: #EFF3F7;
 	border: 1px solid #999;
 	text-align: left;
-	font-size: 11px;
+	font-size: 12px;
 	padding: 3px 5px 3px 3px;
 	background-image: url('images/icon_components/articles/articles-menu-icon-bg.gif');
 	background-repeat: repeat-y;
@@ -1267,7 +1267,7 @@ ins,
 	-moz-border-radius: 3px;
 	padding: 2px 1px 2px 4px;
 	margin:0px;
-	font-size: 11px;
+	font-size: 12px;
 	overflow: hidden;
 	background-color: #FFFFFF;
 	background-image: url('images/folder_css_images/rte-dd-bg.gif');
@@ -1317,7 +1317,7 @@ ins,
 	background-color: #EFF3F7;
 	border: 1px solid #999;
 	text-align: left;
-	font-size: 11px;
+	font-size: 12px;
 	padding: 3px 5px 3px 3px;
 }
 

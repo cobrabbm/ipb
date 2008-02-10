@@ -46,7 +46,7 @@ class acp_components
 	
 	function auto_run()
 	{
-		$this->ipsclass->html_title = "IPB: Components";
+		$this->ipsclass->html_title = "IPB: 组件中心";
 		
 		//--------------------------------
 		// Get info from DB (Special case)

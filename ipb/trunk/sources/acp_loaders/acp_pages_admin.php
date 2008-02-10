@@ -32,59 +32,59 @@
 // $PAGES[ $cat_id ][$page_id][3] = URL type: 1 = Board URL 0 = ACP URL
 // $PAGES[ $cat_id ][$page_id][4] = Item icon: 1= redirect 0 = Normal
 			
-$CATS[]  = array( '��ȫ����' );
+$CATS[]  = array( '安全中心' );
 
 $PAGES[] = array(
-					1 => array( '��ȫ����'		 , 'section=admin&amp;act=security' ),
-					2 => array( '�г�ȫ������Ա', 'section=admin&amp;act=security&amp;code=list_admins'  ),
-					3 => array( '����������' , 'section=admin&amp;act=acpperms&amp;code=acpp_list'   ),
+					1 => array( '安全中心'		 , 'section=admin&amp;act=security' ),
+					2 => array( '列出所有管理员', 'section=admin&amp;act=security&amp;code=list_admins'  ),
+					3 => array( '管理权限设置' , 'section=admin&amp;act=acpperms&amp;code=acpp_list'   ),
 			       );
 
-$CATS[]  = array( '��̳��־' );
+$CATS[]  = array( '论坛日志' );
 
 $PAGES[] = array(
-					1 => array( 'View Moderator Logs'  , 'section=admin&amp;act=modlog'    ),
-					2 => array( 'View Admin Logs'      , 'section=admin&amp;act=adminlog'  ),
-					3 => array( 'View Email Logs'      , 'section=admin&amp;act=emaillog'  ),
-					4 => array( 'View Email Error Logs', 'section=admin&amp;act=emailerror' ),
-					5 => array( 'View Bot Logs'        , 'section=admin&amp;act=spiderlog' ),
-					6 => array( 'View Warn Logs'       , 'section=admin&amp;act=warnlog'   ),
-					7 => array( 'View ACP Log In Logs' , 'section=admin&amp;act=loginlog'   ),
+					1 => array( '查看版主日志'  , 'section=admin&amp;act=modlog'    ),
+					2 => array( '查看管理员日志'      , 'section=admin&amp;act=adminlog'  ),
+					3 => array( '查看邮件日志'      , 'section=admin&amp;act=emaillog'  ),
+					4 => array( '查看邮件错误日志', 'section=admin&amp;act=emailerror' ),
+					5 => array( '查看搜索引擎日志'        , 'section=admin&amp;act=spiderlog' ),
+					6 => array( '查看警告日志'       , 'section=admin&amp;act=warnlog'   ),
+					7 => array( '查看后台登录日志' , 'section=admin&amp;act=loginlog'   ),
 			       );
 									
-$CATS[]  = array( 'Components' );
+$CATS[]  = array( '组件管理' );
 
 $PAGES[] = array(
-					1 => array( 'Manage Components'      , 'section=admin&amp;act=components'   ),
-					2 => array( 'Register New Component' , 'section=admin&amp;act=components&amp;code=component_add' ),
+					1 => array( '管理组件'      , 'section=admin&amp;act=components'   ),
+					2 => array( '注册组件' , 'section=admin&amp;act=components&amp;code=component_add' ),
 			       );
 			       
-$CATS[]  = array( 'Statistic Center' );
+$CATS[]  = array( '统计中心' );
 
 $PAGES[] = array(
-					1 => array( 'Registration Stats' , 'section=admin&amp;act=stats&amp;code=reg'   ),
-					2 => array( 'New Topic Stats'    , 'section=admin&amp;act=stats&amp;code=topic' ),
-					3 => array( 'Post Stats'         , 'section=admin&amp;act=stats&amp;code=post'  ),
-					4 => array( 'Personal Message'   , 'section=admin&amp;act=stats&amp;code=msg'   ),
-					5 => array( 'Topic Views'        , 'section=admin&amp;act=stats&amp;code=views' ),
+					1 => array( '注册状态统计' , 'section=admin&amp;act=stats&amp;code=reg'   ),
+					2 => array( '新主题统计'    , 'section=admin&amp;act=stats&amp;code=topic' ),
+					3 => array( '发帖数统计'         , 'section=admin&amp;act=stats&amp;code=post'  ),
+					4 => array( '短消息统计'   , 'section=admin&amp;act=stats&amp;code=msg'   ),
+					5 => array( '主题查看统计'        , 'section=admin&amp;act=stats&amp;code=views' ),
 			       );
 			       
 			       
-$CATS[]  = array( 'SQL Management' );
+$CATS[]  = array( '数据库管理' );
 
 $PAGES[] = array(
-					1 => array( 'SQL Toolbox'     , 'section=admin&amp;act=sql'           ),
-					2 => array( 'SQL Back Up'     , 'section=admin&amp;act=sql&amp;code=backup'    ),
-					3 => array( 'SQL Runtime Info', 'section=admin&amp;act=sql&amp;code=runtime'   ),
-					4 => array( 'SQL System Vars' , 'section=admin&amp;act=sql&amp;code=system'    ),
-					5 => array( 'SQL Processes'   , 'section=admin&amp;act=sql&amp;code=processes' ),
+					1 => array( '数据库工具箱'     , 'section=admin&amp;act=sql'           ),
+					2 => array( '数据库备份'     , 'section=admin&amp;act=sql&amp;code=backup'    ),
+					3 => array( '数据库执行信息', 'section=admin&amp;act=sql&amp;code=runtime'   ),
+					4 => array( '数据库系统变量' , 'section=admin&amp;act=sql&amp;code=system'    ),
+					5 => array( '数据库进程'   , 'section=admin&amp;act=sql&amp;code=processes' ),
 			       );
 
-$CATS[]  = array( 'API Management' );
+$CATS[]  = array( 'API 管理' );
 
 $PAGES[] = array(
-					1 => array( 'Manage XML-RPC Users', 'section=admin&amp;act=api&amp;code=api_list' ),
-					2 => array( 'View XML-RPC Logs'   , 'section=admin&amp;act=api&amp;code=log_list' ),
+					1 => array( '管理 XML-RPC 用户', 'section=admin&amp;act=api&amp;code=api_list' ),
+					2 => array( '查看 XML-RPC 日志'   , 'section=admin&amp;act=api&amp;code=log_list' ),
 			       ); 
 
 ?>
