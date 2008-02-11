@@ -197,7 +197,7 @@ class class_xml
 	*
 	* @ var string
 	*/
-	var $doc_type = 'ISO-8859-1';
+	var $doc_type = 'UTF-8';
 	
 	var $use_doctype = 1;
 	
