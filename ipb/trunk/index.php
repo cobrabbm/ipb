@@ -357,7 +357,7 @@ $ipsclass->vars['mime_img']      = $ipsclass->vars['ipb_img_url'] ? $ipsclass->v
 
 if ( !isset($ipsclass->vars['default_language']) OR $ipsclass->vars['default_language'] == "")
 {
-	$ipsclass->vars['default_language'] = 'en';
+	$ipsclass->vars['default_language'] = 'zh-cn';
 }
 
 //--------------------------------
