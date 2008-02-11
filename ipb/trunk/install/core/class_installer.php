@@ -105,7 +105,7 @@ class class_installer
 		
 		if ( PHP_VERSION < $this->version_php_min )
 		{
-			$errors[] = 'ÄúµÄ PHP °æ±¾Ì«¾ÉÎŞ·¨°²×°´Ë³ÌĞò, ÇëÔÚ½øĞĞÏÂÒ»²½Ö®Ç°Éı¼¶ÄúµÄÈí¼ş.';
+			$errors[] = 'æ‚¨çš„ PHP ç‰ˆæœ¬å¤ªæ—§æ— æ³•å®‰è£…æ­¤ç¨‹åº, è¯·åœ¨è¿›è¡Œä¸‹ä¸€æ­¥ä¹‹å‰å‡çº§æ‚¨çš„è½¯ä»¶.';
 		}
 	
 		/**
@@ -121,7 +121,7 @@ class class_installer
 			{
 				if( ! ( is_dir( $_d) && is_readable( $_d ) ) )
 				{
-					$errors[] = 'ÎŞ·¨¶¨Î»ÏÂÃæµÄ±ØĞëÎÄ¼ş¼Ğ: "' . $_d . '"';
+					$errors[] = 'æ— æ³•å®šä½ä¸‹é¢çš„å¿…é¡»æ–‡ä»¶å¤¹: "' . $_d . '"';
 				}
 			}
 		}
@@ -132,7 +132,7 @@ class class_installer
 			{
 				if( ! ( file_exists( $_f) && is_readable( $_f ) ) )
 				{
-					$errors[] = 'ÎŞ·¨¶¨Î»ÏÂÃæµÄ±ØĞëÎÄ¼ş: "' . $_f . '"';
+					$errors[] = 'æ— æ³•å®šä½ä¸‹é¢çš„å¿…é¡»æ–‡ä»¶: "' . $_f . '"';
 				}
 			}
 		}
@@ -146,7 +146,7 @@ class class_installer
 			{
 				if( ! is_writeable( $_d ) )
 				{
-					$errors[] = 'ÎŞ·¨Ğ´ÈëÏÂÃæµÄÎÄ¼ş¼Ğ: "' . str_replace( INS_DOC_ROOT_PATH, '', $_d ) . '", ÇëÉèÖÃÊôĞÔÎª 777';
+					$errors[] = 'æ— æ³•å†™å…¥ä¸‹é¢çš„æ–‡ä»¶å¤¹: "' . str_replace( INS_DOC_ROOT_PATH, '', $_d ) . '", è¯·è®¾ç½®å±æ€§ä¸º 777';
 				}
 			}
 				
@@ -154,7 +154,7 @@ class class_installer
 			{
 				if( ! is_writeable( $_f ) )
 				{
-					$errors[] = 'ÎŞ·¨Ğ´ÈëÏÂÃæµÄÎÄ¼ş: "' . str_replace( INS_DOC_ROOT_PATH, '', $_f ) . '", ÇëÉèÖÃÊôĞÔÎª 777';
+					$errors[] = 'æ— æ³•å†™å…¥ä¸‹é¢çš„æ–‡ä»¶: "' . str_replace( INS_DOC_ROOT_PATH, '', $_f ) . '", è¯·è®¾ç½®å±æ€§ä¸º 777';
 				}
 			}
 		}
