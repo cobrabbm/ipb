@@ -14,34 +14,34 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>Log in Detail</div>
+ <div class='tableheaderalt'>登录详细信息</div>
 	<table width='100%' cellpadding='4' cellspacing='0'>
 	<tr>
 		<td class='tablerow2'>
 			<fieldset>
-				<legend><strong>Basics</strong></legend>
+				<legend><strong>基本概况</strong></legend>
 				<table width='100%' cellpadding='4' cellspacing='0'>
 				 <tr>
 					<td width='30%' class='tablerow1'>Username</td>
 					<td width='70%' class='tablerow1'>{$log['admin_username']}</td>
 				</tr>
 				<tr>
-					<td class='tablerow1'>IP Address</td>
+					<td class='tablerow1'>IP 地址</td>
 					<td class='tablerow1'>{$log['admin_ip_address']}</td>
 				</tr>
 				<tr>
-					<td class='tablerow1'>Log in Time</td>
+					<td class='tablerow1'>登录时间</td>
 					<td class='tablerow1'>{$log['_admin_time']}</td>
 				</tr>
 				<tr>
-					<td class='tablerow1'>Success</td>
+					<td class='tablerow1'>成功登录</td>
 					<td class='tablerow1'><img src='{$this->ipsclass->skin_acp_url}/images/{$log['_admin_img']}' border='0' alt='-' class='ipd' /></td>
 				</tr>
 				</table>
 			</fieldset>
 		<br />
 		<fieldset>
-			<legend><strong>POST Data (Form Data)</strong></legend>
+			<legend><strong>POST 数据 (表格提交)</strong></legend>
 			<table width='100%' cellpadding='4' cellspacing='0'>
 EOF;
 		if ( is_array( $log['_admin_post_details']['post'] ) AND count( $log['_admin_post_details']['post'] ) )
@@ -59,7 +59,7 @@ $IPBHTML .= <<<EOF
 		</fieldset>
 		<br />
 		<fieldset>
-			<legend><strong>GET Data (URL Data)</strong></legend>
+			<legend><strong>GET 数据 (地址栏提交)</strong></legend>
 			<table width='100%' cellpadding='4' cellspacing='0'>
 EOF;
 		if ( is_array( $log['_admin_post_details']['get'] ) AND count( $log['_admin_post_details']['get'] ) )
@@ -122,15 +122,15 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>ACP Log in Attempts</div>
+ <div class='tableheaderalt'>后台登录</div>
  <table width='100%' cellpadding='4' cellspacing='0'>
  <tr>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
-  <td class='tablesubheader' width='30%'>Name</td>
-  <td class='tablesubheader' width='20%'>IP Address</td>
-  <td class='tablesubheader' width='44%' align='center'>Date</td>
-  <td class='tablesubheader' width='5%' align='center'>Status</td>
-  <td class='tablesubheader' width='5%' align='center'>Log</td>
+  <td class='tablesubheader' width='30%'>名称</td>
+  <td class='tablesubheader' width='20%'>IP 地址</td>
+  <td class='tablesubheader' width='44%' align='center'>日期</td>
+  <td class='tablesubheader' width='5%' align='center'>状态</td>
+  <td class='tablesubheader' width='5%' align='center'>日志</td>
  </tr>
  $content
  </table>
@@ -159,11 +159,11 @@ $IPBHTML .= <<<EOF
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div id='ipb-get-members' style='border:1px solid #000; background:#FFF; padding:2px;position:absolute;width:210px;display:none;z-index:100'></div>
 <div class='tableborder'>
- <div class='tableheaderalt'>ACP Permissions: Find an administrator</div>
+ <div class='tableheaderalt'>后台权限: 查找管理员</div>
  <div class='tablesubheader'>&nbsp;</div>
   <table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
   <tr>
-    <td class='tablerow1'  width='50%'  valign='middle'><b>Enter an administrator's display name</b><div style='color:gray'>An administrator is someone that has access to the ACP via their primary or secondary groups and is NOT in the Root Admin group.</div></td>
+    <td class='tablerow1'  width='50%'  valign='middle'><b>输入一个管理员的显示名称</b><div style='color:gray'>管理员是一个由所属一级或者二级团队赋予权限的区别于系统管理员的用户组.</div></td>
     <td class='tablerow2'  width='50%'  valign='middle'><input type="text" id='entered_name' name="entered_name" size="30" autocomplete='off' style='width:210px' value="" tabindex="1" /></td>
   </tr>
   <tr>
@@ -201,7 +201,7 @@ $IPBHTML .= <<<EOF
 <div class="tableborder" style='border-width:2px'>
  <div class='tableheaderalt' id='perms-drag' title='{$this->ipsclass->lang['myass_drag']}'>
   <div style='float:right'><a href='#' onclick='document.getElementById("perms-wrapper").style.display="none"'>[X]</a></div>
-  <div>ACP Restriction Permissions</div>
+  <div>后台权限限制</div>
  </div>
   <div id='perms-content'></div>
   <div id='perms-status' class='tablerow4' style='height:30px;padding:0px'><div style='width:100px;float:left' id='perms-status-msg'></div></div>
@@ -209,12 +209,12 @@ $IPBHTML .= <<<EOF
 </div>
 
 <div class='tableborder'>
- <div class='tableheaderalt'>ACP Restriction Permissions</div>
+ <div class='tableheaderalt'>后台权限限制</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='40%'>Member</td>
-  <td class='tablesubheader' width='20%' align='center'>Primary Group</td>
-  <td class='tablesubheader' width='20%' align='center'>Updated</td>
+  <td class='tablesubheader' width='40%'>会员</td>
+  <td class='tablesubheader' width='20%' align='center'>原始用户组</td>
+  <td class='tablesubheader' width='20%' align='center'>更新</td>
   <td class='tablesubheader' width='5%'><img id="menumainone" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /></td>
  </tr>
  $content
@@ -226,18 +226,18 @@ $IPBHTML .= <<<EOF
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <input type='hidden' name='MAX_FILE_SIZE' value='10000000000'>
 <div class='tableborder'>
- <div class='tableheaderalt'>Import an XML Permissions file</div>
+ <div class='tableheaderalt'>导入 XML 权限设置</div>
   <table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
   <tr>
-    <td class='tablerow1'  width='50%'  valign='middle'><b>Upload XML permissions file from your computer</b><div style='color:gray'>Duplicate entries will not be overwritten. The file must begin with 'ipb_' and end with either '.xml' or '.xml.gz'</div></td>
+    <td class='tablerow1'  width='50%'  valign='middle'><b>从本地上传权限设置 XML 文件</b><div style='color:gray'>重复条目不会被覆盖. 文件必须以 'ipb_' 开头以 '.xml' 或 '.xml.gz' 作为扩展名</div></td>
     <td class='tablerow2'  width='50%'  valign='middle'><input class='textinput' type='file'  size='30' name='FILE_UPLOAD'></td>
   </tr>
   <tr>
-    <td class='tablerow1'  width='50%'  valign='middle'><b><u>OR</u> enter the filename of the XML permissions file</b><div style='color:gray'>The file must be uploaded into the forum's root folder</div></td>
+    <td class='tablerow1'  width='50%'  valign='middle'><b><u>或者</u> 输入 XML 权限设置文件路径</b><div style='color:gray'>文件必须已经上传到论坛相应目录下</div></td>
     <td class='tablerow2'  width='50%'  valign='middle'><input type='text' name='file_location' value='ipb_acpperms.xml' size='30' class='textinput'></td>
   </tr>
   <tr>
-  <td align='center' class='tablesubheader' colspan='2' ><input type='submit' value='Import XML settings Set' class='realbutton' accesskey='s'></td>
+  <td align='center' class='tablesubheader' colspan='2' ><input type='submit' value='导入 XML 设置文件' class='realbutton' accesskey='s'></td>
   </tr>
   </table>
 </div>
@@ -249,20 +249,20 @@ if ( IN_DEV )
 $IPBHTML .= <<<EOF
 <br />
 <div class='tableborder'>
- <div class='tableheaderalt'>Developer Tools</div>
- <div class='tablerow1'><strong>Generate XML from source files</strong>
- 	<div class='desctext'>Pick through /sources/action_admin for permission check rows and build an XML document ready for import</div>
- 	<div align='right'><strong><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-dev-source-to-xml'>RUN TOOL</a> &gt;&gt;</strong></div>
+ <div class='tableheaderalt'>开发人员工具</div>
+ <div class='tablerow1'><strong>从资源文件生成 XML 文档</strong>
+ 	<div class='desctext'>从 /sources/action_admin 文件夹生成含有权限设置的可导入的权限 XML 文档</div>
+ 	<div align='right'><strong><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-dev-source-to-xml'>执行工具</a> &gt;&gt;</strong></div>
  </div>
  
- <div class='tablerow1'><strong>Generate Report: Uncompleted Files</strong>
- 	<div class='desctext'>Pick through /sources/action_admin for files that don't have any permission rows</div>
- 	<div align='right'><strong><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-dev-report-missing'>RUN TOOL</a> &gt;&gt;</strong></div>
+ <div class='tablerow1'><strong>生成报告: 未完成文件</strong>
+ 	<div class='desctext'>从 /sources/action_admin 文件夹生成没有权限设置的可导入的权限 XML 文档</div>
+ 	<div align='right'><strong><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-dev-report-missing'>执行工具</a> &gt;&gt;</strong></div>
  </div>
  
- <div class='tablerow1'><strong>Generate Report: Language File</strong>
- 	<div class='desctext'>Pick through /sources/action_admin and generate the language file basics</div>
- 	<div align='right'><strong><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-dev-report-language'>RUN TOOL</a> &gt;&gt;</strong></div>
+ <div class='tablerow1'><strong>生成报告: 语言文件</strong>
+ 	<div class='desctext'>从 /sources/action_admin 文件夹生成基本语言 XML 文档</div>
+ 	<div align='right'><strong><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-dev-report-language'>执行工具</a> &gt;&gt;</strong></div>
  </div>
 </div>
 EOF;
@@ -274,7 +274,7 @@ $IPBHTML .= <<<EOF
   menu_build_menu(
   "menumainone",
   new Array( 
-  			 img_add + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-member-add'>Find and add administrator...</a>"
+  			 img_add + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=acpperms-member-add'>查找添加管理员...</a>"
            ) );
 //]]>
 </script>
@@ -306,8 +306,8 @@ $IPBHTML .= <<<EOF
   menu_build_menu(
   "menu{$data['id']}",
   new Array(
-  			img_delete   + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=accperms-member-remove&amp;mid={$data['id']}\");'>Remove all member's restrictions...</a>",
-  			img_item   + " <a href='#' onclick='permobj.init(\"\",{$data['id']})'>Manage member's restrictions...</a>"
+  			img_delete   + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=accperms-member-remove&amp;mid={$data['id']}\");'>移除所有会员权限限制...</a>",
+  			img_item   + " <a href='#' onclick='permobj.init(\"\",{$data['id']})'>管理会员权限限制...</a>"
   		    ) );
  </script>
 EOF;
@@ -328,12 +328,10 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <div class='tablerow2'>
 <input type='hidden' id='perms-perm-child-id' value=' ' />
-ACP permission restrictions for <strong>{$member['members_display_name']}</strong>
+赋予 <strong>{$member['members_display_name']}</strong> 后台权限
 <br />
 <br />
-Simply click on one of the tabs above to set the access level for all functions in this
-tab. If you want to choose access on a per-function level, click on the relevant link
-to be shown this function's options.
+只需点击上方的标签即可使用菜单内的全部功能. 如果您想要使用其中的每一个功能, 点击相关的链接来显示功能的选项.
 </div>
 EOF;
 //--endhtml--//
@@ -352,7 +350,7 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <div class='tablerow2'>
 <input type='hidden' id='perms-perm-child-id' value='' />
-ACP permission restritctions for <strong>{$member['members_display_name']}</strong>
+赋予 <strong>{$member['members_display_name']}</strong> 后台权限
 <br />
 <br />
 Access to this tab has not yet been enabled. To enable individual access permissions for this tab
@@ -379,37 +377,37 @@ $IPBHTML .= <<<EOF
  <div style='height:36px;margin-left:1px'>
    <div class='{$onoff['content']}' style='padding:7px'>
    	<input type='hidden' id='tab_content' value='{$tabinit['content']}' />
-   	<a href='#' id='href_content' onclick='permobj.init("content", $member_id)'>MANAGEMENT</a>
+   	<a href='#' id='href_content' onclick='permobj.init("content", $member_id)'>论坛管理</a>
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick_small.png' id='img-content-tick' onclick="return permobj.save_tab('content', $member_id, 1 );" title='Allow Access to this tab' style='cursor:pointer' border='0' alt='Allow' class='img-boxed-off' />
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross_small.png' id='img-content-cross' onclick="return permobj.save_tab('content', $member_id, 0 );" title='Deny Access to this tab' style='cursor:pointer' border='0' alt='Deny' class='img-boxed-off' />
    </div>
    <div class='{$onoff['lookandfeel']}' style='padding:7px'>
    	<input type='hidden' id='tab_lookandfeel' value='{$tabinit['lookandfeel']}' />
-   	<a href='#' id='href_lookandfeel' onclick='permobj.init("lookandfeel", $member_id)'>LOOK &amp; FEEL</a>
+   	<a href='#' id='href_lookandfeel' onclick='permobj.init("lookandfeel", $member_id)'>皮肤模板</a>
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick_small.png' id='img-lookandfeel-tick' onclick="return permobj.save_tab('lookandfeel', $member_id, 1 );" title='Allow Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross_small.png' id='img-lookandfeel-cross' onclick="return permobj.save_tab('lookandfeel', $member_id, 0 );" title='Deny Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    </div>
    <div class='{$onoff['tools']}' style='padding:7px'>
    	<input type='hidden' id='tab_tools' value='{$tabinit['tools']}' />
-   	<a href='#' id='href_tools' onclick='permobj.init("tools", $member_id )'>TOOLS &amp; SETTINGS</a>
+   	<a href='#' id='href_tools' onclick='permobj.init("tools", $member_id )'>工具设置</a>
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick_small.png' id='img-tools-tick' onclick="return permobj.save_tab('tools', $member_id, 1 );" title='Allow Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross_small.png' id='img-tools-cross' onclick="return permobj.save_tab('tools', $member_id, 0 );" title='Deny Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    </div>
    <div class='{$onoff['components']}' style='padding:7px'>
    	<input type='hidden' id='tab_components' value='{$tabinit['components']}' />
-   	<a href='#' id='href_components' onclick='permobj.init("components", $member_id)'>COMPONENTS</a>
+   	<a href='#' id='href_components' onclick='permobj.init("components", $member_id)'>组件管理</a>
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick_small.png' id='img-components-tick' onclick="return permobj.save_tab('components', $member_id, 1 );" title='Allow Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross_small.png' id='img-components-cross' onclick="return permobj.save_tab('components', $member_id, 0 );" title='Deny Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    </div>
    <div class='{$onoff['admin']}' style='padding:7px'>
    	<input type='hidden' id='tab_admin' value='{$tabinit['admin']}' />
-   	<a href='#' id='href_admin' onclick='permobj.init("admin", $member_id)'>ADMIN</a>
+   	<a href='#' id='href_admin' onclick='permobj.init("admin", $member_id)'>管理首页</a>
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick_small.png' id='img-admin-tick' onclick="return permobj.save_tab('admin', $member_id, 1 );" title='Allow Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross_small.png' id='img-admin-cross' onclick="return permobj.save_tab('admin', $member_id, 0 );" title='Deny Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    </div>
    <div class='{$onoff['help']}' style='padding:7px'>
    	<input type='hidden' id='tab_help' value='{$tabinit['help']}' />
-   	<a href='#' id='href_help' onclick='permobj.init("help", $member_id)'>HELP & SUPPORT</a>
+   	<a href='#' id='href_help' onclick='permobj.init("help", $member_id)'>帮助支持</a>
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick_small.png' id='img-help-tick' onclick="return permobj.save_tab('help', $member_id, 1 );" title='Allow Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross_small.png' id='img-help-cross' onclick="return permobj.save_tab('help', $member_id, 0 );" title='Deny Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    </div>   

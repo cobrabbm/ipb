@@ -126,15 +126,17 @@ $IPBHTML .= <<<EOF
 <div id='loading-layer' style='display:none'>
 	<div id='loading-layer-shadow'>
 	   <div id='loading-layer-inner' >
-		   <img src='{$this->ipsclass->skin_acp_url}/images/loading_anim.gif' style='vertical-align:middle' border='0' alt='Loading...' /><br />
-		   <span style='font-weight:bold' id='loading-layer-text'>Loading Data. Please Wait...</span>
+		   <img src='{$this->ipsclass->skin_acp_url}/images/loading_anim.gif' style='vertical-align:middle' border='0' alt='正在加载...' /><br />
+		   <span style='font-weight:bold' id='loading-layer-text'>正在加载数据. 请稍候...</span>
 	   </div>
 	</div>
 </div>
 <div id='ipdwrapper'><!-- IPDWRAPPER -->
 <%CONTENT%>
 <br />
- <div class='copy' align='center'>Invision Power Board &copy $date <a href='http://www.invisionpower.com' target='_blank'>IPS, Inc.</a></div>
+ <div class='copy' align='center'>Invision Power Board &copy $date <a href='http://www.invisionpower.com' target='_blank'>IPS, Inc.</a>
+<br />
+Chinese Version by IPBChina.COM [易维论坛 Standard]</div>
 </div><!-- / IPDWRAPPER -->
 <script type="text/javascript">
 menu_do_global_init();
@@ -373,13 +375,13 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-<div class='{$onoff['dashboard']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/dashboard.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=dashboard'>HOME</a></div>
-<div class='{$onoff['content']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/system.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=content'>MANAGEMENT</a></div>
-<div class='{$onoff['lookandfeel']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/lookfeel.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=lookandfeel'>LOOK &amp; FEEL</a></div>
-<div class='{$onoff['tools']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/tools.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=tools'>TOOLS &amp; SETTINGS</a></div>
-<div class='{$onoff['components']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/components.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=components'>COMPONENTS</a></div>
-<div class='{$onoff['admin']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/admin.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=admin'>ADMIN</a></div>
-<div class='{$onoff['help']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/help.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=help'>SUPPORT</a></div>
+<div class='{$onoff['dashboard']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/dashboard.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=dashboard'>首页</a></div>
+<div class='{$onoff['content']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/system.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=content'>论坛设置</a></div>
+<div class='{$onoff['lookandfeel']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/lookfeel.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=lookandfeel'>皮肤模板</a></div>
+<div class='{$onoff['tools']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/tools.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=tools'>工具设置</a></div>
+<div class='{$onoff['components']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/components.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=components'>组件管理</a></div>
+<div class='{$onoff['admin']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/admin.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=admin'>管理面板</a></div>
+<div class='{$onoff['help']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/help.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=help'>支持中心</a></div>
 
 EOF;
 
@@ -399,8 +401,8 @@ $IPBHTML .= <<<EOF
 <br /><br />
 <div align='center' style='margin-left:auto;margin-right:auto'>
 <div class='tableborder' style='vertical-align:bottom;text-align:left;width:75%;color:#555'>
- <div style='padding:5px'><b>Queries</b></div>
- <div class='tablerow1' style='padding:6px;color:#555;font-size:10px'>$queries</div>
+ <div style='padding:5px'><b>数据查询</b></div>
+ <div class='tablerow1' style='padding:6px;color:#555;font-size: 12px;'>$queries</div>
 </div>
 </div>
 EOF;
@@ -442,11 +444,11 @@ $IPBHTML .= <<<EOF
    	<img src='{$this->ipsclass->skin_acp_url}/images/acp-login-lock.gif' alt='IPB' border='0' />
    </div>
    <br />
-   <div class='desctext' style='font-size:10px'>
-   <div align='center'><strong>Welcome to IP.Board</strong></div>
+   <div class='desctext' style='font-size: 12px;'>
+   <div align='center'><strong>欢迎来到易维论坛管理系统</strong></div>
    <br />
-  	<div style='font-size:9px;color:gray'>&copy; Invision Power Services, Inc.
-	This program is protected by international copyright laws as described in the license agreement.</div>
+  	<div style='font-size: 9px;color:gray'>&copy; Invision Power Services, Inc.</div>
+	<div style='font-size: 12px;color:gray'>本程序受国际版权法规的保护.</div>
    </div>
    </td>
    <td width='300' style='width:300px' valign='top'>
@@ -462,24 +464,24 @@ EOF;
 if ( $this->ipsclass->vars['ipbli_usertype'] == 'username' )
 {
 $IPBHTML .= <<<EOF
-		<td align='right'><strong>User Name</strong></td>
+		<td align='right'><strong>会员名称</strong></td>
 EOF;
 }
 else
 {
 $IPBHTML .= <<<EOF
-		<td align='right'><strong>Email</strong></td>
+		<td align='right'><strong>邮件地址</strong></td>
 EOF;
 }
 $IPBHTML .= <<<EOF
 	  <td><input style='border:1px solid #AAA' type='text' size='20' name='username' id='namefield' value='$name' /></td>
 	 </tr>
 	 <tr>
-	  <td align='right'><strong>Password</strong></td>
+	  <td align='right'><strong>登录密码</strong></td>
 	  <td><input style='border:1px solid #AAA' type='password' size='20' name='password' value='' /></td>
 	 </tr>
 	 <tr>
-	  <td colspan='2' align='center'><input type='submit' style='border:1px solid #AAA' value='Log In' /></td>
+	  <td colspan='2' align='center'><input type='submit' style='border:1px solid #AAA' value='登录' /></td>
 	 </tr>
 	 <tr>
 	  <td colspan='2'><br />
@@ -554,13 +556,13 @@ $IPBHTML .= <<<EOF
 <div class='tableborder'>
  <div class='alttitle'>
   <div style='float:right'><img src='{$this->ipsclass->skin_acp_url}/images/acp_logo.gif' alt='IPB' border='0' /></div>
-  <div style='padding-left:3px;padding-top:14px;font-size:16px;'>Redirecting....</div>
+  <div style='padding-left:3px;padding-top:14px;font-size:16px;'>页面跳转中....</div>
  </div>
  <div style='background-color:#FFF;padding:10px;'>
  <strong>{$text}</strong>
  <br />
  <br />
- <a href='$url'>( Click here if you do not wish to wait )</a>
+ <a href='$url'>( 如果您不想等待请点击这里 )</a>
  </div>
 </div>
 </div>
@@ -602,7 +604,7 @@ $IPBHTML .= <<<EOF
 <div class='tableborder'>
  <div class='alttitle'>
   <div style='float:right'><img src='{$this->ipsclass->skin_acp_url}/images/acp_logo.gif' alt='IPB' border='0' /></div>
-  <div style='padding-left:3px;padding-top:14px;font-size:16px;'>Function Complete</div>
+  <div style='padding-left:3px;padding-top:14px;font-size:16px;'>操作完成</div>
  </div>
  <div style='background-color:#FFF;padding:10px;'>
  <strong>{$text}</strong>
@@ -647,10 +649,10 @@ $IPBHTML .= <<<EOF
    	<img src='{$this->ipsclass->skin_acp_url}/images/acp-redirect.gif' alt='IPB' border='0' />
    </div>
    <br />
-   <div class='desctext' style='font-size:10px'>
-   <div align='center'><strong>Page Redirecting...</strong></div>
+   <div class='desctext' style='font-size: 12px;'>
+   <div align='center'><strong>页面跳转中...</strong></div>
    <br />
-  	<div style='font-size:9px;color:gray'>Please stand-by as we redirect you.</div>
+  	<div style='font-size: 12px;color:gray'>请在此期间不要关闭页面.</div>
    </div>
    </td>
    <td width='300' style='width:300px' valign='top'>
@@ -663,7 +665,7 @@ $IPBHTML .= <<<EOF
 		 <strong>{$text}</strong>
 		 <br />
 		 <br />
-		 <a href='$url'>( Click here if you do not wish to wait )</a>
+		 <a href='$url'>( 如果您不想等待请点击这里 )</a>
 	  </td>
 	 </tr>
 	 </table>
@@ -922,7 +924,8 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <br />
  <div align='right' id='jwrap'><strong>Quick Jump</strong> <!--JUMP--></div>
-<!-- <div class='copy' align='center'>Invision Power Board &copy $date <a href='http://www.invisionpower.com' target='_blank'>IPS, Inc.</a></div>-->
+<!-- <div class='copy' align='center'>Invision Power Board &copy $date <a href='http://www.invisionpower.com' target='_blank'>IPS, Inc.</a><br />
+Chinese Version by IPBChina.COM [易维论坛 Standard]</div>-->
 </div><!-- / IPDWRAPPER -->
 <script type="text/javascript">
 menu_do_global_init();
@@ -997,8 +1000,8 @@ $IPBHTML .= <<<EOF
 <div id='loading-layer' style='display:none'>
 	<div id='loading-layer-shadow'>
 	   <div id='loading-layer-inner' >
-		   <img src='{$this->ipsclass->skin_acp_url}/images/loading_anim.gif' style='vertical-align:middle' border='0' alt='Loading...' />
-		   <span style='font-weight:bold' id='loading-layer-text'>Loading Data. Please Wait...</span>
+		   <img src='{$this->ipsclass->skin_acp_url}/images/loading_anim.gif' style='vertical-align:middle' border='0' alt='正在加载...' />
+		   <span style='font-weight:bold' id='loading-layer-text'>正在加载数据. 请稍候...</span>
 	   </div>
 	</div>
 </div>
