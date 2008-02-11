@@ -21,7 +21,7 @@ class action_db
 			/* Make sure the fields were filled out */			
 			if ( ! $this->install->ipsclass->input['db_host'] || ! $this->install->ipsclass->input['db_name'] || ! $this->install->ipsclass->input['db_user'] )
 			{
-				$errors[] = 'Äú±ØÐëÍê³É±í¸ñÖÐµÄÈ«²¿ÄÚÈÝ';
+				$errors[] = 'æ‚¨å¿…é¡»å®Œæˆè¡¨æ ¼ä¸­çš„å…¨éƒ¨å†…å®¹';
 			}
 			
 			//-----------------------------------------
@@ -114,7 +114,7 @@ class action_db
 				
 				if( !count($errors) )
 				{
-					$errors[] = "ÄúµÄÊý¾Ý¿â·þÎñÆ÷Á¬½ÓÓÐÎÊÌâ. Çë¼ì²éÄúµÄÉèÖÃÐÅÏ¢È»ºóÖØÊÔ.";
+					$errors[] = "æ‚¨çš„æ•°æ®åº“æœåŠ¡å™¨è¿žæŽ¥æœ‰é—®é¢˜. è¯·æ£€æŸ¥æ‚¨çš„è®¾ç½®ä¿¡æ¯ç„¶åŽé‡è¯•.";
 				}
 			}
 			
@@ -154,10 +154,10 @@ class action_db
 				$html = "<tr>
 							<td colspan='2'>
 								<div class='warning'>
-									<p><strong style='color:red'>ÄúÕýÔÚÊÔÍ¼½«Êý¾Ý°²×°µ½Ò»¸öÒÑ¾­´æÔÚÊý¾Ý±íµÄÊý¾Ý¿âÖÐ</strong>
-									<br />Èç¹ûÄúÏ£ÍûÔÚÕâÒ»Êý¾Ý¿âÖÐ½øÐÐ°²×°, µ±Ç°ËùÓÐÒÑ¾­´æÔÚµÄÊý¾Ý±íºÍÊý¾Ý¶¼¿ÉÄÜ±»É¾³ý.
-									Äú¿ÉÒÔ¼ÌÐø°²×°, É¾³ýËùÓÐµ±Ç°µÄÊý¾Ý»òÕß·µ»ØÐÞ¸ÄÊý¾Ý±íÇ°×º.</p>
-									<input type='checkbox' value='1' name='_drop_tables' /><strong>ÔÚÏÂÒ»²½µÄ°²×°Ç°É¾³ýÈ«²¿µÄÏÖÓÐÊý¾Ý±í</strong>
+									<p><strong style='color:red'>æ‚¨æ­£åœ¨è¯•å›¾å°†æ•°æ®å®‰è£…åˆ°ä¸€ä¸ªå·²ç»å­˜åœ¨æ•°æ®è¡¨çš„æ•°æ®åº“ä¸­</strong>
+									<br />å¦‚æžœæ‚¨å¸Œæœ›åœ¨è¿™ä¸€æ•°æ®åº“ä¸­è¿›è¡Œå®‰è£…, å½“å‰æ‰€æœ‰å·²ç»å­˜åœ¨çš„æ•°æ®è¡¨å’Œæ•°æ®éƒ½å¯èƒ½è¢«åˆ é™¤.
+									æ‚¨å¯ä»¥ç»§ç»­å®‰è£…, åˆ é™¤æ‰€æœ‰å½“å‰çš„æ•°æ®æˆ–è€…è¿”å›žä¿®æ”¹æ•°æ®è¡¨å‰ç¼€.</p>
+									<input type='checkbox' value='1' name='_drop_tables' /><strong>åœ¨ä¸‹ä¸€æ­¥çš„å®‰è£…å‰åˆ é™¤å…¨éƒ¨çš„çŽ°æœ‰æ•°æ®è¡¨</strong>
 								</div>
 							</td>
 						</tr>";

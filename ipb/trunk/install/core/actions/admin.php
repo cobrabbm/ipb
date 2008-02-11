@@ -20,24 +20,24 @@ class action_admin
 		{
 			if( ! $this->install->ipsclass->input['username'] )
 			{
-				$errors[] = '您必须指定一个管理员用户名称';	
+				$errors[] = '鎮ㄥ繀椤绘寚瀹氫竴涓鐞嗗憳鐢ㄦ埛鍚嶇О';	
 			}
 			
 			if( ! $this->install->ipsclass->input['password'] )
 			{
-				$errors[] = '您必须指定一个管理员用户密码';	
+				$errors[] = '鎮ㄥ繀椤绘寚瀹氫竴涓鐞嗗憳鐢ㄦ埛瀵嗙爜';	
 			}
 			else 
 			{
 				if( $this->install->ipsclass->input['password'] != $this->install->ipsclass->input['confirm_password']	)
 				{
-					$errors[] = '管理员密码输入不匹配';	
+					$errors[] = '绠＄悊鍛樺瘑鐮佽緭鍏ヤ笉鍖归厤';	
 				}
 			}
 			
 			if( ! $this->install->ipsclass->input['email'] )
 			{
-				$errors[] = '您必须指定一个管理员邮件地址';	
+				$errors[] = '鎮ㄥ繀椤绘寚瀹氫竴涓鐞嗗憳閭欢鍦板潃';	
 			}
 			
 			if( is_array( $errors ) )

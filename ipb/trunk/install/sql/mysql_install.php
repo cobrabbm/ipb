@@ -71,7 +71,7 @@ class install_extra
 	function install_form_extra()
 	{
 		$extra = "<tr>
-					<td class='title'><b>MySQL Êı¾İ±íÀàĞÍ</b><div style='color:gray'>Èç¹ûÄúÎŞ·¨È·¶¨ÇëÑ¡Ôñ MyISAM .</div></td>
+					<td class='title'><b>MySQL æ•°æ®è¡¨ç±»å‹</b><div style='color:gray'>å¦‚æœæ‚¨æ— æ³•ç¡®å®šè¯·é€‰æ‹© MyISAM .</div></td>
 					<td class='content'><select name='mysql_tbl_type' class='sql_form'><option value='MyISAM'>MYISAM</option><option value='INNODB'>INNODB</option></td>
 				  </tr>";
 	
@@ -95,7 +95,7 @@ class install_extra
 		
 		if ( ! $_REQUEST['mysql_tbl_type'] )
 		{
-			$this->errors[] = 'You must complete the required SQL section!';
+			$this->errors[] = 'æ‚¨å¿…é¡»å¡«å†™å¿…é¡»çš„ SQL éƒ¨åˆ†!';
 			return;
 		}
 		

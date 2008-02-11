@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <installdata>
 	<action>
 		<file>requirements</file>
-		<menu>ÏµÍ³ÐèÇó</menu>
+		<menu>ç³»ç»Ÿéœ€æ±‚</menu>
 		<position>0</position>
 	</action>
 	<action>
 		<file>eula</file>
-		<menu>×îÖÕÓÃ»§Ðí¿ÉÐ­Òé</menu>
+		<menu>æœ€ç»ˆç”¨æˆ·è®¸å¯åè®®</menu>
 		<position>1</position>
 	</action>
 	<action>
 		<file>address</file>
-		<menu>ÉèÖÃÂÛÌ³µØÖ·</menu>
+		<menu>è®¾ç½®è®ºå›åœ°å€</menu>
 		<position>2</position>
 	</action>
 	<action>
 		<file>db</file>
-		<menu>ÉèÖÃÊý¾Ý¿â</menu>
+		<menu>è®¾ç½®æ•°æ®åº“</menu>
 		<position>3</position>
 	</action>
 	<action>
 		<file>admin</file>
-		<menu>ÉèÖÃ¹ÜÀíÔ±ÕÊºÅ</menu>
+		<menu>è®¾ç½®ç®¡ç†å‘˜å¸å·</menu>
 		<position>4</position>
 	</action>
 	<action>
 		<file>install</file>
-		<menu>Ö´ÐÐ°²×°</menu>
+		<menu>æ‰§è¡Œå®‰è£…</menu>
 		<position>5</position>
 	</action>
 </installdata>

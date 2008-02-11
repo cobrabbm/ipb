@@ -71,7 +71,7 @@ if ( $ipsclass->input['p'] != 'done' )
 	if ( $got_lock )
 	{
 		$install->template->hide_next = 1;
-		$install->template->warning( array( "¸Ã°²×°ÏµÍ³ÒÑ¾­Ëø¶¨. Èç¹ûÄúÏëÒªÖØĞÂ°²×°, ÇëÍ¨¹ı FTP É¾³ı 'installfiles/lock.php' ÎÄ¼şÈ»ºóÖØĞÂË¢ĞÂ±¾Ò³." ) );
+		$install->template->warning( array( "è¯¥å®‰è£…ç³»ç»Ÿå·²ç»é”å®š. å¦‚æœæ‚¨æƒ³è¦é‡æ–°å®‰è£…, è¯·é€šè¿‡ FTP åˆ é™¤ 'installfiles/lock.php' æ–‡ä»¶ç„¶åé‡æ–°åˆ·æ–°æœ¬é¡µ." ) );
 		$install->template->output( $install->product_name, $install->product_version );
 		
 		exit();
@@ -87,8 +87,8 @@ if ( file_exists( INS_DOC_ROOT_PATH.'conf_global.php.dist') AND ! file_exists( I
 	if ( ! @rename( INS_DOC_ROOT_PATH.'conf_global.php.dist', INS_DOC_ROOT_PATH.'conf_global.php' ) )
 	{
 		$install->template->hide_next = 1;
-		$install->template->warning( array( "<strong>ÔÚ½øĞĞÏÂÒ»²½Ö®Ç°Äú±ØĞëÖØÃüÃûÎÄ¼ş 'conf_global.<b style='color:red'>php.dist</b>' Îª 'conf_global.<b style='color:red'>php</b>'.</strong>
-					  						 ÕâÒ»ÎÄ¼ş¿ÉÒÔÍ¨¹ı FTP ·ÃÎÊÔÚÂÛÌ³µÄ¸ùÄ¿Â¼ÏÂÕÒµ½, ºÍ 'admin.php' Óë 'index.php' ÔÚÍ¬Ò»¸öÎÄ¼ş¼Ğ." ) );
+		$install->template->warning( array( "<strong>åœ¨è¿›è¡Œä¸‹ä¸€æ­¥ä¹‹å‰æ‚¨å¿…é¡»é‡å‘½åæ–‡ä»¶ 'conf_global.<b style='color:red'>php.dist</b>' ä¸º 'conf_global.<b style='color:red'>php</b>'.</strong>
+					  						 è¿™ä¸€æ–‡ä»¶å¯ä»¥é€šè¿‡ FTP è®¿é—®åœ¨è®ºå›çš„æ ¹ç›®å½•ä¸‹æ‰¾åˆ°, å’Œ 'admin.php' ä¸ 'index.php' åœ¨åŒä¸€ä¸ªæ–‡ä»¶å¤¹." ) );
 		$install->template->output( $install->product_name, $install->product_version );
 		exit();
 	}

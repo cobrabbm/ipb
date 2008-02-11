@@ -118,7 +118,7 @@ class action_install
 		$this->install->ipsclass->converge = new class_converge( $this->install->ipsclass->DB );
 				
 		include( INS_ROOT_PATH . 'sql/' . $this->install->saved_data['sql_driver'] . '_tables.php' );
-		$output[] = "ÕıÔÚ´´½¨Êı¾İ±í...";
+		$output[] = "æ­£åœ¨åˆ›å»ºæ•°æ®è¡¨...";
 		
 		foreach( $TABLE as $q )
 		{
@@ -150,7 +150,7 @@ class action_install
 		if ( $this->install->ipsclass->DB->sql_can_fulltext() )
 		{
 			include( INS_ROOT_PATH . 'sql/' . $this->install->saved_data['sql_driver'] . '_fulltext.php' );
-			$output[] = "ÕıÔÚ½¨Á¢Ë÷ÒıÏî...";		
+			$output[] = "æ­£åœ¨å»ºç«‹ç´¢å¼•é¡¹...";		
 			
 			 foreach( $INDEX as $q )
 			 {
@@ -177,7 +177,7 @@ class action_install
 		}
 		
 		include( INS_ROOT_PATH . 'sql/' . $this->install->saved_data['sql_driver'] . '_inserts.php' );
-		$output[] = "ÕıÔÚµ¼ÈëÊı¾İÄÚÈİ...";		
+		$output[] = "æ­£åœ¨å¯¼å…¥æ•°æ®å†…å®¹...";		
 		
 		foreach( $INSERT as $q )
 		{
@@ -204,7 +204,7 @@ class action_install
 		// Create Admin account
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚ´´½¨¹ÜÀíÔ±ÕÊºÅ...";
+		$output[] = "æ­£åœ¨åˆ›å»ºç®¡ç†å‘˜å¸å·...";
 		
 		$this->install->create_admin_account();
 		
@@ -243,7 +243,7 @@ class action_install
 		// Install settings
 		//-----------------------------------------
 	
-		$output[] = "ÕıÔÚµ¼ÈëÏµÍ³ÉèÖÃ...";
+		$output[] = "æ­£åœ¨å¯¼å…¥ç³»ç»Ÿè®¾ç½®...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -479,7 +479,7 @@ class action_install
 		// Install settings
 		//-----------------------------------------
 	
-		$output[] = "ÕıÔÚµ¼Èë ACP È¨ÏŞÉèÖÃ...";
+		$output[] = "æ­£åœ¨å¯¼å…¥ ACP æƒé™è®¾ç½®...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -549,7 +549,7 @@ class action_install
 		// Install settings
 		//-----------------------------------------
 	
-		$output[] = "ÕıÔÚµ¼ÈëÂÛÌ³Ä£°å...";
+		$output[] = "æ­£åœ¨å¯¼å…¥è®ºå›æ¨¡æ¿...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -626,7 +626,7 @@ class action_install
 		
 		if( $safe_mode )
 		{
-			$this->install->template->append( $this->install->template->install_page_refresh( array( 'ÎÒÃÇ¼ì²âµ½ÄúµÄ·şÎñÆ÷¿ªÆôÁË°²È«Ä£Ê½.  ÕıÔÚÌø¹ı IP.Board Pro Ä£°åµ¼Èë...' ) ) );	
+			$this->install->template->append( $this->install->template->install_page_refresh( array( 'æˆ‘ä»¬æ£€æµ‹åˆ°æ‚¨çš„æœåŠ¡å™¨å¼€å¯äº†å®‰å…¨æ¨¡å¼.  æ­£åœ¨è·³è¿‡ IP.Board Pro æ¨¡æ¿å¯¼å…¥...' ) ) );	
 			$this->install->template->next_action = '?p=install&sub=caches';
 			$this->install->template->hide_next   = 1;
 		}
@@ -656,7 +656,7 @@ class action_install
 		
 		if( !$this->install->ipsclass->input['didskin'] )
 		{
-			$output[] = "ÕıÔÚµ¼Èë IP.Board Pro Ä£°åÉèÖÃ...";
+			$output[] = "æ­£åœ¨å¯¼å…¥ IP.Board Pro æ¨¡æ¿è®¾ç½®...";
 			
 			$api->skin_add_set( ROOT_PATH . 'resources/ipb_skin-pro.xml.gz' );
 			
@@ -666,7 +666,7 @@ class action_install
 		}
 		else
 		{
-			$output[] = "ÕıÔÚµ¼Èë IP.Board Pro Ä£°åÍ¼Æ¬...";
+			$output[] = "æ­£åœ¨å¯¼å…¥ IP.Board Pro æ¨¡æ¿å›¾ç‰‡...";
 			$api->images_add_set( ROOT_PATH . 'resources/ipb_images-pro.xml.gz', 3 );
 	
 			$this->install->ipsclass->DB->do_update( 'skin_sets', array( 'set_default' => 0 ) );
@@ -708,7 +708,7 @@ class action_install
 		// XML: COMPONENTS
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµ¼Èë×é¼şĞÅÏ¢...";
+		$output[] = "æ­£åœ¨å¯¼å…¥ç»„ä»¶ä¿¡æ¯...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -736,7 +736,7 @@ class action_install
 		// XML: LOG IN MODULES
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµÇ¼Ç×é¼şĞÅÏ¢...";
+		$output[] = "æ­£åœ¨ç™»è®°ç»„ä»¶ä¿¡æ¯...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -764,7 +764,7 @@ class action_install
 		// XML: GROUPS
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµ¼ÈëÓÃ»§×éĞÅÏ¢...";
+		$output[] = "æ­£åœ¨å¯¼å…¥ç”¨æˆ·ç»„ä¿¡æ¯...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -792,7 +792,7 @@ class action_install
 		// XML: ATTACHMENTS
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµ¼Èë¸½¼şÀàĞÍĞÅÏ¢...";
+		$output[] = "æ­£åœ¨å¯¼å…¥é™„ä»¶ç±»å‹ä¿¡æ¯...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -820,7 +820,7 @@ class action_install
 		// XML: SKIN SETS
 		//-----------------------------------------
 	
-		$output[] = "ÕıÔÚµ¼ÈëÄ£°åÉèÖÃÊı¾İ...";
+		$output[] = "æ­£åœ¨å¯¼å…¥æ¨¡æ¿è®¾ç½®æ•°æ®...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -867,7 +867,7 @@ class action_install
 		// XML: TASKS :D
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµ¼ÈëÈÎÎñ¹ÜÀíĞÅÏ¢...";
+		$output[] = "æ­£åœ¨å¯¼å…¥ä»»åŠ¡ç®¡ç†ä¿¡æ¯...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -905,7 +905,7 @@ class action_install
 		// XML: FAQ
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµ¼ÈëÏµÍ³°ïÖúĞÅÏ¢...";
+		$output[] = "æ­£åœ¨å¯¼å…¥ç³»ç»Ÿå¸®åŠ©ä¿¡æ¯...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -933,7 +933,7 @@ class action_install
 		// XML: BBCode
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµ¼Èë×Ô¶¨Òå BBCode ĞÅÏ¢...";
+		$output[] = "æ­£åœ¨å¯¼å…¥è‡ªå®šä¹‰ BBCode ä¿¡æ¯...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		
@@ -962,7 +962,7 @@ class action_install
 		// XML: Help Information
 		//-----------------------------------------
 		
-		$output[] = "ÕıÔÚµ¼Èë ACP °ïÖúÎÄ¼ş...";
+		$output[] = "æ­£åœ¨å¯¼å…¥ ACP å¸®åŠ©æ–‡ä»¶...";
 		$xml = new class_xml();
 		$xml->lite_parser = 1;
 		

@@ -21,13 +21,13 @@ class action_address
 			/* Check Directory */
 			if( ! $this->install->ipsclass->input['install_dir'] OR ! ( is_dir( $this->install->ipsclass->input['install_dir'] ) ) )
 			{
-				$errors[] = 'The specified directory does not exist';
+				$errors[] = '指定的文件夹不存在';
 			}
 			
 			/* Check URL */
 			if( ! $this->install->ipsclass->input['install_url'] )
 			{
-				$errors[] = 'You did not specify a URL';	
+				$errors[] = '您没有提供一个 URL';	
 			}
 
 			if( is_array( $errors ) )

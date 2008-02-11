@@ -134,7 +134,7 @@ class application_installer extends class_installer
 		$core_conf .= "\n".'?'.'>';
 
 		/* Write Configuration Files */
-		$output[] = 'ÕıÔÚĞ´ÈëÉèÖÃÎÄ¼ş...<br />';
+		$output[] = 'æ­£åœ¨å†™å…¥è®¾ç½®æ–‡ä»¶...<br />';
 		
 		$this->write_file( $this->saved_data['install_dir'] . '/conf_global.php'  , $core_conf );
 		
@@ -145,7 +145,7 @@ class application_installer extends class_installer
 		if( !file_exists( $this->saved_data['install_dir'] . '/conf_global.php' ) )
 		{
 			$this->template->hide_next = 1;
-			$this->template->warning( array( "ÎÒÃÇÎŞ·¨Ğ´ÈëÉèÖÃĞÅÏ¢µ½ conf_global.php ÎÄ¼ş. ÇëÈ·ÈÏ¸ÃÎÄ¼şÓĞ¿É¶ÁĞ´È¨ÏŞ." ) );
+			$this->template->warning( array( "æˆ‘ä»¬æ— æ³•å†™å…¥è®¾ç½®ä¿¡æ¯åˆ° conf_global.php æ–‡ä»¶. è¯·ç¡®è®¤è¯¥æ–‡ä»¶æœ‰å¯è¯»å†™æƒé™." ) );
 			$this->template->output( $this->product_name, $this->product_version );
 			
 			exit();
@@ -159,7 +159,7 @@ class application_installer extends class_installer
 			if( !is_array($INFO) )
 			{
 				$this->template->hide_next = 1;
-				$this->template->warning( array( "ÎÒÃÇÎŞ·¨Ğ´ÈëÉèÖÃĞÅÏ¢µ½ conf_global.php ÎÄ¼ş. ÇëÈ·ÈÏ¸ÃÎÄ¼şÓĞ¿É¶ÁĞ´È¨ÏŞ." ) );
+				$this->template->warning( array( "æˆ‘ä»¬æ— æ³•å†™å…¥è®¾ç½®ä¿¡æ¯åˆ° conf_global.php æ–‡ä»¶. è¯·ç¡®è®¤è¯¥æ–‡ä»¶æœ‰å¯è¯»å†™æƒé™." ) );
 				$this->template->output( $this->product_name, $this->product_version );
 				
 				exit();
@@ -230,7 +230,7 @@ class application_installer extends class_installer
 			define( 'CACHE_PATH', INS_ROOT_PATH."../" );
 		}		
 		
-		$output[] = "ÕıÔÚÖØ½¨ÂÛÌ³Ä£°å...";
+		$output[] = "æ­£åœ¨é‡å»ºè®ºå›æ¨¡æ¿...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/lib/admin_cache_functions.php' );
 		$acp           =  new admin_cache_functions();
@@ -242,7 +242,7 @@ class application_installer extends class_installer
 		// Forum cache
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨ÂÛÌ³»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºè®ºå›ç¼“å­˜...";
 		
 		$ignore_me = array( 'redirect_url', 'redirect_loc', 'rules_text', 'permission_custom_error', 'notify_modq_emails' );
 		
@@ -302,7 +302,7 @@ class application_installer extends class_installer
 		// Group Cache
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨ÓÃ»§×é»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºç”¨æˆ·ç»„ç¼“å­˜...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/groups.php' );
 		$lib           =  new ad_groups();
@@ -314,7 +314,7 @@ class application_installer extends class_installer
 		// Systemvars
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨ÏµÍ³±äÁ¿»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºç³»ç»Ÿå˜é‡ç¼“å­˜...";
 		
 		$this->ipsclass->cache['systemvars'] = array();
 
@@ -329,7 +329,7 @@ class application_installer extends class_installer
 		// Stats
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨¾²Ì¬±äÁ¿»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºé™æ€å˜é‡ç¼“å­˜...";
 		
 		$this->ipsclass->cache['stats'] = array();
 
@@ -352,7 +352,7 @@ class application_installer extends class_installer
 		// Ranks
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨»áÔ±µÈ¼¶»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºä¼šå‘˜ç­‰çº§ç¼“å­˜...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/member.php' );
 		$lib           =  new ad_member();
@@ -364,7 +364,7 @@ class application_installer extends class_installer
 		// SETTINGS
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨ÏµÍ³ÉèÖÃ»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºç³»ç»Ÿè®¾ç½®ç¼“å­˜...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/settings.php' );
 		$lib           =  new ad_settings();
@@ -376,7 +376,7 @@ class application_installer extends class_installer
 		// EMOTICONS
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨±íÇéÍ¼±ê»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºè¡¨æƒ…å›¾æ ‡ç¼“å­˜...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/emoticons.php' );
 		$lib           =  new ad_emoticons();
@@ -388,7 +388,7 @@ class application_installer extends class_installer
 		// LANGUAGES
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨ÓïÑÔÎÄ¼ş»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºè¯­è¨€æ–‡ä»¶ç¼“å­˜...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/languages.php' );
 		$lib           =  new ad_languages();
@@ -400,7 +400,7 @@ class application_installer extends class_installer
 		// ATTACHMENT TYPES
 		//-------------------------------------------------------------
 		
-		$output[] = "ÕıÔÚÖØ½¨¸½¼şÀàĞÍ»º´æ...";
+		$output[] = "æ­£åœ¨é‡å»ºé™„ä»¶ç±»å‹ç¼“å­˜...";
 		
 		require_once( INS_DOC_ROOT_PATH.'sources/action_admin/attachments.php' );
 		$lib           =  new ad_attachments();
@@ -408,7 +408,7 @@ class application_installer extends class_installer
 		$lib->attach_type_rebuildcache();
 		unset( $lib );
 		
-		$output[] = "ËùÓĞ»º´æÖØ½¨Íê³É, µã»÷ 'ÏÂÒ»²½' °´Å¥¼ÌĞø...";
+		$output[] = "æ‰€æœ‰ç¼“å­˜é‡å»ºå®Œæˆ, ç‚¹å‡» 'ä¸‹ä¸€æ­¥' æŒ‰é’®ç»§ç»­...";
 		
 		$this->saved_data['admin_url'] = $this->saved_data['install_url'] . '/index.php';
 		

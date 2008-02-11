@@ -58,7 +58,7 @@ class install_template
 			}
 		}
 		
-		$this->install_pages['done'] = '��װ����';
+		$this->install_pages['done'] = '安装结束';
 	   
 		/* Set Current Page */
 		$this->page_current = ( $this->ipsclass->input['p'] ) ? $this->ipsclass->input['p'] : 'requirements';
@@ -145,7 +145,7 @@ echo <<<EOF
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<title>IPS ��װ����</title>
+		<title>IPS 安装程序</title>
 		<style type='text/css' media='all'>
 			@import url('install.css');
 		</style>
@@ -168,7 +168,7 @@ echo <<<EOF
 		<div id='ipswrapper'>
 		    <div class='main_shell'>
 
-		 	    <h1><img src='images/package_icon.gif' align='absmiddle' /> ��ӭ���� IPS ��Ʒ��װ����</h1>
+		 	    <h1><img src='images/package_icon.gif' align='absmiddle' /> 欢迎来到 IPS 产品安装程序</h1>
 		 	    <div class='content_shell'>
 		 	        <div class='package'>
 		 	            <div>
@@ -195,7 +195,7 @@ echo <<<EOF
     		 	                    </div>
 
     		 	                    <div style='vertical-align: middle'>
-    		 	                        <h2>{$this->product_name} ��װ</h2>
+    		 	                        <h2>{$this->product_name} 安装</h2>
     		 	                        <strong>{$this->product_version}</strong>
     		 	                    </div>
     		 	                </div>
@@ -210,7 +210,7 @@ echo <<<EOF
 		 	            <div class='hr'></div>
 		 	            <div style='padding-top: 17px; padding-right: 15px; padding-left: 15px'>
 		 	                <div style='float: left'>
-		 	                    <input type='button' class='nav_button' value='ȡ����װ' onclick="window.location='index.php';return false;" />
+		 	                    <input type='button' class='nav_button' value='取消安装' onclick="window.location='index.php';return false;" />
 		 	                </div>
 
 		 	                <div style='float: right'>
@@ -221,7 +221,7 @@ if( ! $this->hide_next )
 if( $this->next_action == 'disabled' )
 {
 echo <<<EOF
-		 	                    <input type='submit' class='nav_button' value='��װ�޷�����...' disabled='disabled' />
+		 	                    <input type='submit' class='nav_button' value='安装无法继续...' disabled='disabled' />
 EOF;
 }
 else 
@@ -231,11 +231,11 @@ if( !$this->next_action )
 	$back = $this->ipsclass->my_getenv('HTTP_REFERER');
 	
 echo <<<EOF
-	<input type='button' class='nav_button' value='< ��һ��' onclick="window.location='{$back}';return false;" />
+	<input type='button' class='nav_button' value='< 上一步' onclick="window.location='{$back}';return false;" />
 EOF;
 }
 echo <<<EOF
-		 	                    <input type='submit' class='nav_button' value='��һ�� >' />
+		 	                    <input type='submit' class='nav_button' value='下一步 >' />
 EOF;
 }
 }
@@ -278,16 +278,16 @@ return <<<EOF
         		 	                    <img src='images/wizard.gif' align='absmiddle' />
         		 	                </div>
         		 	                <div>
-        		 	                    ��ӭ���� {$this->product_name} ��Ʒ�İ�װ��. ��һ�򵼳�����������ɰ�װ����.
+        		 	                    欢迎来到 {$this->product_name} 产品的安装向导. 这一向导程序将引导您完成安装过程.
         		 	                </div>
         		 	            </div>
     <br/><br/>
     		 	            
-    <h3>ϵͳ����</h3>
+    <h3>系统需求</h3>
 
     <br />
-    <strong>PHP:</strong> v{$php_version} ����߰汾<br />
-    <strong>SQL:</strong> mySQL v$sql_version ����߰汾
+    <strong>PHP:</strong> v{$php_version} 或更高版本<br />
+    <strong>SQL:</strong> mySQL v$sql_version 或更高版本
     <br /><br />
 EOF;
 	}
@@ -309,7 +309,7 @@ check_eula = function()
 	}
 	else
 	{
-		alert( '������ͬ����ȨЭ����ܽ�����һ���İ�װ' );
+		alert( '您必须同意授权协议才能进行下一步的安装' );
 		return false;
 	}
 }
@@ -318,13 +318,13 @@ document.getElementById( 'install-form' ).onsubmit = check_eula;
 
 </script>
 
-���ڽ�����һ��֮ǰ��ϸ�Ķ�����Э�鲢�ҵ����ʾͬ��.<br /><br />
+请在进行下一步之前仔细阅读许可协议并且点击表示同意.<br /><br />
 
         		 	            
         		 	            <div class='eula'>
 									$eula        		 	                
                                 </div>
-                                <input type='checkbox' name='eula' id='eula'><strong> ��ͬ������Э��</strong>
+                                <input type='checkbox' name='eula' id='eula'><strong> 我同意许可协议</strong>
 
 
 EOF;
@@ -339,16 +339,16 @@ return <<<EOF
 <div id='warn-message' style='display:none;'><center><div id='warn-message-content'></div></center></div>
 
         		 	            <fieldset>
-        		 	                <legend><img src='images/addresses.gif' align='absmiddle' />&nbsp; ��̳��ַ����</legend>
+        		 	                <legend><img src='images/addresses.gif' align='absmiddle' />&nbsp; 论坛地址设置</legend>
 
         		 	                <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
             		 	                <tr>
-            		 	                    <td width='30%' class='title'>��װλ��:</td>
+            		 	                    <td width='30%' class='title'>安装位置:</td>
             		 	                    <td width='70%' class='content'><input type='text' class='sql_form' name='install_dir' value='{$dir}'></td>
             		 	                </tr>
 
         		 	                	<tr>
-            		 	                    <td width='30%' class='title'>���ʵ�ַ:</td>
+            		 	                    <td width='30%' class='title'>访问地址:</td>
             		 	                    <td width='70%' class='content'><input type='text' class='sql_form' name='install_url' value='{$url}'></td>
             		 	                </tr>
             		 	            </table>
@@ -377,11 +377,11 @@ return <<<EOF
 <div class='info' style='margin-top: 4px;'>
         		 	                <div class='float_img'><img src='images/help.gif' /></div>
 
-        		 	                <div>��ѡ����������ʹ�õ����ݿ�����.</div>
+        		 	                <div>请选择下面您所使用的数据库引擎.</div>
         		 	            </div>
         		 	            
         		 	            <fieldset>
-        		 	                <legend><img src='images/db.gif' align='absmiddle' />&nbsp; ���ݿ�����</legend>
+        		 	                <legend><img src='images/db.gif' align='absmiddle' />&nbsp; 数据库引擎</legend>
         		 	                <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
 										<tr>
             		 	                    <td width='30%' class='title'>SQL Driver:</td>
@@ -405,39 +405,39 @@ return <<<EOF
 <div class='info' style='margin-top: 4px;'>
     <div class='float_img'><img src='images/help.gif' /></div>
 
-    <div>��������κε�����������������ѯ�ռ������. �ڽ�����һ��֮ǰ���������ȴ���һ�����ݿ�..</div>
+    <div>如果您对任何的设置有疑问请您咨询空间服务商. 在进行下一步之前您必须首先创建一个数据库..</div>
 </div>
 
 <fieldset>
-    <legend><img src='images/db.gif' align='absmiddle' />&nbsp; ���ݿ�����</legend>
+    <legend><img src='images/db.gif' align='absmiddle' />&nbsp; 数据库设置</legend>
     <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
 		<!--{TOP.SQL}-->
         <tr>
-            <td width='30%' class='title'>���ݿ�����:</td>
+            <td width='30%' class='title'>数据库主机:</td>
             <td width='70%' class='content'>
             	<input type='text' class='sql_form' value='localhost' name='db_host'>
             </td>
         </tr>
         <tr>
-            <td class='title'>���ݿ�����:</td>
+            <td class='title'>数据库名称:</td>
             <td class='content'>
             	<input type='text' class='sql_form' name='db_name' value='{$_REQUEST['db_name']}'>
             </td>
         </tr>
         <tr>
-            <td class='title'>���ݿ��û�:</td>
+            <td class='title'>数据库用户:</td>
             <td class='content'>
             	<input type='text' class='sql_form' name='db_user' value='{$_REQUEST['db_user']}'>
             </td>
         </tr>
         <tr>
-            <td class='title'>���ݿ�����:</td>
+            <td class='title'>数据库密码:</td>
             <td class='content'>
             	<input type='password' class='sql_form' name='db_pass'>
             </td>
         </tr>
         <tr>
-            <td class='title'>���ݱ�ǰ׺:</td>
+            <td class='title'>数据表前缀:</td>
             <td class='content'>
             	<input type='text' class='sql_form' name='db_pre' value='$prefix'>
             </td>
@@ -456,24 +456,24 @@ EOF;
 	{
 return <<<EOF
 								<fieldset>
-        		 	                <legend><img src='images/admin.gif' align='absmiddle' />&nbsp; ����Ա�˺�����</legend>
+        		 	                <legend><img src='images/admin.gif' align='absmiddle' />&nbsp; 管理员账号设置</legend>
         		 	                <table style='width: 100%; border: 0px; padding:0px' cellspacing='0'>
             		 	                <tr>
-            		 	                    <td width='30%' class='title'>��Ա����:</td>
+            		 	                    <td width='30%' class='title'>会员名称:</td>
 
             		 	                    <td width='70%' class='content'><input type='text' class='sql_form' name='username'></td>
             		 	                </tr>
             		 	                <tr>
-            		 	                    <td class='title'>��Ա����:</td>
+            		 	                    <td class='title'>会员密码:</td>
             		 	                    <td class='content'><input type='password' class='sql_form' name='password'></td>
             		 	                </tr>
             		 	                <tr>
-            		 	                    <td class='title'>ȷ������:</td>
+            		 	                    <td class='title'>确认密码:</td>
 
             		 	                    <td class='content'><input type='password' class='sql_form' name='confirm_password'></td>
             		 	                </tr>
             		 	                <tr>
-            		 	                    <td class='title'>�ʼ���ַ:</td>
+            		 	                    <td class='title'>邮件地址:</td>
             		 	                    <td class='content'><input type='text' class='sql_form' name='email'></td>
             		 	                </tr>
             		 	            </table>
@@ -488,11 +488,11 @@ EOF;
 	function install_page()
 	{
 return <<<EOF
-��װ�����Ѿ�׼���ð�װ {$this->product_name} ��Ʒ. ���� <strong>��ʼ</strong> �������Զ��İ�װ����!<br /><br />
+安装程序已经准备好安装 {$this->product_name} 产品. 请点击 <strong>开始</strong> 来启动自动的安装进程!<br /><br />
 
         		 	            
         		 	            <div style='float: right'>
-        		 	                <input type='submit' class='nav_button' value='��ʼ��װ...'>
+        		 	                <input type='submit' class='nav_button' value='开始安装...'>
         		 	            </div>
 EOF;
 	}
@@ -527,7 +527,7 @@ $HTML .= <<<EOF
     		 	                </ul>
 								<br />
 								<div style='float: right'>
-									<input type='submit' class='nav_button' value='������������תû���Զ����' />
+									<input type='submit' class='nav_button' value='点击这里如果跳转没有自动完成' />
 								</div>
 EOF;
 
@@ -568,21 +568,21 @@ EOF;
 		{
 			$extra = "<div class='warning'>
 		        		<div style='float: left; margin-right: 7px; margin-left: 5px'><img src='images/warning.gif' /></div>
-						<p>��װû������<br />������ɾ�� 'install/index.php' �ļ�!</p>
+						<p>安装没有锁定<br />请立即删除 'install/index.php' 文件!</p>
 					  </div>";
 		}
 		
 $HTML .= <<<EOF
         		 	            <br />
 
-        		 	            <img src='images/install_done.gif' align='absmiddle' />&nbsp;&nbsp;<span class='done_text'>��װ�ɹ�!</span><br /><br />
-        		 	            ף������ <a href='$url'>{$this->product_name}</a> �Ѿ�����ʹ����! ������һЩ���õ�������ʾ.<br /><br /><br />
+        		 	            <img src='images/install_done.gif' align='absmiddle' />&nbsp;&nbsp;<span class='done_text'>安装成功!</span><br /><br />
+        		 	            祝贺您的 <a href='$url'>{$this->product_name}</a> 已经可以使用了! 下面是一些有用的链接提示.<br /><br /><br />
         		 	            $extra
-        		 	            <h3>���õ�����</h3>
+        		 	            <h3>有用的链接</h3>
         		 	            <ul id='links'>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=clientarea'>�ͻ�ר��</a></li>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=docs-ipb'>�ٷ��ĵ�</a></li>
-        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=forums'>�ٷ���̳</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=clientarea'>客户专区</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=docs-ipb'>官方文档</a></li>
+        		 	                <li><img src='images/link.gif' align='absmiddle' /> <a href='http://external.ipslink.com/ipboard22/landing/?p=forums'>官方论坛</a></li>
         		 	            </ul>
 
 EOF;
