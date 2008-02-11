@@ -293,7 +293,7 @@ select:focus
 
 .inputtextmini
 {
-	font-size:10px;
+	font-size: 12px;
 }
 
 .inputtextgreen
@@ -317,7 +317,7 @@ select:focus
 
 .formsubmit
 {
-	font-size:11px;
+	font-size: 12px;
 	font-weight: bold;
 }
 
@@ -339,7 +339,7 @@ a:hover
 
 .global-copyright
 {
-	font-size:10px;
+	font-size: 12px;
 	font-weight:bold;
 	color: #3363A1;
 	padding:15px;
@@ -571,7 +571,7 @@ img.calendar
 
 .menutext
 {
-	font-size:10px;
+	font-size: 12px;
 }
 
 /* ======================================== */
@@ -710,7 +710,7 @@ img.calendar
 .tableheaderalt,
 .tableheader2
 {
-	font-size:12px;
+	font-size: 12px;
 	vertical-align:middle;
 	font-weight:bold;
 	color:#FFF;
@@ -732,7 +732,7 @@ img.calendar
 .tablesubheader
 {
 	background-color:#ACBFD9;
-	font-size:10px;
+	font-size: 12px;
 	color: #3363A1;
 	font-weight:bold;
 	padding:5px;
@@ -778,7 +778,7 @@ img.calendar
 .formbutton-off
 {
 	padding:6px;
-	font-size:10px;
+	font-size: 12px;
 	font-weight:bold;
 	width:auto;
 	float:left;
@@ -898,7 +898,7 @@ img.calendar
 	border:1px solid #999;
 	background-color: #FED4D4;
 	font-family:Verdana, Arial;
-	font-size:10px;
+	font-size: 12px;
 	font-weight:bold;
 	padding:6px;
 	margin:0px;
@@ -909,7 +909,7 @@ img.calendar
 	border:1px solid #999;
 	background-color: #E7E7E7;
 	font-family:Verdana, Arial;
-	font-size:10px;
+	font-size: 12px;
 	font-weight:bold;
 	padding: 4px;
 	cursor: pointer;
@@ -974,7 +974,7 @@ img.calendar
 	border:1px solid #777;
 	background-color: #CCC;
 	font-family:Verdana, Arial;
-	font-size:10px;
+	font-size: 12px;
 	font-weight:bold;
 	padding:6px;
 	margin:0px;
@@ -1005,7 +1005,7 @@ img.calendar
 	border:1px solid #999;
 	background-color: #E7E7E7;
 	font-family:Verdana, Arial;
-	font-size:10px;
+	font-size: 12px;
 	font-weight:bold;
 	padding:2px;
 	cursor: pointer;
@@ -1017,7 +1017,7 @@ img.calendar
 	border:1px solid #999;
 	background-color: #CCC;
 	font-family:Verdana, Arial;
-	font-size:10px;
+	font-size: 12px;
 	font-weight:bold;
 	padding:2px;
 	cursor: pointer;
@@ -1036,7 +1036,7 @@ input[type="text"]
 
 .mininav
 {
-	font-size:11px;
+	font-size: 12px;
 	color:#3363A1;
 }
 
@@ -1051,12 +1051,12 @@ input[type="text"]
 
 .datedropdown
 {
-	font-size:10px;
+	font-size: 12px;
 }
 
 .datedropdownleave
 {
-	font-size:10px;
+	font-size: 12px;
 	background-color:#FED4D4;
 }
 
@@ -1074,7 +1074,7 @@ input[type="text"]
 .paletteheader
 {
 	font-weight:bold;
-	font-size:12px;
+	font-size: 12px;
 	color:#FFFFFF;
 	height:25px;
 	background-image: url(images/folder_css_images/main_menu_bg.gif);
@@ -1099,7 +1099,7 @@ input[type="text"]
 
 .iframebuttonsoff
 {
-	font-size:10px;
+	font-size: 12px;
 	border:1px solid #777;
 	border-bottom:0px;
 	padding:5px;
@@ -1108,7 +1108,7 @@ input[type="text"]
 
 .iframebuttons
 {
-	font-size:10px;
+	font-size: 12px;
 	border:1px solid #777;
 	border-bottom:0px;
 	padding:5px;
@@ -1395,7 +1395,7 @@ ins,
 /* used in ips_rte.js - do not remove */
 .rtebottombutton
 {
-	font-size:10px;
+	font-size: 12px;
 	border:1px solid #777;
 	border-top:0px;
 	padding:3px;
@@ -1406,7 +1406,7 @@ ins,
 /* used in ips_rte.js - do not remove */
 .rtebottombuttonon
 {
-	font-size:10px;
+	font-size: 12px;
 	border:1px solid #777;
 	border-top:0px;
 	padding:3px;
@@ -1460,7 +1460,7 @@ ins,
 
 .rteselectbox
 {
-	font-size:11px;
+	font-size: 12px;
 }
 
 .rss-feed-valid
@@ -1579,7 +1579,7 @@ ins,
 	background-color: #a8afbd;
 	color: #3b424c;
 	font-weight: bold;
-	font-size:12px;
+	font-size: 12px;
 }
 
 .homepage_sub_row {
