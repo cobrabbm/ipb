@@ -22,7 +22,7 @@
 			<g_use_pm>0</g_use_pm>
 			<g_is_supmod>0</g_is_supmod>
 			<g_access_cp>0</g_access_cp>
-			<g_title>Validating</g_title>
+			<g_title>等待验证</g_title>
 			<g_can_remove>0</g_can_remove>
 			<g_append_edit>1</g_append_edit>
 			<g_access_offline>0</g_access_offline>
@@ -74,7 +74,7 @@
 			<g_use_pm>0</g_use_pm>
 			<g_is_supmod>0</g_is_supmod>
 			<g_access_cp>0</g_access_cp>
-			<g_title>Guests</g_title>
+			<g_title>游客</g_title>
 			<g_can_remove>0</g_can_remove>
 			<g_append_edit>0</g_append_edit>
 			<g_access_offline>0</g_access_offline>
@@ -126,7 +126,7 @@
 			<g_use_pm>1</g_use_pm>
 			<g_is_supmod>0</g_is_supmod>
 			<g_access_cp>0</g_access_cp>
-			<g_title>Members</g_title>
+			<g_title>会员</g_title>
 			<g_can_remove>0</g_can_remove>
 			<g_append_edit>1</g_append_edit>
 			<g_access_offline>0</g_access_offline>
@@ -178,7 +178,7 @@
 			<g_use_pm>1</g_use_pm>
 			<g_is_supmod>1</g_is_supmod>
 			<g_access_cp>1</g_access_cp>
-			<g_title>Root Admin</g_title>
+			<g_title>总管理员</g_title>
 			<g_can_remove>0</g_can_remove>
 			<g_append_edit>1</g_append_edit>
 			<g_access_offline>1</g_access_offline>
@@ -230,7 +230,7 @@
 			<g_use_pm>0</g_use_pm>
 			<g_is_supmod>0</g_is_supmod>
 			<g_access_cp>0</g_access_cp>
-			<g_title>Banned</g_title>
+			<g_title>已封禁</g_title>
 			<g_can_remove>0</g_can_remove>
 			<g_append_edit>0</g_append_edit>
 			<g_access_offline>0</g_access_offline>
@@ -282,7 +282,7 @@
 			<g_use_pm>1</g_use_pm>
 			<g_is_supmod>1</g_is_supmod>
 			<g_access_cp>1</g_access_cp>
-			<g_title>Administrators</g_title>
+			<g_title>管理员</g_title>
 			<g_can_remove>0</g_can_remove>
 			<g_append_edit>1</g_append_edit>
 			<g_access_offline>1</g_access_offline>
