@@ -46,7 +46,7 @@ class ad_xmlout
     
     function xmlout()
     {
-    	$this->xml_header = '<?xml version="1.0" encoding="ISO-8859-1"?'.'>';
+    	$this->xml_header = '<?xml version="1.0" encoding="UTF-8"?'.'>';
     }
     
     /*-------------------------------------------------------------------------*/

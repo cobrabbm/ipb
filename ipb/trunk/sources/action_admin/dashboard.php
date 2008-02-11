@@ -195,7 +195,7 @@ class ad_dashboard
 			$this->ipsclass->update_cache( array( 'value' => $this->ipsclass->txt_stripslashes($_POST['notes']), 'name' => 'adminnotes', 'donow' => 1, 'deletefirst' => 0, 'array' => 0 ) );
 		}
 		
-		$text = "You can use this section to keep notes for yourself and other admins, etc.";
+		$text = "您可以在记录一些信息供您自己和其他管理员查阅.";
 		
 		$this->ipsclass->init_load_cache( array( 'adminnotes', 'skinpanic' ) );
 		
@@ -404,14 +404,14 @@ class ad_dashboard
 		
 		if ( isset($this->ipsclass->cache['skinpanic']) AND $this->ipsclass->cache['skinpanic'] == 'rebuildemergency' )
 		{
-			$skinpanic = $this->html->warning_box( "Warning: A skin error occured", $this->html->warning_rebuild_emergency() ) . "<br />";
+			$skinpanic = $this->html->warning_box( "警告: 发生了一个主题错误", $this->html->warning_rebuild_emergency() ) . "<br />";
 			
 			$this->ipsclass->html = str_replace( '<!--warningskin-->', $skinpanic, $this->ipsclass->html );
 		}
 		
 		if ( isset($this->ipsclass->cache['skinpanic']) AND $this->ipsclass->cache['skinpanic'] == 'rebuildupgrade' )
 		{
-			$skinupgrade = $this->html->warning_box( "An upgrade has been performed", $this->html->warning_rebuild_upgrade() ) . "<br />";
+			$skinupgrade = $this->html->warning_box( "进行了一次升级", $this->html->warning_rebuild_upgrade() ) . "<br />";
 
 			$this->ipsclass->html = str_replace( '<!--warningskin-->', $skinupgrade, $this->ipsclass->html );
 		}
@@ -440,10 +440,10 @@ class ad_dashboard
 				$_mtime  = $this->ipsclass->get_date( $last_settings_save     , 'JOINED' );
 				$_dbtime = $this->ipsclass->get_date( $last_update['cs_value'], 'JOINED' );
 				
-				$_html = $this->ipsclass->skin_acp_global->warning_box( "settings.xml File Updated",
-																		"The 'resources/settings.xml' file has been updated. Please visit <a href='{$this->ipsclass->base_url}&amp;section=tools'>this page</a> to re-import it to make sure your settings are up-to-date
-																		<br />Last modified time for 'settings.xml': $_mtime.
-																		<br />Last import run: $_dbtime" ) . "<br />";
+				$_html = $this->ipsclass->skin_acp_global->warning_box( "settings.xml 文件更新",
+																		"文件 'resources/settings.xml' 已经更新. 请访问<a href='{$this->ipsclass->base_url}&amp;section=tools'>这里</a>重新导入本文件以确认您的设置是最新的
+																		<br />'settings.xml' 上次修改时间: $_mtime.
+																		<br />上次导入时间: $_dbtime" ) . "<br />";
 				
 				$this->ipsclass->html = str_replace( '<!--in_dev_check-->', $_html, $this->ipsclass->html );	
 			}
@@ -454,7 +454,7 @@ class ad_dashboard
 				
 				if ( $_notes )
 				{
-					$_html = $this->ipsclass->skin_acp_global->information_box( "Developers' Notes", nl2br($_notes) ) . "<br />";
+					$_html = $this->ipsclass->skin_acp_global->information_box( "开发者注意事项", nl2br($_notes) ) . "<br />";
 					$this->ipsclass->html = str_replace( '<!--in_dev_notes-->', $_html, $this->ipsclass->html );
 				}
 			}
@@ -468,20 +468,20 @@ class ad_dashboard
 		{
 			if ( $lock_file != 1 )
 			{
-				$installer = $this->html->warning_box( "Unlocked Installer", $this->html->warning_unlocked_installer() ) . "<br />";
+				$installer = $this->html->warning_box( "存在未锁定安装程序", $this->html->warning_unlocked_installer() ) . "<br />";
 	
 				$this->ipsclass->html = str_replace( '<!--warninginstaller-->', $installer, $this->ipsclass->html );
 			}
 			else
 			{
-				$installer = $this->html->warning_box( "Installer Present", $this->html->warning_installer() ) . "<br />";
+				$installer = $this->html->warning_box( "安装程序存在", $this->html->warning_installer() ) . "<br />";
 	
 				$this->ipsclass->html = str_replace( '<!--warninginstaller-->', $installer, $this->ipsclass->html );
 			}
 		}
 		else if( $converter )
 		{
-			$installer = $this->html->warning_box( "Converter Present", $this->html->warning_converter() ) . "<br />";
+			$installer = $this->html->warning_box( "转换程序存在", $this->html->warning_converter() ) . "<br />";
 
 			$this->ipsclass->html = str_replace( '<!--warninginstaller-->', $installer, $this->ipsclass->html );
 		}		
@@ -492,7 +492,7 @@ class ad_dashboard
 		
 		if ( $unfinished_upgrade == 1 ) 
 		{
-			$upgrade = $this->html->warning_box( "Unfinished Upgrade", $this->html->warning_upgrade() ) . "<br />";
+			$upgrade = $this->html->warning_box( "未完成升级", $this->html->warning_upgrade() ) . "<br />";
 
 			$this->ipsclass->html = str_replace( '<!--warningupgrade-->', $upgrade, $this->ipsclass->html );
 		}		
@@ -503,7 +503,7 @@ class ad_dashboard
 		
 		if ( PHP_VERSION < '4.3.0' )
 		{
-			$version = $this->html->warning_box( "Your PHP Version (" . PHP_VERSION . ") is insufficient",
+			$version = $this->html->warning_box( "您的 PHP 版本 (" . PHP_VERSION . ") 不足",
 																	$this->html->acp_php_version_warning() ) . "<br />";
 
 			$this->ipsclass->html = str_replace( '<!--phpversioncheck-->', $version, $this->ipsclass->html );
@@ -519,7 +519,7 @@ class ad_dashboard
 
 			if( !$hide['conf_value'] )
 			{
-				$fulltext = $this->html->warning_box( "Not Using Full Text", $this->html->acp_ftext_warning( $fulltext_a, $fulltext_b ) ) . "<br />";
+				$fulltext = $this->html->warning_box( "没有使用全文索引", $this->html->acp_ftext_warning( $fulltext_a, $fulltext_b ) ) . "<br />";
 	
 				$this->ipsclass->html = str_replace( '<!--warningftext-->', $fulltext, $this->ipsclass->html );
 			}
@@ -531,7 +531,7 @@ class ad_dashboard
 		
 		if ( $this->ipsclass->vars['board_offline'] )
 		{
-			$offline = $this->html->warning_box( "Board Offline", "Your board is currently offline<br /><br />&raquo; <a href='{$this->ipsclass->base_url}&section=tools&act=op&code=findsetting&key=boardoffline'>Turn Board Online</a>" ) . "<br />";
+			$offline = $this->html->warning_box( "论坛已关闭", "您的论坛当前已关闭<br /><br />&raquo; <a href='{$this->ipsclass->base_url}&section=tools&act=op&code=findsetting&key=boardoffline'>打开论坛</a>" ) . "<br />";
 
 			$this->ipsclass->html = str_replace( '<!--boardoffline-->', $offline, $this->ipsclass->html );
 		}

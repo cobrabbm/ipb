@@ -15,7 +15,7 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div style='font-size:30px; padding-left:7px; letter-spacing:-2px; border-bottom:1px solid #EDEDED'>
- Welcome to Invision Power Board
+ 欢迎使用 Invision Power Board
 </div>
 <br />
 <script type="text/javascript" src='{$this->ipsclass->vars['board_url']}/jscripts/ipb_xhr_findnames.js'></script>
@@ -29,23 +29,23 @@ $IPBHTML .= <<<EOF
 	<tr>
 	 <td>
 		<div class='homepage_pane_border'>
-		 <div class='homepage_section'>Common Actions</div>
+		 <div class='homepage_section'>常规操作</div>
 		 <table width='100%' cellspacing='0' cellpadding='4' id='common_actions'>
 			 <tr>
 			  <td width='33%' valign='top'>
-				<div><a href='{$this->ipsclass->base_url}&section=content&act=mem&code=search' title='Manage Members'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/members.png' border='0' alt='Manage Members' /> Manage Members</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=mod' title='Process Validating Members'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/validating.png' border='0' alt='Process Validating Members' /> Validating Members</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=content&act=forum' title='Manage Forums'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/forums.png' border='0' alt='Manage Forums' /> Manage Forums</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=content&act=mem&code=search' title='管理会员'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/members.png' border='0' alt='管理会员' /> 管理会员</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=mod' title='处理等待验证会员'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/validating.png' border='0' alt='处理等待验证会员' /> 等待验证会员</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=content&act=forum' title='管理板块'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/forums.png' border='0' alt='管理板块' /> 管理板块</a></div>
 			</td>
 			<td width='33%' valign='top'>
-				<div><a href='{$this->ipsclass->base_url}&section=tools' title='Edit System Settings'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/settings.png' border='0' alt='Edit System Settings' /> Edit System Settings</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets' title='Skin Manager'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/skins.png' border='0' alt='Skin Manager' /> Skin Manager</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=tools&act=postoffice' title='Bulk Mailer'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/bulkmail.png' border='0' alt='Bulk Mailer' /> Bulk Mailer</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=tools' title='修改系统设置'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/settings.png' border='0' alt='修改系统设置' /> 修改系统设置</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets' title='主题管理'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/skins.png' border='0' alt='主题管理' /> 主题管理</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=tools&act=postoffice' title='批量发送邮件'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/bulkmail.png' border='0' alt='批量发送邮件' /> 批量发送邮件</a></div>
 			</td>
 			<td width='33%' valign='top'>
-				<div><a href='{$this->ipsclass->base_url}&section=content&act=group' title='Manage Groups'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/groups.png' border='0' alt='Manage Groups' /> Manage Groups</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=lookandfeel&act=lang' title='Language Manager'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/languages.png' border='0' alt='Language Manager' /> Language Manager</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=lookandfeel&act=emoticons&code=emo' title='Emoticon Manager'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/emos.png' border='0' alt='Emoticon Manager' /> Emoticon Manager</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=content&act=group' title='管理用户组'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/groups.png' border='0' alt='管理用户组' /> 管理用户组</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=lookandfeel&act=lang' title='管理语言'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/languages.png' border='0' alt='管理语言' /> 管理语言</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=lookandfeel&act=emoticons&code=emo' title='管理表情'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/emos.png' border='0' alt='管理表情' /> 管理表情</a></div>
 			 </tr>
 		 </table>
 		</div>
@@ -57,7 +57,7 @@ $IPBHTML .= <<<EOF
 	<tr>
 	 <td>
 		<div class='homepage_pane_border'>
-		 <div class='homepage_section'>Tasks and Statistics</div>
+		 <div class='homepage_section'>任务与统计</div>
 		 <table width='100%' cellspacing='0' cellpadding='4'>
 			 <tr>
 			  <td width='50%' valign='top'>
@@ -65,33 +65,33 @@ $IPBHTML .= <<<EOF
 			  </td>
 			  <td width='50%' valign='top'>
 				<div class='homepage_border'>
-				 <div class='homepage_sub_header'>Quick Actions</div>
+				 <div class='homepage_sub_header'>快速管理</div>
 				 <table width='100%' cellpadding='4' cellspacing='0'>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>Find/Edit Member</strong> <span class='desctext' title='Enter a partial name to search for'>?</span>
-					<br /><form name='DOIT' id='DOIT' action='{$this->ipsclass->adskin->base_url}&section=content&act=mem&code=searchresults&searchtype=normal&' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='33' class='textinput' id='members_display_name' name='members_display_name' value='' /> <input type='submit' value='Go...' class='realbutton' onclick='edit_member()' /></form>
+					<strong>寻找或修改会员</strong> <span class='desctext' title='输入一部分或全部用户名'>?</span>
+					<br /><form name='DOIT' id='DOIT' action='{$this->ipsclass->adskin->base_url}&section=content&act=mem&code=searchresults&searchtype=normal&' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='33' class='textinput' id='members_display_name' name='members_display_name' value='' /> <input type='submit' value='查找...' class='realbutton' onclick='edit_member()' /></form>
 				  </td>
 				 </tr>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>Add New Member</strong> <span class='desctext' title='Enter a name and group'>?</span>
-				    <br /><form name='newmem' id='newmem' action='{$this->ipsclass->adskin->base_url}&section=content&act=mem&code=add' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='17' class='textinput' name='name' value='' /> <select name='mgroup'>{$g_dd}</select> <input type='submit' value='Go...' class='realbutton' /></form></td>
+					<strong>添加新会员</strong> <span class='desctext' title='输入用户名和用户组'>?</span>
+				    <br /><form name='newmem' id='newmem' action='{$this->ipsclass->adskin->base_url}&section=content&act=mem&code=add' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='17' class='textinput' name='name' value='' /> <select name='mgroup'>{$g_dd}</select> <input type='submit' value='添加...' class='realbutton' /></form></td>
 				 </tr>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>Edit a Forum</strong> <span class='desctext' title='Select the forum to edit'>?</span>
-				    <br /><form name='newmem' id='newmem' action='{$this->ipsclass->adskin->base_url}&section=content&act=forum&code=edit' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><select name='f'>{$f_dd}</select> <input type='submit' value='Go...' class='realbutton' /></form></td>
+					<strong>编辑一个板块</strong> <span class='desctext' title='选择一个板块以修改'>?</span>
+				    <br /><form name='newmem' id='newmem' action='{$this->ipsclass->adskin->base_url}&section=content&act=forum&code=edit' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><select name='f'>{$f_dd}</select> <input type='submit' value='编辑...' class='realbutton' /></form></td>
 				 </tr>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>IP Address Search</strong> <span class='desctext' title='Lookup info on an IP address'>?</span>
-				  	<br /><form name='ipform' id='ipform' action='{$this->ipsclass->adskin->base_url}&section=content&act=mtools&code=learnip' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='33' class='textinput' name='ip' value='' /> <input type='submit' value='Go...' class='realbutton' /></form></td>
+					<strong>IP 地址搜索</strong> <span class='desctext' title='查找某 IP 地址的信息'>?</span>
+				  	<br /><form name='ipform' id='ipform' action='{$this->ipsclass->adskin->base_url}&section=content&act=mtools&code=learnip' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='33' class='textinput' name='ip' value='' /> <input type='submit' value='查找...' class='realbutton' /></form></td>
 				 </tr>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>Search System Settings</strong> <span class='desctext' title='Search for a setting to edit'>?</span>
-				  	<br /><form name='settingform' id='settingform' action='{$this->ipsclass->adskin->base_url}&section=tools&act=op&code=setting_view' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='33' class='textinput' name='search' value='' /> <input type='submit' value='Go...' class='realbutton' /></form></td>
+					<strong>搜索系统设置</strong> <span class='desctext' title='搜索某个设置以修改'>?</span>
+				  	<br /><form name='settingform' id='settingform' action='{$this->ipsclass->adskin->base_url}&section=tools&act=op&code=setting_view' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='33' class='textinput' name='search' value='' /> <input type='submit' value='搜索...' class='realbutton' /></form></td>
 				 </tr>
 				 </table>
 				</div>
@@ -107,12 +107,12 @@ $IPBHTML .= <<<EOF
 	<tr>
 	 <td>
 		<div class='homepage_pane_border'>
-		 <div class='homepage_section'>Communication</div>
+		 <div class='homepage_section'>交流</div>
 		 <table width='100%' cellspacing='0' cellpadding='4'>
 			 <tr>
 			  <td valign='top' width='50%'>
 			  	<div class='homepage_border'>
-					<div class='homepage_sub_header'>ACP Notes</div>
+					<div class='homepage_sub_header'>记事本</div>
 					<br />{$content['ad_notes']}<br />
 				</div>
 			  </td>
@@ -131,32 +131,32 @@ $IPBHTML .= <<<EOF
 	<div id='acp-update-wrapper' style='display:none'>
 		<!-- Security Update -->
 		<div class='homepage_pane_warning_border' id='acp-update-security' style='display:none'>
-		 <div class='homepage_section_warning'>Security Update Available</div>
+		 <div class='homepage_section_warning'>存在安全更新</div>
 			<div style='font-size:12px;padding:4px; text-align:center'>
 				<p>
-					<strong><span id='acp-version-security'></span></strong> Security Update Available!
+					<strong><span id='acp-version-security'></span></strong> 存在安全更新!
 				</p>
-				<input type='button' onclick='VU_moreinfo()' value=' More Information ' /> <input type='button' onclick='VU_reset()' value=' Reset Warning ' />
+				<input type='button' onclick='VU_moreinfo()' value=' 更多信息 ' /> <input type='button' onclick='VU_reset()' value=' 复位警告 ' />
 			</div>
 		</div>
 		<!-- Normal Version Upgrade -->
 		<div class='homepage_pane_border' id='acp-update-update' style='display:none'>
-		 <div class='homepage_section'>Update Available</div>
+		 <div class='homepage_section'>存在更新</div>
 			<div style='font-size:12px;padding:4px; text-align:center'>
 				<p>
 					<strong><span id='acp-version-update'></span></strong> Update Available Now!
 				</p>
-				<input type='button' onclick='VU_moreinfo()' value=' More Information ' /> <input type='button' onclick='VU_reset()' value=' Reset Notice ' />
+				<input type='button' onclick='VU_moreinfo()' value=' 更多信息 ' /> <input type='button' onclick='VU_reset()' value=' 复位提示 ' />
 			</div>
 		</div>
 		<!-- Normal Version Upgrade -->
 		<div class='homepage_pane_border' id='acp-update-normal' style='display:none'>
-		 <div class='homepage_section'>New Version Available</div>
+		 <div class='homepage_section'>存在新版本</div>
 			<div style='font-size:12px;padding:4px; text-align:center'>
 				<p>
-					Version <strong><span id='acp-version-normal'></span></strong> Available Now!
+					版本 <strong><span id='acp-version-normal'></span></strong> 现在可以使用!
 				</p>
-				<input type='button' onclick='VU_moreinfo()' value=' More Information ' />
+				<input type='button' onclick='VU_moreinfo()' value=' 更多信息 ' />
 			</div>
 		</div>
 		<br />
@@ -169,7 +169,7 @@ $IPBHTML .= <<<EOF
 	<!--boardoffline-->
 	{$content['validating']}
 	<div class='homepage_pane_border' id='acp-news-outer'>
-	 <div class='homepage_section'>Latest IPS News</div>
+	 <div class='homepage_section'>最新 IPS 新闻</div>
 		<div>
 			<div id='acp-news-wrapper'>
 			</div>
@@ -177,13 +177,13 @@ $IPBHTML .= <<<EOF
 	</div>
 	<br />
 	<div class='homepage_pane_border' id='acp-blog-outer'>
-	 <div class='homepage_section'>Latest IPS Blogs</div>
+	 <div class='homepage_section'>最新 IPS 日志</div>
 		<div id='acp-blog-wrapper'>
 		</div>
 	</div>
 	<br />
 	<div class='homepage_pane_border'>
-	 <div class='homepage_section'>IP.Board Bulletin</div>
+	 <div class='homepage_section'>IP.Board 公告板</div>
 		<div id='keith-is-not-hidden'>
 		</div>
 	</div>
