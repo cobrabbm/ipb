@@ -53,14 +53,14 @@ $INSERT[] = "INSERT INTO ibf_emoticons (id, typed, image, clickable, emo_set) VA
 $INSERT[] = "INSERT INTO ibf_forums VALUES (2, 1, 1, <%time%>, 1, '<%admin_name%>', '测试板块', '您随时可以删除', 1, 1, 0, 1, '', '', '欢迎使用易维论坛!', 1, 'last_post', 'Z-A', 100, 'all', 0, 0, 1, 1, 1, NULL, 1, 1, '', 0, 0, '', '', '', '', '', 1, '', 'a:6:{s:11:\"start_perms\";s:1:\"*\";s:11:\"reply_perms\";s:1:\"*\";s:10:\"read_perms\";s:1:\"*\";s:12:\"upload_perms\";s:1:\"*\";s:14:\"download_perms\";s:1:\"*\";s:10:\"show_perms\";s:1:\"*\";}', 0, 0, 0, 0, 1, '', 0);";
 $INSERT[] = "INSERT INTO ibf_forums VALUES (1, 0, 0, 0, 0, '', '测试分类', '您随时可以删除', 1, 1, 0, 1, '', '', '', 0, 'last_post', 'Z-A', 30, 'all', 0, 0, 1, 1, 1, NULL, -1, 0, '', 0, 0, '', '', '', '', '', 0, '', 'a:5:{s:11:\"start_perms\";s:0:\"\";s:11:\"reply_perms\";s:0:\"\";s:10:\"read_perms\";s:0:\"\";s:12:\"upload_perms\";s:0:\"\";s:10:\"show_perms\";s:1:\"*\";}', 1, 0, 0, 1, 1, '', 0);";
 
-$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='Validating Forum Set', perm_id=1";
-$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='Member Forum Set', perm_id=3";
-$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='Guest Forum Set', perm_id=2";
-$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='Admin Forum Set', perm_id=4";
-$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='Banned Forum Set', perm_id=5";
+$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='等待验证权限', perm_id=1";
+$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='会员权限', perm_id=3";
+$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='游客权限', perm_id=2";
+$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='管理员权限', perm_id=4";
+$INSERT[] = "INSERT INTO ibf_forum_perms SET perm_name='封禁会员权限', perm_id=5";
 
 $INSERT[] = "INSERT INTO ibf_languages (lid, ldir, lname, lauthor, lemail) VALUES (1, 'en', 'English', 'Invision Power Board', 'languages@invisionboard.com');";
-$INSERT[] = "INSERT INTO ibf_languages (lid, ldir, lname, lauthor, lemail) VALUES (1, 'zh-cn', '简体中文', 'Skylook', 'skylook@126.com');";
+$INSERT[] = "INSERT INTO ibf_languages (lid, ldir, lname, lauthor, lemail) VALUES (2, 'zh-cn', '简体中文', 'Skylook', 'skylook@126.com');";
 
 $INSERT[] = "INSERT INTO ibf_posts (pid, append_edit, edit_time, author_id, author_name, use_sig, use_emo, ip_address, post_date, icon_id, post, queued, topic_id, post_title, new_topic, edit_name, post_key, post_parent, post_htmlstate) VALUES (1, 0, NULL, 1, 'IPBChina 团队', 0, 1, '127.0.0.1', <%time%>, 0, '欢迎使用易维论坛&#33;<br /><br />  <br /><br /> 感谢您选择易维论坛 (Invision Power Board). 如果您有英语基础,建议您花一些时间查看 IPS 官方的手册.<br /><br />  <br /><br /> 您随时可以删除本主题或者板块甚至分类.<br /><br />  <br /><br /> <a href=\"http://external.ipslink.com/ipboard22/landing/?p=docs-ipb\" target=\"_blank\">查看手册...</a> <br /> <br />衷心感谢您选择了易维论坛!<br /><br /><a href=\"http://www.ipbchina.com\" target=\"_blank\">IPBChina 团队</a>', 0, 1, NULL, 1, NULL, '0', 0, 0);";
 

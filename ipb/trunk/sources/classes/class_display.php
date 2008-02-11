@@ -147,6 +147,8 @@ class display {
         
 		$version = ( isset( $this->ipsclass->vars['ipb_display_version'] ) AND $this->ipsclass->vars['ipb_display_version'] != 0 ) ? $this->ipsclass->version : '';
 		
+		$ipbchina_version = ($this->ipsclass->vars['ipb_display_version'] != 0) ? $this->ipsclass->ipbchina_version : '';
+		
         if ($this->ipsclass->vars['ipb_copy_number'] && $this->ipsclass->vars['ips_cp_purchase'])
         {
         	$copyright = "";
@@ -166,12 +168,13 @@ class display {
         	$copyright = "<!-- Copyright Information -->
         				  <div align='center' class='copyright'>
         				  	Powered By <a href='http://www.invisionboard.com' style='text-decoration:none' target='_blank'>IP.Board</a>
-        				  	{$version} &copy; ".date("Y")." &nbsp;<a href='http://www.invisionpower.com' style='text-decoration:none' target='_blank'>IPS, Inc</a>.
+        				  	{$version} &copy; ".date("Y")." &nbsp;<a href='http://www.invisionpower.com' style='text-decoration:none' target='_blank'>IPS, Inc</a>.<br />
+        					易维论坛 {$version} {$ipbchina_version} By <a href='http://www.ipbchina.com/'>IPBChina.com</a>
         				  ";
         				  
         	if ( $this->ipsclass->vars['ipb_reg_show'] and $this->ipsclass->vars['ipb_reg_name'] )
         	{
-        		$copyright .= "<div>Licensed to: ". $this->ipsclass->vars['ipb_reg_name']."</div>";
+        		$copyright .= "<div>授权给: ". $this->ipsclass->vars['ipb_reg_name']."</div>";
         	}
         	
         	
@@ -480,7 +483,7 @@ class display {
     {
     	if ( $this->ipsclass->vars['print_headers'] )
     	{
-    		$this->ipsclass->vars['gb_char_set'] = $this->ipsclass->vars['gb_char_set'] ? $this->ipsclass->vars['gb_char_set'] : 'iso-8859-1';
+    		$this->ipsclass->vars['gb_char_set'] = $this->ipsclass->vars['gb_char_set'] ? $this->ipsclass->vars['gb_char_set'] : 'UTF-8';
     		
 			header("HTTP/1.0 200 OK");
 			header("HTTP/1.1 200 OK");
@@ -1174,7 +1177,7 @@ class display {
 				list( $cust_number, $acc_number ) = explode( ',', $cust_number_tmp );
 				
 				@header( "Content-type: text/xml" );
-				$out  = '<?xml version="1.0" encoding="ISO-8859-1"?'.'>';
+				$out  = '<?xml version="1.0" encoding="UTF-8"?'.'>';
 				$out .= "\n<ipscheck>\n\t<result>1</result>\n\t<customer_id>$cust_number</customer_id>\n\t<account_id>$acc_number</account_id>\n\t"
 					 .  "<version_id>{$this->ipsclass->acpversion}</version_id>\n\t<version_string>{$this->ipsclass->version}</version_string>\n\t<release_hash><![CDATA[<{%dyn.down.var.md5%}]]>></release_hash>"
 					 .  "\n</ipscheck>";

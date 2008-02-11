@@ -332,7 +332,7 @@ class ipsclass {
 		// Char set
 		//-----------------------------------------
 		
-		$this->vars['gb_char_set'] = $this->vars['gb_char_set'] ? $this->vars['gb_char_set'] : 'iso-8859-1';
+		$this->vars['gb_char_set'] = $this->vars['gb_char_set'] ? $this->vars['gb_char_set'] : 'UTF-8';
 		
 		//-----------------------------------------
 		// PHP API
