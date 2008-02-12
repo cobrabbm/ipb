@@ -14,13 +14,13 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>User Group Management</div>
+ <div class='tableheaderalt'>会员用户组管理</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='40%'>Group Title</td>
-  <td class='tablesubheader' width='10%' align='center'>Can Access ACP</td>
-  <td class='tablesubheader' width='10%' align='center'>Is Super Mod</td>
-  <td class='tablesubheader' width='10%' align='center'>Members</td>
+  <td class='tablesubheader' width='40%'>用户组名称</td>
+  <td class='tablesubheader' width='10%' align='center'>允许进入后台</td>
+  <td class='tablesubheader' width='10%' align='center'>超级版主</td>
+  <td class='tablesubheader' width='10%' align='center'>会员数量</td>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
  </tr>
  {$content}
@@ -30,14 +30,14 @@ $IPBHTML .= <<<EOF
 <form action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=add' method='POST' >
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div class='tableborder'>
- <div class='tableheaderalt'>Create a User Group</div>
+ <div class='tableheaderalt'>创建一个用户组</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablerow2' width='40%'><strong>Base new group on...</strong></td>
+  <td class='tablerow2' width='40%'><strong>新用户组基于...</strong></td>
   <td class='tablerow1' width='60%'>{$form['_new_dd']}</td>
  </tr>
  <tr>
-  <td colspan='2' class='tablesubheader' align='center'><input type='submit' value='Create...' class='realbutton' /></td>
+  <td colspan='2' class='tablesubheader' align='center'><input type='submit' value='创建...' class='realbutton' /></td>
  </tr>
  </table>
 </div>
@@ -81,7 +81,7 @@ $IPBHTML .= <<<EOF
 <script type="text/javascript">
   menu_build_menu(
   "menu{$r['g_id']}",
-  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=edit&amp;id={$r['g_id']}'>Edit Group</a>",
+  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=edit&amp;id={$r['g_id']}'>编辑用户组</a>",
 EOF;
 if ( ! in_array( $r['g_id'], array( $this->ipsclass->vars['auth_group'], $this->ipsclass->vars['guest_group'], $this->ipsclass->vars['member_group'], $this->ipsclass->vars['admin_group'] ) )  )
 {
@@ -115,12 +115,12 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 					    
 <div class='tableborder'>
- <div class='tableheaderalt'>Forum Permission Sets</div>
+ <div class='tableheaderalt'>论坛权限设置</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='20%'>Name</td>
-  <td class='tablesubheader' width='15%'>Used by Group(s)</td>
-  <td class='tablesubheader' width='20%' align='center'>Used by Member(s)</td>
+  <td class='tablesubheader' width='20%'>会员名称</td>
+  <td class='tablesubheader' width='15%'>用户组使用</td>
+  <td class='tablesubheader' width='20%' align='center'>会员使用</td>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
  </tr>
  {$content}
@@ -131,18 +131,18 @@ $IPBHTML .= <<<EOF
 <form name='theAdminForm' id='adminform' action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=dopermadd' method='post'>
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
  <div class='tableborder'>
-  <div class='tableheaderalt'>Create a new permission set</div>
+  <div class='tableheaderalt'>创建一个新的权限设置</div>
   <table cellpadding='4' cellspacing='0' width='100%'>
   <tr>
-   <td class='tablerow1'><strong>Permission Set Name</strong></td>
+   <td class='tablerow1'><strong>权限设置名称</strong></td>
    <td class='tablerow2'><input type='text' class='input' size='30' name='new_perm_name' /></td>
   </tr>
   <tr>
-   <td class='tablerow1'><strong>Base this permission set on which existing set...</strong></td>
+   <td class='tablerow1'><strong>新权限设置基于...</strong></td>
    <td class='tablerow2'><select name='new_perm_copy' class='dropdown'>{$dlist}</select></td>
   </tr>
  </table>
- <div class='tablefooter' align='center'><input type='submit' value='Create' class='realbutton' /></div>
+ <div class='tablefooter' align='center'><input type='submit' value='创建' class='realbutton' /></div>
 </div>
 </form>
 EOF;
@@ -168,7 +168,7 @@ EOF;
 if ( $r['mems'] > 0 )
 {
 $IPBHTML .= <<<EOF
-{$r['mems']} (<a href='javascript:pop_win("&amp;{$this->ipsclass->form_code}&amp;code=view_perm_users&amp;id={$r['id']}", "User", "500","350");' title='View the member names of those using this permission set in a new window'>View</a>)
+{$r['mems']} (<a href='javascript:pop_win("&amp;{$this->ipsclass->form_code}&amp;code=view_perm_users&amp;id={$r['id']}", "会员", "500","350");' title='查看所有使用这一会员权限的会员'>查看</a>)
 EOF;
 }
 else
@@ -179,24 +179,24 @@ EOF;
 }
 $IPBHTML .= <<<EOF
   </td>															
-  <td class='tablerow1' align='center'><img id="menu{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /></td>
+  <td class='tablerow1' align='center'><img id="menu{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /></td>
 </tr>
 <script type="text/javascript">
   menu_build_menu(
   "menu{$r['id']}",
-  new Array( img_view   + " <a href='javascript:pop_win(\"&amp;{$this->ipsclass->form_code}&amp;code=preview_forums&amp;id={$r['id']}&amp;t=read\", \"Preview\", \"400\",\"350\");' title='See what this group can see..'>Preview...</a>",
-  			 img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=fedit&amp;id={$r['id']}'>Edit...</a>",
+  new Array( img_view   + " <a href='javascript:pop_win(\"&amp;{$this->ipsclass->form_code}&amp;code=preview_forums&amp;id={$r['id']}&amp;t=read\", \"预览\", \"400\",\"350\");' title='查看这一用户组有权限看到..'>预览...</a>",
+  			 img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=fedit&amp;id={$r['id']}'>编辑...</a>",
 EOF;
 if ( ! $r['isactive'] )
 {
 $IPBHTML .= <<<EOF
-              img_delete   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=pdelete&amp;id={$r['id']}'>Delete...</a>"
+              img_delete   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=pdelete&amp;id={$r['id']}'>删除...</a>"
 EOF;
 }
 else
 {
 $IPBHTML .= <<<EOF
-              img_delete   + " <em>In Use</em>"
+              img_delete   + " <em>正在使用</em>"
 EOF;
 }
 $IPBHTML .= <<<EOF

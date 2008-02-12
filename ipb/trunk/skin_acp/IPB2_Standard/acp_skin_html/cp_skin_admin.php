@@ -353,11 +353,10 @@ $IPBHTML .= <<<EOF
 赋予 <strong>{$member['members_display_name']}</strong> 后台权限
 <br />
 <br />
-Access to this tab has not yet been enabled. To enable individual access permissions for this tab
-simply click the green cross icon next to the tab title.
+您没有权限使用这一菜单. 开启这一菜单的权限您只需点击标签旁边的绿叉图标.
 <br />
 <br />
-You can then set individual permissions for each function which is grouped under this tab.
+您可以设置这一标签下每一个功能项的权限.
 </div>
 EOF;
 //--endhtml--//
@@ -460,7 +459,7 @@ $IPBHTML .= <<<EOF
  			<td width='60%' id='td_mainbit_b' class='{$class_name}'>
  				<div style='padding:6px'>
  					<input type='hidden' id='pb_mainbit' name='mainbit' value='{$perm_value}' />
- 					<strong>ALLOW ACCESS TO THIS FUNCTION</strong>
+ 					<strong>允许使用这一功能</strong>
  				</div>
  			</td>
  			<td width='5%' id='td_mainbit_c' class='{$class_name}'>
@@ -487,7 +486,7 @@ $IPBHTML .= <<<EOF
 <tr>
  <td colspan='4' style='height:25px' align='right'>
   <div style='width:80px;float:right;text-align:center;cursor:pointer' onclick='return permobj.save_bits(1);' class='input-ok-content' id='perms-save-box'>Save</div>
-  <div style='width:80px;float:right;text-align:center;cursor:pointer' onclick='return permobj.undo_bits();' class='input-ok-content' id='perms-undo-box'>UNDO</div>
+  <div style='width:80px;float:right;text-align:center;cursor:pointer' onclick='return permobj.undo_bits();' class='input-ok-content' id='perms-undo-box'>撤销</div>
  </td>
 </tr>
 EOF;
@@ -496,7 +495,7 @@ $IPBHTML .= <<<EOF
 	</table>
 </div>
 <div class='desctext' style='padding:4px'>
-	When "ALLOW ACCESS TO THIS FUNCTION" is enabled you may set the individual access permissions for the sub-features of this particular function. Otherwise, changes to the individual access permission will have no effect.
+	当开启了 "允许使用这一功能" 后您可以单独设置每一个功能的权限. 否则, 单个功能的权限设置将不起作用.
 </div>
 EOF;
 //--endhtml--//
@@ -515,7 +514,7 @@ $IPBHTML .= <<<EOF
 <input type='hidden' id='perms-perm-child-id' value='' />
 <table width='100%' cellpadding='0' cellspacing='0'>
 <tr>
- <td width='100%' nowrap='nowrap' id='td_mainbit_a' class='{$class_name}' colspan='4'>There are either no components enabled, or none of the components enabled have permission settings.</td>
+ <td width='100%' nowrap='nowrap' id='td_mainbit_a' class='{$class_name}' colspan='4'>当前没有任何开启的组件或者您没有权限设置组件.</td>
 </tr>
 <tr>
  <td colspan='4' style='padding:1px;height:12px'><!-- ta --></td>
