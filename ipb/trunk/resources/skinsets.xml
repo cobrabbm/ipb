@@ -34,8 +34,8 @@ html{
 body{ 
 	background: #FFF;
 	color: #222;
-	font-family: Tahoma,Verdana,Arial, "Trebuchet MS", Sans-Serif, Georgia, Courier, "Times New Roman", Serif;
-	font-size: 12px;
+	font-family: Verdana, Tahoma, Arial, "Trebuchet MS", Sans-Serif, Georgia, Courier, "Times New Roman", Serif;
+	font-size: 11px;
 	line-height: 135%;
 	margin: 0px;
 	padding: 0px; /* required for Opera to have 0 margin */
@@ -56,7 +56,7 @@ td.ipbtable
 { /* required for text in tables, because tables do not inherit from body */
 	background: transparent;
 	color: #222;
-	font-size: 12px;
+	font-size: 11px;
 	line-height: 135%;
 }
 
@@ -98,7 +98,7 @@ a:visited,
 a:active{
 	background: transparent;
 	color: #222;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover{
@@ -149,7 +149,7 @@ a:hover{
 .minipagelink,
 .minipagelinklast{
 	border: 1px solid #C2CFDF;
-	font-size: 12px;
+	font-size: 10px;
 	margin: 0 1px 0 0;
 }
 
@@ -175,7 +175,7 @@ a:hover{
 .fauxbutton{
 	background: #BFCDE0;
 	border: 1px solid #072A66;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: bold;
 	padding: 4px;
 }
@@ -192,7 +192,7 @@ a:hover{
 .forumdesc a:visited,
 .forumdesc a:active{ 
 	background: transparent;
-	font-size: 12px; 
+	font-size: 10px; 
 	color: #666;
 	line-height: 135%;
 	margin: 2px 0 0 0;
@@ -385,12 +385,12 @@ ul#help{
 .signature{  
 	background: transparent;
 	color: #339; 
-	font-size: 12px;
+	font-size: 10px;
 	line-height: 150%;
 }
 
 .postdetails{ 
-	font-size: 12px;
+	font-size: 10px;
 	line-height:140%;
 }
 
@@ -478,18 +478,18 @@ ul#help{
 }
 
 .desc{ 
-	font-size: 12px; 
+	font-size: 11px; 
 	color: #434951;
 }
 
 .lastaction
 {
-	font-size: 12px; 
+	font-size: 10px; 
 	color: #434951;
 }
 
 .edit{ 
-	font-size: 12px;
+	font-size: 9px;
 }
 
 .thin{ 
@@ -534,7 +534,7 @@ ul#help{
 .calweekday{ 
 	background: #DFE6EF;
 	color: #666;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: bold;
 	margin: 0;
 	padding: 4px;
@@ -615,8 +615,8 @@ select{
 	background: #FFF;
 	border: 1px solid #4C77B6;
 	color: #000;
-	font-family: tahoma, verdana, helvetica, sans-serif;
-	font-size: 12px;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 11px;
 	margin: 5px;
 	padding: 2px;
 	vertical-align: middle;
@@ -671,13 +671,13 @@ input.button{
 }
 
 optgroup option{
-	font-family: tahoma, verdana, helvetica, sans-serif;
+	font-family: verdana, helvetica, sans-serif;
 	font-size: 12px;
 }
 
 .codebuttons{ 
-	font-family: Tahoma, Verdana, Helvetica, Sans-Serif; 
-	font-size: 12px; 
+	font-family: Verdana, Helvetica, Sans-Serif; 
+	font-size: 10px; 
 	vertical-align: middle;
 	margin:2px;
 }
@@ -689,8 +689,8 @@ optgroup option{
 	background: #FFF;
 	border: 1px solid #4C77B6;
 	color: #000;
-	font-family: Tahoma, Verdana, Helvetica, Sans-Serif;
-	font-size: 12px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 11px;
 	padding: 2px;
 	vertical-align: middle;
 }
@@ -794,7 +794,7 @@ optgroup option{
 	border-left: 4px solid #8394B2;
 	color: #000;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 10px;
 	margin: 2px auto 0 auto;
 	padding: 3px;
 }
@@ -842,7 +842,7 @@ optgroup option{
 	border: 1px solid #000; 
 	color: #465584; 
 	font-family: Verdana, Arial; 
-	font-size: 12px; 
+	font-size: 11px; 
 	padding: 2px; 
 	white-space: normal;
 }
@@ -938,7 +938,7 @@ table th,
 	background: transparent url(style_images/<#IMG_DIR#>/tile_sub.gif);
 	border-bottom: 1px solid #5176B5;
 	color: #3A4F6C; 
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 1px;
 	margin: 0; 
@@ -1030,7 +1030,7 @@ td.formbuttonrow{
 	background: transparent;
 	border: 0;
 	color: #222;
-	font-size: 12px;
+	font-size: 11px;
 	margin: 0;
 	padding: 5px;
 	text-align: left;
@@ -1075,7 +1075,7 @@ td.formbuttonrow{
 
 .newslink td{
 	color: #222;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 5px 5px 5px 10px;
 }
 
@@ -1090,7 +1090,7 @@ td.formbuttonrow{
 	background: #FFF;
 	border: 1px solid #999;
 	color: #072A66;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 3px;
 	vertical-align: middle;
 	width: auto;
@@ -1200,7 +1200,7 @@ td.formbuttonrow{
 
 #gfooter td{
 	color: #FFF;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 4px;
 }
 
@@ -1239,7 +1239,7 @@ td.formbuttonrow{
 {
 	background: transparent url(style_images/<#IMG_DIR#>/tile_sub-lite.gif);
 	float: right;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 0.5px;
 	margin: 0px;
@@ -1292,7 +1292,7 @@ td.formbuttonrow{
 #userlinksguest p{
 	background: transparent !important;
 	border: 0 !important;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 1px;
 	margin: 0 !important;
@@ -1350,7 +1350,7 @@ td.formbuttonrow{
 	border: 1px solid #C2CFDF;
 	border-bottom: 0;
 	color: #000;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold;
 	margin: 0 10px 0 0;
 	padding: 5px;
@@ -1392,7 +1392,7 @@ td.formbuttonrow{
 #print h3,
 #print p{
 	border-bottom: 1px solid #999;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: normal;
 }
 
@@ -1405,7 +1405,7 @@ td.formbuttonrow{
 
 #print h4{
 	background: #F9F9F9;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #print p{
@@ -1441,7 +1441,7 @@ td.formbuttonrow{
 	background-color:#FFF;
 	padding:8px;
 	padding-bottom:9px;
-	font-size:12px;
+	font-size:10px;
 	float:left;
 	width:auto;
 	margin-top:3px;
@@ -1455,7 +1455,7 @@ td.formbuttonrow{
 	background-color: #B5C3D9;
 	color: #333;
 	padding: 8px;
-	font-size:12px;
+	font-size:10px;
 	float: left;
 	width: auto;
 	margin-top:3px;
@@ -1497,7 +1497,7 @@ td.formbuttonrow{
    background: #F0F5FA;
    border: 1px solid #777;
    text-align:left;
-   font-size:12px;
+   font-size:10px;
    white-space:nowrap;
    margin:1px;
 }
@@ -1540,7 +1540,7 @@ td.formbuttonrow{
    background: #F0F5FA;
    border: 1px solid #3A4F6C;
    text-align:left;
-   font-size:12px;
+   font-size:10px;
    white-space:nowrap;
    /*padding:3px 5px 3px 3px;*/
    /*width:300px;*/
@@ -1578,7 +1578,7 @@ td.formbuttonrow{
 	height:18px;
 	text-align:center;
 	margin:0px;
-	font-size:12px;
+	font-size:11px;
 	padding:3px;
 }
 
@@ -1636,7 +1636,7 @@ td.formbuttonrow{
 	border-top: 1px solid #5176B5;
 	border-bottom: 1px solid #5176B5;
 	color: #3A4F6C; 
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 1px;
 	margin: 0; 
@@ -1710,7 +1710,7 @@ td.formbuttonrow{
 	background-color: #000;
 	border: 0px;
 	color: #FFF;
-	font-size: 12px;
+	font-size: 10px;
 	width: auto;
 	-moz-border-radius-topleft: 7px;
 	-moz-border-radius-topright: 7px;
@@ -1742,7 +1742,7 @@ td.formbuttonrow{
 	margin-bottom: 0px;
 	padding: 4px;
 	color: #333;
-	font-size: 12px;
+	font-size: 10px;
 	border: 1px solid #C5C7CD;
 	-moz-border-radius: 5px;
 	width: auto;
@@ -1772,7 +1772,7 @@ td.formbuttonrow{
 { 
 	background: transparent url(style_images/<#IMG_DIR#>/tile_sub.gif);
 	color: #3A4F6C; 
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	margin: 0px 0px 1px 0px; 
 	padding: 5px; 
@@ -1885,7 +1885,7 @@ td.formbuttonrow{
 .pp-tiny-text
 {
 	color: gray;
-	font-size: 12px;
+	font-size: 10px;
 }
 
 .pp-mini-content-entry,
@@ -1945,7 +1945,7 @@ td.formbuttonrow{
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	margin-top:3px;
-	font-size:12px;
+	font-size:10px;
 }
 
 .pp-taboff,
@@ -1963,7 +1963,7 @@ td.formbuttonrow{
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	margin-top:3px;
-	font-size:12px;
+	font-size:10px;
 }
 
 .pp-tabshaded
@@ -2049,8 +2049,8 @@ html{
 body{ 
 	background: #FFF;
 	color: #222;
-	font-family: Tahoma,Verdana,Arial, "Trebuchet MS", Sans-Serif, Georgia, Courier, "Times New Roman", Serif;
-	font-size: 12px;
+	font-family: Verdana, Tahoma, Arial, "Trebuchet MS", Sans-Serif, Georgia, Courier, "Times New Roman", Serif;
+	font-size: 11px;
 	line-height: 135%;
 	margin: 0px;
 	padding: 0px; /* required for Opera to have 0 margin */
@@ -2071,7 +2071,7 @@ td.ipbtable
 { /* required for text in tables, because tables do not inherit from body */
 	background: transparent;
 	color: #222;
-	font-size: 12px;
+	font-size: 11px;
 	line-height: 135%;
 }
 
@@ -2113,7 +2113,7 @@ a:visited,
 a:active{
 	background: transparent;
 	color: #222;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover{
@@ -2164,7 +2164,7 @@ a:hover{
 .minipagelink,
 .minipagelinklast{
 	border: 1px solid #C2CFDF;
-	font-size: 12px;
+	font-size: 10px;
 	margin: 0 1px 0 0;
 }
 
@@ -2190,7 +2190,7 @@ a:hover{
 .fauxbutton{
 	background: #BFCDE0;
 	border: 1px solid #072A66;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: bold;
 	padding: 4px;
 }
@@ -2207,7 +2207,7 @@ a:hover{
 .forumdesc a:visited,
 .forumdesc a:active{ 
 	background: transparent;
-	font-size: 12px; 
+	font-size: 10px; 
 	color: #666;
 	line-height: 135%;
 	margin: 2px 0 0 0;
@@ -2252,7 +2252,7 @@ label{
 }
 
 img.attach{ 
-	background: #808080 url(style_images/<#IMG_DIR#>/click2enlarge.gif) no-repeat top right;
+	background: #808080 url(style_images/1/click2enlarge.gif) no-repeat top right;
 	border: 1px solid #808080;
 	margin: 0 2px 0 0;
 	padding: 11px 2px 2px 2px;
@@ -2314,7 +2314,7 @@ img.attach{
 	
 .thumbwrap img.galattach,
 .thumbwrapp img.galattach{
-	background: #FFF url(style_images/<#IMG_DIR#>/img_larger.gif) no-repeat bottom right;
+	background: #FFF url(style_images/1/img_larger.gif) no-repeat bottom right;
 	border: 1px solid #072A66;
 	margin: 5px;
 	padding: 2px 2px 10px 2px;
@@ -2400,12 +2400,12 @@ ul#help{
 .signature{  
 	background: transparent;
 	color: #339; 
-	font-size: 12px;
+	font-size: 10px;
 	line-height: 150%;
 }
 
 .postdetails{ 
-	font-size: 12px;
+	font-size: 10px;
 	line-height:140%;
 }
 
@@ -2493,18 +2493,18 @@ ul#help{
 }
 
 .desc{ 
-	font-size: 12px; 
+	font-size: 11px; 
 	color: #434951;
 }
 
 .lastaction
 {
-	font-size: 12px; 
+	font-size: 10px; 
 	color: #434951;
 }
 
 .edit{ 
-	font-size: 12px;
+	font-size: 9px;
 }
 
 .thin{ 
@@ -2549,7 +2549,7 @@ ul#help{
 .calweekday{ 
 	background: #DFE6EF;
 	color: #666;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: bold;
 	margin: 0;
 	padding: 4px;
@@ -2630,8 +2630,8 @@ select{
 	background: #FFF;
 	border: 1px solid #4C77B6;
 	color: #000;
-	font-family: tahoma, verdana, helvetica, sans-serif;
-	font-size: 12px;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 11px;
 	margin: 5px;
 	padding: 2px;
 	vertical-align: middle;
@@ -2686,13 +2686,13 @@ input.button{
 }
 
 optgroup option{
-	font-family: tahoma, verdana, helvetica, sans-serif;
+	font-family: verdana, helvetica, sans-serif;
 	font-size: 12px;
 }
 
 .codebuttons{ 
-	font-family: Tahoma, Verdana, Helvetica, Sans-Serif; 
-	font-size: 12px; 
+	font-family: Verdana, Helvetica, Sans-Serif; 
+	font-size: 10px; 
 	vertical-align: middle;
 	margin:2px;
 }
@@ -2704,8 +2704,8 @@ optgroup option{
 	background: #FFF;
 	border: 1px solid #4C77B6;
 	color: #000;
-	font-family: Tahoma, Verdana, Helvetica, Sans-Serif;
-	font-size: 12px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 11px;
 	padding: 2px;
 	vertical-align: middle;
 }
@@ -2803,13 +2803,13 @@ optgroup option{
  */
 
 .quotetop{
-	background: #E4EAF2 url(style_images/<#IMG_DIR#>/css_img_quote.gif) no-repeat right;
+	background: #E4EAF2 url(style_images/1/css_img_quote.gif) no-repeat right;
 	border: 1px dotted #000;
 	border-bottom: 0;
 	border-left: 4px solid #8394B2;
 	color: #000;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 10px;
 	margin: 2px auto 0 auto;
 	padding: 3px;
 }
@@ -2827,7 +2827,7 @@ optgroup option{
 .codetop,
 .sqltop,
 .htmltop{
-	background: #FDDBCC url(style_images/<#IMG_DIR#>/css_img_code.gif) no-repeat right;
+	background: #FDDBCC url(style_images/1/css_img_code.gif) no-repeat right;
 	color: #000;
 	font-weight: bold;
 	margin: 0 auto 0 auto;
@@ -2857,7 +2857,7 @@ optgroup option{
 	border: 1px solid #000; 
 	color: #465584; 
 	font-family: Verdana, Arial; 
-	font-size: 12px; 
+	font-size: 11px; 
 	padding: 2px; 
 	white-space: normal;
 }
@@ -2890,7 +2890,7 @@ optgroup option{
 .borderwrap h3,
 .maintitle,
 .maintitlecollapse{
-	background: url(style_images/<#IMG_DIR#>/tile_cat.gif);
+	background: url(style_images/1/tile_cat.gif);
 	border: 1px solid #FFF;
 	border-bottom: 1px solid #5176B5;
 	color: #FFF; 
@@ -2950,10 +2950,10 @@ table th,
 .subtitle,
 .subtitlediv,
 .postlinksbar{ 
-	background: transparent url(style_images/<#IMG_DIR#>/tile_sub.gif);
+	background: transparent url(style_images/1/tile_sub.gif);
 	border-bottom: 1px solid #5176B5;
 	color: #3A4F6C; 
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 1px;
 	margin: 0; 
@@ -3045,7 +3045,7 @@ td.formbuttonrow{
 	background: transparent;
 	border: 0;
 	color: #222;
-	font-size: 12px;
+	font-size: 11px;
 	margin: 0;
 	padding: 5px;
 	text-align: left;
@@ -3090,7 +3090,7 @@ td.formbuttonrow{
 
 .newslink td{
 	color: #222;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 5px 5px 5px 10px;
 }
 
@@ -3105,7 +3105,7 @@ td.formbuttonrow{
 	background: #FFF;
 	border: 1px solid #999;
 	color: #072A66;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 3px;
 	vertical-align: middle;
 	width: auto;
@@ -3215,7 +3215,7 @@ td.formbuttonrow{
 
 #gfooter td{
 	color: #FFF;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 4px;
 }
 
@@ -3225,7 +3225,7 @@ td.formbuttonrow{
 }
 
 #logostrip{ 
-	background: #3860BB url(style_images/<#IMG_DIR#>/tile_back.gif);
+	background: #3860BB url(style_images/1/tile_back.gif);
 	border: 1px solid #FFF;
 	height: 68px;
 	margin: 0;
@@ -3233,14 +3233,14 @@ td.formbuttonrow{
 }
 
 #logographic{
-	background: transparent url(style_images/<#IMG_DIR#>/logo4.gif) no-repeat left;
+	background: transparent url(style_images/1/logo4.gif) no-repeat left;
 	height: 68px;
 	margin: 0;
 	padding: 0;
 }
 
 #submenu{ 
-	background: transparent url(style_images/<#IMG_DIR#>/tile_sub.gif);
+	background: transparent url(style_images/1/tile_sub.gif);
 	border: 1px solid #FFF;
 	border-top: 0;
 	color: #3A4F6C; 
@@ -3252,9 +3252,9 @@ td.formbuttonrow{
 .ipb-top-left-link,
 .ipb-top-right-link
 {
-	background: transparent url(style_images/<#IMG_DIR#>/tile_sub-lite.gif);
+	background: transparent url(style_images/1/tile_sub-lite.gif);
 	float: right;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 0.5px;
 	margin: 0px;
@@ -3307,7 +3307,7 @@ td.formbuttonrow{
 #userlinksguest p{
 	background: transparent !important;
 	border: 0 !important;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 1px;
 	margin: 0 !important;
@@ -3365,7 +3365,7 @@ td.formbuttonrow{
 	border: 1px solid #C2CFDF;
 	border-bottom: 0;
 	color: #000;
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold;
 	margin: 0 10px 0 0;
 	padding: 5px;
@@ -3407,7 +3407,7 @@ td.formbuttonrow{
 #print h3,
 #print p{
 	border-bottom: 1px solid #999;
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: normal;
 }
 
@@ -3420,7 +3420,7 @@ td.formbuttonrow{
 
 #print h4{
 	background: #F9F9F9;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #print p{
@@ -3456,7 +3456,7 @@ td.formbuttonrow{
 	background-color:#FFF;
 	padding:8px;
 	padding-bottom:9px;
-	font-size:12px;
+	font-size:10px;
 	float:left;
 	width:auto;
 	margin-top:3px;
@@ -3470,7 +3470,7 @@ td.formbuttonrow{
 	background-color: #B5C3D9;
 	color: #333;
 	padding: 8px;
-	font-size:12px;
+	font-size:10px;
 	float: left;
 	width: auto;
 	margin-top:3px;
@@ -3512,7 +3512,7 @@ td.formbuttonrow{
    background: #F0F5FA;
    border: 1px solid #777;
    text-align:left;
-   font-size:12px;
+   font-size:10px;
    white-space:nowrap;
    margin:1px;
 }
@@ -3555,7 +3555,7 @@ td.formbuttonrow{
    background: #F0F5FA;
    border: 1px solid #3A4F6C;
    text-align:left;
-   font-size:12px;
+   font-size:10px;
    white-space:nowrap;
    /*padding:3px 5px 3px 3px;*/
    /*width:300px;*/
@@ -3593,7 +3593,7 @@ td.formbuttonrow{
 	height:18px;
 	text-align:center;
 	margin:0px;
-	font-size:12px;
+	font-size:11px;
 	padding:3px;
 }
 
@@ -3606,7 +3606,7 @@ td.formbuttonrow{
 	padding:3px;
 	font-weight:normal;
 	background-color:#EEF2F7;
-	background-image: url(style_images/<#IMG_DIR#>/menu_action_down-padded.gif);
+	background-image: url(style_images/1/menu_action_down-padded.gif);
 	background-repeat: no-repeat;
 	background-position: right;
 }
@@ -3647,11 +3647,11 @@ td.formbuttonrow{
 
 .popupmenu-category
 { 
-	background: transparent url(style_images/<#IMG_DIR#>/tile_sub.gif);
+	background: transparent url(style_images/1/tile_sub.gif);
 	border-top: 1px solid #5176B5;
 	border-bottom: 1px solid #5176B5;
 	color: #3A4F6C; 
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	letter-spacing: 1px;
 	margin: 0; 
@@ -3705,7 +3705,7 @@ td.formbuttonrow{
 	height:20px;
 	margin: 0px;
 	padding: 6px 4px 4px 4px;
-	background: transparent url(style_images/<#IMG_DIR#>/css_pp_header.gif);
+	background: transparent url(style_images/1/css_pp_header.gif);
 	border: 1px solid #3A4F6C;
 	border-bottom: 0px;
 	color: #FFF;
@@ -3725,7 +3725,7 @@ td.formbuttonrow{
 	background-color: #000;
 	border: 0px;
 	color: #FFF;
-	font-size: 12px;
+	font-size: 10px;
 	width: auto;
 	-moz-border-radius-topleft: 7px;
 	-moz-border-radius-topright: 7px;
@@ -3757,7 +3757,7 @@ td.formbuttonrow{
 	margin-bottom: 0px;
 	padding: 4px;
 	color: #333;
-	font-size: 12px;
+	font-size: 10px;
 	border: 1px solid #C5C7CD;
 	-moz-border-radius: 5px;
 	width: auto;
@@ -3785,9 +3785,9 @@ td.formbuttonrow{
 
 .pp-header
 { 
-	background: transparent url(style_images/<#IMG_DIR#>/tile_sub.gif);
+	background: transparent url(style_images/1/tile_sub.gif);
 	color: #3A4F6C; 
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold; 
 	margin: 0px 0px 1px 0px; 
 	padding: 5px; 
@@ -3795,7 +3795,7 @@ td.formbuttonrow{
 
 .pp-title
 {
-	background: url(style_images/<#IMG_DIR#>/css_pp_header.gif);
+	background: url(style_images/1/css_pp_header.gif);
 	border-bottom: 1px solid #5176B5;
 	color: #FFF; 
 	font-size: 12px;
@@ -3828,7 +3828,7 @@ td.formbuttonrow{
 
 .pp-contentbox-back
 {
-	background-image: url(style_images/<#IMG_DIR#>/folder_profile_portal/pp-css-contentblock.gif);
+	background-image: url(style_images/1/folder_profile_portal/pp-css-contentblock.gif);
 	background-repeat: repeat-x;
 	background-color: #ACBFD9;
 	padding: 6px;
@@ -3900,7 +3900,7 @@ td.formbuttonrow{
 .pp-tiny-text
 {
 	color: gray;
-	font-size: 12px;
+	font-size: 10px;
 }
 
 .pp-mini-content-entry,
@@ -3929,7 +3929,7 @@ td.formbuttonrow{
 .pp-tabclear,
 .pp-maintitle
 {
-	background: url(style_images/<#IMG_DIR#>/css_pp_header.gif);
+	background: url(style_images/1/css_pp_header.gif);
 	border: 1px solid #FFF;
 	border-bottom: 1px solid #5176B5;
 	color: #FFF; 
@@ -3956,11 +3956,11 @@ td.formbuttonrow{
 	padding:8px;
 	float:left;
 	width:auto;
-	background-image: url(style_images/<#IMG_DIR#>/css_pp_tab_on.gif);
+	background-image: url(style_images/1/css_pp_tab_on.gif);
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	margin-top:3px;
-	font-size:12px;
+	font-size:10px;
 }
 
 .pp-taboff,
@@ -3974,16 +3974,16 @@ td.formbuttonrow{
 	padding:8px;
 	float: left;
 	width: auto;
-	background-image: url(style_images/<#IMG_DIR#>/css_pp_tab_off.gif);
+	background-image: url(style_images/1/css_pp_tab_off.gif);
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	margin-top:3px;
-	font-size:12px;
+	font-size:10px;
 }
 
 .pp-tabshaded
 {
-	background-image: url(style_images/<#IMG_DIR#>/css_pp_tab_shaded.gif);
+	background-image: url(style_images/1/css_pp_tab_shaded.gif);
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	color: #516795;
