@@ -14,34 +14,34 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>XML-RPC Log Detail</div>
+ <div class='tableheaderalt'>XML-RPC 日志细节</div>
 	<table width='100%' cellpadding='4' cellspacing='0'>
 	<tr>
 		<td class='tablerow2'>
 			<fieldset>
-				<legend><strong>Basics</strong></legend>
+				<legend><strong>基本信息</strong></legend>
 				<table width='100%' cellpadding='4' cellspacing='0'>
 				 <tr>
-					<td width='30%' class='tablerow1'>API Key</td>
+					<td width='30%' class='tablerow1'>API 键值</td>
 					<td width='70%' class='tablerow1'><strong>{$log['api_log_key']}</strong></td>
 				</tr>
 				<tr>
-					<td class='tablerow1'>IP Address</td>
+					<td class='tablerow1'>IP 地址</td>
 					<td class='tablerow1'>{$log['api_log_ip']}</td>
 				</tr>
 				<tr>
-					<td class='tablerow1'>Time</td>
+					<td class='tablerow1'>时间</td>
 					<td class='tablerow1'>{$log['_api_log_date']}</td>
 				</tr>
 				<tr>
-					<td class='tablerow1'>Success</td>
+					<td class='tablerow1'>操作成功</td>
 					<td class='tablerow1'><img src='{$this->ipsclass->skin_acp_url}/images/{$log['_api_log_allowed']}' border='0' alt='-' class='ipd' /></td>
 				</tr>
 				</table>
 			</fieldset>
 		<br />
 		<fieldset>
-			<legend><strong>XML-RPC Data (Form Data)</strong></legend>
+			<legend><strong>XML-RPC 数据 (表单提交)</strong></legend>
 			<div style='border:1px solid black;background-color:#FFF;padding:4px;white-space:pre;height:400px;overflow:auto'>
 				{$log['_api_log_query']}
 			</div>
@@ -66,15 +66,15 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>XML-RPC Request Log</div>
+ <div class='tableheaderalt'>XML-RPC 请求日志</div>
  <table width='100%' cellpadding='4' cellspacing='0'>
  <tr>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
-  <td class='tablesubheader' width='30%'>API Key</td>
-  <td class='tablesubheader' width='20%'>IP Address</td>
-  <td class='tablesubheader' width='44%' align='center'>Date</td>
-  <td class='tablesubheader' width='5%' align='center'>Status</td>
-  <td class='tablesubheader' width='5%' align='center'>Log</td>
+  <td class='tablesubheader' width='30%'>API 键值</td>
+  <td class='tablesubheader' width='20%'>IP 地址</td>
+  <td class='tablesubheader' width='44%' align='center'>日期</td>
+  <td class='tablesubheader' width='5%' align='center'>状态</td>
+  <td class='tablesubheader' width='5%' align='center'>日志</td>
  </tr>
 EOF;
 
@@ -121,12 +121,12 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>XML-RPC API Users</div>
+ <div class='tableheaderalt'>XML-RPC API 用户</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
   <td class='tablesubheader' width='55%'>API User</td>
-  <td class='tablesubheader' width='20%' align='center'>API Key</td>
+  <td class='tablesubheader' width='20%' align='center'>API 键值</td>
   <td class='tablesubheader' width='20%' align='center'>IP</td>
   <td class='tablesubheader' width='5%'><img id="menumainone" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /></td>
  </tr>
@@ -148,8 +148,8 @@ $IPBHTML .= <<<EOF
   menu_build_menu(
   "menu{$user['api_user_id']}",
   new Array(
-			img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_edit&amp;api_user_id={$user['api_user_id']}'>Edit API User...</a>",
-  			img_delete + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_remove&amp;api_user_id={$user['api_user_id']}\");'>Remove API User...</a>"
+			img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_edit&amp;api_user_id={$user['api_user_id']}'>编辑 API 用户...</a>",
+  			img_delete + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_remove&amp;api_user_id={$user['api_user_id']}\");'>删除 API 用户...</a>"
   		    ) );
  </script>
 EOF;
@@ -159,7 +159,7 @@ else
 {
 $IPBHTML .= <<<EOF
  <tr>
-	<td colspan='5' class='tablerow1' style='text-align:center;font-size:14px'><em>There are no API users currently.<br /><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>Would you like to create one?</a></em></td>
+	<td colspan='5' class='tablerow1' style='text-align:center;font-size:14px'><em>当前没有任何激活的 API 用户.<br /><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>您想要创建一个吗?</a></em></td>
  </tr>
 EOF;
 }
@@ -171,7 +171,7 @@ $IPBHTML .= <<<EOF
 <script type="text/javascript">
   menu_build_menu(
   "menumainone",
-  new Array( img_add   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>Create New API User...</a>" ) );
+  new Array( img_add   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>创建新的 API 用户...</a>" ) );
 </script>
 EOF;
 
@@ -204,7 +204,7 @@ var tabfactory    = new tab_factory();
  <tr>
    <td class='tablerow1'>
       <fieldset>
-       <legend><strong>API User Basics</strong></legend>
+       <legend><strong>API 用户基本信息</strong></legend>
  		<table cellpadding='0' cellspacing='0' border='0' width='100%'>
 EOF;
 if ( $type == 'add' )
@@ -212,8 +212,8 @@ if ( $type == 'add' )
 $IPBHTML .= <<<EOF
 	<tr>
 	  <td width='40%' class='tablerow1'>
-		<strong>API User Key</strong>
-		<div class='desctext'>This key is automatically generated and will be re-generated if you refresh this form.</div>
+		<strong>API 用户键值</strong>
+		<div class='desctext'>该键值由系统自动生成, 如果您刷新键值也将改变.</div>
 		<input type='hidden' name='api_user_key' value='{$form['_api_user_key']}' />
 	  </td>
 	  <td width='60%' class='tablerow2' style='font-size:14px'>{$form['_api_user_key']}</td>
@@ -223,11 +223,11 @@ EOF;
 
 $IPBHTML .= <<<EOF
  		<tr>
-   		  <td width='40%' class='tablerow1'><strong>API User Title</strong><div class='desctext'>The title is just a name for your records for easier identification.</div></td>
+   		  <td width='40%' class='tablerow1'><strong>API 用户名称</strong><div class='desctext'>这一名称仅仅是作为给身份认证记录的名字.</div></td>
    		  <td width='60%' class='tablerow2'>{$form['api_user_name']}</td>
  		</tr>
 		<tr>
-		  <td width='40%' class='tablerow1'><strong>API Restrict IP</strong><div class='desctext'><strong>Optional</strong>: You may enter the IP Address of the server you only wish to grant access. This increases security and is recommended.</div></td>
+		  <td width='40%' class='tablerow1'><strong>API 限制 IP 地址</strong><div class='desctext'><strong>可选</strong>: 您可以输入服务器的 IP 地址如果您只允许授权登录. 我们推荐您这样做以提高系统安全性.</div></td>
 		  <td width='60%' class='tablerow2'>{$form['api_user_ip']}</td>
 		</tr>
 	   </table>
@@ -237,7 +237,7 @@ $IPBHTML .= <<<EOF
  <tr>
   <td class='tablerow1'>
       <fieldset>
-       <legend><strong>API Permissions</strong></legend>
+       <legend><strong>API 权限设置</strong></legend>
 		<div class='tabwrap'>
 EOF;
 
@@ -253,7 +253,7 @@ EOF;
 
 $IPBHTML .= <<<EOF
 		</div>
-		<div class='tabclear'>API Permissions</div>
+		<div class='tabclear'>API 权限设置</div>
 EOF;
 
 if ( is_array( $permissions ) AND count( $permissions ) )
@@ -270,7 +270,7 @@ EOF;
 			{
 $IPBHTML .= <<<EOF
 			<tr>
-				<td class='tablerow1' width='70%'>Allow access to <strong>{$_data['title']}</strong></td>
+				<td class='tablerow1' width='70%'>允许 <strong>{$_data['title']} 使用接口</strong></td>
 				<td class='tablerow2' width='30%'>{$_data['form']}</td>
 EOF;
 			}
