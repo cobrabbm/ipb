@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <settingexport exported="1199459980">
 	<settinggroup>
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>boardguidelines</conf_title_keyword>
 			<conf_title_title>论坛规则</conf_title_title>
-			<conf_title_desc>这一部分允许您修改论坛规则.  如果开启,   头部将出现论坛规则的链接.</conf_title_desc>
+			<conf_title_desc>这一部分允许您修改论坛规则. 如果开启, 页首将出现论坛规则的链接.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
 
 		<setting>
 			<conf_id>1</conf_id>
-			<conf_title>在头部展示论坛规则链接 ?</conf_title>
+			<conf_title>在页首显示论坛规则链接?</conf_title>
 			<conf_description></conf_description>
 			<conf_group>1</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -32,8 +32,8 @@
 
 		<setting>
 			<conf_id>2</conf_id>
-			<conf_title>外部论坛规则页面链接</conf_title>
-			<conf_description>输入外部论坛规则页面的 URL 地址,   如果您不希望启用这一功能请留空.</conf_description>
+			<conf_title>链接到外部论坛规则页面?</conf_title>
+			<conf_description>输入外部论坛规则页面的 URL 地址, 如果您不希望启用这一功能请留空.</conf_description>
 			<conf_group>1</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>gl_link</conf_key>
@@ -52,7 +52,7 @@
 
 		<setting>
 			<conf_id>3</conf_id>
-			<conf_title>头部使用标题 ?</conf_title>
+			<conf_title>页首使用标题?</conf_title>
 			<conf_description></conf_description>
 			<conf_group>1</conf_group>
 			<conf_type>input</conf_type>
@@ -92,43 +92,43 @@
 
 		<setting>
 			<conf_id>5</conf_id>
-			<conf_title><![CDATA[注册条款和规则]]></conf_title>
-			<conf_description><![CDATA[这一部分的内容将在新会员注册时出现 .
+			<conf_title><![CDATA[注册条款 &amp; 规则]]></conf_title>
+			<conf_description><![CDATA[这一部分的内容将在新会员注册时出现.
 <b>HTML 开启</b>]]></conf_description>
 			<conf_group>1</conf_group>
 			<conf_type>editor</conf_type>
 			<conf_key>reg_rules</conf_key>
 			<conf_value></conf_value>
-			<conf_default><![CDATA[<b>论坛条款和规则</b>
+			<conf_default><![CDATA[<b>论坛条款 & 规则</b>
 
-当您申请会员时,  表示您已经同意遵守本规章.
+当您申请用户时，表示您已经同意遵守本规章。
 
-欢迎您加入本站点参加交流和讨论,  本站点为公共论坛,  为维护网上公共秩序和社会稳定,  请您自觉遵守以下条款: 
+欢迎您加入本站点参加交流和讨论，本站点为公共论坛，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：
 
-一,  不得利用本站危害国家安全,  泄露国家秘密,  不得侵犯国家社会集体的和公民的合法权益,  不得利用本站制作,  复制和传播下列信息: 
-　 (一) 煽动抗拒,  破坏宪法和法律,  行政法规实施的;
-　(二) 煽动颠覆国家政权,  推翻社会主义制度的;
-　(三) 煽动分裂国家,  破坏国家统一的; 
-　(四) 煽动民族仇恨,  民族歧视,  破坏民族团结的; 
-　(五) 捏造或者歪曲事实,  散布谣言,  扰乱社会秩序的; 
-　(六) 宣扬封建迷信,  淫秽,  色情,  赌博,  暴力,  凶杀,  恐怖,  教唆犯罪的; 
-　(七) 公然侮辱他人或者捏造事实诽谤他人的,  或者进行其他恶意攻击的; 
-　(八) 损害国家机关信誉的; 
-　(九) 其他违反宪法和法律行政法规的; 
-　(十) 进行商业广告行为的. 
+一、不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播下列信息：
+　 （一）煽动抗拒、破坏宪法和法律、行政法规实施的；
+　（二）煽动颠覆国家政权，推翻社会主义制度的；
+　（三）煽动分裂国家、破坏国家统一的；
+　（四）煽动民族仇恨、民族歧视，破坏民族团结的；
+　（五）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；
+　（六）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；
+　（七）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；
+　（八）损害国家机关信誉的；
+　（九）其他违反宪法和法律行政法规的；
+　（十）进行商业广告行为的。
 
-二,  互相尊重,  对自己的言论和行为负责,  不得随意辱骂攻击同好. 
-三,  禁止在申请会员时使用相关本站的词汇,  或是带有侮辱,  毁谤,  造谣类的或是有其含义的各种语言进行注册会员,  否则我们会将其删除. 
-四,  禁止以任何方式对本站进行各种破坏行为. 
-五,  如果您有违反国家相关法律法规的行为,  本站概不负责,  您的登录论坛信息均被记录无疑,  必要时,  我们会向相关的国家管理部门提供此类信息. 
-六,  论坛公告版和各版均有相关管理制度公布,  请新注册会员多注意了解. 
+二、互相尊重，对自己的言论和行为负责，不得随意辱骂攻击同好。
+三、禁止在申请用户时使用相关本站的词汇，或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户，否则我们会将其删除。
+四、禁止以任何方式对本站进行各种破坏行为。
+五、如果您有违反国家相关法律法规的行为，本站概不负责，您的登录论坛信息均被记录无疑，必要时，我们会向相关的国家管理部门提供此类信息。
+六、论坛公告版和各版均有相关管理制度公布，请新注册会员多注意了解。
 
 ]]></conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>5</conf_position>
-			<conf_start_group><![CDATA[注册条款和规则]]></conf_start_group>
+			<conf_start_group><![CDATA[注册条款 &amp; 规则]]></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>0</conf_add_cache>
 			<conf_title_keyword>boardguidelines</conf_title_keyword>
@@ -139,7 +139,7 @@
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>boardoffline</conf_title_keyword>
 			<conf_title_title>论坛离线 / 上线</conf_title_title>
-			<conf_title_desc>Use this setting to turn switch your board online or offline and leave a message for your visitors.</conf_title_desc>
+			<conf_title_desc>您可以选择是否对用户开放论坛.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -147,7 +147,7 @@
 		<setting>
 			<conf_id>6</conf_id>
 			<conf_title>论坛离线?</conf_title>
-			<conf_description><![CDATA[论坛离线后仍然会对特别的会员组开放 (可以在会员和会员组部分进行这一设置).]]></conf_description>
+			<conf_description><![CDATA[论坛离线后仍然会对特别的用户组开放 (可以在会员 & 用户组部分进行这一设置).]]></conf_description>
 			<conf_group>2</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>board_offline</conf_key>
@@ -187,7 +187,7 @@
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>calendar</conf_title_keyword>
-			<conf_title_title><![CDATA[日历和生日]]></conf_title_title>
+			<conf_title_title><![CDATA[日历 &amp; 生日]]></conf_title_title>
 			<conf_title_desc>这一部分中您可以设置论坛日历和相关选项.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
@@ -196,7 +196,7 @@
 		<setting>
 			<conf_id>8</conf_id>
 			<conf_title>在论坛首页日历中显示生日信息?</conf_title>
-			<conf_description><![CDATA[如果设置为 "是",   首页日历中将显示当天过生日的会员信息.]]></conf_description>
+			<conf_description><![CDATA[如果设置为 "是", 首页日历中将显示当天过生日的会员信息.]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>show_bday_calendar</conf_key>
@@ -215,8 +215,8 @@
 
 		<setting>
 			<conf_id>9</conf_id>
-			<conf_title><![CDATA[在论坛首页显示今日生日的会员?]]></conf_title>
-			<conf_description><![CDATA[如果设置为 "是",  首页将显示今日过生日的会员.]]></conf_description>
+			<conf_title><![CDATA[在论坛首页显示今日生日的用户?]]></conf_title>
+			<conf_description><![CDATA[如果设置为 "是", 首页将显示今日过生日的会员.]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>show_birthdays</conf_key>
@@ -235,8 +235,8 @@
 
 		<setting>
 			<conf_id>10</conf_id>
-			<conf_title>没有会员生日时自动隐藏?</conf_title>
-			<conf_description><![CDATA[如果选择"是", 首页将不显示今日的会员.]]></conf_description>
+			<conf_title>没有会员过生日时自动隐藏?</conf_title>
+			<conf_description><![CDATA[如果选 "是", 当没有会员过生日时 "今天过生日的会员" 一栏会隐藏.]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>autohide_bday</conf_key>
@@ -255,8 +255,8 @@
 
 		<setting>
 			<conf_id>11</conf_id>
-			<conf_title>显示即将来临的日历事件?</conf_title>
-			<conf_description><![CDATA[如果选择"是", 论坛首页将显示单个的即将来临的事件, 而不会显示周期性或者时间较长远的事件.]]></conf_description>
+			<conf_title>Show forthcoming calendar events?</conf_title>
+			<conf_description><![CDATA[If set to "yes", this will show single forthcoming calendar events on the board index view. It will not show recurring events or ranged events.]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>show_calendar</conf_key>
@@ -266,7 +266,7 @@
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>4</conf_position>
-			<conf_start_group>即将来临的日历事件</conf_start_group>
+			<conf_start_group>Forcoming Calendar Events</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
 			<conf_title_keyword>calendar</conf_title_keyword>
@@ -275,8 +275,8 @@
 
 		<setting>
 			<conf_id>12</conf_id>
-			<conf_title>没有事件时自动隐藏?</conf_title>
-			<conf_description><![CDATA[如果选择"是", 论坛首页将不会显示即将来临的日历事件.]]></conf_description>
+			<conf_title>没有事件显示时自动隐藏?</conf_title>
+			<conf_description><![CDATA[If set to "yes", this will remove the forcoming calendar events block from the board index view if there are none to show.]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>autohide_calendar</conf_key>
@@ -295,8 +295,8 @@
 
 		<setting>
 			<conf_id>13</conf_id>
-			<conf_title><![CDATA[在 [x] 日前显示日历事件]]></conf_title>
-			<conf_description>控制在首页显示多少天内即将将发生的事件.</conf_description>
+			<conf_title><![CDATA[显示将来几天内的事件?]]></conf_title>
+			<conf_description>控制在首页可以看到未来多少天之内的事件.</conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>calendar_limit</conf_key>
@@ -315,8 +315,8 @@
 
 		<setting>
 			<conf_id>14</conf_id>
-			<conf_title><![CDATA[日历中选择年份的下拉框的起始年]]></conf_title>
-			<conf_description>该选项用于查看日历/发帖事件.</conf_description>
+			<conf_title><![CDATA[年份下拉菜单起始年份]]></conf_title>
+			<conf_description>该选项用于查看日历/添加事件.</conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>start_year</conf_key>
@@ -335,8 +335,8 @@
 
 		<setting>
 			<conf_id>15</conf_id>
-			<conf_title><![CDATA[日历中选择年份的下拉框的终止年]]></conf_title>
-			<conf_description><![CDATA[该选项用于查看日历/发帖事件.设置示例:开始年份 2007, 如果填 5, 那么结束年份为 2012]]></conf_description>
+			<conf_title><![CDATA[年份下拉菜单终止年份]]></conf_title>
+			<conf_description><![CDATA[该选项用于查看日历/添加事件.设置示例:开始年份 2007, 如果填 5, 那么结束年份为 2012]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>year_limit</conf_key>
@@ -356,7 +356,7 @@
 		<setting>
 			<conf_id>16</conf_id>
 			<conf_title>从周一开始每一周?</conf_title>
-			<conf_description>日历默认一周从周日开始, 如果这里设置为"是", 您的论坛日历上的一周将从周一开始.</conf_description>
+			<conf_description>日历默认一周从周日开始,如果这里设置为"是",您的论坛日历上的一周将从周一开始.</conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_calendar_mon</conf_key>
@@ -384,7 +384,7 @@
 
 		<setting>
 			<conf_id>17</conf_id>
-			<conf_title>Cookie 域名</conf_title>
+			<conf_title>Cookie 作用域</conf_title>
 			<conf_description><![CDATA[提示:使用 .your-domain.com 作为全局 cookie 域名.]]></conf_description>
 			<conf_group>4</conf_group>
 			<conf_type>input</conf_type>
@@ -425,7 +425,7 @@
 		<setting>
 			<conf_id>19</conf_id>
 			<conf_title>Cookie 路径</conf_title>
-			<conf_description>即 IBF 主目录对于网站域名的相对路径</conf_description>
+			<conf_description>即 IPB 主目录对于网站域名的相对路径</conf_description>
 			<conf_group>4</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>cookie_path</conf_key>
@@ -445,7 +445,7 @@
 		<setting>
 			<conf_id>20</conf_id>
 			<conf_title>创建增强自动登录 Cookie?</conf_title>
-			<conf_description>如果打开, 当会员登录时, 将在 Cookie 中记录加密的位置信息, 黑客不可能窃取这样的 Cookie.如果会员不能登录, 关闭此选项.</conf_description>
+			<conf_description>如果打开,当会员登录时,将在 Cookie 中记录加密的位置信息,黑客不可能窃取这样的 Cookie.如果会员不能登录,关闭此选项.</conf_description>
 			<conf_group>4</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>cookie_stronghold</conf_key>
@@ -475,7 +475,7 @@
 			<conf_id>21</conf_id>
 			<conf_title>使用 COPPA 注册系统</conf_title>
 			<conf_description><![CDATA[
-			在论坛上使用<a href="http://www.ftc.gov/ogc/coppa1.htm" target="_blank">COPPA</a>注册系统, 它会让13岁以下的儿童, 通过传真或邮件的方式才能验证注册通过.]]></conf_description>
+			在论坛上使用<a href="http://www.ftc.gov/ogc/coppa1.htm" target="_blank">COPPA</a>注册系统,它会让13岁以下的儿童,通过传真或邮件的方式才能验证注册通过.]]></conf_description>
 			<conf_group>5</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>use_coppa</conf_key>
@@ -494,7 +494,7 @@
 
 		<setting>
 			<conf_id>22</conf_id>
-			<conf_title>COPPA表单显示的传真号码</conf_title>
+			<conf_title>COPPA 表单显示的传真号码</conf_title>
 			<conf_description></conf_description>
 			<conf_group>5</conf_group>
 			<conf_type>input</conf_type>
@@ -514,7 +514,7 @@
 
 		<setting>
 			<conf_id>23</conf_id>
-			<conf_title>COPPA表单邮寄地址</conf_title>
+			<conf_title>COPPA 表单邮寄地址</conf_title>
 			<conf_description></conf_description>
 			<conf_group>5</conf_group>
 			<conf_type>textarea</conf_type>
@@ -534,8 +534,8 @@
 
 		<setting>
 			<conf_id>300</conf_id>
-			<conf_title>附加的COPPA信息</conf_title>
-			<conf_description>这里的文字信息将会被显示在必须通过父母签核的表单上, 并且能够用来把您的隐私信息包含在内(COPPA承诺的一项要求)</conf_description>
+			<conf_title>附加的 COPPA 信息</conf_title>
+			<conf_description>这里的文字信息将会被显示在必须通过父母签核的表单上,并且能够用来把您的隐私信息包含在内(COPPA承诺的一项要求)</conf_description>
 			<conf_group>5</conf_group>
 			<conf_type>editor</conf_type>
 			<conf_key>coppa_consent_extra</conf_key>
@@ -563,8 +563,8 @@
 
 		<setting>
 			<conf_id>24</conf_id>
-			<conf_title>在主题旁显示会员自定义信息?</conf_title>
-			<conf_description><![CDATA[如果选择"是", 将在主题旁的作者栏显示会员附加信息, 这将在数据库查询语句中添加一个"LEFT JOIN"子句.]]></conf_description>
+			<conf_title>在主题旁显示用户自定义信息?</conf_title>
+			<conf_description><![CDATA[如果选择"是",将在主题旁的作者栏显示用户附加信息,这将在数据库查询语句中添加一个"LEFT JOIN"子句.]]></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>custom_profile_topic</conf_key>
@@ -584,7 +584,7 @@
 		<setting>
 			<conf_id>25</conf_id>
 			<conf_title>缓存日历和生日?</conf_title>
-			<conf_description><![CDATA[如果不是每天有人访问您的论坛, 建议不要打开.]]></conf_description>
+			<conf_description><![CDATA[如果不是每天有人访问您的论坛,建议不要打开.]]></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>cache_calendar</conf_key>
@@ -603,7 +603,7 @@
 
 		<setting>
 			<conf_id>26</conf_id>
-			<conf_title><![CDATA[有效会员的活动时间 [分钟]]]></conf_title>
+			<conf_title><![CDATA[有效用户的活动时间 [分钟]]]></conf_title>
 			<conf_description></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>input</conf_type>
@@ -624,7 +624,7 @@
 		<setting>
 			<conf_id>27</conf_id>
 			<conf_title>在数据库中保存阅读主题</conf_title>
-			<conf_description><![CDATA[输入您希望储存主题信息的天数, 对于访问量大的论坛, 我们推荐设置为 7 天.系统将自动清理并更新这些信息.输入 0 将不在数据库储存主题信息.]]></conf_description>
+			<conf_description><![CDATA[输入您希望储存主题信息的天数,对于访问量大的论坛,我们推荐设置为 7 天.系统将自动清理并更新这些信息.输入 0 将不在数据库储存主题信息.]]></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>db_topic_read_cutoff</conf_key>
@@ -644,7 +644,7 @@
 		<setting>
 			<conf_id>28</conf_id>
 			<conf_title>立即更新主题查看次数</conf_title>
-			<conf_description>如果打开, 主题查看计数器会在主题加载时更新.如果关闭, 主题查看数会保存在另一个数据表, 并会每6小时更新一次计数器.这将会显著减少对主题表的负载.如果您的论坛非常大.建议您关闭这个选项.</conf_description>
+			<conf_description>如果打开,主题查看计数器会在主题加载时更新.如果关闭,主题查看数会保存在另一个数据表,并会每6小时更新一次计数器.这将会显著减少对主题表的负载.如果您的论坛非常大.建议您关闭这个选项.</conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>update_topic_views_immediately</conf_key>
@@ -663,7 +663,7 @@
 
 		<setting>
 			<conf_id>29</conf_id>
-			<conf_title>显示论坛版块时, 标记会员参与的主题?</conf_title>
+			<conf_title>显示论坛版块时,标记用户参与的主题?</conf_title>
 			<conf_description></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -683,7 +683,7 @@
 
 		<setting>
 			<conf_id>30</conf_id>
-			<conf_title><![CDATA[不显示"正在浏览该版块的会员"信息?]]></conf_title>
+			<conf_title><![CDATA[不显示"正在浏览该版块的用户"信息?]]></conf_title>
 			<conf_description>这将减少一次数据库查询</conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -703,7 +703,7 @@
 
 		<setting>
 			<conf_id>31</conf_id>
-			<conf_title><![CDATA[不显示"正在阅读该主题的会员"信息?]]></conf_title>
+			<conf_title><![CDATA[不显示"正在阅读该主题的用户"信息?]]></conf_title>
 			<conf_description>这将减少一次数据库查询</conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -723,7 +723,7 @@
 
 		<setting>
 			<conf_id>32</conf_id>
-			<conf_title>显示活动会员</conf_title>
+			<conf_title>显示活动用户</conf_title>
 			<conf_description></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -763,7 +763,7 @@
 
 		<setting>
 			<conf_id>33</conf_id>
-			<conf_title>允许会员使用搜索功能?</conf_title>
+			<conf_title>允许用户使用搜索功能?</conf_title>
 			<conf_description></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -804,7 +804,7 @@
 		<setting>
 			<conf_id>35</conf_id>
 			<conf_title>服务器负载限制</conf_title>
-			<conf_description><![CDATA[当服务器访问人数达到填写的数值时将显示"系统正忙", 留空表示不对服务器负载进行限制.]]></conf_description>
+			<conf_description><![CDATA[当服务器访问人数达到填写的数值时将显示"系统正忙",留空表示不对服务器负载进行限制.]]></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>load_limit</conf_key>
@@ -824,7 +824,7 @@
 		<setting>
 			<conf_id>36</conf_id>
 			<conf_title>输出 HTTP no-cache 头信息?</conf_title>
-			<conf_description><![CDATA[本设置使浏览器停止缓存页面, 这可能因页面请求增加而导致服务器负载增加.提示:必须打开位于常规配置中的"输出 HTTP 头信息"设置才能使本设置生效.]]></conf_description>
+			<conf_description><![CDATA[本设置使浏览器停止缓存页面,这可能因页面请求增加而导致服务器负载增加.提示:必须打开位于常规配置中的"输出 HTTP 头信息"设置才能使本设置生效.]]></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>nocache</conf_key>
@@ -843,8 +843,8 @@
 
 		<setting>
 			<conf_id>37</conf_id>
-			<conf_title><![CDATA[每次显示搜索 [x] 条]]></conf_title>
-			<conf_description><![CDATA[搜索完成后, 每页显示搜索结果的数目.留空则以适当的格式输出搜索结果]]></conf_description>
+			<conf_title><![CDATA[每页显示搜索结果数]]></conf_title>
+			<conf_description><![CDATA[搜索完成后,每页显示搜索结果的数目.留空则以适当的格式输出搜索结果]]></conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>search_post_cut</conf_key>
@@ -864,7 +864,7 @@
 		<setting>
 			<conf_id>38</conf_id>
 			<conf_title>不在论坛首页显示子版块</conf_title>
-			<conf_description>如果设置为"是", 论坛首页将只显示分类和第一层的版块.</conf_description>
+			<conf_description>如果设置为"是",论坛首页将只显示分类和第一层的版块.</conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>disable_subforum_show</conf_key>
@@ -884,7 +884,7 @@
 		<setting>
 			<conf_id>39</conf_id>
 			<conf_title>显示版块快速跳转列表?</conf_title>
-			<conf_description>如果您的论坛有许多版块, 您应该禁止快速跳转菜单, 尽管它只占了页面边缘很小的地方, 但是生成了大量的 HTML 代码.</conf_description>
+			<conf_description>如果您的论坛有许多版块,您应该禁止快速跳转菜单,尽管它只占了页面边缘很小的地方,但是生成了大量的 HTML 代码.</conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>short_forum_jump</conf_key>
@@ -904,7 +904,7 @@
 		<setting>
 			<conf_id>294</conf_id>
 			<conf_title>使用多字节安全换行功能</conf_title>
-			<conf_description>是否打开多字节安全换行功能?虽然打开此功能需要占用许多资源, 但是对于含有多字节语言的会员是必要的.</conf_description>
+			<conf_description>是否打开多字节安全换行功能?虽然打开此功能需要占用许多资源,但是对于含有多字节语言的用户是必要的.</conf_description>
 			<conf_group>6</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>multibyte_wordwrap</conf_key>
@@ -933,7 +933,7 @@
 		<setting>
 			<conf_id>40</conf_id>
 			<conf_title>服务器本地时区</conf_title>
-			<conf_description><![CDATA[<span style='color:red'>如果您选择了正确的时区, 但是仍然有一个小时的时, 那时因为夏令时在起作用.您的会员们可以在他们的控制面板的"论坛设置"中调整时差.</span>]]></conf_description>
+			<conf_description><![CDATA[<span style='color:red'>如果您选择了正确的时区,但是仍然有一个小时的时,那时因为夏令时在起作用.您的会员们可以在他们的控制面板的"论坛设置"中调整时差.</span>]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>time_offset</conf_key>
@@ -946,9 +946,9 @@
 		
 		foreach( $this->ipsclass->lang as $off => $words )
  		{
- 			if (preg_match("/^time_([&#092;&#092;.&#092;&#092;-&#092;&#092;d]+?)$/",  $off,  $match))
+ 			if (preg_match("/^time_([&#092;&#092;.&#092;&#092;-&#092;&#092;d]+?)$/", $off, $match))
  			{
- 				$dropdown[] = array( $match[1],  $words );
+ 				$dropdown[] = array( $match[1], $words );
  			}
  		}
 }]]></conf_evalphp>
@@ -964,7 +964,7 @@
 		<setting>
 			<conf_id>41</conf_id>
 			<conf_title>服务器时间校正 [分钟]</conf_title>
-			<conf_description><![CDATA[在您设置好服务器时区后, 如果还需要服务器时间后退, 那么使用减号符号"-"(不加引号).当前论坛时间为(根据上面的时区和这里的调整得到):<br><-T->]]></conf_description>
+			<conf_description><![CDATA[在您设置好服务器时区后,如果还需要服务器时间后退,那么使用减号符号"-"(不加引号).当前论坛时间为(根据上面的时区和这里的调整得到):<br><-T->]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>time_adjust</conf_key>
@@ -973,8 +973,8 @@
 			<conf_extra></conf_extra>
 			<conf_evalphp><![CDATA[if ( $show )
 {
-    $d_date = $this->ipsclass->get_date(time(),  'LONG', 1);
-$r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description'] );
+    $d_date = $this->ipsclass->get_date(time(), 'LONG',1);
+$r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] );
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>2</conf_position>
@@ -1033,7 +1033,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 			<conf_type>input</conf_type>
 			<conf_key>clock_long</conf_key>
 			<conf_value></conf_value>
-			<conf_default>M j Y,  h:i A</conf_default>
+			<conf_default>M j Y, h:i A</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -1048,7 +1048,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>45</conf_id>
 			<conf_title>使用相对时间设置?</conf_title>
-			<conf_description><![CDATA[在帖子/最后发帖信息中使用"今天", "昨天".]]></conf_description>
+			<conf_description><![CDATA[在帖子/最后发帖信息中使用"今天","昨天".]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>time_use_relative</conf_key>
@@ -1056,8 +1056,8 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 			<conf_default>1</conf_default>
 			<conf_extra><![CDATA[0=No
 1=Yes ( Today & Yesterday )
-2=Yes ( Last X Minutes,  Today & Yesterday)
-3=Yes ( Full,  minutes,  hours & days )]]></conf_extra>
+2=Yes ( Last X Minutes, Today & Yesterday)
+3=Yes ( Full, minutes, hours & days )]]></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>6</conf_position>
@@ -1076,7 +1076,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 			<conf_type>input</conf_type>
 			<conf_key>time_use_relative_format</conf_key>
 			<conf_value></conf_value>
-			<conf_default>{--},  h:i A</conf_default>
+			<conf_default>{--}, h:i A</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -1091,7 +1091,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>47</conf_id>
 			<conf_title>自动检测夏令时</conf_title>
-			<conf_description><![CDATA[自动检测夏令时开启时, 您的会员的配置信息将会自动调整到正确的时间.]]></conf_description>
+			<conf_description><![CDATA[自动检测夏令时开启时,您的会员的配置信息将会自动调整到正确的时间.]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>time_dst_auto_correction</conf_key>
@@ -1120,7 +1120,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>48</conf_id>
 			<conf_title><![CDATA[打开"昵称"功能]]></conf_title>
-			<conf_description><![CDATA[如果打开, 会员将可以为自己起一个和"登录会员名"不同的"昵称".如果您使用非内部认证模块, 必须打开此功能.]]></conf_description>
+			<conf_description><![CDATA[如果打开,会员将可以为自己起一个和"登录用户名"不同的"昵称".如果您使用非内部认证模块,必须打开此功能.]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>auth_allow_dnames</conf_key>
@@ -1159,8 +1159,8 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 
 		<setting>
 			<conf_id>49</conf_id>
-			<conf_title>禁止昵称同登录会员名重复</conf_title>
-			<conf_description><![CDATA[如果"是", 会员不能选择一个别人正在使用的昵称, 也不能和其他人的会员名相同.如果"否", 会员仅仅不能选择一个别人正在使用的昵称.]]></conf_description>
+			<conf_title>禁止昵称同登录用户名重复</conf_title>
+			<conf_description><![CDATA[如果"是",用户不能选择一个别人正在使用的昵称,也不能和其他人的用户名相同.如果"否",用户仅仅不能选择一个别人正在使用的昵称.]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>auth_dnames_nologinname</conf_key>
@@ -1179,8 +1179,8 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 
 		<setting>
 			<conf_id>178</conf_id>
-			<conf_title>可用在会员名中的字符</conf_title>
-			<conf_description><![CDATA[如果这里被设置好, IPB论坛将保证所有的会员名在注册的时候仅可以包含这些列出来的字符.<br /><br />若要实现按字母排序的会员名, 则使用用:<b>a-zA-Z0-9</b>]]></conf_description>
+			<conf_title>可用在用户名中的字符</conf_title>
+			<conf_description><![CDATA[如果这里被设置好,IPB 论坛将保证所有的用户名在注册的时候仅可以包含这些列出来的字符.<br /><br />若要实现按字母排序的用户名,则使用用:<b>a-zA-Z0-9</b>]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>username_characters</conf_key>
@@ -1200,7 +1200,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>179</conf_id>
 			<conf_title>用来显示的错误信息</conf_title>
-			<conf_description><![CDATA[若您指定了可在会员名中使用的字符, 而一位会员试图用非法字符来注册时, 将会显示的错误信息.<br /><b>小贴士:</b>您可以使用 {chars} 来显示被允许用来注册会员名的字符.]]></conf_description>
+			<conf_description><![CDATA[若您指定了可在用户名中使用的字符,而一位用户试图用非法字符来注册时,将会显示的错误信息.<br /><b>小贴士:</b>您可以使用 {chars} 来显示被允许用来注册用户名的字符.]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>username_errormsg</conf_key>
@@ -1219,8 +1219,8 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 
 		<setting>
 			<conf_id>301</conf_id>
-			<conf_title>不允许在会员名中使用分隔线</conf_title>
-			<conf_description><![CDATA[您想明确的阻止新换行, 分隔线和HTML标签使用在会员名和昵称中?]]></conf_description>
+			<conf_title>不允许在用户名中使用分隔线</conf_title>
+			<conf_description><![CDATA[您想明确的阻止新换行,分隔线和HTML标签使用在用户名和昵称中?]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>usernames_nobr</conf_key>
@@ -1289,7 +1289,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>52</conf_id>
 			<conf_title>邮件发送方式</conf_title>
-			<conf_description><![CDATA[如果 PHP 的 mail() 函数无效时, 请使用 SMTP 发送邮件.如果您不确定, 请联系您的服务器提供商.]]></conf_description>
+			<conf_description><![CDATA[如果 PHP 的 mail() 函数无效时,请使用 SMTP 发送邮件. 如果您不确定,请联系您的服务器提供商.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>mail_method</conf_key>
@@ -1349,7 +1349,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>55</conf_id>
 			<conf_title><![CDATA[为发送和接收邮件地址添加"<"和">"?]]></conf_title>
-			<conf_description><![CDATA[某些 SMTP 服务器要求邮件地址用尖括号"<"和">"包括.如果您在邮件错误记录中看到错误, 那么请打开此选项.]]></conf_description>
+			<conf_description><![CDATA[某些 SMTP 服务器要求邮件地址用尖括号"<"和">"包括.如果您在邮件错误记录中看到错误,那么请打开此选项.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>mail_wrap_brackets</conf_key>
@@ -1368,8 +1368,8 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 
 		<setting>
 			<conf_id>56</conf_id>
-			<conf_title>SMTP 会员名</conf_title>
-			<conf_description><![CDATA[如果使用"localhost", 绝大多数情况下不需要填写.]]></conf_description>
+			<conf_title>SMTP 用户名</conf_title>
+			<conf_description><![CDATA[如果使用"localhost",绝大多数情况下不需要填写.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>smtp_user</conf_key>
@@ -1389,7 +1389,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>57</conf_id>
 			<conf_title>SMTP 密码</conf_title>
-			<conf_description><![CDATA[如果使用"localhost", 绝大多数情况下不需要填写.]]></conf_description>
+			<conf_description><![CDATA[如果使用"localhost",绝大多数情况下不需要填写.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>smtp_pass</conf_key>
@@ -1438,7 +1438,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>59</conf_id>
 			<conf_title>论坛名称</conf_title>
-			<conf_description>这是您的论坛的名称, 它是论坛导航栏的第一个连接.</conf_description>
+			<conf_description>这是您的论坛的名称,它是论坛导航栏的第一个连接.</conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>board_name</conf_key>
@@ -1458,7 +1458,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>60</conf_id>
 			<conf_title>网站名称</conf_title>
-			<conf_description><![CDATA[这是您的网站名称, 如果您同时填写了网站地址, 它们将在论坛顶部显示.]]></conf_description>
+			<conf_description><![CDATA[这是您的网站名称,如果您同时填写了网站地址,它们将在论坛顶部显示.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>home_name</conf_key>
@@ -1478,7 +1478,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>61</conf_id>
 			<conf_title>网站地址</conf_title>
-			<conf_description><![CDATA[这是您的网站地址, 如果您同时填写了网站名称, 它们将在论坛顶部显示.]]></conf_description>
+			<conf_description><![CDATA[这是您的网站地址,如果您同时填写了网站名称,它们将在论坛顶部显示.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>home_url</conf_key>
@@ -1509,13 +1509,13 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 {
  $this_host = $this->ipsclass->my_getenv( 'SERVER_NAME' );
  $this_script = $this->ipsclass->my_getenv( 'SCRIPT_NAME' );
- $this_script = str_replace( "&#092;&#092;",  "/",  $this_script );
+ $this_script = str_replace( "&#092;&#092;", "/", $this_script );
 
  if( $this_host AND $this_script )
  {
-  $this_script = str_replace( '/'.IPB_ACP_DIRECTORY.'/index.php',  '/uploads',  $this_script );
+  $this_script = str_replace( '/'.IPB_ACP_DIRECTORY.'/index.php', '/uploads', $this_script );
 
-  $r['conf_description'] = str_replace( "<!--SUGGEST-->",  "<br />IPB 检测到上传 URL为:<br />http://".$this_host.$this_script,  $r['conf_description'] );
+  $r['conf_description'] = str_replace( "<!--SUGGEST-->", "<br />IPB 检测到上传 URL为:<br />http://".$this_host.$this_script, $r['conf_description'] );
  }
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -1530,7 +1530,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>63</conf_id>
 			<conf_title><![CDATA[Path to &#39;upload&#39; directory]]></conf_title>
-			<conf_description><![CDATA[这是磁盘路径, 不是 URL.
+			<conf_description><![CDATA[这是磁盘路径,不是 URL.
 <!--SUGGEST-->]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
@@ -1540,13 +1540,13 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 			<conf_extra>upload_dir</conf_extra>
 			<conf_evalphp><![CDATA[if( $show == 1 )
 {
- $this_script = str_replace( '&#092;&#092;',  '/',  $this->ipsclass->my_getenv( 'SCRIPT_FILENAME' ) );
+ $this_script = str_replace( '&#092;&#092;', '/', $this->ipsclass->my_getenv( 'SCRIPT_FILENAME' ) );
 
  if( $this_script )
  {
-  $this_script = str_replace( '/'.IPB_ACP_DIRECTORY.'/index.php',  '/uploads',  $this_script );
+  $this_script = str_replace( '/'.IPB_ACP_DIRECTORY.'/index.php', '/uploads', $this_script );
 
-  $r['conf_description'] = str_replace( "<!--SUGGEST-->",  "<br />IPB 检测到 uploads 路径是:<br />".$this_script,  $r['conf_description'] );
+  $r['conf_description'] = str_replace( "<!--SUGGEST-->", "<br />IPB 检测到 uploads 路径是:<br />".$this_script, $r['conf_description'] );
  }
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -1562,7 +1562,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 			<conf_id>64</conf_id>
 			<conf_title>缓存路径</conf_title>
 			<conf_description><![CDATA[<b>可以留空</b>
-<br />如果使用集群服务器, 可以在这里指定 IPB 写文件的路径(skin_cache, style_avatars, style_emoticons, style_images), 如果输入路径, 请确保以斜线结束.]]></conf_description>
+<br />如果使用集群服务器,可以在这里指定 IPB 写文件的路径(skin_cache,style_avatars,style_emoticons,style_images),如果输入路径,请确保以斜线结束.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_cache_path</conf_key>
@@ -1603,7 +1603,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 			<conf_id>66</conf_id>
 			<conf_title>图片 URL</conf_title>
 			<conf_description><![CDATA[<b>可以留空</b>
-<br />如果您想从不同的服务器来处理图片或者使用集群服务器, 可以在这里设置.URL 必须以 http:// 开头]]></conf_description>
+<br />如果您想从不同的服务器来处理图片或者使用集群服务器,可以在这里设置.URL 必须以 http:// 开头]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_img_url</conf_key>
@@ -1643,7 +1643,7 @@ $r['conf_description'] = str_replace( '<-T->',  $d_date,  $r['conf_description']
 		<setting>
 			<conf_id>68</conf_id>
 			<conf_title>自动跳转类型</conf_title>
-			<conf_description><![CDATA[页面跳转类型, 请根据您的服务器的操作系统选择.]]></conf_description>
+			<conf_description><![CDATA[页面跳转类型,请根据您的服务器的操作系统选择.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>header_redirect</conf_key>
@@ -1665,7 +1665,7 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 		<setting>
 			<conf_id>69</conf_id>
 			<conf_title><![CDATA[关闭转向页面显示?]]></conf_title>
-			<conf_description><![CDATA[打开后, 会员发帖, 搜索等操作之后将不显示重定向消息页面.这些页面可以让会员知道其操作已经被处理.关闭这些页面将节省带宽并且减少服务器负载]]></conf_description>
+			<conf_description><![CDATA[打开后,用户发帖,搜索等操作之后将不显示重定向消息页面.这些页面可以让用户知道其操作已经被处理.关闭这些页面将节省带宽并且减少服务器负载]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_remove_redirect_pages</conf_key>
@@ -1692,7 +1692,7 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 			<conf_value></conf_value>
 			<conf_default>0</conf_default>
 			<conf_extra><![CDATA[0=0: None - Don't show any debug information
-1=1: Show server load,  page generation times and query count
+1=1: Show server load, page generation times and query count
 2=2: Show level 1 (above) and GET and POST information
 3=3: Show level 1 + 2 and database queries]]></conf_extra>
 			<conf_evalphp></conf_evalphp>
@@ -1708,7 +1708,7 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 		<setting>
 			<conf_id>71</conf_id>
 			<conf_title>禁止 GZIP 压缩编码?</conf_title>
-			<conf_description>GZIP 压缩编码可以使页面传输更快, 带宽占用更低.然而, 某些服务器不能开启此设置.</conf_description>
+			<conf_description>GZIP 压缩编码可以使页面传输更快,带宽占用更低.然而,某些服务器不能开启此设置.</conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>disable_gzip</conf_key>
@@ -1728,7 +1728,7 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 		<setting>
 			<conf_id>72</conf_id>
 			<conf_title>使用安全模式皮肤</conf_title>
-			<conf_description><![CDATA[本设置在安装过程中自动处理, 您可以在这里修改, 使用安全模式后将不缓存 PHP 文件.]]></conf_description>
+			<conf_description><![CDATA[本设置在安装过程中自动处理,您可以在这里修改,使用安全模式后将不缓存 PHP 文件.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>safe_mode_skins</conf_key>
@@ -1748,15 +1748,15 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 		<setting>
 			<conf_id>73</conf_id>
 			<conf_title>数字格式</conf_title>
-			<conf_description><![CDATA[您可以选择一个分隔数字千位和百位之间的符号, (例如:美国和英国使用逗号)]]></conf_description>
+			<conf_description><![CDATA[您可以选择一个分隔数字千位和百位之间的符号,(例如:美国和英国使用逗号)]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>number_format</conf_key>
 			<conf_value></conf_value>
-			<conf_default>, </conf_default>
+			<conf_default>,</conf_default>
 			<conf_extra><![CDATA[none=Don't format
 space=Space
-, =, 
+,=,
 .=.]]></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -1778,7 +1778,7 @@ space=Space
 			<conf_value></conf_value>
 			<conf_default>.</conf_default>
 			<conf_extra>.=.
-, =, </conf_extra>
+,=,</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>18</conf_position>
@@ -1792,7 +1792,7 @@ space=Space
 		<setting>
 			<conf_id>75</conf_id>
 			<conf_title>GD 版本</conf_title>
-			<conf_description><![CDATA["GD"是 PHP 的嵌入图形库, "GD2"是最新版本, 拥有更强的图形功能, 如果您使用"GD2"出错, 请使用 "GD1".]]></conf_description>
+			<conf_description><![CDATA["GD"是 PHP 的嵌入图形库,"GD2"是最新版本,拥有更强的图形功能,如果您使用"GD2"出错,请使用 "GD1".]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>gd_version</conf_key>
@@ -1842,7 +1842,7 @@ space=Space
 		<setting>
 			<conf_id>76</conf_id>
 			<conf_title>Chat Site ID / Account No.</conf_title>
-			<conf_description>If you are using Parachat v7 or greater,  enter your site ID (1234,  for example). If you are using an older version of Parachat please enter your group number (ip0000,  for example)</conf_description>
+			<conf_description>If you are using Parachat v7 or greater, enter your site ID (1234, for example). If you are using an older version of Parachat please enter your group number (ip0000, for example)</conf_description>
 			<conf_group>32</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>chat04_account_no</conf_key>
@@ -1904,7 +1904,7 @@ ParaChat Server installation or hosted ParaChat Enterprise solution.</strong>]]>
 		<setting>
 			<conf_id>79</conf_id>
 			<conf_title><![CDATA[Enable &#39;Who&#39;s Chatting?&#39;]]></conf_title>
-			<conf_description><![CDATA[If enabled,  this will show who's chatting in the chat room on your forums home page underneath the active users list.]]></conf_description>
+			<conf_description><![CDATA[If enabled, this will show who's chatting in the chat room on your forums home page underneath the active users list.]]></conf_description>
 			<conf_group>32</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>chat04_who_on</conf_key>
@@ -2059,7 +2059,7 @@ Example:<br />
 {
 	if ( is_array($_POST['chat04_access_groups']) )
 	{
-		$_POST['chat04_access_groups'] = implode(", ", $_POST['chat04_access_groups']);
+		$_POST['chat04_access_groups'] = implode(",",$_POST['chat04_access_groups']);
 	}
 	else
 	{
@@ -2084,7 +2084,7 @@ $key = 'chat04_access_groups[]';
 		<setting>
 			<conf_id>87</conf_id>
 			<conf_title>默认的聊天室语言</conf_title>
-			<conf_description>This is the default language used for the chat user inteface (buttons and labels,  etc)</conf_description>
+			<conf_description>This is the default language used for the chat user inteface (buttons and labels, etc)</conf_description>
 			<conf_group>32</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>chat04_default_lang</conf_key>
@@ -2150,7 +2150,7 @@ premium=Premium</conf_extra>
 		<setting>
 			<conf_id>90</conf_id>
 			<conf_title><![CDATA[Enable &quot;Plain Mode&quot;?]]></conf_title>
-			<conf_description><![CDATA["Plain mode" removes the colored chat text from your Invision Power Chat Advanced room(s),  and implements single-colored (non-GUI) chat text. This will disable the graphic emoticons and click-able URLs.]]></conf_description>
+			<conf_description><![CDATA["Plain mode" removes the colored chat text from your Invision Power Chat Advanced room(s), and implements single-colored (non-GUI) chat text. This will disable the graphic emoticons and click-able URLs.]]></conf_description>
 			<conf_group>32</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>chat04_plainmode</conf_key>
@@ -2320,7 +2320,7 @@ premium=Premium</conf_extra>
 		<setting>
 			<conf_id>98</conf_id>
 			<conf_title><![CDATA[Enable &#39;Who&#39;s Chatting?&#39;]]></conf_title>
-			<conf_description><![CDATA[If enabled,  this will show who's chatting in the chat room on your forums home page underneath the active users list.]]></conf_description>
+			<conf_description><![CDATA[If enabled, this will show who's chatting in the chat room on your forums home page underneath the active users list.]]></conf_description>
 			<conf_group>33</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>chat_who_on</conf_key>
@@ -2383,7 +2383,7 @@ premium=Premium</conf_extra>
 		<setting>
 			<conf_id>101</conf_id>
 			<conf_title>是否更换IPChat控制面板的密码?</conf_title>
-			<conf_description><![CDATA[If you have changed your IPChat control panel password,  please add the new password here. Leave blank if it's not changed.]]></conf_description>
+			<conf_description><![CDATA[If you have changed your IPChat control panel password, please add the new password here. Leave blank if it's not changed.]]></conf_description>
 			<conf_group>33</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>chat_pass_md5</conf_key>
@@ -2544,7 +2544,7 @@ pt=Portuguese</conf_extra>
 {
 	if ( is_array($_POST['chat_access_groups']) )
 	{
-		$_POST['chat_access_groups'] = implode(", ", $_POST['chat_access_groups']);
+		$_POST['chat_access_groups'] = implode(",",$_POST['chat_access_groups']);
 	}
 	else
 	{
@@ -2580,7 +2580,7 @@ if ( $show == 1 )
 {
 	if ( is_array($_POST['chat_admin_groups']) )
 	{
-		$_POST['chat_admin_groups'] = implode(", ", $_POST['chat_admin_groups']);
+		$_POST['chat_admin_groups'] = implode(",",$_POST['chat_admin_groups']);
 	}
 	else
 	{
@@ -2614,7 +2614,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>110</conf_id>
 			<conf_title>打开 IP.Converge</conf_title>
-			<conf_description><![CDATA[如果是, 您可以使用 IP.Converge 来"聚合"您的论坛.
+			<conf_description><![CDATA[如果是,您可以使用 IP.Converge 来"聚合"您的论坛.
 ]]></conf_description>
 			<conf_group>13</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -2644,7 +2644,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>111</conf_id>
 			<conf_title>打开 IP.Converge?</conf_title>
-			<conf_description><![CDATA[If 'yes',  this IPB will authenticate against IP.Converge.]]></conf_description>
+			<conf_description><![CDATA[If 'yes', this IPB will authenticate against IP.Converge.]]></conf_description>
 			<conf_group>34</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipconverge_enabled</conf_key>
@@ -2762,7 +2762,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>116</conf_id>
 			<conf_title>IPB 授权码</conf_title>
-			<conf_description><![CDATA[这是 IPB 注册码, 不是您的客户码或客户中心密码.要获得注册码, 登录到您的客户中心然后点击"Your Purchases"下方的"Invision Power Board".不要随便删除或编辑这里!]]></conf_description>
+			<conf_description><![CDATA[这是 IPB 注册码,不是您的客户码或客户中心密码.要获得注册码,登录到您的客户中心然后点击"Your Purchases"下方的"Invision Power Board".不要随便删除或编辑这里!]]></conf_description>
 			<conf_group>16</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_reg_number</conf_key>
@@ -2782,7 +2782,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>117</conf_id>
 			<conf_title>显示注册信息?</conf_title>
-			<conf_description><![CDATA[如果选择是, 论坛最底部将显示注册信息.]]></conf_description>
+			<conf_description><![CDATA[如果选择是,论坛最底部将显示注册信息.]]></conf_description>
 			<conf_group>16</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_reg_show</conf_key>
@@ -2802,7 +2802,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>118</conf_id>
 			<conf_title>显示注册到</conf_title>
-			<conf_description><![CDATA[例如:<em>Matthew Mecham</em>,  <em>IPS,  Inc.]]></conf_description>
+			<conf_description><![CDATA[例如:<em>Matthew Mecham</em>, <em>IPS, Inc.]]></conf_description>
 			<conf_group>16</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_reg_name</conf_key>
@@ -2823,7 +2823,7 @@ if ( $show == 1 )
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>ipbloginhandler</conf_title_keyword>
 			<conf_title_title>IPB Log in Handler</conf_title_title>
-			<conf_title_desc>Hidden settings,  so there.</conf_title_desc>
+			<conf_title_desc>Hidden settings, so there.</conf_title_desc>
 			<conf_title_noshow>1</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -2850,7 +2850,7 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>120</conf_id>
-			<conf_title>登入会员名类型</conf_title>
+			<conf_title>登入用户名类型</conf_title>
 			<conf_description></conf_description>
 			<conf_group>36</conf_group>
 			<conf_type>input</conf_type>
@@ -2880,7 +2880,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>121</conf_id>
 			<conf_title>打开 IPB 门户?</conf_title>
-			<conf_description><![CDATA[如果是, IPB Portal 可以通过"index.php?act=home"或者一个特殊的"index.php"脚本文件(请查阅文档获得详情).]]></conf_description>
+			<conf_description><![CDATA[如果是,IPB Portal 可以通过"index.php?act=home"或者一个特殊的"index.php"脚本文件(请查阅文档获得详情).]]></conf_description>
 			<conf_group>18</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>csite_on</conf_key>
@@ -2939,7 +2939,7 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>124</conf_id>
-			<conf_title>显示会员/游客信息框?</conf_title>
+			<conf_title>显示用户/游客信息框?</conf_title>
 			<conf_description></conf_description>
 			<conf_group>18</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -2992,7 +2992,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp><![CDATA[if ( $show == 1)
 {
-    $value = preg_replace( "/&(middot|quot|copy|amp)/",  "&&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;1",  $value );
+    $value = preg_replace( "/&(middot|quot|copy|amp)/", "&&#092;&#092;&#092;&#092;&#092;&#092;&#092;&#092;1", $value );
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>19</conf_position>
@@ -3035,7 +3035,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp><![CDATA[if ( $show == 1)
 {
- $value = preg_replace( "/&(middot|quot|copy|amp)/",  "&\\\\\\\\1",  $value );
+ $value = preg_replace( "/&(middot|quot|copy|amp)/", "&\\\\\\\\1", $value );
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>21</conf_position>
@@ -3199,7 +3199,7 @@ if ( $show == 1 )
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>newssetup</conf_title_keyword>
 			<conf_title_title>论坛新闻设置</conf_title_title>
-			<conf_title_desc>您可以在这里指定一个版块导出新闻主题, 使用 ssi.php 和 IPB 门户来调用.</conf_title_desc>
+			<conf_title_desc>您可以在这里指定一个版块导出新闻主题,使用 ssi.php 和 IPB 门户来调用.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -3247,16 +3247,16 @@ if ( $show == 1 )
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>personalmessagesetup</conf_title_keyword>
-			<conf_title_title>短消息设置</conf_title_title>
-			<conf_title_desc>您可以在这里设置论坛短消息.</conf_title_desc>
+			<conf_title_title>悄悄话设置</conf_title_title>
+			<conf_title_desc>您可以在这里设置论坛悄悄话.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
 
 		<setting>
 			<conf_id>140</conf_id>
-			<conf_title>是否允许在短消息中使用 BBCode?</conf_title>
-			<conf_description><![CDATA[BBCode 的语法格式为 [tag][/tag], 用来格式化文本以及产生其他效果.]]></conf_description>
+			<conf_title>是否允许在悄悄话中使用 BBCode?</conf_title>
+			<conf_description><![CDATA[BBCode 的语法格式为 [tag][/tag],用来格式化文本以及产生其他效果.]]></conf_description>
 			<conf_group>21</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>msg_allow_code</conf_key>
@@ -3275,8 +3275,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>141</conf_id>
-			<conf_title>是否允许在短消息中使用 HTML 代码?</conf_title>
-			<conf_description><![CDATA[如果是, 您的会员可以在短消息中使用 HTML 代码.基于安全考虑, 建议您关闭这个选项.]]></conf_description>
+			<conf_title>是否允许在悄悄话中使用 HTML 代码?</conf_title>
+			<conf_description><![CDATA[如果是,您的会员可以在悄悄话中使用 HTML 代码.基于安全考虑,建议您关闭这个选项.]]></conf_description>
 			<conf_group>21</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>msg_allow_html</conf_key>
@@ -3295,7 +3295,7 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>142</conf_id>
-			<conf_title>短消息列表每页显示的最大数</conf_title>
+			<conf_title>悄悄话列表每页显示的最大数</conf_title>
 			<conf_description>默认是50.</conf_description>
 			<conf_group>21</conf_group>
 			<conf_type>input</conf_type>
@@ -3315,8 +3315,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>143</conf_id>
-			<conf_title>不可屏蔽短消息的会员组</conf_title>
-			<conf_description>会员不能屏蔽这些会员组发送的短消息, 可以多选.</conf_description>
+			<conf_title>不可屏蔽悄悄话的用户组</conf_title>
+			<conf_description>会员不能屏蔽这些用户组发送的悄悄话,可以多选.</conf_description>
 			<conf_group>21</conf_group>
 			<conf_type>multi</conf_type>
 			<conf_key>unblockable_pm_groups</conf_key>
@@ -3327,7 +3327,7 @@ if ( $show == 1 )
 {
 	if ( is_array($_POST['unblockable_pm_groups']) )
 	{
-		$_POST['unblockable_pm_groups'] = implode(", ", $_POST['unblockable_pm_groups']);
+		$_POST['unblockable_pm_groups'] = implode(",",$_POST['unblockable_pm_groups']);
 	}
 	else
 	{
@@ -3352,7 +3352,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>144</conf_id>
 			<conf_title><![CDATA[忽略"收件箱已满"信息]]></conf_title>
-			<conf_description><![CDATA[选中的会员组中的会员可以向其他人发送短消息, 即便收件人的收件箱已满.]]></conf_description>
+			<conf_description><![CDATA[选中的用户组中的会员可以向其他人发送悄悄话,即便收件人的收件箱已满.]]></conf_description>
 			<conf_group>21</conf_group>
 			<conf_type>multi</conf_type>
 			<conf_key>override_inbox_full</conf_key>
@@ -3363,7 +3363,7 @@ if ( $show == 1 )
 {
 	if ( is_array($_POST['override_inbox_full']) )
 	{
-		$_POST['override_inbox_full'] = implode(", ", $_POST['override_inbox_full']);
+		$_POST['override_inbox_full'] = implode(",",$_POST['override_inbox_full']);
 	}
 	else
 	{
@@ -3437,7 +3437,7 @@ if ( $show == 1 )
 {
 	if ( is_array($_POST['recent_topics_article_forum']) )
 	{
-		$_POST['recent_topics_article_forum'] = implode(", ", $_POST['recent_topics_article_forum']);
+		$_POST['recent_topics_article_forum'] = implode(",",$_POST['recent_topics_article_forum']);
 	}
 	else
 	{
@@ -3511,7 +3511,7 @@ $key = 'recent_topics_article_forum[]';
 		<setting>
 			<conf_id>149</conf_id>
 			<conf_title>是否开启搜索机器蜘蛛识别?</conf_title>
-			<conf_description><![CDATA[如果选择否, 本功能将关闭, 下面的设置将无效.]]></conf_description>
+			<conf_description><![CDATA[如果选择否,本功能将关闭,下面的设置将无效.]]></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>spider_sense</conf_key>
@@ -3531,7 +3531,7 @@ $key = 'recent_topics_article_forum[]';
 		<setting>
 			<conf_id>150</conf_id>
 			<conf_title>记录所有的蜘蛛访问?</conf_title>
-			<conf_description><![CDATA[如果您收到攻击, 请将本功能关闭.因为本功能将为数据库带来一点额外的开销.]]></conf_description>
+			<conf_description><![CDATA[如果您收到攻击,请将本功能关闭.因为本功能将为数据库带来一点额外的开销.]]></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>spider_visit</conf_key>
@@ -3550,8 +3550,8 @@ $key = 'recent_topics_article_forum[]';
 
 		<setting>
 			<conf_id>151</conf_id>
-			<conf_title>将机器蜘蛛视为会员组?</conf_title>
-			<conf_description><![CDATA[您可以设置一个特殊的"机器蜘蛛"会员组, 他们只可以访问某些特定的版块.]]></conf_description>
+			<conf_title>将机器蜘蛛视为用户组?</conf_title>
+			<conf_description><![CDATA[您可以设置一个特殊的"机器蜘蛛"用户组,他们只可以访问某些特定的版块.]]></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>spider_group</conf_key>
@@ -3571,7 +3571,7 @@ $key = 'recent_topics_article_forum[]';
 		<setting>
 			<conf_id>152</conf_id>
 			<conf_title>机器蜘蛛使用的皮肤</conf_title>
-			<conf_description><![CDATA[您可以设置一个最简单的皮肤供搜索机器蜘蛛使用, 这样可以减轻网络带宽占用, 提升论坛速度.]]></conf_description>
+			<conf_description><![CDATA[您可以设置一个最简单的皮肤供搜索机器蜘蛛使用,这样可以减轻网络带宽占用,提升论坛速度.]]></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>spider_suit</conf_key>
@@ -3590,7 +3590,7 @@ $key = 'recent_topics_article_forum[]';
 
 		<setting>
 			<conf_id>153</conf_id>
-			<conf_title>将机器蜘蛛显示在在线会员列表中?</conf_title>
+			<conf_title>将机器蜘蛛显示在在线用户列表中?</conf_title>
 			<conf_description></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -3601,7 +3601,7 @@ $key = 'recent_topics_article_forum[]';
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>5</conf_position>
-			<conf_start_group>在线会员列表</conf_start_group>
+			<conf_start_group>在线用户列表</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
 			<conf_title_keyword>searchenginespiders</conf_title_keyword>
@@ -3610,8 +3610,8 @@ $key = 'recent_topics_article_forum[]';
 
 		<setting>
 			<conf_id>154</conf_id>
-			<conf_title>将机器蜘蛛显示为匿名会员</conf_title>
-			<conf_description><![CDATA[如果选择是, 只有管理员可在论坛在线会员列表里看见搜索机器人.]]></conf_description>
+			<conf_title>将机器蜘蛛显示为匿名用户</conf_title>
+			<conf_description><![CDATA[如果选择是,只有管理员可在论坛在线用户列表里看见搜索机器人.]]></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>spider_anon</conf_key>
@@ -3630,7 +3630,7 @@ $key = 'recent_topics_article_forum[]';
 
 		<setting>
 			<conf_id>155</conf_id>
-			<conf_title>搜索机器人在会员列表中的显示方式</conf_title>
+			<conf_title>搜索机器人在用户列表中的显示方式</conf_title>
 			<conf_description><![CDATA[可以将搜索机器蜘蛛显示为容易识别的名称.(每行一个)<br>例如:googlebot=Google.com]]></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>textarea</conf_type>
@@ -3697,8 +3697,8 @@ man=Manual</conf_extra>
 		}
 	}
 		
-	$r['conf_description'] = str_replace( "<!--FULLTEXT-->",  $full_text,  $r['conf_description'] );
-	$r['conf_description'] = str_replace( "<!--FULLCHECK-->",  $index,  $r['conf_description'] );
+	$r['conf_description'] = str_replace( "<!--FULLTEXT-->", $full_text, $r['conf_description'] );
+	$r['conf_description'] = str_replace( "<!--FULLCHECK-->", $index, $r['conf_description'] );
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>1</conf_position>
@@ -3733,7 +3733,7 @@ adv=Advanced Search</conf_extra>
 		<setting>
 			<conf_id>158</conf_id>
 			<conf_title>搜索关键词最小长度</conf_title>
-			<conf_description><![CDATA[允许使用较短的关键词将返回更多的结果, 例如"if", "at", 等等.如果使用全文搜索, 本设置无效.]]></conf_description>
+			<conf_description><![CDATA[允许使用较短的关键词将返回更多的结果,例如"if","at",等等.如果使用全文搜索,本设置无效.]]></conf_description>
 			<conf_group>25</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>min_search_word</conf_key>
@@ -3764,7 +3764,7 @@ adv=Advanced Search</conf_extra>
 {
 	if ( is_array($_POST['vnp_block_forums']) )
 	{
-		$_POST['vnp_block_forums'] = implode(", ", $_POST['vnp_block_forums']);
+		$_POST['vnp_block_forums'] = implode(",",$_POST['vnp_block_forums']);
 	}
 	else
 	{
@@ -3789,7 +3789,7 @@ $key = 'vnp_block_forums[]';
 		<setting>
 			<conf_id>296</conf_id>
 			<conf_title>是否隐藏手动搜索提示?</conf_title>
-			<conf_description>如果您使用手动搜索并且您的数据库服务器支持全文搜索, 则在管理面板首页会出现一个提示.您可以选择"是"来手动关闭提示.</conf_description>
+			<conf_description>如果您使用手动搜索并且您的数据库服务器支持全文搜索,则在管理面板首页会出现一个提示.您可以选择"是"来手动关闭提示.</conf_description>
 			<conf_group>25</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>hide_ftext_note</conf_key>
@@ -3818,7 +3818,7 @@ $key = 'vnp_block_forums[]';
 		<setting>
 			<conf_id>160</conf_id>
 			<conf_title>是否打开验证码?</conf_title>
-			<conf_description><![CDATA[强制会员在注册和修改邮件地址时, 输入一个随机代码, 可以阻止某些自动注册脚本/机器人的攻击.]]></conf_description>
+			<conf_description><![CDATA[强制用户在注册和修改邮件地址时,输入一个随机代码,可以阻止某些自动注册脚本/机器人的攻击.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>bot_antispam</conf_key>
@@ -3840,7 +3840,7 @@ gif=Normal (No special requirements)</conf_extra>
 		<setting>
 			<conf_id>161</conf_id>
 			<conf_title>验证码使用字体</conf_title>
-			<conf_description><![CDATA[如果是, 验证码将随机使用"/style_captcha/captcha_fonts"目录内的字体.]]></conf_description>
+			<conf_description><![CDATA[如果是,验证码将随机使用"/style_captcha/captcha_fonts"目录内的字体.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>captcha_allow_fonts</conf_key>
@@ -3860,7 +3860,7 @@ gif=Normal (No special requirements)</conf_extra>
 		<setting>
 			<conf_id>162</conf_id>
 			<conf_title>游客发帖控制</conf_title>
-			<conf_description>游客在允许的版块发帖时, 是否需要输入随机验证码?</conf_description>
+			<conf_description>游客在允许的版块发帖时,是否需要输入随机验证码?</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>guest_captcha</conf_key>
@@ -3882,7 +3882,7 @@ gif=Normal (No special requirements)</conf_extra>
 		<setting>
 			<conf_id>163</conf_id>
 			<conf_title>是否允许使用动态图片?</conf_title>
-			<conf_description><![CDATA[如果是, 会员可以发布使用 PHP/ASP 等脚本生成的图片.可以用来做随机签名图片等, 但是但是可能被恶意会员利用.]]></conf_description>
+			<conf_description><![CDATA[如果是,用户可以发布使用 PHP/ASP 等脚本生成的图片.可以用来做随机签名图片等,但是但是可能被恶意用户利用.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>allow_dynamic_img</conf_key>
@@ -3902,7 +3902,7 @@ gif=Normal (No special requirements)</conf_extra>
 		<setting>
 			<conf_id>164</conf_id>
 			<conf_title>是否打开 X_FORWARDED_FOR IP 匹配?</conf_title>
-			<conf_description><![CDATA[如果打开, 将检查 X_FORWARDED_FOR 头信息来匹配会员的 IP 地址.本功能应用在在企业内部网环境下, REMOTE_ADDR 相同的情况.如果不清楚, 请关闭本功能.]]></conf_description>
+			<conf_description><![CDATA[如果打开,将检查 X_FORWARDED_FOR 头信息来匹配用户的 IP 地址.本功能应用在在企业内部网环境下,REMOTE_ADDR 相同的情况.如果不清楚,请关闭本功能.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>xforward_matching</conf_key>
@@ -3922,14 +3922,14 @@ gif=Normal (No special requirements)</conf_extra>
 		<setting>
 			<conf_id>165</conf_id>
 			<conf_title>找回密码方法</conf_title>
-			<conf_description><![CDATA[会员忘记密码的时候, 采用何种方式找回密码, 推荐选择"通过邮件发送随机密码", 相对较为安全.]]></conf_description>
+			<conf_description><![CDATA[会员忘记密码的时候,采用何种方式找回密码,推荐选择"通过邮件发送随机密码",相对较为安全.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>lp_method</conf_key>
 			<conf_value></conf_value>
 			<conf_default>random</conf_default>
 			<conf_extra>random=通过电子邮件发送随机密码
-choose=允许会员输入新密码</conf_extra>
+choose=允许用户输入新密码</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>12</conf_position>
@@ -3942,8 +3942,8 @@ choose=允许会员输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>166</conf_id>
-			<conf_title><![CDATA[会员登录过期时间]]></conf_title>
-			<conf_description><![CDATA[会员存储在 Cookie 中的登录密码, 如果一段时间不使用, 将会失效, 会员必须重新登录.本措施避免黑客通过窃取 Cookie 来攻击论坛, 从而增强了安全性.]]></conf_description>
+			<conf_title><![CDATA[用户登录过期时间]]></conf_title>
+			<conf_description><![CDATA[用户存储在 Cookie 中的登录密码,如果一段时间不使用,将会失效,用户必须重新登录.本措施避免黑客通过窃取 Cookie 来攻击论坛,从而增强了安全性.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>login_key_expire</conf_key>
@@ -3966,7 +3966,7 @@ choose=允许会员输入新密码</conf_extra>
 		<setting>
 			<conf_id>167</conf_id>
 			<conf_title><![CDATA[是否在每次登录时重设会员的认证密钥?]]></conf_title>
-			<conf_description><![CDATA[如果是, 会员每次成功登录后, 将重设会员的认证密钥, 认证密钥存储在 Cookie 中, 类似密码, 这样的话, 会员将不能同时在多台电脑上记住登录信息.]]></conf_description>
+			<conf_description><![CDATA[如果是,用户每次成功登录后,将重设会员的认证密钥,认证密钥存储在 Cookie 中,类似密码,这样的话,用户将不能同时在多台电脑上记住登录信息.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>login_change_key</conf_key>
@@ -3986,7 +3986,7 @@ choose=允许会员输入新密码</conf_extra>
 		<setting>
 			<conf_id>168</conf_id>
 			<conf_title>Session 有效期(单位:秒)</conf_title>
-			<conf_description>在您指定的时限删除Session, 数字越小Session被盗用的可能性越小.</conf_description>
+			<conf_description>在您指定的时限删除Session,数字越小Session被盗用的可能性越小.</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>session_expiration</conf_key>
@@ -4005,8 +4005,8 @@ choose=允许会员输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>169</conf_id>
-			<conf_title><![CDATA[是否验证会员的 IP 地址]]></conf_title>
-			<conf_description><![CDATA[如果选择是, 会员的 IP 地址必须和存储在 Sessions 表中的匹配.如果论坛搭建在企业内部网环境, 请选否.]]></conf_description>
+			<conf_title><![CDATA[是否验证用户的 IP 地址]]></conf_title>
+			<conf_description><![CDATA[如果选择是,用户的 IP 地址必须和存储在 Sessions 表中的匹配.如果论坛搭建在企业内部网环境,请选否.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>match_ipaddress</conf_key>
@@ -4025,8 +4025,8 @@ choose=允许会员输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>170</conf_id>
-			<conf_title><![CDATA[是否验证会员的浏览器]]></conf_title>
-			<conf_description>本功能减轻了Session被盗的风险, 但这并不意味着会员在同一时间使用其他浏览器时会结束Session.</conf_description>
+			<conf_title><![CDATA[是否验证用户的浏览器]]></conf_title>
+			<conf_description>本功能减轻了Session被盗的风险,但这并不意味着用户在同一时间使用其他浏览器时会结束Session.</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>match_browser</conf_key>
@@ -4045,7 +4045,7 @@ choose=允许会员输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>171</conf_id>
-			<conf_title>多次登录失败后, 锁定会员账户</conf_title>
+			<conf_title>多次登录失败后,锁定用户账户</conf_title>
 			<conf_description><![CDATA[输入允许登录失败的次数.<br />
 <b>提示</b>: 输入0关闭本功能]]></conf_description>
 			<conf_group>26</conf_group>
@@ -4066,7 +4066,7 @@ choose=允许会员输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>172</conf_id>
-			<conf_title>设置多少时间后, 重设失败登录(单位:分)</conf_title>
+			<conf_title>设置多少时间后,重设失败登录(单位:分)</conf_title>
 			<conf_description><![CDATA[输入允许登录失败的次数<br />
 <b>提示</b>: 输入0关闭本功能 <!-- locked -->]]></conf_description>
 			<conf_group>26</conf_group>
@@ -4088,8 +4088,8 @@ choose=允许会员输入新密码</conf_extra>
 		<setting>
 			<conf_id>173</conf_id>
 			<conf_title>是否自动解锁账户?</conf_title>
-			<conf_description><![CDATA[如果某个账户因为失败的登录而倍锁定, 您是否希望该账户在经过您定义的时间后自动解锁？<br />
-<b>提示</b>: 设置为否, 将需要您手工解锁这些账户]]></conf_description>
+			<conf_description><![CDATA[如果某个账户因为失败的登录而倍锁定,您是否希望该账户在经过您定义的时间后自动解锁？<br />
+<b>提示</b>: 设置为否,将需要您手工解锁这些账户]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_bruteforce_unlock</conf_key>
@@ -4108,8 +4108,8 @@ choose=允许会员输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>174</conf_id>
-			<conf_title>是否使用安全邮件来进行会员邮件发送?</conf_title>
-			<conf_description>隐藏会员邮件地址并且阻止一些邮件收集机器人获取您的会员邮件信息s.</conf_description>
+			<conf_title>是否使用安全邮件来进行用户邮件发送?</conf_title>
+			<conf_description>隐藏用户邮件地址并且阻止一些邮件收集机器人获取您的用户邮件信息s.</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>use_mail_form</conf_key>
@@ -4129,7 +4129,7 @@ choose=允许会员输入新密码</conf_extra>
 		<setting>
 			<conf_id>175</conf_id>
 			<conf_title>是否允许上传图片?</conf_title>
-			<conf_description>高级程序员可以让图片像脚本一样运行, 虽然 IPB 限制了这个功能的危害, 不过如果您对安全很在意的话, 最好还是关闭.</conf_description>
+			<conf_description>高级程序员可以让图片像脚本一样运行,虽然 IPB 限制了这个功能的危害,不过如果您对安全很在意的话,最好还是关闭.</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>allow_images</conf_key>
@@ -4149,7 +4149,7 @@ choose=允许会员输入新密码</conf_extra>
 		<setting>
 			<conf_id>176</conf_id>
 			<conf_title>允许在帖子中上传Flash或者用作头像?</conf_title>
-			<conf_description><![CDATA[Flash 采用内建的脚本机制, 这就存在一定的安全隐患, 除非您绝对信任您的会员, 否则请不要开启.]]></conf_description>
+			<conf_description><![CDATA[Flash 采用内建的脚本机制,这就存在一定的安全隐患,除非您绝对信任您的用户,否则请不要开启.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>allow_flash</conf_key>
@@ -4169,7 +4169,7 @@ choose=允许会员输入新密码</conf_extra>
 		<setting>
 			<conf_id>177</conf_id>
 			<conf_title>从论坛前台删除后台管理员链接</conf_title>
-			<conf_description><![CDATA[如果是,  论坛页眉部分将不显示后台管理员链接.如果您更改了"admin"目录, 请打开本功能.]]></conf_description>
+			<conf_description><![CDATA[如果是，论坛页眉部分将不显示后台管理员链接.如果您更改了"admin"目录,请打开本功能.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>security_remove_acp_link</conf_key>
@@ -4188,15 +4188,15 @@ choose=允许会员输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>180</conf_id>
-			<conf_title>会员注册是否需要激活?</conf_title>
-			<conf_description><![CDATA[需要管理员手工激活每一个新账户, 或者新会员需要通过邮件激活账户.如果选择了"会员及管理员激活", 那么会员首先收到激活邮件, 成功激活后, 将进入管理员激活队列, 等待管理员激活.]]></conf_description>
+			<conf_title>用户注册是否需要激活?</conf_title>
+			<conf_description><![CDATA[需要管理员手工激活每一个新账户,或者新用户需要通过邮件激活账户.如果选择了"用户及管理员激活",那么用户首先收到激活邮件,成功激活后,将进入管理员激活队列,等待管理员激活.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>reg_auth_type</conf_key>
 			<conf_value></conf_value>
 			<conf_default>0</conf_default>
-			<conf_extra>admin_user=会员及管理员激活
-user=会员电子邮件激活
+			<conf_extra>admin_user=用户及管理员激活
+user=用户电子邮件激活
 admin=管理员人工激活
 0=不激活</conf_extra>
 			<conf_evalphp></conf_evalphp>
@@ -4211,8 +4211,8 @@ admin=管理员人工激活
 
 		<setting>
 			<conf_id>181</conf_id>
-			<conf_title><![CDATA[[x]天后, 删除未完成的注册验证]]></conf_title>
-			<conf_description><![CDATA[本功能将在您设置的天数后自动删除未完成会员验证的会员, 设置成0将不会自动删除.]]></conf_description>
+			<conf_title><![CDATA[[x]天后,删除未完成的注册验证]]></conf_title>
+			<conf_description><![CDATA[本功能将在您设置的天数后自动删除未完成用户验证的用户,设置成0将不会自动删除.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>validate_day_prune</conf_key>
@@ -4231,8 +4231,8 @@ admin=管理员人工激活
 
 		<setting>
 			<conf_id>182</conf_id>
-			<conf_title>是否发送邮件通知新会员注册?</conf_title>
-			<conf_description>本功能在将有新会员成功注册后给系统管理员发送一封邮件.</conf_description>
+			<conf_title>是否发送邮件通知新用户注册?</conf_title>
+			<conf_description>本功能在将有新用户成功注册后给系统管理员发送一封邮件.</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>new_reg_notify</conf_key>
@@ -4252,7 +4252,7 @@ admin=管理员人工激活
 		<setting>
 			<conf_id>183</conf_id>
 			<conf_title>是否强迫游客登录论坛?</conf_title>
-			<conf_description>如果是, 会员必须登录后才能浏览论坛.</conf_description>
+			<conf_description>如果是,用户必须登录后才能浏览论坛.</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>force_login</conf_key>
@@ -4272,7 +4272,7 @@ admin=管理员人工激活
 		<setting>
 			<conf_id>184</conf_id>
 			<conf_title>是否关闭注册?</conf_title>
-			<conf_description><![CDATA[如果选择是, 将禁止注册新会员.]]></conf_description>
+			<conf_description><![CDATA[如果选择是,将禁止注册新用户.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>no_reg</conf_key>
@@ -4292,7 +4292,7 @@ admin=管理员人工激活
 		<setting>
 			<conf_id>185</conf_id>
 			<conf_title>在输入的字符中删除 chr(0xCA)</conf_title>
-			<conf_description><![CDATA[会员名称可以利用这个字符生成隐藏的空格 - 在汉字环境下, 打开本功能会产生错误.]]></conf_description>
+			<conf_description><![CDATA[用户名称可以利用这个字符生成隐藏的空格 - 在汉字环境下,打开本功能会产生错误.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>strip_space_chr</conf_key>
@@ -4312,7 +4312,7 @@ admin=管理员人工激活
 		<setting>
 			<conf_id>186</conf_id>
 			<conf_title><![CDATA[关闭"报告主题给版主"的链接]]></conf_title>
-			<conf_description>关闭会员举报帖子功能.</conf_description>
+			<conf_description>关闭用户举报帖子功能.</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>disable_reportpost</conf_key>
@@ -4339,7 +4339,7 @@ admin=管理员人工激活
 			<conf_value></conf_value>
 			<conf_default>pm</conf_default>
 			<conf_extra>email=电子邮件
-pm=短消息</conf_extra>
+pm=悄悄话</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>47</conf_position>
@@ -4353,7 +4353,7 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_id>188</conf_id>
 			<conf_title>发帖间隔设置(单位:秒)</conf_title>
-			<conf_description><![CDATA[让会员两次发帖等待一定时间, 可以防止恶意灌水.留空将不启用本功能.本功能对忽略灌水限制的会员组成员无效.]]></conf_description>
+			<conf_description><![CDATA[让用户两次发帖等待一定时间,可以防止恶意灌水.留空将不启用本功能.本功能对忽略灌水限制的用户组成员无效.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>flood_control</conf_key>
@@ -4372,8 +4372,8 @@ pm=短消息</conf_extra>
 
 		<setting>
 			<conf_id>189</conf_id>
-			<conf_title>允许会员浏览在线列表</conf_title>
-			<conf_description><![CDATA[如果"是", 会员和游客就可以查看到每个人所处位置, 没有权限浏览的帖子和没有权限访问的版块将不会显示.]]></conf_description>
+			<conf_title>允许用户浏览在线列表</conf_title>
+			<conf_description><![CDATA[如果"是",用户和游客就可以查看到每个人所处位置,没有权限浏览的帖子和没有权限访问的版块将不会显示.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>allow_online_list</conf_key>
@@ -4393,7 +4393,7 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_id>190</conf_id>
 			<conf_title>禁止匿名(隐身)登陆</conf_title>
-			<conf_description><![CDATA[会员将不能匿名(隐身)登陆]]></conf_description>
+			<conf_description><![CDATA[用户将不能匿名(隐身)登陆]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>disable_anonymous</conf_key>
@@ -4412,8 +4412,8 @@ pm=短消息</conf_extra>
 
 		<setting>
 			<conf_id>191</conf_id>
-			<conf_title>禁止系统管理员查看隐身的在线会员</conf_title>
-			<conf_description>隐身会员的名字后面有一个星号</conf_description>
+			<conf_title>禁止系统管理员查看隐身的在线用户</conf_title>
+			<conf_description>隐身用户的名字后面有一个星号</conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>disable_admin_anon</conf_key>
@@ -4452,7 +4452,7 @@ pm=短消息</conf_extra>
 
 		<setting>
 			<conf_id>193</conf_id>
-			<conf_title>禁止系统管理员查看在线会员 IP 地址</conf_title>
+			<conf_title>禁止系统管理员查看在线用户 IP 地址</conf_title>
 			<conf_description></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -4481,8 +4481,8 @@ pm=短消息</conf_extra>
 
 		<setting>
 			<conf_id>194</conf_id>
-			<conf_title>在会员注册的时候显示付费服务包?</conf_title>
-			<conf_description>如果打开, 付费服务包将显示在注册页面, 供正在注册的会员选择.</conf_description>
+			<conf_title>在用户注册的时候显示付费服务包?</conf_title>
+			<conf_description>如果打开,付费服务包将显示在注册页面,供正在注册的用户选择.</conf_description>
 			<conf_group>27</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>subsm_show_reg</conf_key>
@@ -4502,7 +4502,7 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_id>195</conf_id>
 			<conf_title>每个会员必须购买付费服务</conf_title>
-			<conf_description>打开后, 会员在注册时必须选择一个付费服务包才能通过验证, 而已经注册的会员必须购买付费服务包后才能看到论坛.</conf_description>
+			<conf_description>打开后,会员在注册时必须选择一个付费服务包才能通过验证,而已经注册的会员必须购买付费服务包后才能看到论坛.</conf_description>
 			<conf_group>27</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>subsm_enforce</conf_key>
@@ -4521,8 +4521,8 @@ pm=短消息</conf_extra>
 
 		<setting>
 			<conf_id>196</conf_id>
-			<conf_title>会员注册之后,  购买付费项目之前所处的会员组</conf_title>
-			<conf_description><![CDATA[如果您要求每个会员都必须购买一种付费项目, 请选择一个会员组来转移那些在购买付费项目之前注册的会员.属于此会员组的会员, 如果他们尚未购买一种付费项目, 那么在他们登录的时候将看到"购买付费项目"页面.]]></conf_description>
+			<conf_title>会员注册之后，购买付费项目之前所处的用户组</conf_title>
+			<conf_description><![CDATA[如果您要求每个会员都必须购买一种付费项目,请选择一个用户组来转移那些在购买付费项目之前注册的会员.属于此用户组的会员,如果他们尚未购买一种付费项目,那么在他们登录的时候将看到"购买付费项目"页面.]]></conf_description>
 			<conf_group>27</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>subsm_nopkg_group</conf_key>
@@ -4542,8 +4542,8 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>topicspostsandpolls</conf_title_keyword>
-			<conf_title_title>主题, 帖子和投票</conf_title_title>
-			<conf_title_desc>您可以在这里对主题, 帖子和投票的显示和发布进行设置.</conf_title_desc>
+			<conf_title_title>主题,帖子和投票</conf_title_title>
+			<conf_title_desc>您可以在这里对主题,帖子和投票的显示和发布进行设置.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -4771,7 +4771,7 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_id>208</conf_id>
 			<conf_title><![CDATA[自动调整大图]]></conf_title>
-			<conf_description><![CDATA[若选择"是", 则任何用 [IMG] 标签发表的图片将会被调整大小以免撑破板块的布局.]]></conf_description>
+			<conf_description><![CDATA[若选择"是",则任何用 [IMG] 标签发表的图片将会被调整大小以免撑破板块的布局.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>resize_linked_img</conf_key>
@@ -4791,7 +4791,7 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_id>209</conf_id>
 			<conf_title>树型模式下每主题页面显示帖子数</conf_title>
-			<conf_description>此项决定树型模式下, 每页显示的帖子索引数量.对于非常庞大的主题, 这将帮助减小服务器负载.</conf_description>
+			<conf_description>此项决定树型模式下,每页显示的帖子索引数量.对于非常庞大的主题,这将帮助减小服务器负载.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>threaded_per_page</conf_key>
@@ -4811,7 +4811,7 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_id>210</conf_id>
 			<conf_title>默认主题查看模式</conf_title>
-			<conf_description><![CDATA[有"树型模式", "标准模式", "线型增强"三种方式.]]></conf_description>
+			<conf_description><![CDATA[有"树型模式","标准模式","线型增强"三种方式.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>topicmode_default</conf_key>
@@ -4832,8 +4832,8 @@ linearplus=Linear Plus</conf_extra>
 
 		<setting>
 			<conf_id>211</conf_id>
-			<conf_title>禁止忽略的会员组</conf_title>
-			<conf_description>选中的会员组将不能被忽略.</conf_description>
+			<conf_title>禁止忽略的用户组</conf_title>
+			<conf_description>选中的用户组将不能被忽略.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>multi</conf_type>
 			<conf_key>cannot_ignore_groups</conf_key>
@@ -4844,7 +4844,7 @@ linearplus=Linear Plus</conf_extra>
 {
 	if ( is_array($_POST['cannot_ignore_groups']) )
 	{
-		$_POST['cannot_ignore_groups'] = ', '.implode(", ", $_POST['cannot_ignore_groups']).', ';
+		$_POST['cannot_ignore_groups'] = ','.implode(",",$_POST['cannot_ignore_groups']).',';
 	}
 	else
 	{
@@ -5011,7 +5011,7 @@ desc=Descending (9-0)</conf_extra>
 		<setting>
 			<conf_id>219</conf_id>
 			<conf_title>自动换行设置</conf_title>
-			<conf_description>防止一堆很长的连续不断的字符将表格撑大, 建议 80-100, 中文的帖子可能会出现乱码.</conf_description>
+			<conf_description>防止一堆很长的连续不断的字符将表格撑大,建议 80-100,中文的帖子可能会出现乱码.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>post_wordwrap</conf_key>
@@ -5031,7 +5031,7 @@ desc=Descending (9-0)</conf_extra>
 		<setting>
 			<conf_id>220</conf_id>
 			<conf_title>每篇帖子允许的最大引用数量</conf_title>
-			<conf_description>限制多层嵌套引用, 防止某些浏览器崩溃.</conf_description>
+			<conf_description>限制多层嵌套引用,防止某些浏览器崩溃.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>max_quotes_per_post</conf_key>
@@ -5051,7 +5051,7 @@ desc=Descending (9-0)</conf_extra>
 		<setting>
 			<conf_id>221</conf_id>
 			<conf_title><![CDATA[合并会员一段时间内的重复发贴]]></conf_title>
-			<conf_description><![CDATA[当某会员在短时间内连续2次在同一个主题发贴时, 将会合并帖子.输入这个时间的值(单位:分钟), 输 0将关闭本功能.]]></conf_description>
+			<conf_description><![CDATA[当某会员在短时间内连续2次在同一个主题发贴时,将会合并帖子.输入这个时间的值(单位:分钟),输 0将关闭本功能.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>post_merge_conc</conf_key>
@@ -5071,7 +5071,7 @@ desc=Descending (9-0)</conf_extra>
 		<setting>
 			<conf_id>222</conf_id>
 			<conf_title>关闭重复引用</conf_title>
-			<conf_description><![CDATA[打开本功能将删除帖子中的重复引用内容<br><a href='#' title='and if that made any sense,  then you are far cleverer than I.'>..</a>]]></conf_description>
+			<conf_description><![CDATA[打开本功能将删除帖子中的重复引用内容<br><a href='#' title='and if that made any sense, then you are far cleverer than I.'>..</a>]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>strip_quotes</conf_key>
@@ -5091,12 +5091,12 @@ desc=Descending (9-0)</conf_extra>
 		<setting>
 			<conf_id>223</conf_id>
 			<conf_title>允许的图片后缀名</conf_title>
-			<conf_description><![CDATA[允许图片使用 [img][/img] 标签.包含格式为(gif, jpeg, jpg, png)]]></conf_description>
+			<conf_description><![CDATA[允许图片使用 [img][/img] 标签.包含格式为(gif,jpeg,jpg,png)]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>img_ext</conf_key>
 			<conf_value></conf_value>
-			<conf_default>gif, jpeg, jpg, png</conf_default>
+			<conf_default>gif,jpeg,jpg,png</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -5111,7 +5111,7 @@ desc=Descending (9-0)</conf_extra>
 		<setting>
 			<conf_id>224</conf_id>
 			<conf_title>打开URL过滤</conf_title>
-			<conf_description>打开后, 可以基于白名单或者黑名单过滤URL, URL过滤可以明确的允许(白名单)或者拒绝(黑名单)帖子中的连接(包括图片).</conf_description>
+			<conf_description>打开后,可以基于白名单或者黑名单过滤URL,URL过滤可以明确的允许(白名单)或者拒绝(黑名单)帖子中的连接(包括图片).</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_use_url_filter</conf_key>
@@ -5197,7 +5197,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>228</conf_id>
 			<conf_title>直接显示帖子中的图片</conf_title>
-			<conf_description><![CDATA[如果"是", 帖子中的任何图片附件将会直接显示图片本身而不是下载链接.打开后将允许会员发帖的时候用[attachmentid]标记来给图片定位.]]></conf_description>
+			<conf_description><![CDATA[如果"是",帖子中的任何图片附件将会直接显示图片本身而不是下载链接.打开后将允许用户发帖的时候用[attachmentid]标记来给图片定位.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>show_img_upload</conf_key>
@@ -5217,7 +5217,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>229</conf_id>
 			<conf_title>每行最多显示缩略图数量</conf_title>
-			<conf_description>附件图片缩略图超过这个数字时会换行, 否则将在同一行显示.请不要设置的很大,  以免撑破表格.</conf_description>
+			<conf_description>附件图片缩略图超过这个数字时会换行,否则将在同一行显示.请不要设置的很大, 以免撑破表格.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>topic_attach_no_per_row</conf_key>
@@ -5237,7 +5237,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>230</conf_id>
 			<conf_title>显示附件图片的缩略图</conf_title>
-			<conf_description><![CDATA[如果上面的选项设置为"是", 打开本功能可以将附件图片显示为缩略图, 这将加快帖子的显示速度.]]></conf_description>
+			<conf_description><![CDATA[如果上面的选项设置为"是",打开本功能可以将附件图片显示为缩略图,这将加快帖子的显示速度.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>siu_thumb</conf_key>
@@ -5257,7 +5257,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>231</conf_id>
 			<conf_title><![CDATA[附件图片缩略图宽度]]></conf_title>
-			<conf_description><![CDATA[仅当上面的2个选项打开时生效.您可以定义缩略图的宽度.如果图片小于这里的大小, 将直接显示图片.]]></conf_description>
+			<conf_description><![CDATA[仅当上面的2个选项打开时生效.您可以定义缩略图的宽度.如果图片小于这里的大小,将直接显示图片.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>siu_width</conf_key>
@@ -5277,7 +5277,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>232</conf_id>
 			<conf_title><![CDATA[附件图片缩略图高度]]></conf_title>
-			<conf_description><![CDATA[仅当上面的2个选项打开时生效.您可以定义缩略图的高度.如果图片小于这里的大小, 将直接显示图片.]]></conf_description>
+			<conf_description><![CDATA[仅当上面的2个选项打开时生效.您可以定义缩略图的高度.如果图片小于这里的大小,将直接显示图片.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>siu_height</conf_key>
@@ -5357,7 +5357,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>236</conf_id>
 			<conf_title>每个投票允许最多问题数量</conf_title>
-			<conf_description>在每个投票内, 会员最多可以问多少问题.</conf_description>
+			<conf_description>在每个投票内,用户最多可以问多少问题.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>max_poll_questions</conf_key>
@@ -5396,7 +5396,7 @@ http://competitor_domain.com*]]></conf_description>
 
 		<setting>
 			<conf_id>238</conf_id>
-			<conf_title>允许会员查看了投票结果再投票</conf_title>
+			<conf_title>允许用户查看了投票结果再投票</conf_title>
 			<conf_description></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -5417,7 +5417,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>239</conf_id>
 			<conf_title>允许投票发起人自己投票</conf_title>
-			<conf_description><![CDATA[如果选择"是",  投票发起人也可以投票.]]></conf_description>
+			<conf_description><![CDATA[如果选择"是"，投票发起人也可以投票.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>allow_creator_vote</conf_key>
@@ -5456,8 +5456,8 @@ http://competitor_domain.com*]]></conf_description>
 
 		<setting>
 			<conf_id>241</conf_id>
-			<conf_title>允许会员在主题中增加投票的有效时间(单位:小时)</conf_title>
-			<conf_description>允许会员先发表主题再增加投票, 对版主和管理员无效</conf_description>
+			<conf_title>允许用户在主题中增加投票的有效时间(单位:小时)</conf_title>
+			<conf_description>允许会员先发表主题再增加投票,对版主和管理员无效</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>startpoll_cutoff</conf_key>
@@ -5477,7 +5477,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>242</conf_id>
 			<conf_title>允许会员使用所见即所得编辑器</conf_title>
-			<conf_description><![CDATA[如果是, 使用 IE 6, Mozilla 和 Firefox 的会员可以使用所见即所得(WYSIWYG)编辑器.]]></conf_description>
+			<conf_description><![CDATA[如果是,使用 IE 6,Mozilla 和 Firefox 的会员可以使用所见即所得(WYSIWYG)编辑器.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>posting_allow_rte</conf_key>
@@ -5497,7 +5497,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>243</conf_id>
 			<conf_title>默认打开侧边栏</conf_title>
-			<conf_description><![CDATA[如果是, 所见即所得编辑器的侧边栏(包含图释和快速连接选项)将会打开, 直到会员点击"切换侧边栏"按钮.]]></conf_description>
+			<conf_description><![CDATA[如果是,所见即所得编辑器的侧边栏(包含图释和快速连接选项)将会打开,直到用户点击"切换侧边栏"按钮.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>rte_side_panel_open</conf_key>
@@ -5518,7 +5518,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>trashcansetup</conf_title_keyword>
 			<conf_title_title>回收站设置</conf_title_title>
-			<conf_title_desc>回收站是一个特殊的论坛版块, 被删除的帖子将会移动到这里.</conf_title_desc>
+			<conf_title_desc>回收站是一个特殊的论坛版块,被删除的帖子将会移动到这里.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module>trashcan.php</conf_title_module>
 		</setting>
@@ -5526,7 +5526,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>244</conf_id>
 			<conf_title>打开回收站</conf_title>
-			<conf_description><![CDATA[如果"否", 本功能将被关闭, 下面的设置将被忽略.]]></conf_description>
+			<conf_description><![CDATA[如果"否",本功能将被关闭,下面的设置将被忽略.]]></conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>forum_trash_can_enable</conf_key>
@@ -5546,7 +5546,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>245</conf_id>
 			<conf_title>指定一个论坛版块作为回收站</conf_title>
-			<conf_description>不需要特别的读/写/回复权限, 请把它当作一个普通版块来设置.</conf_description>
+			<conf_description>不需要特别的读/写/回复权限,请把它当作一个普通版块来设置.</conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>forum_trash_can_id</conf_key>
@@ -5566,7 +5566,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>246</conf_id>
 			<conf_title>对系统管理员使用回收站设置?</conf_title>
-			<conf_description><![CDATA[如果否, 他们发表的帖子将被正常删除]]></conf_description>
+			<conf_description><![CDATA[如果否,他们发表的帖子将被正常删除]]></conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>forum_trash_can_use_radmin</conf_key>
@@ -5586,7 +5586,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>247</conf_id>
 			<conf_title>对普通管理员使用回收站设置</conf_title>
-			<conf_description><![CDATA[如果否, 他们发表的帖子将被正常删除]]></conf_description>
+			<conf_description><![CDATA[如果否,他们发表的帖子将被正常删除]]></conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>forum_trash_can_use_admin</conf_key>
@@ -5606,7 +5606,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>248</conf_id>
 			<conf_title>对总版主使用回收站设置</conf_title>
-			<conf_description><![CDATA[如果否, 他们发表的帖子将被正常删除]]></conf_description>
+			<conf_description><![CDATA[如果否,他们发表的帖子将被正常删除]]></conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>forum_trash_can_use_smod</conf_key>
@@ -5626,7 +5626,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>249</conf_id>
 			<conf_title>对论坛版主使用回收站设置</conf_title>
-			<conf_description><![CDATA[如果否, 他们发表的帖子将被正常删除]]></conf_description>
+			<conf_description><![CDATA[如果否,他们发表的帖子将被正常删除]]></conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>forum_trash_can_use_mod</conf_key>
@@ -5646,7 +5646,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>userprofiles</conf_title_keyword>
-			<conf_title_title>会员资料</conf_title_title>
+			<conf_title_title>用户资料</conf_title_title>
 			<conf_title_desc><![CDATA[您可以在本单元调整会员全局访问许可以及其他设置.]]></conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
@@ -5665,7 +5665,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>1</conf_position>
-			<conf_start_group>全局会员资料选项</conf_start_group>
+			<conf_start_group>全局用户资料选项</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
 			<conf_title_keyword>userprofiles</conf_title_keyword>
@@ -5674,8 +5674,8 @@ http://competitor_domain.com*]]></conf_description>
 
 		<setting>
 			<conf_id>251</conf_id>
-			<conf_title>关闭使用会员组的前缀和后缀格式化</conf_title>
-			<conf_description>这里将完全禁止使用会员组的前缀和后缀格式化会员名</conf_description>
+			<conf_title>关闭使用用户组的前缀和后缀格式化</conf_title>
+			<conf_description>这里将完全禁止使用用户组的前缀和后缀格式化用户名</conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_disable_group_psformat</conf_key>
@@ -5694,7 +5694,7 @@ http://competitor_domain.com*]]></conf_description>
 
 		<setting>
 			<conf_id>252</conf_id>
-			<conf_title>会员使用自定义头衔必须达到的发帖量</conf_title>
+			<conf_title>用户使用自定义头衔必须达到的发帖量</conf_title>
 			<conf_description>输入0禁止此功能</conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>input</conf_type>
@@ -5836,12 +5836,12 @@ rte=Rich-Text Editor</conf_extra>
 		<setting>
 			<conf_id>259</conf_id>
 			<conf_title>User selectable posts per page dropdown contents</conf_title>
-			<conf_description><![CDATA[Separate with a comma,  'Use forum default' added automatically<br>Example: 5, 15, 20, 25, 30]]></conf_description>
+			<conf_description><![CDATA[Separate with a comma, 'Use forum default' added automatically<br>Example: 5,15,20,25,30]]></conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>postpage_contents</conf_key>
 			<conf_value></conf_value>
-			<conf_default>5, 10, 15, 20, 25, 30, 35, 40</conf_default>
+			<conf_default>5,10,15,20,25,30,35,40</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -5856,12 +5856,12 @@ rte=Rich-Text Editor</conf_extra>
 		<setting>
 			<conf_id>260</conf_id>
 			<conf_title>User selectable topics per forum page dropdown contents</conf_title>
-			<conf_description><![CDATA[Separate with a comma,  'Use forum default' added automatically<br>Example: 5, 15, 20, 25, 30]]></conf_description>
+			<conf_description><![CDATA[Separate with a comma, 'Use forum default' added automatically<br>Example: 5,15,20,25,30]]></conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>topicpage_contents</conf_key>
 			<conf_value></conf_value>
-			<conf_default>5, 10, 15, 20, 25, 30, 35, 40</conf_default>
+			<conf_default>5,10,15,20,25,30,35,40</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -5907,7 +5907,7 @@ rte=Rich-Text Editor</conf_extra>
 {
 	if ( is_array($_POST['autoforum_sub_groups']) )
 	{
-		$_POST['autoforum_sub_groups'] = implode(", ", $_POST['autoforum_sub_groups']);
+		$_POST['autoforum_sub_groups'] = implode(",",$_POST['autoforum_sub_groups']);
 	}
 	else
 	{
@@ -5952,12 +5952,12 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>264</conf_id>
 			<conf_title>Allowed avatar image URL extensions</conf_title>
-			<conf_description>Seperate with comma (gif, png, jpeg) etc</conf_description>
+			<conf_description>Seperate with comma (gif,png,jpeg) etc</conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>avatar_ext</conf_key>
 			<conf_value></conf_value>
-			<conf_default>gif, jpg, jpeg, png</conf_default>
+			<conf_default>gif,jpg,jpeg,png</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -6072,12 +6072,12 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>270</conf_id>
 			<conf_title>Allowed photo URL extensions</conf_title>
-			<conf_description>Seperate with comma (gif, png, jpeg) etc</conf_description>
+			<conf_description>Seperate with comma (gif,png,jpeg) etc</conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>photo_ext</conf_key>
 			<conf_value></conf_value>
-			<conf_default>gif, jpg, jpeg, png</conf_default>
+			<conf_default>gif,jpg,jpeg,png</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -6172,7 +6172,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>276</conf_id>
 			<conf_title><![CDATA[Use &#39;classic&#39; mode profiles?]]></conf_title>
-			<conf_description><![CDATA[If 'yes',  the new profile portal will be disabled and the classic profile mode (IPB 2.1) will be used instead.]]></conf_description>
+			<conf_description><![CDATA[If 'yes', the new profile portal will be disabled and the classic profile mode (IPB 2.1) will be used instead.]]></conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>pp_show_classic</conf_key>
@@ -6192,7 +6192,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>277</conf_id>
 			<conf_title>Allow members to rate each other?</conf_title>
-			<conf_description><![CDATA[If 'yes',  members will be able to rate other members from their profiles.]]></conf_description>
+			<conf_description><![CDATA[If 'yes', members will be able to rate other members from their profiles.]]></conf_description>
 			<conf_group>30</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>pp_allow_member_rate</conf_key>
@@ -6221,7 +6221,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>278</conf_id>
 			<conf_title>打开警告系统</conf_title>
-			<conf_description><![CDATA[如果"否", 警告系统将不再使用, 同时关闭其显示.]]></conf_description>
+			<conf_description><![CDATA[如果"否",警告系统将不再使用,同时关闭其显示.]]></conf_description>
 			<conf_group>31</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>warn_on</conf_key>
@@ -6241,8 +6241,8 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>279</conf_id>
 			<conf_title>最小警告等级</conf_title>
-			<conf_description><![CDATA[可以使用负数.如果使用负数, 我们建议您不要采用图形区块和百分比模式, 请使用"数字等级模式". 
-会员注册后的初始警告等级是0.]]></conf_description>
+			<conf_description><![CDATA[可以使用负数.如果使用负数,我们建议您不要采用图形区块和百分比模式,请使用"数字等级模式". 
+用户注册后的初始警告等级是0.]]></conf_description>
 			<conf_group>31</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>warn_min</conf_key>
@@ -6281,8 +6281,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>281</conf_id>
-			<conf_title>受保护的会员组</conf_title>
-			<conf_description><![CDATA[不能警告的选中会员组, 您可以选择多个.]]></conf_description>
+			<conf_title>受保护的用户组</conf_title>
+			<conf_description><![CDATA[不能警告的选中用户组,您可以选择多个.]]></conf_description>
 			<conf_group>31</conf_group>
 			<conf_type>multi</conf_type>
 			<conf_key>warn_protected</conf_key>
@@ -6293,7 +6293,7 @@ if ( $show == 1 )
 {
 	if ( is_array($_POST['warn_protected']) )
 	{
-		$_POST['warn_protected'] = implode(", ", $_POST['warn_protected']);
+		$_POST['warn_protected'] = implode(",",$_POST['warn_protected']);
 	}
 	else
 	{
@@ -6317,8 +6317,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>282</conf_id>
-			<conf_title>允许不被保护的会员组查看他们自己的警告等级</conf_title>
-			<conf_description><![CDATA[如果选择"是", 会员可以看见自己的警告等级以及被警告原因.]]></conf_description>
+			<conf_title>允许不被保护的用户组查看他们自己的警告等级</conf_title>
+			<conf_description><![CDATA[如果选择"是",用户可以看见自己的警告等级以及被警告原因.]]></conf_description>
 			<conf_group>31</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>warn_show_own</conf_key>
@@ -6438,7 +6438,7 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>288</conf_id>
-			<conf_title>版主每日警告单一会员最大次数</conf_title>
+			<conf_title>版主每日警告单一用户最大次数</conf_title>
 			<conf_description></conf_description>
 			<conf_group>31</conf_group>
 			<conf_type>input</conf_type>
@@ -6518,7 +6518,7 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>292</conf_id>
-			<conf_title>总版主每日警告单会员最大次数</conf_title>
+			<conf_title>总版主每日警告单用户最大次数</conf_title>
 			<conf_description></conf_description>
 			<conf_group>31</conf_group>
 			<conf_type>input</conf_type>
@@ -6548,7 +6548,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>297</conf_id>
 			<conf_title>打开XML-RPC应用程序接口系统</conf_title>
-			<conf_description><![CDATA[选择是, 您的应用程序接口会员将能够使用XML-RPC接口.]]></conf_description>
+			<conf_description><![CDATA[选择是,您的应用程序接口用户将能够使用XML-RPC接口.]]></conf_description>
 			<conf_group>39</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>xmlrpc_enable</conf_key>
@@ -6568,7 +6568,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>298</conf_id>
 			<conf_title>XML-RPC应用程序接口记录</conf_title>
-			<conf_description><![CDATA[您想保存哪种类型的记录?选择"所有的"将会保存所有的应用程序接口记录, 选择"失败的"将仅仅保存应用程序接口访问失败的记录.]]></conf_description>
+			<conf_description><![CDATA[您想保存哪种类型的记录?选择"所有的"将会保存所有的应用程序接口记录,选择"失败的"将仅仅保存应用程序接口访问失败的记录.]]></conf_description>
 			<conf_group>39</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>xmlrpc_log_type</conf_key>
@@ -6589,7 +6589,7 @@ failed=失败的</conf_extra>
 		<setting>
 			<conf_id>299</conf_id>
 			<conf_title>XML-RPC记录过期时间</conf_title>
-			<conf_description><![CDATA[输入您想保存记录的最大天数.例如:如果您输入30, 那么30天之前的记录将被删除.]]></conf_description>
+			<conf_description><![CDATA[输入您想保存记录的最大天数.例如:如果您输入30,那么30天之前的记录将被删除.]]></conf_description>
 			<conf_group>39</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>xmlrpc_log_expire</conf_key>
