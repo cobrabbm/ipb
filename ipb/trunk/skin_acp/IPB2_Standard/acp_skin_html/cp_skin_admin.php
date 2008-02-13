@@ -22,7 +22,7 @@ $IPBHTML .= <<<EOF
 				<legend><strong>基本概况</strong></legend>
 				<table width='100%' cellpadding='4' cellspacing='0'>
 				 <tr>
-					<td width='30%' class='tablerow1'>Username</td>
+					<td width='30%' class='tablerow1'>会员名称</td>
 					<td width='70%' class='tablerow1'>{$log['admin_username']}</td>
 				</tr>
 				<tr>
@@ -103,7 +103,7 @@ $IPBHTML .= <<<EOF
  <td class='tablerow2' align='center'>{$r['_admin_time']}</td>
  <td class='tablerow2' align='center'><img src='{$this->ipsclass->skin_acp_url}/images/{$r['_admin_img']}' border='0' alt='-' class='ipd' /></td>
  <td class='tablerow1' width='1' valign='middle'>
- 	<a href='#' onclick="return ipsclass.pop_up_window('{$this->ipsclass->base_url}&section=admin&amp;act=loginlog&amp;code=view_detail&amp;detail={$r['admin_id']}', 400, 400)" title='View Details'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/view.png' border='0' alt='-' class='ipd' /></a>
+ 	<a href='#' onclick="return ipsclass.pop_up_window('{$this->ipsclass->base_url}&section=admin&amp;act=loginlog&amp;code=view_detail&amp;detail={$r['admin_id']}', 400, 400)" title='查看详细信息'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/view.png' border='0' alt='-' class='ipd' /></a>
  </td>
 </tr>
 EOF;
