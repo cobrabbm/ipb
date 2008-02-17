@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <helpsectionsexport exported="1190903772">
 	<helpsectionsgroup>
 		<helpsections>
 			<key>dashboard_dashboard_</key>
-			<title>ACP Help System</title>
-			<helptext><![CDATA[<b>Welcome to the ACP Help System</b>
+			<title>ºóÌ¨°ïÖúÏµÍ³</title>
+			<helptext><![CDATA[<b>»¶Ó­À´µ½ºóÌ¨°ïÖúÏµÍ³</b>
 <br />This system will provide more advanced information on specific settings and pages in your Admin Control Panel.
 <br />For pages that hold more information, you will see a box just like this one. 
 <br />For individual settings, an image will appear next to them, which you can click for more information. The image will appear as: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
