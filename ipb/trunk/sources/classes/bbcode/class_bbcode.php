@@ -11,7 +11,7 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2008-01-03 11:01:06 -0500 (Thu, 03 Jan 2008) $
+|   > $Date: 2008-01-03 11:01:29 -0500 (Thu, 03 Jan 2008) $
 |   > $Revision: 1155 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
@@ -202,7 +202,7 @@ class class_bbcode extends class_bbcode_core
 			// [url]http://www.index.com[/url]
 			// [url=http://www.index.com]ibforums![/url]
 			//-----------------------------------------
-			
+
 			$txt = preg_replace_callback( "#\[url\](.*?)\[/url\]#is"                                                    , array( &$this, '_regex_build_url_tags'), $txt );
 			$txt = preg_replace_callback( "#\[url\s*=\s*(?:\&quot\;|\")\s*(.*?)\s*(?:\&quot\;|\")\s*\](.*?)\[\/url\]#is", array( &$this, '_regex_build_url_tags'), $txt );
 			$txt = preg_replace_callback( "#\[url\s*=\s*(.*?)\s*\](.*?)\[\/url\]#is"                                    , array( &$this, '_regex_build_url_tags'), $txt );
@@ -293,7 +293,7 @@ class class_bbcode extends class_bbcode_core
 		// Parse smilies (disallow smilies in siggies, or we'll have to query the DB for each post
 		// and each signature when viewing a topic, not something that we really want to do.
 		//-----------------------------------------
-		
+
 		if ( $this->parse_smilies )
 		{
 			$txt = ' '.$txt.' ';
