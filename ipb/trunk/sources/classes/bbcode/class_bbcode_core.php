@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2008-01-03 11:01:06 -0500 (Thu, 03 Jan 2008) $
-|   > $Revision: 1155 $
+|   > $Date: 2008-01-31 10:55:56 -0500 (Thu, 31 Jan 2008) $
+|   > $Revision: 1181 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -779,7 +779,10 @@ class class_bbcode_core
 							{
 								$match[ $_content ][$i] = $this->post_db_parse_bbcode( $match[ $_content ][$i] );
 							}
-								
+
+							$match[ $_content ][$i] = preg_replace( '#(style)=#is', "$1&#61;", $match[ $_content ][$i] );	
+							$match[ $_option ][$i] = preg_replace( '#(style)=#is', "$1&#61;", $match[ $_option ][$i] );
+
 							$tmp = $row['bbcode_replace'];
 							$tmp = str_replace( '{option}' , $match[ $_option  ][$i], $tmp );
 							$tmp = str_replace( '{content}', $match[ $_content ][$i], $tmp );
@@ -815,7 +818,7 @@ class class_bbcode_core
 				}
 			}
 		}
-		
+
 		//-----------------------------------------
 		// Snapback used?
 		//-----------------------------------------
@@ -1434,6 +1437,37 @@ class class_bbcode_core
 		{
 			return '';
 		}
+		
+		//-----------------------------------------
+		// Don't let emos in URL..
+		//-----------------------------------------
+		
+		if ( $this->parse_smilies )
+		{
+			if ( count( $this->ipsclass->cache['emoticons'] ) > 0 )
+			{
+				foreach( $this->ipsclass->cache['emoticons'] as $row)
+				{
+					$code	= $row['typed'];
+					$code	= str_replace( '<', '&lt;', str_replace( '>', '&gt;', $code ) );	
+					
+					if( strpos( $url, $code ) )
+					{
+						$new  = '';
+						
+						for( $i=0; $i<strlen($code); $i++ )
+						{
+							//print dechex(ord($code{$i})).'<Br>';
+							$new .= '%' . dechex(ord($code{$i}));
+						}
+						
+						$url = str_replace( $code, $new, $url );
+					}
+				}
+			}
+		}
+		
+		$url = htmlspecialchars($url);
 		
 		//-----------------------------------------
 		// Is the img extension allowed to be posted?
@@ -2202,6 +2236,35 @@ class class_bbcode_core
 		}
 		
 		//-----------------------------------------
+		// Don't let emos in URL..
+		//-----------------------------------------
+		
+		if ( $this->parse_smilies )
+		{
+			if ( count( $this->ipsclass->cache['emoticons'] ) > 0 )
+			{
+				foreach( $this->ipsclass->cache['emoticons'] as $row)
+				{
+					$code	= $row['typed'];
+					$code	= str_replace( '<', '&lt;', str_replace( '>', '&gt;', $code ) );	
+					
+					if( strpos( $url['html'], $code ) )
+					{
+						$new  = '';
+						
+						for( $i=0; $i<strlen($code); $i++ )
+						{
+							//print dechex(ord($code{$i})).'<Br>';
+							$new .= '%' . dechex(ord($code{$i}));
+						}
+						
+						$url['html'] = str_replace( $code, $new, $url['html'] );
+					}
+				}
+			}
+		}
+		
+		//-----------------------------------------
 		// Make sure the last character isn't punctuation..
 		// if it is, remove it and add it to the
 		// end array
@@ -2240,6 +2303,7 @@ class class_bbcode_core
 		// clean up the ampersands / brackets
 		//-----------------------------------------
 		
+		$url['html'] = htmlspecialchars( $url['html'] );
 		$url['html'] = str_replace( "&amp;amp;", "&amp;", $url['html'] );
 		$url['html'] = str_replace( "["        , "%5b"  , $url['html'] );
 		$url['html'] = str_replace( "]"        , "%5d"  , $url['html'] );
