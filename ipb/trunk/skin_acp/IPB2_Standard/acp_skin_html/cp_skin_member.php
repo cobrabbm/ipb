@@ -454,7 +454,7 @@ $IPBHTML .= <<<EOF
   <td class='tablesubheader' width='20%'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=mod&amp;st=$st&amp;sort=mem&amp;ord=$new_ord'>会员显示名称</a></td>
   <td class='tablesubheader' width='15%'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mod&st=$st&sort=email&ord=$new_ord'>邮件地址</a></td>
   <td class='tablesubheader' width='20%'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mod&st=$st&sort=sent&ord=$new_ord'>邮件发送</a></td>
-  <td class='tablesubheader' width='5%' align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mod&st=$st&sort=posts&ord=$new_ord'>Posts</a></td>
+  <td class='tablesubheader' width='5%' align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mod&st=$st&sort=posts&ord=$new_ord'>帖子数目</a></td>
   <td class='tablesubheader' width='15%'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mod&st=$st&sort=reg&ord=$new_ord'>注册日期</a></td>
   <td class='tablesubheader' width='1%'><input type='checkbox' id='maincheckbox' onclick='check_boxes()' /></td>
  </tr>

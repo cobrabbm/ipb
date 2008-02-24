@@ -87,7 +87,7 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <a name='versions'></a>
 <div class='tableborder'>
- <div class='tableheaderalt'>�汾��ʷ (��� 5 ��)</div>
+ <div class='tableheaderalt'>版本历史 (最后 5 条)</div>
  <table width='100%' cellpadding='4' cellspacing='0'>
  $content
  </table>

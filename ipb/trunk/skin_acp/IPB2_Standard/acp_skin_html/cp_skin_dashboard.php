@@ -194,17 +194,17 @@ $IPBHTML .= <<<EOF
 <!-- HIDDEN "STOP" DIV -->
 <div id='acp-update-stop-wrapper' style='display:none;width:450px;'>
 	<div class='homepage_pane_warning_border' style='height:130px'>
-		<div class='homepage_section_warning'>NOTICE: RESET UPDATE NOTICE</div>
+		<div class='homepage_section_warning'>注意: 重设更新提醒</div>
 		<div style='float:left'>
 			<img src='{$this->ipsclass->skin_acp_url}/images/update_icons/update_warning.png' border='0' />
 		</div>
 		<div style='padding:4px;font-size:12px'>
-			Only reset this notice if you <strong>have already performed the upgrade</strong>.
+			如果您 <strong>已经完成升级</strong> 请进行重设.
 			<p>
-				Resetting this notice <strong>will not</strong> perform the upgrade for you.
+				重设提醒 <strong>不会</strong> 给您完成升级过程.
 			</p>
 			<p style='text-align: right'>
-				<input type='button' value=' CONTINUE ' onclick='VR_continue()' style='background-color:lightgreen;font-size:14px;' />
+				<input type='button' value=' 继续 ' onclick='VR_continue()' style='background-color:lightgreen;font-size:14px;' />
 				<input type='button' value=' CANCEL ' onclick='VR_cancel()' style='background-color:pink;font-size:14px;' />
 			</p>
 		</div>
@@ -214,17 +214,17 @@ $IPBHTML .= <<<EOF
 <!-- HIDDEN "INFORMATION" DIV -->
 <div id='acp-update-info-wrapper' style='display:none;width:450px;'>
 	<div class='homepage_pane_border' style='height:130px'>
-		<div class='homepage_section'>NOTICE: UPDATE INFORMATION</div>
+		<div class='homepage_section'>注意: 更新信息</div>
 		<div style='float:left'>
 			<img src='{$this->ipsclass->skin_acp_url}/images/update_icons/update_info.png' border='0' />
 		</div>
 		<div style='padding:4px;font-size:12px'>
 			<p>
-				To download the latest update, please log into the <strong>IPS Client Center</strong> and navigate to <strong>Your Downloads</strong>
+				下载最新更新, 请登录 <strong>IPS 官方客户中心</strong> 进行 <strong>您的下载</strong>
 			</p>
 			<p style='text-align: right;'>
-				<input type='button' value=' VISIT IPS CLIENT CENTER ' onclick='VU_continue()' style='background-color:lightgreen;font-size:14px;width:190px;' />
-				<input type='button' value=' CLOSE ' onclick='VU_cancel()' style='background-color:pink;font-size:14px;width:70px;' />
+				<input type='button' value=' 访问 IPS 官方客户中心 ' onclick='VU_continue()' style='background-color:lightgreen;font-size:14px;width:190px;' />
+				<input type='button' value=' 关闭 ' onclick='VU_cancel()' style='background-color:pink;font-size:14px;width:70px;' />
 			</p>
 		</div>
 	</div>
@@ -278,7 +278,7 @@ function edit_member()
 {
 	if (document.getElementById('DOIT').members_display_name.value == "")
 	{
-		alert("You must enter a username!");
+		alert("您必须输输入一个用户名称!");
 		return false;
 	}
 }
@@ -490,14 +490,14 @@ if ( IN_DEV )
 $IPBHTML .= <<<EOF
 <br />
 <div class='tableborder'>
- <div class='tableheaderalt'>DEV Installer XML Exports</div>
+ <div class='tableheaderalt'>开发包安装 XML 导入</div>
  <div class='tablepad'>
-	<a href='{$this->ipsclass->base_url}&amp;section=admin&amp;act=components&amp;code=master_xml_export'>Components</a>
-	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=loginauth&amp;code=master_xml_export'>Log In Modules</a>
-	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=group&amp;code=master_xml_export'>Groups</a>
-	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=attach&amp;code=master_xml_export'>Attachments</a>
-	&middot; <a href='{$this->ipsclass->base_url}&amp;section=lookandfeel&amp;act=sets&amp;code=master_xml_export'>Skins</a>
-	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=task&amp;code=master_xml_export'>Tasks</a>
+	<a href='{$this->ipsclass->base_url}&amp;section=admin&amp;act=components&amp;code=master_xml_export'>系统组件</a>
+	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=loginauth&amp;code=master_xml_export'>登录模块</a>
+	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=group&amp;code=master_xml_export'>用户组</a>
+	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=attach&amp;code=master_xml_export'>附件</a>
+	&middot; <a href='{$this->ipsclass->base_url}&amp;section=lookandfeel&amp;act=sets&amp;code=master_xml_export'>皮肤</a>
+	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=task&amp;code=master_xml_export'>任务</a>
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=help&amp;code=master_xml_export'>FAQ</a>
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=bbcode&amp;code=bbcode_export'>BBCode</a>
  </div>
@@ -520,10 +520,10 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='homepage_pane_border'>
-	<div class='homepage_section'>Admin Validation Queue</div>
+	<div class='homepage_section'>管理员激活列表</div>
 	{$content}
 	<div align='right'>
-	   <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=mod' style='text-decoration:none'>MORE &raquo;</a>
+	   <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=mod' style='text-decoration:none'>更多 &raquo;</a>
 	 </div>
 </div>
 <br />
@@ -544,14 +544,14 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <div class='homepage_sub_row_3'>
  <div style='float:right;'>
-  <a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=domod&_admin_auth_key={$this->ipsclass->_admin_auth_key}&mid_{$data['member_id']}=1&type=approve'><img src='{$this->ipsclass->skin_acp_url}/images/aff_tick.png' alt='Yes' class='ipd' /></a>&nbsp;
-  <a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=domod&_admin_auth_key={$this->ipsclass->_admin_auth_key}&mid_{$data['member_id']}=1&type=delete'><img src='{$this->ipsclass->skin_acp_url}/images/aff_cross.png' alt='No' class='ipd' /></a>
+  <a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=domod&_admin_auth_key={$this->ipsclass->_admin_auth_key}&mid_{$data['member_id']}=1&type=approve'><img src='{$this->ipsclass->skin_acp_url}/images/aff_tick.png' alt='是' class='ipd' /></a>&nbsp;
+  <a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=domod&_admin_auth_key={$this->ipsclass->_admin_auth_key}&mid_{$data['member_id']}=1&type=delete'><img src='{$this->ipsclass->skin_acp_url}/images/aff_cross.png' alt='否' class='ipd' /></a>
  </div>
  <div>
   <strong><a href='{$this->ipsclass->vars['board_url']}/index.php?showuser={$data['member_id']}' target='_blank'>{$data['members_display_name']}</a></strong>{$data['_coppa']}<br />
   &nbsp;&nbsp;{$data['email']}</a><br />
   <div class='desctext'>&nbsp;&nbsp;IP: <a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=learnip&ip={$data['ip_address']}'>{$data['ip_address']}</a></div>
-  <div class='desctext'>&nbsp;&nbsp;Registered {$data['_entry']}</div>
+  <div class='desctext'>&nbsp;&nbsp;注册日期 {$data['_entry']}</div>
  </div>
 </div>
 EOF;
@@ -569,9 +569,8 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-	We recommend you remove the Converter System
-   	from your server for security.
-   	<br />Simply remove <b>convert/index.php</b> from your installation to remove this message.
+	为了您的系统安全我们强烈建议您删除数据转换工具.
+   	<br />您只需删除您所安装的转换工具中的 <b>convert/index.php</b> 文件即可.
 EOF;
 
 //--endhtml--//
@@ -591,7 +590,7 @@ $IPBHTML .= <<<EOF
 <form action='{$this->ipsclass->base_url}&amp;section=dashboard&amp;act=dashboard&amp;save=1' method='post'>
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <textarea name='notes' style='background-color:#F9FFA2;border:1px solid #CCC;width:95%;font-family:verdana;font-size:10px' rows='8' cols='25'>{$notes}</textarea>
-<div><br /><input type='submit' value='Save Admin Notes' class='realbutton' /></div>
+<div><br /><input type='submit' value='保存管理日志' class='realbutton' /></div>
 </form>
 </div>
 EOF;
@@ -623,7 +622,7 @@ $IPBHTML .= <<<EOF
  </td>
  <td class='homepage_sub_row_3' align='center'>
 	<img src='{$this->ipsclass->skin_acp_url}/images/{$r['_admin_img']}' border='0' alt='-' class='ipd' />
-	<br /><a href='#' onclick="return ipsclass.pop_up_window('{$this->ipsclass->base_url}&amp;section=admin&amp;act=loginlog&amp;code=view_detail&amp;detail={$r['admin_id']}', 400, 400)" title='View Details'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/view.png' border='0' alt='-' class='ipd' /></a>
+	<br /><a href='#' onclick="return ipsclass.pop_up_window('{$this->ipsclass->base_url}&amp;section=admin&amp;act=loginlog&amp;code=view_detail&amp;detail={$r['admin_id']}', 400, 400)" title='查看详细信息'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/view.png' border='0' alt='-' class='ipd' /></a>
 </td>
 </tr>
 EOF;
@@ -643,11 +642,11 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <br />
 <div class='homepage_pane_border'>
- <div class='homepage_section'>Latest ACP Log Ins</div>
+ <div class='homepage_section'>最近后台登录</div>
 	<table cellspacing='0' cellpadding='0' border='0' width='100%'>
 	$content
 	</table>
-	<div align='right'><a href='{$this->ipsclass->base_url}&amp;section=admin&amp;act=loginlog' style='text-decoration:none'>MORE &raquo;</a></div>
+	<div align='right'><a href='{$this->ipsclass->base_url}&amp;section=admin&amp;act=loginlog' style='text-decoration:none'>更多 &raquo;</a></div>
 </div>
 <br />
 EOF;
@@ -672,10 +671,10 @@ $IPBHTML .= <<<EOF
 </td>
  <td class='tablerow2'>
 	<strong style='font-size:12px'><a href='{$this->ipsclass->vars['board_url']}/index.php?showuser={$r['session_member_id']}' target='_blank'>{$r['members_display_name']}</a></strong>
-	<div style='margin-top:6px'>Logged in: {$r['_log_in']}</div>
-	<div class='desctext'>IP: {$r['session_ip_address']}</div>
-	<div class='desctext'>Using: {$r['session_location']}</div>
-	<div class='desctext'>Last click: {$r['_click']}</div>
+	<div style='margin-top:6px'>登录时间: {$r['_log_in']}</div>
+	<div class='desctext'>IP 地址: {$r['session_ip_address']}</div>
+	<div class='desctext'>登录地址: {$r['session_location']}</div>
+	<div class='desctext'>最后点击: {$r['_click']}</div>
 </td>
 </tr>
 EOF;
@@ -694,7 +693,7 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='homepage_border'>
- <div class='homepage_sub_header'>Administrators Using ACP</div>
+ <div class='homepage_sub_header'>正在使用后台的管理员</div>
  <table width='100%' cellpadding='4' cellspacing='0'>
  $content
  </table>
@@ -720,7 +719,7 @@ $IPBHTML .= <<<EOF
  </td>
  <td class='tablerow1'>
 	 <b>{$rowb['members_display_name']}</b>
-	<div class='desctext'>IP: {$rowb['ip_address']}</div>
+	<div class='desctext'>IP 地址: {$rowb['ip_address']}</div>
 </td>
  <td class='tablerow2'>{$rowb['_ctime']}</td>
 </tr>
@@ -740,17 +739,17 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>Last 5 ACP Actions</div>
+ <div class='tableheaderalt'>最近 5 个后台活动记录</div>
  <table width='100%' cellpadding='4' cellspacing='0'>
  <tr>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
-  <td class='tablesubheader' width='44'>Member Name</td>
-  <td class='tablesubheader' width='55%'>Time of action</td>
+  <td class='tablesubheader' width='44'>会员名称</td>
+  <td class='tablesubheader' width='55%'>活动时间</td>
  </tr>
  $content
  </table>
  <div class='tablefooter' align='right'>
-   <a href='{$this->ipsclass->base_url}section=admin&amp;act=adminlog' style='text-decoration:none'>MORE &raquo;</a>
+   <a href='{$this->ipsclass->base_url}section=admin&amp;act=adminlog' style='text-decoration:none'>更多 &raquo;</a>
  </div>
 </div>
 
@@ -771,30 +770,30 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='homepage_border'>
- <div class='homepage_sub_header'><a href='{$this->ipsclass->base_url}&amp;section=help&amp;act=diag'>System Overview</a></div>
+ <div class='homepage_sub_header'><a href='{$this->ipsclass->base_url}&amp;section=help&amp;act=diag'>系统概览</a></div>
  <table width='100%' cellpadding='4' cellspacing='0'>
  <tr>
-  <td class='homepage_sub_row' width='60%'><strong>IP.Board Version</strong> &nbsp;(<a href='{$this->ipsclass->base_url}&amp;section=help&amp;act=diag#versions'>History</a>)</td>
+  <td class='homepage_sub_row' width='60%'><strong>IP.Board 版本</strong> &nbsp;(<a href='{$this->ipsclass->base_url}&amp;section=help&amp;act=diag#versions'>历史</a>)</td>
   <td class='homepage_sub_row' width='40%'><span style='color:red'>{$content['ipb_version']} (ID: {$content['ipb_id']})</span></td>
  </tr>
  <tr>
-  <td class='homepage_sub_row'><strong>Members</strong></td>
+  <td class='homepage_sub_row'><strong>会员</strong></td>
   <td class='homepage_sub_row'>
-  	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mem&amp;code=search'>Manage</a>
+  	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mem&amp;code=search'>管理</a>
   	(<strong>{$content['members']}</strong>)
   </td>
  </tr>
  <tr>
   <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>Online Users</strong></td>
   <td class='homepage_sub_row'>
-  	<a href='{$this->ipsclass->vars['board_url']}/index.php?act=online' target='_blank'>View Online List</a>
+  	<a href='{$this->ipsclass->vars['board_url']}/index.php?act=online' target='_blank'>查看在线列表</a>
   	(<strong>{$content['sessions']}</strong>)
   </td>
  </tr> 
  <tr>
-  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>Awaiting Validation</strong></td>
+  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>等待激活列表</strong></td>
   <td class='homepage_sub_row'>
-	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=mod'>Manage</a>
+	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=mod'>管理</a>
   	(<strong>{$content['validate']}</strong>)
   </td>
  </tr>
@@ -804,9 +803,9 @@ if( $this->ipsclass->vars['ipb_bruteforce_attempts'] > 0 )
 {
 $IPBHTML .= <<<EOF
  <tr>
-  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>Locked Accounts</strong></td>
+  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>锁定帐户</strong></td>
   <td class='homepage_sub_row'>
-  	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=lock'>Manage</a>
+  	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=lock'>管理</a>
   	(<strong>{$content['locked']}</strong>)
   </td>
  </tr>
@@ -815,39 +814,39 @@ EOF;
 
 $IPBHTML .= <<<EOF
  <tr>
-  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>COPPA Accounts</strong></td>
+  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>COPPA 帐户</strong></td>
   <td class='homepage_sub_row'>
-  	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=mod&amp;filter=coppa'>Manage</a>
+  	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mtools&amp;code=mod&amp;filter=coppa'>管理</a>
   	(<strong>{$content['coppa']}</strong>)
   </td>
  </tr>
  <tr>
-  <td class='homepage_sub_row'><strong>Topics</strong></td>
+  <td class='homepage_sub_row'><strong>主题</strong></td>
   <td class='homepage_sub_row'>
   	<strong>{$content['topics']}</strong>
   </td>
  </tr>
  <tr>
-  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>Awaiting Moderation</strong></td>
+  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>等待审核</strong></td>
   <td class='homepage_sub_row'>
   	{$content['topics_mod']}
   </td>
  </tr>
  <tr>
-  <td class='homepage_sub_row'><strong>Posts</strong></td>
+  <td class='homepage_sub_row'><strong>帖子</strong></td>
   <td class='homepage_sub_row'>
   	<strong>{$content['replies']}</strong>
   </td>
  </tr>
  <tr>
-  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>Awaiting Moderation</strong></td>
+  <td class='homepage_sub_row'>&nbsp;&nbsp;&#124;-<strong>等待审核</strong></td>
   <td class='homepage_sub_row'>
   	{$content['posts_mod']}
   </td>
  </tr>
  <tr>
-  <td class='homepage_sub_row'><strong>Uploads</strong></td>
-  <td class='homepage_sub_row'><strong><em><div id='uploads-size'><i>Loading...</i></div></em></strong></td>
+  <td class='homepage_sub_row'><strong>上传</strong></td>
+  <td class='homepage_sub_row'><strong><em><div id='uploads-size'><i>正在上传...</i></div></em></strong></td>
  </tr>
 
  </table>
@@ -913,7 +912,7 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-	Invision Power Board requires at least PHP 4.3.0 to operate fully.<br />Some sections of the ACP may not operate until you upgrade.
+	Invision Power Board 需要最低 PHP 4.3.0 版本环境来实现所有的功能.<br />如果您不进行升级一些后台管理操作将无法实现.
 EOF;
 
 //--endhtml--//
@@ -931,18 +930,18 @@ $IPBHTML = "";
 if( $a )
 {
 $IPBHTML .= <<<EOF
-	Your SQL server supports fulltext searching, which performs much better than the manual search method, however you have not yet created your fulltext indexes.
+	您的数据库服务器支持全文搜索, 这种搜索方式比手工搜索具有更好的性能表现, 然而在这种环境中您将无法创建全文索引.
 	<br /><br />
-	To create fulltext indexes please see <a href='{$this->ipsclass->base_url}&section=tools&act=op&code=dofulltext'>this page</a> (please note that you can <a href='{$this->ipsclass->base_url}&section=help&act=support&code=support'>submit a ticket</a> for assistance)
+	创建全文索引请阅读 <a href='{$this->ipsclass->base_url}&section=tools&act=op&code=dofulltext'>这里</a> (请注意您可以 <a href='{$this->ipsclass->base_url}&section=help&act=support&code=support'>提交支持请求</a> 来寻求官方帮助)
 	<br /><br />
 EOF;
 }
 
 if( $b )
 {
-	$query = urlencode( 'Type of search to use' );
+	$query = urlencode( '搜索使用类型' );
 $IPBHTML .= <<<EOF
-	It appears fulltext searching is not enabled on your board.  You should enable <a href='{$this->ipsclass->base_url}&section=tools&act=op&code=setting_view&search={$query}'>this setting</a> if fulltext indexes have been created.
+	我们检测到全文搜索在您的论坛中没有开启. 如果您创建了全文索引, 您必须开启 <a href='{$this->ipsclass->base_url}&section=tools&act=op&code=setting_view&search={$query}'>这一设置</a> 来使用这一功能.
 EOF;
 }
 
@@ -979,8 +978,8 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-	Remove <b>install/index.php</b> from your server at once!
-  	<br />Leaving it on your server WILL compromise the security of your system.
+	请立即在您的服务器删除 <b>install/index.php</b> 文件!
+  	<br />保留这一文件将给您的系统造成安全隐患.
 EOF;
 
 //--endhtml--//
@@ -997,7 +996,7 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-	IPB has detected that an upgrade has not been completed.  Click <a href='{$this->ipsclass->vars['board_url']}/upgrade/index.php'>here</a> to complete.
+	IPB 检测到您的升级过程尚未完成. 请点击 <a href='{$this->ipsclass->vars['board_url']}/upgrade/index.php'>这里</a> 来完成升级.
 EOF;
 
 //--endhtml--//
@@ -1013,9 +1012,8 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-	Although the installer appears to be locked, we recommend you remove it
-   	from your server for security.
-   	<br />Simply remove <b>install/index.php</b> from your installation to remove this message.
+	虽然我们已经锁定了安装系统, 但是我们仍然建议您进行删除操作.
+   	<br />您只需删除 <b>install/index.php</b> 文件即可.
 EOF;
 
 //--endhtml--//
@@ -1031,20 +1029,19 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-   Either you or one of your members encountered a skin error. The following took place
-   automatically:
+   您或者您的会员遇到了皮肤错误. 下面的动作自动完成了:
    <ul>
-	<li>They were asked to clear their skin settings</li>
-	<li>They were asked to click a link to attempt access in the ACP</li>
-	<li>The ACP picked up the skin error and rebuilt the skin ID cache, the default skin and it may have turned on safe mode skins</li>
+	<li>他们已经被告知清除他们的皮肤设置</li>
+	<li>他们被告知点击链接来尝试进入后台</li>
+	<li>系统后台已经记录皮肤错误并且重建皮肤文件缓存, 启用默认皮肤并且转而采用安全模式</li>
    </ul>
-   <b>What to do now</b>
+   <b>下一步怎么做</b>
    <ul>
-	<li>Firstly, if you don't wish to use safe mode skins, check the CHMOD value of the 'skin_cache' directory to make sure IPB can write into that directory</li>
-	<li>If the permissions are correct, check your 'System Settings -&gt; General Configuration' settings to check the value of 'Safe Mode Skins' - disable if not required</li>
+	<li>首先, 如果您不希望启用安全模式的皮肤, 请设置 'skin_cache' 文件夹属性为可写这样系统才能够向文件夹中写入皮肤文件缓存</li>
+	<li>如果文件夹权限正确, 请您检查 '系统设置 -&gt; 通用系统设置' 点击禁用 '安全模式皮肤' - 如果您不需要这一设置</li>
 	<li>As a precaution, rebuild all your skins by following the link below</li>
    </ul>
-   <b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>REBUILD ALL SKIN CACHES & REMOVE THIS WARNING</a> &lt;&lt;</b>
+   <b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>重建所有皮肤缓存 & 移除这一警告</a> &lt;&lt;</b>
 EOF;
 
 //--endhtml--//
@@ -1060,8 +1057,8 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-   You'll need to update all your skin caches to ensure the new template bits have been added correctly.
-   <br /><br /><b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>REBUILD ALL SKIN CACHES & REMOVE THIS WARNING</a> &lt;&lt;</b>
+   您将需要更新所有皮肤缓存来确保新的模板项可以正确添加.
+   <br /><br /><b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>重建所有皮肤缓存 & 移除这一警告</a> &lt;&lt;</b>
 EOF;
 
 //--endhtml--//
