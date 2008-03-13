@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2008-01-31 10:55:56 -0500 (Thu, 31 Jan 2008) $
-|   > $Revision: 1181 $
+|   > $Date: 2008-03-06 17:05:33 -0500 (Thu, 06 Mar 2008) $
+|   > $Revision: 1198 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -751,7 +751,7 @@ class class_bbcode_core
 				
 				if ( $row['bbcode_useoption'] )
 				{
-					while (preg_match_all( "#(\[".$preg_tag."=(?:&quot;|&\#39;|\"|\')?(.+?)(?:&quot;|&\#39;|\"|\')?\])((?R)|.*?)(\[/".$preg_tag."\])#si", $t, $match ))
+					while (preg_match_all( "#(\[".$preg_tag."=(?:\"|\')?(.+?)(?:\"|\')?\])((?R)|.*?)(\[/".$preg_tag."\])#si", $t, $match ))
 					{
 						for ( $i = 0; $i < count($match[0]); $i++)
 						{
@@ -780,12 +780,12 @@ class class_bbcode_core
 								$match[ $_content ][$i] = $this->post_db_parse_bbcode( $match[ $_content ][$i] );
 							}
 
-							$match[ $_content ][$i] = preg_replace( '#(style)=#is', "$1&#61;", $match[ $_content ][$i] );	
-							$match[ $_option ][$i] = preg_replace( '#(style)=#is', "$1&#61;", $match[ $_option ][$i] );
+							//$match[ $_content ][$i] = preg_replace( '#(style)=#is', "$1&#61;", $match[ $_content ][$i] );	
+							//$match[ $_option ][$i] = preg_replace( '#(style)=#is', "$1&#61;", $match[ $_option ][$i] );
 
 							$tmp = $row['bbcode_replace'];
-							$tmp = str_replace( '{option}' , $match[ $_option  ][$i], $tmp );
-							$tmp = str_replace( '{content}', $match[ $_content ][$i], $tmp );
+							$tmp = str_replace( '{option}' , $this->ipsclass->xss_html_clean( $match[ $_option  ][$i] ), $tmp );
+							$tmp = str_replace( '{content}', $this->ipsclass->xss_html_clean( $match[ $_content ][$i] ), $tmp );
 							$t   = str_replace( $match[0][$i], $tmp, $t );
 						}
 					}
@@ -1464,10 +1464,14 @@ class class_bbcode_core
 						$url = str_replace( $code, $new, $url );
 					}
 				}
+				
+				// Using the :/ smiley
+				$url = str_replace( 'http%3a%2f', 'http:/', $url );
 			}
 		}
 		
 		$url = htmlspecialchars($url);
+		$url = str_replace( '&amp;amp;', '&amp;', $url );
 		
 		//-----------------------------------------
 		// Is the img extension allowed to be posted?
@@ -2261,6 +2265,9 @@ class class_bbcode_core
 						$url['html'] = str_replace( $code, $new, $url['html'] );
 					}
 				}
+				
+				// Using the :/ smiley
+				$url['html'] = str_replace( 'http%3a%2f', 'http:/', $url['html'] );
 			}
 		}
 		
@@ -2482,7 +2489,7 @@ class class_bbcode_core
 			return $default;
 		}
 		
-		return "<!--Flash $width+$height+$url--><OBJECT CLASSID='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' WIDTH=$width HEIGHT=$height><PARAM NAME=MOVIE VALUE=$url><PARAM NAME=PLAY VALUE=TRUE><PARAM NAME=LOOP VALUE=TRUE><PARAM NAME=QUALITY VALUE=HIGH><EMBED SRC=$url WIDTH=$width HEIGHT=$height PLAY=TRUE LOOP=TRUE QUALITY=HIGH></EMBED></OBJECT><!--End Flash-->";
+		return "<!--Flash $width+$height+$url--><OBJECT CLASSID='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' WIDTH='$width' HEIGHT='$height'><PARAM NAME='MOVIE' VALUE='$url'><PARAM NAME='PLAY' VALUE='TRUE'><PARAM NAME='LOOP' VALUE='TRUE'><PARAM NAME='QUALITY' VALUE='HIGH'><PARAM NAME='allowscriptaccess' VALUE='never'><EMBED AllowScriptAccess='never' SRC='$url' WIDTH='$width' HEIGHT='$height' PLAY='TRUE' LOOP='TRUE' QUALITY='HIGH'></EMBED></OBJECT><!--End Flash-->";
 	}
 	
 	/*-------------------------------------------------------------------------*/

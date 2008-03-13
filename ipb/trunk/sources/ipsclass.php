@@ -10,8 +10,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2008-01-03 11:01:06 -0500 (Thu, 03 Jan 2008) $
-|   > $Revision: 1155 $
+|   > $Date: 2008-03-06 17:05:33 -0500 (Thu, 06 Mar 2008) $
+|   > $Revision: 1198 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -98,13 +98,6 @@ class ipsclass {
 	var $vn_full         = '';
 	var $vn_build_date   = '';
 	var $vn_build_reason = '';
-	
-	/**
-	* IPBCHINA version number
-	*
-	* @var string
-	*/
-	var $ipbchina_version = 'Beta 1';
 	
 	/**
 	* Member Array
@@ -439,7 +432,7 @@ class ipsclass {
 		// Char set
 		//-----------------------------------------
 		
-		$this->vars['gb_char_set'] = $this->vars['gb_char_set'] ? $this->vars['gb_char_set'] : 'UTF-8';
+		$this->vars['gb_char_set'] = $this->vars['gb_char_set'] ? $this->vars['gb_char_set'] : 'iso-8859-1';
 		
 		//-----------------------------------------
 		// Max display name length
@@ -1814,7 +1807,7 @@ class ipsclass {
 			
 			if ( ! $this->lang_id )
 			{
-				$this->lang_id = 'zh-cn';
+				$this->lang_id = 'en';
 			}
 		}
     	
@@ -2430,7 +2423,7 @@ class ipsclass {
 		
 		$_NOW = $this->memory_debug_make_flag();
 		
-	    $this->vars['default_language'] = isset($this->vars['default_language']) ? $this->vars['default_language'] : 'zh-cn';
+	    $this->vars['default_language'] = isset($this->vars['default_language']) ? $this->vars['default_language'] : 'en';
 	    
     	if ( ! $this->lang_id )
     	{
@@ -2707,18 +2700,35 @@ class ipsclass {
 		//-----------------------------------------
 		// Basics...
 		//-----------------------------------------
-		
+
 		$html = preg_replace( "/javascript/i" , "j&#097;v&#097;script", $html );
 		$html = preg_replace( "/alert/i"      , "&#097;lert"          , $html );
+		$html = preg_replace( "/behavior/i"   , "beh&#097;vior"    	  , $html );
+		$html = preg_replace( "/e((\/\*.*?\*\/)*)x((\/\*.*?\*\/)*)p((\/\*.*?\*\/)*)r((\/\*.*?\*\/)*)e((\/\*.*?\*\/)*)s((\/\*.*?\*\/)*)s((\/\*.*?\*\/)*)i((\/\*.*?\*\/)*)o((\/\*.*?\*\/)*)n/i" , "exp&#8203;ressi&#111;n"     , $html );
+		$html = preg_replace( "/e((\\\|&#092;)*)x((\\\|&#092;)*)p((\\\|&#092;)*)r((\\\|&#092;)*)e((\\\|&#092;)*)s((\\\|&#092;)*)s((\\\|&#092;)*)i((\\\|&#092;)*)o((\\\|&#092;)*)n/i" 	  , "exp&#8203;ressi&#111;n"     	  , $html );
+		$html = preg_replace( "/m((\\\|&#092;)*)o((\\\|&#092;)*)z((\\\|&#092;)*)\-((\\\|&#092;)*)b((\\\|&#092;)*)i((\\\|&#092;)*)n((\\\|&#092;)*)d((\\\|&#092;)*)i((\\\|&#092;)*)n((\\\|&#092;)*)g/i" 	  , "moz-&#8203;b&#105;nding"     	  , $html );
 		$html = preg_replace( "/about:/i"     , "&#097;bout:"         , $html );
-		$html = preg_replace( "/onmouseover/i", "&#111;nmouseover"    , $html );
-		$html = preg_replace( "/onclick/i"    , "&#111;nclick"        , $html );
-		$html = preg_replace( "/onload/i"     , "&#111;nload"         , $html );
-		$html = preg_replace( "/onsubmit/i"   , "&#111;nsubmit"       , $html );
 		$html = preg_replace( "/<body/i"      , "&lt;body"            , $html );
 		$html = preg_replace( "/<html/i"      , "&lt;html"            , $html );
 		$html = preg_replace( "/document\./i" , "&#100;ocument."      , $html );
+		$html = preg_replace( "/window\./i"   , "wind&#111;w."      , $html );
 		
+		$event_handlers	= array( 'mouseover', 'mouseout', 'mouseup', 'mousemove', 'mousedown', 'mouseenter', 'mouseleave', 'mousewheel',
+								 'contextmenu', 'click', 'dblclick', 'load', 'unload', 'submit', 'blur', 'focus', 'resize', 'scroll',
+								 'change', 'reset', 'select', 'selectionchange', 'selectstart', 'start', 'stop', 'keydown', 'keyup',
+								 'keypress', 'abort', 'error', 'dragdrop', 'move', 'moveend', 'movestart', 'activate', 'afterprint',
+								 'afterupdate', 'beforeactivate', 'beforecopy', 'beforecut', 'beforedeactivate', 'beforeeditfocus',
+								 'beforepaste', 'beforeprint', 'beforeunload', 'begin', 'bounce', 'cellchange', 'controlselect',
+								 'copy', 'cut', 'paste', 'dataavailable', 'datasetchanged', 'datasetcomplete', 'deactivate', 'drag',
+								 'dragend', 'dragleave', 'dragenter', 'dragover', 'drop', 'end', 'errorupdate', 'filterchange', 'finish',
+								 'focusin', 'focusout', 'help', 'layoutcomplete', 'losecapture', 'mediacomplete', 'mediaerror', 'outofsync',
+								 'pause', 'propertychange', 'progress', 'readystatechange', 'repeat', 'resizeend', 'resizestart', 'resume',
+								 'reverse', 'rowsenter', 'rowexit', 'rowdelete', 'rowinserted', 'seek', 'syncrestored', 'timeerror',
+								 'trackchange', 'urlflip',
+								);
+		
+		$html = preg_replace( "/on(" . implode( '|', $event_handlers ) . ")/i", "&#111;n\\1"    , $html );
+
 		return $html;
 	}
 	
@@ -5310,8 +5320,9 @@ class ipsclass {
 				return "<object classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" width='{$this_dims[0]}' height='{$this_dims[1]}'>
 						<param name='movie' value='{$member_avatar}'><param name='play' value='true'>
 						<param name='loop' value='true'><param name='quality' value='high'>
+						<param name='allowscriptaccess' value='never'>
 						<param name='wmode' value='transparent'> 
-						<embed src='{$member_avatar}' width='{$this_dims[0]}' height='{$this_dims[1]}' play='true' loop='true' quality='high' wmode='transparent'></embed>
+						<embed src='{$member_avatar}' allowscriptaccess='never' width='{$this_dims[0]}' height='{$this_dims[1]}' play='true' loop='true' quality='high' wmode='transparent'></embed>
 						</object>";
 			}
 			else
@@ -5334,7 +5345,8 @@ class ipsclass {
 						<param name='movie' value='{$this->vars['upload_url']}/$member_avatar'><param name='play' value='true'>
 						<param name='loop' value='true'><param name='quality' value='high'>
 						<param name='wmode' value='transparent'> 
-					    <embed src='{$this->vars['upload_url']}/$member_avatar' width='{$this_dims[0]}' height='{$this_dims[1]}' play='true' loop='true' quality='high' wmode='transparent'></embed>
+						<param name='allowscriptaccess' value='never'>
+					    <embed src='{$this->vars['upload_url']}/$member_avatar' allowscriptaccess='never' width='{$this_dims[0]}' height='{$this_dims[1]}' play='true' loop='true' quality='high' wmode='transparent'></embed>
 						</object>";
 			}
 			else
@@ -5411,6 +5423,8 @@ class ipsclass {
 			$member['pp_main_width']  = 150;
 			$member['pp_main_height'] = 150;
 			$member['_has_photo']     = 0;
+			
+			$member['pp_thumb_photo'] = '';
 		}
 		else
 		{
@@ -5920,6 +5934,7 @@ class ipsclass {
 			}
 		}
 		
+		$member['location']		   = $this->txt_wordwrap( $member['location'], 25 );
 		$member['member_joined']   = $this->compiled_templates[ $skin_file ]->member_joined( $this->get_date( $member['joined'], 'JOINED' ) );
 		$member['member_group']    = $this->compiled_templates[ $skin_file ]->member_group( $group_name );
 		$member['member_posts']    = $this->compiled_templates[ $skin_file ]->member_posts( $this->do_number_format( intval( $member['posts'] ) ) );
