@@ -288,31 +288,31 @@ function no_specialchars(type)
 	if (type == 'sets')
 	{
 	  var field = document.theAdminForm.sname;
-	  name = 'Skin Set Title';
+	  name = '皮肤设置名称';
 	}
 	
 	if (type == 'wrapper')
 	{
 	  var field = document.theAdminForm.name;
-	  name = 'Wrapper Title';
+	  name = '接口名称';
 	}
 	
 	if (type == 'csssheet')
 	{
 	  var field = document.theAdminForm.name;
-	  name = 'StyleSheet Title';
+	  name = '样式表标题';
 	}
 	
 	if (type == 'templates')
 	{
 	  var field = document.theAdminForm.skname;
-	  name = 'Template Set Name';
+	  name = '模板设置名称';
 	}
 	
 	if (type == 'images')
 	{
 	  var field = document.theAdminForm.setname;
-	  name = 'Image & Macro Set Title';
+	  name = '图片 & 标签设置名称';
 	}
 	
 	var valid = 'abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.()[]:;~+-_';
@@ -331,7 +331,7 @@ function no_specialchars(type)
 	
 	if (ok == 0)
 	{
-	  alert('Invalid entry for: ' + name + ', you can only use alphanumerics and the following special characters.\n. ( ) : ; ~ + - _');
+	  alert('无效输入: ' + name + ', 您只能使用字母和数字以及下面的指定特殊符号.\n. ( ) : ; ~ + - _');
 	  return false;
 	}
 	else
@@ -366,7 +366,7 @@ function maincheckdelete(url, msg)
 {
 	if ( ! msg )
 	{
-		msg = 'PLEASE CONFIRM:\nOK to proceed?';
+		msg = '请确认:\n开始执行?';
 	}
 	
 	if (confirm( msg ))
@@ -375,7 +375,7 @@ function maincheckdelete(url, msg)
 	}
 	else
 	{
-		alert ( 'OK, action cancelled!' );
+		alert ( '好的, 操作取消!' );
 	} 
 }
 

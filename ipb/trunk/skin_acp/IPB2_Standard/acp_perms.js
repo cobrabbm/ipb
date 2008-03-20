@@ -68,7 +68,7 @@ acpperms.prototype.save_group = function( perm_main, perm_child, member_id, resu
 		
 		if ( ! _this.xmlobj.readystate_ready_and_ok() )
 		{
-			_this.show_loading( 'Saving...' );
+			_this.show_loading( '正在保存...' );
 			return;
 		}
 		
@@ -182,7 +182,7 @@ acpperms.prototype.clicked = function( perm_bit, onoff )
 	
 	if ( perm_bit != 'mainbit' && ( ! document.getElementById( 'pb_mainbit' ).value || document.getElementById( 'pb_mainbit' ).value == 0 ) )
 	{
-		alert( "To enabled individual access permissions, please enable 'ALLOW ACCESS TO THIS FUNCTION'" );
+		alert( "为了开启个人登录权限, 请开启 '允许使用这一功能' 选项" );
 		return false;
 	}
 	
@@ -347,7 +347,7 @@ acpperms.prototype.save_bits = function( doreturn )
 	try
 	{
 		document.getElementById( 'perms-save-box' ).className = 'input-ok-content';
-		document.getElementById( 'perms-save-box' ).innerHTML = "Auto-saving...";
+		document.getElementById( 'perms-save-box' ).innerHTML = "正在自动保存...";
 	}
 	catch(e) { }
 	
@@ -429,7 +429,7 @@ acpperms.prototype.save_mainbit = function( result )
 		
 		if ( ! _this.xmlobj.readystate_ready_and_ok() )
 		{
-			_this.show_loading( 'Saving...' );
+			_this.show_loading( '正在保存...' );
 			return;
 		}
 		
@@ -785,7 +785,7 @@ acpperms.prototype.show_loading = function( status_msg )
 
 acpperms.prototype.hide_loading = function()
 {
-	this.div_status_msg.innerHTML = '<div style="width:auto" class="input-ok-content">Ready</span>';
+	this.div_status_msg.innerHTML = '<div style="width:auto" class="input-ok-content">准备就绪</span>';
 	
 	this.loading_fired = 0;
 	
