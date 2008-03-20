@@ -278,7 +278,7 @@ function template_find_bits(event)
 	}
 	catch(e)
 	{
-		alert( "Could not locate a template bit called: " + search_box.value + "\nPlease search in the format:\ntemplate_name (template_group)" );
+		alert( "无法找到下面的模板项: " + search_box.value + "\n请使用以下格式搜索:\n模板名称 (模板组)" );
 	}
 }
 
@@ -299,7 +299,7 @@ function template_bit_restore( tid )
 	
 	if ( editor_contents[ 't'+tid ] )
 	{
-		if ( confirm("Are you sure you want to restore the template?\nALL UNSAVED CHANGES WILL BE LOST!") )
+		if ( confirm("您确信您将要恢复模板初始状态吗?\n执行这一操作后所有未保存的的更改都将丢失!") )
 		{
 			edit_box_obj.value     = editor_contents[ 't'+tid ];
 			editor_contents[ 't'+tid ] = '';
@@ -319,7 +319,7 @@ function template_edit_close( tid )
 	
 	if ( editor_contents[ 't'+tid ] )
 	{
-		if ( ! confirm('WARNING: CLICK "OK" TO LOSE ANY UNSAVED CHANGES' ) )
+		if ( ! confirm('警告: 点击 "确定" 将会丢失所有未保存的更改' ) )
 		{
 			return false;
 		}
@@ -477,7 +477,7 @@ function template_revert_clicked(event)
 		var bitname      = clicked_href.replace( /.*bitname=(.+?)&.*/  , "$1" );
 		var custombit    = clicked_href.replace( /.*custombit=(.+?)/, "$1" );
 		
-		if ( confirm( "WARNING: You cannot undo this action!\nPress OK to continue or CANCEL to cancel this action..." ) )
+		if ( confirm( "警告: 您无法恢复这一操作!\n请点击 确定 来继续或者 取消 终止这一操作..." ) )
 		{
 			if ( use_enhanced_js && parseInt(custombit) != 1 )
 			{
@@ -611,7 +611,7 @@ function template_add_bit( add_url, event )
 	
 	if ( editor_unload_set )
 	{
-		if ( ! confirm('WARNING: CLICK "OK" TO LOSE ANY UNSAVED CHANGES' ) )
+		if ( ! confirm('警告: 点击 "确定" 将会丢失所有未保存的更改' ) )
 		{
 			return false;
 		}
@@ -691,7 +691,7 @@ function template_load_editor( bit_name, event, bit_url )
 	
 	if ( editor_unload_set )
 	{
-		if ( ! confirm('WARNING: CLICK "OK" TO LOSE ANY UNSAVED CHANGES' ) )
+		if ( ! confirm('警告: 点击 "确定" 将会丢失所有未保存的更改' ) )
 		{
 			return false;
 		}

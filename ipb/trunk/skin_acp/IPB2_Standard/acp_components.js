@@ -160,7 +160,7 @@ function bbedit_components_remove_menu_row() {}
 
 components.prototype.remove_menu_row = function( id )
 {
-	if ( confirm( "Are you sure you wish to remove this menu row?" ) )
+	if ( confirm( "您确信删除这一菜单项吗?" ) )
 	{
 		//-------------------------------
 		// Delete All bits
