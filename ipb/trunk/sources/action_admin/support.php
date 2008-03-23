@@ -58,8 +58,8 @@ class ad_support
 		switch($this->ipsclass->input['code'])
 		{
 			case 'doctor':
-				$this->ipsclass->admin->page_detail = "Please utilize our documentation to discover how to use features found in the software.";
-				$this->ipsclass->admin->page_title  = "Documentation";
+				$this->ipsclass->admin->page_detail = "请利用我们的文档来学习如何使用 IPB 论坛程序的功能.";
+				$this->ipsclass->admin->page_title  = "文档";
 				
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'http://external.ipslink.com/ipboard22/landing/?p=docs-ipb' );
@@ -68,7 +68,7 @@ class ad_support
 			
 			case 'kb':
 				$this->ipsclass->admin->page_detail = "Please utilize our knowledgebase to search for common issues and fixes to those issues.  You can also find documentation on how to use the features found in the software as well.";
-				$this->ipsclass->admin->page_title  = "Help & Support";
+				$this->ipsclass->admin->page_title  = "帮助和支持";
 				
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'http://external.ipslink.com/ipboard22/landing/?p=kb' );
@@ -76,7 +76,7 @@ class ad_support
 				
 			case 'support':
 				$this->ipsclass->admin->page_detail = "If you are experiencing an issue with your Invision Power Services software and require official assistance or support, you may utilize our ticketing system to submit a ticket.  Please allow 24-48 hours for a response during normal business hours.<br /><br /><i>You must have an active support contract with us in order to submit a ticket.</i>";
-				$this->ipsclass->admin->page_title  = "Help & Support";
+				$this->ipsclass->admin->page_title  = "帮助和支持";
 							
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'https://www.invisionpower.com/customer/index.php?&module=clientarea&section=tickets' );
@@ -85,7 +85,7 @@ class ad_support
 			case 'resources':
 				$this->ipsclass->admin->page_detail = "resources.invisionpower.com is a customer-only resource site where you can find helpful articles, modifications, skins, and graphics for your forum.  Note that all content and advice found on resources.invisionpower.com is provided as-is by the individual user, and is not endorsed nor support by Invision Power Services, Inc.  
 														If you are looking for additional resources for your board, this is the first place to go.";
-				$this->ipsclass->admin->page_title  = "Help & Support";
+				$this->ipsclass->admin->page_title  = "帮助和支持";
 							
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'http://resources.invisionpower.com' );
@@ -93,7 +93,7 @@ class ad_support
 				
 			case 'contact':
 				$this->ipsclass->admin->page_detail = "If you would like to contact us you can find our current contact information and hours of operation below.";
-				$this->ipsclass->admin->page_title  = "Help & Support";
+				$this->ipsclass->admin->page_title  = "帮助和支持";
 							
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'http://external.ipslink.com/ipboard22/landing/?p=contact' );
@@ -101,7 +101,7 @@ class ad_support
 				
 			case 'features':
 				$this->ipsclass->admin->page_detail = "If you would like to request a feature, or see if a particular feature has already been requested, for Invision Power Board this forum is the place to do so.";
-				$this->ipsclass->admin->page_title  = "Help & Support";
+				$this->ipsclass->admin->page_title  = "帮助和支持";
 							
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'http://external.ipslink.com/ipboard22/landing/?p=suggestfeatures' );
@@ -109,7 +109,7 @@ class ad_support
 				
 			case 'bugs':
 				$this->ipsclass->admin->page_detail = "You may submit and track all bugs reported to us by our users for Invision Power Board in the Bugtracker below.";
-				$this->ipsclass->admin->page_title  = "Help & Support";
+				$this->ipsclass->admin->page_title  = "帮助和支持";
 							
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'http://forums.invisionpower.com/index.php?autocom=bugtracker&code=show_project&product_id=2' );
@@ -119,7 +119,7 @@ class ad_support
 			//-----------------------------------------
 			default:
 				$this->ipsclass->admin->page_detail = "If you are experiencing an issue with your Invision Power Services software and require official assistance or support, you may utilize our ticketing system to submit a ticket.  Please allow 24-48 hours for a response during normal business hours.<br /><br /><i>You must have an active support contract with us in order to submit a ticket.</i>";
-				$this->ipsclass->admin->page_title  = "Help & Support";
+				$this->ipsclass->admin->page_title  = "帮助和支持";
 			
 				$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':view' );
 				$this->ipsclass->admin->show_inframe( 'https://www.invisionpower.com/customer/index.php?&module=clientarea&section=tickets' );

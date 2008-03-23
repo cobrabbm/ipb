@@ -50,7 +50,7 @@ class ad_modlogs {
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Moderator Logs' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '版主记录' );
 		
 		//-----------------------------------------
 
@@ -85,8 +85,8 @@ class ad_modlogs {
 	{
 		$start = intval($this->ipsclass->input['st']) >=0 ? intval($this->ipsclass->input['st']) : 0;
 		
-		$this->ipsclass->admin->page_detail = "Viewing all actions by a moderator";
-		$this->ipsclass->admin->page_title  = "Moderator Logs Manager";
+		$this->ipsclass->admin->page_detail = "查看某版主的所有操作记录";
+		$this->ipsclass->admin->page_title  = "版主操作记录管理器";
 	
 		if ( !isset($this->ipsclass->input['search_string']) OR $this->ipsclass->input['search_string'] == "")
 		{
@@ -155,19 +155,19 @@ class ad_modlogs {
 														)
 												 );
 									  
-		$this->ipsclass->admin->page_detail = "You may view and remove actions performed by your moderators";
-		$this->ipsclass->admin->page_title  = "Moderator Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里查看或删除版主的操作记录";
+		$this->ipsclass->admin->page_title  = "版主操作记录管理器";
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Member Name"            , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Action Performed"        , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Forum"                  , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Topic Title"            , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Time of action"         , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP address"             , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名称"	, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作"		, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "论坛版块"	, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题标题"	, "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作时间"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"		, "10%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Moderator Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版主记录" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
@@ -199,7 +199,7 @@ class ad_modlogs {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>版主记录</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
@@ -227,7 +227,7 @@ class ad_modlogs {
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'moderator_logs', 'where' => "member_id=".intval($this->ipsclass->input['mid']) ) );
 		
-		$this->ipsclass->admin->save_log("Removed Moderator Logs");
+		$this->ipsclass->admin->save_log("删除版主操作记录");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&{$this->ipsclass->form_code}&act=modlog");
 		exit();
@@ -247,8 +247,8 @@ class ad_modlogs {
 	{
 		$form_array = array();
 	
-		$this->ipsclass->admin->page_detail = "You may view and remove actions performed by your moderators";
-		$this->ipsclass->admin->page_title  = "Moderator Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里查看或删除版主的操作记录";
+		$this->ipsclass->admin->page_title  = "版主操作记录管理";
 
 		
 		//-----------------------------------------
@@ -258,14 +258,14 @@ class ad_modlogs {
 		$this->ipsclass->DB->cache_add_query( 'modlogs_list_current_last_five', array() );
 		$this->ipsclass->DB->cache_exec_query();
 		
-		$this->ipsclass->adskin->td_header[] = array( "Member Name"            , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Action Performed"        , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Forum"                  , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Topic Title"            , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Time of action"         , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP address"             , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名称"	, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作"		, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "论坛版块"	, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题标题"	, "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作时间"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"		, "10%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Last 5 Moderation Actions" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最新的 5 条操作记录" );
 
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -302,12 +302,12 @@ class ad_modlogs {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Member Name"            , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Actions Performed"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "View all by member"     , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Remove all by member"   , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名称"	, "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作次数"		, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "查看所有"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除所有"	, "30%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Moderator Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版主操作记录" );
 		
 		$this->ipsclass->DB->cache_add_query( 'modlogs_list_current_show_all', array() );
 		$this->ipsclass->DB->cache_exec_query();
@@ -316,8 +316,8 @@ class ad_modlogs {
 		{
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>{$r['members_display_name']}</b>",
 																				 "<center>{$r['act_count']}</center>",
-																				 "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&act=modlog&code=view&mid={$r['member_id']}'>View</a></center>",
-																				 "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&act=modlog&code=remove&mid={$r['member_id']}'>Remove</a></center>",
+																				 "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&act=modlog&code=view&mid={$r['member_id']}'>查看</a></center>",
+																				 "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&act=modlog&code=remove&mid={$r['member_id']}'>R删除</a></center>",
 																		)      );
 		}
 			
@@ -337,27 +337,27 @@ class ad_modlogs {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search Moderator Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索版主记录" );
 		
 		$form_array = array(
-							  0 => array( 'topic_title', 'Topic Title' ),
-							  1 => array( 'ip_address',  'IP Address'  ),
-							  2 => array( 'member_name', 'Member Name' ),
-							  3 => array( 'topic_id'   , 'Topic ID'    ),
-							  4 => array( 'forum_id'   , 'Forum ID'    )
+							  0 => array( 'topic_title', '主题标题' ),
+							  1 => array( 'ip_address',  'IP 地址'  ),
+							  2 => array( 'member_name', '会员名称' ),
+							  3 => array( 'topic_id'   , '主题 ID'    ),
+							  4 => array( 'forum_id'   , '版块 ID'    )
 						   );
 			
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search for...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索条件...</b>" ,
 										  		  $this->ipsclass->adskin->form_input( "search_string")
 								 )      );
 								 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search in...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b>" ,
 										  		  $this->ipsclass->adskin->form_dropdown( "search_type", $form_array)
 								 )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

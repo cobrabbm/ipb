@@ -212,8 +212,8 @@ class ad_skin_css
 	{
 		//-----------------------------------------
 	
-		$this->ipsclass->admin->page_detail = "A mismatch has been found between the cached style sheet and the style sheet stored in the database";
-		$this->ipsclass->admin->page_title  = "Resynchronise Style Sheet";
+		$this->ipsclass->admin->page_detail = "缓存中的样式表和数据库中的样式表之间发现了一出不匹配";
+		$this->ipsclass->admin->page_title  = "同步样式表";
 		
 		//-----------------------------------------
 		
@@ -231,18 +231,18 @@ class ad_skin_css
 									     
 		$favour = 'db';
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Resynch CSS before editing..." );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "编辑前同步 CSS..." );
 		
 		if ( intval($cache_mtime) > intval($db_mtime) )
 		{
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-														"<b>CSS in database last updated:</b> ".$this->ipsclass->admin->get_date($db_mtime, 'LONG'),
-														"<b>CSS in database, # characters:</b> $db_length",
+														"<b>数据库中的 CSS 最后更新于:</b> ".$this->ipsclass->admin->get_date($db_mtime, 'LONG'),
+														"<b>数据库中的 CSS 字符数:</b> $db_length",
 											 )      );
 											 
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-														"<span style='color:red'><b>CSS in CACHE last updated:</b> ".$this->ipsclass->admin->get_date($cache_mtime, 'LONG')."</span>",
-														"<span style='color:red'><b>CSS in CACHE, # characters:</b> $cache_length</span>",
+														"<span style='color:red'><b>缓存中的 CSS 最后更新于:</b> ".$this->ipsclass->admin->get_date($cache_mtime, 'LONG')."</span>",
+														"<span style='color:red'><b>缓存中的 CSS 字符数:</b> $cache_length</span>",
 											 )      );
 			$favour = 'cache';
 											 
@@ -250,21 +250,21 @@ class ad_skin_css
 		else
 		{
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-														"<span style='color:red'><b>CSS in database last updated:</b> ".$this->ipsclass->admin->get_date($db_mtime, 'LONG')."</span>",
-														"<span style='color:red'><b>CSS in database, # characters:</b> $db_length</span>",
+														"<span style='color:red'><b>数据库中的 CSS 最后更新于:</b> ".$this->ipsclass->admin->get_date($db_mtime, 'LONG')."</span>",
+														"<span style='color:red'><b>数据库中的 CSS 字符数:</b> $db_length</span>",
 											 )      );
 											 
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-														"<b>CSS in CACHE last updated:</b> ".$this->ipsclass->admin->get_date($cache_mtime, 'LONG'),
-														"<b>CSS in CACHE, # characters:</b> $cache_length",
+														"<b>缓存中的 CSS 最后更新于:</b> ".$this->ipsclass->admin->get_date($cache_mtime, 'LONG'),
+														"<b>缓存中的 CSS 字符数:</b> $cache_length",
 											 )      );
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-														"<b>Resynchronise using....</b>",
+														"<b>同步方向....</b>",
 														$this->ipsclass->adskin->form_dropdown( 'favour', array(
-																							    0 => array( 'cache', 'Overwrite database version with cached version'),
-																							    1 => array( 'db'   , 'Update cached version from the database' ),
+																							    0 => array( 'cache', '使用缓存覆盖数据库'),
+																							    1 => array( 'db'   , '使用数据库更新缓存' ),
 																							 ), $favour ),
 											 )      );
 		
@@ -332,7 +332,7 @@ class ad_skin_css
 		
 		if ( count($parsed) < 1)
 		{
-			$this->ipsclass->admin->error("The stylesheet is in a format that Invision Power Board cannot understand, no optimization done.");
+			$this->ipsclass->admin->error("无法解析样式表格式.");
 		}
 		
 		//-----------------------------------------
@@ -375,7 +375,7 @@ class ad_skin_css
 		
 		if ($final_size < 1000)
 		{
-			$this->ipsclass->admin->error("The stylesheet is in a format that Invision Power Board cannot understand, no optimization done.");
+			$this->ipsclass->admin->error("无法解析样式表格式.");
 		}
 		
 		//-----------------------------------------
@@ -394,7 +394,7 @@ class ad_skin_css
 			$pc_saved = sprintf( "%.2f", ($saved / $orig_size) * 100);
 		}
 		
-		$this->ipsclass->admin->done_screen("Stylesheet updated: Characters Saved: $saved ($pc_saved %)", "Manage Style Sheets", "{$this->ipsclass->form_code}" );
+		$this->ipsclass->admin->done_screen("样式表已更新: 保存字符数: $saved ($pc_saved %)", "样式表管理", "{$this->ipsclass->form_code}" );
 	}
 	
 	
@@ -436,7 +436,7 @@ class ad_skin_css
 		// Update cache?
 		//-----------------------------------------
 		
-		$extra = "<b>Stylesheet cache file updated</b>";
+		$extra = "<b>样式表缓存文件已更新</b>";
 		
 		$message = $this->ipsclass->cache_func->_write_css_to_cache( $this->ipsclass->input['id'] );
 		
@@ -446,9 +446,9 @@ class ad_skin_css
 		
 		if ( ! $this->ipsclass->input['savereload'] )
 		{
-			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'Skin Manager Home' );
-			$this->ipsclass->main_msg = "Stylesheet updated : $extra";
-			$this->ipsclass->admin->redirect( $this->ipsclass->base_url.'&section='.$this->ipsclass->section_code.'&act=sets', "Stylesheet updated, returning to the skin manager" );
+			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'皮肤管理' );
+			$this->ipsclass->main_msg = "样式表已更新 : $extra";
+			$this->ipsclass->admin->redirect( $this->ipsclass->base_url.'&section='.$this->ipsclass->section_code.'&act=sets', "样式表已更新, 返回皮肤管理" );
 		}
 		else
 		{
@@ -456,7 +456,7 @@ class ad_skin_css
 			// Reload edit window
 			//-----------------------------------------
 			
-			$this->ipsclass->main_msg = "Stylesheet updated : $extra";
+			$this->ipsclass->main_msg = "样式表已更新 : $extra";
 			$this->do_form('edit');
 		}
 	}
@@ -518,7 +518,7 @@ class ad_skin_css
 		$css    = $found_content;
 		
 		$code   = 'doedit';
-		$button = 'Save Stylesheet';
+		$button = '保存样式表';
 		
 		//-----------------------------------------
 		// Preserve <#IMG_DIR#>
@@ -555,8 +555,8 @@ class ad_skin_css
 			
 		//-----------------------------------------
 	
-		$this->ipsclass->admin->page_detail = "You may use CSS fully when adding or editing stylesheets.<br />Click <a href='#' onclick='ipsclass.pop_up_window(\"{$this->ipsclass->base_url}&act=rtempl&code=css_diff&id={$this->ipsclass->input['id']}\", 800, 600 )'>here</a> to view the changes between this CSS and the default skin CSS.";
-		$this->ipsclass->admin->page_title  = "Manage Style Sheets";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加或编辑样式表.<br />点击 <a href='#' onclick='ipsclass.pop_up_window(\"{$this->ipsclass->base_url}&act=rtempl&code=css_diff&id={$this->ipsclass->input['id']}\", 800, 600 )'>这里</a>  可以查看当前 CSS 和默认皮肤 CSS 之间的区别.";
+		$this->ipsclass->admin->page_title  = "样式表管理";
 		
 		//-----------------------------------------
 		
@@ -598,7 +598,7 @@ class ad_skin_css
 		$formbuttons = "<div align='center' class='tablesubheader'>
 						<input type='submit' name='submit' value='$button' class='realdarkbutton'>
 						<input type='submit' name='savereload' value='Save and Reload Stylesheet' class='realdarkbutton'>
-						<input type='button' name='diffreport' value='View CSS Differences Report' class='realdarkbutton' onclick='ipsclass.pop_up_window(\"{$this->ipsclass->base_url}&act=rtempl&code=css_diff&id={$this->ipsclass->input['id']}\", 800, 600 ); return false;' />
+						<input type='button' name='diffreport' value='保存后重新载入样式表' class='realdarkbutton' onclick='ipsclass.pop_up_window(\"{$this->ipsclass->base_url}&act=rtempl&code=css_diff&id={$this->ipsclass->input['id']}\", 800, 600 ); return false;' />
 						</div></form>\n";
 		
 		$this->ipsclass->html = str_replace( '<!--IPB.EDITORBOTTOM-->', $formbuttons, $this->ipsclass->html );
@@ -619,13 +619,13 @@ class ad_skin_css
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "80%" );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Find CSS Usage" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "查找 CSS 使" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
 																			   "Show me where...",
-																			   $this->ipsclass->adskin->form_dropdown('csschoice', $css_elements).' ... is used within the templates &nbsp;'
+																			   $this->ipsclass->adskin->form_dropdown('csschoice', $css_elements).' ... 在模板中的位置 &nbsp;'
 																			  .'<input type="button" value="Go!" onClick="cssSearch(\''.$this->ipsclass->input['id'].'\');" id="editbutton">'
-																			  .'&nbsp;<input type="button" value="Preview CSS Style" onClick="cssPreview(\''.$this->ipsclass->input['id'].'\');" id="editbutton">'
+																			  .'&nbsp;<input type="button" value="预览 CSS 样式" onClick="cssPreview(\''.$this->ipsclass->input['id'].'\');" id="editbutton">'
 																	)      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form();
@@ -636,8 +636,8 @@ class ad_skin_css
 										 
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'Skin Manager Home' );
-		$this->ipsclass->admin->nav[] = array( '' ,'Editing Style Sheet in set '.$this_set['set_name'] );
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( '' ,'编辑样式表 '.$this_set['set_name'] );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -788,8 +788,8 @@ class ad_skin_css
 		
 		require ROOT_PATH .'sources/lib/skin_info.php';
 	
-		$this->ipsclass->admin->page_detail = "You edit the existing colours below. <strong><a href='{$this->ipsclass->vars['board_url']}/skin_acp/IPB2_Standard/colours.html' target='_blank'>Launch Colour Picker</a></center></strong>";
-		$this->ipsclass->admin->page_title  = "Manage Style Sheets [ Colours ]";
+		$this->ipsclass->admin->page_detail = "您可以在下面编辑现在的颜色设置. <strong><a href='{$this->ipsclass->vars['board_url']}/skin_acp/IPB2_Standard/colours.html' target='_blank'>运行颜色拾取器</a></center></strong>";
+		$this->ipsclass->admin->page_title  = "样式表管理 [ 颜色 ]";
 		
 		$formfields = array( 1 => array( 'code'  , 'docolour'   ),
 																			 2 => array( 'act'   , 'style'      ),
@@ -837,7 +837,7 @@ class ad_skin_css
 							}
 						    </script>";
 						    
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "CSS Colours" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "CSS 颜色" );
 		$this->ipsclass->html .= "<td class='tablerow2'>";
 		
 		foreach ( $colours as $prop => $val )
@@ -872,18 +872,18 @@ class ad_skin_css
 								  <tr>
 								   <td width='40%' valign='top'>
 								    <fieldset>
-								     <legend><strong>Font Color</strong></legend>
+								     <legend><strong>字体颜色</strong></legend>
 										{$font_box}&nbsp;&nbsp;<input type='text' id='{$md5}color' onclick=\"updatecolor('{$md5}color')\" size='6' style='border:1px solid black;background-color:{$val['color']}' readonly='readonly'>&nbsp;<a href='#' title='launch color picker' onclick=\"poppicker('{$val['color']}', '{$md5}color'); return false;\"><img src='{$this->ipsclass->skin_acp_url}/images/colorselect.png' border='0' /></a>
 									</fieldset>
 									<br />
 									<fieldset>
-									 <legend><strong>Background Color</strong></legend>
+									 <legend><strong>背景颜色</strong></legend>
 			 						    {$bgcol_box}&nbsp;&nbsp;<input type='text' id='{$md5}backgroundcolor'  onclick=\"updatecolor('{$md5}backgroundcolor')\" size='6' style='border:1px solid black;background-color:{$val['background-color']}' readonly='readonly'>&nbsp;<a href='#' title='launch color picker' onclick=\"poppicker('{$val['background-color']}', '{$md5}backgroundcolor'); return false;\"><img src='{$this->ipsclass->skin_acp_url}/images/colorselect.png' border='0' /></a>
 			 						</fieldset>
 			 					   </td>
 			 					   <td width='60%' valign='top'>
 			 					   <fieldset>
-									 <legend><strong>Other CSS Attributes</strong></legend>
+									 <legend><strong>其他 CSS 属性</strong></legend>
 			 						    <textarea class='textinput' cols='40' rows='5' style='width:100%' name='f{$md5}extra'>{$val['_extra']}</textarea>
 			 						</fieldset>
 			 					   </td>
@@ -894,7 +894,7 @@ class ad_skin_css
 		}
 		
 		$this->ipsclass->html .= "</td>";
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("编辑");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

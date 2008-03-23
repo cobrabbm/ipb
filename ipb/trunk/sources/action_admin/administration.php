@@ -57,9 +57,9 @@ class ad_administration
 		// Require and RUN !! THERES A BOMB
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_detail = "The cache manager allows you to view the contents of your cache and update them.";
-		$this->ipsclass->admin->page_title  = "Cache Manager";
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Cache Manager' );
+		$this->ipsclass->admin->page_detail = "您可以在这里查看并更新缓存的内容.";
+		$this->ipsclass->admin->page_title  = "缓存管理";
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '缓存管理' );
 		
 		//-----------------------------------------
 		// Load skin
@@ -71,27 +71,27 @@ class ad_administration
 		// Map
 		//-----------------------------------------
 		
-		$this->map = array( 'forum_cache'   => 'All forum information and data',
-							'group_cache'   => 'All member group infomation and data',
-							'systemvars'    => 'System runtime variables',
-							'skin_id_cache' => 'Skin set information and data',
-							'moderators'    => 'All moderator information and data',
-							'stats'         => 'Board stats, such as total posts, etc',
-							'ranks'         => 'Member titles and rank information',
-							'profilefields' => 'Custom profile field information',
-							'birthdays'     => 'Members birthdays',
-							'calendar'      => 'Forthcoming calendar events',
-							'calendars'		=> 'Calendars you have created in the calendar manager',
-							'multimod'      => 'Multi-moderation information and data',
-							'bbcode'        => "Custom BBCode information and data",
-							'settings'      => "Board settings and variables",
-							'emoticons'     => 'Emoticon information and data',
-							'badwords'      => 'Bad Word Filters information and data',
-							'languages'     => 'Language Set information',
-							'banfilters'    => 'Banned IP addresses',
-							'attachtypes'   => 'Attachment Types information',
-							'announcements' => 'Announcements cache',
-							'components'    => 'Components enabled on your IPB',
+		$this->map = array( 'forum_cache'   => '版块信息和数据',
+							'group_cache'   => '用户组信息和数据',
+							'systemvars'    => '系统运行变量',
+							'skin_id_cache' => '皮肤信息和数据',
+							'moderators'    => '版主信息和数据',
+							'stats'         => '论坛统计，例如帖子数等',
+							'ranks'         => '会员头衔和等级信息',
+							'profilefields' => '自定义数据信息',
+							'birthdays'     => '会员生日',
+							'calendar'      => '未来的日历事件',
+							'calendars'		=> '您添加的日历',
+							'multimod'      => '主题批处理',
+							'bbcode'        => "自定义 BBCode",
+							'settings'      => "论坛设置和变量",
+							'emoticons'     => '论坛图释',
+							'badwords'      => '论坛过滤',
+							'languages'     => '语言包',
+							'banfilters'    => '屏蔽的 IP 地址',
+							'attachtypes'   => '附件类型',
+							'announcements' => '公告缓存',
+							'components'    => '开启的组件',
 						  );
 		
 		//-----------------------------------------
@@ -228,7 +228,7 @@ class ad_administration
 			
 				$this->ipsclass->update_forum_cache();
 				
-				$this->ipsclass->main_msg = 'Forum Cache Updated';
+				$this->ipsclass->main_msg = '版块缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -251,7 +251,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'group_cache', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'Group Cache Updated';
+				$this->ipsclass->main_msg = '用户组缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -328,7 +328,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'systemvars', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'System Variables Updated';
+				$this->ipsclass->main_msg = '系统变量缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -341,7 +341,7 @@ class ad_administration
     			$admin->ipsclass =& $this->ipsclass;
     			$admin->_rebuild_skin_id_cache();
 				
-				$this->ipsclass->main_msg = 'Skin ID Cache Updated';
+				$this->ipsclass->main_msg = '皮肤缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -358,7 +358,7 @@ class ad_administration
 				
 				$this->mod->rebuild_moderator_cache();
 				
-				$this->ipsclass->main_msg = 'Moderators Updated';
+				$this->ipsclass->main_msg = '版主缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -370,7 +370,7 @@ class ad_administration
 				
 				
 				
-				$this->ipsclass->main_msg = 'Statistics Updated';
+				$this->ipsclass->main_msg = '统计缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -399,7 +399,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'ranks', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'Ranks Updated';
+				$this->ipsclass->main_msg = '会员等级缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -421,7 +421,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'profilefields', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'Profile Fields Updated';
+				$this->ipsclass->main_msg = '会员附加信息缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -441,7 +441,7 @@ class ad_administration
 				$task->restrict_log = 1;
 				$task->run_task();
 				
-				$this->ipsclass->main_msg = 'Calendar Events Updated';
+				$this->ipsclass->main_msg = '日历事件缓存已更新';
 				break;
 				
 			case 'calendars':
@@ -451,7 +451,7 @@ class ad_administration
 				$cal->ipsclass =& $this->ipsclass;
 				$cal->calendars_rebuildcache();
 				
-				$this->ipsclass->main_msg = 'Calendars Updated';
+				$this->ipsclass->main_msg = '日历缓存已更新';
 				break;				
 				
 			//-----------------------------------------
@@ -471,7 +471,7 @@ class ad_administration
 				$task->restrict_log = 1;
 				$task->run_task();
 				
-				$this->ipsclass->main_msg = 'Birthdays Updated';
+				$this->ipsclass->main_msg = '生日缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -497,7 +497,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'multimod', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'Multi-Moderation Updated';
+				$this->ipsclass->main_msg = '主题批处理缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -512,7 +512,7 @@ class ad_administration
 				
 				$this->bbcode->bbcode_rebuildcache();
 			
-				$this->ipsclass->main_msg = 'BBCode Updated';
+				$this->ipsclass->main_msg = 'BBCode 缓存已更';
 				break;
 				
 			//-----------------------------------------
@@ -540,7 +540,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'settings', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'Settings Updated';
+				$this->ipsclass->main_msg = '设置缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -555,7 +555,7 @@ class ad_administration
 				
 				$this->emoticons->emoticon_rebuildcache();
 			
-				$this->ipsclass->main_msg = 'Emoticons Updated';
+				$this->ipsclass->main_msg = '图释缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -570,7 +570,7 @@ class ad_administration
 				
 				$this->banandbadword->badword_rebuildcache();
 				
-				$this->ipsclass->main_msg = 'Badwords Updated';
+				$this->ipsclass->main_msg = '过滤缓存已更新';
 				break;
 			
 			//-----------------------------------------
@@ -591,7 +591,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'languages', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'Languages Updated';
+				$this->ipsclass->main_msg = '语言包缓存已更新';
 				break;
 			
 			//-----------------------------------------
@@ -606,7 +606,7 @@ class ad_administration
 				
 				$this->banandbadword->ban_rebuildcache();
 				
-				$this->ipsclass->main_msg = 'Banfilters Updated';
+				$this->ipsclass->main_msg = '屏蔽缓存已更新';
 				break;
 			
 			//-----------------------------------------
@@ -626,7 +626,7 @@ class ad_administration
 				
 				$this->ipsclass->update_cache( array( 'name' => 'attachtypes', 'array' => 1, 'deletefirst' => 1 ) );
 				
-				$this->ipsclass->main_msg = 'Attachment Types Updated';
+				$this->ipsclass->main_msg = '附件类型缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -640,7 +640,7 @@ class ad_administration
 				$announcements->ipsclass =& $this->ipsclass;
 				$announcements->announce_recache();
 				
-				$this->ipsclass->main_msg = 'Announcements Updated';
+				$this->ipsclass->main_msg = '公告缓存已更新';
 				break;
 				
 			//-----------------------------------------
@@ -655,11 +655,11 @@ class ad_administration
 				
 				$this->components->components_rebuildcache();
 			
-				$this->ipsclass->main_msg = 'Components Updated';
+				$this->ipsclass->main_msg = '组件缓存已更新';
 				break;
 					
 			default:
-				$this->ipsclass->main_msg = 'No valid cache was specified to update';
+				$this->ipsclass->main_msg = '没有指定要更新的缓存';
 				break;
 		}
 		

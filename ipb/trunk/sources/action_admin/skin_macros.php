@@ -116,7 +116,7 @@ class ad_skin_macros {
 		//-----------------------------------------
 		
 		$this->ipsclass->input['id'] = $id;
-		$this->ipsclass->main_msg = "Macro removed!";
+		$this->ipsclass->main_msg = "宏已删除!";
 		$this->show_macros();
 	}
 	
@@ -271,9 +271,9 @@ class ad_skin_macros {
 		
 		$skin = $this->ipsclass->DB->fetch_row();
 		
-		$this->ipsclass->admin->page_detail = "To edit a macro, simply click on the 'edit' link of the appropriate macro.";
+		$this->ipsclass->admin->page_detail = "要编辑宏, 请点击宏旁的“编辑”按钮.";
 										 
-		$this->ipsclass->admin->page_title  = "Manage Replacement Macros in Set: {$skin['set_name']}";
+		$this->ipsclass->admin->page_title  = "编辑皮肤 {$skin['set_name']} 的宏替换";
 		
 		//-----------------------------------------
 		// Start output
@@ -283,7 +283,7 @@ class ad_skin_macros {
 							function editmacro(id, variable, replace)
 							{
 								document.macroform.code.value         = 'doeditmacro';
-								document.macroform.submitbutton.value = 'Edit This Macro';
+								document.macroform.submitbutton.value = '保存修改';
 								document.macroform.mid.value          = id;
 								document.macroform.variable.value     = variable;
 								document.macroform.replacement.value  = replace;
@@ -294,7 +294,7 @@ class ad_skin_macros {
 							function addmacro(id)
 							{
 								document.macroform.code.value         = 'doaddmacro';
-								document.macroform.submitbutton.value = 'Add This Macro';
+								document.macroform.submitbutton.value = '添加宏';
 								document.macroform.mid.value          = id;
 								document.macroform.variable.value     = '';
 								document.macroform.replacement.value  = '';
@@ -311,8 +311,8 @@ class ad_skin_macros {
 							<div class='tableheaderalt'>
 							  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
 							  <tr>
-							  <td align='left' width='100%' style='font-weight:bold;font-size:11px;color:#FFF'>Manage Replacement Macros</td>
-							  <td align='right' nowrap='nowrap' style='padding-right:2px'><input type='button' class='realdarkbutton' value='Add Macro' onclick=\"addmacro('{$this->ipsclass->input['id']}');\" /></td>
+							  <td align='left' width='100%' style='font-weight:bold;font-size:11px;color:#FFF'>宏替换管理</td>
+							  <td align='right' nowrap='nowrap' style='padding-right:2px'><input type='button' class='realdarkbutton' value='添加宏' onclick=\"addmacro('{$this->ipsclass->input['id']}');\" /></td>
 							  </tr>
 							  </table>
 							  <div align='center' style='position:absolute;display:none;text-align:center;' id='popbox'>
@@ -327,11 +327,11 @@ class ad_skin_macros {
 							   <table cellspacing='0' width='500' align='center' cellpadding='6' style='background:#EEE;border:2px outset #555;'>
 							   <tr>
 								<td width='1%' nowrap='nowrap' valign='top'>
-								 <b>Variable</b><br><input class='textinput' name='variable' type='text' size='20' />
+								 <b>变量</b><br><input class='textinput' name='variable' type='text' size='20' />
 								 <br /><br />
-								 <center><input type='submit' class='realbutton' value='Edit Macro' name='submitbutton' /> <input type='button' class='realdarkbutton' value='Close' onclick=\"togglediv('popbox');\" /></center>
+								 <center><input type='submit' class='realbutton' value='编辑宏' name='submitbutton' /> <input type='button' class='realdarkbutton' value='Close' onclick=\"togglediv('popbox');\" /></center>
 								</td>
-								<td width='99%'><b>Replacement</b><br /><textarea class='textinput' name='replacement' style='width:99%;height:50px'></textarea></td>
+								<td width='99%'><b>替换为</b><br /><textarea class='textinput' name='replacement' style='width:99%;height:50px'></textarea></td>
 							   </tr>
 							   </table>
 							   </form>
@@ -403,7 +403,7 @@ class ad_skin_macros {
 			
 			if ( $row['macro_set'] > 1 and $row['macro_set'] == $this->ipsclass->input['id'] )
 			{
-				$remove_button = "<input type='button' class='realbutton' name='remove' value='Revert' onclick=\"removemacro('{$this->ipsclass->form_code_js}&code=macroremove&mid={$row['macro_id']}&id={$this->ipsclass->input['id']}&p={$this->ipsclass->input['p']}');\" />";
+				$remove_button = "<input type='button' class='realbutton' name='remove' value='恢复' onclick=\"removemacro('{$this->ipsclass->form_code_js}&code=macroremove&mid={$row['macro_id']}&id={$this->ipsclass->input['id']}&p={$this->ipsclass->input['p']}');\" />";
 			}
 			else
 			{
@@ -423,7 +423,7 @@ class ad_skin_macros {
 				$preview = preg_replace( "#style_images#", $this->ipsclass->vars['board_url'].'/style_images', $preview );
 			}
 			
-			$edit_button = "<input type='button' class='realbutton' value='Change' onclick={$out_quote}editmacro( {$in_quote}{$row['macro_id']}{$in_quote}, {$in_quote}{$row['macro_value']}{$in_quote}, {$in_quote}$real{$in_quote});{$out_quote} />";
+			$edit_button = "<input type='button' class='realbutton' value='修改' onclick={$out_quote}editmacro( {$in_quote}{$row['macro_id']}{$in_quote}, {$in_quote}{$row['macro_value']}{$in_quote}, {$in_quote}$real{$in_quote});{$out_quote} />";
 			
 			//-----------------------------------------
 			// Render row
@@ -447,7 +447,7 @@ class ad_skin_macros {
 		$this->ipsclass->html .= "</table>
 						   </div>
 						   <div class='tablesubheader' align='center'>
-						    <input type='button' class='realdarkbutton' value='Add Macro' onclick=\"addmacro('{$this->ipsclass->input['id']}');\" />
+						    <input type='button' class='realdarkbutton' value='添加宏' onclick=\"addmacro('{$this->ipsclass->input['id']}');\" />
 						   </div>
 						   </div>";
 		
@@ -459,18 +459,18 @@ class ad_skin_macros {
 		//-----------------------------------------
 		
 		$this->ipsclass->html .= "<br />
-							<div><strong>Replace Macro Example</strong><br />
-							If you added a key of 'green_font' and a replacement of '&lt;font color='green'>', each instance of <span style='color:red'><b>&lt;{green_font}&gt;</b></span> would be converted to &lt;font color='green'>
-							<br /><b>&lt;#IMG_DIR#></b> is available to any macro, this is automatically replaced with the name of the image directory you choose when using this macro set in a skin
+							<div><strong>宏替换例程</strong><br />
+							如果您添加了一个变量“green_font”，设置它替换为 '&lt;font color='green'>', 那么那么每一个 <span style='color:red'><b>&lt;{green_font}&gt;</b></span> 将被自动转换成 &lt;font color='green'>
+							<br /><b>&lt;#IMG_DIR#></b> 任何宏都可以使用, 此标记将自动转换为对应皮肤的图像目录
 							</div><br />
-							<div><strong>Replacement Macro Legend:</strong><br />
-							{$this->altered} This item has been customized for this skin set.
-							<br />{$this->unaltered} This item has not been customized from the master skin set.
-							<br />{$this->inherited} This item has inherited customizations from the parent skin set.
+							<div><strong>宏替换图例:</strong><br />
+							{$this->altered} 此项目有自定义内容.
+							<br />{$this->unaltered} 此项目没有自定义内容.
+							<br />{$this->inherited} 此项目继承了父皮肤的自定义内容.
 							</div>";
 		
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'Skin Manager Home' );
-		$this->ipsclass->admin->nav[] = array( '' ,'Editing Replacement Macros in Set '.$skin['set_name'] );
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( '' ,'编辑皮肤 '.$skin['set_name'] .' 的宏替换');
 		
 		$this->ipsclass->admin->output();
 		

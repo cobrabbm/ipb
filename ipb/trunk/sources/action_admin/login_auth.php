@@ -514,8 +514,8 @@ class ad_login_auth
 		
 		$this->ipsclass->html .= $this->html->login_diagnostics( $login );
 		
-		$this->ipsclass->html_help_title = "Log In Manager";
-		$this->ipsclass->html_help_msg   = "This section will allow you to manage your log in authentication methods.";
+		$this->ipsclass->html_help_title = "登录模块管理";
+		$this->ipsclass->html_help_msg   = "您可以在这里管理论坛的登录验证模块.";
 		
 		$this->ipsclass->admin->output();
 	}
@@ -549,7 +549,7 @@ class ad_login_auth
 		
 		if ( ! $login_title OR ! $login_folder_name OR ! $login_folder_name )
 		{
-			$this->ipsclass->main_msg = "You must complete the entire form.";
+			$this->ipsclass->main_msg = "您必须完整填写表单.";
 			$this->login_form( $type );
 			return;
 		}
@@ -617,13 +617,13 @@ class ad_login_auth
 			$array['login_date'] = time();
 			
 			$this->ipsclass->DB->do_insert( 'login_methods', $array );
-			$this->ipsclass->main_msg = 'New Log In Method Added';
+			$this->ipsclass->main_msg = '新登录模块已添加';
 		}
 		else
 		{
 			
 			$this->ipsclass->DB->do_update( 'login_methods', $array, 'login_id='.$login_id );
-			$this->ipsclass->main_msg = 'Log In Method Edited';
+			$this->ipsclass->main_msg = '登录模块已编辑';
 		}
 		
 		//-----------------------------------------
@@ -667,8 +667,8 @@ class ad_login_auth
 		if ( $type == 'add' )
 		{
 			$formcode = 'login_add_do';
-			$title    = "Register New Log In Method";
-			$button   = "Register New Log In Method";
+			$title    = "注册新登录模块";
+			$button   = "注册新登录模块";
 		}
 		else
 		{
@@ -682,8 +682,8 @@ class ad_login_auth
 			}
 			
 			$formcode = 'login_edit_do';
-			$title    = "Edit Log In Method ".$login['login_title'];
-			$button   = "Save Changes";
+			$title    = "编辑登录模块 ".$login['login_title'];
+			$button   = "保存编辑";
 		}
 		
 		//-------------------------------
@@ -714,10 +714,10 @@ class ad_login_auth
 		
 		$this->ipsclass->html .= $this->html->login_form( $form, $title, $formcode, $button, $login );
 		
-		$this->ipsclass->html_help_title = "Log In Manager";
-		$this->ipsclass->html_help_msg   = "This section will allow you to manage your log in authentication methods.";
+		$this->ipsclass->html_help_title = "登录模块管理";
+		$this->ipsclass->html_help_msg   = "您可以在这里管理论坛的登录验证模块.";
 		
-		$this->ipsclass->admin->nav[]    = array( "", "Add/Edit Login Module" );
+		$this->ipsclass->admin->nav[]    = array( "", "添加/编辑登录模块" );
 		$this->ipsclass->admin->output();
 	}
 	
@@ -760,8 +760,8 @@ class ad_login_auth
 		
 		$this->ipsclass->html .= $this->html->login_overview( $content );
 		
-		$this->ipsclass->admin->page_title  = "Log In Authentication Manager";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your log in methods.";
+		$this->ipsclass->admin->page_title  = "登录模块管理";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理论坛的登录验证模块.";
 		$this->ipsclass->admin->output();
 	}
 

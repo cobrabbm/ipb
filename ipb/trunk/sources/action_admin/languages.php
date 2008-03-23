@@ -179,7 +179,7 @@ class ad_languages {
 			}
 		}
 		
-		$this->ipsclass->main_msg = "Member's language choice updated";
+		$this->ipsclass->main_msg = "会员语言选择已更新";
 		$this->list_current();
 	}
 	
@@ -238,7 +238,7 @@ class ad_languages {
 		
 		if ( ! $this->ipsclass->input['lang_name'] )
 		{
-			$this->ipsclass->admin->error("You must enter a name for this language import!");
+			$this->ipsclass->admin->error("您必须为导入的语言输入一个名称!");
 		}
 		
 		if ( $_FILES['FILE_UPLOAD']['name'] == "" or ! $_FILES['FILE_UPLOAD']['name'] or ($_FILES['FILE_UPLOAD']['name'] == "none") )
@@ -311,7 +311,7 @@ class ad_languages {
 		
 		if ( ! $content )
 		{
-			$this->ipsclass->main_msg = "The XML file appears to be empty - please check the form and try again";
+			$this->ipsclass->main_msg = "XML 文件没有内容 - 请检查后重试";
 			$this->import();
 		}
 		
@@ -356,7 +356,7 @@ class ad_languages {
 
 		if ( ! count( $lang_array ) )
 		{
-			$this->ipsclass->main_msg = "The XML file appears to be empty - please check the form and try again";
+			$this->ipsclass->main_msg = "XML 文件没有内容 - 请检查后重试";
 			$this->import();
 		}
 		
@@ -401,11 +401,11 @@ class ad_languages {
 					@fwrite( $FH, $file_contents );
 					@fclose( $FH );
 				
-					$messages[] = "'{$file}' imported correctly!";
+					$messages[] = "'{$file}' 导入正确!";
 				}
 				else
 				{
-					$messages[] = "Cannot create '{$file}' - skipping...";
+					$messages[] = "无法创建 '{$file}' - 跳过...";
 				}
 				
 				continue;
@@ -437,16 +437,16 @@ class ad_languages {
 					@fwrite( $FH, $file_contents );
 					@fclose( $FH );
 				
-					$messages[] = "'{$file}' imported correctly!";
+					$messages[] = "'{$file}' 导入正确!";
 				}
 				else
 				{
-					$messages[] = "Cannot create '{$file}' - skipping...";
+					$messages[] = "无法创建 '{$file}' - 跳过...";
 				}
 			}
 			else
 			{
-				$messages[] = "'{$file}' appears to be empty - skipping...";
+				$messages[] = "'{$file}' 没有内容 - 跳过...";
 			}
 			
 			unset($new_file_array);
@@ -466,7 +466,7 @@ class ad_languages {
 		
 		$this->rebuild_cache();
 		
-		$this->ipsclass->main_msg = "Import attempt completed<br />".implode( "\n<br />", $messages );
+		$this->ipsclass->main_msg = "导入完成<br />".implode( "\n<br />", $messages );
 		$this->import();
 	}
 	
@@ -476,9 +476,9 @@ class ad_languages {
 	
 	function import()
 	{
-		$this->ipsclass->admin->page_detail = "This section will allow you to import an XML file containing all the language data.";
-		$this->ipsclass->admin->page_title  = "Language Pack Import";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Import Language Pack' );
+		$this->ipsclass->admin->page_detail = "您可以在这里导入一个包含语言数据的 XML 文件.";
+		$this->ipsclass->admin->page_title  = "导入语言包";
+		$this->ipsclass->admin->nav[] 		= array( '', '导入语言包' );
 		
 		//-----------------------------------------
 		
@@ -495,21 +495,21 @@ class ad_languages {
 
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Import an XML language file" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导入 XML 语言文件" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Upload XML language file from your computer</b><div style='color:gray'>The file must begin with 'ipb_language' and end with either '.xml' or '.xml.gz'</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>上传 XML 语言文件</b><div style='color:gray'>文件名必须以 'ipb_language' 开头并且以 '.xml' 或 '.xml.gz' 结尾</div>" ,
 										  				         $this->ipsclass->adskin->form_upload(  )
 								                        )      );
 								                        
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>OR</u> enter the filename of the XML language file</b><div style='color:gray'>The file must be uploaded into the forum's root folder</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>或者</u> 输入 XML 语言文件名</b><div style='color:gray'>文件必须上传到论坛根目录</div>" ,
 										  				         $this->ipsclass->adskin->form_input( 'lang_location', 'ipb_language.xml.gz'  )
 								                        )      );
 								                        
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enter the name for this new language set</b><div style='color:gray'>For example: English, US, German, DE...</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b输入新语言包名称</b><div style='color:gray'>例如: English, US, 繁体中文...</div>" ,
 										  				         $this->ipsclass->adskin->form_input( 'lang_name', ''  )
 								                        )      );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Import XML Language Set");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("导入 XML 语言包");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -691,9 +691,9 @@ class ad_languages {
 		}
 	
 	
-		$this->ipsclass->admin->page_detail = "You may edit any of the language information below.";
-		$this->ipsclass->admin->page_title  = "Edit Language set: ".$row['lname'];
-		$this->ipsclass->admin->nav[] 		= array( '', 'Editing Langage Set '.$row['lname'] );
+		$this->ipsclass->admin->page_detail = "您可以编辑下面的语言信息.";
+		$this->ipsclass->admin->page_title  = "编辑语言包: ".$row['lname'];
+		$this->ipsclass->admin->nav[] 		= array( '', '编辑语言包 '.$row['lname'] );
 		
 		//-----------------------------------------
 		
@@ -706,12 +706,12 @@ class ad_languages {
 														
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Block Name" , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Content"    , "80%" );
+		$this->ipsclass->adskin->td_header[] = array( "区块名" , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "内容"    , "80%" );
 
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Language Text: ".$this->ipsclass->input['lang_file'] );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "语言文本: ".$this->ipsclass->input['lang_file'] );
 									     
 		foreach($lang as $k => $v)
 		{
@@ -737,7 +737,7 @@ class ad_languages {
 														   )      );
 		}
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit this file");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("保存编辑");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -782,7 +782,7 @@ class ad_languages {
 		
 		$this->rebuild_cache();
 		
-		$this->ipsclass->admin->done_screen("Language pack information updated", "Manage language sets", "{$this->ipsclass->form_code}" );
+		$this->ipsclass->admin->done_screen("语言包信息已更新", "语言包管理", "{$this->ipsclass->form_code}" );
 		
 	}
 	
@@ -886,7 +886,7 @@ class ad_languages {
 		
 		if ($this->ipsclass->input['id'] == 1)
 		{
-			$this->ipsclass->admin->error("You cannot remove this language pack.");
+			$this->ipsclass->admin->error("您不能删除这个语言包.");
 		}
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'languages', 'where' => "lid='".$this->ipsclass->input['id']."'" ) );
@@ -1012,11 +1012,11 @@ class ad_languages {
 		
 		if ( $this->ipsclass->input['id'] )
 		{
-			$this->ipsclass->admin->done_screen("Set updated", "Manage Language Sets", "{$this->ipsclass->form_code}&code=edit&id={$this->ipsclass->input['id']}", 'redirect' );
+			$this->ipsclass->admin->done_screen("语言包已更新", "语言包管理", "{$this->ipsclass->form_code}&code=edit&id={$this->ipsclass->input['id']}", 'redirect' );
 		}
 		else
 		{
-			$this->ipsclass->admin->done_screen("Set updated", "Manage Language Sets", "{$this->ipsclass->form_code}", 'redirect' );
+			$this->ipsclass->admin->done_screen("语言包已更新", "语言包管理", "{$this->ipsclass->form_code}", 'redirect' );
 		}
 	}
 	
@@ -1093,18 +1093,18 @@ class ad_languages {
 		
 		if ($row['lauthor'] and $row['lemail'])
 		{
-			$author = " (<b>'{$row['lname']}'</b> was created by <a href='mailto:{$row['lemail']}' target='_blank'>{$row['lauthor']}</a>)";
+			$author = " (语言包<b>'{$row['lname']}'</b>  由 <a href='mailto:{$row['lemail']}' target='_blank'>{$row['lauthor']}</a> 创建)";
 		}
 		else if ($row['lauthor'])
 		{
-			$author = " (<b>'{$row['lname']}'</b> was created by {$row['lauthor']})";
+			$author = " (语言包<b>'{$row['lname']}'</b> 由 {$row['lauthor']} 创建)";
 		}
 		
 		//-----------------------------------------
 	
-		$this->ipsclass->admin->page_detail = "Please choose which language section you wish to edit below.$author";
-		$this->ipsclass->admin->page_title  = "Edit Language set";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Editing Langage Set '.$row['lname'] );
+		$this->ipsclass->admin->page_detail = "请您在下面选择需要编辑的语言单元.$author";
+		$this->ipsclass->admin->page_title  = "编辑语言包";
+		$this->ipsclass->admin->nav[] 		= array( '', '编辑语言包 '.$row['lname'] );
 		
 		//-----------------------------------------
 		
@@ -1123,11 +1123,11 @@ class ad_languages {
 
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Edit language set information{$author}" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "编辑语言包信息{$author}" );
 		
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>Language Set Name</b>",
+													"<b>名称</b>",
 													$this->ipsclass->adskin->form_input('lname', $row['lname']),
 									     )      );
 									     
@@ -1135,18 +1135,18 @@ class ad_languages {
 		{
 									     
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-														"<b>Language set author name:</b>",
+														"<b>作者:</b>",
 														$this->ipsclass->adskin->form_input('lauthor', $row['lauthor']),
 											 )      );
 											 
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-														"<b>Language set author email:</b>",
+														"<b>作者邮件:</b>",
 														$this->ipsclass->adskin->form_input('lemail', $row['lemail']),
 											 )      );
 											 
 		}
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit language set details");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("保存编辑");
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 									     
@@ -1166,14 +1166,14 @@ class ad_languages {
 
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Edit language files in set '".$row['lname']."'" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "编辑语言包 '".$row['lname']."'的文件" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>Please select a language file to edit</b>",
+													"<b>请选择要编辑的语言文件</b>",
 													$this->ipsclass->adskin->form_dropdown('lang_file', $form_array),
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit this language file");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("保存编辑");
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 									     
@@ -1197,8 +1197,8 @@ class ad_languages {
 		
 		$form_array = array();
 	
-		$this->ipsclass->admin->page_detail = "You can edit, remove and create new language packs from this section";
-		$this->ipsclass->admin->page_title  = "Manage Language Sets";
+		$this->ipsclass->admin->page_detail = "您可以在这里编辑, 删除或创建语言包";
+		$this->ipsclass->admin->page_title  = "语言包管理";
 		
 		//-----------------------------------------
 		
@@ -1213,13 +1213,13 @@ class ad_languages {
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
 		
-			$this->ipsclass->adskin->td_header[] = array( "Title"        , "40%" );
-			$this->ipsclass->adskin->td_header[] = array( "Members"      , "30%" );
-			$this->ipsclass->adskin->td_header[] = array( "Export"       , "10%" );
-			$this->ipsclass->adskin->td_header[] = array( "Edit"         , "10%" );
-			$this->ipsclass->adskin->td_header[] = array( "Remove"       , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( "名称"        , "40%" );
+			$this->ipsclass->adskin->td_header[] = array( "会员数量"      , "30%" );
+			$this->ipsclass->adskin->td_header[] = array( "导出"       , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( "编辑"         , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( "删除"       , "10%" );
 		
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Current Language Packs In Use" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "当前使用中的语言包" );
 			
 			while ( $r = $this->ipsclass->DB->fetch_row() )
 			{
@@ -1227,11 +1227,11 @@ class ad_languages {
 				
 				if ($this->ipsclass->vars['default_language'] == $r['ldir'])
 				{
-					$root = "<span style='color:red;font-weight:bold'> (Default Language)</span>";
+					$root = "<span style='color:red;font-weight:bold'> ( 默认语言 )</span>";
 				}
 				else
 				{
-					$root = " ( <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=makedefault&id=".urlencode($r['ldir'])."'>Make Default Language</a> )";
+					$root = " ( <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=makedefault&id=".urlencode($r['ldir'])."'>设置为默认语言</a> )";
 				}
 			
 				$show_array[ $r['lid'] ] .= stripslashes($r['lname'])."<br>";
@@ -1243,9 +1243,9 @@ class ad_languages {
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>".stripslashes($r['lname'])."</b> $root",
 														  "<center>{$r['mcount']}</center>",
-														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=export&id={$r['lid']}'>Export</a></center>",
-														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=edit&id={$r['lid']}'>Edit</a></center>",
-														  "<center><a href='javascript:checkdelete(\"{$this->ipsclass->form_code_js}&code=remove&id={$r['lid']}\")'>Remove</a></center>",
+														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=export&id={$r['lid']}'>导出</a></center>",
+														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=edit&id={$r['lid']}'>编辑</a></center>",
+														  "<center><a href='javascript:checkdelete(\"{$this->ipsclass->form_code_js}&code=remove&id={$r['lid']}\")'>删除</a></center>",
 												 )      );
 												   
 				$used_ids[] = $r['lid'];
@@ -1268,12 +1268,12 @@ class ad_languages {
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
 		
-			$this->ipsclass->adskin->td_header[] = array( "Title"  , "40%" );
-			$this->ipsclass->adskin->td_header[] = array( "Export" , "10%" );
-			$this->ipsclass->adskin->td_header[] = array( "Edit"   , "30%" );
-			$this->ipsclass->adskin->td_header[] = array( "Remove" , "20%" );
+			$this->ipsclass->adskin->td_header[] = array( "名称"  , "40%" );
+			$this->ipsclass->adskin->td_header[] = array( "导出" , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( "编辑"   , "30%" );
+			$this->ipsclass->adskin->td_header[] = array( "删除" , "20%" );
 		
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Current Unallocated Language Packs" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "目前没有会员使用的语言包" );
 			
 			
 			
@@ -1282,17 +1282,17 @@ class ad_languages {
 				
 				if ($this->ipsclass->vars['default_language'] == $r['ldir'])
 				{
-					$root = "<span style='color:red;font-weight:bold'> (Default Language)</span>";
+					$root = "<span style='color:red;font-weight:bold'> ( 目前没有会员使用的语言包 )</span>";
 				}
 				else
 				{
-					$root = " ( <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=makedefault&id=".urlencode($r['ldir'])."'>Make Default Language</a> )";
+					$root = " ( <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=makedefault&id=".urlencode($r['ldir'])."'>设置为默认语言</a> )";
 				}
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>".stripslashes($r['lname'])."</b> $root",
-														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=export&id={$r['lid']}'>Export</a></center>",
-														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=edit&id={$r['lid']}'>Edit</a></center>",
-														  "<center><a href='javascript:checkdelete(\"{$this->ipsclass->form_code_js}&code=remove&id={$r['lid']}\")'>Remove</a></center>",
+														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=export&id={$r['lid']}'>导出</a></center>",
+														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=edit&id={$r['lid']}'>编辑</a></center>",
+														  "<center><a href='javascript:checkdelete(\"{$this->ipsclass->form_code_js}&code=remove&id={$r['lid']}\")'>删除</a></center>",
 												 )      );
 												 
 				$form_array[] = array( $r['lid'], $r['lname'] );
@@ -1314,13 +1314,13 @@ class ad_languages {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Create Language Set" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "创建语言包" );
 			
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Base new language set on...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>新语言包基于...</b>" ,
 										  		 			      $this->ipsclass->adskin->form_dropdown( "id", $form_array)
 								 						)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Create new Language set");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("创建语言包");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1336,17 +1336,17 @@ class ad_languages {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Swap Member's Language Choice" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重设会员的语言选择" );
 			
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Member's that now use language set...</b>" ,
-										  		 			      $this->ipsclass->adskin->form_dropdown( "old", array_merge( array( -1 => array( 'none', 'No preference stored - using default' ) ), $form_array ) )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员目前使用的语言包...</b>" ,
+										  		 			      $this->ipsclass->adskin->form_dropdown( "old", array_merge( array( -1 => array( 'none', '没有选择 - 使用论坛默认设置' ) ), $form_array ) )
 								 						)      );
 								 						
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Update to use language set...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置为使用语言包...</b>" ,
 										  		 			      $this->ipsclass->adskin->form_dropdown( "new", $form_array)
 								 						)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Swap Member&#039;s Choice");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("重设会员的语言选择");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

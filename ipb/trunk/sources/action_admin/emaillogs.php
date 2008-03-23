@@ -54,7 +54,7 @@ class ad_emaillogs
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Email Logs' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '邮件发送记录' );
 		
 		// Make sure we're a root admin, or else!
 		
@@ -119,11 +119,11 @@ class ad_emaillogs
 		$row['email_date'] = $this->ipsclass->admin->get_date( $row['email_date'], 'LONG' );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													"<strong>From:</strong> {$row['name']} &lt;{$row['from_email_address']}&gt;
-													<br /><strong>To:</strong> {$row['to_name']} &lt;{$row['to_email_address']}&gt;
-													<br /><strong>Sent:</strong> {$row['email_date']}
-													<br /><strong>From IP:</strong> {$row['from_ip_address']}
-													<br /><strong>Subject:</strong> {$row['email_subject']}
+													"<strong>发件人：</strong> {$row['name']} &lt;{$row['from_email_address']}&gt;
+													<br /><strong>收件人：</strong> {$row['to_name']} &lt;{$row['to_email_address']}&gt;
+													<br /><strong>发送时间：</strong> {$row['email_date']}
+													<br /><strong>发件人 IP：</strong> {$row['from_ip_address']}
+													<br /><strong>主题：</strong> {$row['email_subject']}
 													<hr>
 													<br />{$row['email_content']}
 												    "
@@ -173,7 +173,7 @@ class ad_emaillogs
 			$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'email_logs', 'where' => " email_id IN (".implode(',', $ids ).")" ) );
 		}
 		
-		$this->ipsclass->admin->save_log("Removed email log entries");
+		$this->ipsclass->admin->save_log("删除邮件发送记录");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&act=emaillog");
 		exit();
@@ -197,8 +197,8 @@ class ad_emaillogs
 		
 		$start = intval($this->ipsclass->input['st']) >=0 ? intval($this->ipsclass->input['st']) : 0;
 	
-		$this->ipsclass->admin->page_detail = "Stored email logs";
-		$this->ipsclass->admin->page_title  = "Email Logs Manager";
+		$this->ipsclass->admin->page_detail = "保存的邮件发送记录";
+		$this->ipsclass->admin->page_title  = "邮件发送记录管理";
 		
 		//-----------------------------------------
 		// Check URL parameters
@@ -209,7 +209,7 @@ class ad_emaillogs
 		
 		if ( isset($this->ipsclass->input['type']) AND $this->ipsclass->input['type'] != "" )
 		{
-			$this->ipsclass->admin->page_title .= " (Search Results)";
+			$this->ipsclass->admin->page_title .= " ( 搜索结果 )";
 		
 			switch( $this->ipsclass->input['type'] )
 			{
@@ -227,7 +227,7 @@ class ad_emaillogs
 					$string = urldecode($this->ipsclass->input['string']);
 					if ( $string == "" )
 					{
-						$this->ipsclass->admin->error("You must enter something to search by");
+						$this->ipsclass->admin->error("您必须输入搜索字符串");
 					}
 					$url_query[] = 'type='.$this->ipsclass->input['type'];
 					$url_query[] = 'string='.urlencode($string);
@@ -237,7 +237,7 @@ class ad_emaillogs
 					$string = urldecode($this->ipsclass->input['string']);
 					if ( $string == "" )
 					{
-						$this->ipsclass->admin->error("You must enter something to search by");
+						$this->ipsclass->admin->error("您必须输入搜索字符串");
 					}
 					$url_query[] = 'type='.$this->ipsclass->input['type'];
 					$url_query[] = 'string='.urlencode($string);
@@ -247,7 +247,7 @@ class ad_emaillogs
 					$string = urldecode($this->ipsclass->input['string']);
 					if ( $string == "" )
 					{
-						$this->ipsclass->admin->error("You must enter something to search by");
+						$this->ipsclass->admin->error("您必须输入搜索字符串");
 					}
 					$url_query[] = 'type='.$this->ipsclass->input['type'];
 					$url_query[] = 'string='.urlencode($string);
@@ -257,7 +257,7 @@ class ad_emaillogs
 					$string = urldecode($this->ipsclass->input['string']);
 					if ( $string == "" )
 					{
-						$this->ipsclass->admin->error("You must enter something to search by");
+						$this->ipsclass->admin->error("您必须输入搜索字符串");
 					}
 					$url_query[] = 'type='.$this->ipsclass->input['type'];
 					$url_query[] = 'string='.urlencode($string);
@@ -267,7 +267,7 @@ class ad_emaillogs
 					$string = urldecode($this->ipsclass->input['string']);
 					if ( $string == "" )
 					{
-						$this->ipsclass->admin->error("You must enter something to search by");
+						$this->ipsclass->admin->error("您必须输入搜索字符串");
 					}
 					
 					if ( $this->ipsclass->input['match'] == 'loose' )
@@ -277,7 +277,7 @@ class ad_emaillogs
 		
 						if ( ! $this->ipsclass->DB->get_num_rows() )
 						{
-							$this->ipsclass->admin->error("No matches found in the email logs");
+							$this->ipsclass->admin->error("找不到匹配的记录");
 						}
 						
 						$ids = array();
@@ -296,7 +296,7 @@ class ad_emaillogs
 						
 						if ( ! $this->ipsclass->DB->get_num_rows() )
 						{
-							$this->ipsclass->admin->error("No matches found in the email logs");
+							$this->ipsclass->admin->error("找不到匹配的记录");
 						}
 						
 						$r = $this->ipsclass->DB->fetch_row();
@@ -311,7 +311,7 @@ class ad_emaillogs
 					$string = urldecode($this->ipsclass->input['string']);
 					if ( $string == "" )
 					{
-						$this->ipsclass->admin->error("You must enter something to search by");
+						$this->ipsclass->admin->error("您必须输入搜索字符串");
 					}
 					
 					if ( $this->ipsclass->input['match'] == 'loose' )
@@ -321,7 +321,7 @@ class ad_emaillogs
 						
 						if ( ! $this->ipsclass->DB->get_num_rows() )
 						{
-							$this->ipsclass->admin->error("No matches found in the email logs");
+							$this->ipsclass->admin->error("找不到匹配的记录");
 						}
 						
 						$ids = array();
@@ -340,7 +340,7 @@ class ad_emaillogs
 					
 						if ( ! $this->ipsclass->DB->get_num_rows() )
 						{
-							$this->ipsclass->admin->error("No matches found in the email logs");
+							$this->ipsclass->admin->error("找不到匹配的记录");
 						}
 						
 						$r = $this->ipsclass->DB->fetch_row();
@@ -389,8 +389,8 @@ class ad_emaillogs
 		$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $count['cnt'],
 														  'PER_PAGE'    => 25,
 														  'CUR_ST_VAL'  => $start,
-														  'L_SINGLE'    => "Single Page",
-														  'L_MULTI'     => "Pages: ",
+														  'L_SINGLE'    => "单页",
+														  'L_MULTI'     => "页码: ",
 														  'BASE_URL'    => $this->ipsclass->base_url."&{$this->ipsclass->form_code}".$url,
 														)
 												 );
@@ -436,12 +436,12 @@ class ad_emaillogs
 																	)      );
 		
 		$this->ipsclass->adskin->td_header[] = array( "<input type='checkbox' onclick='checkall();' id='checkme' />"         , "5%" );
-		$this->ipsclass->adskin->td_header[] = array( "From Member"    , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Subject"        , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "To Member"      , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Sent Time"      , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "发件会员"    , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题"        , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "收件会员"      , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "发送时间"      , "25%" );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Logged Emails" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "邮件发送记录" );
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -463,10 +463,10 @@ class ad_emaillogs
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有结果</center>");
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic('<div style="float:left;width:auto"><input type="submit" value="Remove Checked" class="realbutton" />&nbsp;<input type="checkbox" id="checkbox" name="type" value="all" />&nbsp;Remove all?</div><div align="right">'.$links.'</div></form>', 'left', 'tablesubheader');
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic('<div style="float:left;width:auto"><input type="submit" value="删除选中" class="realbutton" />&nbsp;<input type="checkbox" id="checkbox" name="type" value="all" />&nbsp;删除全部?</div><div align="right">'.$links.'</div></form>', 'left', 'tablesubheader');
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -481,32 +481,32 @@ class ad_emaillogs
 																			 3 => array( 'section', $this->ipsclass->section_code ),
 																	)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search Email Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索邮件发送记录" );
 		
 		$form_array = array(
-							  0 => array( 'subject'    , 'Email Subject'    ),
-							  1 => array( 'content'    , 'Email Body' ),
-							  2 => array( 'email_from' , 'From Email Address' ),
-							  3 => array( 'email_to'   , 'To Email Address'   ),
-							  4 => array( 'name_from'  , 'From Member Name'),
-							  5 => array( 'name_to'    , 'To Member Name' ),
+							  0 => array( 'subject'    , '邮件主题'    ),
+							  1 => array( 'content'    , '邮件正文' ),
+							  2 => array( 'email_from' , '发件人地址' ),
+							  3 => array( 'email_to'   , '收件人地址'   ),
+							  4 => array( 'name_from'  , '发件人名称'),
+							  5 => array( 'name_to'    , '收件人名称' ),
 						   );
 						   
 		$type_array = array(
-							  0 => array( 'exact'      , 'is exactly' ),
-							  1 => array( 'loose'      , 'contains'   ),
+							  0 => array( 'exact'      , '精确' ),
+							  1 => array( 'loose'      , '包含'   ),
 						   );
 			
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search where</b> &nbsp;"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索对象</b> &nbsp;"
 												  . $this->ipsclass->adskin->form_dropdown( "type", $form_array) ." "
 												  . $this->ipsclass->adskin->form_dropdown( "match", $type_array) ." "
 												  . $this->ipsclass->adskin->form_input( "string"),
 										  		
 								 )      );
 								 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

@@ -62,7 +62,7 @@ class ad_diagnostics
 		// Set default nav
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Diagnostics' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '诊断' );
 		
 		if ( strtoupper( substr(PHP_OS, 0, 3) ) === 'WIN' )
 		{
@@ -112,10 +112,10 @@ class ad_diagnostics
 	
 	function version_check()
 	{
-		$this->ipsclass->admin->page_detail = "Running different version files can produce unexpected results.  For example, a version 2.1 file is not compatible with a verison 2.0 file.  If any files are listed below in red, it is recommended you upload fresh copies of those files.";
-		$this->ipsclass->admin->page_title  = "IPB Diagnostics";
+		$this->ipsclass->admin->page_detail = "运行不同版本的文件将造成不可预料的后果. 例如, 2.1 版本的文件和 2.0 版本的文件互不不兼容. 如果有任何文件在下面以红色列出, 建议您上传一个最新的版本.";
+		$this->ipsclass->admin->page_title  = "IPB 诊断";
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Version Check Results' );
+		$this->ipsclass->admin->nav[] = array( '', '版本检查结果' );
 		set_time_limit(0);
 		
 		$dir 	= preg_replace( "#^(.+?)\/$#", "\\1", ROOT_PATH );
@@ -128,7 +128,7 @@ class ad_diagnostics
 		$this->ipsclass->adskin->td_header[] = array( ""  , "30%" );
 		$this->ipsclass->adskin->td_header[] = array( ""  , "70%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Version Information" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版本信息" );
 		
    		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'upgrade_history', 'order' => 'upgrade_version_id DESC', 'limit' => array(0, 5) ) );
    		$this->ipsclass->DB->simple_exec();
@@ -157,11 +157,11 @@ class ad_diagnostics
 			$this->ipsclass->acpversion = $latest_version['upgrade_version_id'];
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB Version", $this->ipsclass->version.' (ID: '.$this->ipsclass->acpversion.')' ) );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 版本", $this->ipsclass->version.' (ID: '.$this->ipsclass->acpversion.')' ) );
 		
 		if( !count($upgrade_history) )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Upgrade History", '<i>None Available</i>' ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "升级历史", '<i>不可用</i>' ) );
 		}
 		else
 		{
@@ -175,10 +175,10 @@ class ad_diagnostics
 				
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();	
 		
-		$this->ipsclass->adskin->td_header[] = array( "File"  	, "70%" );
-		$this->ipsclass->adskin->td_header[] = array( "Version" , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "文件"  	, "70%" );
+		$this->ipsclass->adskin->td_header[] = array( "版本" , "30%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Version Check Results" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版本检查结果" );
 		
 		if( is_array($file_versions) && count($file_versions) )
 		{		
@@ -198,7 +198,7 @@ class ad_diagnostics
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( " There was a processing error - we could not read the files" ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( " 发生错误 - 无法读取文件" ) );
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -260,10 +260,10 @@ class ad_diagnostics
 	
 	function permissions_check()
 	{
-		$this->ipsclass->admin->page_detail = "Certain files and directories must have the proper permissions set on them in order for IPB to properly write data to your disk.  On Windows, you should ensure the files have \"Read/Write\" permissions, while on Unix/Linux you should ensure the files are \"CHMOD 777\".";
-		$this->ipsclass->admin->page_title  = "IPB Diagnostics";
+		$this->ipsclass->admin->page_detail = "一些文件和文件夹必须具有适当的访问许可, IPB 才能在您的磁盘上写入数据. 在 Windows 系统, 您必须确保它们具有“读取/写入”许可, 在 Unix/Linux 系统, 您必须确保文件为“CHMOD 777”.";
+		$this->ipsclass->admin->page_title  = "IPB 诊断";
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Permission Check Results' );
+		$this->ipsclass->admin->nav[] = array( '', '访问许可检测结果' );
 		
 		$checkdirs = array( 'style_images', 'style_emoticons', 'cache', 'cache'.$this->dir_split.'skin_cache', 'cache'.$this->dir_split.'lang_cache', 'uploads' );
 		$langfiles = array( 'lang_boards', 'lang_buddy', 'lang_calendar', 'lang_emails', 'lang_email_content', 'lang_error',
@@ -395,20 +395,20 @@ class ad_diagnostics
 				
 				if( !strpos( $dir_to_check, 'skin_' ) OR !strpos( $dir_to_check, '.php' ) )
 				{
-					$output[] = "<span class='rss-feed-invalid'>We could not find the file or folder ".$root_dir.$dir_to_check."</span>";
+					$output[] = "<span class='rss-feed-invalid'>无法找到文件或文件夹 ".$root_dir.$dir_to_check."</span>";
 				}
 			}
 			else if( !is_writeable( $root_dir.$dir_to_check ) )
 			{
-				$output[] = "<span class='rss-feed-invalid'>The following file or folder is not writeable ".$root_dir.$dir_to_check."</span>";
+				$output[] = "<span class='rss-feed-invalid'>下列文件或文件夹不可写 ".$root_dir.$dir_to_check."</span>";
 			}
 			else if( is_writeable( $root_dir.$dir_to_check ) )
 			{
-				$output[] = "<span class='rss-feed-valid'>".$root_dir.$dir_to_check." is writeable</span>";
+				$output[] = "<span class='rss-feed-valid'>".$root_dir.$dir_to_check." 可写</span>";
 			}
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Permissions Check Results" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "访问许可检测结果" );
 		
 		if( is_array($output) && count($output) )
 		{		
@@ -419,7 +419,7 @@ class ad_diagnostics
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "We did not find any files or folders to check.  Oooops." ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "oooops!!! 找不到任何要检测的文件或文件夹." ) );
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -434,10 +434,10 @@ class ad_diagnostics
 	
 	function whitespace_check()
 	{
-		$this->ipsclass->admin->page_detail = "If there is any whitespace before or after the php tags in files used by IPB, it can result in blank pages or malformed html.  If any results are returned you should open those files and delete the extra spaces or line breaks at the beginning and/or end of the file.";
-		$this->ipsclass->admin->page_title  = "IPB Diagnostics";
+		$this->ipsclass->admin->page_detail = "如果在 IPB 文件得 PHP 标记前后有空格, 将会导致白屏或页面畸形. 如果您发现这样的问题, 您必须打开这些文件, 在文件的开头或结尾删除这些额外的空格或回车换行符.";
+		$this->ipsclass->admin->page_title  = "IPB 诊断";
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Whitespace Check Results' );
+		$this->ipsclass->admin->nav[] = array( '', '空白检测结果' );
 		
 		set_time_limit(0);
 		
@@ -446,18 +446,18 @@ class ad_diagnostics
 		$files_with_junk = array();
 		$files_with_junk = $this->recur_dir( $dir );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Whitespace Check Results" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "空白检测结果" );
 		
 		if( is_array($files_with_junk) && count($files_with_junk) )
 		{		
 			foreach( $files_with_junk as $html_row )
 			{
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( $html_row." has whitespace at the beginning or end of the file" ) );
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( $html_row." 在文件开头或结尾有空格" ) );
 			}
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( " All files appear to be in good order" ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( " 所有文件都没有问题" ) );
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -521,10 +521,10 @@ class ad_diagnostics
 	
 	function db_index_check()
 	{
-		$this->ipsclass->admin->page_detail = "Database indexes help your database engine work more efficiently with the data it hosts.  If any of the indexes are missing, it can cause your site to run slower than it should.  Please use the appropriate links or queries to fix any indexes reported missing below.";
-		$this->ipsclass->admin->page_title  = "IPB Diagnostics";
+		$this->ipsclass->admin->page_detail = "数据库索引使您的数据库效率更高。 如果有索引丢失， 您的论坛运行速度将减慢。 所以，请修复检测到得错误.";
+		$this->ipsclass->admin->page_title  = "IPB 诊断";
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Database Index Results' );
+		$this->ipsclass->admin->nav[] = array( '', '数据库索引核对结果' );
 		
 		//-----------------------------------------		
 		// Fixing something?
@@ -571,11 +571,11 @@ class ad_diagnostics
 				
 					if( $this->ipsclass->DB->error != "" )
 					{
-						$this->ipsclass->main_msg .= "<span style='color:red;'>SQL Error</span><br />{$this->ipsclass->DB->error}<br />";
+						$this->ipsclass->main_msg .= "<span style='color:red;'>SQL 错误</span><br />{$this->ipsclass->DB->error}<br />";
 					}
 					else
 					{
-						$this->ipsclass->main_msg .= "Query: ".htmlspecialchars($sql)."<br />Executed Successfully<br />";
+						$this->ipsclass->main_msg .= "Query: ".htmlspecialchars($sql)."<br />实行成功<br />";
 					}
 					
 					$this->ipsclass->DB->error  = "";
@@ -590,7 +590,7 @@ class ad_diagnostics
 		
 		if( !file_exists( ROOT_PATH."/install/sql/{$this->ipsclass->vars['sql_driver']}_tables.php" ) )
 		{
-			$this->ipsclass->admin->error( "You must upload /install/sql/{$this->ipsclass->vars['sql_driver']}_tables.php from the IPB installation package for your current version to run this tool" );
+			$this->ipsclass->admin->error( "您必须上传 /install/sql/{$this->ipsclass->vars['sql_driver']}_tables.php 才能运行本工具" );
 		}
 
 		//require ROOT_PATH."sources/action_admin/sql_{$this->ipsclass->vars['sql_driver']}.php";
@@ -612,9 +612,9 @@ class ad_diagnostics
 			
 			$this->ipsclass->html .= $this->html->dbindexer_javascript();
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "WARNING: ERRORS FOUND" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "警告: 发现错误" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-invalid'>There were errors found with indexes in your database.  Please review them below, or click <a href='#' onclick='fix_all_dberrors();'>here</a> to correct these errors.", 2 ) ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-invalid'>您的数据库有错误. 您可以在下面看到它们, 您也可以点击 <a href='#' onclick='fix_all_dberrors();'>这里</a> 来修复这些错误.", 2 ) ) );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		}
@@ -623,18 +623,18 @@ class ad_diagnostics
 			$this->ipsclass->adskin->td_header[] = array( "{none}"    	, "50%" );
 			$this->ipsclass->adskin->td_header[] = array( "{none}"    	, "50%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "No Errors Found" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "没有发现错误" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-valid'>There were no errors found with your database indexes.", 2 ) ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-valid'>您的数据库没有错误.", 2 ) ) );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		}	
 		
-		$this->ipsclass->adskin->td_header[] = array( "Table"    	, "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Index Name"  , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Fix"       	, "60%" );
+		$this->ipsclass->adskin->td_header[] = array( "表"    	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "状态"  , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "修复"       	, "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Database Index Results" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "数据表核对结果" );
 		
 		$i = 0;
 		
@@ -671,9 +671,9 @@ class ad_diagnostics
 	function db_check()
 	{
 		$this->ipsclass->admin->page_detail = "If you are missing necessary database tables, or columns in those database tables, you will see database errors (or missing data) when browsing IPB.  Please use the links or queries provided below to remedy any missing columns or tables.";
-		$this->ipsclass->admin->page_title  = "IPB Diagnostics";
+		$this->ipsclass->admin->page_title  = "IPB 诊断";
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Database Schema Results' );
+		$this->ipsclass->admin->nav[] = array( '', '数据表核对结果' );
 		
 		//-----------------------------------------		
 		// Fixing something?
@@ -761,9 +761,9 @@ class ad_diagnostics
 			
 			$this->ipsclass->html .= $this->html->dbchecker_javascript();
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "WARNING: ERRORS FOUND" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "警告: 发现错误" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-invalid'>There were errors found with your database.  Please review them below, or click <a href='#' onclick='fix_all_dberrors();'>here</a> to correct these errors.", 2 ) ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-invalid'>您的数据库有错误. 您可以在下面看到它们, 您也可以点击 <a href='#' onclick='fix_all_dberrors();'>这里</a> 来修复这些错误.", 2 ) ) );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		}
@@ -772,18 +772,18 @@ class ad_diagnostics
 			$this->ipsclass->adskin->td_header[] = array( "{none}"    	, "50%" );
 			$this->ipsclass->adskin->td_header[] = array( "{none}"    	, "50%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "No Errors Found" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "没有错误" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-valid'>There were no errors found with your database.", 2 ) ) );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<span class='rss-feed-valid'>您的数据库索引没有错误.", 2 ) ) );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		}			
 		
-		$this->ipsclass->adskin->td_header[] = array( "Table"    	, "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Status"  	, "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Fix"       	, "50%" );
+		$this->ipsclass->adskin->td_header[] = array( "表"    	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "索引"  , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "修复"       	, "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Database Table Results" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "数据库索引核对结果" );
 		
 		$good_img = "<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick.png' border='0' alt='YN' class='ipd' />";
 		$bad_img  = "<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross.png' border='0' alt='YN' class='ipd' />";
@@ -822,8 +822,8 @@ class ad_diagnostics
 	
 	function list_functions()
 	{
-		$this->ipsclass->admin->page_detail = "This page will give you a diagnostic overview of your system, pulling various data about the server and it's current status where permitted";
-		$this->ipsclass->admin->page_title  = "IPB Diagnostics";
+		$this->ipsclass->admin->page_detail = "在这里您可以对您的 IPB 论坛运行诊断工具";
+		$this->ipsclass->admin->page_title  = "IPB 诊断";
 		
 		//-----------------------------------------
 		// PHP INFO?
@@ -977,12 +977,12 @@ class ad_diagnostics
 				{
 					foreach( $server_reply as $info )
 					{
-						if( strstr( $info, "Total Physical Memory" ) )
+						if( strstr( $info, "统计物理内存" ) )
 						{
 							$total_memory =  trim( str_replace( ":", "", strrchr( $info, ":" ) ) );
 						}
 						
-						if( strstr( $info, "Available Physical Memory" ) )
+						if( strstr( $info, "可用物理内存" ) )
 						{
 							$avail_memory =  trim( str_replace( ":", "", strrchr( $info, ":" ) ) );
 						}
@@ -1043,38 +1043,38 @@ class ad_diagnostics
 		
 		$this->ipsclass->adskin->td_header[] = array( "{none}"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "{none}" 	, "60%" );		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "System Overview" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "系统概况" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB Version",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 版本",
 																				$this->ipsclass->version . " (ID:" . $this->ipsclass->vn_full . ")" ) );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( strtoupper(SQL_DRIVER)." Version",
 																				$sql_version ) );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "PHP Version",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "PHP 版本",
 																				$php_version ) );
 																				
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Disabled PHP Functions",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "禁止的 PHP 函数",
 																				$disabled_functions ) );																				
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Safe Mode",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "安全模式",
 																				SAFE_MODE_ON == 1 ? "<span style='color:red;font-weight:bold;'>ON</span>" : "<span style='color:green;font-weight:bold;'>OFF</span>" ) );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Server Software",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "服务器软件",
 																				$server_software ) );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Current Server Load",
 																				$load_limit ) );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Total Server Memory",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "服务器内存总数",
 																				$total_memory ) );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Available Physical Memory",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "可用物理内存",
 																				$avail_memory ) );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "System Processes" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "系统进程" );
 		
 		if( strstr( strtolower(PHP_OS), 'win' ) )
 		{
@@ -1089,7 +1089,7 @@ class ad_diagnostics
 		
 		if( !$tasks )
 		{
-			$tasks = "<i>Unable to obtain process information</i>";
+			$tasks = "<i>无法获得进程信息</i>";
 		}
 		else
 		{

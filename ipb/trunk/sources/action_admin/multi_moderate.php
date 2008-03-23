@@ -61,7 +61,7 @@ class ad_multi_moderate
 		$this->forumfunc = new admin_forum_functions();
 		$this->forumfunc->ipsclass =& $this->ipsclass;
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Topic multi-moderation home' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '主题批处理' );
 		
 		switch($this->ipsclass->input['code'])
 		{
@@ -145,7 +145,7 @@ class ad_multi_moderate
 		
 		$this->rebuild_cache();
 		
-		$this->ipsclass->admin->save_log("Topic Multi-Mod removed");
+		$this->ipsclass->admin->save_log("主题批处理方案已删除");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&{$this->ipsclass->form_code}");
 		
@@ -182,12 +182,12 @@ class ad_multi_moderate
 		
 		if ( ! $forums )
 		{
-			$this->ipsclass->admin->error("You must select some forums to activate with this multi-moderation suite");
+			$this->ipsclass->admin->error("您必须选择某个版块来激活主题批处理方案");
 		}
 		
 		if ( $this->ipsclass->input['topic_move'] == 'n' )
 		{
-			$this->ipsclass->admin->error("Incorrect forum chosen in the 'move to' section of the topic multi-moderation. Please note that you cannot choose to move the topic to a category");
+			$this->ipsclass->admin->error("选择了错误的目标版块. 请注意, 您不能移动到一个分类");
 		}
 			
 		$save = array(
@@ -219,7 +219,7 @@ class ad_multi_moderate
 			$mm_id = $this->ipsclass->DB->get_insert_id();
 		}
 		
-		$this->ipsclass->admin->save_log("Update topic multi-moderation entries ($type)");
+		$this->ipsclass->admin->save_log("更新主题批处理方案 ($type)");
 		
 		$this->rebuild_cache();
 		
@@ -234,12 +234,12 @@ class ad_multi_moderate
 	
 	function do_form($type='new')
 	{
-		$this->ipsclass->admin->page_detail = "Multi moderation allows you to combine moderation actions to create easy to use shortcuts to several moderation options.";
-		$this->ipsclass->admin->page_title  = "Topic Multi-Moderation";
+		$this->ipsclass->admin->page_detail = "主题批处理可以将多个管理操作组合成批处理快捷方式.";
+		$this->ipsclass->admin->page_title  = "主题批处理";
 		
 		$form_code   = 'donew';
-		$description = 'Add a new topic multi-moderation';
-		$button      = "Add New Multi-Moderation";
+		$description = '新建主题批处理方案';
+		$button      = "新建方案";
 		$id			 = 0;
 		$topic_mm	 = array( 'mm_forums' => '', 'mm_title' => '', 'topic_title_st' => '',
 								'topic_title_end' => '', 'topic_state' => '', 'topic_pin' => '',
@@ -259,8 +259,8 @@ class ad_multi_moderate
 			}
 			
 			$form_code   = 'doedit';
-			$description = 'Edit the topic multi-moderation';
-			$button      = "Edit Multi-Moderation";
+			$description = '编辑主题批处理方案';
+			$button      = "保存修改";
 		}
 		
 		//-----------------------------------------
@@ -274,21 +274,21 @@ class ad_multi_moderate
 		//-----------------------------------------
 		
 		$state_dd = array(
-						  0 => array( 'leave', 'Leave' ),
-						  1 => array( 'close', 'Close' ),
-						  2 => array( 'open' , 'Open'  ),
+						  0 => array( 'leave', '不变' ),
+						  1 => array( 'close', '关闭' ),
+						  2 => array( 'open' , '打开'  ),
 					   );
 					  
 		$pin_dd   = array(
-						  0 => array( 'leave', 'Leave' ),
-						  1 => array( 'pin'  , 'Pin'   ),
-						  2 => array( 'unpin', 'Unpin' ),
+						  0 => array( 'leave', '不变' ),
+						  1 => array( 'pin'  , '置顶'   ),
+						  2 => array( 'unpin', '取消置顶' ),
 					    );
 					    
 		$app_dd   = array(
-						  0 => array( '0', 'Leave' ),
-						  1 => array( '1', 'Approve (Set Visible)'   ),
-						  2 => array( '2', 'Unapprove (Set Invisibe)' ),
+						  0 => array( '0', '不变' ),
+						  1 => array( '1', '批准（设置为可见）'   ),
+						  2 => array( '2', '拒绝（设置为隐藏）' ),
 					    );
 					  
 		//-----------------------------------------
@@ -298,8 +298,8 @@ class ad_multi_moderate
 		$forum_html = "<select name='forums[]' class='textinput' size='15' multiple='multiple'>\n";
 		
 		$forum_html .= $topic_mm['mm_forums'] == '*'
-				     ? "<option value='all' selected='selected'>-- ALL FORUMS --</option>\n"
-					 : "<option value='all'>-- ALL FORUMS --</option>\n";		    
+				     ? "<option value='all' selected='selected'>-- 所有版块 --</option>\n"
+					 : "<option value='all'>-- 所有版块--</option>\n";		    
 		
 		$forum_jump = $this->forumfunc->ad_forums_forum_data();
 			
@@ -332,52 +332,52 @@ class ad_multi_moderate
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "60%" );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Topic Multi-Moderation", $description );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "主题批处理", $description );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Title for this Multi-Moderation Suite?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>方案标题?</b>" ,
 												  $this->ipsclass->adskin->form_input("mm_title", $topic_mm['mm_title'] )
 									     )      );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Active in Forums...</b><br>You may choose more than one" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用此方案的版块...</b><br>按住 Ctrl 复选" ,
 												  $forum_html
 									     )      );							     
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( 'Moderation Options', 'left', 'tablesubheader' );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( '管理选项', 'left', 'tablesubheader' );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Add to <i>START</i> of topic title?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加主题标题前缀<i>START</i> of topic title?</b>" ,
 												  $this->ipsclass->adskin->form_input("topic_title_st", $topic_mm['topic_title_st'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Add to <i>END</i> of topic title?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加主题标题后缀<i>END</i> of topic title?</b>" ,
 												  $this->ipsclass->adskin->form_input("topic_title_end", $topic_mm['topic_title_end'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Alter topic state?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>改变主题状态?</b>" ,
 												  $this->ipsclass->adskin->form_dropdown("topic_state", $state_dd, $topic_mm['topic_state'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Alter pinned state?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>改变置顶状态?</b>" ,
 												  $this->ipsclass->adskin->form_dropdown("topic_pin", $pin_dd, $topic_mm['topic_pin'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Alter approved state?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>改变审核状态?</b>" ,
 												  $this->ipsclass->adskin->form_dropdown("topic_approve", $app_dd, $topic_mm['topic_approve'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Move topic?</b>" ,
-					    						  $this->ipsclass->adskin->form_dropdown("topic_move", array_merge( array( 0 => array('-1', 'Don\'t Move' ) ), $fporum_jump ), $topic_mm['topic_move'] )
-					    						  ."<br />".$this->ipsclass->adskin->form_checkbox('topic_move_link', $topic_mm['topic_move_link'] )."<strong>Leave a link to the source topic?</strong>"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>移动主题?</b>" ,
+					    						  $this->ipsclass->adskin->form_dropdown("topic_move", array_merge( array( 0 => array('-1', '不移动' ) ), $fporum_jump ), $topic_mm['topic_move'] )
+					    						  ."<br />".$this->ipsclass->adskin->form_checkbox('topic_move_link', $topic_mm['topic_move_link'] )."<strong>在原始版块保留连接?</strong>"
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( 'Post Options', 'left', 'tablesubheader' );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( '帖子选项', 'left', 'tablesubheader' );
 	
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Add a reply to the topic?</b><br>HTML enabled" ,
-												  "Enable this reply? &nbsp;".$this->ipsclass->adskin->form_yes_no('topic_reply', $topic_mm['topic_reply'] )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加一个回复?</b><br>HTML 可用" ,
+												  "添加回复? &nbsp;".$this->ipsclass->adskin->form_yes_no('topic_reply', $topic_mm['topic_reply'] )
 												  ."<br />"
 												  . $this->ipsclass->adskin->form_textarea("topic_reply_content", $topic_mm['topic_reply_content'] )
-												  ."<br />".$this->ipsclass->adskin->form_checkbox('topic_reply_postcount', $topic_mm['topic_reply_postcount'] )."<strong>Increment poster's post count?</strong>"
+												  ."<br />".$this->ipsclass->adskin->form_checkbox('topic_reply_postcount', $topic_mm['topic_reply_postcount'] )."<strong>增加发贴人的帖子计数?</strong>"
 									     )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form($button);
@@ -397,15 +397,15 @@ class ad_multi_moderate
 	
 	function list_current()
 	{
-		$this->ipsclass->admin->page_detail = "Multi moderation allows you to combine moderation actions to create easy to use shortcuts to several moderation options.";
-		$this->ipsclass->admin->page_title  = "Topic Multi-Moderation";
+		$this->ipsclass->admin->page_detail = "主题批处理可以将多个管理操作组合成批处理快捷方式";
+		$this->ipsclass->admin->page_title  = "主题批处理";
 		
 		
-		$this->ipsclass->adskin->td_header[] = array( "Title"  , "50%" );
-		$this->ipsclass->adskin->td_header[] = array( "Edit"   , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Remove" , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "标题"	, "50%" );
+		$this->ipsclass->adskin->td_header[] = array( "编辑"	, "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除"	, "25%" );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Current Topic Multi-Moderation" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "当前的主题批处理方案" );
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'topic_mmod', 'order' => "mm_title" ) );
 		$this->ipsclass->DB->simple_exec();
@@ -417,17 +417,17 @@ class ad_multi_moderate
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
 																		 "<strong>{$row['mm_title']}</strong>",
-																		 "<center><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=edit&amp;id={$row['mm_id']}'>Edit</a></center>",
-																		 "<center><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=delete&amp;id={$row['mm_id']}'>Remove</a></center>",
+																		 "<center><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=edit&amp;id={$row['mm_id']}'>编辑</a></center>",
+																		 "<center><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=delete&amp;id={$row['mm_id']}'>删除</a></center>",
 																)      );
 			}
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>None set up</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有设置</center>");
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=new'>Add New</a></span></div>", 'center', 'tablefooter' );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=new'>新建</a></span></div>", 'center', 'tablefooter' );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

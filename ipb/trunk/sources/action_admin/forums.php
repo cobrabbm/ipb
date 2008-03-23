@@ -221,8 +221,8 @@ class ad_forums
 		// Do form..
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Forum Skin Options";
-		$this->ipsclass->admin->page_detail = "You may choose to either add or remove a skin set to this forum. The skin choice will override the users choice.";
+		$this->ipsclass->admin->page_title  = "版块皮肤选项";
+		$this->ipsclass->admin->page_detail = "您可以为板块指定一个皮肤, 将会覆盖用户的选择.";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'   , 'doskinedit'),
 																			 2 => array( 'act'    , 'forum'  ),
@@ -234,17 +234,17 @@ class ad_forums
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Skin choices for forum: {$forum['name']}" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版块 {$forum['name']} 使用的皮肤" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Apply which skin to this forum?</b>" ,
-																 "<select class='dropdown' name='fsid'><option value='-1'>--None / Remove All--</option>{$skin_list}</select>"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择版块使用的皮肤?</b>" ,
+																 "<select class='dropdown' name='fsid'><option value='-1'>--无 / 删除设置--</option>{$skin_list}</select>"
 														 )      );
 														 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Apply to all children of this forum (all sub-forums)</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>统一所有子版块皮肤</b>" ,
 																 $this->ipsclass->adskin->form_yes_no( 'apply_to_children' )
 														 )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit forum skin options");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("保存编辑");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -288,7 +288,7 @@ class ad_forums
 			}
 		}
 		
-		$this->ipsclass->main_msg = "Forum skin updated";
+		$this->ipsclass->main_msg = "版块皮肤已更新";
 		
 		$this->recache_forums();
 		
@@ -355,8 +355,8 @@ class ad_forums
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Forum Rules";
-		$this->ipsclass->admin->page_detail = "You may edit, add, remove or change the state of the forum rules display";
+		$this->ipsclass->admin->page_title  = "版块规则";
+		$this->ipsclass->admin->page_detail = "您可以编辑, 添加, 删除或改变板块规则显示状态";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'   , 'dorules'),
 																			 2 => array( 'act'    , 'forum'  ),
@@ -368,20 +368,20 @@ class ad_forums
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Forum Rules set up" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版块规则设置" );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Display method</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>显示方式</b>" ,
 																 $this->ipsclass->adskin->form_dropdown( "show_rules",
 																					   array( 
-																							   0 => array( '0' , 'Don\'t Show' ),
-																							   1 => array( '1' , 'Show Link Only' ),
-																							   2 => array( '2' , 'Show full text' )
+																							   0 => array( '0' , '不显示' ),
+																							   1 => array( '1' , '显示连接' ),
+																							   2 => array( '2' , '显示全文' )
 																							),
 																					   $forum['show_rules']
 																					 )
 														)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rules Title</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>规则标题</b>" ,
 																 $this->ipsclass->adskin->form_input("title", $this->ipsclass->txt_stripslashes(str_replace( "'", '&#039;', $forum['rules_title'])))
 														)      );
 									     
@@ -402,11 +402,11 @@ class ad_forums
 		
 		$form_element = $this->han_editor->show_editor( $forum['rules_text'], 'body' );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rules Text</b><br>(HTML Editing Mode)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>规则正文</b><br>( HTML 编辑模式 )" ,
 																 $form_element
 														)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit forum rules");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("保存编辑");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -460,7 +460,7 @@ class ad_forums
 		$this->ipsclass->DB->do_update( 'forums', $rules, 'id='.$this->ipsclass->input['f'] );
 		
 		$this->recache_forums();
-		$this->ipsclass->main_msg = "Forum rules updated";
+		$this->ipsclass->main_msg = "版块规则已更新";
 		
 		//-----------------------------------------
 		// Bounce back to parent...
@@ -491,9 +491,9 @@ class ad_forums
 
 		$this->recache_forums();
 		
-		$this->ipsclass->admin->save_log("Recounted posts in forum '{$this->ipsclass->forums->forum_by_id[$this->ipsclass->input['f']]['name']}'");
+		$this->ipsclass->admin->save_log("重新计算版块“{$this->ipsclass->forums->forum_by_id[$this->ipsclass->input['f']]['name']}”的帖子数");
 		
-		$this->ipsclass->main_msg = "Forum resynschronized";
+		$this->ipsclass->main_msg = "版块已同步";
 		
 		//-----------------------------------------
 		// Bounce back to parent...
@@ -532,9 +532,9 @@ class ad_forums
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title = "Empty Forum '{$forum['name']}'";
+		$this->ipsclass->admin->page_title = "清空版块 '{$forum['name']}'";
 		
-		$this->ipsclass->admin->page_detail = "This WILL DELETE ALL TOPICS, POSTS AND POLLS.<br>The forum itself will not be deleted - please ensure you wish to carry out this action before continuing.";
+		$this->ipsclass->admin->page_detail = "将要删除版块内的全部主题, 帖子和投票.<br>版块本身不会被删除 - 继续前请确认您正在进行的操作.";
 		
 		//-----------------------------------------
 		
@@ -552,11 +552,11 @@ class ad_forums
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Empty Forum '{$forum['name']}'" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "清空版块 '{$forum['name']}'" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Forum to empty: </b>" , $forum['name'] )      );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>正要清空的版块: </b>" , $forum['name'] )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Empty this forum");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("清空该版块");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -619,10 +619,10 @@ class ad_forums
 		
 		$this->recache_forums();
 		
-		$this->ipsclass->admin->save_log("Emptied forum '{$this->ipsclass->input['name']}' of all posts");
+		$this->ipsclass->admin->save_log("清空版块 '{$this->ipsclass->input['name']}' of all posts");
 		
 		$this->ipsclass->input['f'] =  $this->ipsclass->forums->forum_by_id[ $this->ipsclass->input['f'] ]['parent_id'];
-		$this->ipsclass->main_msg   = "Forum emptied";
+		$this->ipsclass->main_msg   = "版块已清空";
 		$this->show_forums();
 	}
 	
@@ -651,7 +651,7 @@ class ad_forums
 		
 		if ( $this->ipsclass->DB->get_num_rows() < 2 )
 		{
-			$this->ipsclass->admin->error("Can not remove this forum, please create another before attempting to remove this one");
+			$this->ipsclass->admin->error("无法删除此版块, 删除前请先建立另一个版块");
 		}
 		
 		while ( $r = $this->ipsclass->DB->fetch_row() )
@@ -682,11 +682,11 @@ class ad_forums
 		// Start form
 		//-----------------------------------------
 		
-		$text = $is_cat ? "Category" : "Forum";
+		$text = $is_cat ? "分类" : "版块";
 		
-		$this->ipsclass->admin->page_title = "Removing {$text} '{$name}'";
+		$this->ipsclass->admin->page_title = "删除版块 {$text} '{$name}'";
 		
-		$this->ipsclass->admin->page_detail = "Before we remove this {$text}, if this {$text} is not empty, we need to determine what to do with any topics and posts you may have left in this {$text}.";
+		$this->ipsclass->admin->page_detail = "删除{$text}此版块前，如果{$text}此版块不是空的，我们需要确定怎么处理{$text}版块内的主题和帖子.";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'   , 'dodelete'),
 																			 2 => array( 'act'    , 'forum'     ),
@@ -701,13 +701,13 @@ class ad_forums
 		// Main form
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Required" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "请确认" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>{$text} to remove: </b>" , $name )      );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>正要删除的版块{$text}: </b>" , $name )      );
 		
 		if ( $posts['count'] )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Move all <i>existing topics and posts in this {$text}</i> to which forum?</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>移动全部 <i>{$text}版块内的主题和帖子</i> 到?</b>" ,
 																	$this->ipsclass->adskin->form_dropdown( "MOVE_ID", $form_array )
 														  )      );
 			
@@ -715,13 +715,13 @@ class ad_forums
 		
 		if ( $children['count'] )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Move all <i>children forums</i> to which forum or category?</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>移动全部 <i>子版块</i> 到?</b>" ,
 																	$this->ipsclass->adskin->form_dropdown( "new_parent_id", $form_array )
 														  )      );
 		}
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "Remove {$text}" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "删除版块 {$text}" );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -766,7 +766,7 @@ class ad_forums
 		{
 			if ( $this->ipsclass->input['new_parent_id'] == $this->ipsclass->input['f'] )
 			{
-				$this->ipsclass->main_msg = "You cannot move children forums to the forum you're removing!";
+				$this->ipsclass->main_msg = "您不能将子版块移动到您正要删除的版块内!";
 				$this->delete_form();
 			}
 		}
@@ -787,7 +787,7 @@ class ad_forums
 		{
 			if ( $this->ipsclass->input['MOVE_ID'] == $this->ipsclass->input['f'] )
 			{
-				$this->ipsclass->main_msg = "You cannot move topics into the forum you're removing!";
+				$this->ipsclass->main_msg = "您不能将主题移动到您正要删除的版块内!";
 				$this->delete_form();
 			}
 			
@@ -852,9 +852,9 @@ class ad_forums
 		
 		$moderator->rebuild_moderator_cache();
 		
-		$this->ipsclass->admin->save_log("Removed forum '{$forum['name']}'");
+		$this->ipsclass->admin->save_log("删除版块 '{$forum['name']}'");
 		
-		$this->ipsclass->admin->done_screen("Forum Removed", "Forum Control", $this->ipsclass->form_code, 'redirect' );
+		$this->ipsclass->admin->done_screen("删除版块", "版块控制", $this->ipsclass->form_code, 'redirect' );
 	}
 
 	
@@ -881,51 +881,51 @@ class ad_forums
 		$perm_matrix = "";
 		$dd_state    = array( 0 => array( 1, 'Active' ), 1 => array( 0, 'Read Only Archive' ) );
 		$dd_moderate = array(
-							 0 => array( 0, 'No' ),
-							 1 => array( 1, 'Moderate all new topics and all replies' ),
-							 2 => array( 2, 'Moderate new topics but don\'t moderate replies' ),
-							 3 => array( 3, 'Moderate replies but don\'t moderate new topics' ),
+							 0 => array( 0, '不审核' ),
+							 1 => array( 1, '审核所有新主题和回复' ),
+							 2 => array( 2, '审核新主题但不审核回复' ),
+							 3 => array( 3, '审核回复但不审核新主题' ),
 							);
 		$dd_prune    = array( 
-							 0 => array( 1, 'Today' ),
-							 1 => array( 5, 'Last 5 days'  ),
-							 2 => array( 7, 'Last 7 days'  ),
-							 3 => array( 10, 'Last 10 days' ),
-							 4 => array( 15, 'Last 15 days' ),
-							 5 => array( 20, 'Last 20 days' ),
-							 6 => array( 25, 'Last 25 days' ),
-							 7 => array( 30, 'Last 30 days' ),
-							 8 => array( 60, 'Last 60 days' ),
-							 9 => array( 90, 'Last 90 days' ),
-							 10=> array( 100,'Show All'     ),
+							 0 => array( 1, '今天' ),
+							 1 => array( 5, '5 天内'  ),
+							 2 => array( 7, '7 天内'  ),
+							 3 => array( 10, '10 天内' ),
+							 4 => array( 15, '15 天内' ),
+							 5 => array( 20, '20 天内' ),
+							 6 => array( 25, '25 天内' ),
+							 7 => array( 30, '30 天内' ),
+							 8 => array( 60, '60 天内' ),
+							 9 => array( 90, '90 天内' ),
+							 10=> array( 100,'全部'     ),
 							);
 		
 		$dd_order    = array( 
-							 0 => array( 'last_post', 'Date of the last post' ),
-							 1 => array( 'title'    , 'Topic Title' ),
-							 2 => array( 'starter_name', 'Topic Starters Name' ),
-							 3 => array( 'posts'    , 'Topic Posts' ),
-							 4 => array( 'views'    , 'Topic Views' ),
-							 5 => array( 'start_date', 'Date topic started' ),
-							 6 => array( 'last_poster_name'   , 'Name of the last poster' )
+							 0 => array( 'last_post', '最后回复日期' ),
+							 1 => array( 'title'    , '主题标题' ),
+							 2 => array( 'starter_name', '主题作者名称' ),
+							 3 => array( 'posts'    , '主题回复数' ),
+							 4 => array( 'views'    , '主题点击数' ),
+							 5 => array( 'start_date', '主题发表日期' ),
+							 6 => array( 'last_poster_name'   , '最后回复者名称' )
 							);
 																							
 																							
 																							
 		$dd_by       = array( 
-							 0 => array( 'Z-A', 'Descending (Z - A, 0 - 10)' ),
-							 1 => array( 'A-Z', 'Ascending (A - Z, 10 - 0)'  )
+							 0 => array( 'Z-A', '倒序 (Z - A, 0 - 10)' ),
+							 1 => array( 'A-Z', '正序 (A - Z, 10 - 0)'  )
 							);
 							
 		$dd_filter	 = array(
-							 0 => array( 'all', 	'All Topics' ),
-							 1 => array( 'open', 	'Open Topics' ),
-							 2 => array( 'hot',		'Hot Topics' ),
-							 3 => array( 'poll',	'Polls' ),
-							 4 => array( 'locked',	'Locked Topics' ),
-							 5 => array( 'moved',	'Moved Topics' ),
-							 6 => array( 'istarted', 'Topics Reader Started' ),
-							 7 => array( 'ireplied', 'Topics Reader Replied' ),
+							 0 => array( 'all', 	'全部主题' ),
+							 1 => array( 'open', 	'打开的主题' ),
+							 2 => array( 'hot',		'热门主题' ),
+							 3 => array( 'poll',	'投票' ),
+							 4 => array( 'locked',	'关闭的主题' ),
+							 5 => array( 'moved',	'移动的主题' ),
+							 6 => array( 'istarted', '浏览者发表的主题' ),
+							 7 => array( 'ireplied', '浏览者回复的主题' ),
 							);
 							 
 																									 
@@ -933,8 +933,7 @@ class ad_forums
 		// Set up title, desc
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_detail = "This section will allow you to add or edit an existing {$addnew_type}. If you wish to adjust the forum permissions (who has the ability to
-							   			 	   start, reply and read topics) click on 'Edit Permissions on the Forums and Categories overview.";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加或编辑论坛版块, 分类. 如果您想调整论坛版块的访问许可( 发表, 回复和查看主题 ), 请点击'访问许可'.";
 		
 		//-----------------------------------------
 		// EDIT
@@ -948,7 +947,7 @@ class ad_forums
 			
 			if ( ! $forum_id )
 			{
-				$this->ipsclass->admin->error("You didn't choose a forum to edit, duh!");
+				$this->ipsclass->admin->error("您没有选择要编辑的版块!");
 			}
 			
 			//-----------------------------------------
@@ -983,8 +982,8 @@ class ad_forums
 				$addnew_type = $addnew_type == 'category' ? 'forum' : 'category';
 			}
 			
-			$title  		= "Editing {$addnew_type}: {$forum['name']}";
-			$button 		= "Edit {$addnew_type}";
+			$title  		= "正在编辑 {$addnew_type}: {$forum['name']}";
+			$button 		= "保存 {$addnew_type}";
 			$code   		= "doedit";
 			
 			if( $addnew_type == 'category' )
@@ -1007,9 +1006,9 @@ class ad_forums
 							<tr>
 							 <td align='left' width='40%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>Basic Settings for {$forum['name']}</td>
 							 <td align='right' width='60%'>".
-							 $this->ipsclass->adskin->js_make_button("Edit {$addnew_type} Rules"  , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=frules&f={$this->ipsclass->input['f']}")."&nbsp;".
-						     $this->ipsclass->adskin->js_make_button("Edit Skin Settings", $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=skinedit&f={$this->ipsclass->input['f']}")."&nbsp;".
-						     $this->ipsclass->adskin->js_make_button("Recount {$addnew_type}"     , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=recount&f={$this->ipsclass->input['f']}")
+							 $this->ipsclass->adskin->js_make_button("编辑 {$addnew_type} 规则"  , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=frules&f={$this->ipsclass->input['f']}")."&nbsp;".
+						     $this->ipsclass->adskin->js_make_button("编辑皮肤设置", $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=skinedit&f={$this->ipsclass->input['f']}")."&nbsp;".
+						     $this->ipsclass->adskin->js_make_button("重新统计 {$addnew_type}"     , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=recount&f={$this->ipsclass->input['f']}")
 							 ."&nbsp;&nbsp;</td>
 							</tr>
 							</table>";
@@ -1031,7 +1030,7 @@ class ad_forums
 			
 			$forum = array(
 							'sub_can_post'				=> $subcanpost,
-							'name'						=> $f_name ? $f_name : 'New '.ucwords($addnew_type),
+							'name'						=> $f_name ? $f_name : '新 '.ucwords($addnew_type),
 							'parent_id'					=> $parentid,
 							'use_ibc'					=> 1,
 							'quick_reply'				=> 1,
@@ -1064,10 +1063,10 @@ class ad_forums
 							
 						  );
 						  
-			$title       = "Add a ".ucwords($addnew_type);
-			$button      = "Add ".ucwords($addnew_type);
+			$title       = "新建 ".ucwords($addnew_type);
+			$button      = "新建 ".ucwords($addnew_type);
 			$code        = "donew";
-			$basic_title = 'Basic Settings';
+			$basic_title = '基本设置';
 			
 			if( $addnew_type == 'category' )
 			{
@@ -1176,8 +1175,8 @@ class ad_forums
 		// Nav and print
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Forums' );
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit '.ucwords($addnew_type) );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理版块' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑 '.ucwords($addnew_type) );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -1205,7 +1204,7 @@ class ad_forums
 		$this->ipsclass->input['name'] = trim($this->ipsclass->input['name']);
 		$this->ipsclass->input['f']    = intval($this->ipsclass->input['f']);
 		
-		$forum_cat_lang = intval($this->ipsclass->input['parent_id']) == -1 ? 'Category' : 'Forum';
+		$forum_cat_lang = intval($this->ipsclass->input['parent_id']) == -1 ? '分类' : '版块';
 		
 		//-----------------------------------------
 		// Auth check...
@@ -1219,7 +1218,7 @@ class ad_forums
 		
 		if ( $this->ipsclass->input['name'] == "" )
 		{
-			$this->ipsclass->main_msg = "You must enter a ".strtolower($forum_cat_lang)." title";
+			$this->ipsclass->main_msg = "您必须输入 ".strtolower($forum_cat_lang)." 标题";
 			$this->forum_form( $type );
 			return;
 		}
@@ -1238,7 +1237,7 @@ class ad_forums
 			
 			if ( in_array( $this->ipsclass->input['parent_id'], $ids ) )
 			{
-				$this->ipsclass->main_msg = "Sorry, that is not possible. You are attempting to move a parent forum or category into its own child structure. Please go back and choose a different parent forum.";
+				$this->ipsclass->main_msg = "抱歉, 您正试图将一个父版块移动到它的子版块中, 请后退选择另一个版块.";
 				$this->forum_form( $type );
 				return;
 			}
@@ -1354,9 +1353,9 @@ class ad_forums
 			
 			$this->ipsclass->DB->do_insert( 'forums', $save );
 			
-			$this->ipsclass->main_msg = $forum_cat_lang." Created";
+			$this->ipsclass->main_msg = $forum_cat_lang." 已建立";
 			
-			$this->ipsclass->admin->save_log($forum_cat_lang." '{$this->ipsclass->input['name']}' created");
+			$this->ipsclass->admin->save_log("建立" $forum_cat_lang." '{$this->ipsclass->input['name']}' 建立");
 		}
 		else
 		{
@@ -1400,9 +1399,9 @@ class ad_forums
 		 				
 			$this->ipsclass->DB->do_update( 'forums', $save, "id={$this->ipsclass->input['f']}"  );
 			
-			$this->ipsclass->main_msg = $forum_cat_lang." Edited";
+			$this->ipsclass->main_msg = $forum_cat_lang." 已编辑";
 			
-			$this->ipsclass->admin->save_log($forum_cat_lang." '{$this->ipsclass->input['name']}' edited");
+			$this->ipsclass->admin->save_log("编辑" $forum_cat_lang." '{$this->ipsclass->input['name']}'");
 		}
 		
 		$this->recache_forums();
@@ -1436,7 +1435,7 @@ class ad_forums
 		
 		if ( ! $this->ipsclass->input['f'] )
 		{
-			$this->ipsclass->admin->error("You didn't choose a forum to edit, duh!");
+			$this->ipsclass->admin->error("你没有选择要编辑的板块!");
 		}
 		
 		//-----------------------------------------
@@ -1460,7 +1459,7 @@ class ad_forums
 			$this->ipsclass->admin->error("Could not retrieve the forum data based on ID {$this->ipsclass->input['f']}");
 		}
 		
-		$this->ipsclass->admin->page_title = "Edit permissions for ".$forum['name'];
+		$this->ipsclass->admin->page_title = "编辑版块访问许可 ".$forum['name'];
 		
 		//-----------------------------------------
 		// HTML
@@ -1469,21 +1468,21 @@ class ad_forums
 		if( $forum['parent_id'] != 'root' )
 		{
 			$perm_matrix = $this->build_group_perms(  $forum['show_perms'], $forum['read_perms'], $forum['start_perms'], $forum['reply_perms'], $forum['upload_perms'], $forum['download_perms'], 
-												  $this->ipsclass->forums->forum_by_id[ $forum['parent_id'] ]['name'].' &gt; '.$forum['name'].' &gt; '."Permission Access Levels" );
+												  $this->ipsclass->forums->forum_by_id[ $forum['parent_id'] ]['name'].' &gt; '.$forum['name'].' &gt; '."访问许可设置" );
 												  
-			$this->ipsclass->admin->page_detail = "<b>Forum access permissions</b><br>(Check box for access, uncheck to not allow access)<br>If you deny read access for a permission set, they will not see the forum";
+			$this->ipsclass->admin->page_detail = "<b>版块访问许可</b><br>( 选中表示允许，不选中表示不允许 )<br>如果您对某个访问许可集关闭了显示许可， 他们将看不到版块";
 		}
 		else
 		{
-			$perm_matrix = $this->build_group_cat_perms( $forum['show_perms'], $forum['name'].' &gt; '."Permission Access Levels" );
+			$perm_matrix = $this->build_group_cat_perms( $forum['show_perms'], $forum['name'].' &gt; '."访问许可设置" );
 			
-			$this->ipsclass->admin->page_detail = "<b>Category access permissions</b><br>(Select permission set for access, deselect to not allow access)<br>If you do not select a permission set, they will not be able to see any forums in that category.";
+			$this->ipsclass->admin->page_detail = "<b>分类访问许可</b><br>( 选中表示允许，不选中表示不允许 )<br>如果您没有选中某个许可集， 他们将看不到此分类中的版块.";
 		}
 		
 		$this->ipsclass->html .= $this->html->forum_permission_form( $forum, $relative, $perm_matrix );
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Forums' );
-		$this->ipsclass->admin->nav[] = array( '', 'Permissions for forum '.$forum['name'] );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理版块' );
+		$this->ipsclass->admin->nav[] = array( '', '访问许可设置 '.$forum['name'] );
 		
 		$this->ipsclass->admin->output();
 			
@@ -1623,7 +1622,7 @@ class ad_forums
 		
 		if ( isset($this->ipsclass->input['doprevious']) AND $this->ipsclass->input['doprevious'] and $this->ipsclass->input['previd'] > 0 )
 		{
-			$this->ipsclass->main_msg = 'Forum permissions edited';
+			$this->ipsclass->main_msg = '编辑版块访问许可';
 			
 			$this->ipsclass->input['f'] = $this->ipsclass->input['previd'];
 			
@@ -1631,7 +1630,7 @@ class ad_forums
 		}
 		else if ( isset($this->ipsclass->input['donext']) AND $this->ipsclass->input['donext'] and $this->ipsclass->input['nextid'] > 0 )
 		{
-			$this->ipsclass->main_msg = 'Forum permissions edited';
+			$this->ipsclass->main_msg = '版块访问许可已保存';
 			
 			$this->ipsclass->input['f'] = $this->ipsclass->input['nextid'];
 			
@@ -1643,7 +1642,7 @@ class ad_forums
 		}
 		else
 		{
-			$this->ipsclass->admin->done_screen("Forum Access Permissions Edited", "Forum Control", $this->ipsclass->form_code, 'redirect' );
+			$this->ipsclass->admin->done_screen("版块访问许可已保存", "版块控制", $this->ipsclass->form_code, 'redirect' );
 		}
 	}
 	
@@ -1669,7 +1668,7 @@ class ad_forums
 			$this->ipsclass->admin->error("Cannot go any further, not F passed");
 		}
 		
-		$this->ipsclass->admin->page_detail = "Simply select the position you require for each forum and submit the form to complete the re-order.";
+		$this->ipsclass->admin->page_detail = "只需选择版块的排序顺序然后提交表单就可完成排序.";
 		
 		$this->forumfunc->type = 'reorder';
 		
@@ -1694,7 +1693,7 @@ class ad_forums
 			
 		$this->ipsclass->html .= $this->forumfunc->forum_show_cat($temp_html, $cat_data);
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form_standalone("Re-order");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form_standalone("排序");
 		
 		$this->ipsclass->admin->output();
 	}
@@ -1747,8 +1746,8 @@ class ad_forums
 		// INIT
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title   = "Category and Forums Overview";
-		$this->ipsclass->admin->page_detail  = "You can manage your forums from here. Click on the icons for more information.";
+		$this->ipsclass->admin->page_title   = "分类和版块";
+		$this->ipsclass->admin->page_detail  = "您可以在这里管理您的论坛版块。 点击版块右边的图标可以看到更多设置.";
 		
 		//-----------------------------------------
 		// Nav
@@ -1762,7 +1761,7 @@ class ad_forums
 			{
 				array_shift($nav);
 				
-				$this->ipsclass->html .= "<div class='navstrip'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}'>Forums</a> &gt; ".implode( " &gt; ", $nav )."</div><br />";
+				$this->ipsclass->html .= "<div class='navstrip'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}'>版块</a> &gt; ".implode( " &gt; ", $nav )."</div><br />";
 			}
 		}
 		
@@ -1835,7 +1834,7 @@ class ad_forums
 		
 		$this->ipsclass->html .= $this->html->render_forum_footer( $choose, $mem_group );
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Manage Forums' );
+		$this->ipsclass->admin->nav[] = array( '', '管理版块' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -1945,7 +1944,7 @@ class ad_forums
 	}
 	
 	
-	function build_group_cat_perms( $show='*', $title='Permission Access Levels' )
+	function build_group_cat_perms( $show='*', $title='访问许可设置' )
 	{
 		//-----------------------------------------
 		// Load skin if required

@@ -155,7 +155,7 @@ class ad_rssimport
 		
 		$this->ipsclass->DB->build_and_exec_query( array( 'delete' => 'rss_import', 'where' => 'rss_import_id='.$rss_import_id ) );
 		
-		$this->ipsclass->main_msg = "RSS Import stream removed.";
+		$this->ipsclass->main_msg = "RSS 导入项目已删除.";
 		$this->rssimport_overview();
 	}
 	
@@ -211,7 +211,7 @@ class ad_rssimport
 		{
 			if ( $return )
 			{
-				$this->ipsclass->main_msg = "Could not locate any topics to delete";
+				$this->ipsclass->main_msg = "找不到要删除的主题";
 				$this->rssimport_overview();
 				return;
 			}
@@ -234,7 +234,7 @@ class ad_rssimport
 		
 		$this->ipsclass->DB->build_and_exec_query( array( 'delete' => 'rss_imported', 'where' => 'rss_imported_tid IN('.implode(',',$remove_tids).')' ) );
 		
-		$this->ipsclass->main_msg = intval(count($remove_tids))." topics removed.";
+		$this->ipsclass->main_msg = intval(count($remove_tids))." 个主题已删除.";
 		$this->rssimport_overview();
 	}
 	
@@ -286,7 +286,7 @@ class ad_rssimport
 		
 		if ( $article_count['cnt'] < 1 )
 		{
-			$this->ipsclass->main_msg = "The RSS Import Stream '{$rssstream['rss_import_title']}' has no imported articles to remove.";
+			$this->ipsclass->main_msg = "RSS 导入项目“{$rssstream['rss_import_title']}”中没有要删除的导入帖子.";
 			$this->rssimport_overview();
 			return;
 		}
@@ -297,10 +297,10 @@ class ad_rssimport
 		
 		$this->ipsclass->html .= $this->html->rss_import_remove_articles_form( $rssstream, intval($article_count['cnt']) );
 		
-		$this->ipsclass->admin->page_title  = "RSS Import Manager";
-		$this->ipsclass->admin->page_detail = "This section will allow you to remove already posted articles.";
+		$this->ipsclass->admin->page_title  = "SS 导入项目管理";
+		$this->ipsclass->admin->page_detail = "您可以在这里删除通过 RSS 导入的主题.";
 		
-		$this->ipsclass->admin->nav[]       = array( '', "Remove RSS Articles" );
+		$this->ipsclass->admin->nav[]       = array( '', "删除 RSS 导入主题" );
 		$this->ipsclass->admin->output();
 	}
 	
@@ -502,7 +502,7 @@ class ad_rssimport
 				
 				if ( ! is_array( $this->class_rss->rss_channels ) or ! count( $this->class_rss->rss_channels ) )
 				{
-					$rss_error[] = "Could not open {$row['rss_import_url']} to locate channels.";
+					$rss_error[] = "无法打开 {$row['rss_import_url']} 定位频道.";
 					continue;
 				}
 				
@@ -525,7 +525,7 @@ class ad_rssimport
 				
 				if ( ! is_array( $this->class_rss->rss_items ) or ! count( $this->class_rss->rss_items ) )
 				{
-					$rss_error[] = "{$row['rss_import_url']} has no items to import";
+					$rss_error[] = "{$row['rss_import_url']} 中没有条目要导入";
 					continue;
 				}
 				
@@ -565,7 +565,7 @@ class ad_rssimport
 							
 							if ( ! $item_data['title'] OR ! $item_data['content'] )
 							{
-							 	$rss_error[] = "Skipping '{$item_data['title']}' no title or content";
+							 	$rss_error[] = "跳过“{$item_data['title']}”, 没有标题或内容";
 								continue;
 							}
 							
@@ -582,7 +582,7 @@ class ad_rssimport
 				
 				if ( ! count( $check_guids ) )
 				{
-					$rss_error[] = "No RSS items to import";
+					$rss_error[] = "没有 RSS 条目可以导入";
 					continue;
 				}
 				
@@ -881,7 +881,7 @@ class ad_rssimport
 		
 		if ( $return )
 		{
-			$this->ipsclass->main_msg = "RSS Import(s) Re-cached";
+			$this->ipsclass->main_msg = "RSS 导入项目已重新缓存";
 			
 			if ( count( $rss_error ) )
 			{
@@ -913,7 +913,7 @@ class ad_rssimport
 			
 			if( count($this->validate_msg) )
 			{
-				$this->ipsclass->main_msg = "<b>Validation Results for <span class='rss-feed-url'>".$this->ipsclass->txt_stripslashes( trim( $_POST['rss_import_url'] ) )."</span></b><br />&nbsp;&middot;".implode( "<br />&nbsp;&middot;", $this->validate_msg );
+				$this->ipsclass->main_msg = "<b>验证结果 <span class='rss-feed-url'>".$this->ipsclass->txt_stripslashes( trim( $_POST['rss_import_url'] ) )."</span></b><br />&nbsp;&middot;".implode( "<br />&nbsp;&middot;", $this->validate_msg );
 				$this->rssimport_form( $type );
 				return;
 			}
@@ -960,7 +960,7 @@ class ad_rssimport
 		
 		if ( ! $rss_import_title OR ! $rss_import_url OR ! $rss_import_pergo OR ! $rss_import_forum_id OR ! $rss_import_mid )
 		{
-			$this->ipsclass->main_msg = "You must complete the entire form.";
+			$this->ipsclass->main_msg = "您必须完整填写表单.";
 			$this->rssimport_form( $type );
 			return;
 		}
@@ -1030,7 +1030,7 @@ class ad_rssimport
 		
 		if ( ! is_array( $this->class_rss->rss_channels ) or ! count( $this->class_rss->rss_channels ) )
 		{
-			$rss_error[] = "Could not open $rss_import_url to locate channels.";
+			$rss_error[] = "无法打开 $rss_import_url 定位频道.";
 		}
 		
 		if ( is_array( $rss_error ) AND count( $rss_error ) )
@@ -1048,7 +1048,7 @@ class ad_rssimport
 		
 		if ( !isset($member['id']) OR !$member['id'] )
 		{
-			$this->ipsclass->main_msg = "We could not find a member called '{$rss_import_mid}'";
+			$this->ipsclass->main_msg = "找不到名为{$rss_import_mid}”的会员'";
 			$this->rssimport_form( $type );
 			return;
 		}
@@ -1065,14 +1065,14 @@ class ad_rssimport
 		
 		if ( !isset($this->ipsclass->forums->forum_by_id[ $rss_import_forum_id ]) OR !$this->ipsclass->forums->forum_by_id[ $rss_import_forum_id ] )
 		{
-			$this->ipsclass->main_msg = "The selected forum to import into doesn't exist";
+			$this->ipsclass->main_msg = "所选版块不存在";
 			$this->rssimport_form( $type );
 			return;
 		}
 		
 		if ( $this->ipsclass->forums->forum_by_id[ $rss_import_forum_id ]['sub_can_post'] != 1 OR $this->ipsclass->forums->forum_by_id[ $rss_import_forum_id ]['redirect_on'] == 1 )
 		{
-			$this->ipsclass->main_msg = "The selected forum to import into isn't capable of receiving topics.";
+			$this->ipsclass->main_msg = "所选版块无法接受主题.";
 			$this->rssimport_form( $type );
 			return;
 		}
@@ -1105,13 +1105,13 @@ class ad_rssimport
 		if ( $type == 'add' )
 		{
 			$this->ipsclass->DB->do_insert( 'rss_import', $array );
-			$this->ipsclass->main_msg = 'RSS Import Stream Created';
+			$this->ipsclass->main_msg = 'RSS 导入项目已创建';
 			$rss_import_id = $this->ipsclass->DB->get_insert_id();
 		}
 		else
 		{
 			$this->ipsclass->DB->do_update( 'rss_import', $array, 'rss_import_id='.$rss_import_id );
-			$this->ipsclass->main_msg = 'RSS Import Stream Edited';
+			$this->ipsclass->main_msg = 'RSS 导入项目已编辑';
 		}
 		
 		if( $rss_import_enabled )
@@ -1152,11 +1152,11 @@ class ad_rssimport
 		if ( $type == 'add' )
 		{
 			$formcode = 'rssimport_add_save';
-			$title    = "Create New RSS Import Stream";
-			$button   = "Create New RSS Import Stream";
+			$title    = "新建 RSS 导入项目";
+			$button   = "新建";
 			$rssstream = array( 'rss_import_topic_open' => 1, 
 							    'rss_import_enabled' 	=> 1, 
-							    'rss_import_showlink' 	=> '[url={url}]View the full article[/url]',
+							    'rss_import_showlink' 	=> '[url={url}]查看全文[/url]',
 							    'rss_import_title'		=> '',
 							    'rss_import_url'		=> '',
 							    'rss_import_forum_id'	=> 0,
@@ -1196,8 +1196,8 @@ class ad_rssimport
 			}
 			
 			$formcode = 'rssimport_edit_save';
-			$title    = "Edit RSS Import Stream ".$rssstream['rss_import_title'];
-			$button   = "Save Changes";
+			$title    = "编辑 RSS 导入项目 ".$rssstream['rss_import_title'];
+			$button   = "保存修改";
 		}
 		
 		//-------------------------------
@@ -1240,10 +1240,10 @@ class ad_rssimport
 	
 		$this->ipsclass->html .= $this->html->rss_import_form( $form, $title, $formcode, $button, $rssstream );
 		
-		$this->ipsclass->admin->page_title  = "RSS Import Manager";
+		$this->ipsclass->admin->page_title  = "RSS 导入项目管";
 		$this->ipsclass->admin->page_detail = "This section will allow you to manage your RSS Import feeds.";
 		
-		$this->ipsclass->admin->nav[]       = array( "", "Add/Edit RSS Import" );
+		$this->ipsclass->admin->nav[]       = array( "", "新建/编辑 RSS 导入项目" );
 		$this->ipsclass->admin->output();
 	}
 	
@@ -1272,7 +1272,7 @@ class ad_rssimport
 											   'PER_PAGE'    => 25,
 											   'CUR_ST_VAL'  => $st,
 											   'L_SINGLE'    => "",
-											   'L_MULTI'     => "Pages: ",
+											   'L_MULTI'     => "页码: ",
 											   'BASE_URL'    => $this->ipsclass->base_url."&{$this->ipsclass->form_code}",
 											 )
 									  );		
@@ -1297,8 +1297,8 @@ class ad_rssimport
 		
 		$this->ipsclass->html .= $this->html->rss_import_overview( $content, $page_links );
 		
-		$this->ipsclass->admin->page_title  = "RSS Import Manager";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your RSS Import feeds.";
+		$this->ipsclass->admin->page_title  = "RSS 导入项目管";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您论坛的 RSS 导入项目管理.";
 		$this->ipsclass->admin->output();
 	}
 	
@@ -1462,13 +1462,13 @@ class ad_rssimport
 				if( $this->class_rss->class_file_management->http_status_code )
 				{
 					$this->validate_msg[] =	$this->html->rss_validate_msg( array( 'class' => 'rss-feed-invalid', 
-																				  'msg' => "HTTP Status Code: ".$this->class_rss->class_file_management->http_status_code." (".$this->class_rss->class_file_management->http_status_text.")" ) );
+																				  'msg' => "HTTP 状态码: ".$this->class_rss->class_file_management->http_status_code." (".$this->class_rss->class_file_management->http_status_text.")" ) );
 				}
 			}
 			else
 			{
 				$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-valid', 
-																			  'msg' => "HTTP Status Code: ".$this->class_rss->class_file_management->http_status_code." (".$this->class_rss->class_file_management->http_status_text.")" ) );
+																			  'msg' => "HTTP 状态码: ".$this->class_rss->class_file_management->http_status_code." (".$this->class_rss->class_file_management->http_status_text.")" ) );
 			}
 			
 			if ( is_array( $this->class_rss->errors ) and count( $this->class_rss->errors ) )
@@ -1487,24 +1487,24 @@ class ad_rssimport
 						if( strtolower($rss_import_charset) != strtolower($this->class_rss->orig_doc_type) )
 						{
 							$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-invalid', 
-																						  'msg' => "The RSS feed's charset is <i>{$this->class_rss->orig_doc_type}</i> but you entered <i>{$rss_import_charset}</i>" ) );
+																						  'msg' => "RSS 的字符集是 <i>{$this->class_rss->orig_doc_type}</i> ,不过您输入了 <i>{$rss_import_charset}</i>" ) );
 						}
 						else
 						{
 							$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-valid', 
-																						  'msg' => "The RSS feed's charset is <i>{$this->class_rss->orig_doc_type}</i> (correct)" ) );
+																						  'msg' => "RSS 的字符集是 <i>{$this->class_rss->orig_doc_type}</i> ( 正确 )" ) );
 						}
 					}
 					else
 					{
 						$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-valid', 
-																					  'msg' => "The RSS feed's charset is <i>{$this->class_rss->orig_doc_type}</i>" ) );
+																					  'msg' => "RSS 的字符集是 <i>{$this->class_rss->orig_doc_type}</i>" ) );
 					}
 				}
 				else
 				{
 					$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-invalid', 
-																				  'msg' => "We could not determine the feed's character set" ) );
+																				  'msg' => "无法确定 RSS 的字符集" ) );
 				}
 				
 				//--------------------------------------------
@@ -1514,12 +1514,12 @@ class ad_rssimport
 				if ( ! is_array( $this->class_rss->rss_channels ) or ! count( $this->class_rss->rss_channels ) )
 				{
 					$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-invalid', 
-																				  'msg' => "We could not find any channels in the RSS feed (nothing to import)." ) );
+																				  'msg' => "无法在 RSS 中找到任何频道." ) );
 				}
 				else
 				{
 					$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-valid', 
-																				  'msg' => "We found ".count($this->class_rss->rss_channels)." channel(s) in the RSS feed." ) );
+																				  'msg' => "我们在 RSS 中找到".count($this->class_rss->rss_channels)." 个频道." ) );
 					
 					//--------------------------------------------
 					// Any Items?
@@ -1528,7 +1528,7 @@ class ad_rssimport
 					if ( ! is_array( $this->class_rss->rss_items ) or ! count( $this->class_rss->rss_items ) )
 					{
 						$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-invalid', 
-																					  'msg' => "We could not find any actual content (topics, news articles, etc.) (nothing to import)" ) );
+																					  'msg' => "无法在 RSS 中找到任何实际内容 (主题, 新文章等等.) (什么都没导入)" ) );
 					}
 					else
 					{
@@ -1537,7 +1537,7 @@ class ad_rssimport
 							if ( is_array( $this->class_rss->rss_items[ $channel_id ] ) and count ($this->class_rss->rss_items[ $channel_id ] ) )
 							{
 								$this->validate_msg[] = $this->html->rss_validate_msg( array( 'class' => 'rss-feed-valid', 
-																						  	  'msg' => "We found ".count($this->class_rss->rss_items[ $channel_id ])." article(s)/topic(s) in the RSS feed." ) );
+																						  	  'msg' => "我们在 RSS 中找到 ".count($this->class_rss->rss_items[ $channel_id ])." 篇文章/主题." ) );
 																
 								foreach( $this->class_rss->rss_items[ $channel_id ] as $item_data )
 								{
@@ -1633,7 +1633,7 @@ class ad_rssimport
 			{
 				if( count($this->validate_msg) )
 				{
-					$this->ipsclass->main_msg = "<b>Validation Results for <span class='rss-feed-url'>".$rss_import_url."</span></b><br />&nbsp;&middot;".implode( "<br />&nbsp;&middot;", $this->validate_msg );
+					$this->ipsclass->main_msg = "<b>的验证结果 <span class='rss-feed-url'>".$rss_import_url."</span></b><br />&nbsp;&middot;".implode( "<br />&nbsp;&middot;", $this->validate_msg );
 					$this->rssimport_overview();
 					return;
 				}

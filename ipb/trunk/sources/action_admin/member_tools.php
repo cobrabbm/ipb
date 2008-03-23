@@ -56,7 +56,7 @@ class ad_member_tools
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Member Tools Home' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '会员工具' );
 		
 		//-----------------------------------------
 		// Load HTML
@@ -78,8 +78,8 @@ class ad_member_tools
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Member Tool Box";
-		$this->ipsclass->admin->page_detail = 'You can use the tools below to search for IP address.';
+		$this->ipsclass->admin->page_title  = "会员工具箱";
+		$this->ipsclass->admin->page_detail = '您可以使用下面的工具搜索 IP 地址.';
 
 		switch($this->ipsclass->input['code'])
 		{
@@ -137,12 +137,12 @@ class ad_member_tools
 	{
 		if ( $this->ipsclass->input['ip'] == "" )
 		{
-			$this->show_index("You did not enter an IP address to search by");
+			$this->show_index("您没有输入要搜索的 IP 地址");
 		}
 		
 		$ip = trim($this->ipsclass->input['ip']);
 		
-		$resolved = 'N/A - Partial IP Address';
+		$resolved = '无 - 不完整的 IP 地址';
 		$exact    = 0;
 		
 		if ( substr_count( $ip, '.' ) == 3 )
@@ -173,9 +173,9 @@ class ad_member_tools
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Host Address for {$this->ipsclass->input['ip']}" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "[{$this->ipsclass->input['ip']}] 的主机地址" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>IP address resolves to</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>IP 地址</b>" ,
 																 $resolved
 													    )      );
 		
@@ -185,13 +185,13 @@ class ad_member_tools
 		// Find registered members
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Name"       , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Email"      , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Posts"      , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP"         , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Registered" , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名字"	, "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "邮件地址"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "帖子数"		, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"		, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "注册时间"	, "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Members using that IP when REGISTERING" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "使用这个 IP 注册的会员" );
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => 'id, members_display_name, email, posts, ip_address, joined',
 									  'from'   => 'members',
@@ -202,7 +202,7 @@ class ad_member_tools
 		
 		if ( ! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No Matches Found", "center");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "没有找到匹配的会员", "center");
 		}
 		else
 		{
@@ -224,33 +224,33 @@ class ad_member_tools
 		// Find Names posted under
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Name"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Email"      , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP"         , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "First Used"  , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "View Post"  , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名字"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "邮件地址"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"		, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "首次使用"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "浏览帖子"	, "15%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Members using that IP when POSTING" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "使用这个 IP 发帖的会员" );
 		
 		$this->ipsclass->DB->cache_add_query( 'member_tools_learn_ip_one', array( 'query' => $query) );
 		$this->ipsclass->DB->cache_exec_query();
 		
 		if ( ! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No Matches Found", "center");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "没有找到匹配的会员", "center");
 		}
 		else
 		{
 			while ( $m = $this->ipsclass->DB->fetch_row() )
 			{
-				$m['name'] = $m['name'] ? $m['name'] : "Guest";
-				$m['email'] = $m['email'] ? $m['email'] : "<i>Not Available</i>";
+				$m['name'] = $m['name'] ? $m['name'] : "游客";
+				$m['email'] = $m['email'] ? $m['email'] : "<i>不可用</i>";
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( $m['name'] ,
 																		 $m['email'],
 																		 $m['ip_address'],
 																		 $this->ipsclass->get_date( $m['post_date'], 'SHORT' ),
-																		 "<center><a href='{$this->ipsclass->vars['board_url']}/index.php?showtopic={$m['topic_id']}&view=findpost&p={$m['pid']}' target='_blank'>View Post</a></center>",
+																		 "<center><a href='{$this->ipsclass->vars['board_url']}/index.php?showtopic={$m['topic_id']}&view=findpost&p={$m['pid']}' target='_blank'>浏览帖子</a></center>",
 																)      );
 			}
 		}
@@ -261,20 +261,20 @@ class ad_member_tools
 		// Find Names VOTED under
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Name"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Email"      , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP"         , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "First Used" , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "View Poll" , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名字"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "邮件地址"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"		, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "首次使用"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "浏览投票"	, "15%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Members using that IP when VOTING" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "使用这个 IP 投票的会员" );
 		
 		$this->ipsclass->DB->cache_add_query( 'member_tools_learn_ip_two', array( 'query' => $query) );
 		$this->ipsclass->DB->cache_exec_query();
 		
 		if ( ! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No Matches Found", "center");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "没有找到匹配的会员", "center");
 		}
 		else
 		{
@@ -284,7 +284,7 @@ class ad_member_tools
 																		 $m['email'],
 																		 $m['ip_address'],
 																		 $this->ipsclass->get_date( $m['vote_date'], 'SHORT' ),
-																		 "<center><a href='{$this->ipsclass->vars['board_url']}/index.php?showtopic={$m['tid']}' target='_blank'>View Poll</a></center>",
+																		 "<center><a href='{$this->ipsclass->vars['board_url']}/index.php?showtopic={$m['tid']}' target='_blank'>浏览投票</a></center>",
 																)      );
 			}
 		}
@@ -295,19 +295,19 @@ class ad_member_tools
 		// Find Names EMAILING under
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Name"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Email"      , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP"         , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "First Used"    , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名字"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "邮件地址"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"		, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "首次使用"	, "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Members using that IP when EMAILING other members" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "使用这个 IP 发送邮件给他人的会员" );
 		
 		$this->ipsclass->DB->cache_add_query( 'member_tools_learn_ip_three', array( 'query' => $query) );
 		$this->ipsclass->DB->cache_exec_query();
 		
 		if ( ! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No Matches Found", "center");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "没有找到匹配的会员", "center");
 		}
 		else
 		{
@@ -328,19 +328,19 @@ class ad_member_tools
 		// Find Names VALIDATING under
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Name"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Email"      , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP"         , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "First Used" , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名字"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "邮件地址"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"		, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "浏览帖子"	, "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Members using that IP while VALIDATING their accounts" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "使用这个 IP 并处于待激活状态的会员" );
 		
 		$this->ipsclass->DB->cache_add_query( 'member_tools_learn_ip_four', array( 'query' => $query) );
 		$this->ipsclass->DB->cache_exec_query();
 		
 		if ( ! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No Matches Found", "center");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "没有找到匹配的会员", "center");
 		}
 		else
 		{
@@ -370,7 +370,7 @@ class ad_member_tools
 	{
 		if ( $this->ipsclass->input['name'] == "" and $this->ipsclass->input['member_id'] == "" )
 		{
-			$this->show_index("You did not enter a name to search by");
+			$this->show_index("您没有输入要搜索的名字");
 		}
 		
 		if ( isset($this->ipsclass->input['member_id']) AND $this->ipsclass->input['member_id'] )
@@ -382,7 +382,7 @@ class ad_member_tools
 		
 			if ( ! $member = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->show_index("Could not locate a member with the id of '$id'");
+				$this->show_index("找不到叫“$id”的会员");
 			}
 		}
 		else
@@ -394,7 +394,7 @@ class ad_member_tools
 			
 			if ( ! $member = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->show_index( "We could not find an exact match for that member name, some choices will be shown below", $name );
+				$this->show_index( "找不到此名字的模糊匹配", $name );
 			}
 		}
 		
@@ -409,8 +409,8 @@ class ad_member_tools
 		$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $count['cnt'],
 														  'PER_PAGE'    => $end,
 														  'CUR_ST_VAL'  => $st,
-														  'L_SINGLE'    => "Single Page",
-														  'L_MULTI'     => "Multiple Pages",
+														  'L_SINGLE'    => "单页",
+														  'L_MULTI'     => "多页",
 														  'BASE_URL'    => $this->ipsclass->base_url."&".$this->ipsclass->form_code."&code=showallips&member_id={$member['id']}",
 												 )      );
 		
@@ -441,15 +441,15 @@ class ad_member_tools
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "IP Address"          , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Times Used"          , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Date Used"           , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Used for other Reg." , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP Tool"             , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"			, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "使用次数"		, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "使用日期"		, "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "其他会员使用"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 工具"			, "25%" );
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "{$member['name']}'s IP addresses ({$count['cnt']}) matches" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "找到 {$count['cnt']} 个 {$member['name']} 使用过的 IP 地址" );
 		
 		foreach( $master as $r )
 		{
@@ -457,7 +457,7 @@ class ad_member_tools
 																	 $r['ip'] ,
 																	 $this->ipsclass->get_date( $r['post_date'], 'SHORT' ),
 																	 "<center>". intval( count($reg[ $r['ip_address'] ]) ). "</center>",
-																	 "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=learnip&ip={$r['ip_address']}'>Learn about this IP</a></center>"
+																	 "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=learnip&ip={$r['ip_address']}'>此 IP 的更多信息</a></center>"
 															)      );
 		}
 		
@@ -481,7 +481,7 @@ class ad_member_tools
 		{
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Message" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "消息" );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( $msg ) );
 			
@@ -504,11 +504,11 @@ class ad_member_tools
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Show all IP Addresses a member has posted with" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "显示此会员使用过的所有 IP 地址" );
 		
 		if ( $membername == "" )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enter the member's name</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入会员名称</b>" ,
 													  $this->ipsclass->adskin->form_input( "name", isset($_POST['name']) ? $this->ipsclass->txt_stripslashes($_POST['name']) : '', 'text', "id='name'" )
 											 )      );
 		}
@@ -519,7 +519,7 @@ class ad_member_tools
 		
 			if ( ! $this->ipsclass->DB->get_num_rows() )
 			{
-				$this->show_index("There are no members with names that start with '$membername'");
+				$this->show_index("没有会员的名字是以 '$membername' 开头的");
 			}
 			
 			$mem_array = array();
@@ -529,12 +529,12 @@ class ad_member_tools
 				$mem_array[] = array( $m['id'], $m['name'] );
 			}
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Choose the member from the selection</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择匹配的会员</b>" ,
 													  $this->ipsclass->adskin->form_dropdown( "member_id", $mem_array )
 											 )      );
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Get IP Addresses");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("获得 IP 地址");
 									     							     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -557,13 +557,13 @@ class ad_member_tools
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "IP Multi-Tool" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "IP 工具" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Show me everything you know about this IP...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>显示关于此 IP 的所有信息...</b>" ,
 												   $this->ipsclass->adskin->form_input( "ip", isset($_POST['ip']) ? $this->ipsclass->txt_stripslashes($_POST['ip']) : '' )
 										  )      );
 										  
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Show me!");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("确定!");
 									     							     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

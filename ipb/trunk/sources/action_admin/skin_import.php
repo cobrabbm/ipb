@@ -194,7 +194,7 @@ class ad_skin_import {
 		
 		if ( ! count($images) )
 		{
-			$this->ipsclass->main_msg = "There were no images to import from that XMLarchive.";
+			$this->ipsclass->main_msg = "XML 文档中没有包含可以导入的图片.";
 			$this->show_export_page();
 		}
 		
@@ -205,7 +205,7 @@ class ad_skin_import {
 		
 		if ( ! is_writable( CACHE_PATH.'style_images' ) )
 		{
-			$this->ipsclass->main_msg = 'We cannot create a new folder in the "style_images" folder - please check the CHMOD value of that folder and change to 0777 is required.';
+			$this->ipsclass->main_msg = '无法在'style_images'目录中创建目录 - 请检查文件夹的 CHMOD 值, 如果有必要, 设置为 0777.';
 			$this->show_export_page();
 		}
 		
@@ -225,7 +225,7 @@ class ad_skin_import {
 		
 		if ( ! @mkdir( CACHE_PATH.'style_images/'.$safename, 0777 ) )
 		{
-			$this->ipsclass->main_msg = "We are unable to create a directory in the 'style_images' folder.";
+			$this->ipsclass->main_msg = "无法在'style_images'文件夹中创建目录.";
 			$this->show_export_page();
 		}
 		else
@@ -283,7 +283,7 @@ class ad_skin_import {
 		// all done?
 		//-----------------------------------------
 		
-		$this->ipsclass->main_msg = "Image set imported!";
+		$this->ipsclass->main_msg = "图像包已导入!";
 		$this->show_export_page();
 	}
 	
@@ -397,7 +397,7 @@ class ad_skin_import {
 		
 		if ( ! is_array( $info_xml ) and ! count( $info_xml ) )
 		{
-			$this->ipsclass->main_msg = "The XMLarchive import doesn't appear to be valid - please check the file and try again.";
+			$this->ipsclass->main_msg = "导入的 XML 文档无效 - 请检查文件后重试.";
 			$this->show_export_page();
 		}
 		
@@ -531,7 +531,7 @@ class ad_skin_import {
 		// DONE!
 		//-----------------------------------------
 		
-		$this->ipsclass->main_msg = 'Skin Set Imported! (id: '.$new_skin_id.')';
+		$this->ipsclass->main_msg = '皮肤包已导入! (id: '.$new_skin_id.')';
 			
 		$this->ipsclass->main_msg .= "<br />".implode( "<br />", $this->ipsclass->cache_func->messages );
 		
@@ -616,7 +616,7 @@ class ad_skin_import {
 		
 		if( !$content )
 		{
-			$this->ipsclass->main_msg = "Could not open the xml file";
+			$this->ipsclass->main_msg = "无法打开 XML 文件";
 			$this->show_export_page();
 			return;
 		}
@@ -1313,8 +1313,8 @@ class ad_skin_import {
 		$form_array   = array();
 		$set_to_image = array();
 		
-		$this->ipsclass->admin->page_detail = "You can download skin sets by configuring the form below. The skin XML templates (HTML, Macros, CSS & Wrapper) are independent of the image set.<br />To download a 'full' skin set, you will need to download both the skin XML and the image set.";
-		$this->ipsclass->admin->page_title  = "Export Skin Sets";
+		$this->ipsclass->admin->page_detail = "您可以在这里将皮肤打包下载. 皮肤 XML 模版 ( 包括 HTML、CSS、宏以及页面结构 ) 都和图像包无关<br />要下载完整的皮肤包, 您需要同时下载皮肤 XML 和图像包.";
+		$this->ipsclass->admin->page_title  = "导出皮肤包";
 		
 		//-----------------------------------------
 		// Get skin list...
@@ -1363,7 +1363,7 @@ class ad_skin_import {
  			{
 				if ( is_dir( CACHE_PATH.'style_images/'.$file ) )
 				{
-					$dirs[] = array( $file, 'Image Set: "'.$file.'" (used in skin: '.$set_to_image[ $file ].')' );
+					$dirs[] = array( $file, '图像设置: "'.$file.'" (使用的皮肤: '.$set_to_image[ $file ].')' );
 				}
  			}
  		}
@@ -1411,19 +1411,19 @@ class ad_skin_import {
 		$import_dirs[] 	= array( '', '-None-' );
 		$import_dirs 	= array_merge( $import_dirs, $dirs );
 		
-		$import_skins 	= "<option value='0'>-None-</option>".$skin_list;
+		$import_skins 	= "<option value='0'>-无-</option>".$skin_list;
 		
 		$this->ipsclass->html .= "<div class='tableborder'>
-							 <div class='tableheaderalt'>Exporting...</div>
+							 <div class='tableheaderalt'>导出...</div>
 							 <div class='tablepad' style='background-color:#EAEDF0'>
 							 <br />
 							 <fieldset>
-							  <legend><strong>Export Skin Templates</strong>
+							  <legend><strong>导出皮肤模板</strong>
 							  $start_form_a
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Export Which Skin Template Set?</b><div class='graytext'>Please select which skin set (HTML templates, CSS, Macros & wrapper) you wish to export.</div></td>
+							   <td class='tablerow1' width='40%'><b>导出皮肤?</b><div class='graytext'>请选择要导出的皮肤 ( 包括 HTML 模版、宏、CSS以及论坛页面结构 ) .</div></td>
 							   <td class='tablerow2' width='60%'><select name='skin_id' class='dropdown'>{$skin_list}</select></td>
 							 </tr>
 							 <tr>

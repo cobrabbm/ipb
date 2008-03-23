@@ -63,7 +63,7 @@ class ad_settings {
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[]       = array( "{$this->ipsclass->form_code}", "View General Settings" );
+		$this->ipsclass->admin->nav[]       = array( "{$this->ipsclass->form_code}", "系统设置" );
 
 		//-----------------------------------------
 		// Load template
@@ -356,7 +356,7 @@ class ad_settings {
 
 			if ( ! $this->ipsclass->input['file_location'] )
 			{
-				$this->ipsclass->main_msg = "No upload file was found and no filename was specified.";
+				$this->ipsclass->main_msg = "找不到上传文件或没有指定文件名.";
 				$this->setting_start();
 			}
 
@@ -401,7 +401,7 @@ class ad_settings {
 
 		if ( ! $content )
 		{
-			$this->ipsclass->admin->error( "Import file is not in the correct format or is corrupt" );
+			$this->ipsclass->admin->error( "导入文件格式不正确，或者已损坏" );
 		}
 
 		if ( $tool == 'check' )
@@ -639,7 +639,7 @@ class ad_settings {
 		// Resync
 		//-----------------------------------------
 
-		$this->ipsclass->main_msg = "$updated settings updated $inserted settings inserted";
+		$this->ipsclass->main_msg = "更新了 $updated 项设置, 插入了 $inserted 项设置";
 
 		if ( ! $noreturn )
 		{
@@ -683,7 +683,7 @@ class ad_settings {
 
 		if ( ! count( $ids ) )
 		{
-			$this->ipsclass->main_msg = "You must select SOME settings to export!";
+			$this->ipsclass->main_msg = "您必须选择要导出的设置!";
 			$this->setting_someexport_start();
 		}
 
@@ -781,9 +781,9 @@ class ad_settings {
 
 	function setting_someexport_start()
 	{
-		$this->ipsclass->admin->page_title  = "Export Selected System Settings";
-		$this->ipsclass->admin->page_detail = "Check the box of the setting you wish to export.";
-		$this->ipsclass->admin->nav[]       = array( '', "Export Settings" );
+		$this->ipsclass->admin->page_title  = "导出所选的系统设置";
+		$this->ipsclass->admin->page_detail = "选中您要导出的设置前面的复选框.";
+		$this->ipsclass->admin->nav[]       = array( '', "导出设置" );
 
 		//-----------------------------------------
 		// start form
@@ -795,7 +795,7 @@ class ad_settings {
 													    )      );
 
 		$this->ipsclass->html .= "<div class='tableborder'>
-								  <div class='tableheaderalt'>System Settings</div>
+								  <div class='tableheaderalt'>系统设置</div>
 								  <table width='100%' cellspacing='1' cellpadding='4' border='0'>";
 
 		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'conf_settings', 'order' => 'conf_id' ) );
@@ -837,7 +837,7 @@ class ad_settings {
 		$this->ipsclass->html .= $output;
 
 		$this->ipsclass->html .= "</table>
-						    <div class='tablesubheader' align='center'><input type='submit' class='realbutton' value='EXPORT SELECTED' /></form></div></div>";
+						    <div class='tablesubheader' align='center'><input type='submit' class='realbutton' value='导出所选' /></form></div></div>";
 
 		$this->ipsclass->admin->output();
 	}
@@ -1000,13 +1000,13 @@ class ad_settings {
 
 			if ( $count > 0 )
 			{
-				$this->ipsclass->main_msg = "Cannot remove this setting group as it still contains active settings";
+				$this->ipsclass->main_msg = "无法删除包含有效设置的设置组";
 			}
 			else
 			{
 				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'conf_settings_titles', 'where' => 'conf_title_id='.intval($this->ipsclass->input['id']) ) );
 
-				$this->ipsclass->main_msg = "Setting Group Removed";
+				$this->ipsclass->main_msg = "设置组已删除";
 			}
 
 		}
@@ -1042,15 +1042,15 @@ class ad_settings {
 
 	function settinggroup_form( $type='add' )
 	{
-		$this->ipsclass->admin->page_title  = "System Configuration Settings";
-		$this->ipsclass->admin->page_detail = "This section contains all the configuration options for your IPB.";
-		$this->ipsclass->admin->nav[]       = array( '', "Add/Edit Settings" );
+		$this->ipsclass->admin->page_title  = "系统设置";
+		$this->ipsclass->admin->page_detail = "本单元包含了所有的 IPB 的配置选项.";
+		$this->ipsclass->admin->nav[]       = array( '', "添加/编辑设置" );
 
 		if ( $type == 'add' )
 		{
 			$formcode = 'settinggroup_add';
-			$title    = "Create New Board Setting Group";
-			$button   = "Create New Setting Group";
+			$title    = "新建论坛设置组";
+			$button   = "新建组";
 			$conf	  = array( 'conf_title_title' 	=> '',
 								'conf_title_desc' 	=> '',
 								'conf_title_keyword' => '',
@@ -1068,8 +1068,8 @@ class ad_settings {
 			}
 
 			$formcode = 'settinggroup_edit';
-			$title    = "Edit Setting ".$conf['conf_title'];
-			$button   = "Save Changes";
+			$title    = "编辑 ".$conf['conf_title'];
+			$button   = "保存修改";
 		}
 
 		$this->ipsclass->admin->page_detail = '&nbsp;';
@@ -1098,19 +1098,19 @@ class ad_settings {
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( $title );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Group title?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置组标题?</b>" ,
 												  			     $this->ipsclass->adskin->form_input( 'conf_title_title', ( isset($_POST['conf_title_title']) AND $_POST['conf_title_title'] ) ? $_POST['conf_title_title'] : $conf['conf_title_title'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Group Description?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置组描述?</b>" ,
 												  			     $this->ipsclass->adskin->form_textarea( 'conf_title_desc', ( isset($_POST['conf_title_desc']) AND $_POST['conf_title_desc'] ) ? $_POST['conf_title_desc'] : $conf['conf_title_desc'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Group Keyword?</b><div class='graytext'>Used to pull this from the DB without relying on an ID</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置组关键字?</b><div class='graytext'>系统根据关键字从数据库中读取数据而不是 ID</div>" ,
 																			 $this->ipsclass->adskin->form_input( 'conf_title_keyword', ( isset($_POST['conf_title_keyword']) AND $_POST['conf_title_keyword'] ) ? $_POST['conf_title_keyword'] : $conf['conf_title_keyword'] )
 																	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Group Module?</b><div class='desctext'>Enter the filename of the PHP module file (eg: example.php) for pre and post setting parsing. The file name must be uploaded into the /sources/components_acp/setting_plugins directory." ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置组模块?</b><div class='desctext'>输入 PHP 模块文件名 ( 例如: example.php ) , 此文件用来做设置预分析. 文件必须上传到 /sources/components_acp/setting_plugins 目录." ,
 												  			     $this->ipsclass->adskin->form_input( 'conf_title_module', ( isset($_POST['conf_title_module']) AND $_POST['conf_title_module'] ) ? $_POST['conf_title_module'] : $conf['conf_title_module'] )
 										 		    	)      );
 
@@ -1120,7 +1120,7 @@ class ad_settings {
 
 		if ( IN_DEV )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Hide from main settings list?</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>不在主设置列表中显示?</b>" ,
 																				 $this->ipsclass->adskin->form_yes_no( 'conf_title_noshow', ( isset($_POST['conf_title_noshow']) AND $_POST['conf_title_noshow'] ) ? $_POST['conf_title_noshow'] : $conf['conf_title_noshow'] )
 																		)      );
 		}
@@ -1152,7 +1152,7 @@ class ad_settings {
 
 		if ( ! $conf_title_keyword )
 		{
-			$this->ipsclass->main_msg = "You must enter a unique keyword for: Setting Group Keyword";
+			$this->ipsclass->main_msg = "您必须输入唯一的设置组关键字";
 			$this->settinggroup_form();
 			return;
 		}
@@ -1175,7 +1175,7 @@ class ad_settings {
 
 			if ( $test['conf_title_title'] AND $test['conf_title_id'] != $this->ipsclass->input['id'] )
 			{
-				$this->ipsclass->main_msg = "You are already using this keyword for another setting group";
+				$this->ipsclass->main_msg = "此关键字已经被另一个设置组使用了";
 				$this->settinggroup_form();
 				return;
 			}
@@ -1207,12 +1207,12 @@ class ad_settings {
 		if ( $type == 'add' )
 		{
 			$this->ipsclass->DB->do_insert( 'conf_settings_titles', $array );
-			$this->ipsclass->main_msg = 'New Setting Group Added';
+			$this->ipsclass->main_msg = '设置组已添加';
 		}
 		else
 		{
 			$this->ipsclass->DB->do_update( 'conf_settings_titles', $array, 'conf_title_id='.intval($this->ipsclass->input['id']) );
-			$this->ipsclass->main_msg = 'Setting Group Edited';
+			$this->ipsclass->main_msg = '设置组已编辑';
 		}
 
 		$this->setting_rebuildcache();
@@ -1228,9 +1228,9 @@ class ad_settings {
 
 	function setting_form( $type='add' )
 	{
-		$this->ipsclass->admin->page_title  = "System Configuration Settings";
-		$this->ipsclass->admin->page_detail = "This section contains all the configuration options for your IPB.";
-		$this->ipsclass->admin->nav[]       = array( '', "Add/Edit Settings" );
+		$this->ipsclass->admin->page_title  = "系统设置";
+		$this->ipsclass->admin->page_detail = "本单元包含了所有的 IPB 的配置选项.";
+		$this->ipsclass->admin->nav[]       = array( '', "添加/编辑设置" );
 
 		if ( $type == 'add' )
 		{
@@ -1277,8 +1277,8 @@ class ad_settings {
 			}
 
 			$formcode = 'setting_edit';
-			$title    = "Edit Setting ".$conf['conf_title'];
-			$button   = "Save Changes";
+			$title    = "编辑设置 ".$conf['conf_title'];
+			$button   = "保存修改";
 		}
 
 		$this->ipsclass->admin->page_detail = '&nbsp;';
@@ -1301,12 +1301,12 @@ class ad_settings {
 		// Type
 		//-----------------------------------------
 
-		$types = array( 0 => array( 'input'   , 'Text Input' ),
-						1 => array( 'dropdown', 'Drop Down'  ),
-						2 => array( 'yes_no'  , 'Yes/No Radio Buttons'),
-						3 => array( 'textarea', 'Textarea'   ),
-						4 => array( 'editor'  , 'Full Editor'   ),
-						5 => array( 'multi'   , 'Multi Select' ),
+		$types = array( 0 => array( 'input'   , '文本框' ),
+						1 => array( 'dropdown', '下拉菜单'  ),
+						2 => array( 'yes_no'  , '是/否 单选按钮'),
+						3 => array( 'textarea', '多行文本'   ),
+						4 => array( 'editor'  , '完整编辑器'   ),
+						5 => array( 'multi'   , '多项选择' ),
 					 );
 
 		//-----------------------------------------
@@ -1332,62 +1332,62 @@ class ad_settings {
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( $title );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting title?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置标题?</b>" ,
 												  			   $this->ipsclass->adskin->form_input( 'conf_title', ( isset($_POST['conf_title']) AND $_POST['conf_title'] ) ? $_POST['conf_title'] : $conf['conf_title'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Position?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置位置?</b>" ,
 												  			   $this->ipsclass->adskin->form_input( 'conf_position', ( isset($_POST['conf_position']) AND $_POST['conf_position'] ) ? $_POST['conf_position'] : $conf['conf_position'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Description?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置说明?</b>" ,
 												  			   $this->ipsclass->adskin->form_textarea( 'conf_description', ( isset($_POST['conf_description']) AND $_POST['conf_description'] ) ? $_POST['conf_description'] : $conf['conf_description'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Group?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置组?</b>" ,
 												  			   $this->ipsclass->adskin->form_dropdown( 'conf_group', $groups, ( isset($_POST['conf_group']) AND $_POST['conf_group'] ) ? $_POST['conf_group'] : $conf['conf_group'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Type?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置类型?</b>" ,
 												  			   $this->ipsclass->adskin->form_dropdown( 'conf_type', $types, ( isset($_POST['conf_type']) AND $_POST['conf_type'] ) ? $_POST['conf_type'] : $conf['conf_type'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Key?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置关键字?</b>" ,
 												  			   $this->ipsclass->adskin->form_input( 'conf_key', ( isset($_POST['conf_key']) AND $_POST['conf_key'] ) ? $_POST['conf_key'] : $conf['conf_key'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Current Value?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置当前值?</b>" ,
 												  			   $this->ipsclass->adskin->form_textarea( 'conf_value', $this->ipsclass->txt_htmlspecialchars( ( isset($_POST['conf_value']) AND $_POST['conf_value'] ) ? $_POST['conf_value'] : $conf['conf_value'] ) )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Default Value?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置默认值?</b>" ,
 												  			   $this->ipsclass->adskin->form_textarea( 'conf_default', $this->ipsclass->txt_htmlspecialchars( ( isset($_POST['conf_default']) AND $_POST['conf_default'] ) ? $_POST['conf_default'] : $conf['conf_default'] ) )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Setting Extra?</b><div style='color:gray'>Use for creating form element extras.<br />Drop down box use: Key=Value; one per line.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置附加数据?</b><div style='color:gray'>用来从枚举数据中创建设置.<br />下拉框使用: 关键字=值; 每行一项.</div>" ,
 												  			   $this->ipsclass->adskin->form_textarea( 'conf_extra', ( isset($_POST['conf_extra']) AND $_POST['conf_extra'] ) ? $_POST['conf_extra'] : $conf['conf_extra'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Raw PHP code to eval before showing and saving?</b><div style='color:gray'>\$show = 1; is set when showing setting.<br />\$save = 1; is set when saving the setting.<br />Use \$key and \$value when writing PHP code.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>R显示或保存前执行 PHP 代码?</b><div style='color:gray'>\$show = 1; 表示在显示前执行.<br />\$save = 1; 表示在保存时执行<br />编写 PHP 代码时可以使用 \$key 和 \$value.</div>" ,
 												  			   $this->ipsclass->adskin->form_textarea( 'conf_evalphp', ( isset($_POST['conf_evalphp']) AND $_POST['conf_evalphp'] ) ? $_POST['conf_evalphp'] : $conf['conf_evalphp'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Start setting group?</b><div style='color:gray'>Enter title here or leave blank to not start a setting group</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>开始分组?</b><div style='color:gray'>输入分组标题, 可以留空</div>" ,
 												  			   $this->ipsclass->adskin->form_input( 'conf_start_group', ( isset($_POST['conf_start_group']) AND $_POST['conf_start_group'] ) ? $_POST['conf_start_group'] : $conf['conf_start_group'] )
 										 		    	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>End setting group?</b><div style='color:gray'>End an opened setting group</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>结束一个设置分组?</b><div style='color:gray'>结束一个设置分组</div>" ,
 												  			   $this->ipsclass->adskin->form_yes_no( 'conf_end_group', ( isset($_POST['conf_end_group']) AND $_POST['conf_end_group'] ) ? $_POST['conf_end_group'] : $conf['conf_end_group'] )
 										 		    	)      );
 
 		if ( IN_DEV )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Make a default settings (cannot be removed by user)?</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用默认设置 ( 用户不能删除 )?</b>" ,
 												  			       $this->ipsclass->adskin->form_yes_no( 'conf_protected', ( isset($_POST['conf_protected']) AND $_POST['conf_protected'] ) ? $_POST['conf_protected'] : $conf['conf_protected'] )
 										 		    	  )      );
 		}
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Add this option into the settings cache?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>将设置加入系统设置缓存?</b>" ,
 																  $this->ipsclass->adskin->form_yes_no( 'conf_add_cache', ( isset($_POST['conf_add_cache']) AND $_POST['conf_add_cache'] ) ? $_POST['conf_add_cache'] : $conf['conf_add_cache'] )
 														 )      );
 
@@ -1467,8 +1467,8 @@ class ad_settings {
 		// Page headers
 		//-----------------------------------------
 
-		$this->ipsclass->admin->page_title  = $this->ipsclass->admin->page_title  ? $this->ipsclass->admin->page_title  : "System Configuration Settings";
-		$this->ipsclass->admin->page_detail = $this->ipsclass->admin->page_detail ? $this->ipsclass->admin->page_detail : "This section contains all the configuration options for your IPB.<br />If you wish to leave an entry blank, please use the keyword: <b>{blank}</b> or enter a zero: <b>0</b>.";
+		$this->ipsclass->admin->page_title  = $this->ipsclass->admin->page_title  ? $this->ipsclass->admin->page_title  : "系统配置";
+		$this->ipsclass->admin->page_detail = $this->ipsclass->admin->page_detail ? $this->ipsclass->admin->page_detail : "这里包括了所有 IPB 论坛的配置选项.<br />如果您要把某个条目留空, 用此关键字: <b>{blank}</b> 或者输入零: <b>0</b>.";
 
 		//-----------------------------------------
 		// Already got our fields?
@@ -1573,7 +1573,7 @@ class ad_settings {
 					$this->setting_start();
 				}
 
-				$title = "Searched for: ".$keywords;
+				$title = "搜索条件: ".$keywords;
 			}
 
 			//-----------------------------------------
@@ -1651,7 +1651,7 @@ class ad_settings {
 														  	  	  'PER_PAGE'    => $end,
 																  'CUR_ST_VAL'  => $start,
 																  'L_SINGLE'    => "",
-																  'L_MULTI'     => "Multi Page",
+																  'L_MULTI'     => "多页",
 																  'BASE_URL'    => $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=setting_view&search={$search_key}",
 																  'search'      => $search_key,
 														 )     );
@@ -1669,8 +1669,8 @@ class ad_settings {
 
 		if ( ! $search_key AND ! $this->get_by_key )
 		{
-			$html .=  $this->ipsclass->adskin->js_make_button("Add New Setting"  , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=settingnew&conf_group=".$conf_group).'&nbsp;';
-			$html .=  "<input type='submit' name='reorder' value='Reorder' class='realdarkbutton' />";
+			$html .=  $this->ipsclass->adskin->js_make_button("添加设置"  , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=settingnew&conf_group=".$conf_group).'&nbsp;';
+			$html .=  "<input type='submit' name='reorder' value='重新排序' class='realdarkbutton' />";
 		}
 
 		$html .= "&nbsp;&nbsp;</td>
@@ -1724,16 +1724,16 @@ class ad_settings {
 
 		if ( $_show_error )
 		{
-			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( "Settings Error", "One or more of the settings returned an error.<br /><strong>The settings were NOT updated.</strong>" ) . "<br />";
+			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( "设置出错", "一个或多个设置返回错误. <br /><strong>设置没有更新.</strong>" ) . "<br />";
 		}
 
 		$this->ipsclass->html .= $html;
 
 		$this->ipsclass->html .= "<input type='hidden' name='settings_save' value='".implode(",",$this->key_array)."' />";
 
-		$this->ipsclass->html .= "<div class='tablesubheader' align='center'><input type='submit' value='Update Settings' class='realdarkbutton' /></div></div></form>";
+		$this->ipsclass->html .= "<div class='tablesubheader' align='center'><input type='submit' value='更新设置' class='realdarkbutton' /></div></div></form>";
 
-		$this->ipsclass->html .= "<br /><br /><div align='right'><b><em>Settings Quick Jump</em></b>".$this->setting_make_dropdown()."</div>";
+		$this->ipsclass->html .= "<br /><br /><div align='right'><b><em>设置快速跳转</em></b>".$this->setting_make_dropdown()."</div>";
 		$this->ipsclass->admin->output();
 	}
 
@@ -1941,8 +1941,8 @@ class ad_settings {
 		// Continue
 		//-----------------------------------------
 
-		$delete  = "&#0124; <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_delete&id={$r['conf_id']}' title='key: {$r['conf_key']}'>Delete</a>";
-		$edit    = "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_showedit&id={$r['conf_id']}' title='id: {$r['conf_id']}'>Edit</a>";
+		$delete  = "&#0124; <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_delete&id={$r['conf_id']}' title='key: {$r['conf_key']}'>删除</a>";
+		$edit    = "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_showedit&id={$r['conf_id']}' title='id: {$r['conf_id']}'>编辑</a>";
 		$reorder = 1;
 
 		if ( $r['conf_protected'] and ! IN_DEV )
@@ -2032,8 +2032,8 @@ class ad_settings {
 
 	function setting_start()
 	{
-		$this->ipsclass->admin->page_title  = "System Configuration Settings";
-		$this->ipsclass->admin->page_detail = "This section contains all the configuration options for your IPB.";
+		$this->ipsclass->admin->page_title  = "系统配置";
+		$this->ipsclass->admin->page_detail = "这里包括了所有 IPB 论坛的配置选项.";
 
 		//-----------------------------------------
 		// Are we, like, in dev or what?
@@ -2059,10 +2059,10 @@ class ad_settings {
 				$_mtime  = $this->ipsclass->get_date( $last_settings_save     , 'JOINED' );
 				$_dbtime = $this->ipsclass->get_date( $last_update['cs_value'], 'JOINED' );
 
-				$_html = $this->ipsclass->skin_acp_global->warning_box( "settings.xml File Updated",
-																		"The 'resources/settings.xml' file has been updated. Please visit <a href='{$this->ipsclass->base_url}&amp;section=tools'>this page</a> to re-import it to make sure your settings are up-to-date
-																		<br />Last modified time for 'settings.xml': $_mtime.
-																		<br />Last import run: $_dbtime" ) . "<br />";
+				$_html = $this->ipsclass->skin_acp_global->warning_box( "settings.xml 文件更新",
+																		"esources/settings.xml”文件被更新, 请访问 <a href='{$this->ipsclass->base_url}&amp;section=tools'>这个页面</a> 重新导入, 以确保您的设置更新.
+																		<br />settings.xml”最后更新于: $_mtime.
+																		<br />最后导入: $_dbtime" ) . "<br />";
 
 				$this->ipsclass->html .= $_html;
 			}
@@ -2080,8 +2080,8 @@ class ad_settings {
 
 		$basic_title = "<table cellpadding='0' cellspacing='0' border='0' width='100%'>
 						<tr>
-						 <td align='left' width='40%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>System Settings</td>
-						 <td align='right' width='60%'><form method='post' action='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_view'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='25' onclick='this.value=\"\"' value='Search Settings...' name='search' class='realbutton' />&nbsp;<input type='submit' class='realdarkbutton' value='Go' /></form>"
+						 <td align='left' width='40%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>系统设置</td>
+						 <td align='right' width='60%'><form method='post' action='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_view'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='25' onclick='this.value=\"\"' value='搜索设置...' name='search' class='realbutton' />&nbsp;<input type='submit' class='realdarkbutton' value='Go' /></form>"
 						 ."&nbsp;&nbsp;</td>
 						</tr>
 						</table>";
@@ -2126,7 +2126,7 @@ class ad_settings {
 		}
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array("<div align='center' style='white-space:nowrap'>".
-																	  $this->ipsclass->adskin->js_make_button("Add Setting Group", $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=settinggroup_new")."</div>", 3, 'tablesubheader' )
+																	  $this->ipsclass->adskin->js_make_button("添加设置组", $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=settinggroup_new")."</div>", 3, 'tablesubheader' )
 										 					  )      );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -2151,16 +2151,16 @@ class ad_settings {
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "XML settings file tools" );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Upload XML settings file from your computer</b><div style='color:gray'>Duplicate entries will not be overwritten but the default setting and other options will be updated. The file must end with either '.xml' or '.xml.gz'</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>或者</u> 输入 XML 设置文件名</b><div style='color:gray'>文件必须上传到论坛根目录.</div>" ,
 										  				        			 $this->ipsclass->adskin->form_upload(  )
 											                        )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>OR</u> enter the filename of the XML settings file</b><div style='color:gray'>The file must be uploaded into the forum's root folder</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>或者</u> 输入 XML 设置文件名</b><div style='color:gray'>文件必须上传到论坛根目录</div>" ,
 										  				         			$this->ipsclass->adskin->form_input( 'file_location', 'resources/settings.xml'  )
 											                        )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Tool To Run</b><div style='color:gray'>Please choose the tool you wish to run</div>" ,
-										  				         			  $this->ipsclass->adskin->form_dropdown( 'tool', array( 0 => array( 'import', 'Import Settings' ), 1 => array( 'check', 'Show New &amp; Deleted Settings' ) )  )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择工具</b><div style='color:gray'>请选择您要运行的工具</div>" ,
+										  				         			  $this->ipsclass->adskin->form_dropdown( 'tool', array( 0 => array( 'import', '导入设置' ), 1 => array( 'check', '显示新增和删除的设置' ) )  )
 																	)      );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run Tool");
@@ -2171,11 +2171,11 @@ class ad_settings {
 		// Other & Dev options
 		//-----------------------------------------
 
-		$this->ipsclass->html .= "<br /><br/ ><div align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_someexport_start'>Export Selected Settings</a></div>";
+		$this->ipsclass->html .= "<br /><br/ ><div align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_someexport_start'>导出所选设置</a></div>";
 
 		if ( IN_DEV )
 		{
-			$this->ipsclass->html .= "<br /><div align='center'>Developer Options: <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_allexport'>Export all to XML</a></div>";
+			$this->ipsclass->html .= "<br /><div align='center'>开发选项: <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_allexport'>全部导出到</a></div>";
 		}
 
 		$this->ipsclass->admin->output();
@@ -2222,7 +2222,7 @@ class ad_settings {
 				}
 			}
 
-			$this->ipsclass->main_msg = "Settings reordered";
+			$this->ipsclass->main_msg = "设置已重新排序";
 
 			$this->ipsclass->input['conf_group'] = $this->ipsclass->input['id'];
 
@@ -2401,7 +2401,7 @@ class ad_settings {
 
 		$this->ipsclass->input['conf_group'] = $this->ipsclass->input['id'];
 
-		$this->ipsclass->main_msg = "Settings updated";
+		$this->ipsclass->main_msg = "设置已更新";
 
 		$this->setting_rebuildcache();
 
@@ -2479,7 +2479,7 @@ class ad_settings {
 		if ( $type == 'add' )
 		{
 			$this->ipsclass->DB->do_insert( 'conf_settings', $array );
-			$this->ipsclass->main_msg = 'New Setting Added';
+			$this->ipsclass->main_msg = '设置已添加';
 
 			$this->ipsclass->DB->simple_exec_query( array( 'update' => 'conf_settings_titles', 'set' => 'conf_title_count=conf_title_count+1', 'where' => 'conf_title_id='.$this->ipsclass->input['conf_group'] ) );
 
@@ -2487,7 +2487,7 @@ class ad_settings {
 		else
 		{
 			$this->ipsclass->DB->do_update( 'conf_settings', $array, 'conf_id='.intval($this->ipsclass->input['id']) );
-			$this->ipsclass->main_msg = 'Setting Edited';
+			$this->ipsclass->main_msg = '设置已编辑';
 		}
 
 		$this->setting_rebuildcache();
@@ -2517,7 +2517,7 @@ class ad_settings {
 
 		$this->ipsclass->DB->simple_exec_query( array( 'update' => 'conf_settings', 'set' => "conf_value=''", 'where' => 'conf_id='.$this->ipsclass->input['id'] ) );
 
-		$this->ipsclass->main_msg = "Configuration setting reverted back to default.";
+		$this->ipsclass->main_msg = "设置恢复到默认值.";
 
 		$this->setting_rebuildcache();
 
@@ -2547,7 +2547,7 @@ class ad_settings {
 
 		$this->ipsclass->DB->simple_exec_query( array( 'update' => 'conf_settings_titles', 'set' => 'conf_title_count=conf_title_count-1', 'where' => 'conf_title_id='.$conf['conf_group'] ) );
 
-		$this->ipsclass->main_msg = "Configuration Setting Deleted";
+		$this->ipsclass->main_msg = "设置被删除";
 
 		$this->setting_rebuildcache();
 
@@ -2658,7 +2658,7 @@ class ad_settings {
 				// Explain how, why and what to do..
 
 				$this->ipsclass->admin->page_detail = "";
-				$this->ipsclass->admin->page_title  = "Unable to continue";
+				$this->ipsclass->admin->page_title  = "无法继续";
 
 				$this->ipsclass->html .= $this->return_sql_no_no_cant_do_it_sorry_text();
 
@@ -2674,13 +2674,13 @@ class ad_settings {
 		}
 		else
 		{
-			$this->ipsclass->admin->error("Sorry, the version of MySQL that you are using is unable to use FULLTEXT searches");
+			$this->ipsclass->admin->error("很抱歉, 您的 MySQL 版本无法使用全文搜索");
 		}
 
-		$this->ipsclass->admin->save_log("Full Text Options Updated");
+		$this->ipsclass->admin->save_log("全文搜索选项已更新");
 
 		$query = urlencode( 'Type of search to use' );
-		$this->ipsclass->admin->done_screen("Full Text Indexes Rebuilt", "Full Text Settings", "{$this->ipsclass->form_code}&code=setting_view&search={$query}", "redirect" );
+		$this->ipsclass->admin->done_screen("全文索引已重建", "全文搜索设置", "{$this->ipsclass->form_code}&code=setting_view&search={$query}", "redirect" );
 	}
 
 	/*-------------------------------------------------------------------------*/
@@ -2755,9 +2755,9 @@ class ad_settings {
 			}
 		}
 
-		$this->ipsclass->admin->save_log("Board Settings Updated, Back Up Written");
+		$this->ipsclass->admin->save_log("更新论坛设置");
 
-		$this->ipsclass->admin->done_screen("Forum Configurations updated", "Administration CP Home", "act=index" );
+		$this->ipsclass->admin->done_screen("论坛设置已更新", "管理后台", "act=index" );
 	}
 
 
@@ -2767,41 +2767,37 @@ class ad_settings {
 	{
 return "
 <div style='line-height:150%'>
-<span style='font-weight:bold;font-size:14px;'>Unable to automatically create the FULLTEXT indexes</span>
+<span style='font-weight:bold;font-size:14px;'>无法自动创建全文索引</span>
 <br /><br />
-You have too many posts for an automatic FULLTEXT index creation. It is more than likely that PHP will
-time out before the indexes are complete which could cause some index corruption.
+您的帖子太多，无法自动创建全文索引，索引完成之前 PHP 就会超时，这将会破坏索引。
 <br />
-Creating FULLTEXT indexes is a relatively slow process but it's one that's worth doing as it will save you
-a lot of time and CPU power when your members search.
+创建全文索引是相当慢的操作，但是这非常值得去做，因为当会员使用搜索时，会节约大量的时间和 CPU 资源。
 <br />
-On average, a normal webserver is capable of indexing about 80,000 posts an hour but it is a relatively intense process. If you
-are using MySQL 4.0.12+ then this time is reduced substaintially.
+平均来说，普通的服务器每小时能索引大约 80,000 个帖子，这是非常消耗系统资源的操作，如果您使用 MySQL 4.0.12 以上版本，那么所需的时间将会显著缩短。s
 <br />
 <br />
-<strong style='color:red;font-size:14px'>How to manually create the indexes</strong>
+<strong style='color:red;font-size:14px'>如何手工创建索引</strong>
 <br />
-If you have shell (SSH / Telnet) access to mysql, the process is very straightforward. If you do not have access to shell, then you will
-have to contact your webhost and ask them to do this for you.
+如果您有一个 MySQL 的客户端工具（比如：telnet）可以访问 mySQL，操作将是非常简单的。如果没有，那么请您联系您的主机提供商，请他们为您创建。
 <br /><br />
-<strong>Step 1: Initiate mysql</strong>
+<strong>第一步：初始化 mysql</strong>
 <br />
-In shell type:
+在客户端输入：
 <br />
 <pre>mysql -u{your_sql_user_name} -p{your_sql_password}</pre>
 <br />
-Your MySQL username and password can be found in your conf_global.php file
+您的 MySQL 用户名和密码就是您存放在 conf_global.php 文件中的。
 <br />
 <br />
-<strong>Step 2: Select your database</strong>
+<strong>第二步：选择您的数据库</strong>
 <br />
-In mysql type:
+输入:
 <br />
 <pre>use {your_database_name_here};</pre>
 <br />
-Make sure you use a trailing semi-colon. Your MySQL database name can be found in conf_global.php
+请确认您使用了半角的分号。您的 MySQL 数据库就是您存放在 conf_global.php 文件中的。
 <br /><br />
-<strong>Step 3: Indexing the topics table</strong>
+<strong>第三步：索引主题数据表</strong>
 <br />
 In mysql type:
 <br />
@@ -2812,12 +2808,11 @@ This query can take a while depending on the number of topics you have.
 <br />
 <strong>Step 4: Indexing the posts table</strong>
 <br />
-In mysql type:
+输入:
 <br />
 <pre>alter table " . SQL_PREFIX . "posts add fulltext(post);</pre>
 <br />
-This query can take a while depending on the number of posts you have. On average MySQL can index 80,000 posts an hour. If you are using MySQL 4, the time is greatly reduced.
-</div>
+如果您不是采用 'ibf_' 作为您的数据表的前缀，则需要替换上面的文本。根据您的帖子数量，这条命令会持续一段时间。平均每小时 MySQL 可以索引大约 80,000 个帖子。如果您使用 MySQL 4.0.12 以上版本，那么所需的时间将会显著缩短。</div>
 ";
 	}
 

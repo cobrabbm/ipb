@@ -212,7 +212,7 @@ class ad_components
 
 		$this->components_rebuildcache();
 
-		$this->ipsclass->main_msg = "Component Toggled";
+		$this->ipsclass->main_msg = "组件位置";
 		$this->components_list();
 	}
 
@@ -329,7 +329,7 @@ class ad_components
 
 		$this->components_rebuildcache();
 
-		$this->ipsclass->main_msg = "Component item repositioned";
+		$this->ipsclass->main_msg = "组件已复位";
 		$this->components_list();
 	}
 
@@ -384,7 +384,7 @@ class ad_components
 
 			if ( ! file_exists( ROOT_PATH . $this->ipsclass->input['file_location'] ) )
 			{
-				$this->ipsclass->main_msg = "Could not find the file to open at: " . ROOT_PATH . $this->ipsclass->input['file_location'];
+				$this->ipsclass->main_msg = "找不到文件: " . ROOT_PATH . $this->ipsclass->input['file_location'];
 				$this->components_list();
 				return;
 			}
@@ -423,7 +423,7 @@ class ad_components
 
 			if ( ! $content )
 			{
-				$this->ipsclass->main_msg = "Could not read the uploaded file.";
+				$this->ipsclass->main_msg = "无法读取上传的文件.";
 				$this->components_list();
 				return;
 			}
@@ -513,7 +513,7 @@ class ad_components
 
 		$this->components_rebuildcache();
 
-		$this->ipsclass->main_msg = "$updated components updated $inserted components inserted";
+		$this->ipsclass->main_msg = "$updated 个组件已更新, $inserted 个组件已插入";
 
 		$this->components_list();
 	}
@@ -654,7 +654,7 @@ class ad_components
 
 		if ( ! $com_title OR ! $com_section OR ! $com_filename )
 		{
-			$this->ipsclass->main_msg = "You must complete the entire form.";
+			$this->ipsclass->main_msg = "您必须完整填写表单.";
 			$this->components_form( $type );
 			return;
 		}
@@ -712,7 +712,7 @@ class ad_components
 
 			if ( $test['com_id'] )
 			{
-				$this->ipsclass->main_msg = "You must ensure that both the section code and the filename are unique to this component.";
+				$this->ipsclass->main_msg = "您必须确认 section 代码和文件名对本组件都是唯一的.";
 				$this->components_form( $type );
 				return;
 			}
@@ -720,13 +720,13 @@ class ad_components
 			$array['com_date_added'] = time();
 
 			$this->ipsclass->DB->do_insert( 'components', $array );
-			$this->ipsclass->main_msg = 'New Component Added';
+			$this->ipsclass->main_msg = '组件已添加';
 		}
 		else
 		{
 
 			$this->ipsclass->DB->do_update( 'components', $array, 'com_id='.$com_id );
-			$this->ipsclass->main_msg = 'Component Edited';
+			$this->ipsclass->main_msg = '组件已编辑';
 		}
 
 		$this->components_rebuildcache();
@@ -759,8 +759,8 @@ class ad_components
 		if ( $type == 'add' )
 		{
 			$formcode = 'component_add_do';
-			$title    = "Register New Component";
-			$button   = "Register New Component";
+			$title    = "注册组件";
+			$button   = "注册组件";
 		}
 		else
 		{
@@ -774,8 +774,8 @@ class ad_components
 			}
 
 			$formcode = 'component_edit_do';
-			$title    = "Edit Component ".$component['com_title'];
-			$button   = "Save Changes";
+			$title    = "编辑组件 ".$component['com_title'];
+			$button   = "保存";
 		}
 
 		//--------------------------------------------
@@ -867,11 +867,11 @@ class ad_components
 
 		$this->ipsclass->html .= $this->html->components_form( $form, $title, $formcode, $button, $component, $menu_text, $menu_url, $menu_redirect, $menu_permbit, $menu_permlang );
 
-		$this->ipsclass->html_help_title = "Components Manager";
-		$this->ipsclass->html_help_msg   = "This section will allow you to manage your components.";
+		$this->ipsclass->html_help_title = "组件管理";
+		$this->ipsclass->html_help_msg   = "您可以在这里管理论坛组件.";
 
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Components' );
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit Components' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '组件管理' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑 组件' );
 		$this->ipsclass->admin->output();
 	}
 
@@ -881,9 +881,9 @@ class ad_components
 
 	function components_list()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Components' );
-		$this->ipsclass->admin->page_title  = "Components Manager";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your components.";
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '组件管理' );
+		$this->ipsclass->admin->page_title  = "管理组件";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理论坛组件.";
 
 		//-------------------------------
 		// INIT
@@ -1014,7 +1014,7 @@ class ad_components
 
 		if( $component['com_safemode'] && !IN_DEV )
 		{
-			$this->ipsclass->main_msg = "This component cannot be edited or deleted.";
+			$this->ipsclass->main_msg = "该组件不能编辑或者删除.";
 			$this->components_list();
 			return;
 		}
@@ -1022,7 +1022,7 @@ class ad_components
 		$this->ipsclass->DB->build_and_exec_query( array( 'delete' => 'components', 'where' => 'com_id='.$com_id ) );
 
 		$this->components_rebuildcache();
-		$this->ipsclass->main_msg = "The component has been deleted.";
+		$this->ipsclass->main_msg = "该组件已删除.";
 		$this->components_list();
 	}
 
@@ -1247,17 +1247,17 @@ class ad_components
 				$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 			}
 
-	        $this->ipsclass->admin->done_screen("Succesfully uninstalled ".$component['com_title'], "Manage Components", "{$this->ipsclass->form_code}" );
+	        $this->ipsclass->admin->done_screen("安全模式 ".$component['com_title'], "组件管理", "{$this->ipsclass->form_code}" );
 		}
 		else
 		{
 			//-----------------------------------------
 			// Uninstall confirmation screen
 			//-----------------------------------------
-			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Components' );
-			$this->ipsclass->admin->nav[] = array( '', 'Uninstall Component '.$component['com_title'] );
+			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理组件' );
+			$this->ipsclass->admin->nav[] = array( '', '卸载组件 '.$component['com_title'] );
 
-			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'Uninstall component '.$component['com_title'], 'This section will start the uninstall of '.$component['com_title'] ) . "<br />";
+			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( '卸载组件 '.$component['com_title'], 'This section will start the uninstall of '.$component['com_title'] ) . "<br />";
 
 			$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'			, 'component_uninstall' ),
 																				 2 => array( 'act'			, 'components' ),

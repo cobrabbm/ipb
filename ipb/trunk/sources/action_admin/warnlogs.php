@@ -221,8 +221,8 @@ class ad_warnlogs {
 		
 		$this->ipsclass->html .= ""; // removed js popwin
 		
-		$this->ipsclass->admin->page_detail = "Viewing all warn entries on a member";
-		$this->ipsclass->admin->page_title  = "Warn Logs Manager";
+		$this->ipsclass->admin->page_detail = "查看某会员的全部警告记录";
+		$this->ipsclass->admin->page_title  = "警告记录管理";
 	
 		if ($this->ipsclass->input['search_string'] == "" and $this->ipsclass->input['mid'])
 		{
@@ -267,26 +267,26 @@ class ad_warnlogs {
 		$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $row_count,
 														  'PER_PAGE'    => 30,
 														  'CUR_ST_VAL'  => $start,
-														  'L_SINGLE'    => "Single Page",
-														  'L_MULTI'     => "Pages: ",
+														  'L_SINGLE'    => "单页",
+														  'L_MULTI'     => "页码: ",
 														  'BASE_URL'    => $this->ipsclass->base_url.$query,
 														)
 												 );
 									  
-		$this->ipsclass->admin->page_detail = "You may view warn entries added by your moderators";
-		$this->ipsclass->admin->page_title  = "Warn Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以查看版主的警告记录";
+		$this->ipsclass->admin->page_title  = "警告记录管理";
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Type"        , "5%" );
-		$this->ipsclass->adskin->td_header[] = array( "Member Name" , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Contacted"   , "5%" );
+		$this->ipsclass->adskin->td_header[] = array( "类型"        , "5%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名称" , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "联系"   , "5%" );
 		$this->ipsclass->adskin->td_header[] = array( "MOD Q"       , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "SUSP"        , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "NO POST"     , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Date"        , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Warned By"   , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "View Note"   , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "日期"        , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "警告人"   , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "查看记录"   , "10%" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Warn Logs" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
@@ -375,7 +375,7 @@ class ad_warnlogs {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有记录</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
@@ -403,7 +403,7 @@ class ad_warnlogs {
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'warn_logs', 'where' => "wlog_mid=".intval($this->ipsclass->input['mid']) ) );
 		
-		$this->ipsclass->admin->save_log("Removed Warn Logs");
+		$this->ipsclass->admin->save_log("删除警告记录");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&{$this->ipsclass->form_code}");	
 	}
@@ -417,8 +417,8 @@ class ad_warnlogs {
 	{
 		$form_array = array();
 	
-		$this->ipsclass->admin->page_detail = "You may view and remove warn actions performed by your staff.<br />Note: Removing the logs does not decrease the member's warn level";
-		$this->ipsclass->admin->page_title  = "Warn Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以查看或编辑您的版主对会员的警告操作纪录。<br />提示：删除记录不会降低会员的警告级别";
+		$this->ipsclass->admin->page_title  = "警告记录管理";
 		
 		$this->ipsclass->html .= ""; // removed js popwin
 		
@@ -429,13 +429,13 @@ class ad_warnlogs {
 		$this->ipsclass->DB->cache_add_query( 'warnlogs_list_current', array() );
 		$this->ipsclass->DB->cache_exec_query();
 		
-		$this->ipsclass->adskin->td_header[] = array( "Type"            , "5%" );
-		$this->ipsclass->adskin->td_header[] = array( "Warned Member"   , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Contacted?"      , "5%" );
-		$this->ipsclass->adskin->td_header[] = array( "Date"            , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Warned By"       , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "类型"            , "5%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名称r"   , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "联系?"      , "5%" );
+		$this->ipsclass->adskin->td_header[] = array( "日期"            , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "警告人"       , "25%" );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Last 10 Warn Entries" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最后 10 个警告记录" );
 
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -446,7 +446,7 @@ class ad_warnlogs {
 				$row['wlog_date'] = $this->ipsclass->admin->get_date( $row['wlog_date'], 'LONG' );
 				
 				$type = ( $row['wlog_type'] == 'pos' ) ? '<span style="color:green;font-weight:bold">-</span>' : '<span style="color:red;font-weight:bold">+</span>';
-				$cont = ( $row['wlog_contact'] !=  'none' ) ? "<center><a title='Show message' href='javascript:pop_win(\"&{$this->ipsclass->form_code}&code=viewcontact&id={$row['wlog_id']}\",\"Log\",400,400)'><img src='{$this->ipsclass->skin_acp_url}/images/acp_check.gif' border='0' alt='X'></a></center>" : '&nbsp;';
+				$cont = ( $row['wlog_contact'] !=  'none' ) ? "<center><a title='显示消息' href='javascript:pop_win(\"&{$this->ipsclass->form_code}&code=viewcontact&id={$row['wlog_id']}\",\"Log\",400,400)'><img src='{$this->ipsclass->skin_acp_url}/images/acp_check.gif' border='0' alt='X'></a></center>" : '&nbsp;';
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
 																					 "<center>$type</center>",
@@ -459,19 +459,19 @@ class ad_warnlogs {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有记录</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Member Name"            , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Times Warned"           , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "View all by member"     , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Remove all by member"   , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名称"            , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "警告次数"           , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "查看此会员的所有记录"     , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除此会员的所有记录"   , "30%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Warn Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "保存的警告记录" );
 		
 		$this->ipsclass->DB->cache_add_query( 'warnlogs_list_current_two', array() );
 		$this->ipsclass->DB->cache_exec_query();
@@ -503,24 +503,24 @@ class ad_warnlogs {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search Warn Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索警告记录" );
 		
 		$form_array = array(
-							  0 => array( 'notes'  , 'Entry Notes' ),
-							  1 => array( 'contact', 'Email/PM Sent'  ),
+							  0 => array( 'notes'  , '全部记录' ),
+							  1 => array( 'contact', '发送邮件/悄悄话的记录'  ),
 						   );
 			
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search for...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索条件...</b>" ,
 										  		  $this->ipsclass->adskin->form_input( "search_string")
 								 )      );
 								 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search in...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b>" ,
 										  		  $this->ipsclass->adskin->form_dropdown( "search_type", $form_array)
 								 )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

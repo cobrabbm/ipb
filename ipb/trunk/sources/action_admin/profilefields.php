@@ -53,7 +53,7 @@ class ad_profilefields {
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Custom Profile Fields' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '用户附加信息' );
 		
 		//-----------------------------------------
 		// get class
@@ -141,9 +141,9 @@ class ad_profilefields {
 			$this->ipsclass->admin->error("Could not resolve the group ID, please try again");
 		}
 		
-		$this->ipsclass->admin->page_title = "Deleting a Custom Profile Field";
+		$this->ipsclass->admin->page_title = "删除用户附加信息";
 		
-		$this->ipsclass->admin->page_detail = "Please check to ensure that you are attempting to remove the correct custom profile field as <b>all data will be lost!</b>.";
+		$this->ipsclass->admin->page_detail = "请确认您正试图删除用户附加信息, <b>所有的数据将丢失!</b>.";
 		
 		//-----------------------------------------
 		
@@ -170,13 +170,13 @@ class ad_profilefields {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Removal Confirmation" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除确认" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Custom Profile field to remove</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>用户附加信息已删除</b>" ,
 												                 "<b>".$field['pf_title']."</b>",
 									                   )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Delete this custom field");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("删除");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -210,7 +210,7 @@ class ad_profilefields {
 		
 		$this->rebuild_cache();
 		
-		$this->ipsclass->admin->done_screen("Profile Field Removed", "Custom Profile Field Control", "{$this->ipsclass->form_code}", 'redirect' );
+		$this->ipsclass->admin->done_screen("附加信息已删除", "用户附加信息管理", "{$this->ipsclass->form_code}", 'redirect' );
 		
 	}
 	
@@ -227,7 +227,7 @@ class ad_profilefields {
 		
 		if ($this->ipsclass->input['pf_title'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a field title.");
+			$this->ipsclass->admin->error("您必须输入信息标题.");
 		}
 		
 		//-----------------------------------------
@@ -272,7 +272,7 @@ class ad_profilefields {
 			
 			$this->rebuild_cache();
 			
-			$this->ipsclass->main_msg = "Profile Field Edited";
+			$this->ipsclass->main_msg = "附加信息已编辑";
 			$this->main_screen();
 			
 		}
@@ -288,7 +288,7 @@ class ad_profilefields {
 			
 			$this->rebuild_cache();
 			
-			$this->ipsclass->main_msg = "Profile Field Added";
+			$this->ipsclass->main_msg = "附加信息已添加";
 			$this->main_screen();
 		}
 	}
@@ -303,7 +303,7 @@ class ad_profilefields {
 	function main_form($type='edit')
 	{
 		$this->ipsclass->input['id'] = intval($this->ipsclass->input['id']);
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit Custom Profile Field' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑用户附加信息' );
 		
 		if ($type == 'edit')
 		{
@@ -313,13 +313,13 @@ class ad_profilefields {
 			}
 			
 			$form_code = 'doedit';
-			$button    = 'Complete Edit';
+			$button    = '保存修改';
 				
 		}
 		else
 		{
 			$form_code = 'doadd';
-			$button    = 'Add Field';
+			$button    = '添加信息';
 		}
 		
 		//-----------------------------------------
@@ -344,11 +344,11 @@ class ad_profilefields {
 		
 		if ($type == 'edit')
 		{
-			$this->ipsclass->admin->page_title = "Editing Profile Field ".$fields['pf_title'];
+			$this->ipsclass->admin->page_title = "编辑附加信息 ".$fields['pf_title'];
 		}
 		else
 		{
-			$this->ipsclass->admin->page_title = 'Adding a new profile field';
+			$this->ipsclass->admin->page_title = '添加附加信息';
 			$fields = array( 'pf_title'			=> '',
 							 'pf_content'		=> '',
 							 'pf_desc'			=> '',
@@ -368,7 +368,7 @@ class ad_profilefields {
 		// Wise words
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_detail = "Please double check the information before submitting the form.";
+		$this->ipsclass->admin->page_detail = "提交表单前请仔细检查下面的信息.";
 		
 		//-----------------------------------------
 		// Start form
@@ -393,63 +393,63 @@ class ad_profilefields {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Field Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "信息设置" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Field Title</b><div class='graytext'>Max characters: 200</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>信息标题</b><div class='graytext'>最大字符数: 200</div>" ,
 												                 $this->ipsclass->adskin->form_input("pf_title", $fields['pf_title'] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Description</b><div class='graytext'>Max Characters: 250<br />Can be used to note hidden/required status</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Description</b><div class='graytext'>最大字符: 250<br />可以用来提示会员这是必填信息或者私有信息</div>" ,
 												                 $this->ipsclass->adskin->form_input("pf_desc", $fields['pf_desc'] )
 									                    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Field Type</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>信息类型</b>" ,
 																 $this->ipsclass->adskin->form_dropdown("pf_type",
 																					  array(
-																							   0 => array( 'text' , 'Text Input' ),
-																							   1 => array( 'drop' , 'Drop Down Box' ),
-																							   2 => array( 'area' , 'Text Area' ),
+																							   0 => array( 'text' , '文本框' ),
+																							   1 => array( 'drop' , '下拉框' ),
+																							   2 => array( 'area' , '多行文本' ),
 																						   ),
 																					  $fields['pf_type'] )
 														)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Maximum Input</b><div class='graytext'>For text input and text areas (in characters)</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>最大输入字符数</b><div class='graytext'>用于文本框和多行文本</div>" ,
 												                 $this->ipsclass->adskin->form_input("pf_max_input", $fields['pf_max_input'] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Display order</b><div class='graytext'>When editing and displaying (numeric 1 lowest)</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>显示顺序</b><div class='graytext'>编辑和显示时的顺序 ( 数字 1 表示最后面 )</div>" ,
 												                 $this->ipsclass->adskin->form_input("pf_position", $fields['pf_position'] )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Expected Input Format</b><div class='graytext'>Use: <b>a</b> for alpha characters<br />Use: <b>n</b> for numerics.<br />Example, for credit card numbers: nnnn-nnnn-nnnn-nnnn<br />Example, Date of Birth: nn-nn-nnnn<br />Leave blank to accept any input</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入格式</b><div class='graytext'>表示字母: <b>a</b><br />表示数字: <b>n</b>.<br />例如, 信用卡号码的格式为: nnnn-nnnn-nnnn-nnnn<br />例如, 生日的格式为: nn-nn-nnnn<br />留空表示接受任何输入的字符</div>" ,
 												                 $this->ipsclass->adskin->form_input("pf_input_format", $fields['pf_input_format'] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Option Content (for drop downs)</b><div class='graytext'>In sets, one set per line<br>Example for 'Gender' field:<br>m=Male<br>f=Female<br>u=Not Telling<br>Will produce:<br><select name='pants'><option value='m'>Male</option><option value='f'>Female</option><option value='u'>Not Telling</option></select><br>m,f or u stored in database. When showing field in profile, will use value from pair (f=Female, shows 'Female')</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可选内容（用于下拉框）</b><div class='graytext'>每行一项内容<br>例如，性别信息：<br>m=男<br>f=女<br>u=保密<br>显示效果为：<br><select name='pants'><option value='m'>男</option><option value='f'>女</option><option value='u'>保密</option></select><br>m、f 或 u 保存在数据库。而在资料中显示时，将使用等号后面的内容（f=女, 显示“女”）</div>" ,
 												                 $this->ipsclass->adskin->form_textarea("pf_content", $fields['pf_content'] )
 									                    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Include on registration page?</b><div class='graytext'>If 'yes', the field will be shown upon registration.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>显示在注册页面?</b><div class='graytext'>如果是, 此信息将显示在注册页面.</div>" ,
 												                 $this->ipsclass->adskin->form_yes_no("pf_show_on_reg", $fields["pf_show_on_reg"] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Field MUST be completed and not left empty?</b><div class='graytext'>If 'yes', an error will be shown if this field is not completed.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>必须填写信息, 不能留空?</b><div class='graytext'>如果是, 如果没有填写此信息, 将会有错误提示.</div>" ,
 												                 $this->ipsclass->adskin->form_yes_no("pf_not_null", $fields['pf_not_null'] )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Field can be edited by the member?</b><div class='graytext'>If 'no', the member cannot edit the field but Super Moderators and Admins will be able to.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员可以自己编辑信息?</b><div class='graytext'>如果否, 会员不能编辑自己的信息, 只有管理员和总版主可以.</div>" ,
 												                 $this->ipsclass->adskin->form_yes_no("pf_member_edit", $fields['pf_member_edit'] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Make this a private profile field?</b><div class='graytext'>If yes, field only visible to profile owner, super moderators and admins. If 'no', members can search within this field.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>私有信息?</b><div class='graytext'>如果是, 只有会员本人以及管理员和总版主可以看到信息, 如果否, 会员可以看到其他人的信息.</div>" ,
 												                 $this->ipsclass->adskin->form_yes_no("pf_member_hide", $fields['pf_member_hide'] )
 									                    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Make Admin and Super Moderator Editable/Viewable Only?</b><div class='graytext'>If yes, will override the above options so only admins and super moderators can see and edit this field.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>仅管理员和总版主可以查看/编辑?</b><div class='graytext'>如果是, 将会覆盖上面的设置, 只有管理员和总版主可以查看或编辑本信息.</div>" ,
 												                 $this->ipsclass->adskin->form_yes_no("pf_admin_only", $fields['pf_admin_only'] )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Topic View Format?</b><div class='graytext'>Leave blank if you do not wish to add this field in the author details when viewing a topic.<br />{title} is the title of the custom field, {content} is the user added content. {key} is the form select value of the selected item in a dropdown box.<br />Example: {title}:{content}&lt;br /&gt;<br />Example: {title}:&lt;img src='imgs/{key}'&gt;</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>主题查看格式</b><div class='graytext'>如果您不想在主题旁的作者栏显示本信息, 请留空。<br />{title} 表示信息标题, {content} 表示用户添加的内容. {key} 表示下拉框所选内容的值. <br />例如: {title}:{content}&lt;br /&gt;<br />例如: {title}:&lt;img src='imgs/{key}'&gt;</div>" ,
 												                 $this->ipsclass->adskin->form_textarea("pf_topic_format", $fields['pf_topic_format'] )
 									                    )      );					     							     
 		
@@ -470,26 +470,26 @@ class ad_profilefields {
 	
 	function main_screen()
 	{
-		$this->ipsclass->admin->page_title   = "Custom Profile Fields";
+		$this->ipsclass->admin->page_title   = "用户附加信息";
 		
-		$this->ipsclass->admin->page_detail  = "Custom Profile fields can be used to add optional or required fields to be completed when registering or editing a profile. This is useful if you wish to record data from your members that is not already present in the base board.";
+		$this->ipsclass->admin->page_detail  = "用户附加信息可以在用户资料中添加可选或必填的信息。如果您想要记录的用户数据 IPB 没有内置，这里可以为您实现。";
 		
-		$this->ipsclass->adskin->td_header[] = array( "Field Title"    , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Type"           , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "REQUIRED"       , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "NOT PUBLIC"     , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "SHOW REG"       , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "ADMIN ONLY"     , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Edit"           , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Delete"         , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "信息标题"		, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "信息类型"		, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "必填信息"		, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "私有信息"		, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "注册时显示"		, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "仅管理员可见"	, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "编辑"			, "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除"			, "10%" );
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Custom Profile Field Management" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "用户附加信息管理" );
 		
-		$real_types = array( 'drop' => 'Drop Down Box',
-							 'area' => 'Text Area',
-							 'text' => 'Text Input',
+		$real_types = array( 'drop' => '下拉框',
+							 'area' => '多行文本',
+							 'text' => '文本框',
 						   );
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'pfields_data', 'order' => 'pf_position' ) );
@@ -511,7 +511,7 @@ class ad_profilefields {
 				
 				if ($r['pf_member_hide'] == 1)
 				{
-					$hide = '<center><span style="color:red">Y</span></center>';
+					$hide = '<center><span style="color:red">是</span></center>';
 				}
 				
 				//-----------------------------------------
@@ -520,7 +520,7 @@ class ad_profilefields {
 				
 				if ($r['pf_not_null'] == 1)
 				{
-					$req = '<center><span style="color:red">Y</span></center>';
+					$req = '<center><span style="color:red">是</span></center>';
 				}
 				
 				//-----------------------------------------
@@ -529,7 +529,7 @@ class ad_profilefields {
 				
 				if ($r['pf_show_on_reg'] == 1)
 				{
-					$regi = '<center><span style="color:red">Y</span></center>';
+					$regi = '<center><span style="color:red">是</span></center>';
 				}
 				
 				//-----------------------------------------
@@ -538,7 +538,7 @@ class ad_profilefields {
 				
 				if ($r['pf_admin_only'] == 1)
 				{
-					$admin = '<center><span style="color:red">Y</span></center>';
+					$admin = '<center><span style="color:red">是</span></center>';
 				}
 				
 				
@@ -548,18 +548,18 @@ class ad_profilefields {
 																		 $hide,
 																		 $regi,
 																		 $admin,
-																		 "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&id=".$r['pf_id']."'>Edit</a></center>",
-																		 "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=delete&id=".$r['pf_id']."'>Delete</a></center>",
+																		 "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&id=".$r['pf_id']."'>编辑</a></center>",
+																		 "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=delete&id=".$r['pf_id']."'>删除</a></center>",
 															)      );
 											 
 			}
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("None found", "center", "tablerow1");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("没有找到记录", "center", "tablerow1");
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=add'>Add New Field</a></span></div>", 'center', 'tablefooter' );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=add'>添加信息</a></span></div>", 'center', 'tablefooter' );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

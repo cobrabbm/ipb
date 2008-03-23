@@ -56,8 +56,8 @@ class ad_statistics
 	{
 		//-----------------------------------------
 		
-		$this->month_names = array( 1 => 'January', 'February', 'March'     , 'April'  , 'May'     , 'June',
-										 'July'   , 'August'  , 'September' , 'October', 'November', 'December'
+		$this->month_names = array( 1 => '一月', '二月', '三月', '四月', '五月', '六月',
+										 '七月', '八月', '九月', '十月', '十一月', '十二月'
 								  );
 
 		switch($this->ipsclass->input['code'])
@@ -130,21 +130,21 @@ class ad_statistics
 	
 	function show_views()
 	{
-		$this->ipsclass->admin->page_title = "Statistic Center Results";
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Statistics Overview' );
-		$this->ipsclass->admin->nav[] = array( '', 'Topic Views' );
-		$this->ipsclass->admin->page_detail = "Showing topic view statistics";
+		$this->ipsclass->admin->page_title = "统计中心结果";
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '统计概况' );
+		$this->ipsclass->admin->nav[] = array( '', '主题点击数' );
+		$this->ipsclass->admin->page_detail = "显示主题查看统计";
 		
 		//-----------------------------------------
 		
 		if ( ! checkdate($this->ipsclass->input['to_month']   ,$this->ipsclass->input['to_day']   ,$this->ipsclass->input['to_year']) )
 		{
-			$this->ipsclass->admin->error("The 'Date To:' time is incorrect, please check the input and try again");
+			$this->ipsclass->admin->error("结束日期: 时间不正确，请检查输入后重试");
 		}
 		
 		if ( ! checkdate($this->ipsclass->input['from_month'] ,$this->ipsclass->input['from_day'] ,$this->ipsclass->input['from_year']) )
 		{
-			$this->ipsclass->admin->error("The 'Date From:' time is incorrect, please check the input and try again");
+			$this->ipsclass->admin->error("开始日期：时间不正确，请检查输入后重试");
 		}
 		
 		//-----------------------------------------
@@ -164,13 +164,13 @@ class ad_statistics
 		
 		$results       = array();
 		
-		$this->ipsclass->adskin->td_header[] = array( "Forum"   , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "Result"  , "50%" );
-		$this->ipsclass->adskin->td_header[] = array( "Views"   , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "论坛版块"   , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "结果"  , "50%" );
+		$this->ipsclass->adskin->td_header[] = array( "查看"   , "10%" );
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Topic Views"
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "主题点击"
 										    ." ({$human_from_date['mday']} {$this->month_names[$human_from_date['mon']]} {$human_from_date['year']} to"
 										    ." {$human_to_date['mday']} {$this->month_names[$human_to_date['mon']]} {$human_to_date['year']})"
 										  );
@@ -214,14 +214,14 @@ class ad_statistics
 			}
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( '&nbsp;',
-													 "<div align='right'><b>Total</b></div>",
+													 "<div align='right'><b>合计</b></div>",
 													 "<center><b>".$running_total."</b></center>",
 											)      );
 		
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No results found", "center" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "没有结果", "center" );
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -236,20 +236,20 @@ class ad_statistics
 	
 	function result_screen($mode='reg')
 	{
-		$this->ipsclass->admin->page_title = "Statistic Center Results";
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Statistics Overview' );
+		$this->ipsclass->admin->page_title = "统计中心结果";
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '统计概况' );
 		$this->ipsclass->admin->page_detail = "&nbsp;";
 		
 		//-----------------------------------------
 		
 		if ( ! checkdate($this->ipsclass->input['to_month']   ,$this->ipsclass->input['to_day']   ,$this->ipsclass->input['to_year']) )
 		{
-			$this->ipsclass->admin->error("The 'Date To:' time is incorrect, please check the input and try again");
+			$this->ipsclass->admin->error("结束日期：时间不正确，请检查输入后重试");
 		}
 		
 		if ( ! checkdate($this->ipsclass->input['from_month'] ,$this->ipsclass->input['from_day'] ,$this->ipsclass->input['from_year']) )
 		{
-			$this->ipsclass->admin->error("The 'Date From:' time is incorrect, please check the input and try again");
+			$this->ipsclass->admin->error("开始日期：时间不正确，请检查输入后重试");
 		}
 		
 		//-----------------------------------------
@@ -265,13 +265,13 @@ class ad_statistics
 		
 		if ($mode == 'reg')
 		{
-			$table     = 'Registration Statistics';
+			$table     = '注册统计';
 			
 			$sql_table = 'members';
 			$sql_field = 'joined';
 			
-			$this->ipsclass->admin->page_detail = "Showing the number of users registered. (Note: All times based on GMT)";
-			$this->ipsclass->admin->nav[] = array( '', 'Registered Users' );
+			$this->ipsclass->admin->page_detail = "显示注册用户数. ( 提示: 所有时间基于 GMT 时间 ) ";
+			$this->ipsclass->admin->nav[] = array( '', '用户数量' );
 		}
 		else if ($mode == 'topic')
 		{
@@ -280,8 +280,8 @@ class ad_statistics
 			$sql_table = 'topics';
 			$sql_field = 'start_date';
 			
-			$this->ipsclass->admin->page_detail = "Showing the number of topics started. (Note: All times based on GMT)";
-			$this->ipsclass->admin->nav[] = array( '', 'Topics Started' );
+			$this->ipsclass->admin->page_detail = "显示主题数.  ( 提示: 所有时间基于 GMT 时间 )";
+			$this->ipsclass->admin->nav[] = array( '', '主题数量' );
 		}
 		else if ($mode == 'post')
 		{
@@ -290,8 +290,8 @@ class ad_statistics
 			$sql_table = 'posts';
 			$sql_field = 'post_date';
 			
-			$this->ipsclass->admin->page_detail = "Showing the number of posts. (Note: All times based on GMT)";
-			$this->ipsclass->admin->nav[] = array( '', 'Number of Posts' );
+			$this->ipsclass->admin->page_detail = "显示帖子数. ( 提示: 所有时间基于 GMT 时间 )";
+			$this->ipsclass->admin->nav[] = array( '', '帖子数量' );
 		}
 		else if ($mode == 'msg')
 		{
@@ -300,8 +300,8 @@ class ad_statistics
 			$sql_table = 'message_topics';
 			$sql_field = 'mt_date';
 			
-			$this->ipsclass->admin->page_detail = "Showing the number of sent messages. (Note: All times based on GMT)";
-			$this->ipsclass->admin->nav[] = array( '', 'Sent Private Messages' );
+			$this->ipsclass->admin->page_detail = "显示悄悄话数量.  ( 提示: 所有时间基于 GMT 时间 )";
+			$this->ipsclass->admin->nav[] = array( '', '悄悄话发送数量' );
 		}
 		
 	  
@@ -309,18 +309,18 @@ class ad_statistics
 	  	{
 	  		case 'daily':
 	  			$sql_date = "%w %U %m %Y";
-		  		$php_date = "F jS - Y";
+		  		$php_date = "Y 年 n 月 j 日";
 		  		break;
 		  		
 		  	case 'monthly':
 		  		$sql_date = "%m %Y";
-		  	    $php_date = "F Y";
+		  	    $php_date = "Y 年 n 月";
 		  	    break;
 		  	    
 		  	default:
 		  		// weekly
 		  		$sql_date = "%U %Y";
-		  		$php_date = " [F Y]";
+		  		$php_date = " [Y 年 n 月]";
 		  		break;
 		}
 		
@@ -337,9 +337,9 @@ class ad_statistics
 		
 		$results       = array();
 		
-		$this->ipsclass->adskin->td_header[] = array( "Date"    , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Result"  , "70%" );
-		$this->ipsclass->adskin->td_header[] = array( "Count"   , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "日期"    , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "结果"  , "70%" );
+		$this->ipsclass->adskin->td_header[] = array( "计数"   , "10%" );
 		
 		//-----------------------------------------
 		
@@ -398,14 +398,14 @@ class ad_statistics
 			}
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( '&nbsp;',
-													 "<div align='right'><b>Total</b></div>",
+													 "<div align='right'><b>合计</b></div>",
 													 "<center><b>".$running_total."</b></center>",
 											)      );
 		
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No results found", "center" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "没有记录", "center" );
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -420,39 +420,39 @@ class ad_statistics
 	
 	function main_screen($mode='reg')
 	{
-		$this->ipsclass->admin->page_title = "Statistic Center";
+		$this->ipsclass->admin->page_title = "统计中心";
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Statistics Overview' );
-		$this->ipsclass->admin->page_detail = "Please define the date ranges and other options below.<br>Note: The statistics generated are based on the information currently held in the database, they do not take into account pruned forums or delete posts, etc.";
+		$this->ipsclass->admin->page_detail = "请选择日期范围和其他统计条件.<br>提示: 统计基于您当前的数据库, 不计算被清理的帖子和会员等.";
 		
 		if ($mode == 'reg')
 		{
 			$form_code = 'show_reg';
 			
-			$table     = 'Registration Statistics';
+			$table     = '注册统计';
 		}
 		else if ($mode == 'topic')
 		{
 			$form_code = 'show_topic';
 			
-			$table     = 'New Topic Statistics';
+			$table     = '主题统计';
 		}
 		else if ($mode == 'post')
 		{
 			$form_code = 'show_post';
 			
-			$table     = 'Post Statistics';
+			$table     = '帖子统计';
 		}
 		else if ($mode == 'msg')
 		{
 			$form_code = 'show_msg';
 			
-			$table     = 'PM Statistics';
+			$table     = '悄悄话统计';
 		}
 		else if ($mode == 'views')
 		{
 			$form_code = 'show_views';
 			
-			$table     = 'Topic View Statistics';
+			$table     = '主题点击统计';
 		}
 		
 		
@@ -477,30 +477,30 @@ class ad_statistics
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( $table );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Date From</b>" ,
-												  $this->ipsclass->adskin->form_dropdown( "from_month" , $this->make_month(), $old_date['mon']  ).'&nbsp;&nbsp;'.
-												  $this->ipsclass->adskin->form_dropdown( "from_day"   , $this->make_day()  , $old_date['mday'] ).'&nbsp;&nbsp;'.
-												  $this->ipsclass->adskin->form_dropdown( "from_year"  , $this->make_year() , $old_date['year'] )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>开始日期</b>" ,
+												  $this->ipsclass->adskin->form_dropdown( "from_month" , $this->make_month(), $old_date['mon']  ).'月&nbsp;&nbsp;'.
+												  $this->ipsclass->adskin->form_dropdown( "from_day"   , $this->make_day()  , $old_date['mday'] ).'日&nbsp;&nbsp;'.
+												  $this->ipsclass->adskin->form_dropdown( "from_year"  , $this->make_year() , $old_date['year'] ).'年'
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Date To</b>" ,
-												  $this->ipsclass->adskin->form_dropdown( "to_month" , $this->make_month(), $new_date['mon']  ).'&nbsp;&nbsp;'.
-												  $this->ipsclass->adskin->form_dropdown( "to_day"   , $this->make_day()  , $new_date['mday'] ).'&nbsp;&nbsp;'.
-												  $this->ipsclass->adskin->form_dropdown( "to_year"  , $this->make_year() , $new_date['year'] )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>结束日期</b>" ,
+												  $this->ipsclass->adskin->form_dropdown( "to_month" , $this->make_month(), $new_date['mon']  ).'月&nbsp;&nbsp;'.
+												  $this->ipsclass->adskin->form_dropdown( "to_day"   , $this->make_day()  , $new_date['mday'] ).'日&nbsp;&nbsp;'.
+												  $this->ipsclass->adskin->form_dropdown( "to_year"  , $this->make_year() , $new_date['year'] ).'年'
 									     )      );
 		
 		if ($mode != 'views')
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Time scale</b>" ,
-													  $this->ipsclass->adskin->form_dropdown( "timescale" , array( 0 => array( 'daily', 'Daily'), 1 => array( 'weekly', 'Weekly' ), 2 => array( 'monthly', 'Monthly' ) ) )
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>统计规模</b>" ,
+													  $this->ipsclass->adskin->form_dropdown( "timescale" , array( 0 => array( 'daily', '按日'), 1 => array( 'weekly', '按周' ), 2 => array( 'monthly', '按月' ) ) )
 											 )      );
 		}
 						     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Result Sorting</b>" ,
-												  $this->ipsclass->adskin->form_dropdown( "sortby" , array( 0 => array( 'asc', 'Ascending - Oldest dates first'), 1 => array( 'desc', 'Descending - Newest dates first' ) ), 'desc' )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>结果排序</b>" ,
+												  $this->ipsclass->adskin->form_dropdown( "sortby" , array( 0 => array( 'asc', '升序 - 旧的在前'), 1 => array( 'desc', '降序 - 新的在前' ) ), 'desc' )
 									     )      );
 									     									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Show");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("统计");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

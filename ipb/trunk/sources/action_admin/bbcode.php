@@ -60,8 +60,8 @@ class ad_bbcode {
 		// Require and RUN !! THERES A BOMB
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_detail = "The BBCode manager allows you to create and manage your BBCodes.";
-		$this->ipsclass->admin->page_title  = "BBCode Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里创建和管理您自己的 BBCodes.";
+		$this->ipsclass->admin->page_title  = "自定义 BBCode 管理";
 
 		//-----------------------------------------
 		// What to do...
@@ -135,7 +135,7 @@ class ad_bbcode {
 		
 		if ( ! $content )
 		{
-			$this->ipsclass->main_msg = "Upload failed, ipb_bbcode.xml was either missing or empty";
+			$this->ipsclass->main_msg = "上传失败, ipb_bbcode.xml 文件不存在或者文件为空";
 			$this->bbcode_start();
 		}
 		
@@ -230,7 +230,7 @@ class ad_bbcode {
 		
 		$this->bbcode_rebuildcache();
                     
-		$this->ipsclass->main_msg = "BBCode XML file import completed";
+		$this->ipsclass->main_msg = "BBCode XML 文件导入完成";
 		
 		$this->bbcode_start();
 	
@@ -415,7 +415,7 @@ class ad_bbcode {
 			}
 		}
 		
-		$this->ipsclass->main_msg = "<b>BBCode Test:</b><br /><br />".$t;
+		$this->ipsclass->main_msg = "<b>BBCode 测试:</b><br /><br />".$t;
 		
 		$this->bbcode_start();
 	}
@@ -441,19 +441,19 @@ class ad_bbcode {
 		
 		if ( ! $this->ipsclass->input['bbcode_title'] or ! $this->ipsclass->input['bbcode_tag'] or ! $this->ipsclass->input['bbcode_replace'] )
 		{
-			$this->ipsclass->main_msg = "You must complete the form fully.";
+			$this->ipsclass->main_msg = "您必须完整填写表单.";
 			$this->bbcode_form($type);
 		}
 		
 		if ( ! strstr( $this->ipsclass->input['bbcode_replace'], '{content}' ) )
 		{
-			$this->ipsclass->main_msg = "You must use {content} somewhere in the BBCode replacement section.";
+			$this->ipsclass->main_msg = "您必须在 BBCode 置换中使用.";
 			$this->bbcode_form($type);
 		}
 		
 		if ( ! strstr( $this->ipsclass->input['bbcode_replace'], '{option}' ) AND $this->ipsclass->input['bbcode_useoption'] )
 		{
-			$this->ipsclass->main_msg = "You must use {option} somewhere in the BBCode replacement section or set 'Use Option in tag?' to 'no'.";
+			$this->ipsclass->main_msg = "您必须在 BBCode 置换中使用 {option}，或关闭“标签中有可选参数";
 			$this->bbcode_form($type);
 		}
 		
@@ -472,12 +472,12 @@ class ad_bbcode {
 		if ( $type == 'add' )
 		{
 			$this->ipsclass->DB->do_insert( 'custom_bbcode', $array );
-			$this->ipsclass->main_msg = 'New BBCode Added';
+			$this->ipsclass->main_msg = 'BBCode 已添加';
 		}
 		else
 		{
 			$this->ipsclass->DB->do_update( 'custom_bbcode', $array, 'bbcode_id='.intval($this->ipsclass->input['id']) );
-			$this->ipsclass->main_msg = 'Custom BBCode Edited';
+			$this->ipsclass->main_msg = 'BBCode 已编辑';
 		}
 		
 		$this->bbcode_rebuildcache();
@@ -493,9 +493,9 @@ class ad_bbcode {
 	
 	function bbcode_form($type='add')
 	{
-		$this->ipsclass->admin->page_detail = "The BBCode manager allows you to add new custom BBCode.";
-		$this->ipsclass->admin->page_title  = "BBCode Manager";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Add/Edit BBCode' );
+		$this->ipsclass->admin->page_detail = "您可以在这里添加自定义 BBCode.";
+		$this->ipsclass->admin->page_title  = "自定义 BBCode 管理";
+		$this->ipsclass->admin->nav[] 		= array( '', '添加/编辑 BBCode' );
 		
 		if ( $type == 'edit' )
 		{
@@ -520,8 +520,8 @@ class ad_bbcode {
 							 'bbcode_useoption'	=> '',
 							 'bbcode_replace'	=> '' );
 			$code   = 'bbcode_doadd';
-			$title  = "Adding a new custom BBCode";
-			$button = "Add BBCode";
+			$title  = "添加自定义 BBCode";
+			$button = "添加 BBCode";
 		}
 		
 		//-----------------------------------------
@@ -539,46 +539,46 @@ class ad_bbcode {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( $title );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Custom BBCode Title</b><div style='color:gray'>Used on the BBCode pop-up legend</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 标题</b><div style='color:gray'>用于 BBCode 弹出提示</div>",
 															   $this->ipsclass->adskin->form_input( 'bbcode_title', ( isset($this->ipsclass->input['bbcode_title']) AND $this->ipsclass->input['bbcode_title'] ) ? $this->ipsclass->input['bbcode_title'] : $bbcode['bbcode_title'] )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Custom BBCode Description</b><div style='color:gray'>Used on the BBCode pop-up legend</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 说明</b><div style='color:gray'>用于 BBCode 弹出提示</div>",
 															   $this->ipsclass->adskin->form_textarea( 'bbcode_desc', ( isset($this->ipsclass->input['bbcode_desc']) AND $this->ipsclass->input['bbcode_desc'] ) ? $this->ipsclass->input['bbcode_desc'] : $bbcode['bbcode_desc'] )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Custom BBCode Example</b><div style='color:gray'>Used on the BBCode pop-up legend<br />Use the tag in the example: [tag]This is an example![/tag]</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 示例</b><div style='color:gray'>用于 BBCode 弹出提示<br />在示例中使用标签: [tag]这里是示例！[/tag]</div>",
 															   $this->ipsclass->adskin->form_textarea( 'bbcode_example', ( isset($this->ipsclass->input['bbcode_example']) AND $this->ipsclass->input['bbcode_example'] ) ? $this->ipsclass->input['bbcode_example'] : $bbcode['bbcode_example'] )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Custom BBCode Tag</b><div style='color:gray'>Example: For [tag] enter <b>tag</b></div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 标记</b><div style='color:gray'>例如: 如果标记是 [tag]，那么输入 <b>tag</b></div>",
 															   '[ '.$this->ipsclass->adskin->form_simple_input( 'bbcode_tag', ( isset($this->ipsclass->input['bbcode_tag']) AND $this->ipsclass->input['bbcode_tag'] ) ? $this->ipsclass->input['bbcode_tag'] : $bbcode['bbcode_tag'], 10).' ]'
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Use Option in tag?</b><div style='color:gray'>Use to create [tag=option] style tags</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>标记中有可选参数</b><div style='color:gray'>用于创建 [tag=option] 这样的标记</div>",
 															   $this->ipsclass->adskin->form_yes_no( 'bbcode_useoption', ( isset($this->ipsclass->input['bbcode_useoption']) AND $this->ipsclass->input['bbcode_useoption'] ) ? $this->ipsclass->input['bbcode_useoption'] : $bbcode['bbcode_useoption'] )
 													 )      );
 													
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Switch option around?</b><div style='color:gray'>Use this if you wish to swap the {content} for {option} (IE when using tags like [tag={content}]{option}[/tag]</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>转换参数</b><div style='color:gray'>如果您想将 {content} 和 {option} 交换，就打开本开关（例如创建[tag={content}]{option}[/tag]这样的标记）</div>",
 															   				 $this->ipsclass->adskin->form_yes_no( 'bbcode_switch_option', ( isset($this->ipsclass->input['bbcode_switch_option']) AND $this->ipsclass->input['bbcode_switch_option'] ) ? $this->ipsclass->input['bbcode_switch_option'] : $bbcode['bbcode_switch_option'] )
 													 				)      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Custom BBCode Replacement</b><div style='color:gray'>&lt;tag&gt;{content}&lt;/tag&gt;<br />&lt;tag thing='{option}'&gt;{content}&lt;/tag&gt;</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 置换</b><div style='color:gray'>将 BBCode 标记转换为一段 HTML 代码<br />&lt;tag&gt;{content}&lt;/tag&gt;<br />&lt;tag thing='{option}'&gt;{content}&lt;/tag&gt;</div>",
 															   				 $this->ipsclass->adskin->form_textarea( 'bbcode_replace', ( isset($this->ipsclass->input['bbcode_replace']) AND $this->ipsclass->input['bbcode_replace'] ) ? $this->ipsclass->input['bbcode_replace'] : $bbcode['bbcode_replace'] )
 													 				)      );
 		//-----------------------------------------
 		// Insert Special Options
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Insert into the editor's 'Insert Special' menu?</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>插入到编辑器的“插入特殊”菜单</b>",
 															   				 $this->ipsclass->adskin->form_yes_no( 'bbcode_add_into_menu', ( isset($this->ipsclass->input['bbcode_add_into_menu']) AND $this->ipsclass->input['bbcode_add_into_menu'] ) ? $this->ipsclass->input['bbcode_add_into_menu'] : $bbcode['bbcode_add_into_menu'] )
 													 				)      );
 													
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enter 'option' dialogue text</b><div style='color:gray'>Help text to use above the 'Option' text field. This will appear when the tag is chosen from the 'Insert Special' menu.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入“option”对话框文字</b><div style='color:gray'>Help text to use above the 'Option' text field. This will appear when the tag is chosen from the 'Insert Special' menu.</div>",
 															   			 	 $this->ipsclass->adskin->form_simple_input( 'bbcode_menu_option_text', ( isset($this->ipsclass->input['bbcode_menu_option_text']) AND $this->ipsclass->input['bbcode_menu_option_text'] ) ? $this->ipsclass->input['bbcode_menu_option_text'] : $bbcode['bbcode_menu_option_text'], 50)
 													 				)      );
 													
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enter 'content' dialogue text</b><div style='color:gray'>Help text to use above the 'Content' text field. This will appear when the tag is chosen from the 'Insert Special' menu.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入 'content' 对话框文字 </b><div style='color:gray'>Help text to use above the 'Content' text field. This will appear when the tag is chosen from the 'Insert Special' menu.</div>",
 															   			 	 $this->ipsclass->adskin->form_simple_input( 'bbcode_menu_content_text', ( isset($this->ipsclass->input['bbcode_menu_content_text']) AND $this->ipsclass->input['bbcode_menu_content_text'] ) ? $this->ipsclass->input['bbcode_menu_content_text'] : $bbcode['bbcode_menu_content_text'], 50)
 													 				)      );
 		
@@ -586,8 +586,8 @@ class ad_bbcode {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
-		$this->ipsclass->html .= "<br /><div class='tableborder'><div class='tablerow1' style='padding:6px'><b>More Information</b><br />When adding the BBCode replacement, don't forget to add the {content} block where you wish the tag content to go when parsed.<br />
-						    If you are using an option <b>[tag=option][/tag]</b> tag, don't forget to add in {option} in the BBCode replacement where you want the option to go.</div></div>";
+		$this->ipsclass->html .= "<br /><div class='tableborder'><div class='tablerow1' style='padding:6px'><b>更多信息</b><br />添加 BBCode 置换时，不要忘记在解析标记内容的位置输入 {content}。<br />
+						    如果您要创建一个 <b>[tag=option][/tag]</b> 这样的标签，不要忘记在 BBCode 置换中可选参数的位置输入 {option} 。</div></div>";
 		
 		//-----------------------------------------
 		
@@ -601,8 +601,8 @@ class ad_bbcode {
 	
 	function bbcode_start()
 	{
-		$this->ipsclass->admin->page_detail = "The BBCode manager allows you to add new custom BBCode.";
-		$this->ipsclass->admin->page_title  = "BBCode Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加自定义 BBCode.";
+		$this->ipsclass->admin->page_title  = "自定义 BBCode 管理";
 		
 		//-----------------------------------------
 		// Show the codes mahn!
@@ -639,13 +639,13 @@ class ad_bbcode {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Test your custom BBCode" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "测试您的自定义 BBCode" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Test your BBCode",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "测试您的自定义 BBCode",
 																$this->ipsclass->adskin->form_textarea( 'bbtest', isset($_POST['bbtest']) ? $_POST['bbtest'] : '' ),
 														 )      );
 														 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run Test");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("测试");
 														 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -667,14 +667,14 @@ class ad_bbcode {
 													  ) , "uploadform", " enctype='multipart/form-data'"     );
 													
 													  			
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Import a BBCode List" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导入 BBCode 列表" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													 		 "<b>Upload XML BBCode List</b><div style='color:gray'>Browse your computer for 'bbcode.xml' or 'bbcode.xml.gz'. Duplicate [tag] entries will not be imported.</div>",
+													 		 "<b>上传 XML BBCode 列表</b><div style='color:gray'>文件名必须为“bbcode.xml”或“bbcode.xml.gz”。不会导入重复的 [tag] 项目。</div>",
 													  		 $this->ipsclass->adskin->form_upload(  )
 													   )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Import");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("导入");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

@@ -295,7 +295,7 @@ class ad_help
         		
 		if ($this->ipsclass->input['title'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a title, silly!");
+			$this->ipsclass->admin->error("你必须输入标题!");
 		}
 		
 		$text = $this->han_editor->process_raw_post( 'text' );
@@ -315,7 +315,7 @@ class ad_help
 													  'description' => $this->ipsclass->my_nl2br( $this->ipsclass->input['description'] ),
 											 ) , "id=".intval($this->ipsclass->input['id'])     );
 		
-		$this->ipsclass->admin->save_log("Edited help files");
+		$this->ipsclass->admin->save_log("编辑帮助文件");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&{$this->ipsclass->form_code}");
 		exit();
@@ -358,9 +358,9 @@ class ad_help
 	
 	function show_form($type='new')
 	{
-		$this->ipsclass->admin->page_detail = "You may add/edit and remove help files below.";
-		$this->ipsclass->admin->page_title  = "Help File Management";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Add/Edit Help Files' );
+		$this->ipsclass->admin->page_detail = "您可以在这里添加/编辑和删除帮助文件.";
+		$this->ipsclass->admin->page_title  = "帮助文件管理";
+		$this->ipsclass->admin->nav[] 		= array( '', '添加/编辑帮助文件' );
 		
     	//-----------------------------------------
         // Load and config the std/rte editors
@@ -404,7 +404,7 @@ class ad_help
 		
 			if ( ! $r = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->ipsclass->admin->error("We could not find that help file in the database");
+				$this->ipsclass->admin->error("数据库中找不到此帮助文件");
 			}
 		
 			if ( $this->han_editor->method == 'rte' )
@@ -452,15 +452,15 @@ class ad_help
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( $button );
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Help File Title",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "帮助文件标题",
 												  $this->ipsclass->adskin->form_input('title'  , $r['title'] ),
 										 )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Help File Description",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "帮助文件说明",
 												  $this->ipsclass->adskin->form_textarea('description', $r['description'] ),
 										 )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Help File Text",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "帮助文件正文",
 												  //$this->ipsclass->adskin->form_textarea('text', $r['text'], "60", "10" ),
 												  $this->han_editor->show_editor( $r['text'], 'text' )
 										 )      );
@@ -484,7 +484,7 @@ class ad_help
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'faq', 'where' => "id=".intval($this->ipsclass->input['id']) ) );
 	
-		$this->ipsclass->admin->save_log("Removed a help file");
+		$this->ipsclass->admin->save_log("删除帮助文件");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&{$this->ipsclass->form_code}");
 		exit();
@@ -520,7 +520,7 @@ class ad_help
         		
 		if ($this->ipsclass->input['title'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a title, silly!");
+			$this->ipsclass->admin->error("您必须输入标题");
 		}
 		
 		$text = $this->han_editor->process_raw_post( 'text' );
@@ -541,7 +541,7 @@ class ad_help
 													  'description' => $this->ipsclass->my_nl2br( $this->ipsclass->input['description'] ),
 							 )      );
 												  
-		$this->ipsclass->admin->save_log("Added a help file");
+		$this->ipsclass->admin->save_log("添加帮助文件");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&{$this->ipsclass->form_code}");
 		exit();
@@ -553,8 +553,8 @@ class ad_help
 	
 	function list_files()
 	{
-		$this->ipsclass->admin->page_detail = "You may add/edit and remove help files below.";
-		$this->ipsclass->admin->page_title  = "Help File Management";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加/编辑和删除帮助文件.";
+		$this->ipsclass->admin->page_title  = "帮助文件管理";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'       , 'doreorder'              ),
 																			 2 => array( 'act'        , 'help'                          ),
@@ -563,10 +563,10 @@ class ad_help
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Title"  , "45%" );
-		$this->ipsclass->adskin->td_header[] = array( "Edit"   , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Remove" , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Position" , "5%" );
+		$this->ipsclass->adskin->td_header[] = array( "标题"  , "45%" );
+		$this->ipsclass->adskin->td_header[] = array( "编辑"   , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除" , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "位置" , "5%" );
 		
 		//-----------------------------------------
 		

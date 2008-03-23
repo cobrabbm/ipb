@@ -75,7 +75,7 @@ class ad_member
 			$this->modules->ipsclass =& $this->ipsclass;
 		}
 		
-		$this->ipsclass->admin->nav[] = array( "{$this->ipsclass->form_code}&code=edit", 'Member Management Home' );
+		$this->ipsclass->admin->nav[] = array( "{$this->ipsclass->form_code}&code=edit", '会员管理' );
 		
 		//-----------------------------------------
 		// Load HTML
@@ -308,7 +308,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -635,7 +635,7 @@ class ad_member
 		
 		$this->ipsclass->admin->page_title  = $this->ipsclass->acp_lang['mem_delete_title'];
 		$this->ipsclass->admin->page_detail = $this->ipsclass->acp_lang['mem_delete_title_desc'];
-		$this->ipsclass->admin->nav[] 		= array( '', 'Delete Member Posts' );
+		$this->ipsclass->admin->nav[] 		= array( '', '删除会员帖子' );
 		
 		//-----------------------------------------
 		// INIT
@@ -657,7 +657,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -679,7 +679,7 @@ class ad_member
 		
 		if ( ! $posts['count'] )
 		{
-			$this->ipsclass->main_msg = "There are no posts to delete!";
+			$this->ipsclass->main_msg = "没有需要删除的帖子!";
 			$this->search_results();
 		}
 		
@@ -707,7 +707,7 @@ class ad_member
 		
 		if ( ! $this->ipsclass->input['password'] )
 		{
-			$this->ipsclass->main_msg = "You must enter a password!";
+			$this->ipsclass->main_msg = "您必须输入密码!";
 			$this->member_password_start();
 		}
 		
@@ -758,7 +758,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -836,9 +836,9 @@ class ad_member
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
 		
-		$this->ipsclass->admin->save_log("Members Password Changed ( id: {$this->ipsclass->input['id']} )");
+		$this->ipsclass->admin->save_log("修改会员密码 ( id: {$this->ipsclass->input['id']} )");
 		
-		$this->ipsclass->admin->done_screen("Password Changed", "Member Search", "{$this->ipsclass->form_code}".$page_query, "redirect" );
+		$this->ipsclass->admin->done_screen("密码已修改", "会员搜索", "{$this->ipsclass->form_code}".$page_query, "redirect" );
 	}
 	
 	//-----------------------------------------
@@ -880,7 +880,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -889,25 +889,25 @@ class ad_member
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Change password for member: {$member['members_display_name']}" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "更改会员密码: {$member['members_display_name']}" );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>Enter the new password</strong>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>输入新密码</strong>" ,
 												  			     $this->ipsclass->adskin->form_input('password' ),
 									     			    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Create new password salt?</b><div style='color:gray'>If set to 'yes', a new password salt will be generated. Useful if a member is having trouble logging in.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>创建新的密码?</b><div style='color:gray'>如果是, 将会生成一个新的密码 Salt. 用户有登录问题时有用.</div>" ,
 												  				 $this->ipsclass->adskin->form_yes_no( "newsalt", 1 )
 									     				)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Create new log in key?</b><div style='color:gray'>If set to 'yes', a new cookie log in key will be generated. Useful if a member is having trouble logging in. Any current cookies will not work.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>创建新的登录密钥</b><div style='color:gray'>如果选是, 将会生成新的 Cookie 登录密钥, 用户有登录问题时有用. 当前所有的 Cookie 都将失效.</div>" ,
 												  				 $this->ipsclass->adskin->form_yes_no( "newkey", 1 )
 									     				)      );
 									     									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Change Password");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("修改密码");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
-		$this->ipsclass->admin->nav[] 		= array( '', 'Change Member Password' );
+		$this->ipsclass->admin->nav[] 		= array( '', '修改会员密码' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -922,11 +922,11 @@ class ad_member
 	
 	function member_suspend_start()
 	{
-		$this->ipsclass->admin->page_title = "Account Suspension";
-		$this->ipsclass->admin->page_detail = "Automated temporary member suspension. Simply choose the duration of the suspension and submit the form below";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Suspend Member' );
+		$this->ipsclass->admin->page_title = "锁定帐户";
+		$this->ipsclass->admin->page_detail = "自动锁定会员帐户. 只需选择锁定的时间段然后提交表单";
+		$this->ipsclass->admin->nav[] 		= array( '', '锁定帐户' );
 		
-		$contents = "{membername},\nYour member account at {$this->ipsclass->vars['board_name']} has been temporarily suspended.\n\nYour account will not be functional until {date_end} (depending on your timezone). This is an automated process and you do not need to do anything to expediate the unsuspension process.\n\nBoard Address: {$this->ipsclass->vars['board_url']}/index.php";
+		$contents = "{membername},\n您在 at {$this->ipsclass->vars['board_name']} 的会员帐户被管理员锁定了.\n\n在您当地时间 {date_end} 之前, 您的帐户将无效 ,这是自动处理过程, 请耐心等待您的帐户恢复.\n\n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
 		
 		if ($this->ipsclass->input['mid'] == "")
 		{
@@ -949,7 +949,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -981,21 +981,21 @@ class ad_member
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Member Account Suspension", "Note: If this member is already suspended, any new setting will restart the ban" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "锁定会员帐户", "提示: 如果该会员已经被锁定, 任何新设置都将重新启动锁定" );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>Suspend {$member['members_display_name']} for...</strong>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>锁定会员 {$member['members_display_name']}...</strong>" ,
 												                 $this->ipsclass->adskin->form_input('timespan', $ban['timespan'], "text", "", '5' ) . '&nbsp;' . $this->ipsclass->adskin->form_dropdown('units', $units, $ban['units'] ),
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Email notification to this member?</b><br>(If so, you may edit the email below)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件提醒会员?</b><br>( 如果是, 您可以编辑下面的邮件 )" ,
 												                 $this->ipsclass->adskin->form_yes_no( "send_email", 0 )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Email contents</b><br>(Tags: {membername} = member's name, {date_end} = ban end)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {membername} = 会员用户名, {date_end} = 锁定结束时间)" ,
 												                 $this->ipsclass->adskin->form_textarea( "email_contents", $contents )
 									                    ), "", 'top'       );
 									     									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Suspend This Account");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("锁定此帐户");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1010,9 +1010,9 @@ class ad_member
 	
 	function member_suspend_complete()
 	{
-		$this->ipsclass->admin->page_title = "Account Suspension";
+		$this->ipsclass->admin->page_title = "锁定帐户";
 		
-		$this->ipsclass->admin->page_detail = "Automated temporary member suspension. Confirmation and information";
+		$this->ipsclass->admin->page_detail = "锁定会员帐户, 确认信息";
 		
 		$this->ipsclass->input['mid'] = intval($this->ipsclass->input['mid']);
 		
@@ -1037,7 +1037,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -1082,7 +1082,7 @@ class ad_member
 			$msg = str_replace( "{date_end}"  , $this->ipsclass->admin->get_date( $show_ban['date_end'], 'LONG') , $msg );
 			
 			$this->email->message = $this->email->clean_message($msg);
-			$this->email->subject = "Account Suspension Notification";
+			$this->email->subject = "帐户锁定提醒";
 			$this->email->to      = $member['email'];
 			$this->email->send_mail();
 		}
@@ -1098,9 +1098,9 @@ class ad_member
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
 		
-		$this->ipsclass->admin->save_log("Suspended Member(s) ( {$member['members_display_name']} )");
+		$this->ipsclass->admin->save_log("锁定会员（{$member['members_display_name']}）");
 		
-		$this->ipsclass->admin->done_screen("Suspended Member(s)", "Member Search", "{$this->ipsclass->form_code}".$page_query, "redirect" );
+		$this->ipsclass->admin->done_screen("会员已锁定", "会员搜索", "{$this->ipsclass->form_code}".$page_query, "redirect" );
 	}
 	
 	/*-------------------------------------------------------------------------*/
@@ -1120,9 +1120,9 @@ class ad_member
 		{
 			$this->ipsclass->DB->do_update( 'members', array( 'temp_ban' => $new_ban ), "" );
 			
-			$this->ipsclass->admin->save_log("Unsuspended all member accounts");
+			$this->ipsclass->admin->save_log("解锁所有会员帐户");
 		
-			$msg = "All Accounts Unsuspended";
+			$msg = "所有帐户已解锁";
 		}
 		else
 		{
@@ -1135,9 +1135,9 @@ class ad_member
 			
 			$member = $this->ipsclass->DB->fetch_row();
 			
-			$this->ipsclass->admin->save_log("Unsuspended {$member['members_display_name']}");
+			$this->ipsclass->admin->save_log("解锁会员 {$member['members_display_name']}");
 		
-			$msg = "{$member['members_display_name']} Unsuspended";
+			$msg = "{$member['members_display_name']} 已解锁";
 		}
 		
 		//-----------------------------------------
@@ -1146,7 +1146,7 @@ class ad_member
 		
 		$page_query = "&members_display_name=".$member['members_display_name'];
 		
-		$this->ipsclass->admin->done_screen($msg, "Member Search", "{$this->ipsclass->form_code}".$page_query, "redirect" );
+		$this->ipsclass->admin->done_screen($msg, "会员搜索", "{$this->ipsclass->form_code}".$page_query, "redirect" );
 	}
 	
 	
@@ -1180,7 +1180,7 @@ class ad_member
 		
 		if ($this->ipsclass->input['new_name'] == "")
 		{
-			$this->member_change_display_name( "You must enter a new name for this member" );
+			$this->member_change_display_name( "您必须输入一个新昵称" );
 			exit();
 		}
 		
@@ -1204,7 +1204,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -1214,7 +1214,7 @@ class ad_member
 		
 		if ( $display_name == $member['members_display_name'] )
 		{
-			$this->member_change_display_name("The new name is the same as the old name, that is illogical captain");
+			$this->member_change_display_name("新昵称和旧的一样，老大，您不是开玩笑吧");
 			exit();
 		}
 		
@@ -1236,7 +1236,7 @@ class ad_member
 		
 		if ( ! $display_name )
 		{
-			$this->member_change_display_name("You must enter a name to use");
+			$this->member_change_display_name("您必须输入昵称");
 			exit();
 		}
 		
@@ -1246,7 +1246,7 @@ class ad_member
 
 		if ( preg_match( "#[\[\];,\|]#", str_replace('&#39;', "'", str_replace('&amp;', '&', $unicode_dname) ) )  )
 		{
-			$this->member_change_display_name("The new name contains illegal characters");
+			$this->member_change_display_name("新昵称包含非法字符");
 			exit();
 		}
 		
@@ -1328,7 +1328,7 @@ class ad_member
     	
     	if ( $found_name )
     	{
-    		$this->member_change_display_name("That name is already taken by another member");
+    		$this->member_change_display_name("这个昵称已经被另一个会员使用了");
 			exit();
     	}
     	
@@ -1420,7 +1420,7 @@ class ad_member
 		// LOG
 		//-----------------------------------------
 				
-		$this->ipsclass->admin->save_log("Changed Member's Display Name '{$member['members_display_name']}' to '$display_name'");
+		$this->ipsclass->admin->save_log("修改会员“{$member['members_display_name']}”的昵称为“$display_name”");
 		
 		//-----------------------------------------
 		// Redirect
@@ -1428,7 +1428,7 @@ class ad_member
 
 		$this->ipsclass->input['members_display_name'] = urlencode($display_name);
 		
-		$this->ipsclass->admin->done_screen("Member's Display Name Changed", "Member Search", "{$this->ipsclass->form_code}".$this->_generate_page_string_url(), "redirect" );
+		$this->ipsclass->admin->done_screen("会员昵称已修改", "会员搜索", "{$this->ipsclass->form_code}".$this->_generate_page_string_url(), "redirect" );
 	}
 	
 	
@@ -1449,9 +1449,9 @@ class ad_member
 		// Page titles
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Change Member Name";
-		$this->ipsclass->admin->page_detail = "You may enter a new name for this member.";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Edit Member Display Name' );
+		$this->ipsclass->admin->page_title  = "会员昵称";
+		$this->ipsclass->admin->page_detail = "您可以为这个会员修改昵称.";
+		$this->ipsclass->admin->nav[] 		= array( '', '修改会员昵称' );
 		
 		//-----------------------------------------
 		// Check
@@ -1482,11 +1482,11 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
-		$contents = "{old_name},\nAn administrator has changed your member name on {$this->ipsclass->vars['board_name']}.\n\nYour new name is: {new_name}\n\nPlease remember this as you may need to use this new name when you log in next time.\nBoard Address: {$this->ipsclass->vars['board_url']}/index.php";
+		$contents = "{old_name},\n管理员更改了您在 {$this->ipsclass->vars['board_name']} 的昵称。\n\n您的新昵称是：{new_name}\n\n论坛地址：：{$this->ipsclass->vars['board_url']}/index.php";
 		
 		//-----------------------------------------
 		// FORM
@@ -1509,25 +1509,25 @@ class ad_member
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Change Member's Display Name" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "修改会员昵称" );
 		
 		if ($message != "")
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Error Message:</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>错误消息:</b>" ,
 																				 "<b><span style='color:red'>$message</span></b>",
 																		)      );
 		}
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Current Member's Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>当前会员昵称</b>" ,
 																			 $member['members_display_name'],
 																	)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>New Member's Display Name</b><div class='desctext'>Illegal characters: [ ] | ; &#036;<br />Max. Chars: {$this->ipsclass->vars['max_user_name_length']}</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>新昵称</b><div class='desctext'>非法字符: [ ] | ; &#036;<br />最大字符数: {$this->ipsclass->vars['max_user_name_length']}</div>" ,
 												                 			$this->ipsclass->adskin->form_input( "new_name", $this->ipsclass->input['new_name'] )
 									                    			)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Change this member's display name");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("更改昵称");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1562,7 +1562,7 @@ class ad_member
 		
 		if ($this->ipsclass->input['new_name'] == "")
 		{
-			$this->member_change_name_start("You must enter a new name for this member");
+			$this->member_change_name_start("您必须输入会员的新用户名");
 			exit();
 		}
 		
@@ -1592,7 +1592,7 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
@@ -1600,7 +1600,7 @@ class ad_member
 		
 		if ($this->ipsclass->input['new_name'] == $member['name'])
 		{
-			$this->member_change_name_start("The new name is the same as the old name, that is illogical captain");
+			$this->member_change_name_start("新用户名和旧的一样，老大，您不是开玩笑吧");
 			exit();
 		}
 		
@@ -1619,7 +1619,7 @@ class ad_member
 			
 			if( $check['id'] != $member['id'] )
 			{
-				$this->member_change_name_start("The name '$new_name' already exists, please choose another");
+				$this->member_change_name_start("用户名 '$new_name' 已经存在，请重新输入");
 				exit();
 			}
 		}
@@ -1637,7 +1637,7 @@ class ad_member
 				
 				if ( $this->ipsclass->DB->get_num_rows() )
 				{
-					$this->member_change_name_start("The name '$new_name' is already being used as someone's display name, please choose another");
+					$this->member_change_name_start("用户名 '$new_name' 是另一个会员的昵称, 请重新输入");
 					exit();
 				}
 			}
@@ -1749,12 +1749,12 @@ class ad_member
 			$msg = str_replace( "{new_name}", $new_name      , $msg );
 			
 			$this->email->message = stripslashes($this->email->clean_message($msg));
-			$this->email->subject = "Member Name Change Notification";
+			$this->email->subject = "用户名修改提醒";
 			$this->email->to      = $member['email'];
 			$this->email->send_mail();
 		}
 		
-		$this->ipsclass->admin->save_log("Changed Member Name '{$member['name']}' to '$new_name'");
+		$this->ipsclass->admin->save_log("修改会员 '{$member['name']}' 用户名为 '$new_name'");
 		
 		if ( USE_MODULES == 1 )
 		{
@@ -1775,7 +1775,7 @@ class ad_member
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
 		
-		$this->ipsclass->admin->done_screen("Member's Name Changed", "Member Search", "{$this->ipsclass->form_code}".$page_query, "redirect" );
+		$this->ipsclass->admin->done_screen("会员用户名已修改", "会员搜索", "{$this->ipsclass->form_code}".$page_query, "redirect" );
 	}
 	
 	
@@ -1788,9 +1788,9 @@ class ad_member
 	
 	function member_change_name_start($message="")
 	{
-		$this->ipsclass->admin->page_title = "Change Member Name";
-		$this->ipsclass->admin->page_detail = "You may enter a new name for this member.";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Edit Member Name' );
+		$this->ipsclass->admin->page_title = "修改会员用户名";
+		$this->ipsclass->admin->page_detail = "您可以在下面修改会员的用户名.";
+		$this->ipsclass->admin->nav[] 		= array( '', '修改会员用户名' );
 		
 		//-----------------------------------------
 		// check
@@ -1817,11 +1817,11 @@ class ad_member
 		{
 			if ( $member['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 		}
 		
-		$contents = "{old_name},\nAn administrator has changed your member name on {$this->ipsclass->vars['board_name']}.\n\nYour new name is: {new_name}\n\nPlease remember this as you may need to use this new name when you log in next time.\nBoard Address: {$this->ipsclass->vars['board_url']}/index.php";
+		$contents = "{old_name},\n {$this->ipsclass->vars['board_name']} 的管理员修改了您的用户名. \n\n您的新用户名是: {new_name}\n\n您下次登录时需要使用这个新用户名, 所以请您牢记. \n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
 		
 		//-----------------------------------------
 		// Redirect
@@ -1847,33 +1847,33 @@ class ad_member
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Change Member Name" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "修改会员用户名" );
 		
 		if ($message != "")
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Error Message:</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>错误消息:</b>" ,
 												                 	  "<b><span style='color:red'>$message</span></b>",
 									                    	 )      );
 		}
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Current Member's Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>当前用户名</b>" ,
 												                 $member['name'],
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>New Members Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>新用户名</b>" ,
 												                 $this->ipsclass->adskin->form_input( "new_name", $this->ipsclass->input['new_name'] )
 									                    )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Email notification to this member?</b><br>(If so, you may edit the email below)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发送邮件提醒该会员?</b><br>( 如果是，您可以在下面编辑邮件内容 )" ,
 												                 $this->ipsclass->adskin->form_yes_no( "send_email", 1 )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Email contents</b><br>(Tags: {old_name} = current name, {new_name} = new name)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {old_name} = 旧用户名, {new_name} = 新用户名)" ,
 												                 $this->ipsclass->adskin->form_textarea( "email_contents", $contents )
 									                    )      );
 									     									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Change this members name");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("修改会员用户名");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1915,17 +1915,17 @@ class ad_member
 	
 	function titles_start()
 	{
-		$this->ipsclass->admin->page_title = "Member Ranking Set Up";
-		$this->ipsclass->admin->page_detail = "This section allows you to modify, delete or add extra ranks.<br>If you wish to display pips below the members name, enter the number of pips. If you wish to use a custom image, simply enter the image name in the pips box. Note, these custom images must reside in the 'style_images/{img_dir}/folder_team_icons' directory of your installation";
+		$this->ipsclass->admin->page_title = "会员等级设置";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加, 修改或删除会员等级<br>如果您希望在会员的名称下面显示等级图片, 请输入等级图片代码. 如果您希望使用自定义图片, 只需要在相应空格输入文件名即可. 提示, 这些自定义图片必须存放在“style_images/{img_dir}/folder_team_icons”目录";
 		$this->ipsclass->admin->nav[] = array( '', 'Member Rank Set Up' );
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Title"      , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Min Posts"  , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Pips"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"     , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"     , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "等级名称"	, "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "所需帖子数"  , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "等级图片"	, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "编辑"		, "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除"		, "20%" );
 		
 		//-----------------------------------------
 		// Parse macro
@@ -1944,7 +1944,7 @@ class ad_member
     	$row['A_STAR'] = str_replace( "<#IMG_DIR#>", $mid['set_image_dir'], $row['macro_replace'] );
     	$row['A_STAR'] = preg_replace( "#style_images#", $this->ipsclass->vars['board_url'].'/style_images', $row['A_STAR'] );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Member Titles/Ranks" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "会员等级管理" );
 		
 		//-----------------------------------------
 		// Lets get on with it...
@@ -1973,8 +1973,8 @@ class ad_member
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>".$r['title']."</b>" ,
 																	 $r['posts'],
 																	 $img,
-																	 "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=rank_edit&id={$r['id']}'>Edit</a>",
-																	 "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=rank_delete&id={$r['id']}'>Delete</a>",
+																	 "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=rank_edit&id={$r['id']}'>编辑</a>",
+																	 "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=rank_delete&id={$r['id']}'>删除</a>",
 															)      );
 		}
 									     
@@ -1994,22 +1994,22 @@ class ad_member
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Add a Member Rank" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "添加会员等级" );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rank Title</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>等级名称</b>" ,
 												  $this->ipsclass->adskin->form_input( "title" )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Minimum number of posts needed</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>所需帖子数</b>" ,
 												  $this->ipsclass->adskin->form_input( "posts" )
 									     )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Number of pips</b><div class='graytext'>Or pip image - image must be uploaded into 'style_images/{img_dir}/folder_team_icons'</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>等级图片代码</b><div class='graytext'>或者等级图片文件名 - 图片必须存放在 'style_images/{img_dir}/folder_team_icons'目录</div>" ,
 												  $this->ipsclass->adskin->form_input( "pips" )
 									     )      );
 									     									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Add this rank");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("添加等级");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2028,7 +2028,7 @@ class ad_member
 		{
 			if ($this->ipsclass->input[ $field ] == "")
 			{
-				$this->ipsclass->admin->error("You must complete the form fully");
+				$this->ipsclass->admin->error("您必须完整填写表单");
 			}
 		}
 		
@@ -2044,7 +2044,7 @@ class ad_member
 		
 		$this->titles_recache();
 												  
-		$this->ipsclass->admin->done_screen("Rank Added", "Member Ranking Control", "{$this->ipsclass->form_code}&code=title", 'redirect' );					
+		$this->ipsclass->admin->done_screen("等级已添加", "会员等级管理", "{$this->ipsclass->form_code}&code=title", 'redirect' );					
 		
 		
 	}
@@ -2066,9 +2066,9 @@ class ad_member
 		
 		$this->titles_recache();
 		
-		$this->ipsclass->admin->save_log("Removed Rank Setting");
+		$this->ipsclass->admin->save_log("删除会员等级");
 		
-		$this->ipsclass->admin->done_screen("Rank Removed", "Member Ranking Control", "{$this->ipsclass->form_code}&code=title", 'redirect' );
+		$this->ipsclass->admin->done_screen("等级已删除", "会员等级管理", "{$this->ipsclass->form_code}&code=title", 'redirect' );
 		
 	}
 	
@@ -2107,7 +2107,7 @@ class ad_member
 		{
 			if ( $this->ipsclass->input[ $field ] == "" )
 			{
-				$this->ipsclass->admin->error( "You must complete the form fully" );
+				$this->ipsclass->admin->error( "您必须完整填写表单" );
 			}
 		}
 		
@@ -2122,9 +2122,9 @@ class ad_member
 								
 		$this->titles_recache();
 												  
-		$this->ipsclass->admin->save_log("Edited Rank Setting");
+		$this->ipsclass->admin->save_log("编辑会员等级");
 		
-		$this->ipsclass->admin->done_screen("Rank Edited", "Member Ranking Control", "{$this->ipsclass->form_code}&code=title", 'redirect' );					
+		$this->ipsclass->admin->done_screen("等级已编辑", "会员等级管理", "{$this->ipsclass->form_code}&code=title", 'redirect' );					
 	}
 	
 	/*-------------------------------------------------------------------------*/
@@ -2133,8 +2133,8 @@ class ad_member
 	
 	function titles_rank_setup($mode='edit')
 	{
-		$this->ipsclass->admin->page_title = "Member Rank Set Up";
-		$this->ipsclass->admin->page_detail = "If you wish to display pips below the members name, enter the number of pips. If you wish to use a custom image, simply enter the image name in the pips box. Note, these custom images must reside in the 'style_images/{img_dir}/folder_team_icons' directory of your installation";
+		$this->ipsclass->admin->page_title = "会员等级设置";
+		$this->ipsclass->admin->page_detail = "如果您希望在会员的名称下面显示等级图片, 请输入等级图片代码.  如果您希望使用自定义图片, 只需要在相应空格输入文件名即可. 提示, 这些自定义图片必须存放在“style_images/{img_dir}/folder_team_icons”目录";
 		$this->ipsclass->admin->nav[] 		= array( '', 'Member Rank Set Up' );
 		
 		if ( $mode == 'edit' )
@@ -2151,13 +2151,13 @@ class ad_member
 		
 			$rank = $this->ipsclass->DB->fetch_row();
 			
-			$button = "Complete Edit";
+			$button = "保存修改";
 		}
 		else
 		{
 			$form_code = 'do_add_rank';
 			$rank = array( 'posts' => "", 'title' => "", 'pips' => "");
-			$button = "Add this rank";
+			$button = "添加等级";
 		}
 		
 		//-----------------------------------------
@@ -2175,18 +2175,18 @@ class ad_member
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Member Ranks" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "会员等级" );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rank Title</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>等级名称</b>" ,
 												  							 $this->ipsclass->adskin->form_input( "title", $rank['title'] )
 									     							)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Minimum number of posts needed</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>所需帖子数</b>" ,
 												  							 $this->ipsclass->adskin->form_input( "posts", $rank['posts'] )
 									     							)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Number of pips (Max: 100)</b><br>(Or pip image)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>等级图片代码 (最大: 100)</b><br>(或文件名)" ,
 												  							 $this->ipsclass->adskin->form_input( "pips", $rank['pips'] )
 									     							)      );
 									     									     
@@ -2201,7 +2201,7 @@ class ad_member
 	
 	function member_prune_confirm($ids=array(), $query)
 	{
-		$this->ipsclass->admin->nav[] = array( '', 'Prune Member(s)' );
+		$this->ipsclass->admin->nav[] = array( '', '会员清理' );
 		
 		//-----------------------------------------
 		// Got members?
@@ -2215,9 +2215,9 @@ class ad_member
 			}
 		}
 		
-		$this->ipsclass->admin->page_title = "Member Pruning";
+		$this->ipsclass->admin->page_title = "会员清理";
 		
-		$this->ipsclass->admin->page_detail = "Please confirm your action.";
+		$this->ipsclass->admin->page_detail = "请确认您的操作.";
 		
 		//-----------------------------------------
 		
@@ -2234,21 +2234,21 @@ class ad_member
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Member Prune Confirmation" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "会员清理确认" );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Number of members to prune</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>符合条件的会员数量</b>" ,
 												  				 count($ids)
 									     				)      );
 									     
 		if ( count($member_arr) > 0 )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Members to prune</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员清理</b>" ,
 												    		  implode( '<br />', $member_arr )
 											                )      );
 		}
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Complete Member Pruning");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("确认清理");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2277,7 +2277,7 @@ class ad_member
 		
 		if ($query == "")
 		{
-			$this->ipsclass->admin->error("Prune query error, no query to use");
+			$this->ipsclass->admin->error("找不到符合清理条件的会员");
 		}
 		
 		//-----------------------------------------
@@ -2313,9 +2313,9 @@ class ad_member
 		
 		$this->member_delete_do($ids);
 		#@here
-		$this->ipsclass->admin->save_log("Deleted Member(s) ( ".implode(",",$names)." )");
+		$this->ipsclass->admin->save_log("删除会员 ( ".implode(",",$names)." )");
 		
-		$this->ipsclass->admin->done_screen("Member Account(s) Deleted", "Member Control", "{$this->ipsclass->form_code}" );
+		$this->ipsclass->admin->done_screen("会员帐户已删除", "会员管理", "{$this->ipsclass->form_code}" );
 		
 	}
 	
@@ -2385,7 +2385,7 @@ class ad_member
 		
 		if ( ! count( $tmp_mids ) )
 		{
-			$this->ipsclass->admin->error("No members to delete");
+			$this->ipsclass->admin->error("没有会员删除");
 		}
 		
 		$mids = ' IN ('.implode(",",$tmp_mids).')';
@@ -2543,7 +2543,7 @@ class ad_member
 		
 		if ( ! $this->ipsclass->input['mid'] )
 		{
-			$this->ipsclass->main_msg = "No member found";
+			$this->ipsclass->main_msg = "找不到会员";
 			$this->search_form();
 		}
 		
@@ -2594,7 +2594,7 @@ class ad_member
 		
 		if ( ! count( $names ) )
 		{
-			$this->ipsclass->main_msg = "No member(s) found";
+			$this->ipsclass->main_msg = "找不到会员";
 			$this->search_form();
 		}
 		
@@ -2615,9 +2615,9 @@ class ad_member
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
 		
-		$this->ipsclass->admin->save_log("Deleted Member(s) ( ".implode(",",$names)." )");
+		$this->ipsclass->admin->save_log("删除会员 ( ".implode(",",$names)." )");
 		
-		$this->ipsclass->admin->done_screen("Member(s) Deleted", "Member Search", "{$this->ipsclass->form_code}".$page_query, "redirect" );
+		$this->ipsclass->admin->done_screen("会员已删除", "会员搜索", "{$this->ipsclass->form_code}".$page_query, "redirect" );
 		
 	}
 		
@@ -2634,9 +2634,9 @@ class ad_member
 		// Page details
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Pre Register a member";
-		$this->ipsclass->admin->page_detail = "You may pre-register members using this form.";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Add Member' );
+		$this->ipsclass->admin->page_title  = "添加会员";
+		$this->ipsclass->admin->page_detail = "您可以在这里手工添加会员.";
+		$this->ipsclass->admin->nav[] 		= array( '', '添加会员' );
 		
 		//-----------------------------------------
 		// Got admin restrictions?
@@ -2644,8 +2644,7 @@ class ad_member
 		
 		if ( $this->ipsclass->member['row_perm_cache'] )
 		{
-			$this->ipsclass->html .= "<div class='input-warn-content' style='color:black'><strong>Note: You have ACP Permission Restrictions.</strong><br />Any member you create with a group that
-									  that has access to the ACP will inherit your permission restrictions automatically.</div><br />";
+			$this->ipsclass->html .= "<div class='input-warn-content' style='color:black'><strong>提示: 您在后台的权限受到限制. </strong><br />如果您添加的会员可以访问后台,他将继承您的限制.</div><br />";
 		}
 		
 		//-----------------------------------------
@@ -2699,7 +2698,7 @@ class ad_member
     	
     	if ( count( $fields->out_fields ) )
     	{
-    		$custom_out = $this->ipsclass->adskin->add_td_basic( "Custom Profile Fields", "left", "tablesubheader", 2 );
+    		$custom_out = $this->ipsclass->adskin->add_td_basic( "会员附加信息", "left", "tablesubheader", 2 );
     		
 			foreach( $fields->out_fields as $id => $data )
 			{
@@ -2729,36 +2728,36 @@ class ad_member
 																			 4 => array( 'section', $this->ipsclass->section_code ),
 																   )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Member Registration" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "会员注册" );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Member Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>用户名</b>" ,
 																			 $this->ipsclass->adskin->form_input( "name", isset($_POST['name']) ? $this->ipsclass->txt_stripslashes($_POST['name']) : '' )
 																	)      );
 																	
 		if( $this->ipsclass->vars['auth_allow_dnames'] )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Member Display Name</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>昵称</b>" ,
 																				 $this->ipsclass->adskin->form_input( "members_display_name", isset($_POST['members_display_name']) ?  $this->ipsclass->txt_stripslashes($_POST['members_display_name']) : '' )
 																		)      );
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Password</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>密码</b>" ,
 																			  $this->ipsclass->adskin->form_input( "password", isset($_POST['password']) ? $_POST['password'] : '', 'password' )
 									     							)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Email Address</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件地址</b>" ,
 												  							$this->ipsclass->adskin->form_input( "email", isset($_POST['email']) ? $_POST['email'] : '' )
 									     							)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Member Group</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>用户组</b>" ,
 																			  $this->ipsclass->adskin->form_dropdown( "mgroup",
 																									$mem_group,
 												  													isset($_POST['mgroup']) ? $_POST['mgroup'] : $this->ipsclass->vars['member_group']
 												 							 					  )
 									   							    )      );
 									   							    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>COPPA User?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>COPPA 用户?</b>" ,
 												  							$this->ipsclass->adskin->form_yes_no( "coppa", isset($_POST['coppa']) ? $_POST['coppa'] : '' ) .
 												  							'&nbsp&nbsp;&nbsp;' . $this->ipsclass->adskin->form_checkbox( "sendemail", isset($_POST['sendemail']) ? $_POST['sendemail'] : 1 ) . "Send Confirmation Email?"
 									     							)      );
@@ -2768,7 +2767,7 @@ class ad_member
 			$this->ipsclass->html .= $custom_out;
 		}
 									     						     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Register Member");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("创建会员");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2802,7 +2801,7 @@ class ad_member
 		{
 			if ( ! $_POST[ $field ] )
 			{
-				$this->ipsclass->admin->error("You must complete the form fully!");
+				$this->ipsclass->admin->error("您必须完整填写表单!");
 			}
 		}
 		
@@ -2814,13 +2813,13 @@ class ad_member
 		{
 			if ($this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'])
 			{
-				$this->ipsclass->admin->error("Non root admins cannot create a member in the root admin group");
+				$this->ipsclass->admin->error("非系统管理员不能创建系统管理员组的会员");
 			}
 		}
 		
 		if( preg_match( "#[\;\#\n\r\*\'\"<>&\%\!\(\)\{\}\[\]\?\\/\s]#", $in_email) )
 		{
-			$this->ipsclass->main_msg = "Email address cannot contain these characters: [ ] ; # & ! * ' &quot; &lt; &gt; % ( ) { } ? &#092;";
+			$this->ipsclass->main_msg = "邮件地址不能包含这些字符: [ ] ; # & ! * ' &quot; &lt; &gt; % ( ) { } ? &#092;";
 			$this->member_add_form();
 			return;
 		}
@@ -2830,7 +2829,7 @@ class ad_member
 			
 			if( !$in_email OR strlen($in_email) < 6 )
 			{
-				$this->ipsclass->main_msg = "An invalid email address was entered.  Please choose another one.";
+				$this->ipsclass->main_msg = "输入了无效的邮件地址, 请重新输入.";
 				$this->member_add_form();
 				return;
 			}
@@ -2849,7 +2848,7 @@ class ad_member
 		
 		if ( preg_match( "#[\[\];,\|]#", str_replace('&#39;', "'", str_replace('&amp;', '&', $members_display_name) ) ) )
 		{
-			$this->ipsclass->main_msg = "Display name cannot contain these characters: [ ] ; , |";
+			$this->ipsclass->main_msg = "昵称不能包含这些字符: [ ] ; , |";
 			$this->member_add_form();
 			return;
 		}	
@@ -2885,7 +2884,7 @@ class ad_member
     	
     	if( $this->han_login->return_code != 'METHOD_NOT_DEFINED' AND $this->han_login->return_code != 'EMAIL_NOT_IN_USE' )
     	{
-			$this->ipsclass->main_msg = "The selected email address is already in use.";
+			$this->ipsclass->main_msg = "邮件地址已存在, 请重新输入.";
 			$this->member_add_form();
 			return;
     	}
@@ -2899,7 +2898,7 @@ class ad_member
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->main_msg = "We already have a member by that name, please select another";
+			$this->ipsclass->main_msg = "用户名已存在, 请重新输入";
 			$this->member_add_form();
 			return;
 		}
@@ -2917,7 +2916,7 @@ class ad_member
 				
 				if ( $this->ipsclass->DB->get_num_rows() )
 				{
-					$this->ipsclass->main_msg = "We already have a member using this user name as their display name, please select another";
+					$this->ipsclass->main_msg = "该用户名是某个会员的昵称, 请重新输";
 					$this->member_add_form();
 					return;
 				}
@@ -2933,7 +2932,7 @@ class ad_member
 			
 			if ( $name_check['id'] )
 			{
-				$this->ipsclass->main_msg = "We already have a member using this name as their display name, please select another";
+				$this->ipsclass->main_msg = "该用户名是某个会员的昵称, 请重新输入";
 				$this->member_add_form();
 				return;
 			}
@@ -2953,7 +2952,7 @@ class ad_member
 				
 				if ( $this->ipsclass->DB->get_num_rows() )
 				{
-					$this->ipsclass->main_msg = "We already have a member using this name as their display name, please select another";
+					$this->ipsclass->main_msg = "该用户名是某个会员的昵称, 请重新输入";
 					$this->member_add_form();
 					return;
 				}
@@ -2966,7 +2965,7 @@ class ad_member
 		
 		if ( $this->ipsclass->txt_mb_strlen( $in_username ) > 32 )
 		{
-			$this->ipsclass->main_msg = "The username cannot be longer than 32 characters!";
+			$this->ipsclass->main_msg = "用户名不能大于 32 个字符!";
 			$this->member_add_form();
 			return;
 		}		
@@ -2978,7 +2977,7 @@ class ad_member
 		
 		if ($email_check['id'])
 		{
-			$this->ipsclass->main_msg = "We already have a member with that email address, please choose another email address";
+			$this->ipsclass->main_msg = "邮件地址已存在, 请重新输入";
 			$this->member_add_form();
 			return;
 		}
@@ -3038,7 +3037,7 @@ class ad_member
 
 		if( $this->han_login->return_code != 'METHOD_NOT_DEFINED' AND $this->han_login->return_code != 'SUCCESS' )
 		{
-			$this->ipsclass->main_msg = "The member could not be added ({$this->han_login->return_code}).<br />" . $this->han_login->return_details;
+			$this->ipsclass->main_msg = "无法创建会员 ({$this->han_login->return_code}).<br />" . $this->han_login->return_details;
 			$this->member_add_form();
 			return;
 		}
@@ -3182,7 +3181,7 @@ class ad_member
 		// Log and bog?
 		//-----------------------------------------
 		             
-		$this->ipsclass->admin->save_log("Created new member account for '{$this->ipsclass->input['name']}'");
+		$this->ipsclass->admin->save_log("创建会员帐户 '{$this->ipsclass->input['name']}'");
 		
 		$this->ipsclass->input['searchtype'] = 'normal';
 		$this->ipsclass->input['gotcount']   = 1;
@@ -3203,10 +3202,10 @@ class ad_member
 		// INIT
 		//-----------------------------------------
 		
-		$mem_group = array( 0 => array( 'all', 'Any Group') );
+		$mem_group = array( 0 => array( 'all', '任意用户组') );
 		
-		$this->ipsclass->admin->page_title  = "Edit a member";
-		$this->ipsclass->admin->page_detail = "Search for a member.";
+		$this->ipsclass->admin->page_title  = "编辑会员";
+		$this->ipsclass->admin->page_detail = "搜索会员.";
 		
 		//-----------------------------------------
 		// Saved results?
@@ -3245,13 +3244,13 @@ class ad_member
 		// Printy poos 
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Member Search" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索会员" );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Member's Log In User Name</b><div class='graytext'>This can be left blank if you're using more options below</div>",
-																			 $this->ipsclass->adskin->form_dropdown( 'namewhere', array( 0 => array( 'begin'   , 'Begins with' ),
-																																		 1 => array( 'is'      , 'Is'          ),
-																																		 2 => array( 'contains', 'Contains'    ),
-																																		 3 => array( 'ends'    , 'Ends with'   )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员用户名</b><div class='graytext'>如果您使用下面的搜索条件, 这里可以留空</div>",
+																			 $this->ipsclass->adskin->form_dropdown( 'namewhere', array( 0 => array( 'begin'   , '开始于' ),
+																																		 1 => array( 'is'      , '等于'          ),
+																																		 2 => array( 'contains', '包含'    ),
+																																		 3 => array( 'ends'    , '结尾于'   )
 																																	   ), isset($_POST['namewhere']) ? $_POST['namewhere'] : ''
 																											 )
 																			 .'&nbsp;'. $this->ipsclass->adskin->form_input( "name", isset($_POST['name']) ? $_POST['name'] : '' )
@@ -3259,78 +3258,78 @@ class ad_member
 	
 		if ( $this->ipsclass->vars['auth_allow_dnames'] )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>OR</u> Member's Display Name</b><div class='graytext'>This can be left blank if you're using more options below</div>",
-																			 $this->ipsclass->adskin->form_dropdown( 'dnamewhere', array( 0 => array( 'begin'   , 'Begins with' ),
-																																		 1 => array( 'is'      , 'Is'          ),
-																																		 2 => array( 'contains', 'Contains'    ),
-																																		 3 => array( 'ends'    , 'Ends with'   )
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>OR</u> Member's Display Name</b><div class='graytext'>如果您使用下面的搜索条件, 这里可以留空</div>",
+																			 $this->ipsclass->adskin->form_dropdown( 'dnamewhere', array( 0 => array( 'begin'   , '开始于' ),
+																																		 1 => array( 'is'      , '等于'          ),
+																																		 2 => array( 'contains', '包含'    ),
+																																		 3 => array( 'ends'    , '结尾于'   )
 																																	   ), isset($_POST['dnamewhere']) ? $_POST['dnamewhere'] : ''
 																											 )
 																			 .'&nbsp;'. $this->ipsclass->adskin->form_input( "members_display_name", isset($_POST['members_display_name']) ? $_POST['members_display_name'] : '' )
 																	)      );
 		}
 								     				
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>OR</u> Member's ID is...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>或者</u> 会员 ID 为...</b>" ,
 												                 $this->ipsclass->adskin->form_input( "memberid", isset($_POST['mid']) ? $_POST['mid'] : '' )
 									                    )      );
 									     				
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Type of Search</b>" ,
-												                 $this->ipsclass->adskin->form_dropdown( "searchtype", array( 0 => array( 'normal', 'Find Members to Edit or Delete' ),
-												                 													    1 => array( 'prune' , 'Find Members to Prune (Mass Delete)' )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索类型</b>" ,
+												                 $this->ipsclass->adskin->form_dropdown( "searchtype", array( 0 => array( 'normal', '查找会员并编辑或删除' ),
+												                 													    1 => array( 'prune' , '查找会员并清理 (批量删除)' )
 												                 													  ), isset($_POST['searchtype']) ? $_POST['searchtype'] : '' )
 									                    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "Optional Search Parameters", "left", "tablesubheader" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "可选搜索条件", "left", "tablesubheader" );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Email Address contains...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件地址包含...</b>" ,
 												                 $this->ipsclass->adskin->form_input( "email", isset($_POST['email']) ? $_POST['email'] : '' )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Member Suspended</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>锁定的会员</b>" ,
 												                 $this->ipsclass->adskin->form_dropdown( "suspended", array( 0=>array('0','Either'),1=>array('yes', 'Yes'),2=>array('no', 'No') ), isset($_POST['suspended']) ? $_POST['suspended'] : '' )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>IP Address contains...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>IP 地址包含...</b>" ,
 												                 $this->ipsclass->adskin->form_input( "ip_address", isset($_POST['ip_address']) ? $_POST['ip_address'] : '' )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>AIM name contains...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>AIM 名字包含...</b>" ,
 												                 $this->ipsclass->adskin->form_input( "aim_name", isset($_POST['aim_name']) ? $_POST['aim_name'] : '' )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ICQ Number contains...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ICQ 号码包含...</b>" ,
 												                 $this->ipsclass->adskin->form_input( "icq_number", isset($_POST['icq_number']) ? $_POST['icq_number'] : '' )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Yahoo! Identity contains...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Yahoo! 身份证包含...</b>" ,
 												                 $this->ipsclass->adskin->form_input( "yahoo", isset($_POST['yahoo']) ? $_POST['yahoo'] : '' )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Signature contains...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>签名包含...</b>" ,
 												                 $this->ipsclass->adskin->form_input( "signature", isset($_POST['signature']) ? $_POST['signature'] : '' )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Less than <em>n</em> posts</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发贴数小于 <em>n</em> 篇</b>" ,
 												                 $this->ipsclass->adskin->form_input( "posts", isset($_POST['posts']) ? $_POST['posts'] : '' )
 									                    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Registered Between (MM-DD-YYYY)</b><div class='graytext'>Leave the first box blank to range from the earliest record and leave the last box blank to range to the current time now</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>注册时间 (MM-DD-YYYY)</b><div class='graytext'>留空第一个空格表示从最早时间开始搜索, 留空第二个空格表示搜索到当前时间</div>",
 												                 $this->ipsclass->adskin->form_simple_input( "registered_first", isset($_POST['registered_first']) ? $_POST['registered_first'] : '', 10 ). ' to ' .$this->ipsclass->adskin->form_simple_input( "registered_last", isset($_POST['registered_last']) ? $_POST['registered_last'] : '', 10 )
 									                    )      );
 									                    						     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Last Post Between (MM-DD-YYYY)</b><div class='graytext'>Leave the first box blank to range from the earliest record and leave the last box blank to range to the current time now</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>最后发贴时间 (MM-DD-YYYY)</b><div class='graytext'>留空第一个空格表示从最早时间开始搜索, 留空第二个空格表示搜索到当前时间</div>" ,
 												                 $this->ipsclass->adskin->form_simple_input( "last_post_first", isset($_POST['last_post_first']) ? $_POST['last_post_first'] : '', 10 ). ' to ' . $this->ipsclass->adskin->form_simple_input( "last_post_last", isset($_POST['last_post_last']) ? $_POST['last_post_last'] : '', 10 )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Last Active Between (MM-DD-YYYY)</b><div class='graytext'>Leave the first box blank to range from the earliest record and leave the last box blank to range to the current time now</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>最后活动时间 (MM-DD-YYYY)</b><div class='graytext'>留空第一个空格表示从最早时间开始搜索, 留空第二个空格表示搜索到当前时间</div>" ,
 												                 $this->ipsclass->adskin->form_simple_input( "last_activity_first", isset($_POST['last_activity_first']) ? $_POST['last_activity_first'] : '', 10 ). ' to ' . $this->ipsclass->adskin->form_simple_input( "last_activity_last", isset($_POST['last_activity_last']) ? $_POST['last_activity_last'] : '', 10 )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Is in group...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>所属用户组...</b>" ,
 												                 $this->ipsclass->adskin->form_dropdown( "mgroup", $mem_group, isset($_POST['mgroup']) ? $_POST['mgroup'] : '' )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Is in secondary group...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>第二组为...</b>" ,
 												                 $this->ipsclass->adskin->form_dropdown( "mgroup_others", $mem_group, isset($_POST['mgroup_others']) ? $_POST['mgroup_others'] : '' )
 									                    )      );									                    
 									                    
@@ -3353,7 +3352,7 @@ class ad_member
     	
     	if ( count( $fields->out_fields ) )
     	{
-    		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "Custom Profile Fields", "left", "tablesubheader" );
+    		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "用户附加信息", "left", "tablesubheader" );
     		
 			foreach( $fields->out_fields as $id => $data )
 			{
@@ -3372,7 +3371,7 @@ class ad_member
 			}
 		}
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Find Member");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("查找会员");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -3389,7 +3388,7 @@ class ad_member
 	
 	function search_results()
 	{
-		$this->ipsclass->admin->nav[] = array( '', 'Search Results' );
+		$this->ipsclass->admin->nav[] = array( '', '搜索结果' );
 		
 		$page_query = "";
 		$un_all     = "";
@@ -3431,7 +3430,7 @@ class ad_member
 					
 					if ( ! checkdate( $month, $day, $year ) )
 					{
-						$this->ipsclass->main_msg = "Date out of range (Month: $month, Day: $day, Year: $year). Dates should be in MM-DD-YYYY";
+						$this->ipsclass->main_msg = "日期超出范围( 月: $month, 日: $day, 年: $year ). 日期格式应该是 MM-DD-YYYY";
 						$this->search_form();
 					}
 					
@@ -3580,7 +3579,7 @@ class ad_member
 		
 		if ($count['count'] < 1)
 		{
-			$this->ipsclass->main_msg = "Your search query did not return any matches from the member database.";
+			$this->ipsclass->main_msg = "根据您的搜索条件没有找到任何匹配的会员.";
 			$this->search_form();
 		}
 		
@@ -3608,9 +3607,9 @@ class ad_member
 		
 		$page_query .= '&searchtype=normal&namewhere='.$this->ipsclass->input['namewhere'].'&gotcount='.$count['count'];
 		
-		$this->ipsclass->admin->page_title = "Your Member Search Results";
+		$this->ipsclass->admin->page_title = "您的会员搜索结果";
 		
-		$this->ipsclass->admin->page_detail = "Your search results.";
+		$this->ipsclass->admin->page_detail = "您的搜索结果.";
 		
 		//-----------------------------------------
 		
@@ -3619,8 +3618,8 @@ class ad_member
 		$pages = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $count['count'],
 														  'PER_PAGE'    => 25,
 														  'CUR_ST_VAL'  => $this->ipsclass->input['st'],
-														  'L_SINGLE'    => $un_all."Single Page",
-														  'L_MULTI'     => $un_all."Multi Page",
+														  'L_SINGLE'    => $un_all."单页",
+														  'L_MULTI'     => $un_all."多页",
 														  'BASE_URL'    => $this->ipsclass->base_url."&{$this->ipsclass->form_code}&showsusp={$this->ipsclass->input['showsusp']}&code={$this->ipsclass->input['code']}".$page_query,
 														)  );
 		
@@ -3630,7 +3629,7 @@ class ad_member
 		
 		$this->ipsclass->html .= "
 							<div class='tableborder'>
-							 <div class='tableheaderalt'>Member Search Results: {$count['count']} result(s) found</div>
+							 <div class='tableheaderalt'>会员搜索结果: 找到 {$count['count']} 个会员</div>
 							 <table cellpadding='4' cellspacing='0' border='0' width='100%'>
 						   ";
 						   
@@ -3650,12 +3649,12 @@ class ad_member
 			
 			if ( ! $r['temp_ban'] )
 			{
- 				$suspend_html = " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=banmember&mid={$r['id']}{$page_query}' title='Suspend Member'>Suspend Member...</a>";
+ 				$suspend_html = " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=banmember&mid={$r['id']}{$page_query}' title='Suspend Member'>定会员...</a>";
 			}
 			else
 			{
 				$s_ban        = $this->ipsclass->hdl_ban_line( $r['temp_ban'] );
-				$suspend_html = " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=unsuspend&mid={$r['id']}{$page_query}'>Unsuspend Member (".$this->ipsclass->admin->get_date( $s_ban['date_end'], 'LONG') .$sus_link.")...</a>";
+				$suspend_html = " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=unsuspend&mid={$r['id']}{$page_query}'>解锁会员 (".$this->ipsclass->admin->get_date( $s_ban['date_end'], 'LONG') .$sus_link.")...</a>";
 			}
 			
 			//-----------------------------------------
@@ -3698,11 +3697,11 @@ class ad_member
 						  	</tr>
 						  	<tr>
 						  	 <td width='1%' align='center'><img src='{$this->ipsclass->skin_acp_url}/images/memsearch_group.gif' border='0' /><td>
-						  	 <td width='99%'><strong>{$this->ipsclass->cache['group_cache'][$r['mgroup']]['g_title']}</strong> <span style='font-size:10px' class='graytext'>({$r['posts']} Posts)</span></td>
+						  	 <td width='99%'><strong>{$this->ipsclass->cache['group_cache'][$r['mgroup']]['g_title']}</strong> <span style='font-size:10px' class='graytext'>({$r['posts']} 个帖子)</span></td>
 						  	</tr>
 						  	<tr>
 						  	 <td width='1%' align='center'><img src='{$this->ipsclass->skin_acp_url}/images/memsearch_posts.gif' border='0' /><td>
-						  	 <td width='99%'><strong>Joined: {$joined}</strong></td>
+						  	 <td width='99%'><strong>注册时间: {$joined}</strong></td>
 						  	</tr>
 						  	</table>
 						  	</div>
@@ -3718,21 +3717,21 @@ EOF;
 			else
 			{
 				$people .= <<<EOF
-							new Array( img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=doform&mid={$r['id']}{$page_query}'>Edit Member's Profile...</a>",
-						  			  img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=changename&mid={$r['id']}{$page_query}'>Edit Member's Log In User Name...</a>",
+							new Array( img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=doform&mid={$r['id']}{$page_query}'>修改会员资料...</a>",
+						  			  img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=changename&mid={$r['id']}{$page_query}'>修改会员用户名...</a>",
 EOF;
 				if ( $this->ipsclass->vars['auth_allow_dnames'] )
 				{
 					$people .= <<<EOF
-										 img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=change_display_name&mid={$r['id']}{$page_query}'>Edit Member's Display Name...</a>",
+										 img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=change_display_name&mid={$r['id']}{$page_query}'>修改会员昵称...</a>",
 EOF;
 				}
 			
 				$people .= <<<EOF
-						  				 img_password + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=changepassword&id={$r['id']}{$page_query}'>Change/Reset Password...</a>",
-						  			     img_action + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=deleteposts&mid={$r['id']}{$page_query}'>Delete ALL Member's Posts/Topics...</a>",
+						  				 img_password + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=changepassword&id={$r['id']}{$page_query}'>修改密码...</a>",
+						  			     img_action + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=deleteposts&mid={$r['id']}{$page_query}'>删除该会员所有的帖子和主题...</a>",
 						  				 img_action + "$suspend_html",
-						  				 img_delete + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=member_delete&fromdel=1&_admin_auth_key={$this->ipsclass->_admin_auth_key}&mid={$r['id']}{$page_query}\"); return false;'>Delete Member...</a>"
+						  				 img_delete + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=member_delete&fromdel=1&_admin_auth_key={$this->ipsclass->_admin_auth_key}&mid={$r['id']}{$page_query}\"); return false;'>删除会员...</a>"
 										) );
 							 </script>
 							 </td>
@@ -3838,7 +3837,7 @@ EOF;
 		// Nav
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Edit Member' );
+		$this->ipsclass->admin->nav[] = array( '', '编辑会员' );
 		
 		//-----------------------------------------
         // Load and config the post parser
@@ -3859,7 +3858,7 @@ EOF;
 		{
 			if ( $mem['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 			
 			if ( $mem['mgroup_others'] )
@@ -3872,7 +3871,7 @@ EOF;
 					{
 						if( $other_mgroup == $this->ipsclass->vars['admin_group'] )
 						{
-							$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+							$this->ipsclass->admin->error("您不能编辑系统管理员");
 						}
 					}
 				}
@@ -3985,7 +3984,7 @@ EOF;
 		}
 		else
 		{
-			$form['_custom_fields'] = $this->ipsclass->adskin->add_td_row( array( array( "<b>No Custom Profile Fields Found", 2 ) ) );
+			$form['_custom_fields'] = $this->ipsclass->adskin->add_td_row( array( array( "<b>没有找到附加信息", 2 ) ) );
 		}
 			
 		
@@ -4041,9 +4040,9 @@ EOF;
 		// Start form
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title = "Edit member: ".$mem['members_display_name']." (ID: ".$mem['id'].")";
+		$this->ipsclass->admin->page_title = "编辑会员: ".$mem['members_display_name']." (ID: ".$mem['id'].")";
 		
-		$this->ipsclass->admin->page_detail = "You may alter the members settings from here.";
+		$this->ipsclass->admin->page_detail = "您可以在这里修改会员的信息.";
 		
 		//-----------------------------------------
 		// Mod posts bit
@@ -4075,7 +4074,7 @@ EOF;
 				$mod_arr['timespan'] = $hours;
 			}
 			
-			$form['_mod_extra'] = "<br /><span style='color:red'>Restriction in progress - remaining time has been recalculated</span>";
+			$form['_mod_extra'] = "<br /><span style='color:red'>处于限制中 - 剩余时间已重新计算</span>";
 		}
 		
 		//-----------------------------------------
@@ -4103,7 +4102,7 @@ EOF;
 				$post_arr['timespan'] = $hours;
 			}
 			
-			$form['_post_extra'] = "<br /><span style='color:red'>Restriction in progress - remaining time has been recalculated</span>";
+			$form['_post_extra'] = "<br /><span style='color:red'>处于限制中 - 剩余时间已重新计算</span>";
 		}
 		
 		//-----------------------------------------
@@ -4165,9 +4164,9 @@ EOF;
 		
 		# Profile Information
 		$form['avatar']      = $this->ipsclass->adskin->form_input( "avatar", $mem['avatar_location'] );
-		$form['avatar_type'] = $this->ipsclass->adskin->form_dropdown("avatar_type", array( 0 => array( 'local'  , 'Avatar Gallery'  ),
-																	  						1 => array( 'url'    , 'URL Avatar'      ),
-																							2 => array( 'upload' , 'Uploaded Avatar' ),
+		$form['avatar_type'] = $this->ipsclass->adskin->form_dropdown("avatar_type", array( 0 => array( 'local'  , '头像库'  ),
+																	  						1 => array( 'url'    , '连接头像'      ),
+																							2 => array( 'upload' , '上传头像' ),
 																						  ), $mem['avatar_type'] );
 		$form['avatar_size'] = $this->ipsclass->adskin->form_input( "avatar_size", $mem['avatar_size'] );
 		$form['location']    = $this->ipsclass->adskin->form_input( "location", $mem['location'] );
@@ -4245,7 +4244,7 @@ EOF;
 		
 		if ( ! $this->ipsclass->input['email'] )
 		{
-			$this->ipsclass->main_msg = "You must enter a valid email address for this user.";
+			$this->ipsclass->main_msg = "您必须输入有效的邮件地址.";
 			$this->member_do_edit_form();
 		}
 		
@@ -4317,7 +4316,7 @@ EOF;
 		{
 			if ( $memb['mgroup'] == $this->ipsclass->vars['admin_group'] )
 			{
-				$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+				$this->ipsclass->admin->error("您不能编辑系统管理员");
 			}
 			
 			if( $memb['mgroup_others'] )
@@ -4330,7 +4329,7 @@ EOF;
 					{
 						if( $other_mgroup == $this->ipsclass->vars['admin_group'] )
 						{
-							$this->ipsclass->admin->error("You are not permitted to edit root administrators");
+							$this->ipsclass->admin->error("您不能编辑系统管理员");
 						}
 					}
 				}
@@ -4525,7 +4524,7 @@ EOF;
 			
 			if ($email_check['id'])
 			{
-				$this->ipsclass->main_msg = "Cannot use this email address, another account is already using it";
+				$this->ipsclass->main_msg = "邮件地址已被另一个会员使用";
 				$this->member_do_edit_form();
 			}
 			
@@ -4541,7 +4540,7 @@ EOF;
 	    	
 	    	if( $this->han_login->return_code != 'METHOD_NOT_DEFINED' AND $this->han_login->return_code != 'SUCCESS' )
 	    	{
-				$this->ipsclass->main_msg = "The selected email address is already in use.";
+				$this->ipsclass->main_msg = "邮件地址已被另一个会员使用.";
 				$this->member_add_form();
 				return;
 	    	}
@@ -4743,7 +4742,7 @@ EOF;
 		
 		$this->ipsclass->admin->save_log("Edited Member '{$memb['members_display_name']}' account");
 		
-		$this->ipsclass->main_msg = "Member Edited";
+		$this->ipsclass->main_msg = "会员已编辑";
 		
 		$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url . '&section=content&act=mem&code=searchresults&searchtype=normal&memberid='.$this->ipsclass->input['mid'] );
 	}

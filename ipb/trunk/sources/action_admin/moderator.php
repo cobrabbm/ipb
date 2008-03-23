@@ -129,9 +129,9 @@ class ad_moderator {
 		
 		$this->rebuild_moderator_cache();
 		
-		$this->ipsclass->admin->save_log("Removed Moderator '{$name}'");
+		$this->ipsclass->admin->save_log("删除版主 '{$name}'");
 		
-		$this->ipsclass->main_msg = "Moderator(s) removed";
+		$this->ipsclass->main_msg = "版主已删除 removed";
 		$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
 	}	
 	
@@ -184,9 +184,9 @@ class ad_moderator {
 		
 		$this->rebuild_moderator_cache();
 		
-		$this->ipsclass->admin->save_log("Edited Moderator '{$mod['member_name']}'");
+		$this->ipsclass->admin->save_log("编辑版主 '{$mod['member_name']}'");
 		
-		$this->ipsclass->main_msg = "Moderator(s) edited";
+		$this->ipsclass->main_msg = "版主已编辑";
 		$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
 	}	
 	
@@ -200,7 +200,7 @@ class ad_moderator {
 	{
 		if ($this->ipsclass->input['fid'] == "")
 		{
-			$this->ipsclass->admin->error("You did not choose any forums to add this member to");
+			$this->ipsclass->admin->error("您没有选择该会员将要管理的论坛版块");
 		}
 		
 		//-----------------------------------------
@@ -276,15 +276,14 @@ class ad_moderator {
 			$mr_hash['group_name']  = $group['g_title'];
 			$mr_hash['is_group']    = 1;
 			
-			$ad_log = "Added Group '{$group['g_title']}' as a moderator";
-			
+			$ad_log = "将用户组“{$group['g_title']}”设置为版主";			
 		}
 		else
 		{
 		
 			if ($this->ipsclass->input['mem'] == "")
 			{
-				$this->ipsclass->admin->error("You did not choose a member to add as a moderator");
+				$this->ipsclass->admin->error("您没有选择要设置为版主的会员");
 			}
 			
 			$this->ipsclass->DB->simple_construct( array( 'select' => 'id, members_display_name, name', 'from' => 'members', 'where' => "id=".intval($this->ipsclass->input['mem']) ) );
@@ -292,7 +291,7 @@ class ad_moderator {
 		
 			if ( ! $mem = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->ipsclass->admin->error("Could not match that member name so there.");
+				$this->ipsclass->admin->error("无法匹配您输入的会员用户名.");
 			}
 			
 			//-----------------------------------------
@@ -311,7 +310,7 @@ class ad_moderator {
 			$mr_hash['member_id']   = $mem['id'];
 			$mr_hash['is_group']    = 0;
 			
-			$ad_log = "Added Member '{$mem['members_display_name']}' as a moderator";
+			$ad_log = "将会员 '{$mem['members_display_name']}' 设置为版主";
 		
 		}
 		
@@ -321,7 +320,7 @@ class ad_moderator {
 		
 		if ( count($forum_ids) == 0)
 		{
-			$this->ipsclass->admin->error("You did not select any forums that do not have this group or member already moderating.");
+			$this->ipsclass->admin->error("您没有选择该会员或用户组将要管理的论坛版块.");
 		}
 		
 		//-----------------------------------------
@@ -341,7 +340,7 @@ class ad_moderator {
 		
 		$this->rebuild_moderator_cache();
 		
-		$this->ipsclass->main_msg = "Moderator(s) added";
+		$this->ipsclass->main_msg = "版主已设置";
 		$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
 	}	
 	
@@ -394,7 +393,7 @@ class ad_moderator {
 		{
 			if ( $this->ipsclass->input['fid'] == "" )
 			{
-				$this->ipsclass->admin->error("You did not choose any forums to add this member to");
+				$this->ipsclass->admin->error("您没有选择该会员将要管理的论坛版块");
 			}	
 				
 			$mod   = array();
@@ -432,8 +431,8 @@ class ad_moderator {
 					$this->ipsclass->admin->error("Could not find that group to add as a moderator");
 				}
 				
-				$this->ipsclass->admin->page_detail = "Adding <b>group: {$group['g_title']}</b> as a moderator to: $thenames";
-				$this->ipsclass->admin->page_title = "Add a moderator group";
+				$this->ipsclass->admin->page_detail = "将 <b>用户组 {$group['g_title']}</b> 设置为论坛版块 $thenames 的版主";
+				$this->ipsclass->admin->page_title = "设置版主组";
 			}
 			else
 			{
@@ -455,8 +454,8 @@ class ad_moderator {
 					$member_name = $mem['name'];
 				}
 				
-				$this->ipsclass->admin->page_detail = "Adding a $member_name as a moderator to: $thenames";
-				$this->ipsclass->admin->page_title = "Add a moderator";
+				$this->ipsclass->admin->page_detail = "将会员 $member_name 设置为论坛版块 $thenames 的版主";
+				$this->ipsclass->admin->page_title = "设置版主";
 			
 			}
 			
@@ -472,8 +471,8 @@ class ad_moderator {
 			
 			$form_code = "doedit";
 			
-			$this->ipsclass->admin->page_title  = "Editing a moderator";
-			$this->ipsclass->admin->page_detail = "Please check the information carefully before submitting the form";
+			$this->ipsclass->admin->page_title  = "编辑版主";
+			$this->ipsclass->admin->page_detail = "提交表单之前请您仔细检查设置";
 			
 			$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'moderators', 'where' => "mid=".intval($this->ipsclass->input['mid']) ) );
 			$this->ipsclass->DB->simple_exec();
@@ -508,7 +507,7 @@ class ad_moderator {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "General Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "常规设置" );
 		
 		//-----------------------------------------
 		
@@ -524,62 +523,62 @@ class ad_moderator {
 				$forums[] = array( $r['id'], $r['name'] );
 			}
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Moderates forum...</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>管理论坛版块...</b>" ,
 												  $this->ipsclass->adskin->form_dropdown( "forum_id", $forums, $mod['forum_id'] )
 									     )      );
 		}
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can edit others posts/polls?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许编辑其他会员的帖子和投票?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("edit_post", $mod['edit_post'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can edit others topic titles?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许编辑其他会员的主题标题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("edit_topic", $mod['edit_topic'] )
 									     )      );							     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can delete others posts?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许删除其他会员的帖子?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("delete_post", $mod['delete_post'] )
 									     )      );							     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can delete others topics/polls?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许删除其他会员的主题和投票?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("delete_topic", $mod['delete_topic'] )
 									     )      );							     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can view posters IP addresses?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许查看发贴人的 IP 地址?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("view_ip", $mod['view_ip'] )
 									     )      );		
 				
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can open locked topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许打开关闭的主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("open_topic", $mod['open_topic'] )
 									     )      );		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can close open topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许关闭主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("close_topic", $mod['close_topic'] )
 									     )      );	
 									     	
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can move topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许移动主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("move_topic", $mod['move_topic'] )
 									     )      );							     
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can pin topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许置顶主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("pin_topic", $mod['pin_topic'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can unpin topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许取消置顶主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("unpin_topic", $mod['unpin_topic'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can split / merge topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许合并 / 分割主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("split_merge", $mod['split_merge'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can set topic open time?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许设置主题打开时间?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("mod_can_set_open_time", $mod['mod_can_set_open_time'] )
 									     )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can set topic close time?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许设置主题关闭时间?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("mod_can_set_close_time", $mod['mod_can_set_close_time'] )
 									     )      );
 
@@ -592,23 +591,23 @@ class ad_moderator {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Moderator Control Panel Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版主控制面板设置" );
 		
 		//-----------------------------------------
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can mass move topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许批量移动主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("mass_move", $mod['mass_move'] )
 									     )      );	
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can mass prune topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许批量删除主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("mass_prune", $mod['mass_prune'] )
 									     )      );
 									     						     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can set topics as visible and invisible?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许隐藏及恢复主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("topic_q", $mod['topic_q'] )
 									     )      );							     
 									     	
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can set posts as visible and invisible?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许隐藏及恢复帖子?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("post_q", $mod['post_q'] )
 									     )      );							     
 									     
@@ -621,11 +620,11 @@ class ad_moderator {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Advanced Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "高级设置" );
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can warn other users?</b><div class='desctext'>Note, if you enable this moderators will have warn permissions on any users, regardless of forum</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许警告用户?</b><div class='desctext'>提示,如果打开此权限, 该版主可以在任何论坛版块警告任何会员</div>" ,
 												  $this->ipsclass->adskin->form_yes_no("allow_warn", $mod['allow_warn'] )
 									     )      );							     
 									     	
@@ -633,7 +632,7 @@ class ad_moderator {
 		//										  $this->ipsclass->adskin->form_yes_no("edit_user", $mod['edit_user'] )
 		//							     )      );
 									   
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can use topic multi-moderation?</b><br>".$this->ipsclass->adskin->js_help_link('mod_mmod', 'Important Information' ) ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许使用主题批处理?</b><br>".$this->ipsclass->adskin->js_help_link('mod_mmod', '重要信息' ) ,
 												  $this->ipsclass->adskin->form_yes_no("can_mm", $mod['can_mm'] )
 									     )      );						     
 									     
@@ -677,7 +676,7 @@ class ad_moderator {
 		
 		if ( ! $this->ipsclass->input['fid'] )
 		{
-			$this->ipsclass->main_msg = "You must select some forums first!";
+			$this->ipsclass->main_msg = "您必须先选择论坛版块!";
 			$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
 		}
 		
@@ -687,7 +686,7 @@ class ad_moderator {
 		
 		if ( $this->ipsclass->input['name'] == "" )
 		{
-			$this->ipsclass->main_msg = "You must enter a name";
+			$this->ipsclass->main_msg = "您必须输入名字";
 			$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
 		}
 		
@@ -696,7 +695,7 @@ class ad_moderator {
 		
 		if (! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->main_msg = "Sorry, we could not find any members that matched the search string you entered";
+			$this->ipsclass->main_msg = "抱歉, 找不到匹配您的输入字串的会员";
 			$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
 		}
 		
@@ -711,9 +710,9 @@ class ad_moderator {
 			$form_array[] = array( $r['id'] , $r['name'] );
 		}
 		
-		$this->ipsclass->admin->page_title = "Add a moderator";
+		$this->ipsclass->admin->page_title = "设置版主";
 		
-		$this->ipsclass->admin->page_detail = "Please select the correct member name from the selection below to add as a moderator to the previously selected forums.";
+		$this->ipsclass->admin->page_detail = "请在下面选择正确的会员, 设置他为之前选择的论坛版块的版主.";
 		
 		//-----------------------------------------
 		// Show form
@@ -732,14 +731,14 @@ class ad_moderator {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search for a member" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "寻找会员" );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Choose from the matches...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>从匹配列表中选择...</b>" ,
 												  							 $this->ipsclass->adskin->form_dropdown( "member_id", $form_array )
 									     							)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Choose Member");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("选择会员");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
