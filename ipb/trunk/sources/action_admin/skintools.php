@@ -57,9 +57,9 @@ class ad_skintools {
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->page_detail = "Please read the instructions for each tool carefully.";
-		$this->ipsclass->admin->page_title  = "Skin Set Tools";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'Skin Tools' );
+		$this->ipsclass->admin->page_detail = "请仔细阅读每个工具的说明.";
+		$this->ipsclass->admin->page_title  = "皮肤工具";
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '皮肤工具' );
 
 		//-----------------------------------------
 
@@ -160,7 +160,7 @@ class ad_skintools {
 		
 		if ( ! file_exists( $file ) )
 		{
-			$this->ipsclass->main_msg = "$file could not be found. Please check, upload or try again";
+			$this->ipsclass->main_msg = "找不到文件 $file. 请检查并重新上传此文件";
 			$this->show_intro();
 		}
 		
@@ -205,7 +205,7 @@ class ad_skintools {
 		
 		if ( ! is_array( $xml->xml_array['macroexport']['macrogroup']['macro'] ) )
 		{
-			$this->ipsclass->main_msg = "Error with macros.xml - could not process XML properly";
+			$this->ipsclass->main_msg = "处理 macros.xml 文件出错 - 无法处理 XML 属性";
 			$this->show_intro();
 		}
 	
@@ -233,7 +233,7 @@ class ad_skintools {
 		
 		$this->ipsclass->cache_func->_recache_macros( 1, -1 );
 
-		$this->ipsclass->main_msg = "$updated macros updated, $inserted added.";
+		$this->ipsclass->main_msg = "$updated 项宏已更新, $inserted 项已添加.";
 		$this->show_intro();
 	}
 	
@@ -300,7 +300,7 @@ class ad_skintools {
 		
 		if ( ! strstr( $final_html, '<!--ipb.logo.end-->' ) )
 		{
-			$this->ipsclass->main_msg = "Cannot locate the logo image tags for this skin set - please make sure your templates are up to date.";
+			$this->ipsclass->main_msg = "找不到此皮肤的 Logo 标签 - 请确认您的模板已更新到最新版本.";
 			$this->easy_logo_start();
 		}
 		
@@ -312,7 +312,7 @@ class ad_skintools {
 		{
 			if ( ! $_POST['logo_url'] )
 			{
-				$this->ipsclass->main_msg = "You must either upload a new logo or enter a URL";
+				$this->ipsclass->main_msg = "您必须上传一个图片或者指定一个路径";
 				$this->easy_logo_start();
 			}
 			
@@ -322,7 +322,7 @@ class ad_skintools {
 		{
 			if ( ! is_writable( CACHE_PATH.'style_images' ) )
 			{
-				$this->ipsclass->main_msg = "You must ensure that 'style_images' has the correct CHMOD value to allow PHP to write into it. Try 0777 if all else fails.";
+				$this->ipsclass->main_msg = "您必须确认“style_images”目录的 CHMOD 设置为可写, 有必要的话设置为 0777.";
 				$this->easy_logo_start();
 			}
 			
@@ -353,7 +353,7 @@ class ad_skintools {
 			
 			if ( ! preg_match( "#\.(?:gif|jpg|jpeg|png)$#is", $FILE_NAME ) )
 			{
-				$this->ipsclass->main_msg = "The file you uploaded is not in the correct format. It has to be either a GIF, JPEG or PNG image.";
+				$this->ipsclass->main_msg = "您上传的文件格式不正确. 必须为 GIF, JPEG 或 PNG 格式.";
 				$this->easy_logo_start();
 			}
 			
@@ -363,7 +363,7 @@ class ad_skintools {
 			}
 			else
 			{
-				$this->ipsclass->main_msg = "The upload failed. Please check permissions on the 'style_images' directory and make sure the uploaded file is less that 2mb in size.";
+				$this->ipsclass->main_msg = "上传失败. 请检查“style_images”目录的权限并确保上传文件小于 PHP 的限制 ( 一般为 2MB ).";
 				$this->easy_logo_start();
 			}
 			
@@ -407,7 +407,7 @@ class ad_skintools {
 		
 		$this->ipsclass->cache_func->_rebuild_all_caches(array($this->ipsclass->input['set_skin_set_id']));
 		
-		$this->ipsclass->main_msg = 'Logo Changed and Skin Set Caches Rebuilt (id: '.$this->ipsclass->input['set_skin_set_id'].')';
+		$this->ipsclass->main_msg = 'Logo 已更换, 皮肤缓存已重建 (id: '.$this->ipsclass->input['set_skin_set_id'].')';
 			
 		$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 		
@@ -442,13 +442,13 @@ class ad_skintools {
 		
 		if ( ! $master[1]['section_content'] )
 		{
-			$this->ipsclass->main_msg = "Cannot locate the master template bit 'global_board_header'";
+			$this->ipsclass->main_msg = "找不到主模板元素 'global_board_header'";
 			$this->show_intro();
 		}
 		
 		if ( ! strstr( $master[1]['section_content'], '<!--ipb.logo.end-->' ) )
 		{
-			$this->ipsclass->main_msg = "Cannot locate the logo image tags - please make sure your templates are up to date.";
+			$this->ipsclass->main_msg = "找不到 Logo 标签 - 请确认您的模板已更新到最新版本.";
 			$this->show_intro();
 		}
 		
@@ -496,7 +496,7 @@ class ad_skintools {
 		// Can we upload into style_images?
 		//-----------------------------------------
 		
-		$warning = ! is_writable( CACHE_PATH.'style_images' ) ? "<div class='redbox' style='padding:4px'><strong>WARNING: Unable to upload into 'style_images'. If you wish to upload a file, please CHMOD that directory now!</strong></div>" : '';
+		$warning = ! is_writable( CACHE_PATH.'style_images' ) ? "<div class='redbox' style='padding:4px'><strong>警告: 无法上传到 'style_images'.请检查该目录的文件访问许可!</strong></div>" : '';
 		
 		//-----------------------------------------
 		// Start the form
@@ -510,22 +510,22 @@ class ad_skintools {
 													 
 									     
 		$this->ipsclass->html .= "<div class='tableborder'>
-							<div class='tableheaderalt'>Easy Logo Changer</div>
+							<div class='tableheaderalt'>快速更换 Changer</div>
 							<div class='tablepad' style='background-color:#EAEDF0'>
 							$warning
 							<fieldset class='tdfset'>
-							 <legend><strong>Configuration</strong></legend>
+							 <legend><strong>配置</strong></legend>
 							 <table width='100%' cellpadding='5' cellspacing='0' border='0'>
 							 <tr>
-							   <td width='40%' class='tablerow1'>Apply to which skin set?<div class='graytext'>If you've already modified the board header via the template editing section, this will overwrite your modifications</div></td>
+							   <td width='40%' class='tablerow1'>应用到皮肤?<div class='graytext'>如果您在论坛模板中修改过论坛页眉, 本操作将覆盖您的修改</div></td>
 							   <td width='60%' class='tablerow1'>$skin_list</td>
 							 </tr>
 							 <tr>
-							   <td width='40%' class='tablerow1'>URL to new logo<div class='graytext'>You can use a relative URL or a full URL starting with http://</div></td>
+							   <td width='40%' class='tablerow1'>新 Logo 地址<div class='graytext'>可以使用相对连接或以 'http://' 开头的完整连接</div></td>
 							   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_simple_input('logo_url', ( isset($_POST['logo_url']) AND $_POST['logo_url'] ) ? $_POST['logo_url'] : $current_img_url, '60' )."</td>
 							 </tr>
 							 <tr>
-							   <td width='40%' class='tablerow1'><b><u>OR</u></b> upload a new logo<div class='graytext'>Browse your computer for a logo to upload. Filename must end in .gif, .jpg, .jpeg or .png</div></td>
+							   <td width='40%' class='tablerow1'><b><u>或者</u></b> 上传新<div class='graytext'>文件必须是 gif. jpg. jpeg 或 png 格式</div></td>
 							   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_upload()."</td>
 							 </tr>
 							</table>
@@ -535,7 +535,7 @@ class ad_skintools {
 							
 		//-----------------------------------------
 												 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form_standalone("Complete Edit");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form_standalone("确定");
 		
 		//-----------------------------------------
 		
@@ -556,7 +556,7 @@ class ad_skintools {
 		
 		if ( ! file_exists( $file ) )
 		{
-			$this->ipsclass->main_msg = "$file could not be found. Please check, upload or try again";
+			$this->ipsclass->main_msg = "找不到文件 $file , 请检查并重新上传";
 			$this->show_intro();
 		}
 		
@@ -586,7 +586,7 @@ class ad_skintools {
 
 		if ( ! $xml->xml_array['export']['group']['row'][0]['set_css']['VALUE'] OR ! $xml->xml_array['export']['group']['row'][0]['set_wrapper']['VALUE'] )
 		{
-			$this->ipsclass->main_msg = "Error with resources/ipb_templates.xml - could not process XML properly";
+			$this->ipsclass->main_msg = "处理 resources/ipb_templates.xml 文件出错 - 无法处理 XML 属性";
 			$this->show_intro();
 		}
 		else
@@ -598,7 +598,7 @@ class ad_skintools {
 															  ), 'set_skin_set_id=1' );
 		}
 		
-		$this->ipsclass->main_msg = "Master Template Components Updated";
+		$this->ipsclass->main_msg = "主模版组件已更新";
 		$this->show_intro();
 	}
 	
@@ -618,7 +618,7 @@ class ad_skintools {
 		
 		if ( ! file_exists( ROOT_PATH.'resources/ipb_templates.xml' ) )
 		{
-			$this->ipsclass->main_msg = "resources/ipb_templates.xml cannot be found in the forums root directory. Please check, upload or try again";
+			$this->ipsclass->main_msg = "找不到 resources/ipb_templates.xml 文件, 请检查并重新上传";
 			$this->show_intro();
 		}
 		
@@ -662,7 +662,7 @@ class ad_skintools {
 		
 		if ( ! is_array( $xml->xml_array['templateexport']['templategroup']['template'] ) )
 		{
-			$this->ipsclass->main_msg = "Error with resources/ipb_templates.xml - could not process XML properly";
+			$this->ipsclass->main_msg = "处理 resources/ipb_templates.xml 文件出错 - 无法处理 XML 属性";
 			$this->show_intro();
 		}
 	
@@ -700,7 +700,7 @@ class ad_skintools {
 			}
 		}
 		
-		$this->ipsclass->main_msg = "Master template set rebuilt!<br />$updates updated template bits, $inserts new template bits";
+		$this->ipsclass->main_msg = "主模板已重建!<br />更新 $updates 项模板元素, 插入 $inserts 项新模版元素";
 		
 		$this->show_intro();
 	}
@@ -737,7 +737,7 @@ class ad_skintools {
 		
 		if ( ! $before )
 		{
-			$this->ipsclass->main_msg = "You must enter a 'search for' string before continuing.";
+			$this->ipsclass->main_msg = "您必须输入搜索条件.";
 			$this->searchreplace_start();
 		}
 		
@@ -761,7 +761,7 @@ class ad_skintools {
 			
 			if ( $return )
 			{
-				$this->ipsclass->main_msg = "There was an error processing the 'search for' and 'replace with' variables - please ensure that they are legal regular expressions before continuing.";
+				$this->ipsclass->main_msg = "处理“搜索”和“替换为”变量时出错 - 请确保它们是合法的正则表达式.";
 				$this->searchreplace_start();
 			}
 		}
@@ -840,12 +840,12 @@ class ad_skintools {
 		if ( ! count($templates) )
 		{
 			$this->ipsclass->html .= "<div class='tableborder'>
-								 <div class='tableheaderalt'>Search & Replace Results</div>
+								 <div class='tableheaderalt'>搜索 & 替换结果</div>
 								 <div class='tablepad'>
-								  <b>You searched for: ".stripslashes(htmlspecialchars($before))."</b>
+								  <b>您搜索的关键字是: ".stripslashes(htmlspecialchars($before))."</b>
 								  <br />
 								  <br />
-								  Unfortunately your search didn't return any matches. Please try again and broaden your search terms.
+								  很不幸, 没有搜索到任何记录. 请放宽搜索条件后重试.
 								 </div>
 								</div>";
 			
@@ -859,8 +859,8 @@ class ad_skintools {
 		if ( $this->ipsclass->input['testonly'] )
 		{
 			$this->ipsclass->html .= "<div class='tableborder'>
-								 <div class='tableheaderalt'>Search & Replace Results</div>
-								 <div class='tablepad' style='padding:5px'><b style='font-size:12px'>{$matches} matches for '".htmlentities($before)."' to be replaced with '".htmlentities($after)."'</b><br /><br />";
+								 <div class='tableheaderalt'>搜索 & 替换结果</div>
+								 <div class='tablepad' style='padding:5px'><b style='font-size:12px'>找到 {$matches} 项匹配关键字：“".htmlentities($before)."”，替换为“".htmlentities($after)."”</b><br /><br />";
 								 
 			//-----------------------------------------
 			// Go fru dem all and print..
@@ -940,7 +940,7 @@ class ad_skintools {
 			
 			$this->ipsclass->html .= "</div></div>";
 			
-			$this->ipsclass->admin->nav[] = array( "", "Search results from set ".$this_set['set_name'] );
+			$this->ipsclass->admin->nav[] = array( "", "从皮肤 ".$this_set['set_name']." 的搜索结果" );
 			
 			$this->ipsclass->admin->output();
 		}
@@ -1006,7 +1006,7 @@ class ad_skintools {
 						$this->ipsclass->DB->do_insert( 'skin_templates', $insert_array );
 					}
 					
-					$report[] = $tmp_data['func_name'].' updated...';
+					$report[] = $tmp_data['func_name'].' 已更新...';
 				}
 			}
 			
@@ -1015,7 +1015,7 @@ class ad_skintools {
 			//-----------------------------------------
 			
 			$this->ipsclass->cache_func->_recache_templates( $SEARCH_set, $this_set['set_skin_set_parent'] );
-			$report[] = "Templates recached for set {$this_set['set_name']}";
+			$report[] = "{$this_set['set_name']}的模板缓存已重建";
 			
 			$this->ipsclass->main_msg = implode( "<br />", $report );
 			$this->searchreplace_start();
@@ -1052,7 +1052,7 @@ class ad_skintools {
 		
 		if ( ! $SEARCH_word )
 		{
-			$this->ipsclass->main_msg = "You must enter a search word";
+			$this->ipsclass->main_msg = "您必须输入搜索条件";
 			$this->searchreplace_start();
 		}
 		
@@ -1115,12 +1115,12 @@ class ad_skintools {
 		if ( ! count($final) )
 		{
 			$this->ipsclass->html .= "<div class='tableborder'>
-								 <div class='tableheaderalt'>Search Results</div>
+								 <div class='tableheaderalt'>搜索结果</div>
 								 <div class='tablepad'>
-								  <b>You searched for: ".htmlentities($SEARCH_word)."</b>
+								  <b>您搜索的关键字是: ".htmlentities($SEARCH_word)."</b>
 								  <br />
 								  <br />
-								  Unfortunately your search didn't return any matches. Please try again and broaden your search terms.
+								  很不幸, 没有搜索到任何记录. 请放宽搜索条件后重试.
 								 </div>
 								</div>";
 								
@@ -1157,8 +1157,8 @@ class ad_skintools {
 	{
 		$skin_list = $this->_get_skinlist( 1 );
 		
-		$this->ipsclass->admin->page_detail = "These tools will allow you to search for keywords and bulk replace HTML.";
-		$this->ipsclass->admin->page_title  = "Skin Search & Replace";
+		$this->ipsclass->admin->page_detail = "您可以使用本工具批量搜索某个关键字, 替换到其他 HTML.";
+		$this->ipsclass->admin->page_title  = "皮肤搜索 & 替换";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'act'  , 'skintools'     ),
 																			 2 => array( 'code' , 'simplesearch'  ),
@@ -1168,15 +1168,15 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Simple Search" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "简单搜索" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search for...</b><br /><span style='color:gray'>Enter a simple keyword or block of HTML to search for</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索条件...</b><br /><span style='color:gray'>可以输入词语或者 HTML 代码</span>",
 															       $this->ipsclass->adskin->form_simple_input( 'searchkeywords', '', 30 )
 													    )      );
 													  
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search in set...</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b>",
 															     $skin_list
-															     ."<br /><input type='checkbox' name='searchall' value='1'> Search in selected set and all parents including the master set."
+															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选皮肤和所有父模板中搜索."
 													    )      );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
@@ -1195,33 +1195,33 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search and Replace" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索和替换" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search for...</b><br /><span style='color:gray'>Enter a keyword or a block of HTML to search for.<br />If enabling 'regex mode' you may enter a regular expression here.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索条件...</b><br /><span style='color:gray'>可以输入词语或者 HTML 代码.<br />如果开启了“正则模式”，您可以输入正则表达式.</span>",
 															      $this->ipsclass->adskin->form_textarea( 'searchfor', $_POST['searchfor'] )
 													    )      );
 													  
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Replace with...</b><br /><span style='color:gray'>Enter the replacement block of HTML<br />If enabling 'regex mode' you may enter a regular expression here.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>替换为...</b><br /><span style='color:gray'>可以输入 HTML 代码<br />如果开启了'正则模式'，您可以输入正则表达式.</span>",
 															     $this->ipsclass->adskin->form_textarea( 'replacewith', $_POST['replacewith'] )
 													    )      );
 													    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search in set...</b><br /><span style='color:gray'>NOTE: The search and replace will only work on the specified skin set. The parent and master skin sets will NOT be searched or any replacements made on them.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b><br /><span style='color:gray'>NOTE: The search and replace will only work on the specified skin set. The parent and master skin sets will NOT be searched or any replacements made on them.</span>",
 															     $skin_list
-															     ."<br /><input type='checkbox' name='searchall' value='1'> Search in selected set and all parents including the master set."
+															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选皮肤和所有父模板中搜索."
 													    )      );
 													    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Test Search and Replace Only?</b><br /><span style='color:gray'>If yes, no replacements will be made and you will be able to preview the changes.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>测试搜索和替换?</b><br /><span style='color:gray'>>如果是, 您会看到替换的效果, 但是不会真的替换数据.</span>",
 															      $this->ipsclass->adskin->form_yes_no( 'testonly', 1 )
 													    )      );
 													    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enable 'regex' mode?</b><br /><span style='color:gray'>If yes, you may use 'regex' in your search and replacements.
-																 <br />Example:- Replace all &lt;br&gt; or &lt;br /&gt; with &lt;br clear='all' /&gt;
-																 <br />Search for: <b>&lt;(br)&#92;s?/?&gt;</b>
-																 <br />Replace with: <b>&lt;&#92;&#92;1 clear='all' /&gt;</b></span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enable 'regex' mode?</b><br /><span style='color:gray'>如果是, 您可以使用正则表达式.
+																 <br />例如: - 替换所有的 &lt;br&gt; or &lt;br /&gt; 替换为 &lt;br clear='all' /&gt;
+																 <br />搜索条件为: <b>&lt;(br)&#92;s?/?&gt;</b>
+																 <br />替换为: <b>&lt;&#92;&#92;1 clear='all' /&gt;</b></span>",
 															      $this->ipsclass->adskin->form_yes_no( 'regexmode', 0 )
 													    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1242,7 +1242,7 @@ class ad_skintools {
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "You did not choose any skin(s) to remove from the member's choice";
+			$this->ipsclass->main_msg = "您没有选择皮肤";
 			$this->show_intro();
 			return;
 		}
@@ -1258,7 +1258,7 @@ class ad_skintools {
 			$this->ipsclass->DB->do_update( 'members', array( 'skin' => $new_id ), 'skin'.$query_bit );
 		}
 		
-		$this->ipsclass->main_msg = "Members updated";
+		$this->ipsclass->main_msg = "会员信息已更新";
 		
 		$this->show_intro();
 	}
@@ -1277,7 +1277,7 @@ class ad_skintools {
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "You did not choose any skin(s) to remove from the member's choice";
+			$this->ipsclass->main_msg = "您没有选择皮肤";
 			$this->show_intro();
 			return;
 		}
@@ -1295,7 +1295,7 @@ class ad_skintools {
 		
 		$this->ipsclass->update_forum_cache();
 		
-		$this->ipsclass->main_msg = "Forums updated";
+		$this->ipsclass->main_msg = "版块已更新";
 		
 		$this->show_intro();
 	}	
@@ -1313,12 +1313,12 @@ class ad_skintools {
 		{
 			if ( ! file_exists( CACHE_PATH.'cache/skin_cache/cacheid_'.$pid ) )
 			{
-				$this->ipsclass->main_msg = 'IPB cannot rebuild the master templates as the folder "cacheid_$pid" does not exist';
+				$this->ipsclass->main_msg = '由于文件夹”cacheid_$pid“不存在，无法重建主模板';
 			}
 			
 			$this->ipsclass->cache_func->_rebuild_templates_from_php($pid);
 			
-			$this->ipsclass->main_msg = 'Attempting to rebuild master set from PHP cache files...';
+			$this->ipsclass->main_msg = '试图从 PHP 缓存文件重建主皮肤...';
 				
 			$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 		}
@@ -1327,14 +1327,14 @@ class ad_skintools {
 		{
 			if ( ! file_exists( CACHE_PATH.'style_images/css_'.$cid.'.css' ) )
 			{
-				$this->ipsclass->main_msg = 'IPB cannot rebuild the master CSS as the CSS "css_$cid" does not exist';
+				$this->ipsclass->main_msg = '由于 CSS 文件”css_$cid“不存在, 无法重建主 CSS.';
 			}
 			
 			$css = @file_get_contents( CACHE_PATH.'style_images/css_'.$cid.'.css' );
 			
 			if ( ! $css )
 			{
-				$this->ipsclass->main_msg = 'IPB cannot rebuild the master CSS as the CSS "css_$cid" appears to be empty.';
+				$this->ipsclass->main_msg = '由于 CSS 文件”css_$cid" 没有内容, 无法重建主 CSS.';
 			}
 			
 			$css = trim( preg_replace( "#^.*\*~START CSS~\*/#s", "", $css ) );
@@ -1343,7 +1343,7 @@ class ad_skintools {
 			// Attempt to rearrange style_images dir stuff
 			//-----------------------------------------
 			
-			$this->ipsclass->main_msg = 'Attempting to rebuild master CSS from CSS cache files...';
+			$this->ipsclass->main_msg = '试图从 CSS 缓存文件重建主 CSS...';
 			
 			$css = preg_replace( "#url\(([\"'])?(.+?)/(.+?)([\"'])?\)#is", "url(\\1style_images/1/\\3\\4)", $css );
 			
@@ -1365,7 +1365,7 @@ class ad_skintools {
 	{
 		$this->ipsclass->cache_func->_rebuild_all_caches(array($this->ipsclass->input['set_skin_set_id']));
 		
-		$this->ipsclass->main_msg = 'Skin Set Caches Rebuilt (id: '.$this->ipsclass->input['set_skin_set_id'].')';
+		$this->ipsclass->main_msg = '皮肤缓存已重建 (id: '.$this->ipsclass->input['set_skin_set_id'].')';
 			
 		$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 		
@@ -1403,20 +1403,20 @@ class ad_skintools {
 		{
 			if ( $filemtime = @filemtime( $file ) )
 			{
-				$notice = "resources/ipb_templates.xml last updated: " . $this->ipsclass->get_date( $filemtime, 'JOINED' );
+				$notice = "resources/ipb_templates.xml 最后更新于: " . $this->ipsclass->get_date( $filemtime, 'JOINED' );
 			}
 			
 			if ( $filemtime2 = @filemtime( ROOT_PATH . 'sources/ipsclass.php' ) )
 			{
 				if ( ( $filemtime2 - (86400 * 7) ) > $filemtime )
 				{
-					$error = "Please check resources/ipb_templates.xml - 'ipsclass.php' is more than a week newer.";
+					$error = "请检查 resources/ipb_templates.xml - 'ipsclass.php' 文件更新一点.";
 				}
 			}
 		}
 		else
 		{
-			$error = "Cannot locate '{$file}' - please make sure a copy has been uploaded to the root forum directory";
+			$error = "找不到文件 '{$file}' - 请确认您上传了这个文";
 		}
 		
 		//-----------------------------------------
@@ -1439,14 +1439,14 @@ class ad_skintools {
 		
 		$this->ipsclass->adskin->td_header[] = array( "{none}"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Master Templates" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主模板" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Running this tool will rebuild your master HTML templates that all your skins inherit from.</b>
-																			  <br />After running, you may wish to rebuild your skin set caches to update them with the changes.
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的主 HTML 模板, 所有的皮肤都是继承自这里.</b>
+																			  <br />运行后, 您需要重建皮肤缓存来更新皮肤.
 																			  $extra_html",
 																	)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1473,14 +1473,14 @@ class ad_skintools {
 		{
 			if ( $filemtime = @filemtime( $file ) )
 			{
-				$notice = "resources/skinsets.xml last updated: " . $this->ipsclass->get_date( $filemtime, 'JOINED' );
+				$notice = "resources/skinsets.xml  最后更新于: " . $this->ipsclass->get_date( $filemtime, 'JOINED' );
 			}
 			
 			if ( $filemtime2 = @filemtime( ROOT_PATH . 'sources/ipsclass.php' ) )
 			{
 				if ( ( $filemtime2 - (86400 * 7) ) > $filemtime )
 				{
-					$error = "Please check resources/skinsets.xml - 'ipsclass.php' is more than a week newer.";
+					$error = "请检查 resources/skinsets.xml - 'ipsclass.php' 文件更新一点.";
 				}
 			}
 		}
@@ -1509,14 +1509,14 @@ class ad_skintools {
 		
 		$this->ipsclass->adskin->td_header[] = array( "{none}"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Master Skin Components" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主皮肤组件" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Running this tool will rebuild your master HTML wrapper and CSS.</b>
-																			  <br />After running, you may wish to rebuild your skin set caches to update them with the changes.
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的论坛页面结构和 CSS.</b>
+																			  <br />运行后, 您需要重建皮肤缓存来更新皮肤.
 																			  $extra_html",
 																	)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1543,14 +1543,14 @@ class ad_skintools {
 		{
 			if ( $filemtime = @filemtime( $file ) )
 			{
-				$notice = "resources/macro.xml last updated: " . $this->ipsclass->get_date( $filemtime, 'JOINED' );
+				$notice = "resources/macro.xml 最后更新于: " . $this->ipsclass->get_date( $filemtime, 'JOINED' );
 			}
 			
 			if ( $filemtime2 = @filemtime( ROOT_PATH . 'sources/ipsclass.php' ) )
 			{
 				if ( ( $filemtime2 - (86400 * 7) ) > $filemtime )
 				{
-					$error = "Please check resources/macro.xml - 'ipsclass.php' is more than a week newer.";
+					$error = "请检查 resources/macro.xml - 'ipsclass.php' 文件更新一点.";
 				}
 			}
 		}
@@ -1579,14 +1579,14 @@ class ad_skintools {
 		
 		$this->ipsclass->adskin->td_header[] = array( "{none}"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Master Skin Macros" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主皮肤宏" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Running this tool will rebuild your master macros.</b>
-																			  <br />After running, you may wish to rebuild your skin set caches to update them with the changes.
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的主宏.</b>
+																			  <br />运行后, 您需要重建皮肤缓存来更新皮肤.
 																			  $extra_html",
 																	)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具l...");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1602,13 +1602,13 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Skin Set Cache" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建皮肤缓存" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild skin set cache on set...</b><br /><span style='color:gray'>This option will rebuild the template HTML, wrapper, macro and css caches of this set and any children.</span><br />[ <a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=sets&code=rebuildalltemplates'>Rebuild All</a> ]",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建皮肤缓存...</b><br /><span style='color:gray'>本操作将重建所选皮肤以及所有子皮肤的模板 HTML, 页面结构, 宏和 CSS 缓存.</span><br />[ <a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=sets&code=rebuildalltemplates'>全部重建</a> ]",
 															     $skin_list
 													    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1617,7 +1617,7 @@ class ad_skintools {
 		//-----------------------------------------
 		
 		$dd_two = str_replace( "select name='set_skin_set_id'", "select name='set_skin_set_id2'", $skin_list );
-		$dd_two = str_replace( "<!--DD.OPTIONS-->", "<option value='n'>None - use the admin defaults</option>", $dd_two );
+		$dd_two = str_replace( "<!--DD.OPTIONS-->", "<option value='n'>无 - 使用管理员默认设置</option>", $dd_two );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'act'  , 'skintools'      ),
 																			 2 => array( 'code' , 'changemember'  ),
@@ -1627,17 +1627,17 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Update Members Skin Choice" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "更新会员皮肤选择" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Where the member currently uses...</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>如果会员使用皮肤...</b>",
 																			 str_replace( "select name='set_skin_set_id'", "select name='set_skin_set_id[]' multiple='multiple' size='6'", $skin_list )
 																	)      );
 													  
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Make them use...</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>将他们的选择重置为...</b>",
 															     $dd_two
 													    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1649,17 +1649,17 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Update Forum Skin Options" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "更新版块皮肤选择" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Where the forum currently uses...</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>如果版块使用皮肤...</b>",
 																			 str_replace( "select name='set_skin_set_id'", "select name='set_skin_set_id[]' multiple='multiple' size='6'", $skin_list )
 																	)      );
 													  
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Change forum skin option to...</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>将它们的选择重置到...</b>",
 															     $dd_two
 													    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();		
 		
@@ -1677,14 +1677,14 @@ class ad_skintools {
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Master Skin Set" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主皮肤" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild 'IPB Master Skin Set' FROM CSS AND PHP files.</b><br /><span style='color:gray'>This option will rebuild the template HTML for the master skin set. USE VERY CAREFULLY!</span>",
-																				 "<input type='checkbox' name='phpyes' value='1' /> PHP cache dir.: skin_cache/cacheid_ ".$this->ipsclass->adskin->form_simple_input( 'phplocation', '1', 3 )."<br />".
-																				 "<input type='checkbox' name='cssyes' value='1' /> CSS cache file: style_images/css_ ".$this->ipsclass->adskin->form_simple_input( 'csslocation', '1',3 )
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>从 CSS 文件和 PHP 文件重建“IPB Master Skin Set.</b><br /><span style='color:gray'>本操作将主皮肤的重建模板 HTML. 请小心使用!</span>",
+																				 "<input type='checkbox' name='phpyes' value='1' /> PHP 缓存目录.: skin_cache/cacheid_ ".$this->ipsclass->adskin->form_simple_input( 'phplocation', '1', 3 )."<br />".
+																				 "<input type='checkbox' name='cssyes' value='1' /> CSS 缓存文件: style_images/css_ ".$this->ipsclass->adskin->form_simple_input( 'csslocation', '1',3 )
 																		)      );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+			$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 			
@@ -1705,7 +1705,7 @@ class ad_skintools {
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild cacheid_1 master skins...</b><br /><span style='color:gray'>This option will rewrite all your master cache skin files from the DB.</span>",
 														    			)      );
 
-			$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run tool...");
+			$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		}

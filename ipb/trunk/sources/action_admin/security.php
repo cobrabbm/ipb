@@ -53,7 +53,7 @@ class ad_security
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'IPB Security Center' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'IPB 安全中心' );
 		
 		//-----------------------------------------
 		// LOAD HTML
@@ -126,7 +126,7 @@ class ad_security
 		
 		if ( ! $name or ! $pass )
 		{
-			$this->ipsclass->main_msg = "You must complete the form";
+			$this->ipsclass->main_msg = "您必须完整填写表单";
 			$this->acphtaccess_form();
 			return;
 		}
@@ -151,14 +151,14 @@ class ad_security
 			fwrite( $FF, $htaccess_auth );
 			fclose( $FF );
 			
-			$this->ipsclass->main_msg = "Authentication files written";
+			$this->ipsclass->main_msg = "验证文件已写入";
 			$this->security_overview();
 		}
 		else
 		{
 			$this->ipsclass->html .= $this->html->htaccess_data( $htaccess_pw, $htaccess_auth );
 
-			$this->ipsclass->admin->nav[] = array( '', 'ACP .htaccess' );
+			$this->ipsclass->admin->nav[] = array( '', 'ACP  .htaccess 文件' );
 
 			$this->ipsclass->admin->output();
 		}
@@ -178,7 +178,7 @@ class ad_security
 		
 		$this->ipsclass->html .= $this->html->htaccess_form();
 		
-		$this->ipsclass->admin->nav[] = array( '', 'ACP .htaccess' );
+		$this->ipsclass->admin->nav[] = array( '', 'ACP .htaccess 文件' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -195,7 +195,7 @@ class ad_security
 		
 		$this->ipsclass->html .= $this->html->rename_admin_dir();
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Rename the admin directory' );
+		$this->ipsclass->admin->nav[] = array( '', '重命名 admin 目录' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -228,11 +228,11 @@ class ad_security
 		
 		if ( $done )
 		{
-			$this->ipsclass->main_msg = "CHMOD change completed.";
+			$this->ipsclass->main_msg = "CHMOD  修改完毕.";
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "<strong>Could not complete the process.</strong><br />Please use your FTP client to change the CHMOD value of 'conf_global.php' to 0444.";
+			$this->ipsclass->main_msg = "<strong>无法完成处理.</strong><br />请您使用 FTP 客户端软件来修改 'conf_global.php'的 CHMOD 值到 0444.";
 		}
 		
 		$this->security_overview();
@@ -279,11 +279,11 @@ EOF;
 				fwrite( $FH, $towrite );
 				fclose( $FH );
 			
-				$msg[] = "Written .htaccess to $directory...";
+				$msg[] = "写入 .htaccess 到 $directory...";
 			}
 			else
 			{
-				$msg[] = "Skipped $directory, could not write into it...";
+				$msg[] = "跳过 $directory, 无法写入...";
 			}
 		}
 		
@@ -373,7 +373,7 @@ EOF;
 		//$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "Members with ACP Access", "Below is a list of all members with access to your ACP.<br />If you do not recognize any, please remove their ACP access immediately." ) ."<br />";
 		$this->ipsclass->html .= $this->html->list_admin_overview( $content );
 		
-		$this->ipsclass->admin->nav[] = array( '', 'List Administrators' );
+		$this->ipsclass->admin->nav[] = array( '', '管理员列表' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -508,11 +508,11 @@ EOF;
 			
 			if ( $bad_score )
 			{
-				$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( 'All Executables', 'The deep scanner has found the following files.<br /><strong>'.$bad_score.'</strong> of '.$file_count.' files are rating 7/10 or more.<br />If you\'re unsure of their origin, please investigate them immediately.' ) . "<br />";
+				$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( '所有可执行文件', '深度扫描发现了下列文件.<br /><strong>'.$bad_score.'</strong> 中有'.$file_count.' 个文件的得分高于 7/10 分.<br />如果您不确定它们的来源, 请立即检查.' ) . "<br />";
 			}
 			else
 			{
-				$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'All Executables', 'The deep scanner has found '.$file_count.' files.<br />If you\'re unsure of their origin, please investigate them immediately.' ) . "<br />";
+				$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( '所有可执行文件', '深度扫描找到了 '.$file_count.' files.<br />如果您不确定它们的来源, 请立即检查.' ) . "<br />";
 			}
 			
 			$this->ipsclass->html .= $this->html->deep_scan_bad_files_wrapper( $content );
@@ -527,7 +527,7 @@ EOF;
 			$this->ipsclass->html = preg_replace( "#(value=[\"']".preg_quote( $filter, '#' )."['\"])#i", "\\1 selected='selected'", $this->ipsclass->html );
 		}
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Deep Scan' );
+		$this->ipsclass->admin->nav[] = array( '', '深度扫描' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -616,13 +616,13 @@ EOF;
 				$content .= $this->html->anti_virus_bad_files_row( $file_path, $data['file_path'], $_data );
 			}
 			
-			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( 'Suspicious Files Detected', 'The unauthorized file scan located the following suspicious files.<br />If you\'re unsure of their origin, please remove them immediately.' ) . "<br />";
+			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( '可疑文件探测', '系统找到了下列可疑文件.<br />如果您不确定他们的来源, 请立即删除它们.' ) . "<br />";
 			
 			$this->ipsclass->html .= $this->html->anti_virus_bad_files_wrapper( $content );
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'No Suspicious Files Detected', 'The unauthorized file scan did not identify any suspicious files.<br />Please scan regularly to ensure that your system is secure' ) . "<br />";
+			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( '可以文件探测', '系统没有找到可疑文件.<br />请定期做扫描以保证您的系统安全' ) . "<br />";
 		}
 		
 		//-----------------------------------------
@@ -639,7 +639,7 @@ EOF;
 			$this->ipsclass->html .= $this->html->anti_virus_checked_wrapper( $checked_content );
 		}
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Unauthorized File Check' );
+		$this->ipsclass->admin->nav[] = array( '', '可疑文件检查' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -768,9 +768,9 @@ EOF;
 		
 		if ( intval($cache_array['last_virus_check']) < time() - 7 * 86400 )
 		{
-			$content['bad'] .= $this->html->security_item_bad(  'IPB Unauthorized File Checker',
-			 													'The IPB unauthorized file checker will check your IPB installation for suspicious files.<br />The unauthorized file checker has not been run in over a week',
-																'Run Tool Now',
+			$content['bad'] .= $this->html->security_item_bad(  'IPB 可疑文件检查',
+			 													'本工具可以在 IPB 的安装目录检查可疑文件.<br />已经有一周以上没有运行本工具',
+																'运行工具',
 																$this->ipsclass->form_code_js.'&code=virus_check',
 																'vchecker' );
 														
@@ -778,9 +778,9 @@ EOF;
 		else
 		{
 			$last_run 		  = $this->ipsclass->get_date( $cache_array['last_virus_check'], 'SHORT' );
-			$content['good'] .= $this->html->security_item_good( 'IPB Unauthorized File Checker',
-			 													 'The IPB unauthorized file checker will check your IPB installation for suspicious files.<br />The unauthorized file checker was last run: '.$last_run,
-																 'Run Tool Now',
+			$content['good'] .= $this->html->security_item_good( 'IPB 可疑文件检查',
+			 													 '本工具可以在 IPB 的安装目录检查可疑文件.<br />上次运行本工具: '.$last_run,
+																 '运行工具',
 																 $this->ipsclass->form_code_js.'&code=virus_check',
 																 'vchecker' );
 		}
@@ -791,9 +791,9 @@ EOF;
 		
 		if ( intval($cache_array['last_deepscan_check']) < time() - 30 * 86400 )
 		{
-			$content['bad'] .= $this->html->security_item_bad(  'IPB Executables Deep Scan',
-			 													'The IPB deep scanner will pick out and list every single executable file in your installation.<br />The scanner has not been run in over a month',
-																'Run Tool Now',
+			$content['bad'] .= $this->html->security_item_bad(  'IPB 可执行文件深度扫描',
+			 													'本工具能找出并分析你的 IPB 安装目录中的可执行文件.<br />已经有一月以上没有运行本工具',
+																'运行工具',
 																$this->ipsclass->form_code_js.'&code=deep_scan',
 																'deepscan' );
 														
@@ -801,9 +801,9 @@ EOF;
 		else
 		{
 			$last_run 		  = $this->ipsclass->get_date( $cache_array['last_deepscan_check'], 'SHORT' );
-			$content['good'] .= $this->html->security_item_good(  'IPB Executables Deep Scan',
-			 													  'The IPB deep scanner will pick out and list every single executable file in your installation.<br />The scanner was last run: '.$last_run,
-																  'Run Tool Now',
+			$content['good'] .= $this->html->security_item_good(  'IPB 可执行文件深度扫描',
+			 													  '本工具能找出并分析你的 IPB 安装目录中的可执行文件.<br />上次运行本工具: '.$last_run,
+																  '运行工具',
 																   $this->ipsclass->form_code_js.'&code=deep_scan',
 																  'deepscan' );
 		}
@@ -818,22 +818,22 @@ EOF;
 			
 			if ( ! is_writeable( ROOT_PATH . IPB_ACP_DIRECTORY ) )
 			{
-				$_extra = "<div style='color:red;font-weight:bold'>IPB cannot write the .htaccess files into your '/admin/' directory. Please use your FTP client to CHMOD it to 0777.</div>";
+				$_extra = "<div style='color:red;font-weight:bold'>IPB 无法写入 .htaccess 文件到您的“admin”目录. 请先使用 FTP 客户端软件来修改此目录的 CHMOD 到 0777.</div>";
 			}
 			
 			if ( ! file_exists( ROOT_PATH . IPB_ACP_DIRECTORY . '/.htaccess' ) )
 			{
-				$content['ok'] .= $this->html->security_item_ok(    'IPB ACP .htaccess Protection',
-				 													'To make your ACP even more secure, you can add HTTP authentication in your "/admin/" directory.<br />IPB cannot locate an ACP .htaccess file.'. $_extra,
-																	'Learn More',
+				$content['ok'] .= $this->html->security_item_ok(    'IPB ACP .htaccess 保护',
+				 													'为使您的ACP更安全, 您可以为您的“admin”目录添加 HTTP 验证.<br />IPB cannot locate an ACP .htaccess file.'. $_extra,
+																	'更多信息',
 																	$this->ipsclass->form_code_js.'&code=acphtaccess',
 																	'acphtaccess' );
 			}
 			else
 			{
-				$content['good'] .= $this->html->security_item_good( 'IPB ACP .htaccess Protection',
-				 											 		 'To make your ACP even more secure, you can take add HTTP authentication in your "/admin/" directory.<br />IPB has located an ACP .htaccess file.'.$_extra,
-																	 'Learn More',
+				$content['good'] .= $this->html->security_item_good( 'IPB ACP .htaccess 保护',
+				 											 		 '为使您的ACP更安全, 您可以为您的“admin”目录添加 HTTP 验证. <br />目前此目录没有 .htaccess 文件.'.$_extra,
+																	 '更多信息',
 																	 $this->ipsclass->form_code_js.'&code=acphtaccess',
 																	 'acphtaccess' );
 			}
@@ -841,17 +841,17 @@ EOF;
 			# Other htaccess protection
 			if ( ! file_exists( ROOT_PATH . 'style_emoticons/.htaccess' ) )
 			{
-				$content['ok'] .= $this->html->security_item_ok( 'IPB PHP/CGI .htaccess Protection',
+				$content['ok'] .= $this->html->security_item_ok( 'IPB PHP/CGI .htaccess 保护',
 				 												 'IPB can write .htaccess files to non-PHP directories to prevent PHP and CGI files from executing.<br />IPB cannot locate any .htaccess files.',
-																 'Run Tool Now',
+																 '运行工具',
 																 $this->ipsclass->form_code_js.'&code=htaccess',
 																 'htaccess' );
 			}
 			else
 			{
-				$content['good'] .= $this->html->security_item_good( 'IPB .htaccess Protection',
+				$content['good'] .= $this->html->security_item_good( 'IPB .htaccess 保护',
 				 											 		 'IPB can write .htaccess files to non-PHP directories to prevent PHP and CGI files from executing.<br />IPB has located some .htaccess files.',
-																	 'Run Tool Now',
+																	 '运行工具',
 																	 $this->ipsclass->form_code_js.'&code=htaccess',
 																	 'htaccess' );
 			}
@@ -862,9 +862,9 @@ EOF;
 			
 			if ( is_writeable( ROOT_PATH . 'conf_global.php' ) )
 			{
-				$content['bad'] .= $this->html->security_item_bad( 'Make "conf_global" un-writeable',
-				 												   'After installation, you should change the CHMOD on the "conf_global.php" file to prevent others from reading and writing to it.<br />"conf_global.php" is writeable.',
-																   'Run Tool Now',
+				$content['bad'] .= $this->html->security_item_bad( '使“conf_global”只读',
+				 												   '论坛安装后, 您需要将“conf_global.php”文件的 CHMOD 为只读.<br />“conf_global.php”文件目前可写.',
+																   '运行工具',
 																   $this->ipsclass->form_code_js.'&code=confglobal',
 																   'confglobal' );
 															
@@ -872,8 +872,8 @@ EOF;
 			else
 			{
 				$content['good'] .= $this->html->security_item_good(  'Make "conf_global" un-writeable',
-				 												 	  'After installation, you should change the CHMOD on the "conf_global.php" file to prevent others from reading and writing to it.<br />"conf_global.php" is NOT writeable.',
-																	   'Learn More',
+				 												 	  '论坛安装后, 您需要将“conf_global.php”文件的 CHMOD 为只读. <br />“conf_global.php”文件目前不可写."',
+																	   '更多信息',
 																	   $this->ipsclass->form_code_js.'&code=confglobal',
 																	   'confglobal' );
 			}
@@ -885,18 +885,18 @@ EOF;
 		
 		if ( ! $this->ipsclass->vars['allow_dynamic_img'] )
 		{
-			$content['good'] .= $this->html->security_item_good( 'Disable Dynamic Images',
-			 												  	 'IPB can stop dynamic images being posted on your forums. Dynamic images pose a security risk as they allow javascript to run.<br />Dynamic images are already disabled.',
-																 'Toggle Now',
+			$content['good'] .= $this->html->security_item_good( '禁止动态图片',
+			 												  	 'IPB 本工具可以禁止在论坛张贴动态图片, 动态图片可以运行隐藏的 JavaScript.<br />动态图片已经禁止.',
+																 '立即执行',
 																 $this->ipsclass->form_code_js.'&code=dynamic_images',
 																 'dynamic_images' );
 														
 		}
 		else
 		{
-			$content['bad'] .= $this->html->security_item_bad( 'Disable Dynamic Images',
-			 											       'IPB can stop dynamic images being posted on your forums. Dynamic images pose a security risk ask they allow javascript to run.<br />Dynamic images are ENABLED.',
-														       'Toggle Now',
+			$content['bad'] .= $this->html->security_item_bad( '禁止动态图片',
+			 											       'IPB 本工具可以禁止在论坛张贴动态图, 动态图片可以运行隐藏的 JavaScript.<br />>动态图片<b>未禁止</b>.',
+														       '立即执行',
 														        $this->ipsclass->form_code_js.'&code=dynamic_images',
 														       'dynamic_images' );
 		}

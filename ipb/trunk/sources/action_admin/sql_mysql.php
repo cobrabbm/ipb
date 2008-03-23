@@ -363,9 +363,9 @@ class ad_sql_module {
 	
 	function sbup_splash()
 	{
-		$this->ipsclass->admin->page_detail = "This section allows you to backup your database.";
-		$this->ipsclass->admin->nav[] = array( '', 'MySQL Database Backup' );
-		$this->ipsclass->admin->page_title  = "mySQL ".$this->true_version." Back Up";
+		$this->ipsclass->admin->page_detail = "您可以在这里备份您的数据库.";
+		$this->ipsclass->admin->nav[] = array( '', 'MySQL 数据库备份' );
+		$this->ipsclass->admin->page_title  = "mySQL ".$this->true_version." 备份";
 		
 		// Check for mySQL version..
 		// Might change at some point..
@@ -377,14 +377,12 @@ class ad_sql_module {
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Simple Back Up" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "简单备份" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>Back Up mySQL Database</b><br><br>Once you have clicked the link below, please wait
-													until your browser prompts you with a dialogue box. This may take some time depending on
-													the size of the database you are backing up.
+													"<b>备份 MySQL 数据库</b><br><br>您点击下面的连接后，请等待直到浏览器弹出对话框。本操作需要的时间基于您的数据库大小.
 													<br><br>
-													<b><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=dosafebackup&create_tbl={$this->ipsclass->input['create_tbl']}&addticks={$this->ipsclass->input['addticks']}&skip={$this->ipsclass->input['skip']}&enable_gzip={$this->ipsclass->input['enable_gzip']}'>Click here to start the backup</a></b>"
+													<b><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=dosafebackup&create_tbl={$this->ipsclass->input['create_tbl']}&addticks={$this->ipsclass->input['addticks']}&skip={$this->ipsclass->input['skip']}&enable_gzip={$this->ipsclass->input['enable_gzip']}'>点击这里开始备份</a></b>"
 									     )      );
 									     
 												 
@@ -399,18 +397,17 @@ class ad_sql_module {
 	
 	function show_backup_form()
 	{
-		$this->ipsclass->admin->nav[] = array( '', 'MySQL Database Backup' );
+		$this->ipsclass->admin->nav[] = array( '', 'MySQL 数据库备份' );
 		
-		$this->ipsclass->admin->page_detail = "This section allows you to backup your database.
-							  <br><br><b>Simple Backup</b>
-							  <br>This function compiles a single back up file and prompts a browser dialogue box for you to save 
-							  the file. This is beneficial for PHP safe mode enabled hosts, but can only be used on small databases.
-							  <!--<br><br>
-							  <b>Advanced Backup</b>
-							  <br>This function allows you to split the backup into smaller sections and saves the backup to disk.
-							  <br>Note, this can only be used if you do not have PHP safe mode enabled.-->";
+		$this->ipsclass->admin->page_detail = "您可以在这里备份您的数据库.
+							  <br><br><b>简单备份</b>
+							  <br>本功能将生成一个备份文件并提示您下载保存.本功能可以在 PHP 安全模式下运行，不过只能使用于小数据库.
+							  <br><br>
+							  <b>高级备份</b>
+							  <br>本功能可以将备份文件分割为几个小文件.
+							  <br>提示, 本功能不能用于 PHP 安全模式.";
 
-		$this->ipsclass->admin->page_title  = "mySQL ".$this->true_version." Back Up";
+		$this->ipsclass->admin->page_title  = "mySQL ".$this->true_version." 备份";
 		
 		// Check for mySQL version..
 		// Might change at some point..
@@ -428,24 +425,24 @@ class ad_sql_module {
 																			 4 => array( 'section', $this->ipsclass->section_code ),
 																	)      );
 								   
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Simple Back Up" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "简单备份" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>Add 'CREATE TABLE' statements?</b><br>Add backticks around the table name?<br>(if you get a mySQL error, enable this) <input type='checkbox' name='addticks' value=1>",
+													"<b>添加 'CREATE TABLE' 子句?</b><br>在表名前后添加引号?<br> (如果您遇到 MySQL 出错, 请打开本设置) <input type='checkbox' name='addticks' value=1>",
 													$this->ipsclass->adskin->form_yes_no( 'create_tbl', 1),
 									     )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>Skip non essential data?</b><br>Will not produce insert rows for ibf_sessions, ibf_admin_sessions, ibf_search_results, ibf_reg_anti_spam.",
+													"<b>跳过非核心数据?</b><br>将不会备份 ibf_sessions, ibf_admin_sessions, ibf_search_results, ibf_reg_anti_spam 数据.",
 													$this->ipsclass->adskin->form_yes_no( 'skip', 1),
 									     )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>GZIP Content?</b><br>Will produce a smaller file if GZIP is enabled.",
+													"<b>GZIP 压缩数据?</b><br>打开后将会生成一个较小的 GZip 文件.",
 													$this->ipsclass->adskin->form_yes_no( 'enable_gzip', 0 ),
 									     )      );
 												 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Start Back Up");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("开始备份");
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
 		
@@ -464,12 +461,12 @@ class ad_sql_module {
 		$start = intval($this->ipsclass->input['st']) >=0 ? intval($this->ipsclass->input['st']) : 0;
 		$pages = "";
 		
-		$this->ipsclass->admin->page_detail = "This section allows you to administrate your mySQL database.";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您的 mySQL 数据库.";
 		$this->ipsclass->admin->page_title  = "mySQL ".$this->true_version." Tool Box";
 		
-		$map = array( 'processes' 	=> "SQL Processes",
-					  'runtime'   	=> "SQL Runtime Information",
-					  'system'    	=> "SQL System Variables",
+		$map = array( 'processes' 	=> "SQL 进程",
+					  'runtime'   	=> "SQL 运行信息",
+					  'system'    	=> "SQL 系统变量",
 					);
 					
 		if ( isset($map[ $this->ipsclass->input['code'] ]) AND $map[ $this->ipsclass->input['code'] ] != "" )
@@ -479,7 +476,7 @@ class ad_sql_module {
 		}
 		else
 		{
-			$tbl_title = "Manual Query";
+			$tbl_title = "手工查询";
 			$man_query = 1;
 		}
 		
@@ -494,11 +491,11 @@ class ad_sql_module {
 											      4 => array( 'section', $this->ipsclass->section_code ),
 										 )      );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Run Query" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "执行查询" );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<center>".$this->ipsclass->adskin->form_textarea("query", $sql )."</center>" ) );
 													 
-			$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run a New Query");
+			$this->ipsclass->html .= $this->ipsclass->adskin->end_form("执行新查询");
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		}
 		
@@ -521,9 +518,9 @@ class ad_sql_module {
 		{
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Error" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "错误" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("No valid queries were found") );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("没有有效的查询") );
 		
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 			
@@ -543,9 +540,9 @@ class ad_sql_module {
 			{
 				$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Error" );
+				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "错误" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("This query appears to be invalid: {$sql}") );
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("此查询无效: {$sql}") );
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->end_table();	
 				
@@ -559,9 +556,9 @@ class ad_sql_module {
 			{
 				$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Error" );
+				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "错误" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("Sorry, those queries are not allowed for your safety") );
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("抱歉, 基于安全考虑, 不允许这些查询") );
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->end_table();	
 				
@@ -571,9 +568,9 @@ class ad_sql_module {
 			{
 				$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Error" );
+				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "错误" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("Sorry, you can't delete from or update that table") );
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("抱歉, 你不能删除或者更新该数据") );
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->end_table();	
 				
@@ -592,7 +589,7 @@ class ad_sql_module {
 			{
 				$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "SQL Error" );
+				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "SQL 错误" );
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array($this->ipsclass->DB->error) );
 			
@@ -609,9 +606,9 @@ class ad_sql_module {
 				
 				$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "SQL Query Completed" );
+				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "SQL 查询完成" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("Query: ".htmlspecialchars($sql)."<br>Executed Successfully") );
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("查询: ".htmlspecialchars($sql)."<br>成功执行") );
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 				
@@ -632,8 +629,8 @@ class ad_sql_module {
 						$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $rows_returned,
 															   'PER_PAGE'    => $limit,
 															   'CUR_ST_VAL'  => $start,
-															   'L_SINGLE'    => "Single Page",
-															   'L_MULTI'     => "Pages: ",
+															   'L_SINGLE'    => "单页",
+															   'L_MULTI'     => "页码: ",
 															   'BASE_URL'    => $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=runsql&query=".urlencode($sql),
 															 )
 													  );
@@ -664,7 +661,7 @@ class ad_sql_module {
 				$this->ipsclass->adskin->td_header[] = array( $fields[$i]->name , "*" );
 			}
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Result: ".$tbl_title );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "结果: ".$tbl_title );
 			
 			if ($links != "")
 			{
@@ -715,7 +712,7 @@ class ad_sql_module {
 	
 	function run_tool()
 	{
-		$this->ipsclass->admin->page_detail = "This section allows you to administrate your mySQL database.$extra";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您的 MySQL 数据库.$extra";
 		$this->ipsclass->admin->page_title  = "mySQL ".$this->true_version." Tool Box";
 		
 		//-----------------------------------------
@@ -737,7 +734,7 @@ class ad_sql_module {
  		
  		if ( count($tables) < 1 )
  		{
- 			$this->ipsclass->admin->error("You must choose some tables to run this tool on or it's just plain outright silly");
+ 			$this->ipsclass->admin->error("您必须先选择一个数据表");
  		}
  		
  		//-----------------------------------------
@@ -747,7 +744,7 @@ class ad_sql_module {
 		
 		if (strtoupper($this->ipsclass->input['tool']) == 'DROP' || strtoupper($this->ipsclass->input['tool']) == 'CREATE' || strtoupper($this->ipsclass->input['tool']) == 'FLUSH')
 		{
-			$this->ipsclass->admin->error("You can't do that, sorry");
+			$this->ipsclass->admin->error("抱歉, 你不能那样做");
 		}
 		
 		foreach($tables as $table)
@@ -767,7 +764,7 @@ class ad_sql_module {
 				$this->ipsclass->adskin->td_header[] = array( $fields[$i]->name , "*" );
 			}
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Result: ".$this->ipsclass->input['tool']." ".$table );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "结果: ".$this->ipsclass->input['tool']." ".$table );
 			
 			// Grab the rows - we don't what or how many so...
 			
@@ -831,13 +828,13 @@ class ad_sql_module {
 				
 				if ( preg_match( "/^(DROP|FLUSH)/i", trim($sql) ) )
 				{
-					$this->ipsclass->main_msg = "Sorry, those queries are not allowed for your safety";
+					$this->ipsclass->main_msg = "抱歉, 基于安全考虑, 不允许这些查询";
 					
 					continue;
 				}
 				else if ( preg_match( "/^(?!SELECT)/i", preg_replace( "#\s{1,}#s", "", $sql ) ) and preg_match( "/admin_login_logs/i", preg_replace( "#\s{1,}#s", "", $sql ) ) )
 				{
-					$this->ipsclass->main_msg = "Sorry, those queries are not allowed for your safety";
+					$this->ipsclass->main_msg = "抱歉, 基于安全考虑, 不允许这些查询";
 					
 					continue;			
 				}
@@ -849,11 +846,11 @@ class ad_sql_module {
 				
 					if( $this->ipsclass->DB->error != "" )
 					{
-						$this->ipsclass->main_msg .= "<span style='color:red;'>SQL Error</span><br />{$this->ipsclass->DB->error}<br />";
+						$this->ipsclass->main_msg .= "<span style='color:red;'>SQL 错误</span><br />{$this->ipsclass->DB->error}<br />";
 					}
 					else
 					{
-						$this->ipsclass->main_msg .= "Query: ".htmlspecialchars($sql)."<br />Executed Successfully<br />";
+						$this->ipsclass->main_msg .= "查询: ".htmlspecialchars($sql)."<br />成功执行<br />";
 					}
 					
 					$this->ipsclass->DB->error  = "";
@@ -1006,11 +1003,11 @@ class ad_sql_module {
 		
 		if ( $this->mysql_version < 3232 )
 		{
-			$extra = "<br><b>Note: your version of mySQL has a limited feature set and some tools have been removed</b>";
+			$extra = "<br><b>提示: 您的 MySQL 版本有所限制, 部分功能无法运行</b>";
 		}
 	
-		$this->ipsclass->admin->page_detail = "This section allows you to administrate your mySQL database.$extra";
-		$this->ipsclass->admin->page_title  = "SQL ".$this->true_version." Tool Box";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您的 mySQL 数据库.$extra";
+		$this->ipsclass->admin->page_title  = "SQL ".$this->true_version." 工具箱";
 		
 		//-----------------------------------------
 		// Show advanced stuff for mySQL > 3.23.03
@@ -1060,12 +1057,12 @@ class ad_sql_module {
 		if ( $this->mysql_version >= 3230 )
 		{
 		
-			$this->ipsclass->adskin->td_header[] = array( "Table"      , "20%" );
-			$this->ipsclass->adskin->td_header[] = array( "Rows"       , "10%" );
-			$this->ipsclass->adskin->td_header[] = array( "Export"     , "10%" );
-			$this->ipsclass->adskin->td_header[] = array( '<input name="allbox" type="checkbox" value="Check All" onClick="CheckAll();">'     , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( "数据表"      , "20%" );
+			$this->ipsclass->adskin->td_header[] = array( "记录数"       , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( "导出"     , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( '<input name="allbox" type="checkbox" value="全部选择" onClick="CheckAll();">'     , "10%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Invision Power Board Tables" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Invision Power Board 数据表" );
 			
 			$this->ipsclass->DB->query("SHOW TABLE STATUS FROM `".$this->ipsclass->vars['sql_database']."`");
 			
@@ -1089,11 +1086,11 @@ class ad_sql_module {
 		{
 			// display a basic information table
 			
-			$this->ipsclass->adskin->td_header[] = array( "Table"      , "60%" );
-			$this->ipsclass->adskin->td_header[] = array( "Rows"       , "30%" );
-			$this->ipsclass->adskin->td_header[] = array( '<input name="allbox" type="checkbox" value="Check All" onClick="CheckAll();">'     , "10%" );
+			$this->ipsclass->adskin->td_header[] = array( "数据表"      , "60%" );
+			$this->ipsclass->adskin->td_header[] = array( "记录数"       , "30%" );
+			$this->ipsclass->adskin->td_header[] = array( '<input name="allbox" type="checkbox" value="全部选择" onClick="CheckAll();">'     , "10%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Invision Power Board Tables" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Invision Power Board 数据表" );
 			
 			$tables = $this->ipsclass->DB->get_table_names();
 			
@@ -1126,7 +1123,7 @@ class ad_sql_module {
 		if ( $this->mysql_version < 3232 )
 		{
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<select id='button' name='tool'>
-													<option value='optimize'>Optimize Selected Tables</option>
+													<option value='optimize'>优化所的选表</option>
 												  </select>
 												 <input type='submit' value='Go!' class='realbutton'></form>", "center", "tablerow2" );
 		}
@@ -1134,10 +1131,10 @@ class ad_sql_module {
 		{
 										 
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<select id='button' name='tool'>
-													<option value='optimize'>Optimize Selected Tables</option>
-													<option value='repair'>Repair Selected Tables</option>
-													<option value='check'>Check Selected Tables</option>
-													<option value='analyze'>Analyze Selected Tables</option>
+													<option value='optimize'>优化所选表</option>
+													<option value='repair'>修复所选表</option>
+													<option value='check'>检查所选表</option>
+													<option value='analyze'>分析所选表</option>
 												  </select>
 												 <input type='submit' value='Go!' class='realbutton'></form>", "center", "tablerow2" );
 		}
@@ -1155,13 +1152,13 @@ class ad_sql_module {
 		$this->ipsclass->adskin->td_header[] = array( "{none}"      , "30%" );
 		$this->ipsclass->adskin->td_header[] = array( "{none}"      , "70%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Run a Query" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "执行查询" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Manual Query</b><br>Advanced Users Only",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>手工查询</b><br>仅供高级用户使用",
 												  $this->ipsclass->adskin->form_textarea("query", "" ),
 												 )      );
 												 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run Query");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("执行查询");
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
 		

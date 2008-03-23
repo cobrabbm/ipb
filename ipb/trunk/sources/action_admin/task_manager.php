@@ -75,10 +75,10 @@ class ad_task_manager
 		// Continue
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_detail = "The task manager contains all your scheduled tasks.<br />Please note that as these tasks are run when the board is accessed, the next run time is to be used as a guide only and depends on the traffic your board gets.";
-		$this->ipsclass->admin->page_title  = "Task Manager";
+		$this->ipsclass->admin->page_detail = "任务管理器包含了您所有的计划任务. <br />请注意, 由于任务是在论坛被访问的时候执行的, 任务下次执行的时间只是一个参考, 如果没有人访问您的论坛，任务不会执行.";
+		$this->ipsclass->admin->page_title  = "任务管理";
 
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Task Manager Home' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '任务管理' );
 		
 		//-----------------------------------------
 		// Using "do"?
@@ -359,7 +359,7 @@ class ad_task_manager
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'task_logs', 'where' => $where ) );
 		
-		$this->ipsclass->main_msg = 'Selected Task Logs Removed';
+		$this->ipsclass->main_msg = '所选任务已删除';
 		$this->task_log_setup();
 	}
 	
@@ -369,7 +369,7 @@ class ad_task_manager
 	
 	function task_log_show()
 	{
-		$this->ipsclass->admin->nav[] = array( '', 'Viewing Task Logs' );
+		$this->ipsclass->admin->nav[] = array( '', '查看任务记录' );
 		
 		//-----------------------------------------
 		// SHOW 'EM
@@ -389,12 +389,12 @@ class ad_task_manager
 		
 		$this->ipsclass->DB->simple_exec();
 		
-		$this->ipsclass->adskin->td_header[] = array( "Task Run" , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Date Run" , "35%" );
-		$this->ipsclass->adskin->td_header[] = array( "Log Info" , "45%" );
+		$this->ipsclass->adskin->td_header[] = array( "执行任务" , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "执行时间" , "35%" );
+		$this->ipsclass->adskin->td_header[] = array( "记录信息" , "45%" );
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Selected Task Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "选中任务记录" );
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -408,7 +408,7 @@ class ad_task_manager
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有记录</center>");
 		}
 		
 		
@@ -424,13 +424,13 @@ class ad_task_manager
 	
 	function task_log_setup()
 	{
-		$this->ipsclass->admin->nav[] = array( '', 'Viewing Task Logs' );
+		$this->ipsclass->admin->nav[] = array( '', '查看任务记录' );
 		
 		//-----------------------------------------
 		// Some set up
 		//-----------------------------------------
 		
-		$tasks = array( 0 => array( -1, 'All tasks' ) );
+		$tasks = array( 0 => array( -1, '全部任务' ) );
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'task_manager', 'order' => 'task_title' ) );
 		$this->ipsclass->DB->simple_exec();
@@ -448,12 +448,12 @@ class ad_task_manager
 
 		$this->ipsclass->DB->simple_exec();
 		
-		$this->ipsclass->adskin->td_header[] = array( "Task Run" , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Date Run" , "35%" );
-		$this->ipsclass->adskin->td_header[] = array( "Log Info" , "45%" );
+		$this->ipsclass->adskin->td_header[] = array( "执行任务" , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "运行日期" , "35%" );
+		$this->ipsclass->adskin->td_header[] = array( "记录信息" , "45%" );
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Last 5 Tasks Run" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最后执行的 5 个任务" );
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -467,7 +467,7 @@ class ad_task_manager
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有记录</center>");
 		}
 		
 		
@@ -487,17 +487,17 @@ class ad_task_manager
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "40%" );
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "View Task Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "查看任务记录" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>View logs for task:</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择任务:</b>",
 															  $this->ipsclass->adskin->form_dropdown( 'task_id', $tasks )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Show how many log entries?</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>显示记录数量?</b>",
 															  $this->ipsclass->adskin->form_input( 'task_count', '30' )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('View Logs');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('查看记录');
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -514,17 +514,17 @@ class ad_task_manager
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "40%" );
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "DELETE Task Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除任务记录" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Delete logs for task:</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除所选的任务记录:</b>",
 															  $this->ipsclass->adskin->form_dropdown( 'task_id', $tasks )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Delete logs older than (in days)?</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除 <em>n</em> 天前的任务记录?</b>",
 															  $this->ipsclass->adskin->form_input( 'task_prune', '30' )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('DELETE Logs');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('删除记录');
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -546,7 +546,7 @@ class ad_task_manager
 		
 		$this->ipsclass->DB->do_update( 'task_manager', array( 'task_locked' => 0 ), "task_id=".$task_id );
 		
-		$this->ipsclass->main_msg = 'Task lock removed';
+		$this->ipsclass->main_msg = '任务已开启';
 		$this->task_show_tasks();
 	}
 	
@@ -576,13 +576,13 @@ class ad_task_manager
 		
 		if ( ! $this_task['task_id'] )
 		{
-			$this->ipsclass->main_msg = 'No task to run.';
+			$this->ipsclass->main_msg = '没有要执行的任务.';
 			$this->show_tasks();
 		}
 		
 		if ( ! $this_task['task_enabled'] )
 		{
-			$this->ipsclass->main_msg = "This task has been disabled. Please enable the task before running it.";
+			$this->ipsclass->main_msg = "任务被禁用，请开启后再次执行.";
 			$this->task_show_tasks();
 		}
 		
@@ -599,7 +599,7 @@ class ad_task_manager
 		
 		if ( $this_task['task_locked'] > 0 )
 		{
-			$this->ipsclass->main_msg = "This task was locked at ". gmdate( 'j M Y - G:i', $this_task['task_locked'] ) ." and cannot be run until unlocked.";
+			$this->ipsclass->main_msg = "任务禁用于 ". gmdate( 'j M Y - G:i', $this_task['task_locked'] ) ." 在开启前不会执行.";
 			$this->task_show_tasks();
 		}
 		
@@ -619,7 +619,7 @@ class ad_task_manager
 			$myobj->pass_task( $this_task );
 			$myobj->run_task();
 			
-			$this->ipsclass->main_msg = 'Task run successfully';
+			$this->ipsclass->main_msg = '任务成功执行';
 			$this->task_show_tasks();
 		}
 		else
@@ -649,7 +649,7 @@ class ad_task_manager
 			
 		if ( $task['task_safemode'] and ! IN_DEV )
 		{
-			$this->ipsclass->main_msg = "You are unable to delete this task.";
+			$this->ipsclass->main_msg = "您不能删除此任务.";
 			$this->task_show_tasks();
 			return;
 		}
@@ -662,7 +662,7 @@ class ad_task_manager
 		
 		$this->functions->save_next_run_stamp();
 		
-		$this->ipsclass->main_msg = 'Task deleted';
+		$this->ipsclass->main_msg = '任务被删除';
 		
 		$this->task_show_tasks();
 	}
@@ -695,13 +695,13 @@ class ad_task_manager
 		
 		if ( ! $this->ipsclass->input['task_title'] )
 		{
-			$this->ipsclass->main_msg = 'You must enter a task title.';
+			$this->ipsclass->main_msg = '您必须输入任务名称.';
 			$this->task_form();
 		}
 		
 		if ( ! $this->ipsclass->input['task_file'] )
 		{
-			$this->ipsclass->main_msg = 'You must enter a filename for this task to run';
+			$this->ipsclass->main_msg = '您必须输入此任务运行的文件名';
 			$this->task_form();
 		}
 		
@@ -742,12 +742,12 @@ class ad_task_manager
 		if ( $type == 'edit' )
 		{
 			$this->ipsclass->DB->do_update( 'task_manager', $save, 'task_id='.$task_id );
-			$this->ipsclass->main_msg = 'Task Edited Successfully';
+			$this->ipsclass->main_msg = '成功编辑任务';
 		}
 		else
 		{
 			$this->ipsclass->DB->do_insert( 'task_manager', $save );
-			$this->ipsclass->main_msg = 'Task Saved Successfully';
+			$this->ipsclass->main_msg = '成功保存任务';
 		}
 		
 		$this->functions->save_next_run_stamp();
@@ -762,7 +762,7 @@ class ad_task_manager
 	
 	function task_form($type='edit')
 	{
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit Task' );
+		$this->ipsclass->admin->nav[] = array( '', '新建/编辑任务' );
 		
 		//-----------------------------------------
 		// Init Vars
@@ -780,7 +780,7 @@ class ad_task_manager
 		
 		if ( $type == 'edit' )
 		{
-			$button  = "Edit Task";
+			$button  = "编辑任务";
 			$formbit = "task_edit_do";
 			$this->ipsclass->html_help_title = "";
 			$this->ipsclass->html_help_msg   = "";
@@ -789,31 +789,31 @@ class ad_task_manager
 			
 			if ( $task['task_safemode'] and ! IN_DEV )
 			{
-				$this->ipsclass->main_msg = "You are unable to edit this task.";
+				$this->ipsclass->main_msg = "您不能编辑此任务.";
 				$this->task_show_tasks();
 				return;
 			}
 			
-			$title = "Editing Task: ".$group['cb_group_name'];
+			$title = "编辑任务: ".$group['cb_group_name'];
 		}
 		else
 		{
-			$button  = "Create New Task";
+			$button  = "新建任务";
 			$formbit = "task_add_do";
 			$this->ipsclass->html_help_title = "";
 			$this->ipsclass->html_help_msg   = "";
 			$task   = array();
-			$title  = "Creating New Task";
+			$title  = "新建任务";
 		}
 		
 		//-----------------------------------------
 		// Create drop downs
 		//-----------------------------------------
 		
-		$dropdown['_minute'] = array( 0 => array( '-1', 'Every Minute'   ) );
-		$dropdown['_hour']   = array( 0 => array( '-1', 'Every Hour'     ), 1 => array( '0', '0 - Midnight' ) ); 
-		$dropdown['_wday']   = array( 0 => array( '-1', 'Every Week Day' ) );
-		$dropdown['_mday']   = array( 0 => array( '-1', 'Every Day of the Month' ) );
+		$dropdown['_minute'] = array( 0 => array( '-1', '每分钟'   ) );
+		$dropdown['_hour']   = array( 0 => array( '-1', '每小时'     ), 1 => array( '0', '0 - 午夜' ) ); 
+		$dropdown['_wday']   = array( 0 => array( '-1', '每天（周）' ) );
+		$dropdown['_mday']   = array( 0 => array( '-1', '每天（月）' ) );
 		
 		for( $i = 0 ; $i < 60; $i++ )
 		{
@@ -824,15 +824,15 @@ class ad_task_manager
 		{
 			if ( $i < 12 )
 			{
-				$ampm = $i.' am';
+				$ampm = ' 上午 '.$i.' 点';
 			}
 			else if ( $i == 12 )
 			{
-				$ampm = 'Midday';
+				$ampm = '正午';
 			}
 			else
 			{
-				$ampm = $i - 12 . ' pm';
+				$ampm = ' 下午 ' .($i - 12) . ' 点';
 			}
 			
 			$dropdown['_hour'][] = array( $i, $i. ' - ('.$ampm.')' );
@@ -843,13 +843,13 @@ class ad_task_manager
 			$dropdown['_mday'][] = array( $i, $i );
 		}
 		
-		$dropdown['_wday'][]  = array( '0', 'Sunday'     );
-		$dropdown['_wday'][]  = array( '1', 'Monday'     );
-		$dropdown['_wday'][]  = array( '2', 'Tuesday'    );
-		$dropdown['_wday'][]  = array( '3', 'Wednesday'  );
-		$dropdown['_wday'][]  = array( '4', 'Thursday'   );
-		$dropdown['_wday'][]  = array( '5', 'Friday'     );
-		$dropdown['_wday'][]  = array( '6', 'Saturday'   );
+		$dropdown['_wday'][]  = array( '0', '周日'     );
+		$dropdown['_wday'][]  = array( '1', '周一'     );
+		$dropdown['_wday'][]  = array( '2', '周二'    );
+		$dropdown['_wday'][]  = array( '3', '周三'  );
+		$dropdown['_wday'][]  = array( '4', '周四'   );
+		$dropdown['_wday'][]  = array( '5', '周五'     );
+		$dropdown['_wday'][]  = array( '6', '周六'   );
 		
 		//-----------------------------------------
 		// Form elements
@@ -916,7 +916,7 @@ class ad_task_manager
 			$row['_next_run'] = gmdate( 'j M Y - G:i', $row['task_next_run'] );
 			
 			$row['_class']    = $row['task_enabled'] != 1 ? " style='color:gray'" : '';
-			$row['_title']    = $row['task_enabled'] != 1 ? " (Disabled)" : '';
+			$row['_title']    = $row['task_enabled'] != 1 ? " (禁用)" : '';
 			$row['_next_run'] = $row['task_enabled'] != 1 ? "<span style='color:gray'><s>{$row['_next_run']}</s></span>" : $row['_next_run'];
 			
 			$content .= $this->html->task_manager_row( $row );

@@ -63,10 +63,10 @@ class ad_postoffice
 		
 		$this->root_path = ROOT_PATH ? ROOT_PATH : './';
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'IPB Post Office' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'IPB 论坛邮局' );
 		
-		$this->ipsclass->admin->page_detail = "You may manage previous bulk emails and create new bulk emails in this section.";
-		$this->ipsclass->admin->page_title  = "IPB Post Office";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理或新建群发邮件.";
+		$this->ipsclass->admin->page_title  = "IPB 论坛邮局";
 		
 		switch($this->ipsclass->input['code'])
 		{
@@ -134,7 +134,7 @@ class ad_postoffice
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'bulk_mail', 'where' => 'mail_id='.$id ) );
 											
-		$this->ipsclass->main_msg = "Bulk email deleted";
+		$this->ipsclass->main_msg = "群发邮件已删除";
 		$this->mail_start();
 	}
 	
@@ -150,7 +150,7 @@ class ad_postoffice
 											
 		$this->ipsclass->DB->do_update( 'task_manager', array( 'task_enabled' => 0 ), "task_key='bulkmail'" );
 		
-		$this->ipsclass->main_msg = "Bulk email cancelled";
+		$this->ipsclass->main_msg = "群发邮件已取消";
 		$this->mail_start();
 	}
 	
@@ -312,7 +312,7 @@ class ad_postoffice
 		
 		if ( ! $mail['mail_subject'] and ! $mail['mail_content'] )
 		{
-			$this->ipsclass->main_msg = "Cannot send - the email doesn't have a subject and content";
+			$this->ipsclass->main_msg = "无法发送 - 邮件没有主题和正文";
 			$this->mail_start();
 		}
 		
@@ -349,7 +349,7 @@ class ad_postoffice
 		// Sit back and watch the show
 		//-----------------------------------------
 		
-		$this->ipsclass->main_msg = "Bulk Mail Initiated";
+		$this->ipsclass->main_msg = "开始群发邮件";
 		
 		$this->mail_start();
 	}
@@ -377,7 +377,7 @@ class ad_postoffice
 		
 		if ( ! $mail['mail_subject'] and ! $mail['mail_content'] )
 		{
-			$this->ipsclass->main_msg = "Cannot send - the email doesn't have a subject and content";
+			$this->ipsclass->main_msg = "无法发送 - 邮件没有主题和正文";
 			$this->mail_start();
 		}
 		
@@ -416,32 +416,31 @@ class ad_postoffice
 												                 4 => array( 'section', $this->ipsclass->section_code ),
 									                     )      );
 		
-		$this->ipsclass->html .= "<div class='tableborder'><div class='tableheaderalt'>Sending the bulk mail to {$the_count} members</div>";
+		$this->ipsclass->html .= "<div class='tableborder'><div class='tableheaderalt'>群发邮件给 {$the_count} 位会员</div>";
 		$this->ipsclass->html .= "<div class='tablerow2' style='padding:4px'>
 							<fieldset>
-							 <legend><strong>Email Details</strong></legend>
-							 <strong>Subject: {$mail['mail_subject']}</strong>
+							 <legend><strong>邮件详细信息</strong></legend>
+							 <strong>主题: {$mail['mail_subject']}</strong>
 							 <br />
 							 <br />
 							 <div style='height:200px;white-space:pre'><iframe width='100%' height='200px' scrollbars='auto' src='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=postoffice&code=mail_preview_do&id={$id}'></iframe></div>
 							 <br />
-							 <div align='center'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_edit&id={$id}'>Edit This Email</a></span></div>
+							 <div align='center'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_edit&id={$id}'>编辑邮件 </a></span></div>
 							 <br />
-							 Sending to <b>{$the_count}</b> &nbsp;members.
+							 发送给 <b>{$the_count}</b> &nbsp;位会员.
 							</fieldset>
 							<br />
 							<fieldset>
 							 <legend><strong>Sending the Email</strong></legend>
-							 Clicking the 'Start Sending The Emails' button below will activate the task manager's send bulk email function which will send the email in batches until the all the mail
-							 has been sent. You can watch the progress from the main Post Office screen and cancel the email from being sent.
+							 点击下面的 '开始发送邮件' 按钮, 将会激活任务管理器的群发邮件功能, 邮件将会持续发送, 直到发出所有的邮件. 您可以在邮局主页面看到发送进程，并且可以取消发送.
 							 <br />
-							 We strongly recommend that you opt to send 50 emails per cycle as a maximum. Any more per cycle could severly affect performance of your server while the mail is being sent out.
-							 <br />
-							 <br />
-							 As the mail is sent out in cycles of <em><b>n</b></em> &nbsp;per minute, it can take a while to process all the mail.
+							 强烈建议您每次最多发送 50 封邮件. 更多的发送数量将会大大降低服务器性能.
 							 <br />
 							 <br />
-							 <div align='center'><b>Emails sent per cycle</b> <input type='text' class='realbutton' size='5' name='pergo' value='50' /> &nbsp; <input type='submit' value='Start Sending The Emails' class='realbutton' /></form></div>
+							 每次循环发送 <em><b>n</b></em> 封邮件, 全部发送将需要一段时间.
+							 <br />
+							 <br />
+							 <div align='center'><b>每次发送邮件数量</b> <input type='text' class='realbutton' size='5' name='pergo' value='50' /> &nbsp; <input type='submit' value='开始发送邮件' class='realbutton' /></form></div>
 							</fieldset>
 						   </div>
 						   </div>";
@@ -558,7 +557,7 @@ class ad_postoffice
 		
 		if ( ! $this->ipsclass->input['mail_subject'] or ! $this->ipsclass->input['mail_content'] )
 		{
-			$this->ipsclass->main_msg = "You must enter an email subject and email content before submitting.";
+			$this->ipsclass->main_msg = "您必须输入邮件主题和正文.";
 			$this->mail_form( $type );
 		}
 		
@@ -581,7 +580,7 @@ class ad_postoffice
  		
  		if ( ! count( $ids ) )
  		{
- 			$this->ipsclass->main_msg = "You must select at least one group to send this email message to.";
+ 			$this->ipsclass->main_msg = "您必须至少选择一个用户组.";
  			$this->mail_form( $type );
  		}
  		
@@ -609,7 +608,7 @@ class ad_postoffice
 		
 		if ( ! $count['cnt'] )
 		{
-			$this->ipsclass->main_msg = "Your criteria didn't match any members - please adjust your current criteria";
+			$this->ipsclass->main_msg = "找不到符合您的条件的会员 - 请调整您的搜索条件";
 			$this->mail_form( $type );
 		}
 		
@@ -660,7 +659,7 @@ class ad_postoffice
 			
 			$this->ipsclass->admin->save_log("Bulk mail ({$this->ipsclass->input['mail_subject']}) edited");
 			
-			$this->ipsclass->main_msg = "Bulk mail edited";
+			$this->ipsclass->main_msg = "群发邮件已编辑";
 			$this->mail_start();
 		}
 	}
@@ -674,23 +673,23 @@ class ad_postoffice
 		$this->ipsclass->input['id'] = intval($this->ipsclass->input['id']);
 		
 		$dd_ltmt = array(
-						  0 => array( 'lt' , "less than" ),
-						  1 => array( 'mt' , "more than" )
+						  0 => array( 'lt' , "小于" ),
+						  1 => array( 'mt' , "大于" )
 						);
 		
 		if ( $type == 'add' )
 		{
 			$mail   = array();
-			$title  = "Step 1: Start New Bulk Email";
-			$button =  "Proceed...";
+			$title  = "第一步: 新建群发邮件";
+			$button =  "下一步...";
 			$honour_checked = 'checked="checked"';
 			$html_checked   = '';
 		}
 		else
 		{
 			$mail   = $this->ipsclass->DB->simple_exec_query( array( 'select' => '*', 'from' => 'bulk_mail', 'where' => 'mail_id='.$this->ipsclass->input['id'] ) );
-			$title  = "Editing Stored Mail";
-			$button = "Edit Mail";
+			$title  = "编辑群发邮件";
+			$button = "保存编辑";
 			
 			//-----------------------------------------
 			// Unpack more..
@@ -757,19 +756,19 @@ class ad_postoffice
 		$this->ipsclass->html .= "<div class='tableborder'><div class='tableheaderalt'>{$title}</div>";
 		$this->ipsclass->html .= "<div class='tablerow2' style='padding:4px'>
 							<fieldset>
-							 <legend><strong>Email Subject</strong></legend>
+							 <legend><strong>邮件主题</strong></legend>
 							 <input type='text' size='60' maxsize='250' class='textinput' style='width:100%' name='mail_subject' value='{$mail_subject}' />
 							</fieldset>
 							<br />
 							<fieldset>
-							 <legend><strong>Email Content</strong></legend>
+							 <legend><strong>邮件正文</strong></legend>
 							 <textarea cols='60' rows='20' class='textinput' style='width:100%' name='mail_content'>{$mail_content}</textarea>
 							 <br />
 							 <fieldset>
-							  <legend><strong>Mail Sending Options</strong></legend>
-							   <input type='checkbox' name='mail_honor'   value='1' {$honour_checked} />&nbsp; Honor 'Allow admin to email me' member setting to only email those who have opted in?
+							  <legend><strong>发送选项</strong></legend>
+							   <input type='checkbox' name='mail_honor'   value='1' {$honour_checked} />&nbsp; 只发送给打开“允许管理员给我发送邮件” 设置的会员?
 							   <br/ >
-							   <input type='checkbox' name='mail_html_on' value='1' {$html_checked} />&nbsp; Send email in HTML format (full HTML formatting & tags allowed)
+							   <input type='checkbox' name='mail_html_on' value='1' {$html_checked} />&nbsp; 以 HTML 格式发送邮件（允许 HTML 格式和标记）
 							 </fieldset>
 							</fieldset>";
 		
@@ -781,7 +780,7 @@ class ad_postoffice
 							<tr>
 							 <td width='30%'>
 							  <fieldset>
-							  <legend><strong>Send to Groups:</strong></legend>";
+							  <legend><strong>发送给用户组:</strong></legend>";
 							  
 		foreach( $this->ipsclass->cache['group_cache'] as $g )
 		{
@@ -807,20 +806,20 @@ class ad_postoffice
 							 </td>
 							 <td width='70%' valign='top'>
 							  <fieldset>
-							  <legend><strong>Additional Filters</strong></legend>
+							  <legend><strong>其他过滤选项</strong></legend>
 							  <table width='100%' cellpadding='4' cellspacing='0' border='0'>
 							  <tr>
-							   <td width='60%'>Send to members with <em><b>n</b></em> posts<div class='graytext'>Leave blank to not filter</div></td>
+							   <td width='60%'>收件人的帖子数 <em><b>n</b></em> <div class='graytext'>留空不作限制</div></td>
 							   <td width='40%'>". $this->ipsclass->adskin->form_dropdown('mail_post_ltmt', $dd_ltmt, $_POST['mail_post_ltml'] ? $_POST['mail_post_ltml'] : $mail['mail_post_ltmt'] ).' '.
 							   					  $this->ipsclass->adskin->form_simple_input( "mail_filter_post", $_POST['mail_filter_post'] ? $_POST['mail_filter_post'] : $mail['mail_filter_post'], 7 )."</td>
 							  </tr>
 							  <tr>
-							   <td width='60%'>Send to members who's last visit was <em><b>n</b></em> days ago<div class='graytext'>Leave blank to not filter</div></td>
+							   <td width='60%'>收件人最后在 <em><b>n</b></em> 天前访问论坛<div class='graytext'>留空不作限制</div></td>
 							   <td width='40%'>". $this->ipsclass->adskin->form_dropdown('mail_visit_ltmt', $dd_ltmt, $_POST['mail_visit_ltml'] ? $_POST['mail_visit_ltml'] : $mail['mail_visit_ltmt'] ).' '.
 							   					  $this->ipsclass->adskin->form_simple_input( "mail_filter_visit", $_POST['mail_filter_visit'] ? $_POST['mail_filter_visit'] : $mail['mail_filter_visit'], 7 )."</td>
 							  </tr>
 							  <tr>
-							   <td width='60%'>Send to members who joined <em><b>n</b></em> days ago<div class='graytext'>Leave blank to not filter</div></td>
+							   <td width='60%'>收件人注册于 <em><b>n</b></em> 天前<div class='graytext'>留空不作限制</div></td>
 							   <td width='40%'>". $this->ipsclass->adskin->form_dropdown('mail_joined_ltmt', $dd_ltmt, $_POST['mail_joined_ltml'] ? $_POST['mail_joined_ltml'] : $mail['mail_joined_ltmt'] ).' '.
 							   					  $this->ipsclass->adskin->form_simple_input( "mail_filter_joined", $_POST['mail_filter_joined'] ? $_POST['mail_filter_joined'] : $mail['mail_filter_joined'], 7 )."</td>
 							  </tr>
@@ -835,38 +834,38 @@ class ad_postoffice
 		
 		$this->ipsclass->html .= "<br />
 							<div class='tableborder'>
-							<div class='tablesubheader'>Quick Tags</div>
-							<div class='tablerow1' style='padding:4px'>You may use the following 'quick tags' in your email and they will be converted when the email is sent.</div>
+							<div class='tablesubheader'>快速标记</div>
+							<div class='tablerow1' style='padding:4px'>您可以在邮件正文中使用下列 '快速标签' , 它们会在发送邮件时自动转换.</div>
 							<table cellpadding='2' class='tablerow1' width='100%' cellspacing='0' border='0'>
 							<tr>
 							 <td><strong>{board_name}</strong></td>
-							 <td><em>The name of your board</em></td>
+							 <td><em>论坛名称</em></td>
 							 <td><strong>{board_url}</strong></td>
-							 <td><em>The URL to your board</em></td>
+							 <td><em>论坛地址</em></td>
 							</tr>
 							<tr>
 							 <td><strong>{reg_total}</strong></td>
-							 <td><em>The total number of registered members</em></td>
+							 <td><em>注册用户总数</em></td>
 							 <td><strong>{total_posts}</strong></td>
-							 <td><em>The total number of posts</em></td>
+							 <td><em>帖子总数</em></td>
 							</tr>
 							<tr>
 							 <td><strong>{busy_count}</strong></td>
-							 <td><em>The most number of users online</em></td>
+							 <td><em>在线峰值</em></td>
 							 <td><strong>{busy_time}</strong></td>
-							 <td><em>The time that the most number of members were online</em></td>
+							 <td><em>在线峰值时间</em></td>
 							</tr>
 							<tr>
 							 <td><strong>{member_id}</strong></td>
-							 <td><em>The member ID of the email recipient</em></td>
+							 <td><em>发件人会员ID</em></td>
 							 <td><strong>{member_name}</strong></td>
-							 <td><em>The member name of the email recipient</em></td>
+							 <td><em>发件人用户名</em></td>
 							</tr>
 							<tr>
 							 <td><strong>{member_joined}</strong></td>
-							 <td><em>The member join date of the email recipient</em></td>
+							 <td><em>发件人注册日期</em></td>
 							 <td><strong>{member_posts}</strong></td>
-							 <td><em>The number of posts for the email recipient</em></td>
+							 <td><em>发件人帖子数量</em></td>
 							</tr>
 							</table>
 							</div>";
@@ -880,14 +879,14 @@ class ad_postoffice
 	
 	function mail_start()
 	{
-		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"      , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "Subject"     , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Sent On"     , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Sent To"     , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Time Taken"  , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"     , "1%" );
+		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"		, "1%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题"		, "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "发送时间"	, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "收件人"		, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "持续时间"	, "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"		, "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Your stored bulk email" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "您创建的群发邮件" );
 		
 		//-----------------------------------------
 		// Get mail from DB
@@ -924,7 +923,7 @@ class ad_postoffice
 			
 			if ( $r['mail_active'] )
 			{
-				$inprogress = " <em>( Sending in progress - <a href='#' onclick=\"maincheckdelete('{$this->ipsclass->base_url}&{$this->ipsclass->form_code_js}&code=mail_send_cancel', 'OK to cancel bulk mail?'); return false;\">Cancel</a> )</em>";
+				$inprogress = " <em>（正在发送 - <a href='#' onclick=\"maincheckdelete('{$this->ipsclass->base_url}&{$this->ipsclass->form_code_js}&code=mail_send_cancel', '取消群发邮件？'）; return false;\">取消</a> )</em>";
 			}
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
@@ -941,9 +940,9 @@ class ad_postoffice
 										 menu_build_menu(
 										 "mid-{$r['mail_id']}",
 										 new Array(
-										 	img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_send_start&id={$r['mail_id']}'>Re-send...</a>",
-										 	img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_edit&id={$r['mail_id']}'>Edit...</a>",
-										 	img_delete   + " <a href='#' onclick=\"maincheckdelete('{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_delete&id={$r['mail_id']}');return false;\">Delete...</a>"
+										 	img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_send_start&id={$r['mail_id']}'>重新发送...</a>",
+										 	img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_edit&id={$r['mail_id']}'>重新发送...</a>",
+										 	img_delete   + " <a href='#' onclick=\"maincheckdelete('{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=mail_delete&id={$r['mail_id']}');return false;\">删除...</a>"
 										 ) );
 										 </script>
 EOF;
@@ -1047,15 +1046,14 @@ EOF;
 	
 	function _get_default_mail_contents()
 	{
-		$mail = "{member_name},\n\n\n\n-------------------------------------\n{board_name} Statistics:\n"
-			  ."-------------------------------------\nRegistered Users: {reg_total}\nTotal Posts: {total_posts}\n"
-			  ."Busiest Time: {busy_count} users were online on {busy_time}\n\n"
-			  ."-------------------------------------\nHandy Links\n"
-			  ."-------------------------------------\nBoard Address: {board_url}\nLog In: {board_url}?act=Login&CODE=00\n"
-			  ."Lost Password Recovery: {board_url}?act=Reg&CODE=10\n\n"
-			  ."-------------------------------------\nHow to unsubscribe\n"
-			  ."-------------------------------------\nVisit your email preferences ({board_url}?act=UserCP&CODE=02) and ensure "
-			  ."that the box for 'Send me any updates sent by the board administrator' is unchecked and submit the form";
+		$mail = "{member_name},\n\n\n\n-------------------------------------\n{board_name} 统计：\n"
+			  ."-------------------------------------\n注册用户数:{reg_total}\n帖子总数:{total_posts}\n"
+			  ."于 {busy_time}，有 {busy_count} 位用户同时在线.\n\n"
+			  ."-------------------------------------\n快速连接\n"
+			  ."-------------------------------------\n论坛地址:{board_url}\n登录地址:{board_url}?act=Login&CODE=00\n"
+			  ."找回密码:{board_url}?act=Reg&CODE=10\n\n"
+			  ."-------------------------------------\n如何取消订阅\n"
+			  ."-------------------------------------\n访问您的控制面板中的“邮件参数设置”（{board_url}?act=UserCP&CODE=02）将“接收由论坛管理员发出的任何消息”前的复选框取消, 然后提交表单.";
 			  
 		return $mail;
 	

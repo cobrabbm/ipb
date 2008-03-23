@@ -131,7 +131,7 @@ class ad_skin_wrappers {
 		
 		if ($this->ipsclass->input['txtwrapper'] == "")
 		{
-			$this->ipsclass->admin->error("You can't have an empty template, can you?");
+			$this->ipsclass->admin->error("模板不能为空");
 		}
 		
 		$tmpl = $this->ipsclass->admin->form_to_text( $this->ipsclass->txt_stripslashes($_POST['txtwrapper']) );
@@ -139,12 +139,12 @@ class ad_skin_wrappers {
 		
 		if ( ! preg_match( "/<% BOARD %>/", $tmpl ) )
 		{
-			$this->ipsclass->admin->error("You cannot remove the &lt% BOARD %> tag silly!");
+			$this->ipsclass->admin->error("您不能删除 &lt% BOARD %> 标记!");
 		}
 		
 		if ( ! preg_match( "/<% COPYRIGHT %>/", $tmpl ) )
 		{
-			$this->ipsclass->admin->error("You cannot remove the &lt% COPYRIGHT %> tag silly!");
+			$this->ipsclass->admin->error("您不能删除 &lt% COPYRIGHT %> 标记!");
 		}
 		
 		$this->ipsclass->DB->do_update( 'skin_sets', array( 'set_wrapper' => $tmpl ), 'set_skin_set_id='.$id );
@@ -157,9 +157,9 @@ class ad_skin_wrappers {
 		
 		if ( ! $this->ipsclass->input['savereload'] )
 		{
-			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'Skin Manager Home' );
-			$this->ipsclass->main_msg = "Board Header and Footer Wrapper Updated";
-			$this->ipsclass->admin->done_screen("Board Header and Footer Wrapper Updated", "Skin Manager Home", 'section='.$this->ipsclass->section_code.'&act=sets', "redirect" );
+			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'皮肤管理' );
+			$this->ipsclass->main_msg = "论坛页面结构已更新";
+			$this->ipsclass->admin->done_screen("坛页面结构已更新", "皮肤管理", 'section='.$this->ipsclass->section_code.'&act=sets', "redirect" );
 		}
 		else
 		{
@@ -167,7 +167,7 @@ class ad_skin_wrappers {
 			// Reload edit window
 			//-----------------------------------------
 			
-			$this->ipsclass->main_msg = "Board Header and Footer Wrapper updated";
+			$this->ipsclass->main_msg = "论坛页面结构已更新";
 			$this->do_form('edit');
 		}
 		
@@ -229,25 +229,24 @@ class ad_skin_wrappers {
 		if ($type == 'add')
 		{
 			$code = 'doadd';
-			$button = 'Create Wrapper';
+			$button = '创建页面结构';
 		}
 		else
 		{
 			$code = 'doedit';
-			$button = 'Save Wrapper';
+			$button = '保存页面结构';
 		}
 		
 		//-----------------------------------------
 		// Header
 		//-----------------------------------------
 	
-		$this->ipsclass->admin->page_detail = "You may use HTML fully when adding or editing wrappers.";
-		$this->ipsclass->admin->page_title  = "Editing Board Header and Footer Wrapper";
+		$this->ipsclass->admin->page_detail = "创建和编辑页面结构时, 您可以使用 HTML 代码.";
+		$this->ipsclass->admin->page_title  = "编辑论坛页面结构";
 		
 		if ( $found_id == 1 )
 		{
-			$this->ipsclass->admin->page_detail .= "<br /><strong>This is a copy of the master wrapper, editing it below will copy the changes to a new wrapper unique to this skin set and any children of this set
-											  will inherit this wrapper</strong>";
+			$this->ipsclass->admin->page_detail .= "<br /><strong>这是主页面结构的副本, 编辑这里将会生成一个新的页面结构</strong>";
 		}
 		
 		//-----------------------------------------
@@ -275,7 +274,7 @@ class ad_skin_wrappers {
 		
 		$formbuttons = "<div align='center' class='tablesubheader'>
 						<input type='submit' name='submit' value='$button' class='realdarkbutton'>
-						<input type='submit' name='savereload' value='Save and Reload Wrapper' class='realdarkbutton'>
+						<input type='submit' name='savereload' value='保存并重新载入页面结构' class='realdarkbutton'>
 						</div></form>\n";
 		
 		$this->ipsclass->html = str_replace( '<!--IPB.EDITORBOTTOM-->', $formbuttons, $this->ipsclass->html );
@@ -287,8 +286,8 @@ class ad_skin_wrappers {
 		// Output
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'Skin Manager Home' );
-		$this->ipsclass->admin->nav[] = array( '' ,'Editing Board Wrapper in set '.$this_set['set_name'] );
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( '' ,'编辑皮肤 '.$this_set['set_name'] .' 的论坛页面结构' );
 		
 		$this->ipsclass->admin->output();
 	}

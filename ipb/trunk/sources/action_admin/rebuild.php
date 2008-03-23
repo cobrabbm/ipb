@@ -374,13 +374,13 @@ class ad_rebuild {
 		
 		if ( ! $done )
 		{
-			$this->ipsclass->main_msg = "<b>Member photos: $start to $end completed. $updated updated during this batch...</b>";
+			$this->ipsclass->main_msg = "<b>会员照片: $start 到 $end 已完成. 本次更新 $updated 项...</b>";
 			
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&st='.$end;
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "<b>Member photos updated</b>";
+			$this->ipsclass->main_msg = "<b>会员照片已更新</b>";
 
 			$url  = "{$this->ipsclass->form_code}&code=tools";
 		}
@@ -438,7 +438,7 @@ class ad_rebuild {
 				{
 					if ( ! @unlink( $this->ipsclass->vars['upload_dir'].'/'.$r['pp_thumb_photo'] ) )
 					{
-						$output[] = "Could not remove: ".$r['pp_thumb_photo'];
+						$output[] = "无法删除: ".$r['pp_thumb_photo'];
 						continue;
 					}
 				}
@@ -467,7 +467,7 @@ class ad_rebuild {
 			{
 				$this->ipsclass->DB->do_update( 'profile_portal', $photo_data, 'pp_member_id='.$r['pp_member_id'] );
 				
-				$output[] = "Resized: ".$r['pp_main_photo'];
+				$output[] = "调整大小: ".$r['pp_main_photo'];
 			}
 			
 			unset($image);
@@ -485,7 +485,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -495,7 +495,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>Up to $dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -596,13 +596,13 @@ class ad_rebuild {
 		
 		if ( ! $done )
 		{
-			$this->ipsclass->main_msg = "<b>Contacts: $start to $end completed. $updated updated during this batch...</b>";
+			$this->ipsclass->main_msg = "<b>联系人 $start 到 $end 已完成, 本次更新了 $updated 项...</b>";
 			
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&st='.$end;
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "<b>Contacts updated</b>";
+			$this->ipsclass->main_msg = "<b>联系人已更新</b>";
 
 			$url  = "{$this->ipsclass->form_code}&code=tools";
 		}
@@ -686,13 +686,13 @@ class ad_rebuild {
 		
 		if ( ! $done )
 		{
-			$this->ipsclass->main_msg = "<b>Template bits: $start to $end completed. $updated updated...</b>";
+			$this->ipsclass->main_msg = "<b>模版元素 $start 到 $end 已完成, 本次更新 $updated 项...</b>";
 			
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&st='.$end.'&set_skin_set_id='.$set_skin_set_id;
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "<b>Template bits updated</b>";
+			$this->ipsclass->main_msg = "<b>模版元素已更新</b>";
 
 			$url  = "{$this->ipsclass->form_code}&code=tools";
 		}
@@ -748,7 +748,7 @@ class ad_rebuild {
 		// Time to move on dude
 		//-----------------------------------------
 		
-		$this->ipsclass->main_msg = "$title_deleted_count duplicate setting titles deleted<br />$msg";
+		$this->ipsclass->main_msg = "$title_deleted_count 项重复设置项目已删除<br />$msg";
 		$this->tools_splash();
 	}
 	
@@ -769,7 +769,7 @@ class ad_rebuild {
 		
 		if ( ! $this->ipsclass->DB->table_exists( 'calendar_events' ) )
 		{
-			$this->ipsclass->main_msg = "You cannot run this tool as the old calendar_events table has been removed";
+			$this->ipsclass->main_msg = "由于老的 calendar_events 数据表已删除, 您无法运行本工具";
 			$this->tools_splash();
 		}
 		
@@ -784,7 +784,7 @@ class ad_rebuild {
 			
 			if ( $new['max'] >= $original['max'] OR ! $original['max'] )
 			{
-				$this->ipsclass->main_msg = "Calendar events already converted";
+				$this->ipsclass->main_msg = "日历事件已转换";
 				$this->tools_splash();
 			}
 		}
@@ -868,13 +868,13 @@ class ad_rebuild {
 				$this->ipsclass->DB->do_insert( 'cal_events', $new_event );
 			}
 			
-			$this->ipsclass->main_msg = "<b>Calendar events: $start to $end completed....</b>";
+			$this->ipsclass->main_msg = "<b>日历事件 $start 到 $end 已完成....</b>";
 			
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&max='.$max.'&st='.$end;
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "<b>Calendar events converted</b>";
+			$this->ipsclass->main_msg = "<b>日历事件已转换</b>";
 			
 			$url  = "{$this->ipsclass->form_code}&code=tools";
 		}
@@ -1019,13 +1019,13 @@ class ad_rebuild {
 		
 		if ( ! $done )
 		{
-			$this->ipsclass->main_msg = "<b>Polls: $start to $end of $max completed....</b>";
+			$this->ipsclass->main_msg = "<b>投票 $start 到 $end 已完成, 共 $max 项....</b>";
 			
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&max='.$max.'&st='.$end.'&conv='.$converted;
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "<b>Polls converted</b>";
+			$this->ipsclass->main_msg = "<b>投票已转换</b>";
 			
 			$url  = "{$this->ipsclass->form_code}&code=tools";
 		}
@@ -1137,7 +1137,7 @@ class ad_rebuild {
 			}
 		}
 		
-		$this->ipsclass->main_msg = "$ip_count IP addresses imported, $email_count email address imported, $name_count names imported.";
+		$this->ipsclass->main_msg = "导入 $ip_count 个 IP 地址, 导入 $email_count 个邮件地址, 导入 $name_count 个名称.";
 		
 		require_once( ROOT_PATH."sources/action_admin/banandbadword.php");
 		$thing           =  new ad_banandbadword();
@@ -1187,7 +1187,7 @@ class ad_rebuild {
 		// Time to move on dude
 		//-----------------------------------------
 		
-		$this->ipsclass->main_msg = "$unconverge_count members found and restored";
+		$this->ipsclass->main_msg = "找到并还原 $unconverge_count 个会员";
 		$this->tools_splash();
 		
 	}
@@ -1262,7 +1262,7 @@ class ad_rebuild {
 		// Time to move on dude
 		//-----------------------------------------
 		
-		$this->ipsclass->main_msg = "$title_deleted_count duplicate setting titles deleted and $setting_deleted_count duplicate settings deleted";
+		$this->ipsclass->main_msg = "$title_deleted_count 个重复的设置标题已删除, $setting_deleted_count 个重复的设置已删除";
 		$this->tools_splash();
 	}
 	
@@ -1272,7 +1272,7 @@ class ad_rebuild {
 	
 	function tools_splash()
 	{
-		$this->ipsclass->admin->nav[]	= array( $this->ipsclass->form_code.'&code=tools', 'Maintenance Tools' );
+		$this->ipsclass->admin->nav[]	= array( $this->ipsclass->form_code.'&code=tools', '维护工具' );
 		
 		//-----------------------------------------
 		// Get skin list...
@@ -1289,7 +1289,7 @@ class ad_rebuild {
 		// 2.2.0: START
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'IPB 2.1.x -> 2.2.0 Upgrade Tools', 'These tools will clean up and rebuild content from an upgrade from the IPB 2.1.x series' ) . "<br />";
+		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'IPB 2.1.x -> 2.2.0 升级工具', '这些工具将清理并重建您升级自 IPB 2.1.x 系列的数据库' ) . "<br />";
 		
 		//-----------------------------------------
 		// 220: Personal Photos
@@ -1302,12 +1302,12 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Convert IPB 2.1.x 'Photos' to IPB 2.2.x 'Member Profile Photos'" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 的“照片” 到 IPB 2.2.x 的'会员照片'" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 2.2.0 introduced an extended profile system with a member photo.<br />This tool will update any existing 'uploaded' photos to the new format."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 2.2.0 引入了更强的包含会员照片的会员信息系统.<br />本工具将升级现有的上传照片到新格式."
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( 'RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( '运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1322,12 +1322,12 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Convert IPB 2.1.x 'Contacts' to IPB 2.2.x 'Friends'" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 的'联系人'到 IPB 2.2.x 的'好友'" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 2.2.0 introduced a 'Friends' feature which replaced the PM 'Contacts'.<br />This tool converts any previous contacts into non-mutual Friends."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 2.2.0 引入了'好友'功能, 取代了悄悄话'联系人'.<br />本工具将现有的联系人转换到好友."
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( 'RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( '运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1342,13 +1342,13 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Convert IPB 2.1.x Template HTML Logic to IPB 2.2.x Template HTML Logic" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 模版 HTML 到 IPB 2.2.x 模版 HTML Logic" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "The format for HTML logic in IPB 2.2.0 changed slightly. This tool updates your master skin set held in the DB. You may wish to rebuild caches after using this tool.
-																			  <br />Run against skin set: $skin_list"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "的模版格式有一些变化, 本工具将更新您存储在数据库中的主皮肤. 运行本工具后您需要重建缓存.
+																			  <br />针对皮肤: $skin_list 运行本工具"
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( 'RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( '运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1356,7 +1356,7 @@ class ad_rebuild {
 		// 2.1.0: START
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'IPB 2.0.x -> 2.1.0 Upgrade Tools', 'These tools will clean up and rebuild content from an upgrade from the IPB 2.0.x series' ) . "<br />";
+		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'IPB 2.0.x -> 2.1.0 升级工具', '这些工具将清理并重建您升级自 IPB 2.0.x 系列的数据库' ) . "<br />";
 		
 		//-----------------------------------------
 		// 210: DUPE SETTINGS
@@ -1369,13 +1369,12 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Remove Duplicate System Setting Groups from IPB 2.1.x" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除升级到 IPB 2.1.x 后重复的系统设置组" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "After an upgrade from IPB 2.0.x or import from another board software, you may find that due to running an upgrade tool
-																			  twice or a time-out you'll end up with some duplicate tool groups in the System Settings."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "从 IPB 2.0.x 升级或从另一个论坛到如数据后, 您会发现由于运行了2次升级工具或者超时错误. 系统设置中将会有一些重复的组."
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1390,12 +1389,12 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Convert 2.0.x Calendar Events to 2.1.x Format" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "将 IPB 2.0.x 的日历事件转换为 2.1.x 格式" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "This tool converts IPB 2.0.x calendar events to the new format. Use this tool after a manual upgrade or when some calendar events didn't convert."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "本工具将 IPB 2.0.x 的日历事件转换为新的格式. 如果您的论坛是手工升级的或者某些日历事件没有转换, 请使用本工具."
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1410,12 +1409,12 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Convert 2.0.x Polls to 2.1.x Format" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "将 IPB 2.0.x 的投票转换到 2.1.x 格式" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "This tool converts IPB 2.0.x polls to the new format. Use this tool after a manual upgrade or when some polls didn't convert."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "本工具将 IPB 2.0.x 的投票转换为新的格式. 如果您的论坛是手工升级的或者某些投票没有转换, 请使用本工具."
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1423,7 +1422,7 @@ class ad_rebuild {
 		// 2.0.0: START
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'IPB 1.x.x -> 2.0.0 Upgrade Tools', 'These tools will clean up and rebuild content from an upgrade from the IPB 1.x.x series' ) . "<br />";
+		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( 'IPB 1.x.x -> 2.0.0 升级工具', '这些工具将清理并重建您升级自 IPB 1.x.x 系列的数据库' ) . "<br />";
 		
 		
 		//-----------------------------------------
@@ -1437,14 +1436,13 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Remove Duplicate System Settings from IPB 2.0.x" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除升级到 IPB 2.0.x 后重复的系统设置组" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "After an upgrade from a previous version or import from another board software, you may find that due to running an upgrade tool
-																			  twice or a time-out you'll end up with some duplicate tools in the System Settings.
-																			  <br />This tool finds the duplicates which have a greater ID than the original."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "经过升级或由其他论坛转换而来的论坛, 您会发现, 由于运行了2次升级工具或者超时错误, 系统设置中将会有一些重复的设置.
+																			  <br />本工具将找出这些重复的设置项，并且保留 ID 较大的."
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1459,14 +1457,13 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Find & Restore 'Converged' Members" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "查找并恢复“疑似重复”的会员" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "After an upgrade from a previous version or import from another board software, you may find that because several of your members have used duplicate
-																  email addresses, their account has been moved into the validating group.
-																  <br />This tool finds these members and restores them into the default member group and asks them to change their email address."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "过升级或由其他论坛转换而来的论坛, 您会发现, 由于几个会员使用了重复的邮件地址, 他们的帐户被移动到等待验证用户组.
+																  <br />本工具将找出这些会员，并恢复他们到默认的会员组, 同时提醒他们更改邮件地址."
 														)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1481,13 +1478,12 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Find & Restore old IPB Ban Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "查找并恢复 旧的 IPB 屏蔽设置" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "After an upgrade from a previous version, you may find that your ban settings are no longer
-																  stored.<br />Running this tool attempts to import your old ban settings. Old entries will not overwrite new entries."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "经过升级或由其他论坛转换而来的论坛, 您会发现, 您的屏蔽设置不见了.<br />R本工具将试图导入那些旧设置.旧的项目不会覆盖新项目."
 														)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('RUN TOOL');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1563,11 +1559,11 @@ class ad_rebuild {
  				if ( ! $found['pp_member_id'] )
  				{
  					@unlink( $fullfile );
- 					$output[] = "<span style='color:red'>Removed orphan: $file</span>";
+ 					$output[] = "<span style='color:red'>删除了 $file 个孤立文件: $file</span>";
  				}
  				else
  				{
- 					$output[] = "<span style='color:gray'>Attached File OK: $file</span>";
+ 					$output[] = "<span style='color:gray'>$file 个附件没有问题</span>";
  				}
 			}
  		}
@@ -1584,7 +1580,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -1594,7 +1590,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>Up to {$display} processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 {$display} 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$display;
 			$time = 0;
 		}
@@ -1670,11 +1666,11 @@ class ad_rebuild {
  				if ( ! $found['id'] )
  				{
  					@unlink( $fullfile );
- 					$output[] = "<span style='color:red'>Removed orphan: $file</span>";
+ 					$output[] = "<span style='color:red'>删除 $file 个孤立文件</span>";
  				}
  				else
  				{
- 					$output[] = "<span style='color:gray'>Attached File OK: $file</span>";
+ 					$output[] = "<span style='color:gray'>$file 个附件没有问题</span>";
  				}
 			}
  		}
@@ -1866,7 +1862,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>Up to $dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -1963,7 +1959,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -1973,7 +1969,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>Up to $dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -2060,7 +2056,7 @@ class ad_rebuild {
 				{
 					$this->ipsclass->DB->do_update( 'attachments', $attach_data, 'attach_id='.$r['attach_id'] );
 					
-					$output[] = "Resized: ".$r['attach_location'];
+					$output[] = "调整大小: ".$r['attach_location'];
 				}
 				
 				unset($image);
@@ -2079,7 +2075,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -2089,7 +2085,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>Up to $dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -2187,7 +2183,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -2197,7 +2193,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>Up to $dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -2261,7 +2257,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -2271,7 +2267,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>Up to $dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -2578,7 +2574,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -2590,7 +2586,7 @@ class ad_rebuild {
 			
 			$dis  = $dis + $done;
 			
-			$text = "<b>Up to {$dis} processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&type='.$type.'&pergo='.$this->ipsclass->input['pergo'].'&st='.$last.'&dis='.$dis;
 			$time = 0;
 		}
@@ -2648,7 +2644,7 @@ class ad_rebuild {
 			
 			if ( $this->ipsclass->input['pergo'] <= 200 )
 			{
-				$output[] = "Processed topic ".$r['title'];
+				$output[] = "处理论坛版块 ".$r['title'];
 			}
 			
 			$done++;
@@ -2664,7 +2660,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -2674,7 +2670,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>$dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -2727,7 +2723,7 @@ class ad_rebuild {
 		while( $r = $this->ipsclass->DB->fetch_row( $outer ) )
 		{
 			$modfunc->forum_recount( $r['id'] );
-			$output[] = "Processed forum ".$r['name'];
+			$output[] = "处理论坛版块 ".$r['name'];
 			$done++;
 		}
 		
@@ -2741,7 +2737,7 @@ class ad_rebuild {
 			// Done..
 			//-----------------------------------------
 			
-			$text = "<b>Rebuild completed</b><br />".implode( "<br />", $output );
+			$text = "<b>重建完成</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}";
 			$time = 2;
 		}
@@ -2751,7 +2747,7 @@ class ad_rebuild {
 			// More..
 			//-----------------------------------------
 			
-			$text = "<b>$dis processed so far, continuing...</b><br />".implode( "<br />", $output );
+			$text = "<b>目前处理完 $dis 项数据, 继续处理...</b><br />".implode( "<br />", $output );
 			$url  = "{$this->ipsclass->form_code}&code=".$this->ipsclass->input['code'].'&pergo='.$this->ipsclass->input['pergo'].'&st='.$dis;
 			$time = 0;
 		}
@@ -2771,7 +2767,7 @@ class ad_rebuild {
 	{
 		if ( (! $this->ipsclass->input['posts']) and (! $this->ipsclass->input['online']) and (! $this->ipsclass->input['members'] ) and (! $this->ipsclass->input['lastreg'] ) )
 		{
-			$this->ipsclass->admin->error("Nothing to recount!");
+			$this->ipsclass->admin->error("没有需要重新统计的数据!");
 		}
 		
 		$stats = $this->ipsclass->DB->simple_exec_query( array( 'select' => '*', 'from' => 'cache_store', 'where' => "cs_key='stats'" ) );
@@ -2828,12 +2824,12 @@ class ad_rebuild {
 		}
 		else
 		{
-			$this->ipsclass->admin->error("Nothing to recount!");
+			$this->ipsclass->admin->error("没有需要重新统计的数据!");
 		}
 		
-		$this->ipsclass->main_msg = 'Statistics Recounted';
+		$this->ipsclass->main_msg = '重新统计已完成';
 		
-		$this->ipsclass->admin->done_screen("Statistics Recounted", "Recount statistics section", "{$this->ipsclass->form_code}", 'redirect' );
+		$this->ipsclass->admin->done_screen("重新统计已完成", "数据重新统计", "{$this->ipsclass->form_code}", 'redirect' );
 		
 	}
 	
@@ -2843,9 +2839,9 @@ class ad_rebuild {
 	
 	function rebuild_start()
 	{
-		$this->ipsclass->admin->page_detail = "Please choose which statistics to recount.";
-		$this->ipsclass->admin->page_title  = "Recount & Rebuild Manager";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'Recount & Rebuild' );
+		$this->ipsclass->admin->page_detail = "请选择要重新统计的数据.";
+		$this->ipsclass->admin->page_title  = "数据重新统计";
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '数据重新统计' );
 		
 		//-----------------------------------------
 		// STATISTICS
@@ -2856,28 +2852,28 @@ class ad_rebuild {
 												                 			 4 => array( 'section', $this->ipsclass->section_code ),
 									                    			 )      );
 									     
-		$this->ipsclass->adskin->td_header[] = array( "Statistic"    , "70%" );
-		$this->ipsclass->adskin->td_header[] = array( "Option"       , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "统计"    , "70%" );
+		$this->ipsclass->adskin->td_header[] = array( "选项"       , "30%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Recount Statistics" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重新统计数据" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Recount total topics and posts",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重新统计主题数和帖子数",
 																 $this->ipsclass->adskin->form_dropdown( 'posts', array( 0 => array( 1, 'Yes'  ), 1 => array( 0, 'No' ) ) )
 														)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Recount Members",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重新统计会员数",
 												  $this->ipsclass->adskin->form_dropdown( 'members', array( 0 => array( 1, 'Yes'  ), 1 => array( 0, 'No' ) ) )
 										 )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Reset last registered member",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重设最后注册的会员",
 												  $this->ipsclass->adskin->form_dropdown( 'lastreg', array( 0 => array( 1, 'Yes'  ), 1 => array( 0, 'No' ) ) )
 										 )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Reset 'Most online' statistic?",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重设“在线峰值”统计?",
 												  $this->ipsclass->adskin->form_dropdown( 'online', array( 0 => array( 0, 'No'  ), 1 => array( 1, 'Yes' ) ) )
 										 )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Reset these statistics');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重新统计上述数据');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2893,13 +2889,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Resynchronize Forums" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "同步版块" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Resynchronize Forums</b><div style='color:gray'>This will recount topics, posts and the forum last poster for all your forums</div>",
-												  		       $this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;Per Cycle"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>同步版块</b><div style='color:gray'>本操作将重新统计所有论坛板块的主题, 帖子, 和版块最后发表人.</div>",
+												  		        "每次循环同步&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;个版块"
 										 			  )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Resynchronize Forums');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('同步版块');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2915,13 +2911,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Resynchronize Topics" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "同步主题" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Resynchronize Topics</b><div style='color:gray'>This will recount replies, attachment count and the topic starter and last poster for all your topics.</div>",
-												  		       $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>同步主题</b><div style='color:gray'>本操作将重新统计所有主题的回复, 附件, 主题作者和最后回复人.</div>",
+												  		         "每次循环同步&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;个主题"
 										 			  )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Resynchronize Topics');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('同步主题');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2937,9 +2933,9 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Content [Posts, Calendar Entries, Private Messages, Announcements, Signatures]" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建帖子内容" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild Content</b><div style='color:gray'>This will rebuild the submitted content including BBCode, custom bbcode, HTML (where allowed) and emoticons. Useful if you've changed a lot of custom bbcodes, emoticons or the emoticon paths.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建帖子内容</b><div style='color:gray'>本操作将重建所有帖子内容, 包括 BBCode 和表情. 如果您更改了大量的表情或者表情路径, 本操作很有效.</div>",
 												  		       $this->ipsclass->adskin->form_dropdown( 'type', array( 
 												  		       														array( 'posts'		, 'Post Content' ),
 												  		       														array( 'pms'		, 'Private Messages' ),
@@ -2948,10 +2944,10 @@ class ad_rebuild {
 												  		       														array( 'sigs'		, 'Signatures' ),
 												  		       										) 				) . 
 												  		       	"&nbsp;&nbsp;" . 
-												  		       	$this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
+												  		       	"每次循环重建&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;个帖子"
 										 			  )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Rebuild Content');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建帖子内容');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2967,13 +2963,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild User Names" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建用户名" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild User Names</b><div style='color:gray'>This will reset the saved usernames in posts, topics, logs, etc. Useful if you've recently converted or manually changed member's names.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建用户名</b><div style='color:gray'>本操作将重置保存在帖子, 主题, 操作记录内的用户名. 如果您刚刚手工修改会员的用户名, 本操作很有效.</div>",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Rebuild User Names');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建用户名');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2989,13 +2985,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild User Post Counts" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计用户帖子数" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild User Post Counts</b><div style='color:gray'>This will recount members posts based on CURRENT posts from the database. This will almost certainly REDUCE the post counts for your members as deleted and pruned posts will no longer be counted. This should not be used if you wish to retain your member's current post counts.</div>THERE IS NO UNDO!",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重计用户帖子数</b><div style='color:gray'>本操作将根据当前数据库内的数据重新统计会员的帖子数. 由于不会统计被删除和清理的帖子, 本操作将会减少他们的帖子数. 如果您希望保留会员目前的帖子数, 那么请不要使用本工具.</div>THERE IS NO UNDO!",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Rebuild User Post Counts');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重计用户帖子数');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -3012,13 +3008,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Profile Photo Thumbnails" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计用户帖子数" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild Profile Photo Thumbnails</b><div style='color:gray'>This will rebuild all your profile image thumbnails to the current size. This is useful if you've recently changed the thumbnail size and wish to update all current photos</div>This is moderately resource intensive.",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建个人照片缩略图</b><div style='color:gray'>本操作将重建您会员照片的缩略图的到当前设置的大小. 如果您刚刚调整了缩略图大小, 需要更新的话, 请执行本操作</div>This is moderately resource intensive.",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;Per Cycle"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Rebuild Profile Photo Thumbnails');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建个人照片缩略图');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();		
 		
@@ -3035,13 +3031,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Attachment Thumbnails" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建附件缩略图" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild Attachment Thumbnails</b><div style='color:gray'>This will rebuild all your attachment image thumbnails to the current size. This is useful if you've recently changed the thumbnail size and wish to update all current attachments</div>This is moderately resource intensive.",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建附件缩略图</b><div style='color:gray'>本操作将根据当前设置重建所有图像附件的缩略图. 如果您刚刚修改了缩略图大小, 需要更新的话, 请执行本操作</div>本操作较为占用资源.",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;Per Cycle"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Rebuild Attachment Thumbnails');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建附件缩略图');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -3057,13 +3053,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rebuild Attachment Data" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建附件数据" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild Attachment Data</b><div style='color:gray'>This will rebuild all your attachment data such as filesize, location and file extension</div>This is moderately resource intensive.",
-												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;Per Cycle"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建附件数据</b><div style='color:gray'>本操作将重建所有附件数据, 比如文件大小, 位置和文件扩展. </div>本操作较为占用资源.",
+												  		         "每次循环检查&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;个附件"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Rebuild Attachment Data');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建附件数据');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -3079,13 +3075,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Remove orphaned attachments" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立的附件" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Remove orphaned attachments</b><div style='color:gray'>This will check and remove all orphaned 'post-' attachments not assigned to a post.</div>This is moderately resource intensive.",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除孤立的附件</b><div style='color:gray'>本操作将将找出所有以“post-”开头, 并且没有帖子使用的头像文件, 然后删除它们. </div>本操作较为占用资源.",
 												  		      			    $this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;Per Cycle"
 										 		   	    			 )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Remove orphaned attachments');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('删除孤立的附件');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -3101,13 +3097,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Remove orphaned uploaded avatars" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立的上传头像" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Remove orphaned avatars</b><div style='color:gray'>This will check and remove all orphaned 'av-' avatars not assigned to a member.</div>This is moderately resource intensive.",
-												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;Per Cycle"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除孤立头像</b><div style='color:gray'>操作将将找出所有以 'av-' 开头, 并且没有会员使用的头像文件, 然后删除它们.</div>本操作较为占用资源.",
+												  		         "每次循环检查&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;个文件"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Remove orphaned avatars');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('删除孤立头像');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -3123,13 +3119,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Remove orphaned uploaded photos" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立的上传照片" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Remove orphaned photos</b><div style='color:gray'>This will check and remove all orphaned 'photo-' photographs not assigned to a member.</div>This is moderately resource intensive.",
-												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;Per Cycle"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除孤立照片</b><div style='color:gray'>本操作将将找出所有以 'photo-' 开头, 并且没有会员使用的照片文件, 然后删除它们.</div>本操作较为占用资源.",
+												  		         "每次循环检查&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;个文件"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Remove orphaned photos');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('删除孤立照片');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

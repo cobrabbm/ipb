@@ -47,9 +47,9 @@ class ad_skin_diff
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->page_detail = "Compare your template set differences.";
-		$this->ipsclass->admin->page_title  = "Skin Template HTML Differences";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'Skin Differences Home' );
+		$this->ipsclass->admin->page_detail = "对比模版差异.";
+		$this->ipsclass->admin->page_title  = "皮肤模板 HTML 差异";
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '皮肤对比' );
 
 		//-----------------------------------------
 		// LOAD HTML
@@ -130,7 +130,7 @@ class ad_skin_diff
 		
 		if ( ! $current_session['diff_session_id'] )
 		{
-			$this->ipsclass->admin->error("Could not get the current template compare session.");
+			$this->ipsclass->admin->error("差异报告已删除.");
 		}
 		
 		//-----------------------------------------
@@ -323,12 +323,12 @@ class ad_skin_diff
 			
 			if ( ! $row['diff_change_type'] )
 			{
-				$diff_is = '<span style="color:red">New</span>';
+				$diff_is = '<span style="color:red">新增</span>';
 				$missing++;
 			}
 			else
 			{
-				$diff_is = '<span style="color:green">Changed</span>';
+				$diff_is = '<span style="color:green">修改</span>';
 				$changed++;
 			}
 			
@@ -472,7 +472,7 @@ class ad_skin_diff
 		
 		if ( ! $this->ipsclass->input['diff_session_title'] )
 		{
-			$this->ipsclass->admin->error( "You must enter a title" );
+			$this->ipsclass->admin->error( "您必须输入标题" );
 		}
 		
 		//-----------------------------------------
@@ -485,7 +485,7 @@ class ad_skin_diff
 			// Ut-oh....
 			//-----------------------------------------
 			
-			$this->ipsclass->admin->error( "No file was uploaded" );
+			$this->ipsclass->admin->error( "没有文件上传" );
 		}
 		else
 		{
@@ -501,7 +501,7 @@ class ad_skin_diff
 		
 		if( !$content )
 		{
-			$this->ipsclass->admin->error( "There was no content in the file to process" );
+			$this->ipsclass->admin->error( "文件中没有内容需要处理" );
 		}
 		
 		//-----------------------------------------
@@ -576,7 +576,7 @@ class ad_skin_diff
 		
 		if ( ! is_array( $xml->xml_array['templateexport']['templategroup']['template'] ) )
 		{
-			$this->ipsclass->admin->error("Error with ipb_templates.xml - could not process XML properly");
+			$this->ipsclass->admin->error("Error with ipb_templates.xml - 文件出错 - 无法处理 XML 属性");
 		}
 	
 		foreach( $xml->xml_array['templateexport']['templategroup']['template'] as $entry )
@@ -749,11 +749,11 @@ class ad_skin_diff
 		if ( ! $done )
 		{
 			$this->ipsclass->admin->output_multiple_redirect_hit( $this->ipsclass->base_url.'&'.$this->ipsclass->form_code_js."&code=skin_diff_process&diff_session_id={$diff_session_id}&pergo=".$pergo,
-															  	  $img.' '.$current_session['diff_session_done'].' of '. $current_session['diff_session_togo'] .' template bits processed...' );
+															  	  $img.' '.$current_session['diff_session_done'].' of '. $current_session['diff_session_togo'] .' 项模版元素已处理...' );
 		}
 		else
 		{
-			$this->ipsclass->admin->output_multiple_redirect_done( "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skin_diff_view&diff_session_id={$diff_session_id}' target='_top'>View the differences results</a>");
+			$this->ipsclass->admin->output_multiple_redirect_done( "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skin_diff_view&diff_session_id={$diff_session_id}' target='_top'>查看对比结果</a>");
 		}
 	}
 	

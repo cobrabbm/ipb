@@ -60,7 +60,7 @@ class ad_banandbadword {
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->page_detail = "";
-		$this->ipsclass->admin->page_title  = "Ban Manager";
+		$this->ipsclass->admin->page_title  = "论坛屏蔽项目管理";
 
 		//-----------------------------------------
 		// What to do...
@@ -178,7 +178,7 @@ class ad_banandbadword {
 		
 		$this->ban_rebuildcache();
 		
-		$this->ipsclass->main_msg = "Ban filters removed";
+		$this->ipsclass->main_msg = "论坛屏蔽项目已删除";
 		$this->ban_start();
 	}
 	
@@ -190,7 +190,7 @@ class ad_banandbadword {
 	{
 		if ( ! $this->ipsclass->input['bantext'] )
 		{
-			$this->ipsclass->main_msg = "You must enter something to add to the ban filters!";
+			$this->ipsclass->main_msg = "您必须输入需要屏蔽的内容!";
 			$this->ban_start();
 		}
 		
@@ -202,7 +202,7 @@ class ad_banandbadword {
 		
 		if ( $result['ban_id'] )
 		{
-			$this->ipsclass->main_msg = "Duplicate entry, entry not added to the ban filters database.";
+			$this->ipsclass->main_msg = "重复的项目.";
 			$this->ban_start();
 		}
 		
@@ -210,7 +210,7 @@ class ad_banandbadword {
 		
 		$this->ban_rebuildcache();
 		
-		$this->ipsclass->main_msg = "Ban filter added";
+		$this->ipsclass->main_msg = "论坛屏蔽项目已添加";
 		
 		$this->ban_start();
 		
@@ -222,12 +222,12 @@ class ad_banandbadword {
 	
 	function ban_start()
 	{
-		$this->ipsclass->admin->page_title = "Ban Control";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code.'&code=ban', 'Ban Filters' );
+		$this->ipsclass->admin->page_title = "论坛屏蔽项目";
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code.'&code=ban', '论坛屏蔽' );
 		
-		$this->ipsclass->admin->page_detail = "This section allows you to modify, delete or add IP addresses, email addresses and reserved names to the ban filters.
-										 <br /><strong>You can use * as a wildcard in any Username, IP or email filter. (Example: 127.0.*, *@yahoo.com, bannedname*)</strong>";
-		
+		$this->ipsclass->admin->page_detail = "您可以设置一些需要屏蔽的项目, 例如 IP 地址, 邮件地址, 或者保留用户名. 
+										 <br /><strong>您可以使用 * 作为通配符 ( 例如：127.0.*，*@yahoo.com，bannedname* ). </strong>";
+
 		//-----------------------------------------
 		// Get things
 		//-----------------------------------------
@@ -257,13 +257,13 @@ class ad_banandbadword {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Ban Control" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "论坛屏蔽项目" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( $add_form, "center", "tablesubheader");
 		//-----------------------------------------
 		// Banned IP Addresses
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("Banned IP Addresses", "left", "tablesubheader");
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("屏蔽的 IP 地址", "left", "tablesubheader");
 		
 		if ( isset($ban['ip']) AND  is_array( $ban['ip'] ) AND count( $ban['ip'] ) )
 		{
@@ -277,14 +277,14 @@ class ad_banandbadword {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("No Entered Banned IP Addresses", "left", "tablerow1");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("没有需要屏蔽的 IP 地址", "left", "tablerow1");
 		}
 		
 		//-----------------------------------------
 		// Banned Email Addresses
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("Banned Email Addresses", "left", "tablesubheader");
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("屏蔽的邮件地址", "left", "tablesubheader");
 		
 		if ( isset($ban['email']) AND  is_array( $ban['email'] ) AND count( $ban['email'] ) )
 		{
@@ -298,14 +298,14 @@ class ad_banandbadword {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("No Entered Banned Email Addresses", "left", "tablerow1");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("没有需要屏蔽的邮件地址", "left", "tablerow1");
 		}
 		
 		//-----------------------------------------
 		// Banned Names
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("Non-Registerable Names", "left", "tablesubheader");
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("不可注册的用户名", "left", "tablesubheader");
 		
 		if ( isset($ban['name']) AND is_array( $ban['name'] ) AND count( $ban['name'] ) )
 		{
@@ -319,11 +319,11 @@ class ad_banandbadword {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("No Entered Names", "left", "tablerow1");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("没有用户名", "left", "tablerow1");
 		}
 		
 		$end_it_now = "<div align='left' style='float:left;width:auto;'>
-		 			   <input type='submit' value='Delete Selected' class='realdarkbutton' />
+		 			   <input type='submit' value='删除选中的屏蔽项目' class='realdarkbutton' />
 					   </div></form>";
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( $end_it_now, "center", "tablesubheader");									 
@@ -349,7 +349,7 @@ class ad_banandbadword {
 		
 		if ( ! $content )
 		{
-			$this->ipsclass->main_msg = "Upload failed, ipb_badwords.xml was either missing or empty";
+			$this->ipsclass->main_msg = "上传失败, 找不到 ipb_badwords.xml 或文件为空";
 			$this->badword_start();
 			return;
 		}
@@ -370,7 +370,7 @@ class ad_banandbadword {
 		
 		if( !is_array($xml->xml_array['badwordexport']['badwordgroup']['badword']) OR !count($xml->xml_array['badwordexport']['badwordgroup']['badword']) )
 		{
-			$this->ipsclass->main_msg = "XML Import failed: ipb_badwords.xml is either empty or in the wrong format";
+			$this->ipsclass->main_msg = "XML 导入失败: pb_badwords.xml 为空或者格式错误";
 			$this->badword_start();
 			return;
 		}
@@ -412,7 +412,7 @@ class ad_banandbadword {
 		
 		$this->badword_rebuildcache();
                     
-		$this->ipsclass->main_msg = "Badword XML file import completed";
+		$this->ipsclass->main_msg = "屏蔽词 XML 文件导入完成";
 		
 		$this->badword_start();
 	
@@ -482,8 +482,8 @@ class ad_banandbadword {
 		
 		$badword_html = "";
 			
-		$this->ipsclass->admin->page_detail = "You can add/edit and remove bad word filters in this section.<br>The badword filter allows you to globally replace words from a members post, signature and topic title.<br><br><b>Loose matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' and 'hello' with either your replacement if entered or 6 hashes (case insensitive)<br><br><b>Exact matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' only with either your replacement if entered or 6 hashes (case insensitive)";
-		$this->ipsclass->admin->page_title  = "Bad Word Filter";
+		$this->ipsclass->admin->page_detail = "您可以在这里设置忌语过滤列表。<br>忌语过滤将会在帖子、签名以及主题标题中自动转换指定的内容。<br><br><b>模糊匹配</b>：如果您输入“hell”作为需要过滤的内容，那么系统会自动替换“hell”和“hello”到您指定的内容或者 6 个星号（大小写无关），<br><br><b>精确匹配</b>：如果您输入“hell”作为需要过滤的内容，那么系统将只替换“hell”到您指定的内容或者 6 个星号（大小写无关）。";
+		$this->ipsclass->admin->page_title  = "忌语过滤";
 		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code.'&code=badword', 'Bad Word Filters' );
 		
 		//-----------------------------------------
@@ -508,7 +508,7 @@ class ad_banandbadword {
 			foreach($words as $r)
 			{
 				$r['replace'] = $r['swop']    ? stripslashes($r['swop']) : '######';
-				$r['method']  = $r['m_exact'] ? 'Exact' : 'Loose';
+				$r['method']  = $r['m_exact'] ? '精确' : '模糊';
 				$r['type'] 	= stripslashes($r['type']);
 				
 				$badword_html .= $this->html->badword_row( $r );
@@ -536,14 +536,14 @@ class ad_banandbadword {
 													  ) , "uploadform", " enctype='multipart/form-data'"     );
 													
 													  			
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Import a Badword List" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导入屏蔽词列表" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													 		 "<b>Upload XML Badword List</b><div style='color:gray'>Browse your computer for 'ipb_badwords.xml' or 'ipb_badwords.xml.gz'. Duplicate entries will not be imported.</div>",
+													 		 "<b>上传一个 XML 忌语列表</b><div style='color:gray'>文件名必须是“ipb_badwords.xml”或“ipb_badwords.xml.gz”。重复的项目不会被导入。</div>",
 													  		$this->ipsclass->adskin->form_upload(  )
 													   )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Import");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("导入");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -558,7 +558,7 @@ class ad_banandbadword {
 	{
 		if ($this->ipsclass->input['before'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a word to replace, silly!");
+			$this->ipsclass->admin->error("您必须输入一个需要替换掉的词汇!");
 		}
 		
 		if ($this->ipsclass->input['id'] == "")
@@ -577,7 +577,7 @@ class ad_banandbadword {
 												  
 		$this->badword_rebuildcache();
 		
-		$this->ipsclass->main_msg = "Filter edited";
+		$this->ipsclass->main_msg = "屏蔽词已编辑";
 		
 		$this->badword_start();
 	}
@@ -588,10 +588,10 @@ class ad_banandbadword {
 	
 	function badword_edit()
 	{
-		$this->ipsclass->admin->page_detail = "You may edit the chosen filter below";
-		$this->ipsclass->admin->page_title  = "Bad Word Filter";
+		$this->ipsclass->admin->page_detail = "您可以编辑下面的忌语";
+		$this->ipsclass->admin->page_title  = "屏蔽关键字过滤";
 		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code.'&code=badword', 'Bad Word Filters' );
-		$this->ipsclass->admin->nav[] 		= array( '', 'Edit Bad Word Filter' );
+		$this->ipsclass->admin->nav[] 		= array( '', '编辑关键字过滤' );
 		
 		//-----------------------------------------
 		
@@ -620,20 +620,20 @@ class ad_banandbadword {
 		
 		
 		
-		$this->ipsclass->adskin->td_header[] = array( "Before"  , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "After"   , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "Method"  , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "词汇"  , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "替换为"   , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "替换方式"  , "20%" );
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Edit a filter" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "编辑关键词过滤" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( $this->ipsclass->adskin->form_input('before', stripslashes($r['type']) ),
 												  			     $this->ipsclass->adskin->form_input('after' , stripslashes($r['swop']) ),
-												  			     $this->ipsclass->adskin->form_dropdown( 'match', array( 0 => array( 1, 'Exact'  ), 1 => array( 0, 'Loose' ) ), $r['m_exact'] )
+												  			     $this->ipsclass->adskin->form_dropdown( 'match', array( 0 => array( 1, '精确'  ), 1 => array( 0, '模糊' ) ), $r['m_exact'] )
 													    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('Edit Filter');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('保存编辑');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -656,7 +656,7 @@ class ad_banandbadword {
 		
 		$this->badword_rebuildcache();
 		
-		$this->ipsclass->main_msg = "Filter removed";
+		$this->ipsclass->main_msg = "关键词已删除";
 		
 		$this->badword_start();
 		return;
@@ -670,7 +670,7 @@ class ad_banandbadword {
 	{
 		if ($this->ipsclass->input['before'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a word to replace, silly!");
+			$this->ipsclass->admin->error("您必须输入一个需要替换掉的词汇!");
 		}
 		
 		$this->ipsclass->input['match'] = $this->ipsclass->input['match'] ? 1 : 0;
@@ -684,7 +684,7 @@ class ad_banandbadword {
 		
 		$this->badword_rebuildcache();
 		
-		$this->ipsclass->main_msg = "New filter added";
+		$this->ipsclass->main_msg = "关键词已添加";
 		
 		$this->badword_start();
 	}

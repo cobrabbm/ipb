@@ -457,20 +457,20 @@ class ad_acppermissions
 		$main			  = '';
 		$main_content     = '';
 		$main_img_classes = array( 'tick' => 'img-boxed-off', 'cross' => 'img-boxed-off' );
-		$lang_map         = array( 'add'     => 'Allow ADD permission',
-								   'edit'    => 'Allow EDIT permission',
-								   'remove'  => 'Allow DELETE permission',
-								   'import'  => 'Allow IMPORT permission',
-								   'export'  => 'Allow EXPORT permission',
-								   'rebuild' => 'Allow REBUILD permission',
-								   'recount' => 'Allow RECOUNT permission',
-								   'recache' => 'Allow RECACHE permission',
-								   'view'    => 'Allow VIEW permission',
-								   'search'  => 'Allow SEARCH permission',
-								   'log'     => 'Allow MANAGE LOGS permission',
-								   'show'    => 'Allow BASIC VIEW permission',
-								   'upload'  => "Allow UPLOAD permission",
-								   'do'		 => "Allow PERFORM permission",
+		$lang_map         = array( 'add'     => '允许添加',
+								   'edit'    => '允许编辑',
+								   'remove'  => '允许删除',
+								   'import'  => '允许导入',
+								   'export'  => '允许导出',
+								   'rebuild' => '允许重建',
+								   'recount' => '允许重新统计',
+								   'recache' => '允许重建缓存',
+								   'view'    => '允许查看',
+								   'search'  => '允许搜索',
+								   'log'     => '允许管理记录',
+								   'show'    => '允许基本浏览',
+								   'upload'  => "允许上传",
+								   'do'		 => "允许执行",
 								  );
 		
 		//-------------------------------

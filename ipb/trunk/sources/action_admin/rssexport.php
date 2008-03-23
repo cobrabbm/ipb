@@ -302,7 +302,7 @@ class ad_rssexport
 		
 		if ( $return )
 		{
-			$this->ipsclass->main_msg = "RSS Export(s) Re-cached";
+			$this->ipsclass->main_msg = "RSS 导出项目已重新缓存";
 			$this->rssexport_overview();
 			return;
 		}
@@ -344,7 +344,7 @@ class ad_rssexport
 		$this->ipsclass->DB->build_and_exec_query( array( 'delete' => 'rss_export', 'where' => 'rss_export_id='.$rss_export_id ) );
 		
 		$this->rssexport_rebuild_cache( $rss_export_id, 0 );
-		$this->ipsclass->main_msg = "RSS Export stream removed.";
+		$this->ipsclass->main_msg = "RSS 导出项目已删除.";
 		$this->rssexport_overview();
 	}
 	
@@ -386,7 +386,7 @@ class ad_rssexport
 		
 		if ( ! $rss_export_title OR ! $rss_export_count OR ! $rss_export_forums )
 		{
-			$this->ipsclass->main_msg = "You must complete the entire form.";
+			$this->ipsclass->main_msg = "您必须完整填写表单.";
 			$this->rssexport_form( $type );
 			return;
 		}
@@ -412,13 +412,13 @@ class ad_rssexport
 		{
 			$this->ipsclass->DB->do_insert( 'rss_export', $array );
 			$rss_export_id = 'all';
-			$this->ipsclass->main_msg = 'RSS Export Stream Created';
+			$this->ipsclass->main_msg = 'RSS 导出项目已创建';
 		}
 		else
 		{
 			
 			$this->ipsclass->DB->do_update( 'rss_export', $array, 'rss_export_id='.$rss_export_id );
-			$this->ipsclass->main_msg = 'RSS Export Stream Edited';
+			$this->ipsclass->main_msg = 'RSS 导出项目已编辑';
 		}
 		
 		$this->rssexport_rebuild_cache( $rss_export_id, 0 );
@@ -437,12 +437,12 @@ class ad_rssexport
 		//-----------------------------------------
 		
 		$rss_export_id = isset($this->ipsclass->input['rss_export_id']) ? intval($this->ipsclass->input['rss_export_id']) : 0;
-		$dd_sort       = array( 0 => array( 'DESC', 'Descending (9-0)' ), 1 => array( 'ASC', 'Ascending (0-9)' ) );
-		$dd_order      = array( 0 => array( 'start_date'        , 'Topic Start Date' ),
-								1 => array( 'last_post'         , 'Topic Last Post' ),
-								2 => array( 'views'             , 'Topic Views' ),
-								3 => array( 'starter_id'        , 'Topic Starter' ),
-								4 => array( 'topic_rating_total', 'Topic Rating' ) );
+		$dd_sort       = array( 0 => array( 'DESC', '降序 (9-0)' ), 1 => array( 'ASC', '升序 (0-9)' ) );
+		$dd_order      = array( 0 => array( 'start_date'        , '主题开始日期' ),
+								1 => array( 'last_post'         , '主题最后回复' ),
+								2 => array( 'views'             , '主题查看数' ),
+								3 => array( 'starter_id'        , '主题作者' ),
+								4 => array( 'topic_rating_total', '主题评分' ) );
 		
 		//-----------------------------------------
 		// Check (please?)
@@ -451,8 +451,8 @@ class ad_rssexport
 		if ( $type == 'add' )
 		{
 			$formcode  = 'rssexport_add_save';
-			$title     = "Create New RSS Export Stream";
-			$button    = "Create New RSS Export Stream";
+			$title     = "新建 RSS 导出项目";
+			$button    = "新建";
 			
 			$rssstream = array( 'rss_export_id'			=> 0,
 								'rss_export_title'		=> '',
@@ -478,8 +478,8 @@ class ad_rssexport
 			}
 			
 			$formcode = 'rssexport_edit_save';
-			$title    = "Edit RSS Export Stream ".$rssstream['rss_export_title'];
-			$button   = "Save Changes";
+			$title    = "编辑 RSS 导出项目 ".$rssstream['rss_export_title'];
+			$button   = "保存修改";
 		}
 		
 		//-------------------------------
@@ -513,10 +513,10 @@ class ad_rssexport
 		
 		$this->ipsclass->html .= $this->html->rss_export_form( $form, $title, $formcode, $button, $rssstream );
 		
-		$this->ipsclass->admin->page_title  = "RSS Export Manager";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your RSS export feeds.";
+		$this->ipsclass->admin->page_title  = "RSS 导出项目管理";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您论坛的 RSS 导出项目. ";
 		
-		$this->ipsclass->admin->nav[]       = array( '', "Add/Edit RSS Export Stream" );
+		$this->ipsclass->admin->nav[]       = array( '', "新建、编辑 RSS 导出项目" );
 		$this->ipsclass->admin->output();
 	}
 	
@@ -570,8 +570,8 @@ class ad_rssexport
 		
 		$this->ipsclass->html .= $this->html->rss_export_overview( $content, $page_links );
 		
-		$this->ipsclass->admin->page_title  = "RSS Export Manager";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your RSS export feeds.";
+		$this->ipsclass->admin->page_title  = "RSS 导出项目管理";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您论坛的 RSS 导出项目. ";
 		$this->ipsclass->admin->output();
 	}
 	

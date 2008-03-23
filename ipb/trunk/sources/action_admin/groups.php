@@ -322,7 +322,7 @@ class ad_groups
 		
 		if ($this->ipsclass->input['new_perm_name'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a name");
+			$this->ipsclass->admin->error("您必须输入名称");
 		}
 		
 		$copy_id = $this->ipsclass->input['new_perm_copy'];
@@ -396,7 +396,7 @@ class ad_groups
 		$ad_forums->ipsclass =& $this->ipsclass;
 		$ad_forums->recache_forums();
 		
-		$this->ipsclass->main_msg = "The permission set '{$this->ipsclass->input['new_perm_name']}' has been added";
+		$this->ipsclass->main_msg = "访问许可集 '{$this->ipsclass->input['new_perm_name']}' 已添加";
 		$this->permsplash();
 	}
 	
@@ -430,32 +430,32 @@ class ad_groups
 		switch( $this->ipsclass->input['t'] )
 		{
 			case 'start':
-				$human_type = '<b>Start Topics</b> in this forum';
+				$human_type = '<b>在此版块 <b>发表主题';
 				$code_word  = 'start_perms';
 				break;
 				
 			case 'reply':
-				$human_type = '<b>Reply to Topics</b> in this forum';
+				$human_type = '<b>在此版块 <b>回复主题';
 				$code_word  = 'reply_perms';
 				break;
 			
 			case 'show':
-				$human_type = '<b>See</b> this forum';
+				$human_type = '<b>显示</b> 此版块';
 				$code_word  = 'show_perms';
 				break;
 				
 			case 'upload':
-				$human_type = '<b>Upload Attachments</b> to this forum';
+				$human_type = '<b>在此版块 <b>上传附件';
 				$code_word  = 'upload_perms';
 				break;
 				
 			case 'download':
-				$human_type = '<b>Download Attachments</b> in this forum';
+				$human_type = '<b>在此版块 <b>下载附件';
 				$code_word  = 'download_perms';
 				break;				
 				
 			default:
-				$human_type = '<b>Read Topics</b> in this forum';
+				$human_type = '<b>在此版块 <b>阅读主题';
 				$code_word  = 'read_perms';
 				break;
 		}
@@ -468,7 +468,7 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Preview using: " . $perms['perm_name'] );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "预览访问许可集: " . $perms['perm_name'] );
 		
 		$the_html   = "";
 		
@@ -529,39 +529,39 @@ class ad_groups
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Legend & Info" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "图例和信息" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													"Can $human_type",
+													"允许 $human_type",
 													"<input type='text' readonly='readonly' style='border:1px solid black;background-color:green;size=30px' name='blah'>"
 										 )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													"CANNOT $human_type",
+													"不允许 $human_type",
 													"<input type='text' readonly='readonly' style='border:1px solid gray;background-color:red;size=30px' name='blah'>"
 										 )      );
 
 		if( $code_word != "show_perms" )
 		{
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-														"Category (doesn't use this permission)",
+														"分类 ( 不使用此许可 )",
 														"<input type='text' readonly='readonly' style='border:1px solid gray;background-color:grey;size=30px' name='blah'>"
 											 )      );
 		}
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													"Test with...",
+													"选择测试的许可集...",
 													$this->ipsclass->adskin->form_dropdown( 't',
-																		array( 0 => array( 'start', 'Start Topics'    ),
-																			   1 => array( 'reply', 'Reply To Topics' ),
-																			   2 => array( 'read' , 'Read Topics'      ),
-																			   3 => array( 'show' , 'See Forum'      ),
-																			   4 => array( 'upload', 'Upload to Forum'   ),
-																			   5 => array( 'download', 'Download From Forum'   ),
+																		array( 0 => array( 'start', '发表主题'    ),
+																			   1 => array( 'reply', '回复主题' ),
+																			   2 => array( 'read' , '阅读主题'      ),
+																			   3 => array( 'show' , '显示版块'      ),
+																			   4 => array( 'upload', '上传附件'   ),
+																			   5 => array( 'download', '下载附件'   ),
 																			  ), $this->ipsclass->input['t'] )
 										 )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "Update" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "更新" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -634,11 +634,11 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Result" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "结果" );
 		
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "Removed the custom set of permissions from <b>{$mem['name']}</b>." )      );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "删除会员自定义访问许可集 <b>{$mem['name']}</b>." )      );
 	
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -672,8 +672,8 @@ class ad_groups
 		// Get all members using that ID then!
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "User Details" , "50%" );
-		$this->ipsclass->adskin->td_header[] = array( "Action"       , "50%" );
+		$this->ipsclass->adskin->td_header[] = array( "用户详细信息" , "50%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作"       , "50%" );
 		
 		//-----------------------------------------
 		
@@ -689,7 +689,7 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Members using: " . $perms['perm_name'] );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "会员的访问许可集: " . $perms['perm_name'] );
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => 'id, name, email, posts, org_perm_id',
 													  'from'   => 'members',
@@ -707,7 +707,7 @@ class ad_groups
 				{
 					if ( count($exp_pid) > 1 )
 					{
-						$extra = "<li>Also using: <em style='color:red'>";
+						$extra = "<li>附加访问许可集: <em style='color:red'>";
 						
 						$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'forum_perms', 'where' => "perm_id IN (".$this->ipsclass->clean_perm_string($r['org_perm_id']).") AND perm_id <> {$this->ipsclass->input['id']}" ) );
 						$this->ipsclass->DB->simple_exec();
@@ -727,12 +727,12 @@ class ad_groups
 					}
 					
 					$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<div style='font-weight:bold;font-size:11px;padding-bottom:6px;margin-bottom:3px;border-bottom:1px solid #000'>{$r['name']}</div>
-																						  <li>Posts: {$r['posts']}
-																						  <li>Email: {$r['email']}
+																						  <li>帖子: {$r['posts']}
+																						  <li>邮件: {$r['email']}
 																						  $extra" ,
-																						 "&#149;&nbsp;<a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=remove_mask&amp;id={$r['id']}&amp;pid=$pid' title='Remove this permission set from the user (will not remove all if they use more than one)'>Remove This Permission Set</a>
-																						  <br />&#149;&nbsp;<a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=remove_mask&amp;id={$r['id']}&amp;pid=all' title='Remove all custom permission sets'>Remove All Custom Permission Sets</a>
-																						  <br /><br />&#149;&nbsp;<a href='javascript:pop_close_and_stop(\"{$r['id']}\");'>Edit Member</a>",
+																						 "&#149;&nbsp;<a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=remove_mask&amp;id={$r['id']}&amp;pid=$pid' title='Remove this permission set from the user (will not remove all if they use more than one)'>删除此访问许可集</a>
+																						  <br />&#149;&nbsp;<a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=remove_mask&amp;id={$r['id']}&amp;pid=all' title='Remove all custom permission sets'>删除所有自定义访问许可集</a>
+																						  <br /><br />&#149;&nbsp;<a href='javascript:pop_close_and_stop(\"{$r['id']}\");'>保存</a>",
 																				)      );
 				}
 			}
@@ -764,8 +764,8 @@ class ad_groups
 		// Page title & desc
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Forum Permission Management [ HOME ]";
-		$this->ipsclass->admin->page_detail = "You can manage your forum permissions from this section.";
+		$this->ipsclass->admin->page_title  = "版块访问许可管理 [ HOME ]";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您的论坛版块访问许可设置.";
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=permsplash', 'Manage Permissions' );
 								
 		//-----------------------------------------
@@ -884,14 +884,14 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title = "Forum Permission Management [ EDIT ]";
-		$this->ipsclass->admin->page_detail = "You can edit a set of permissions from this section.";
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=permsplash', 'Manage Permissions' );
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit Permissions' )		;
+		$this->ipsclass->admin->page_title = "版块访问许可管理 [ EDIT ]";
+		$this->ipsclass->admin->page_detail = "您可以在这里编辑某个论坛版块访问许可集.";
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=permsplash', '访问许可管理' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑访问许可' )		;
 		
-		$this->ipsclass->admin->page_detail .= "<br />Simply check the boxes to allow permission for that action, or uncheck the box to deny permission for that action.
-							   <br /><b>Global</b> indicates that all present and future permission sets have access to that action and as such, cannot be changed.
-							   <br />Categories only use \"Show\" permissions, and as such the rest of the permission settings for categories are marked <b>not used</b>.";
+		$this->ipsclass->admin->page_detail .= "<br />选中表示允许该操作, 不选中表示拒绝该操作.
+							   <br /><b>全局</b> 表示所有过去和将来的访问许可集都允许该操作, 不能修改.
+							   <br />分类只有 \"显示\" 许可, 因此, 分类其余的许可都标记为 <b>不可用</b>.";
 		
 		//-----------------------------------------
 		
@@ -916,13 +916,13 @@ class ad_groups
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rename Permission Set: ".$group['perm_name'] );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重命名访问许可集为: ".$group['perm_name'] );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Permission Set Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>访问许可集名称</b>" ,
 												                 $this->ipsclass->adskin->form_input("perm_name", $gname )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit Name");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("编辑名称");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -937,17 +937,17 @@ class ad_groups
 																			 4 => array( 'section', $this->ipsclass->section_code ),
 																	)    	);
 		
-		$this->ipsclass->adskin->td_header[] = array( "Forum Name"   , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Show<br /><input id='show' type='checkbox' onclick='checkcol(\"show\", this.checked );' />"         , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Read<br /><input id='read' type='checkbox' onclick='checkcol(\"read\", this.checked );' />"         , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Reply<br /><input id='reply' type='checkbox' onclick='checkcol(\"reply\", this.checked );' />"        , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Start<br /><input id='start' type='checkbox' onclick='checkcol(\"start\", this.checked );' />"        , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Upload<br /><input id='upload' type='checkbox' onclick='checkcol(\"upload\", this.checked );' />"       , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Download<br /><input id='download' type='checkbox' onclick='checkcol(\"download\", this.checked );' />"       , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "版块名称"   , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "显示<br /><input id='show' type='checkbox' onclick='checkcol(\"show\", this.checked );' />"         , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "阅读<br /><input id='read' type='checkbox' onclick='checkcol(\"read\", this.checked );' />"         , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "回复<br /><input id='reply' type='checkbox' onclick='checkcol(\"reply\", this.checked );' />"        , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "发表<br /><input id='start' type='checkbox' onclick='checkcol(\"start\", this.checked );' />"        , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "上传<br /><input id='upload' type='checkbox' onclick='checkcol(\"upload\", this.checked );' />"       , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "下载<br /><input id='download' type='checkbox' onclick='checkcol(\"download\", this.checked );' />"       , "10%" );
 		
 		$forum_data = $this->forumfunc->ad_forums_forum_data();
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Forum Access Permissions for ".$group['perm_name'] );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "访问许可集 ".$group['perm_name']." 的设置" );
 		
 		foreach( $forum_data as $r )
 		{
@@ -957,7 +957,7 @@ class ad_groups
 			$reply  = "";
 			$upload = "";
 			
-			$global = '<center><i>Global</i></center>';
+			$global = '<center><i>全局</i></center>';
 			
 			if ($r['show_perms'] == '*')
 			{
@@ -974,7 +974,7 @@ class ad_groups
 			
 			//-----------------------------------------
 			
-			$global = '<center><i>Global</i></center>';
+			$global = '<center><i>全局</i></center>';
 			
 			if ($r['read_perms'] == '*')
 			{
@@ -991,7 +991,7 @@ class ad_groups
 			
 			//-----------------------------------------
 			
-			$global = '<center><i>Global</i></center>';
+			$global = '<center><i>全局</i></center>';
 			
 			if ($r['start_perms'] == '*')
 			{
@@ -1008,7 +1008,7 @@ class ad_groups
 			
 			//-----------------------------------------
 			
-			$global = '<center><i>Global</i></center>';
+			$global = '<center><i>全局</i></center>';
 			
 			if ($r['reply_perms'] == '*')
 			{
@@ -1025,7 +1025,7 @@ class ad_groups
 			
 			//-----------------------------------------
 			
-			$global = '<center><i>Global</i></center>';
+			$global = '<center><i>全局</i></center>';
 			
 			if ($r['upload_perms'] == '*')
 			{
@@ -1042,7 +1042,7 @@ class ad_groups
 			
 			//-----------------------------------------
 			
-			$global = '<center><i>Global</i></center>';
+			$global = '<center><i>全局</i></center>';
 			
 			if ($r['download_perms'] == '*')
 			{
@@ -1062,7 +1062,7 @@ class ad_groups
 			if ( $r['root_forum'] )
 			{
 				$css = 'tablerow4';
-				$download = $upload = $reply = $start = $read = "<center><i>Not Used</i></center>";
+				$download = $upload = $reply = $start = $read = "<center><i>不可用</i></center>";
 			}
 			else
 			{
@@ -1084,7 +1084,7 @@ class ad_groups
 		
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Update Forum Permissions");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("更新访问许可集");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1110,7 +1110,7 @@ class ad_groups
 		
 		if ( $this->ipsclass->input['perm_name'] == "" )
 		{
-			$this->ipsclass->admin->error("You must enter a name");
+			$this->ipsclass->admin->error("您必须输入名称");
 		}
 		
 		$gid = $this->ipsclass->input['id'];
@@ -1122,14 +1122,14 @@ class ad_groups
 		
 		if ( ! $gr = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Not a valid group ID");
+			$this->ipsclass->admin->error("无效的 ID");
 		}
 		
 		$this->ipsclass->DB->do_update( 'forum_perms', array( 'perm_name' => $this->ipsclass->input['perm_name'] ), 'perm_id='.intval($this->ipsclass->input['id']) );
 		
-		$this->ipsclass->admin->save_log("Forum Access Permissions Name Edited for Set: '{$gr['perm_name']}'");
+		$this->ipsclass->admin->save_log("编辑论坛版块访问许可集: '{$gr['perm_name']}'");
 		
-		$this->ipsclass->main_msg = "Permission Set Name Updated";
+		$this->ipsclass->main_msg = "访问许可集名称已更新";
 		
 		$this->forum_perms( );
 	}
@@ -1444,9 +1444,9 @@ class ad_groups
 		
 		$adforums->recache_forums();
 		
-		$this->ipsclass->admin->save_log("Forum Access Permissions Edited for Set: '{$gr['perm_name']}'");
+		$this->ipsclass->admin->save_log("编辑论坛版块访问许可集: '{$gr['perm_name']}'");
 		
-		$this->ipsclass->main_msg = "Forum Access Permissions Updated";
+		$this->ipsclass->main_msg = "访问许可集已更新";
 		$this->permsplash( );
 		
 	}
@@ -1464,12 +1464,12 @@ class ad_groups
 		
 		if ($this->ipsclass->input['id'] < 5)
 		{
-			$this->ipsclass->admin->error("You can not move the preset groups. You can rename them and edit the functionality");
+			$this->ipsclass->admin->error("您不能删除预设的用户组. 您可以将他们更名并编辑他们的设置");
 		}
 		
-		$this->ipsclass->admin->page_title = "Deleting a User Group";
+		$this->ipsclass->admin->page_title = "删除用户组";
 		
-		$this->ipsclass->admin->page_detail = "Please check to ensure that you are attempting to remove the correct group.";
+		$this->ipsclass->admin->page_detail = "请您确认, 您正试图删除用户组.";
 		
 		
 		//-----------------------------------------
@@ -1542,21 +1542,21 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Removal Confirmation: ".$group['g_title'] );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除确认: ".$group['g_title'] );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Number of users in this group</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>该组内的用户数量</b>" ,
 												  "<b>".$black_adder['users']."</b>",
 									     )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Number of users with this group as their <u>secondary</u> group</b><br /><i>This secondary group will be removed for these users.</i>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用该组作为 <u>第二组</u> 的会员</b><br /><i>该第二组设置将被删除.</i>" ,
 												  "<b>".$extra_group['users']."</b>",
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Move users in this group to...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>将该组内的用户移动到...</b>" ,
 												  $this->ipsclass->adskin->form_dropdown("to_id", $mem_groups )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Delete this group");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("删除该组");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1692,9 +1692,9 @@ class ad_groups
 		
 		$this->mod->rebuild_moderator_cache();
 	
-		$this->ipsclass->admin->save_log("Member Group '{$this->ipsclass->input['name']}' removed");
+		$this->ipsclass->admin->save_log("删除用户组 '{$this->ipsclass->input['name']}' ");
 		
-		$this->ipsclass->main_msg = "Group Removed";
+		$this->ipsclass->main_msg = "用户组已删除";
 		$this->main_screen();
 	}
 	
@@ -1723,7 +1723,7 @@ class ad_groups
 		
 		if ($this->ipsclass->input['g_title'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a group title.");
+			$this->ipsclass->admin->error("您必须输入用户组名称.");
 		}
 		
 		if ($type == 'edit')
@@ -1749,7 +1749,7 @@ class ad_groups
 		}
 		else
 		{
-			$this->ipsclass->admin->error("No permission sets chosen");
+			$this->ipsclass->admin->error("没有选择访问许可集");
 		}
 		
 		// Build up the hashy washy for the database ..er.. wase.
@@ -1772,7 +1772,7 @@ class ad_groups
 		{
 			if ( $this->ipsclass->input['g_attach_per_post'] > $this->ipsclass->input['g_attach_max'] )
 			{
-				$this->ipsclass->main_msg = "You cannot specify a per post limit greater than the globally allowed limit.";
+				$this->ipsclass->main_msg = "每个帖子的限制不能大于全局限制.";
 				$this->group_form('edit');
 			}
 		}
@@ -1842,11 +1842,11 @@ class ad_groups
 			
 			$this->ipsclass->DB->do_update( 'moderators', array( 'group_name' => trim($this->ipsclass->input['g_title']) ), 'group_id='.$this->ipsclass->input['id'] );
 			
-			$this->ipsclass->admin->save_log("Edited Group '{$this->ipsclass->input['g_title']}'");
+			$this->ipsclass->admin->save_log("编辑用户组 '{$this->ipsclass->input['g_title']}'");
 			
 			$this->rebuild_group_cache();
 			
-			$this->ipsclass->main_msg = "Group Edited";
+			$this->ipsclass->main_msg = "用户组已添加";
 			$this->main_screen();
 			
 		}
@@ -1854,11 +1854,11 @@ class ad_groups
 		{
 			$this->ipsclass->DB->do_insert( 'groups', $db_string );
 			
-			$this->ipsclass->admin->save_log("Added Group '{$this->ipsclass->input['g_title']}'");
+			$this->ipsclass->admin->save_log("添加用户组 '{$this->ipsclass->input['g_title']}'");
 			
 			$this->rebuild_group_cache();
 			
-			$this->ipsclass->main_msg = "Group Added";
+			$this->ipsclass->main_msg = "用户组已添加";
 			$this->main_screen();
 		}
 	}
@@ -1903,7 +1903,7 @@ class ad_groups
 	
 	function group_form($type='edit')
 	{
-		$all_groups = array( 0 => array ('none', 'Don\'t Promote') );
+		$all_groups = array( 0 => array ('none', '不提升') );
 		
 		if ($type == 'edit')
 		{
@@ -1916,18 +1916,18 @@ class ad_groups
 			{
 				if ( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
 				{
-					$this->ipsclass->admin->error("Sorry, you are unable to edit that group as it's the root admin group");
+					$this->ipsclass->admin->error("对不起, 您不能编辑系统管理员组");
 				}
 			}
 			
 			$form_code = 'doedit';
-			$button    = 'Complete Edit';
+			$button    = '保存编辑';
 				
 		}
 		else
 		{
 			$form_code = 'doadd';
-			$button    = 'Add Group';
+			$button    = '添加组';
 		}
 		
 		if ($this->ipsclass->input['id'] != "")
@@ -1990,22 +1990,22 @@ class ad_groups
 		
 		if ($type == 'edit')
 		{
-			$this->ipsclass->admin->page_title = "Editing User Group ".$group['g_title'];
+			$this->ipsclass->admin->page_title = "编辑用户组 ".$group['g_title'];
 		}
 		else
 		{
-			$this->ipsclass->admin->page_title = 'Adding a new user group';
-			$group['g_title'] = 'New Group';
+			$this->ipsclass->admin->page_title = '添加用户组';
+			$group['g_title'] = '新用户组';
 		}
 		
 		$guest_legend = "";
 		
 		if ($group['g_id'] == $this->ipsclass->vars['guest_group'])
 		{
-			$guest_legend = "</b><br><i>(Does not apply to guests)</i>";
+			$guest_legend = "</b><br><i>(对游客无效)</i>";
 		}
 		
-		$this->ipsclass->admin->page_detail = "Please double check the information before submitting the form.";
+		$this->ipsclass->admin->page_detail = "提交表单以前请仔细检查您的设置.";
 		
 		
 		//-----------------------------------------
@@ -2021,17 +2021,17 @@ class ad_groups
 						  	
 						  	if (isAdmin[0].checked == true)
 						  	{
-						  		msg += 'Members in this group can access the Admin Control Panel\\n\\n';
+						  		msg += '该组内的会员可以访问后台\\n\\n';
 						  	}
 						  	
 						  	if (isMod[0].checked == true)
 						  	{
-						  		msg += 'Members in this group are super moderators.\\n\\n';
+						  		msg += '该组内的会员是总版主.\\n\\n';
 						  	}
 						  	
 						  	if (msg != '')
 						  	{
-						  		msg = 'Security Check\\n--------------\\nMember Group Title: ' + document.forms[0].g_title.value + '\\n--------------\\n\\n' + msg + 'Is this correct?';
+						  		msg = '安全检查\\n--------------\\n用户组名称：' + document.forms[0].g_title.value + '\\n--------------\\n\\n' + msg + '请确认下面的信息?';
 						  		
 						  		formCheck = confirm(msg);
 						  		
@@ -2071,7 +2071,7 @@ class ad_groups
 		$suffix = str_replace( '"', "&quot;", $suffix );
 		$suffix = str_replace( "<", "&lt;" , $suffix          );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Global Settings", "Basic Group Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "全局设置", "基础设置" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Group Title</b>" ,
 												  $this->ipsclass->adskin->form_input("g_title", $group['g_title'] )
@@ -2114,34 +2114,34 @@ class ad_groups
 			{
 				if (show == '')
 				{
-					show = 'No change detected\\nClick on the multi-select box to activate';
+					show = '没有变化\\n请点击复选框';
 				}
 				
-				alert('Selected Permission Sets\\n---------------------------------\\n' + show);
+				alert('选中的访问许可集\\n---------------------------------\\n' + show);
 			}
 			
 		</script>";
 		
 		$arr = explode( ",", $group['g_perm_id'] );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Use which permission sets...</b><br>You may choose more than one" ,
-												  $this->ipsclass->adskin->form_multiselect("permid[]", $perm_masks, $arr, 5, 'onfocus="saveit(this)"; onchange="saveit(this)";' )."<br><input style='margin-top:5px' id='editbutton' type='button' onclick='show_me();' value='Show me selected permissions'>"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用的访问许可集...</b><br>您可以复选" ,
+												  $this->ipsclass->adskin->form_multiselect("permid[]", $perm_masks, $arr, 5, 'onfocus="saveit(this)"; onchange="saveit(this)";' )."<br><input style='margin-top:5px' id='editbutton' type='button' onclick='show_me();' value='显示选中的许可集'>"
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Group Icon Image</b><div style='color:gray'>Can be a relative link, i.e. <b>style_images/1/folder_team_icons/admin.gif</b><br />or it can a full URL starting with <b>'http://'</b><br/ >Use <b>style_images/&lt;#IMG_DIR#&gt;/folder_team_icons/{image}</b> (replace {image} with the image name) to dynamically load the image from the style_image folder based on the member's skin choice.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>组图标</b><div style='color:gray'>可以使用相对连接, 例如 <b>style_images/1/folder_team_icons/admin.gif</b><br />也可以是一个以 <b>'http://'</b> 开头的完整连接<br/ >使用 <b>style_images/&lt;#IMG_DIR#&gt;/folder_team_icons/{image}</b>（用图片文件名代替 {image}）可以根据会员选择的皮肤来动态调用图片. </div>" ,
 												  $this->ipsclass->adskin->form_textarea("g_icon", htmlspecialchars($group['g_icon']) )
 									     )      );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Online List Format [Prefix]</b><br>(Can be left blank)<br>(Example:&lt;span style='color:red'&gt;)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>在线列表格式 [前缀]</b><br>（可以留空）<br>（例如:&lt;span style='color:red'&gt;）" ,
 												  $this->ipsclass->adskin->form_input("prefix", $prefix )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Online List Format [Suffix]</b><br>(Can be left blank)<br>(Example:&lt;/span&gt;)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>在线列表格式 [后缀]</b><br>（可以留空）<br>(例如:&lt;/span&gt;)" ,
 												  $this->ipsclass->adskin->form_input("suffix", $suffix )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Hide this group from the member list?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>在会员列表中隐藏该组成员</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_hide_from_list", $group['g_hide_from_list'] )
 									     )      );
 									     
@@ -2154,15 +2154,15 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Upload Permissions", "Manage permissions for PM and post uploads, etc" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "上传权限", "悄悄话和帖子中上传附件的权限" );
 		
 		if( $type == 'edit' AND $group['g_attach_max'] == 0 )
 		{
-			$group['g_attach_maxdis'] = "<i>unlimited</i>";
+			$group['g_attach_maxdis'] = "<i>无限制</i>";
 		}
 		else if( $type == 'edit' AND $group['g_attach_max'] == -1 )
 		{
-			$group['g_attach_maxdis'] = "<i>disabled</i>";
+			$group['g_attach_maxdis'] = "<i>禁止</i>";
 		}
 		else
 		{
@@ -2171,38 +2171,38 @@ class ad_groups
 		
 		$ini_max = @ini_get( 'upload_max_filesize' ) ? @ini_get( 'upload_max_filesize' ) : '<i>cannot obtain</i>';
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>GLOBAL: Max total global file space for all uploads (Inc. PMs and posts) (in KB)</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>Enter -1 to disable uploads or enter 0 to disable this limit.</div>" ,
-																 $this->ipsclass->adskin->form_input("g_attach_max", $group['g_attach_max'] ). ' (currently: '.$group['g_attach_maxdis'].')' . "<br /><b>Note that single file uploads are also limited by your PHP configuration to {$ini_max}</b>"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>全局上传空间( 包括悄悄话和帖子, 单位:KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 -1 禁止上传, 输入 0 取消限制, 只受到 PHP 的最大上传限制.</div>" ,
+																 $this->ipsclass->adskin->form_input("g_attach_max", $group['g_attach_max'] ). ' (currently: '.$group['g_attach_maxdis'].')' . "<br /><b> {$ini_max}</b>"
 														)      );
 										
 		if( $type == 'edit' AND $group['g_attach_per_post'] == 0 )
 		{
-			$group['g_attach_per_postdis'] = "<i>unlimited</i>";
+			$group['g_attach_per_postdis'] = "<i>无限制</i>";
 		}
 		else if( $type == 'edit' AND $group['g_attach_per_post'] == -1 )
 		{
-			$group['g_attach_per_postdis'] = "<i>disabled</i>";
+			$group['g_attach_per_postdis'] = "<i>禁止</i>";
 		}
 		else
 		{
 			$group['g_attach_per_postdis'] = $this->ipsclass->size_format( $group['g_attach_per_post'] * 1024 );
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>PER POST: Max total file space allowed in each post or PM (in KB)</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>Enter 0 to disable a per post limit. This number must be less than the global amount.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>每个帖子或悄悄话的最大上传空间 ( 单位 KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 0 取消限制. 这个数字必须比全局限制小.</div>" ,
 																 $this->ipsclass->adskin->form_input("g_attach_per_post", $group['g_attach_per_post'] ). ' (currently: '.$group['g_attach_per_postdis'].')' . "<br /><b>Note that single file uploads are also limited by your PHP configuration to {$ini_max}</b>"
 														)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>PERSONAL PHOTO: Max upload file size (in KB)</b><br>(Leave blank to disallow uploads)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>个人照片限制 ( 单位: KB )</b><br>( 留空禁止上传 )" ,
 																 $this->ipsclass->adskin->form_input("p_max", $p_max )."<br />"
-																 ."Max Width (px): <input type='text' size='3' class='textinput' name='p_width' value='{$p_width}'> "
-																 ."Max Height (px): <input type='text' size='3' class='textinput' name='p_height' value='{$p_height}'>"
+																 ."最大宽度 (px): <input type='text' size='3' class='textinput' name='p_width' value='{$p_width}'> "
+																 ."最大高度 (px): <input type='text' size='3' class='textinput' name='p_height' value='{$p_height}'>"
 														)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>AVATARS: Allow avatar uploads?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许上传头像?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_avatar_upload", $group['g_avatar_upload'] )
 									     )      );
 									     						     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>PMs: Allow PM attachments?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许在悄悄话上传附件?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_can_msg_attach", $group['g_can_msg_attach'] )
 									     )      );
 									     
@@ -2215,53 +2215,53 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Global Permissions", "Restricting what this group can do" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "全局权限", "限制该组成员的操作权限" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can view board?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许查看论坛?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_view_board", $group['g_view_board'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can view OFFLINE board?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许查看关闭状态的论坛?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_access_offline", $group['g_access_offline'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can view member profiles and the member list?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许查看会员资料和会员列表?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_mem_info", $group['g_mem_info'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can view other members topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许查看其他会员的主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_other_topics", $group['g_other_topics'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can use search?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许使用论坛搜索功能?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_use_search", $group['g_use_search'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Number of seconds for search flood control</b><br>Stops search abuse, enter 0 or leave blank for no flood control" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索时间间隔限制l</b><br>可以防止滥用搜索, 输入 0 或者留空表示不限制l" ,
 												  $this->ipsclass->adskin->form_input("g_search_flood", $group['g_search_flood'] )
 									     )      );
 									     
 		list( $limit, $flood ) = explode( ":", $group['g_email_limit'] );					     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can email members from the board?</b><br />Leave bottom section blank to remove limits $guest_legend</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许从论坛给会员发送邮件?</b><br />>留空表示不限制 $guest_legend</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_email_friend", $group['g_email_friend'] )
-												 ."<br />Only allow ". $this->ipsclass->adskin->form_simple_input("join_limit", $limit, 2 )." emails in a 24hr period"
-												 ."<br />...and only allow 1 email every ".$this->ipsclass->adskin->form_simple_input("join_flood", $flood, 2 )." minutes"
+												 ."<br />24 小时内只允许发送 ". $this->ipsclass->adskin->form_simple_input("join_limit", $limit, 2 )." 封邮件"
+												 ."<br />...并且, 每 ".$this->ipsclass->adskin->form_simple_input("join_flood", $flood, 2 )." 分钟只允许发送 1 封邮件"
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can edit own profile info?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许编辑自己的资料?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_edit_profile", $group['g_edit_profile'] )
 									     )      );							     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can use PM system?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以使用悄悄话功能?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_use_pm", $group['g_use_pm'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Max. Number users allowed to mass PM?$guest_legend<br>(Enter 0 or leave blank to disable mass PM)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许批量发送悄悄话的最大会员数?$guest_legend<br>( 输入0或者默认离开表示禁止)" ,
 												  $this->ipsclass->adskin->form_input("g_max_mass_pm", $group['g_max_mass_pm'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Max. Number of storable messages?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>存储悄悄话最大数量?$guest_legend" ,
 												  $this->ipsclass->adskin->form_input("g_max_messages", $group['g_max_messages'] )
 									     )      );
 									     
@@ -2274,75 +2274,75 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$dd_topic_rate = array( 0 => array( 0, 'No' ), 1 => array( 1, 'Yes (Not allowed to change vote)' ), 2 => array( 2, 'Yes (Allowed to change vote)' ) );
+		$dd_topic_rate = array( 0 => array( 0, 'No' ), 1 => array( 1, '是 ( 不允许修改评分 )' ), 2 => array( 2, '是 ( 允许修改评分 )' ) );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Posting Permissions", "Restrict where this group can post" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "发贴权限", "该组成员发表帖子的权限" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can post new topics (where allowed)?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以发表主题（在许可的论坛版块）?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_post_new_topics", $group['g_post_new_topics'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can rate topics (in forums where allowed)?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以为主题评分（在打开此功能的论坛版块）?</b>" ,
 												  $this->ipsclass->adskin->form_dropdown("g_topic_rate_setting", $dd_topic_rate, $group['g_topic_rate_setting'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can reply to OWN topics?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许回复自己的主题?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_reply_own_topics", $group['g_reply_own_topics'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can reply to OTHER members topics (where allowed)?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许回复其他会员的主题（在许可的论坛版块）?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_reply_other_topics", $group['g_reply_other_topics'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can edit own posts?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许编辑自己的帖子?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_edit_posts", $group['g_edit_posts'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Edit time restriction (in minutes)?$guest_legend<br>Denies user edit after the time set has passed. Leave blank or enter 0 for no restriction" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>编辑时间限制（单位: 分钟）$guest_legend<br>超过时间后拒绝用户编辑帖子. 输入 0 或者留空表示没有限制" ,
 												  $this->ipsclass->adskin->form_input("g_edit_cutoff", $group['g_edit_cutoff'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Allow user to remove 'Edited by' legend?$guest_legend</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许用户删除“由......编辑”的说明?$guest_legend</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_append_edit", $group['g_append_edit'] )
 									     )      );							     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can delete own posts?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许删除自己的帖子?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_delete_own_posts", $group['g_delete_own_posts'] )
 									     )      );
 									     						     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can open/close own topics?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许打开/关闭自己的主题?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_open_close_posts", $group['g_open_close_posts'] )
 									     )      );							     
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can edit own topic title & description?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以编辑自己的主题标题和主题描述?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_edit_topic", $group['g_edit_topic'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can delete own topics?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许删除自己的主题?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_delete_own_topics", $group['g_delete_own_topics'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can start new polls (where allowed)?$guest_legend</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许发布投票 （在打开此功能的论坛版块）?$guest_legend</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_post_polls", $group['g_post_polls'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can vote in polls (where allowed)?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许投票（在打开此功能的论坛版块）?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_vote_polls", $group['g_vote_polls'] )
 									     )      );							     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can avoid flood control?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发布内容不受灌水控制的限制?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_avoid_flood", $group['g_avoid_flood'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can avoid moderation queues?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发布内容不经论坛审核系统?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_avoid_q", $group['g_avoid_q'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can post HTML?$guest_legend</b><br />".$this->ipsclass->adskin->js_help_link('mg_dohtml') ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以发布 HTML?$guest_legend</b><br />".$this->ipsclass->adskin->js_help_link('mg_dohtml') ,
 												  $this->ipsclass->adskin->form_yes_no("g_dohtml", $group['g_dohtml'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can bypass the bad word filter?$guest_legend</b><br />" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发布内容不经论坛过滤系统?$guest_legend</b><br />" ,
 												  $this->ipsclass->adskin->form_yes_no("g_bypass_badwords", $group['g_bypass_badwords'] )
 									     )      );
 									     					     							     
@@ -2357,13 +2357,13 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Display Name Permissions", "Only valid when allowing display names" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "昵称权限", "仅在打开昵称功能时有效" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>Display Name Change: Limit Days</strong><div class='desctext'>This is the number of days in which the number of changes are made. For example \"30\" would mean that the user could only change their name X amount of times in a 30 day period</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>更改昵称时间限制</strong><div class='desctext'>这个限制表示限制的天数. 例如 30 表示在 30 天内用户只能修改 X 次昵称</div>" ,
 												  $this->ipsclass->adskin->form_input("g_dname_date", $group['g_dname_date'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>Display Name Change: Max changes per X days</strong><div class='desctext'>This relates to the maximum number of changes a user can make to their display name within the X day period set. Use \"0\" to disallow users from changing their own display name.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>更改昵称次数限制</strong><div class='desctext'>这个限制表示一个时间段内的最大修改次数. 输入 0 禁止用户更改昵称.</div>" ,
 												  $this->ipsclass->adskin->form_input("g_dname_changes", $group['g_dname_changes'] )
 									     )      );
 									     
@@ -2378,17 +2378,17 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Moderation Permissions", "Allow or deny this group moderation abilities" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "管理权限", "可以打开或关闭该组成员的管理权限" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Is Super Moderator (can moderate anywhere)?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>设置为总版主组 (在任何版块有版主权限) ?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_is_supmod", $group['g_is_supmod'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can access the Admin CP?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许访问后台?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_access_cp", $group['g_access_cp'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Allow user group to post in 'closed' topics?" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许回复锁定的主题 'closed' topics?" ,
 												  $this->ipsclass->adskin->form_yes_no("g_post_closed", $group['g_post_closed'] )
 									     )      );
 									     
@@ -2401,19 +2401,19 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Group Promotion" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "用户组晋升" );
 		
 		if ($group['g_id'] == $this->ipsclass->vars['admin_group'])
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Choose 'Don't Promote' to disable promotions</b><br>".$this->ipsclass->adskin->js_help_link('mg_promote') ,
-													  "Feature disabled for the root admin group, after all - if you're at the top where can you be promoted to?"
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择“不晋升”表示禁止用户组晋升</b><br>".$this->ipsclass->adskin->js_help_link('mg_promote') ,
+													  "系统管理员不能晋升, 您已经是最高级别了, 还能往哪里升?"
 											 )      );
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Choose 'Don't Promote' to disable promotions</b>$guest_legend<br>".$this->ipsclass->adskin->js_help_link('mg_promote') ,
-													  'Promote members of this group to: '.$this->ipsclass->adskin->form_dropdown("g_promotion_id", $all_groups, $group['g_promotion_id'] )
-													 .'<br>when they reach '.$this->ipsclass->adskin->form_simple_input('g_promotion_posts', $group['g_promotion_posts'] ).' posts'
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择“不晋升”表示禁止用户组晋升</b>$guest_legend<br>".$this->ipsclass->adskin->js_help_link('mg_promote') ,
+													  '将该组会员晋升为: '.$this->ipsclass->adskin->form_dropdown("g_promotion_id", $all_groups, $group['g_promotion_id'] )
+													 .'<br>当他们的帖子数达到 '.$this->ipsclass->adskin->form_simple_input('g_promotion_posts', $group['g_promotion_posts'] ).' 时'
 											 )      );
 		}
 		
@@ -2445,9 +2445,9 @@ class ad_groups
 		// Page details
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title = "User Groups";
-		$this->ipsclass->admin->page_detail = "User Grouping is a quick and powerful way to organise your members. There are 4 preset groups that you cannot remove (Validating, Guest, Member and Admin) although you may edit these at will. A good example of user grouping is to set up a group called 'Moderators' and allow them access to certain forums other groups do not have access to.<br>Forum access allows you to make quick changes to that groups forum read, write and reply settings. You may do this on a forum per forum basis in forum control.";
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage User Groups' );
+		$this->ipsclass->admin->page_title = "用户组";
+		$this->ipsclass->admin->page_detail = "用户组是一个快速且强大的管理会员的方法. 有4个您不能删除的预设组（它们分别是 等待验证会员, 游客, 会员 以及系统管理员）, 不过您可以根据需要编辑它们. 现在举例说明: 设置一个组，叫做 '版主'，然后允许它访问某个其他组不能访问的论坛版块. <br>版块访问许可, 此功能可以快速修改用户组在版块内阅读和发表的许可设置, 您可以在论坛版块管理中, 针对每个论坛版块逐一设置.";
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '用户组管理' );
 		
 		//-----------------------------------------
 		// Get groups

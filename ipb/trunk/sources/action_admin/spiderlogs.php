@@ -52,7 +52,7 @@ class ad_spiderlogs {
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Search Engine Spider Logs' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '搜索引擎蜘蛛记录' );
 		
 		//-----------------------------------------
 		// Get bot names
@@ -94,8 +94,8 @@ class ad_spiderlogs {
 	{
 		$start = intval($this->ipsclass->input['st']) >=0 ? intval($this->ipsclass->input['st']) : 0;
 		
-		$this->ipsclass->admin->page_detail = "Viewing all actions by a search engine spider";
-		$this->ipsclass->admin->page_title  = "Search Engine Logs Manager";
+		$this->ipsclass->admin->page_detail = "查看搜索引擎蜘蛛的所有操作记录";
+		$this->ipsclass->admin->page_title  = "搜索引擎记录管理";
 		
 		$botty = urldecode($this->ipsclass->input['bid']);
 		$botty = str_replace( "&#33;", "!", $botty );
@@ -142,25 +142,25 @@ class ad_spiderlogs {
 		$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $row_count,
 											   'PER_PAGE'    => 20,
 											   'CUR_ST_VAL'  => $start,
-											   'L_SINGLE'    => "Single Page",
-											   'L_MULTI'     => "Pages: ",
+											   'L_SINGLE'    => "单页",
+											   'L_MULTI'     => "页码: ",
 											   'BASE_URL'    => $this->ipsclass->base_url.$query,
 											 )
 									  );
 									  
-		$this->ipsclass->admin->page_detail = "You may view and remove actions performed by a search engine bot";
-		$this->ipsclass->admin->page_title  = "Search Engine Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里查看或删除搜索引擎机器人的操作记录";
+		$this->ipsclass->admin->page_title  = "搜索引擎记录管理";
 		
         //-----------------------------------------
 		// Show form!
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Bot Name"            , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Query String"        , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Time of action"      , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP address"          , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "机器人名称"            , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "查询字串"        , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "操作时间"      , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP 地址"          , "10%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Search Engine Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "保存的搜索引擎记录" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
@@ -190,7 +190,7 @@ class ad_spiderlogs {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有记录</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
@@ -221,7 +221,7 @@ class ad_spiderlogs {
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'spider_logs', 'where' => "bot='$botty'" ) );
 		
-		$this->ipsclass->admin->save_log("Removed Search Engine Logs");
+		$this->ipsclass->admin->save_log("删除搜索引擎记录");
 		
 		$this->ipsclass->boink_it($this->ipsclass->base_url."&{$this->ipsclass->form_code}");
 		exit();
@@ -236,18 +236,18 @@ class ad_spiderlogs {
 	{
 		$form_array = array();
 	
-		$this->ipsclass->admin->page_detail = "You may view and remove entries in your spider engine logs";
-		$this->ipsclass->admin->page_title  = "Search Engine Logs Manager";
+		$this->ipsclass->admin->page_detail = "您可以在这里查看或删除搜索引擎蜘蛛的操作记录";
+		$this->ipsclass->admin->page_title  = "搜索引擎记录管理";
 
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Bot Name"            , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Hits"                , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Last Hit"            , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "View all by bot"     , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Remove all by bot"   , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "机器人名称"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "访问次数"                , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "最后访问时间"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "查看所有记录"     , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除所有记录"   , "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Search Engine Spider Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "保存的搜索引擎记录" );
 		
 									  
 		$this->ipsclass->DB->cache_add_query( 'spiderlogs_list_current', array() );
@@ -281,15 +281,15 @@ class ad_spiderlogs {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Search Search Engine Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索记录" );
 			
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search for...</b>" ,
-										  		  $this->ipsclass->adskin->form_input( "search_string").'... in the query string'
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索条件...</b>" ,
+										  		  $this->ipsclass->adskin->form_input( "search_string").'... 请输入查询条件中的关键字'
 								 )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

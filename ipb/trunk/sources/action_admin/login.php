@@ -92,12 +92,12 @@ class ad_login
 		
 		if ( empty($this->ipsclass->input['username']) )
 		{
-			$this->login_form("You must enter a username before proceeding");
+			$this->login_form("languages.php");
 		}
 		
 		if ( empty($this->ipsclass->input['password']) )
 		{
-			$this->login_form("You must enter a password before proceeding");
+			$this->login_form("您必须输入密码");
 		}
 		
 		//-----------------------------------------
@@ -122,11 +122,11 @@ class ad_login
 		
 		$mem = $this->han_login->member;
 
-		$username_incorrect = "Username or password incorrect";
+		$username_incorrect = "用户名或密码错误";
 		
 		if( $this->ipsclass->vars['ipbli_usertype'] != 'username' )
 		{
-			$username_incorrect = "Email address or password incorrect";
+			$username_incorrect = "邮件地址或密码错误";
 		}
 		
 		if ( ( ! $mem['id'] ) or ( $this->han_login->return_code == 'NO_USER' ) )
@@ -140,7 +140,7 @@ class ad_login
 			if ( $this->han_login->return_code == 'ACCOUNT_LOCKED' )
 			{
 				$this->write_to_log( $this->ipsclass->input['username'], 'fail' );
-				$this->login_form( "Your account has been locked due to the number of failed login attempts made" );
+				$this->login_form( "由于多次登录失败, 您的账户被锁定" );
 			}
 			else
 			{
@@ -160,7 +160,7 @@ class ad_login
 		if ( $mem['g_access_cp'] != 1 )
 		{
 			$this->write_to_log( $this->ipsclass->input['username'], 'fail' );
-			$this->login_form("You do not have access to the administrative CP");
+			$this->login_form("您没有访问后台的权限");
 		}
 		else
 		{
@@ -347,7 +347,7 @@ class ad_login
 		$qs = str_replace( '('       , '', $qs );
 		$qs = str_replace( ')'       , '', $qs );
 		
-		$this->ipsclass->html_title = "IPB: ACP: Log in";
+		$this->ipsclass->html_title = "IPB: 后台: 登录";
 		$this->ipsclass->html = str_replace( '<%CONTENT%>', $this->ipsclass->skin_acp_global->log_in_form( $qs, $message, $name ), $this->ipsclass->skin_acp_global->global_main_wrapper() );
 		$this->ipsclass->html = str_replace( '<%TITLE%>'  , $this->ipsclass->html_title, $this->ipsclass->html );
 		$this->ipsclass->html = str_replace( "<body", "<body style='background-image:url({$this->ipsclass->skin_acp_url}/images/blank.gif)'", $this->ipsclass->html );

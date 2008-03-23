@@ -385,19 +385,19 @@ class ad_remote_template {
 		
     	$html = "<html>
     	           <head>
-    	              <title>CSS Preview</title>
+    	              <title>CSS 预览</title>
     	              $css
     	           </head>
     	           <body topmargin='0' leftmargin='0' rightmargin='0' marginwidth='0' marginheight='0' alink='#000000' vlink='#000000'>
     	           <table border='1' width='95%' cellspacing='0' cellpadding='4' align='center'>
     	           <tr>
-    	            <td bgcolor='#EEEEEE' style='font-size:14px'><b>Preview CSS Element '$name'<br>From style sheet '{$this_set['set_name']}'</b></td>
+    	            <td bgcolor='#EEEEEE' style='font-size:14px'><b>预览 CSS 元素 '$name'<br>样式表 '{$this_set['set_name']}'</b></td>
     	           </tr>
     	           </table>
     	           <br>
     	           <table border='1' width='95%' cellspacing='0' cellpadding='4' align='center'>
     	           <tr>
-    	            <td><b>Preview</b></td>
+    	            <td><b>预览</b></td>
     	           </tr>
     	           <tr>
     	           	<td $like>Cozy Lummux Gives Smart Squid Who Asks For Job Pen ([Indeed!])</td>
@@ -406,7 +406,7 @@ class ad_remote_template {
     	           	<br>
     	           	<table border='1' width='95%' cellspacing='0' cellpadding='4' align='center'>
     	            <tr>
-    	             <td colspan='2'><b>Formatted CSS Definition</b></td>
+    	             <td colspan='2'><b>格式化 CSS 定义</b></td>
     	            </tr>
     	              $def_output
     	           </table>
@@ -469,7 +469,7 @@ class ad_remote_template {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table();
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search Results</b>" )  , 'title' );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索结果</b>" )  , 'title' );
 		
 		foreach( $result as $group_name => $sub_array )
 		{
@@ -509,7 +509,7 @@ class ad_remote_template {
 		
 		if ($this->ipsclass->input['bypass'] == 1)
 		{
-			$this->do_message("No Search Results");
+			$this->do_message("没有搜索结果");
 		}
 		
 		//-----------------------------------------
@@ -523,7 +523,7 @@ class ad_remote_template {
 		
 		if ($search_text == "")
 		{
-			$this->do_message("Please enter a string to search");
+			$this->do_message("请输入搜索字符串");
 		}
 		
 		require ROOT_PATH .'sources/lib/skin_info.php';
@@ -563,7 +563,7 @@ class ad_remote_template {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table();
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Search Results</b>" )  , 'title' );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索结果</b>" )  , 'title' );
 		
 		foreach( $result as $group_name => $sub_array )
 		{
@@ -619,7 +619,7 @@ class ad_remote_template {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table(  );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enter text to search for</b><br>".
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入要搜索的文本</b><br>".
 										                         $this->ipsclass->adskin->form_input( 'search' )
 										                )      );
 										 
@@ -680,7 +680,7 @@ class ad_remote_template {
 	
 	function print_compare_top()
 	{
-		$content = $this->ipsclass->input['content'] == 'orig' ? 'Original Template' : 'Current Template';
+		$content = $this->ipsclass->input['content'] == 'orig' ? '原始模版' : '当前模板';
 		
 		print "<html>
 			   <body marginheight='0' marginwidth='0' leftmargin='0' topmargin='0' bgcolor='#000055'>
@@ -751,13 +751,13 @@ class ad_remote_template {
 
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Macro Look-up" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "宏查阅" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enter the Macro to look up</b><br>(EG: {ibf.skin.set_image_dir})",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入要查阅的宏</b><br>(例如: {ibf.skin.set_image_dir})",
 																 $this->ipsclass->adskin->form_input( 'lookup', $this->ipsclass->input['lookup'] )
 														)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Look-up");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("查阅");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -771,7 +771,7 @@ class ad_remote_template {
 	{
 		if ($this->ipsclass->input['lookup'] == "")
 		{
-			$this->ipsclass->admin->error("You must enter a macro to look up", 1);
+			$this->ipsclass->admin->error("您必须输入要查阅的宏", 1);
 		}
 		
 		$is_valid = 0;
@@ -799,7 +799,7 @@ class ad_remote_template {
 		
 		if ($is_valid != 1)
 		{
-			$this->macro_one("Wrong format");
+			$this->macro_one("错误的格式");
 		}
 		
 		if ($extra != "")
@@ -817,7 +817,7 @@ class ad_remote_template {
 						$answer = $this->ipsclass->member[$macro];
 					}
 				}
-				$result = "Loaded Member Information";
+				$result = "加载的会员信息";
 			}
 			else if ($extra == 'vars')
 			{
@@ -830,11 +830,11 @@ class ad_remote_template {
 				
 				$answer = $safe_INFO[$macro];
 				
-				$result = "Config Variable Information (May be protected)";
+				$result = "配置变量信息 ( 可能受保护 )";
 			}
 			else if ($extra == 'lang')
 			{
-				$result = "Language Text";
+				$result = "语言文本";
 				
 				$this->ipsclass->DB->simple_construct( array( 'select' => 'group_name', 'from' => 'skin_templates', 'where' => "suid='{$this->ipsclass->input['suid']}'" ) );
 				$this->ipsclass->DB->simple_exec();
@@ -872,11 +872,11 @@ class ad_remote_template {
 			if ($val = $this->ipsclass->DB->fetch_row())
 			{
 				$answer = htmlentities($val['macro_replace']);
-				$result = "From Macro Set";
+				$result = "来自宏";
 			}
 			else
 			{
-				$answer = "Macro not found";
+				$answer = "没有找到宏";
 			}
 		}
 		
@@ -885,13 +885,13 @@ class ad_remote_template {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Macro Look-up Result <a href='{$this->ipsclass->base_url}&act=rtempl&code=macro_one&suid={$this->ipsclass->input['suid']}'>Go Again</a>" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "宏查阅结果 <a href='{$this->ipsclass->base_url}&act=rtempl&code=macro_one&suid={$this->ipsclass->input['suid']}'>再次查阅</a>" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Entered Macro</b>", $this->ipsclass->input['lookup'] ) );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入的宏</b>", $this->ipsclass->input['lookup'] ) );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Macro Type</b>", $result )      );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>宏类型</b>", $result )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Result</b><br>May be blank if no info", $answer )      );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>结果</b><br>如果没有信息可能为空", $answer )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -947,10 +947,10 @@ class ad_remote_template {
 		
 		$table = "<table width='100%' bgcolor='black' cellpadding='4' style='font-family:verdana, arial;font-size:11px;color:white'>
 				  <tr>
-				   <td align='center' style='font-family:verdana, arial;font-size:11px;color:white'>Template Group: {$template['group_name']} : Template bit: {$template['func_name']}</td>
+				   <td align='center' style='font-family:verdana, arial;font-size:11px;color:white'>模板组: {$template['group_name']} : 模板元素: {$template['func_name']}</td>
 				  </tr>
 				  <tr>
-				   <td align='center' style='font-family:verdana, arial;font-size:11px;color:white'>View as [ <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=text' style='font-family:verdana, arial;font-size:11px;color:white'>Text</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=html' style='font-family:verdana, arial;font-size:11px;color:white'>HTML</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=css' style='font-family:verdana, arial;font-size:11px;color:white'>HTML with CSS</a> ]</td>
+				   <td align='center' style='font-family:verdana, arial;font-size:11px;color:white'>查看 [ <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=text' style='font-family:verdana, arial;font-size:11px;color:white'>文本</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=html' style='font-family:verdana, arial;font-size:11px;color:white'>HTML</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=css' style='font-family:verdana, arial;font-size:11px;color:white'>带有 CSS 格式的 HTML</a> ]</td>
 				  </tr>
 				  </table>
 				  <br><br>
@@ -1004,7 +1004,7 @@ class ad_remote_template {
 			$css_text = "\n<style>\n<!--\n".str_replace( "<#IMG_DIR#>", "style_images/".$r['img_dir'], $css)."\n//-->\n</style>";
 			
 			@header("Content-type: text/html; charset={$this->ipsclass->vars['gb_char_set']}");
-			print "<html><head><title>Preview</title>$css_text</head><body>$table \n";
+			print "<html><head><title>预览</title>$css_text</head><body>$table \n";
 			print str_replace( $macro_orig, $macro_repl, $this->convert_tags($template['section_content']) );
 			
 			exit();

@@ -44,7 +44,7 @@ class ad_calendars
 	
 	function auto_run() 
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Calendars' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '日历管理' );
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_management');
 		
 		switch($this->ipsclass->input['code'])
@@ -141,7 +141,7 @@ class ad_calendars
 		$this->calendar_rebuildcache();
 		$this->calendar_rss_cache();
 		
-		$this->ipsclass->main_msg = "Calendar Removed";
+		$this->ipsclass->main_msg = "日历已删除";
 		$this->calendar_list();
 	}
 	
@@ -181,7 +181,7 @@ class ad_calendars
 		
 		$this->calendars_rebuildcache();
 		
-		$this->ipsclass->main_msg = "Calendar repositioned";
+		$this->ipsclass->main_msg = "日历已复位";
 		$this->calendar_list();
 	}
 	
@@ -412,7 +412,7 @@ class ad_calendars
 		
 		if ( $return )
 		{
-			$this->ipsclass->main_msg = "Calendar Events RSS Recached";
+			$this->ipsclass->main_msg = "日历事件 RSS 缓存已重建";
 			$this->calendar_list();
 		}
 		else
@@ -595,7 +595,7 @@ class ad_calendars
 
 		if ( $return )
 		{
-			$this->ipsclass->main_msg = "Calendar Events Recached";
+			$this->ipsclass->main_msg = "日历事件缓存已重建";
 			$this->calendar_list();
 		}
 	}
@@ -639,7 +639,7 @@ class ad_calendars
 		{
 			if ( ! $cal_title )
 			{
-				$this->ipsclass->main_msg = "You must complete the entire form.";
+				$this->ipsclass->main_msg = "您必须完整填写表单.";
 				$this->calendar_form( $type );
 				return;
 			}
@@ -704,13 +704,13 @@ class ad_calendars
 			$this->ipsclass->DB->do_insert( 'cal_calendars', $array );
 			$cal_id = $this->ipsclass->DB->get_insert_id();
 			
-			$this->ipsclass->main_msg = 'New Calendar Added';
+			$this->ipsclass->main_msg = '添加新日历';
 		}
 		else
 		{
 			
 			$this->ipsclass->DB->do_update( 'cal_calendars', $array, 'cal_id='.$cal_id );
-			$this->ipsclass->main_msg = 'Calendar Edited';
+			$this->ipsclass->main_msg = '日历已编辑';
 		}
 		
 		$this->calendars_rebuildcache();
@@ -745,8 +745,8 @@ class ad_calendars
 		if ( $type == 'add' )
 		{
 			$formcode = 'calendar_add_do';
-			$title    = "Add New Calendar";
-			$button   = "Add New Calendar";
+			$title    = "新建日历";
+			$button   = "新建日历";
 			
 			$calendar = array( 'perm_read'			=> '',
 								'perm_post'			=> '',
@@ -774,8 +774,8 @@ class ad_calendars
 			}
 			
 			$formcode = 'calendar_edit_do';
-			$title    = "Edit Calendar ".$calendar['cal_title'];
-			$button   = "Save Changes";
+			$title    = "编辑日历 ".$calendar['cal_title'];
+			$button   = "保存";
 		}
 		
 		//-----------------------------------------
@@ -871,10 +871,10 @@ class ad_calendars
 		
 		$this->ipsclass->html .= $this->html->calendar_form( $form, $title, $formcode, $button, $calendar );
 		
-		$this->ipsclass->html_help_title = "Calendar Manager";
-		$this->ipsclass->html_help_msg   = "This section will allow you to manage your calendars.";
+		$this->ipsclass->html_help_title = "日历管理";
+		$this->ipsclass->html_help_msg   = "您可以在这里管理您论坛的日历.";
 		
-		$this->ipsclass->admin->nav[]    = array( '', "Add/Edit Calendar" );
+		$this->ipsclass->admin->nav[]    = array( '', "新建/编辑日历" );
 		$this->ipsclass->admin->output();
 	}
 	
@@ -946,8 +946,8 @@ class ad_calendars
 		
 		$this->ipsclass->html .= $this->html->calendar_overview( $content );
 		
-		$this->ipsclass->admin->page_title  = "Calendar Manager";
-		$this->ipsclass->admin->page_detail = "This section will allow you to manage your calendars.";
+		$this->ipsclass->admin->page_title  = "日历管理";
+		$this->ipsclass->admin->page_detail = "您可以在这里管理您论坛的日历.";
 		$this->ipsclass->admin->output();
 	}
 	

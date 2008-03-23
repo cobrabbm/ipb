@@ -237,7 +237,7 @@ class ad_skin_template_bits
 		$group_bits = $this->ipsclass->cache_func->_get_templates($id, $p, 'groups', $group_name );
 
 		$add_button = "<div class='realbutton' style='padding:4px;width:100px'>
-						<a style='text-decoration:none' href='#' onclick=\"parent.template_add_bit('{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=addbit&id={$this->ipsclass->input['id']}&p={$this->ipsclass->input['p']}&expand={$group['group_name']}', event)\">Add Template Bit</a>
+						<a style='text-decoration:none' href='#' onclick=\"parent.template_add_bit('{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=addbit&id={$this->ipsclass->input['id']}&p={$this->ipsclass->input['p']}&expand={$group['group_name']}', event)\">添加模板元素</a>
 					   </div>";
 
 		//-----------------------------------------
@@ -395,8 +395,8 @@ class ad_skin_template_bits
 			$in = ','.$this->ipsclass->input['p'];
 		}
 
-		$this->ipsclass->admin->page_detail = "Please choose which section you wish to edit below.";
-		$this->ipsclass->admin->page_title  = "Edit Template sets";
+		$this->ipsclass->admin->page_detail = "请在下面选择要编辑的模版元素.";
+		$this->ipsclass->admin->page_title  = "编辑模版元素";
 
 		//-----------------------------------------
 		// Generate inline JS
@@ -460,13 +460,13 @@ class ad_skin_template_bits
 			}
 			else
 			{
-				$g['easy_name'] = "<b>".$g['group_name']."</b> (Non-Default Group)";
-				$g['easy_desc'] = "This group is not part of the standard Invision Power Board installation and no description is available";
+				$g['easy_name'] = "<b>".$g['group_name']."</b> (非默认组)";
+				$g['easy_desc'] = "该组不是标准 IPB 安装的一部分，没有说明";
 			}
 
 			if ( isset($skin_names[ $g['group_name'] ][2]) )
 			{
-				$g['easy_preview'] = "<a title='New window: Show relevant IPB page' href='{$this->ipsclass->vars['board_url']}/index.{$this->ipsclass->vars['php_ext']}?{$skin_names[ $g['group_name'] ][2]}' target='_blank'><img src='{$this->ipsclass->skin_acp_url}/images/te_previewon.gif' alt='Preview' border='0' /></a>";
+				$g['easy_preview'] = "<a title='在新窗口显示相关 IPB 页面' href='{$this->ipsclass->vars['board_url']}/index.{$this->ipsclass->vars['php_ext']}?{$skin_names[ $g['group_name'] ][2]}' target='_blank'><img src='{$this->ipsclass->skin_acp_url}/images/te_previewon.gif' alt='Preview' border='0' /></a>";
 			}
 			else
 			{
@@ -544,8 +544,8 @@ class ad_skin_template_bits
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->skin_jump_menu_wrap();
 
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'Skin Manager Home' );
-		$this->ipsclass->admin->nav[] = array( '' ,'Managing Template Set "'.$this_set['set_name'].'"' );
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( '' ,'管理模版元素 "'.$this_set['set_name'].'"' );
 
 		$this->ipsclass->admin->output();
 	}
@@ -596,8 +596,8 @@ class ad_skin_template_bits
 
 	function add_bit()
 	{
-		$this->ipsclass->admin->page_detail = "You may add a template bit using this section.";
-		$this->ipsclass->admin->page_title  = "Template Editing";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加模板元素.";
+		$this->ipsclass->admin->page_title  = "编辑模版";
 
 		$groupname = $this->ipsclass->input['expand'];
 
@@ -634,28 +634,28 @@ class ad_skin_template_bits
 
 
 
-		$options .= "<div class='tableheaderalt'>New Template Bit Specifics</div>
+		$options .= "<div class='tableheaderalt'>新模板元素设置</div>
 					 <div class='tablerow1'>
 					 <table width='100%' cellpadding='5' cellspacing='0' border='0'>
 					 <tr>
-					   <td width='40%' class='tablerow1'>New Template Bit Name<br /><span style='color:gray'>Alphanumerics and underscores only, no spaces.</span></td>
+					   <td width='40%' class='tablerow1'>元素名称<br /><span style='color:gray'>只能使用字母、数字和下划线，不能使用空格.</span></td>
 					   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_input('func_name', $this->ipsclass->txt_stripslashes($_POST['func_name']))."</td>
 					 </tr>
 					 <tr>
-					   <td width='40%' class='tablerow1'>New Template Bit Incoming Data Variables<br /><span style='color:gray'>Define the variables passed to this template bit.</span></td>
+					   <td width='40%' class='tablerow1'>传入数据变量<br /><span style='color:gray'>定义一个传入到此模版元素的数据变量.</span></td>
 					   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_input('func_data', str_replace( "'", '&#039;', $this->ipsclass->txt_stripslashes($_POST['func_data']) ) )."</td>
 					 </tr>
 					  <tr>
-					   <td width='40%' class='tablerow1'>New Template Bit Group...</td>
+					   <td width='40%' class='tablerow1'>所属元素组...</td>
 					   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_dropdown('group_name', $formatted_groups, $this->ipsclass->input['group_name'] ? $this->ipsclass->input['group_name'] : $this->ipsclass->input['expand'] )."</td>
 					 </tr>
 					 <tr>
-					   <td width='40%' class='tablerow1'>Or Create New Group...<br /><span style='color:gray'>Leave empty to use above group. Alphanumerics and underscores only, no spaces</span></td>
+					   <td width='40%' class='tablerow1'>或创建元素组...<br /><span style='color:gray'>留空表示使用上面选择的组.只能使用字母, 数字和下划线, 不能使用空格</span></td>
 					   <td width='60%' class='tablerow1'>skin_".$this->ipsclass->adskin->form_input('new_group_name', $this->ipsclass->txt_stripslashes($_POST['new_group_name']))."</td>
 					 </tr>
 					 </table>
 					</div>
-					<div class='tablesubheader' align='center' style='padding:4px'><input type='submit' name='submit' value='Continue...' class='realdarkbutton'></div>
+					<div class='tablesubheader' align='center' style='padding:4px'><input type='submit' name='submit' value='继续...' class='realdarkbutton'></div>
 					</form>";
 
 		$this->ipsclass->html .= $options;
@@ -679,21 +679,21 @@ class ad_skin_template_bits
 		{
 			if ( preg_match( "#[^\w_]#s", $_POST['new_group_name'] ) )
 			{
-				$this->ipsclass->main_msg = 'The new template bit group name must only contain alphanumerics and underscores.';
+				$this->ipsclass->main_msg = '模板元素组名只能包含字母, 数字和下划线.';
 				$this->add_bit();
 			}
 		}
 
 		if ( ! $_POST['func_name'] )
 		{
-			$this->ipsclass->main_msg = 'The new template bit name cannot be empty.';
+			$this->ipsclass->main_msg = '模板元素名不能为空.';
 			$this->add_bit();
 		}
 		else
 		{
 			if ( preg_match( "#[^\w_]#s", $_POST['func_name'] ) )
 			{
-				$this->ipsclass->main_msg = 'The new template bit name must only contain alphanumerics and underscores.';
+				$this->ipsclass->main_msg = '模板元素名只能包含字母, 数字和下划线.';
 				$this->add_bit();
 			}
 		}
@@ -724,7 +724,7 @@ class ad_skin_template_bits
 
 		if ( $row = $this->ipsclass->DB->simple_exec_query( array( 'select' => 'suid', 'from' => 'skin_templates', 'where' => "(set_id=".intval($this->ipsclass->input['id'])." OR set_id='{$parent_set}') AND group_name='$group_name' AND func_name='$func_name'" ) ) )
 		{
-			$this->ipsclass->main_msg = "The new template bit '$func_name' already exists in group '$group_name'.";
+			$this->ipsclass->main_msg =  "模板元素“$func_name”已存在于组“$group_name”.";
 			$this->add_bit();
 		}
 
@@ -734,7 +734,7 @@ class ad_skin_template_bits
 
 		if ( strtolower($func_name) == 'end' )
 		{
-			$this->ipsclass->main_msg = "You cannot name a template bit 'end'";
+			$this->ipsclass->main_msg = "您不能将模板元素命名为 'end'";
 			$this->add_bit();
 		}
 
@@ -793,8 +793,8 @@ class ad_skin_template_bits
 		// PAGE HEADER
 		//-----------------------------------------
 
-		$this->ipsclass->admin->page_detail = "You may edit the HTML of this template.";
-		$this->ipsclass->admin->page_title  = "Template Editing";
+		$this->ipsclass->admin->page_detail = "您可以编辑本模板的 HTML.";
+		$this->ipsclass->admin->page_title  = "模板编辑";
 
 		//-----------------------------------------
 		// Get $skin_names stuff
@@ -987,8 +987,8 @@ class ad_skin_template_bits
 		if ( $type != 'single' AND $type != 'multiple' )
 		{
 			$formbuttons = "<div align='center' class='tablesubheader'>
-							<input type='submit' name='submit' value='Save Template Bit(s)' class='realdarkbutton'>
-							<input type='submit' name='savereload' value='Save and Reload Template Bit(s)' class='realdarkbutton'>
+							<input type='submit' name='submit' value='保存模板元素' class='realdarkbutton'>
+							<input type='submit' name='savereload' value='保存并重新载入模板元素' class='realdarkbutton'>
 							</div>\n";
 
 			$this->ipsclass->html = str_replace( '<!--IPB.EDITORBOTTOM-->', $formbuttons, $this->ipsclass->html );
@@ -1012,7 +1012,7 @@ class ad_skin_template_bits
 			$groupname = $skin_names[ $groupname ][0];
 		}
 
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'Skin Manager Home' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'皮肤管理' );
 		$this->ipsclass->admin->nav[] = array( "{$this->ipsclass->form_code}&code=edit&id={$id}&groupname={$old_groupname}", $groupname );
 
 		//-----------------------------------------
@@ -1239,7 +1239,7 @@ class ad_skin_template_bits
 			{
 				$this->ipsclass->input['cb_'.$id ] = 1;
 				$this->ipsclass->input['error_raw_'.$id] = $this->ipsclass->txt_stripslashes($_POST['txt'.$id]);
-				$this->ipsclass->main_msg = "These template bits could not be saved because they cause an error when parsed. Please check the data including any HTML logic used and any input data variables.";
+				$this->ipsclass->main_msg = "由于在分析中遇到错误, 这些模板元素不能被保存. 请检查所有的 HTML 语法习惯和变量.";
 
 				$this->template_edit_bit();
 			}
@@ -1249,7 +1249,7 @@ class ad_skin_template_bits
 			if ( ( $type != 'single' AND $type != 'multiple' ) AND ( ! $this->ipsclass->input['savereload'] ) )
 			{
 				$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'Skin Manager Home' );
-				$this->ipsclass->admin->redirect( "{$this->ipsclass->form_code}&code=template-edit-bit&id={$this->ipsclass->input['id']}&group_name={$real_name}", "Template bit(s) updated, returning to template selection screen" );
+				$this->ipsclass->admin->redirect( "{$this->ipsclass->form_code}&code=template-edit-bit&id={$this->ipsclass->input['id']}&group_name={$real_name}", "模板元素已更新, 返回模板元素组页面" );
 			}
 			else
 			{
@@ -1261,13 +1261,13 @@ class ad_skin_template_bits
 				{
 					array_pop($this->ipsclass->cache_func->messages);
 
-					$this->ipsclass->cache_func->messages[] = "Template bit(s) saved to database";
+					$this->ipsclass->cache_func->messages[] = "模板元素已保存";
 
 					$this->ipsclass->main_msg = implode( "<br />", $this->ipsclass->cache_func->messages );
 				}
 				else
 				{
-					$this->ipsclass->main_msg = "Template bit(s) updated";
+					$this->ipsclass->main_msg = "模版元素已更新";
 				}
 
 				foreach( $cb_ids as $cb )
@@ -1365,7 +1365,7 @@ class ad_skin_template_bits
 		}
 		else
 		{
-			$this->ipsclass->admin->redirect( "{$this->ipsclass->form_code}&code=edit&id={$row['set_id']}&p={$this->ipsclass->input['p']}&group_name={$row['group_name']}&#{$row['group_name']}", "Template bit(s) reverted, returning to template selection screen" );
+			$this->ipsclass->admin->redirect( "{$this->ipsclass->form_code}&code=edit&id={$row['set_id']}&p={$this->ipsclass->input['p']}&group_name={$row['group_name']}&#{$row['group_name']}", "模板元素已恢复, 返回模板选择页面" );
 		}
 	}
 
