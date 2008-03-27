@@ -3,21 +3,21 @@
 	<helpsettingsgroup>
 		<helpsettings>
 			<key>new_reg_notify</key>
-			<title>更改接收提醒的默认邮件地址</title>
-			<helptext><![CDATA[如果您想要接收此提醒,您需要在这里设置邮件地址:<br />
+			<title>更改接收的默认邮件地址</title>
+			<helptext><![CDATA[如果您想要接收此邮件,您需要在这里设置邮件地址:<br />
 <i>工具设置</i> -> <i>邮件中心</i> -> <i>邮件设置</i> -> <i>电子邮件设置</i>
 <br />
-<br /><a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=Board+incoming+email+address&code=setting_view", 1); return false;'>点击这里</a> 查看或者设置当前的邮件地址.
+<br /><a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=Board+incoming+email+address&code=setting_view", 1); return false;'>点击这里</a>查看或者设置当前的邮件地址.
 
 
 ]]></helptext>
-			<mouseover>更改接收提醒的默认邮件地址.</mouseover>
+			<mouseover>更改接收的默认邮件地址.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>csite_on</key>
 			<title>如何引用论坛的主题</title>
-			<helptext><![CDATA[如果您有可用的接口需要引用论坛主题,您可以 <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=portal&code=portal_settings&pc_key=recent_topics", 1); return false;'>点击这里</a>, 或者到这里设置:<br/>
+			<helptext><![CDATA[如果您有可用的接口需要引用论坛主题,您可以<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=portal&code=portal_settings&pc_key=recent_topics", 1); return false;'>点击这里</a>,或者到这里设置:<br/>
 <i>工具设置</i> -> <i>管理门户插件</i> -> <i>IPB最近主题</i> -> <i>编辑设置</i>
 
 
@@ -29,7 +29,7 @@
 		<helpsettings>
 			<key>csite_fav_contents</key>
 			<title>如何添加超级链接</title>
-			<helptext><![CDATA[如果您想要添加超级链接,您就需要用到 HTML. 关于 HTML,您可以访问这里获得更多 <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a>.<br /> <br />
+			<helptext><![CDATA[如果您想要添加超级链接,您就需要用到 HTML.关于 HTML,您可以访问这里获得更多 <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a>.<br /> <br />
 添加链接的时候,需要遵循下面的格式:<br />
 &lt;a href="http://www.您的链接地址.com"&gt;链接显示的内容&lt;/a&gt;<br /><br />
 如果想要换行,您就需要用到这个标签: &lt;br /&gt;]]></helptext>
@@ -39,7 +39,7 @@
 		<helpsettings>
 			<key>max_sig_length</key>
 			<title>禁用签名档</title>
-			<helptext><![CDATA[您可以阻止会员创建新的签名档,或者通知他们删除已经存在的签名档.您需要做的就是这里设置为: -1<br /><br />
+			<helptext><![CDATA[您可以阻止会员创建新的签名档,或者通知他们删除已经存在的签名档.您需要做的就是把这里设置为:-1<br /><br />
 提醒:这个操作不会删除已经存在的签名档.除非您选择编辑会员直接删除他们的签名档.]]></helptext>
 			<mouseover>禁用签名档</mouseover>
 		</helpsettings>
@@ -47,7 +47,7 @@
 		<helpsettings>
 			<key>cookie_domain</key>
 			<title>Cookie 作用域</title>
-			<helptext><![CDATA[您需要在您的域名前面加一个英文的句点.例如,如果您的站点是这个 <i>http://www.您的域名.com/论坛/</i>, 您就需要输入:<br />
+			<helptext><![CDATA[您需要在您的域名前面加一个英文的句点.例如,如果您的站点是这个 <i>http://www.您的域名.com/论坛/</i>,您就需要输入:<br />
 <b>.您的域名.com</b><br />
 <br />
 请不要在这里输入除此之外的任何字符,以防止出错.<br /><br />
@@ -59,7 +59,7 @@
 		<helpsettings>
 			<key>cookie_id</key>
 			<title>Cookie 名称前缀</title>
-			<helptext><![CDATA[如果在您的域名下面同时有很多程序在运行,那么这个设置将会非常有用, 因为他们之间可能会互相干扰. 您只需要设置一个区别于其他程序的前缀就可以解决. 例如:<br />
+			<helptext><![CDATA[如果在您的域名下面同时有很多程序在运行,那么这个设置将会非常有用,因为他们之间可能会互相干扰.您只需要设置一个区别于其他程序的前缀就可以解决.例如:<br />
 <b>myipb_</b><br />
 <br />
 如果您运行了几个IPB论坛程序,您也可以这样设置前缀:<br />
@@ -72,7 +72,7 @@
 		<helpsettings>
 			<key>cookie_path</key>
 			<title>Cookie 路径</title>
-			<helptext><![CDATA[S只有在一些特殊情况下才需要进行此设置. 如果您的 cookies 相互冲突,您就可以在论坛程序目录里单独创建一个文件夹作为 cookies 存放路径. 例如:<br />
+			<helptext><![CDATA[S只有在一些特殊情况下才需要进行此设置.如果您的 cookies 相互冲突,您就可以在论坛程序目录里单独创建一个文件夹作为 cookies 存放路径.例如:<br />
 <b>/forum</b>]]></helptext>
 			<mouseover>什么时候我需要设置?</mouseover>
 		</helpsettings>
@@ -80,35 +80,35 @@
 		<helpsettings>
 			<key>update_topic_views_immediately</key>
 			<title>更新主题查看次数 </title>
-			<helptext><![CDATA[大型论坛如果频繁更新主题查看次数可能会出现问题. 有人查看数据的时候主题表就会被访问,频繁操作可能会损坏表单甚至请求被锁死.该项设置为 <b>否</b> 系统会并会每6小时自动更新一次计数器.这将会显著减少对主题表的负载.<b>只有在大型活跃的论坛才需要进行此设置.</b>]]></helptext>
+			<helptext><![CDATA[大型论坛如果频繁更新主题查看次数可能会出现问题.有人查看数据的时候主题表就会被访问,频繁操作可能会损坏表单甚至请求被锁死.该项设置为<b>否</b>,系统每6小时会自动更新一次计数器.这将会显著减少对主题表的负载.<b>只有在大型活跃的论坛才需要进行此设置.</b>]]></helptext>
 			<mouseover>如果我需要这样做我改怎么做?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>load_limit</key>
 			<title>服务器负载限制</title>
-			<helptext><![CDATA[论坛将会对您的服务器负载进行即时快照,缓冲这个结果大约需要10秒. 需要提醒的是系统负载是跟服务器有关,跟论坛程序本身没有关系.如果您发现您的系统负载值很高,请与您的服务提供商联系,查找是由于什么原因引起.<br /><br />
+			<helptext><![CDATA[论坛将会对您的服务器负载进行即时快照,处理这个结果大约需要10秒.需要提醒的是系统负载是跟服务器有关,跟论坛程序本身没有关系.如果您发现您的系统负载值很高,请与您的服务提供商联系,查找是由于什么原因引起.<br /><br />
 <br />
-如果您的服务器操作系统是 <b>Linux</b>, 系统负载取决于:<br />
-How many processes are waiting in queue to use the processor on the server. For example, if you have one CPU on your server, then a load of 1.00 would mean there is one process waiting in queue. If you have two CPUs, then 2.00 would be more suitable for that example. As a safe rule, you can enter a limit of 20.
+如果您的服务器操作系统是 <b>Linux</b>,系统负载取决于:<br />
+服务器上队列有多少进程等待处理.例如,如果你的服务器是单CPU,负载1.00就表示有一个进程在队列里等待.如果你的服务器有两个CPU, 负载就变成2.00.按照安全原则,你可以输入20.
 <br />
 <br />
-If your server has <b>Windows</b>, the server load relates to: <br />
-The CPU usage of the server at that time. As with home computers with Windows, the usage can spike drastically for short periods of time. If you set it at 50, anytime the CPU usage is above 50%, you will get the error message. Also note the board caches the load for 10 seconds, so all users will see the message for a minimum of 10 seconds. On Windows, it is <i>recommended</i> to put it as 100, as the CPU usage monitor is not reliable for tools such as this. By setting it at 100, you will still see the load at the bottom-right of your board, but the board will not give the error when the server load spikes.]]></helptext>
-			<mouseover>What to put depending on your operating system...</mouseover>
+如果你的服务器操作系统是 <b>Windows</b>, 系统负载取决于: <br />
+当前CPU的使用率.在使用 Windows 的服务器中,CPU使用率可能会在某一时间段变化频繁.如果您设置为50,在某一个使用率高于50%的时候,您将会收到报错信息.请记住论坛处理负载的时间是10秒,那么在这期间所有用户都将看到这条消息.在 Windows 系统中, <i>强烈推荐</i>输入100,因为这个时候CPU监视器已经不可靠.设置了100以后,您仍然可以在论坛右下角看到系统负载值,只是系统负载超过峰值的时候论坛也不会提醒您.]]></helptext>
+			<mouseover>输入的数据由您的服务器操作系统决定.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>time_offset</key>
 			<title>服务器时区</title>
-			<helptext>这是游客的默认时区. 游客只有在注册并登录以后才可以设置自己的时区.</helptext>
+			<helptext>这是游客的默认时区.游客只有在注册并登录以后才可以设置自己的时区.</helptext>
 			<mouseover>什么时候用到?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>smtp_host</key>
 			<title>SMTP 信息</title>
-			<helptext><![CDATA[此项(其他有关 SMTP 的设置也一样)只有在您在<i>邮件发送方式</i>选择了使用 SMTP 才需要设置. 如果您使用 PHP Mail() 函数, 这些设置将会采用默认设置.<br /><br />
+			<helptext><![CDATA[此项(其他有关 SMTP 的设置也一样)只有在您在<i>邮件发送方式</i>选择了使用 SMTP 才需要设置.如果您使用 PHP Mail() 函数,这些设置将会采用默认设置.<br /><br />
 如果您不确定您的 SMTP 信息,请联系您的服务器提供商,通常他们都会提供给您相应的信息.]]></helptext>
 			<mouseover></mouseover>
 		</helpsettings>
@@ -116,174 +116,174 @@ The CPU usage of the server at that time. As with home computers with Windows, t
 		<helpsettings>
 			<key>mail_method</key>
 			<title>PHP mail() 邮件函数或者使用 SMTP?</title>
-			<helptext><![CDATA[在通常的PHP安装环境中, PHP mail() 邮件函数是可以使用的.如果您对此不确认, 请联系您的服务器提供商.如果这个函数不可用,或者您在使用中发现很多 <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=admin&act=emailerror", 1); return false;'>邮件错误</a>,建议您切换到 SMTP 方式发送邮件.]]></helptext>
+			<helptext><![CDATA[在通常的PHP安装环境中, PHP mail() 邮件函数都可以使用.如果您对此不确认, 请联系您的服务器提供商.如果这个函数不可用,或者您在使用中发现很多<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=admin&act=emailerror", 1); return false;'>邮件错误</a>,建议您切换到 SMTP 方式发送邮件.]]></helptext>
 			<mouseover>PHP mail() 邮件函数或者使用 SMTP?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>home_url</key>
-			<title>Website URL</title>
-			<helptext><![CDATA[When entering your website URL, be sure to include the full domain. Example: http://www.your-domain.com<br /><br />
-If you do not enter the <i>http://</i>, your link will not work correctly.]]></helptext>
-			<mouseover>Be sure to include http://</mouseover>
+			<title>网站地址</title>
+			<helptext><![CDATA[输入的时候请包括完整的域名.例如: http://www.您的域名.com<br /><br />
+如果您没有输入 <i>http://</i>,您的链接就不会生效.]]></helptext>
+			<mouseover>请确认包含 http://</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>upload_dir</key>
-			<title>Upload Directory</title>
-			<helptext><![CDATA[Be sure to check the suggestion for your upload directory in the setting description.<br /><br />
-If you still have issues uploading, please ensure your <i>uploads</i> directory is writable using the <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>File Permission Checker</a>.]]></helptext>
-			<mouseover>Having Trouble Uploading?</mouseover>
+			<title>上传绝对路径</title>
+			<helptext><![CDATA[请确认上传目录的绝对路径是正确的.<br /><br />
+如果您上传仍然遇到问题,请检查远程文件夹 <i>uploads</i> 是可写的.<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>文件权限检查</a>.]]></helptext>
+			<mouseover>上传遇到问题?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>upload_url</key>
-			<title>Upload URL</title>
-			<helptext><![CDATA[Be sure to check the suggestion for your upload URL in the setting description.<br /><br />
-If you still have issues uploading, please ensure your <i>uploads</i> directory is writable using the <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>File Permission Checker</a>.]]></helptext>
-			<mouseover>Having Trouble Uploading?</mouseover>
+			<title>上传路径</title>
+			<helptext><![CDATA[请严格按照设置提醒确认您的论坛上传路径.<br /><br />
+如果您上传仍然遇到问题,请检查远程文件夹 <i>uploads</i> 是可写的. <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>文件权限检查</a>.]]></helptext>
+			<mouseover>上传遇到问题?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>safe_mode_skins</key>
-			<title>Safe Mode Skin</title>
-			<helptext><![CDATA[The <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag", 1); return false;'>System Overview</a> page will let you know if your PHP installation has Safe Mode on. If it does, please enable this setting.]]></helptext>
-			<mouseover>Not sure if your are running safe_mode?</mouseover>
+			<title>使用安全模式皮肤</title>
+			<helptext><![CDATA[在<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag", 1); return false;'>系统信息</a>页面您可以确认您服务器的安全模式有没有打开.如果没有,请打开它.]]></helptext>
+			<mouseover>不确认是否打开了安全模式?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>search_sql_method</key>
 			<title>会员搜索类型?</title>
-			<helptext><![CDATA[如果您的服务器支持全文搜索, <b>强烈</b>建议您使用它. 搜索对论坛会员来说是一项非常重要的功能. 使用全文搜索可以快速、灵活地为存储在数据库中的文本数据查询创建索引.只有在特殊情况下才选择普通搜索.]]></helptext>
+			<helptext><![CDATA[如果您的服务器支持全文搜索,<b>强烈</b>建议您使用它.搜索对论坛会员来说是一项非常重要的功能.使用全文搜索可以快速、灵活地为存储在数据库中的文本数据查询创建索引.只有在特殊情况下才会选择普通搜索.]]></helptext>
 			<mouseover>会员搜索类型?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>spider_visit</key>
-			<title>Logging Spider visits</title>
-			<helptext><![CDATA[Enabling spider bot visits can greatly increase the amount of database storage space used. If this is enabled, it is recommended to enable <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&code=findsetting&key=log_prune", 1); return false;'>Log Pruning</a> for spider visits.]]></helptext>
-			<mouseover>Important note about enabling logging...</mouseover>
+			<title>搜索蜘蛛访问</title>
+			<helptext><![CDATA[允许搜索蜘蛛访问会使用更多的服务器存储空间.如果开启了此项,请确认<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&code=findsetting&key=log_prune", 1); return false;'>搜索蜘蛛记录</a>已经打开.]]></helptext>
+			<mouseover>关于搜索蜘蛛访问的重要提示.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>spider_group</key>
-			<title>Picking A Group</title>
-			<helptext>When you select a group for search engine bots, they will be able to see and store anything that group has access to. So do not assign them to a special group such as Admins or Moderators, as they will be able to see everything those groups can see - including hidden forums.</helptext>
-			<mouseover>Picking a group...</mouseover>
+			<title>为搜索蜘蛛选择用户组</title>
+			<helptext>如果您为搜索蜘蛛设置了一个会员组,那么它们将继承该会员组的所有设置以及访问权限.所以,请不要设置搜索蜘蛛为管理员组或其他特殊会员组,否则它们可能会看到您已经设置为隐藏的论坛,泄露您本来不想公开的信息.</helptext>
+			<mouseover>为搜索蜘蛛选择用户组.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>search_engine_bots</key>
-			<title>Using Pre-Made Lists</title>
-			<helptext><![CDATA[Some pre-made lists have a long list of recognized bots. While it is useful to know what bots are visiting your site, large lists can cause many issues. It can cause forum slowness or PHP & SQL errors. It is highly recommended to <i>not</i> enter large lists, but rather enter the ones you feel will visit your site or are important to your site.]]></helptext>
-			<mouseover>Adding a list...</mouseover>
+			<title>使用预置的名单</title>
+			<helptext><![CDATA[预置名单中通常已经包含大部分搜索蜘蛛的名字.通过它们您就能知道哪些搜索引擎的搜索蜘蛛曾经来过,但是名单太长也会带来一些问题.它会让论坛变慢或者引起一些 PHP & SQL 错误.因此,建议<i>不要</i>输入太长的名单.您也可以添加对您的论坛来说比较重要的一些搜索蜘蛛名单.]]></helptext>
+			<mouseover>添加预置名单.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>forum_trash_can_id</key>
-			<title>Setting Up A Trash Can Forum</title>
-			<helptext><![CDATA[If you do not have a trash can forum setup already, you can create one using the <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=forum&code=new&type=forum", 1); return false;'>Add New Forum</a> section.<br /><br />
-This forum can be called whatever you would like and placed in whatever category. Normally the trash can forum is setup so that only Admins can view the forum. This way you can review all deleted topics, and permanently delete them as needed.]]></helptext>
-			<mouseover>Setting up a trash can forum...</mouseover>
+			<title>设置一个论坛板块作为回收站</title>
+			<helptext><![CDATA[如果您没有已经存在的回收站板块,您可以使用<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=forum&code=new&type=forum", 1); return false;'>添加论坛板块</a>选项.<br /><br />
+这个论坛板块可以在论坛的任何分区.通常情况下回收站板块会默认安装,只有管理员能够访问.在这里您可以按需查看所有已经被删除的主题.]]></helptext>
+			<mouseover>设置一个论坛板块作为回收站.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>subsm_nopkg_group</key>
-			<title>What Group to Pick?</title>
-			<helptext><![CDATA[The best way to configure this setting is to setup a special user group for people who have no purchased a package as of yet. If you leave this set to 'Validating', it can cause confusion. Once someone validates they would be placed back into the validating group until they pay. Setting up a specific group for unpaid members would allow your members to properly validate, but you would still be able to control what type of board access they have.]]></helptext>
-			<mouseover>What group to pick...</mouseover>
+			<title>哪个用户组除外?</title>
+			<helptext><![CDATA[使用此项功能的时候如果需要排除部分会员,最好的方法就是为他们创建一个特殊的会员组.例如当您设置会员'激活'的时候,问题就会凸显.会员只要付费激活了以后就会进入已激活会员组.为没有付费的会员创建一个特殊的会员组更有利于您的论坛会员激活,而且你仍然可以控制他们的访问权限.]]></helptext>
+			<mouseover>哪个用户组除外?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>bot_antispam</key>
-			<title>About Captcha</title>
-			<helptext><![CDATA[This feature is your first line of defense against spam bots. Most spam bots are unable to get past the registration page when this is set to 'Advanced'. This should stop them before they are able to register. The second line of defense is validation, which can be enabled lower on this page under "<i>New registration email validation?</i>".<br /><br />
-If you continue to get spam registrations, you may wish to ban common spamming IP addresses, names, and emails using the <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=babw&code=ban", 1); return false;'>Ban Filters</a>.]]></helptext>
-			<mouseover>Why should I enable this?</mouseover>
+			<title>关于验证码</title>
+			<helptext><![CDATA[此项功能是您抵御垃圾信息的第一道防线.选择了"高级"选项则大多数垃圾信息都将被屏蔽.只有在提前打开了此项功能以后才会生效.第二道防线就是"注册激活",您可以在这里进行设置 "<i>新用户注册激活?</i>".<br /><br />
+如果您使用了垃圾注册防御,您可能还会用到 IP 地址过滤,名称过滤和 emails 过滤,您可以点击这里设置:<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=babw&code=ban", 1); return false;'>管理屏蔽</a>.]]></helptext>
+			<mouseover>为什么我需要打开它?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>guest_captcha</key>
-			<title>Guest Post Security</title>
-			<helptext><![CDATA[If <i>any</i> of your forums allow guest posting, it is important to set this setting to 'Advanced'. Spam bots commonly search for forums that allow guest posting to spam their sites/links. Most bots cannot bypass the Advanced Captcha, so it will stop your guest forums from being overly spammed.]]></helptext>
-			<mouseover>Guest posting security...</mouseover>
+			<title>游客发帖控制</title>
+			<helptext><![CDATA[如果您的论坛<i>任何</i>板块都允许游客发帖,强烈建议此项设置为"高级".垃圾信息机器人一般会搜索允许游客发帖的论坛来进行他们的恶劣行为,但是他们中的大部分都不能通过此项"高级"设置,所以,选择"高级"以后他们就很难得逞.]]></helptext>
+			<mouseover>游客发帖控制.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>captcha_allow_fonts</key>
-			<title>Preview Captcha</title>
-			<helptext><![CDATA[If there is no preview image in this setting, it can mean that your GD installation does not support fonts. If no image is shown, please set this setting to <i>No</i>. If it still does not load, please set <i>Enable Captcha?</i> to <i>Normal</i> for the time being, and consult with your webhost to have them install the GD libraries with font support.]]></helptext>
-			<mouseover>Preview Captcha</mouseover>
+			<title>验证码预览</title>
+			<helptext><![CDATA[如果这里没有预览图片,意味着您的 GD 安装版本不支持文字类型.如果图片显示不出来,请调整设置为<i>否</i>.如果仍然不显示,请调整 <i>是否打开验证码?</i>为<i>普通</i>,并联系您的服务提供商升级 GD 版本.]]></helptext>
+			<mouseover>验证码预览</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>ipb_bruteforce_attempts</key>
-			<title>Managing Locked Accounts</title>
-			<helptext><![CDATA[If this setting is enabled, you can manage any locked accounts by <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=lock", 1); return false;'>Clicking Here</a>.]]></helptext>
-			<mouseover>Managing locked accounts...</mouseover>
+			<title>管理被锁定的会员</title>
+			<helptext><![CDATA[如果此项被打开,您可以<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=lock", 1); return false;'>点击这里</a>管理被锁定的会员.]]></helptext>
+			<mouseover>管理被锁定的会员.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>reg_auth_type</key>
-			<title>Setting Up Validation</title>
-			<helptext><![CDATA[This setting is important in terms of controlling who can register on your board. Along with the Captcha, this is a good way of reducing the amount of spam your board receives.<br /<br />
-Most of the time admins will want their users to validate their <b>email</b> addresses. This can help avoid false registrations and incorrect emails.<br /><br />
-For tighter security, you can also enable <b>admin</b> validation. With this enabled, you will have to manually validate all accounts on your board.<br /><br />
-To manage your validating accounts, you can view the <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=mod", 1); return false;'>Manage Validating</a> section.]]></helptext>
-			<mouseover>Validation...</mouseover>
+			<title>设置激活选项</title>
+			<helptext><![CDATA[此项对于控制您的论坛注册者来说非常重要.它将让您很大程度上远离垃圾注册信息的骚扰.<br /<br />
+很多情况下论坛管理员都希望会员能够激活他们的<b>电子邮件</b>地址.这样可以避免论坛获得一些错误的电子邮件信息.<br /><br />
+从更高的安全性考虑,您也可以要求<b>管理员</b>激活邮件.这样您的所有会员都是激活过的.<br /><br />
+需要管理您的激活帐户,请点击<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=mod", 1); return false;'>管理激活验证</a>选项.]]></helptext>
+			<mouseover>设置激活选项.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>force_login</key>
-			<title>Guest Viewing</title>
-			<helptext>If you enable this setting, this will override all forum specific settings. Guests will not be able to view any part of the board besides a login and registration screen.</helptext>
-			<mouseover>Guest viewing...</mouseover>
+			<title>游客查看</title>
+			<helptext>如果您开启此项,游客只有在正确的注册并登录以后才能查看论坛的内容.</helptext>
+			<mouseover>游客查看选项.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>strip_space_chr</key>
-			<title>Stripping Hidden Characters</title>
-			<helptext><![CDATA[It is important to use this only if your forum is primarily English. Enabling this feature while using non-Latin (English) characters on your board can cause issues with member accounts.<br /><br />
-Enable this feature if you have users signing up with duplicate usernames. For example, a user can enter a name with a hidden HTML space in it, so it will appear as though it is the same name of an existing user. ]]></helptext>
-			<mouseover>When to enable this...</mouseover>
+			<title>屏蔽隐藏的字符</title>
+			<helptext><![CDATA[如果您的论坛使用英语,此项显得尤为重要.在非英语环境下,打开本功能会产生错误.<br /><br />
+如果您在您的论坛发现两个看起来完全相同的两个会员存在,请开启此功能.例如,某个会员可能会利用某些隐藏的字符注册一个和已经存在的会员一样的名字.]]></helptext>
+			<mouseover>什么时候需要?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>allow_flash</key>
-			<title>Using the Flash Tag</title>
-			<helptext><![CDATA[To post a flash (.swf) movie into a post, you will need to use the flash tags. The flash tag is use like so:<br />
+			<title>使用 Flash 标签</title>
+			<helptext><![CDATA[帖子中间如果如要使用 flash (.swf) 电影就需要使用此选项. flash 标签这样使用:<br />
 <b>[flash=199,199]</b>http://www.domain.com/flashmovie.swf<b>[/flash]</b><br /><br />
-The <i>199,199</i> in the tag define the height and width of the flash movie. To set the maximum height and width for the flash tags, please <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>Click Here</a>. ]]></helptext>
-			<mouseover>How to use the flash tag...</mouseover>
+这里 <i>199,199</i> 定义了 flash 电影的高度和宽度.需要限制此高度和宽度,请<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>点击这里</a>. ]]></helptext>
+			<mouseover>如何使用 Flash 标签?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_h_flash</key>
-			<title>Enabling Flash</title>
-			<helptext><![CDATA[To enable the use of Flash tags, please <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>Click Here</a>. This can also be found under the <i>Security & Privacy</i> setting group.]]></helptext>
-			<mouseover>How to enable flash tags...</mouseover>
+			<title>启用 Flash</title>
+			<helptext><![CDATA[如果想启用 Flash 标签,请<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>点击这里</a>.您也可以在这里设置:<i>安全和隐私</i>.]]></helptext>
+			<mouseover>如何启用 Flash 标签?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_w_flash</key>
-			<title>Enabling Flash</title>
-			<helptext><![CDATA[To enable the use of Flash tags, please <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>Click Here</a>. This can also be found under the <i>Security & Privacy</i> setting group.]]></helptext>
-			<mouseover>How to enable flash tags...</mouseover>
+			<title>启用 Flash</title>
+			<helptext><![CDATA[如果想启用 Flash 标签,请<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>点击这里</a>.您也可以在这里设置:<i>安全和隐私</i>.]]></helptext>
+			<mouseover>如何启用 Flash 标签?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_poll_questions</key>
-			<title>Creating Polls</title>
-			<helptext><![CDATA[Polls are enabled on a per-forum basis. When creating a forum, please ensure that the forum settings have polls enabled.<br /><br />
-When making a new topic, there will be a text link just below the topic title. This link will allow you to create a new poll for this topic.]]></helptext>
-			<mouseover>How to create a poll...</mouseover>
+			<title>创建投票</title>
+			<helptext><![CDATA[投票系统是默认安装的.当您创建一个论坛板块的时候,请确认开启了投票功能.<br /><br />
+当您创建投票的时候,主题描述的下面会有一条文字链接,点击即可创建投票.]]></helptext>
+			<mouseover>如何创建投票?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>startpoll_cutoff</key>
-			<title>Adding a Poll</title>
-			<helptext><![CDATA[To add a poll to an existing topic, you must add a reply to the topic. When clicking 'Add Reply', an a text link will appear above the post box to add a new poll.]]></helptext>
-			<mouseover>Adding a poll to an existing topic...</mouseover>
+			<title>添加投票</title>
+			<helptext><![CDATA[为了在已经存在的主题上添加投票选项,您必须添加主题回复.当点击'添加回复'的时候,一条文字链接将会出现,您就可以点击添加投票.]]></helptext>
+			<mouseover>为已经存在的主题添加投票.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
@@ -296,22 +296,22 @@ When making a new topic, there will be a text link just below the topic title. T
 		<helpsettings>
 			<key>sig_allow_ibc</key>
 			<title>在签名档中使用 BBCode </title>
-			<helptext><![CDATA[如果您想禁止会员在签名档中使用图片,请选择"否". 请注意这禁止了所有 BBCode 的使用,包括 "img" 标签. 即使会员自己在签名档里面添加这个标签,它也是不能解析的.]]></helptext>
+			<helptext><![CDATA[如果您想禁止会员在签名档中使用图片,请选择"否".请注意这禁止了所有 BBCode 的使用,包括 "img" 标签.即使会员自己在签名档里面添加这个标签,它也是不能解析的.]]></helptext>
 			<mouseover>在签名档中禁用图片</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>allow_skins</key>
 			<title>论坛皮肤选择</title>
-			<helptext>如果您禁用了此项设置,那么论坛关于皮肤选择的下拉菜单将不再显示. 您也不可以为用户组设置不同的论坛皮肤.他们会使用默认的论坛皮肤设置.</helptext>
-			<mouseover>Allowing skins...</mouseover>
+			<helptext>如果您禁用了此项设置,那么论坛关于皮肤选择的下拉菜单将不再显示.您也不可以为用户组设置不同的论坛皮肤.他们会使用默认的论坛皮肤设置.</helptext>
+			<mouseover>允许使用论坛皮肤.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_user_name_length</key>
-			<title>Possible hardcoded limit...</title>
-			<helptext><![CDATA[In some cases, there may be a hardcoded limit of 32 characters. To change this, please view the <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=support&code=kb", 1); return false;'>Knowledge Base</a> article relating to this subject.]]></helptext>
-			<mouseover>Possible hardcoded limit...</mouseover>
+			<title>昵称长度限制.</title>
+			<helptext><![CDATA[通常情况下,最大昵称长度为32个字符.如果想要更改,请点击<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=support&code=kb", 1); return false;'>IPB 支持库</a>阅读相关文档.]]></helptext>
+			<mouseover>昵称长度限制.</mouseover>
 		</helpsettings>
 	</helpsettingsgroup>
 
