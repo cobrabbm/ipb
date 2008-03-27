@@ -3,315 +3,315 @@
 	<helpsettingsgroup>
 		<helpsettings>
 			<key>new_reg_notify</key>
-			<title>¸ü¸Ä½ÓÊÕµÄÄ¬ÈÏÓÊ¼þµØÖ·</title>
-			<helptext><![CDATA[Èç¹ûÄúÏëÒª½ÓÊÕ´ËÓÊ¼þ,ÄúÐèÒªÔÚÕâÀïÉèÖÃÓÊ¼þµØÖ·:<br />
-<i>¹¤¾ßÉèÖÃ</i> -> <i>ÓÊ¼þÖÐÐÄ</i> -> <i>ÓÊ¼þÉèÖÃ</i> -> <i>µç×ÓÓÊ¼þÉèÖÃ</i>
+			<title>æ›´æ”¹æŽ¥æ”¶çš„é»˜è®¤é‚®ä»¶åœ°å€</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨æƒ³è¦æŽ¥æ”¶æ­¤é‚®ä»¶,æ‚¨éœ€è¦åœ¨è¿™é‡Œè®¾ç½®é‚®ä»¶åœ°å€:<br />
+<i>å·¥å…·è®¾ç½®</i> -> <i>é‚®ä»¶ä¸­å¿ƒ</i> -> <i>é‚®ä»¶è®¾ç½®</i> -> <i>ç”µå­é‚®ä»¶è®¾ç½®</i>
 <br />
-<br /><a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=Board+incoming+email+address&code=setting_view", 1); return false;'>µã»÷ÕâÀï</a>²é¿´»òÕßÉèÖÃµ±Ç°µÄÓÊ¼þµØÖ·.
+<br /><a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=Board+incoming+email+address&code=setting_view", 1); return false;'>ç‚¹å‡»è¿™é‡Œ</a>æŸ¥çœ‹æˆ–è€…è®¾ç½®å½“å‰çš„é‚®ä»¶åœ°å€.
 
 
 ]]></helptext>
-			<mouseover>¸ü¸Ä½ÓÊÕµÄÄ¬ÈÏÓÊ¼þµØÖ·.</mouseover>
+			<mouseover>æ›´æ”¹æŽ¥æ”¶çš„é»˜è®¤é‚®ä»¶åœ°å€.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>csite_on</key>
-			<title>ÈçºÎÒýÓÃÂÛÌ³µÄÖ÷Ìâ</title>
-			<helptext><![CDATA[Èç¹ûÄúÓÐ¿ÉÓÃµÄ½Ó¿ÚÐèÒªÒýÓÃÂÛÌ³Ö÷Ìâ,Äú¿ÉÒÔ<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=portal&code=portal_settings&pc_key=recent_topics", 1); return false;'>µã»÷ÕâÀï</a>,»òÕßµ½ÕâÀïÉèÖÃ:<br/>
-<i>¹¤¾ßÉèÖÃ</i> -> <i>¹ÜÀíÃÅ»§²å¼þ</i> -> <i>IPB×î½üÖ÷Ìâ</i> -> <i>±à¼­ÉèÖÃ</i>
+			<title>å¦‚ä½•å¼•ç”¨è®ºå›çš„ä¸»é¢˜</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨æœ‰å¯ç”¨çš„æŽ¥å£éœ€è¦å¼•ç”¨è®ºå›ä¸»é¢˜,æ‚¨å¯ä»¥<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=portal&code=portal_settings&pc_key=recent_topics", 1); return false;'>ç‚¹å‡»è¿™é‡Œ</a>,æˆ–è€…åˆ°è¿™é‡Œè®¾ç½®:<br/>
+<i>å·¥å…·è®¾ç½®</i> -> <i>ç®¡ç†é—¨æˆ·æ’ä»¶</i> -> <i>IPBæœ€è¿‘ä¸»é¢˜</i> -> <i>ç¼–è¾‘è®¾ç½®</i>
 
 
 
 ]]></helptext>
-			<mouseover>ÒýÓÃÂÛÌ³Ö÷Ìâ</mouseover>
+			<mouseover>å¼•ç”¨è®ºå›ä¸»é¢˜</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>csite_fav_contents</key>
-			<title>ÈçºÎÌí¼Ó³¬¼¶Á´½Ó</title>
-			<helptext><![CDATA[Èç¹ûÄúÏëÒªÌí¼Ó³¬¼¶Á´½Ó,Äú¾ÍÐèÒªÓÃµ½ HTML.¹ØÓÚ HTML,Äú¿ÉÒÔ·ÃÎÊÕâÀï»ñµÃ¸ü¶à <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a>.<br /> <br />
-Ìí¼ÓÁ´½ÓµÄÊ±ºò,ÐèÒª×ñÑ­ÏÂÃæµÄ¸ñÊ½:<br />
-&lt;a href="http://www.ÄúµÄÁ´½ÓµØÖ·.com"&gt;Á´½ÓÏÔÊ¾µÄÄÚÈÝ&lt;/a&gt;<br /><br />
-Èç¹ûÏëÒª»»ÐÐ,Äú¾ÍÐèÒªÓÃµ½Õâ¸ö±êÇ©: &lt;br /&gt;]]></helptext>
-			<mouseover>HTML °ïÖú</mouseover>
+			<title>å¦‚ä½•æ·»åŠ è¶…çº§é“¾æŽ¥</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨æƒ³è¦æ·»åŠ è¶…çº§é“¾æŽ¥,æ‚¨å°±éœ€è¦ç”¨åˆ° HTML.å…³äºŽ HTML,æ‚¨å¯ä»¥è®¿é—®è¿™é‡ŒèŽ·å¾—æ›´å¤š <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a>.<br /> <br />
+æ·»åŠ é“¾æŽ¥çš„æ—¶å€™,éœ€è¦éµå¾ªä¸‹é¢çš„æ ¼å¼:<br />
+&lt;a href="http://www.æ‚¨çš„é“¾æŽ¥åœ°å€.com"&gt;é“¾æŽ¥æ˜¾ç¤ºçš„å†…å®¹&lt;/a&gt;<br /><br />
+å¦‚æžœæƒ³è¦æ¢è¡Œ,æ‚¨å°±éœ€è¦ç”¨åˆ°è¿™ä¸ªæ ‡ç­¾: &lt;br /&gt;]]></helptext>
+			<mouseover>HTML å¸®åŠ©</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_sig_length</key>
-			<title>½ûÓÃÇ©Ãûµµ</title>
-			<helptext><![CDATA[Äú¿ÉÒÔ×èÖ¹»áÔ±´´½¨ÐÂµÄÇ©Ãûµµ,»òÕßÍ¨ÖªËûÃÇÉ¾³ýÒÑ¾­´æÔÚµÄÇ©Ãûµµ.ÄúÐèÒª×öµÄ¾ÍÊÇ°ÑÕâÀïÉèÖÃÎª:-1<br /><br />
-ÌáÐÑ:Õâ¸ö²Ù×÷²»»áÉ¾³ýÒÑ¾­´æÔÚµÄÇ©Ãûµµ.³ý·ÇÄúÑ¡Ôñ±à¼­»áÔ±Ö±½ÓÉ¾³ýËûÃÇµÄÇ©Ãûµµ.]]></helptext>
-			<mouseover>½ûÓÃÇ©Ãûµµ</mouseover>
+			<title>ç¦ç”¨ç­¾åæ¡£</title>
+			<helptext><![CDATA[æ‚¨å¯ä»¥é˜»æ­¢ä¼šå‘˜åˆ›å»ºæ–°çš„ç­¾åæ¡£,æˆ–è€…é€šçŸ¥ä»–ä»¬åˆ é™¤å·²ç»å­˜åœ¨çš„ç­¾åæ¡£.æ‚¨éœ€è¦åšçš„å°±æ˜¯æŠŠè¿™é‡Œè®¾ç½®ä¸º:-1<br /><br />
+æé†’:è¿™ä¸ªæ“ä½œä¸ä¼šåˆ é™¤å·²ç»å­˜åœ¨çš„ç­¾åæ¡£.é™¤éžæ‚¨é€‰æ‹©ç¼–è¾‘ä¼šå‘˜ç›´æŽ¥åˆ é™¤ä»–ä»¬çš„ç­¾åæ¡£.]]></helptext>
+			<mouseover>ç¦ç”¨ç­¾åæ¡£</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>cookie_domain</key>
-			<title>Cookie ×÷ÓÃÓò</title>
-			<helptext><![CDATA[ÄúÐèÒªÔÚÄúµÄÓòÃûÇ°Ãæ¼ÓÒ»¸öÓ¢ÎÄµÄ¾äµã.ÀýÈç,Èç¹ûÄúµÄÕ¾µãÊÇÕâ¸ö <i>http://www.ÄúµÄÓòÃû.com/ÂÛÌ³/</i>,Äú¾ÍÐèÒªÊäÈë:<br />
-<b>.ÄúµÄÓòÃû.com</b><br />
+			<title>Cookie ä½œç”¨åŸŸ</title>
+			<helptext><![CDATA[æ‚¨éœ€è¦åœ¨æ‚¨çš„åŸŸåå‰é¢åŠ ä¸€ä¸ªè‹±æ–‡çš„å¥ç‚¹.ä¾‹å¦‚,å¦‚æžœæ‚¨çš„ç«™ç‚¹æ˜¯è¿™ä¸ª <i>http://www.æ‚¨çš„åŸŸå.com/è®ºå›/</i>,æ‚¨å°±éœ€è¦è¾“å…¥:<br />
+<b>.æ‚¨çš„åŸŸå.com</b><br />
 <br />
-Çë²»ÒªÔÚÕâÀïÊäÈë³ý´ËÖ®ÍâµÄÈÎºÎ×Ö·û,ÒÔ·ÀÖ¹³ö´í.<br /><br />
-Èç¹ûÄúÊ¹ÓÃµÄÊÇ¶þ¼¶ÓòÃû,ÀýÈç: <i>http://ÂÛÌ³.ÄúµÄÓòÃû.com</i>,ÄÇÃ´,ÄúÐèÒªÊäÈë:<br />
-<b>.ÂÛÌ³.ÄúµÄÓòÃû.com</b>]]></helptext>
-			<mouseover>ÎÒ¸ÃÊäÈëÊ²Ã´?</mouseover>
+è¯·ä¸è¦åœ¨è¿™é‡Œè¾“å…¥é™¤æ­¤ä¹‹å¤–çš„ä»»ä½•å­—ç¬¦,ä»¥é˜²æ­¢å‡ºé”™.<br /><br />
+å¦‚æžœæ‚¨ä½¿ç”¨çš„æ˜¯äºŒçº§åŸŸå,ä¾‹å¦‚: <i>http://è®ºå›.æ‚¨çš„åŸŸå.com</i>,é‚£ä¹ˆ,æ‚¨éœ€è¦è¾“å…¥:<br />
+<b>.è®ºå›.æ‚¨çš„åŸŸå.com</b>]]></helptext>
+			<mouseover>æˆ‘è¯¥è¾“å…¥ä»€ä¹ˆ?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>cookie_id</key>
-			<title>Cookie Ãû³ÆÇ°×º</title>
-			<helptext><![CDATA[Èç¹ûÔÚÄúµÄÓòÃûÏÂÃæÍ¬Ê±ÓÐºÜ¶à³ÌÐòÔÚÔËÐÐ,ÄÇÃ´Õâ¸öÉèÖÃ½«»á·Ç³£ÓÐÓÃ,ÒòÎªËûÃÇÖ®¼ä¿ÉÄÜ»á»¥Ïà¸ÉÈÅ.ÄúÖ»ÐèÒªÉèÖÃÒ»¸öÇø±ðÓÚÆäËû³ÌÐòµÄÇ°×º¾Í¿ÉÒÔ½â¾ö.ÀýÈç:<br />
+			<title>Cookie åç§°å‰ç¼€</title>
+			<helptext><![CDATA[å¦‚æžœåœ¨æ‚¨çš„åŸŸåä¸‹é¢åŒæ—¶æœ‰å¾ˆå¤šç¨‹åºåœ¨è¿è¡Œ,é‚£ä¹ˆè¿™ä¸ªè®¾ç½®å°†ä¼šéžå¸¸æœ‰ç”¨,å› ä¸ºä»–ä»¬ä¹‹é—´å¯èƒ½ä¼šäº’ç›¸å¹²æ‰°.æ‚¨åªéœ€è¦è®¾ç½®ä¸€ä¸ªåŒºåˆ«äºŽå…¶ä»–ç¨‹åºçš„å‰ç¼€å°±å¯ä»¥è§£å†³.ä¾‹å¦‚:<br />
 <b>myipb_</b><br />
 <br />
-Èç¹ûÄúÔËÐÐÁË¼¸¸öIPBÂÛÌ³³ÌÐò,ÄúÒ²¿ÉÒÔÕâÑùÉèÖÃÇ°×º:<br />
-µÚÒ»¸öÂÛÌ³: <b>forum1_</b><br />
-µÚ¶þ¸öÂÛÌ³: <b>forum2_</b><br />
-µÈµÈ.]]></helptext>
-			<mouseover>Õâ¸öÉèÖÃÓÐÊ²Ã´ÓÃ?</mouseover>
+å¦‚æžœæ‚¨è¿è¡Œäº†å‡ ä¸ªIPBè®ºå›ç¨‹åº,æ‚¨ä¹Ÿå¯ä»¥è¿™æ ·è®¾ç½®å‰ç¼€:<br />
+ç¬¬ä¸€ä¸ªè®ºå›: <b>forum1_</b><br />
+ç¬¬äºŒä¸ªè®ºå›: <b>forum2_</b><br />
+ç­‰ç­‰.]]></helptext>
+			<mouseover>è¿™ä¸ªè®¾ç½®æœ‰ä»€ä¹ˆç”¨?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>cookie_path</key>
-			<title>Cookie Â·¾¶</title>
-			<helptext><![CDATA[SÖ»ÓÐÔÚÒ»Ð©ÌØÊâÇé¿öÏÂ²ÅÐèÒª½øÐÐ´ËÉèÖÃ.Èç¹ûÄúµÄ cookies Ïà»¥³åÍ»,Äú¾Í¿ÉÒÔÔÚÂÛÌ³³ÌÐòÄ¿Â¼Àïµ¥¶À´´½¨Ò»¸öÎÄ¼þ¼Ð×÷Îª cookies ´æ·ÅÂ·¾¶.ÀýÈç:<br />
+			<title>Cookie è·¯å¾„</title>
+			<helptext><![CDATA[Såªæœ‰åœ¨ä¸€äº›ç‰¹æ®Šæƒ…å†µä¸‹æ‰éœ€è¦è¿›è¡Œæ­¤è®¾ç½®.å¦‚æžœæ‚¨çš„ cookies ç›¸äº’å†²çª,æ‚¨å°±å¯ä»¥åœ¨è®ºå›ç¨‹åºç›®å½•é‡Œå•ç‹¬åˆ›å»ºä¸€ä¸ªæ–‡ä»¶å¤¹ä½œä¸º cookies å­˜æ”¾è·¯å¾„.ä¾‹å¦‚:<br />
 <b>/forum</b>]]></helptext>
-			<mouseover>Ê²Ã´Ê±ºòÎÒÐèÒªÉèÖÃ?</mouseover>
+			<mouseover>ä»€ä¹ˆæ—¶å€™æˆ‘éœ€è¦è®¾ç½®?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>update_topic_views_immediately</key>
-			<title>¸üÐÂÖ÷Ìâ²é¿´´ÎÊý </title>
-			<helptext><![CDATA[´óÐÍÂÛÌ³Èç¹ûÆµ·±¸üÐÂÖ÷Ìâ²é¿´´ÎÊý¿ÉÄÜ»á³öÏÖÎÊÌâ.ÓÐÈË²é¿´Êý¾ÝµÄÊ±ºòÖ÷Ìâ±í¾Í»á±»·ÃÎÊ,Æµ·±²Ù×÷¿ÉÄÜ»áËð»µ±íµ¥ÉõÖÁÇëÇó±»ËøËÀ.¸ÃÏîÉèÖÃÎª<b>·ñ</b>,ÏµÍ³Ã¿6Ð¡Ê±»á×Ô¶¯¸üÐÂÒ»´Î¼ÆÊýÆ÷.Õâ½«»áÏÔÖø¼õÉÙ¶ÔÖ÷Ìâ±íµÄ¸ºÔØ.<b>Ö»ÓÐÔÚ´óÐÍ»îÔ¾µÄÂÛÌ³²ÅÐèÒª½øÐÐ´ËÉèÖÃ.</b>]]></helptext>
-			<mouseover>Èç¹ûÎÒÐèÒªÕâÑù×öÎÒ¸ÄÔõÃ´×ö?</mouseover>
+			<title>æ›´æ–°ä¸»é¢˜æŸ¥çœ‹æ¬¡æ•° </title>
+			<helptext><![CDATA[å¤§åž‹è®ºå›å¦‚æžœé¢‘ç¹æ›´æ–°ä¸»é¢˜æŸ¥çœ‹æ¬¡æ•°å¯èƒ½ä¼šå‡ºçŽ°é—®é¢˜.æœ‰äººæŸ¥çœ‹æ•°æ®çš„æ—¶å€™ä¸»é¢˜è¡¨å°±ä¼šè¢«è®¿é—®,é¢‘ç¹æ“ä½œå¯èƒ½ä¼šæŸåè¡¨å•ç”šè‡³è¯·æ±‚è¢«é”æ­».è¯¥é¡¹è®¾ç½®ä¸º<b>å¦</b>,ç³»ç»Ÿæ¯6å°æ—¶ä¼šè‡ªåŠ¨æ›´æ–°ä¸€æ¬¡è®¡æ•°å™¨.è¿™å°†ä¼šæ˜¾è‘—å‡å°‘å¯¹ä¸»é¢˜è¡¨çš„è´Ÿè½½.<b>åªæœ‰åœ¨å¤§åž‹æ´»è·ƒçš„è®ºå›æ‰éœ€è¦è¿›è¡Œæ­¤è®¾ç½®.</b>]]></helptext>
+			<mouseover>å¦‚æžœæˆ‘éœ€è¦è¿™æ ·åšæˆ‘æ”¹æ€Žä¹ˆåš?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>load_limit</key>
-			<title>·þÎñÆ÷¸ºÔØÏÞÖÆ</title>
-			<helptext><![CDATA[ÂÛÌ³½«»á¶ÔÄúµÄ·þÎñÆ÷¸ºÔØ½øÐÐ¼´Ê±¿ìÕÕ,´¦ÀíÕâ¸ö½á¹û´óÔ¼ÐèÒª10Ãë.ÐèÒªÌáÐÑµÄÊÇÏµÍ³¸ºÔØÊÇ¸ú·þÎñÆ÷ÓÐ¹Ø,¸úÂÛÌ³³ÌÐò±¾ÉíÃ»ÓÐ¹ØÏµ.Èç¹ûÄú·¢ÏÖÄúµÄÏµÍ³¸ºÔØÖµºÜ¸ß,ÇëÓëÄúµÄ·þÎñÌá¹©ÉÌÁªÏµ,²éÕÒÊÇÓÉÓÚÊ²Ã´Ô­ÒòÒýÆð.<br /><br />
+			<title>æœåŠ¡å™¨è´Ÿè½½é™åˆ¶</title>
+			<helptext><![CDATA[è®ºå›å°†ä¼šå¯¹æ‚¨çš„æœåŠ¡å™¨è´Ÿè½½è¿›è¡Œå³æ—¶å¿«ç…§,å¤„ç†è¿™ä¸ªç»“æžœå¤§çº¦éœ€è¦10ç§’.éœ€è¦æé†’çš„æ˜¯ç³»ç»Ÿè´Ÿè½½æ˜¯è·ŸæœåŠ¡å™¨æœ‰å…³,è·Ÿè®ºå›ç¨‹åºæœ¬èº«æ²¡æœ‰å…³ç³».å¦‚æžœæ‚¨å‘çŽ°æ‚¨çš„ç³»ç»Ÿè´Ÿè½½å€¼å¾ˆé«˜,è¯·ä¸Žæ‚¨çš„æœåŠ¡æä¾›å•†è”ç³»,æŸ¥æ‰¾æ˜¯ç”±äºŽä»€ä¹ˆåŽŸå› å¼•èµ·.<br /><br />
 <br />
-Èç¹ûÄúµÄ·þÎñÆ÷²Ù×÷ÏµÍ³ÊÇ <b>Linux</b>,ÏµÍ³¸ºÔØÈ¡¾öÓÚ:<br />
-·þÎñÆ÷ÉÏ¶ÓÁÐÓÐ¶àÉÙ½ø³ÌµÈ´ý´¦Àí.ÀýÈç,Èç¹ûÄãµÄ·þÎñÆ÷ÊÇµ¥CPU,¸ºÔØ1.00¾Í±íÊ¾ÓÐÒ»¸ö½ø³ÌÔÚ¶ÓÁÐÀïµÈ´ý.Èç¹ûÄãµÄ·þÎñÆ÷ÓÐÁ½¸öCPU, ¸ºÔØ¾Í±ä³É2.00.°´ÕÕ°²È«Ô­Ôò,Äã¿ÉÒÔÊäÈë20.
+å¦‚æžœæ‚¨çš„æœåŠ¡å™¨æ“ä½œç³»ç»Ÿæ˜¯ <b>Linux</b>,ç³»ç»Ÿè´Ÿè½½å–å†³äºŽ:<br />
+æœåŠ¡å™¨ä¸Šé˜Ÿåˆ—æœ‰å¤šå°‘è¿›ç¨‹ç­‰å¾…å¤„ç†.ä¾‹å¦‚,å¦‚æžœä½ çš„æœåŠ¡å™¨æ˜¯å•CPU,è´Ÿè½½1.00å°±è¡¨ç¤ºæœ‰ä¸€ä¸ªè¿›ç¨‹åœ¨é˜Ÿåˆ—é‡Œç­‰å¾….å¦‚æžœä½ çš„æœåŠ¡å™¨æœ‰ä¸¤ä¸ªCPU, è´Ÿè½½å°±å˜æˆ2.00.æŒ‰ç…§å®‰å…¨åŽŸåˆ™,ä½ å¯ä»¥è¾“å…¥20.
 <br />
 <br />
-Èç¹ûÄãµÄ·þÎñÆ÷²Ù×÷ÏµÍ³ÊÇ <b>Windows</b>, ÏµÍ³¸ºÔØÈ¡¾öÓÚ: <br />
-µ±Ç°CPUµÄÊ¹ÓÃÂÊ.ÔÚÊ¹ÓÃ Windows µÄ·þÎñÆ÷ÖÐ,CPUÊ¹ÓÃÂÊ¿ÉÄÜ»áÔÚÄ³Ò»Ê±¼ä¶Î±ä»¯Æµ·±.Èç¹ûÄúÉèÖÃÎª50,ÔÚÄ³Ò»¸öÊ¹ÓÃÂÊ¸ßÓÚ50%µÄÊ±ºò,Äú½«»áÊÕµ½±¨´íÐÅÏ¢.Çë¼Ç×¡ÂÛÌ³´¦Àí¸ºÔØµÄÊ±¼äÊÇ10Ãë,ÄÇÃ´ÔÚÕâÆÚ¼äËùÓÐÓÃ»§¶¼½«¿´µ½ÕâÌõÏûÏ¢.ÔÚ Windows ÏµÍ³ÖÐ, <i>Ç¿ÁÒÍÆ¼ö</i>ÊäÈë100,ÒòÎªÕâ¸öÊ±ºòCPU¼àÊÓÆ÷ÒÑ¾­²»¿É¿¿.ÉèÖÃÁË100ÒÔºó,ÄúÈÔÈ»¿ÉÒÔÔÚÂÛÌ³ÓÒÏÂ½Ç¿´µ½ÏµÍ³¸ºÔØÖµ,Ö»ÊÇÏµÍ³¸ºÔØ³¬¹ý·åÖµµÄÊ±ºòÂÛÌ³Ò²²»»áÌáÐÑÄú.]]></helptext>
-			<mouseover>ÊäÈëµÄÊý¾ÝÓÉÄúµÄ·þÎñÆ÷²Ù×÷ÏµÍ³¾ö¶¨.</mouseover>
+å¦‚æžœä½ çš„æœåŠ¡å™¨æ“ä½œç³»ç»Ÿæ˜¯ <b>Windows</b>, ç³»ç»Ÿè´Ÿè½½å–å†³äºŽ: <br />
+å½“å‰CPUçš„ä½¿ç”¨çŽ‡.åœ¨ä½¿ç”¨ Windows çš„æœåŠ¡å™¨ä¸­,CPUä½¿ç”¨çŽ‡å¯èƒ½ä¼šåœ¨æŸä¸€æ—¶é—´æ®µå˜åŒ–é¢‘ç¹.å¦‚æžœæ‚¨è®¾ç½®ä¸º50,åœ¨æŸä¸€ä¸ªä½¿ç”¨çŽ‡é«˜äºŽ50%çš„æ—¶å€™,æ‚¨å°†ä¼šæ”¶åˆ°æŠ¥é”™ä¿¡æ¯.è¯·è®°ä½è®ºå›å¤„ç†è´Ÿè½½çš„æ—¶é—´æ˜¯10ç§’,é‚£ä¹ˆåœ¨è¿™æœŸé—´æ‰€æœ‰ç”¨æˆ·éƒ½å°†çœ‹åˆ°è¿™æ¡æ¶ˆæ¯.åœ¨ Windows ç³»ç»Ÿä¸­, <i>å¼ºçƒˆæŽ¨è</i>è¾“å…¥100,å› ä¸ºè¿™ä¸ªæ—¶å€™CPUç›‘è§†å™¨å·²ç»ä¸å¯é .è®¾ç½®äº†100ä»¥åŽ,æ‚¨ä»ç„¶å¯ä»¥åœ¨è®ºå›å³ä¸‹è§’çœ‹åˆ°ç³»ç»Ÿè´Ÿè½½å€¼,åªæ˜¯ç³»ç»Ÿè´Ÿè½½è¶…è¿‡å³°å€¼çš„æ—¶å€™è®ºå›ä¹Ÿä¸ä¼šæé†’æ‚¨.]]></helptext>
+			<mouseover>è¾“å…¥çš„æ•°æ®ç”±æ‚¨çš„æœåŠ¡å™¨æ“ä½œç³»ç»Ÿå†³å®š.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>time_offset</key>
-			<title>·þÎñÆ÷Ê±Çø</title>
-			<helptext>ÕâÊÇÓÎ¿ÍµÄÄ¬ÈÏÊ±Çø.ÓÎ¿ÍÖ»ÓÐÔÚ×¢²á²¢µÇÂ¼ÒÔºó²Å¿ÉÒÔÉèÖÃ×Ô¼ºµÄÊ±Çø.</helptext>
-			<mouseover>Ê²Ã´Ê±ºòÓÃµ½?</mouseover>
+			<title>æœåŠ¡å™¨æ—¶åŒº</title>
+			<helptext>è¿™æ˜¯æ¸¸å®¢çš„é»˜è®¤æ—¶åŒº.æ¸¸å®¢åªæœ‰åœ¨æ³¨å†Œå¹¶ç™»å½•ä»¥åŽæ‰å¯ä»¥è®¾ç½®è‡ªå·±çš„æ—¶åŒº.</helptext>
+			<mouseover>ä»€ä¹ˆæ—¶å€™ç”¨åˆ°?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>smtp_host</key>
-			<title>SMTP ÐÅÏ¢</title>
-			<helptext><![CDATA[´ËÏî(ÆäËûÓÐ¹Ø SMTP µÄÉèÖÃÒ²Ò»Ñù)Ö»ÓÐÔÚÄúÔÚ<i>ÓÊ¼þ·¢ËÍ·½Ê½</i>Ñ¡ÔñÁËÊ¹ÓÃ SMTP ²ÅÐèÒªÉèÖÃ.Èç¹ûÄúÊ¹ÓÃ PHP Mail() º¯Êý,ÕâÐ©ÉèÖÃ½«»á²ÉÓÃÄ¬ÈÏÉèÖÃ.<br /><br />
-Èç¹ûÄú²»È·¶¨ÄúµÄ SMTP ÐÅÏ¢,ÇëÁªÏµÄúµÄ·þÎñÆ÷Ìá¹©ÉÌ,Í¨³£ËûÃÇ¶¼»áÌá¹©¸øÄúÏàÓ¦µÄÐÅÏ¢.]]></helptext>
+			<title>SMTP ä¿¡æ¯</title>
+			<helptext><![CDATA[æ­¤é¡¹(å…¶ä»–æœ‰å…³ SMTP çš„è®¾ç½®ä¹Ÿä¸€æ ·)åªæœ‰åœ¨æ‚¨åœ¨<i>é‚®ä»¶å‘é€æ–¹å¼</i>é€‰æ‹©äº†ä½¿ç”¨ SMTP æ‰éœ€è¦è®¾ç½®.å¦‚æžœæ‚¨ä½¿ç”¨ PHP Mail() å‡½æ•°,è¿™äº›è®¾ç½®å°†ä¼šé‡‡ç”¨é»˜è®¤è®¾ç½®.<br /><br />
+å¦‚æžœæ‚¨ä¸ç¡®å®šæ‚¨çš„ SMTP ä¿¡æ¯,è¯·è”ç³»æ‚¨çš„æœåŠ¡å™¨æä¾›å•†,é€šå¸¸ä»–ä»¬éƒ½ä¼šæä¾›ç»™æ‚¨ç›¸åº”çš„ä¿¡æ¯.]]></helptext>
 			<mouseover></mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>mail_method</key>
-			<title>PHP mail() ÓÊ¼þº¯Êý»òÕßÊ¹ÓÃ SMTP?</title>
-			<helptext><![CDATA[ÔÚÍ¨³£µÄPHP°²×°»·¾³ÖÐ, PHP mail() ÓÊ¼þº¯Êý¶¼¿ÉÒÔÊ¹ÓÃ.Èç¹ûÄú¶Ô´Ë²»È·ÈÏ, ÇëÁªÏµÄúµÄ·þÎñÆ÷Ìá¹©ÉÌ.Èç¹ûÕâ¸öº¯Êý²»¿ÉÓÃ,»òÕßÄúÔÚÊ¹ÓÃÖÐ·¢ÏÖºÜ¶à<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=admin&act=emailerror", 1); return false;'>ÓÊ¼þ´íÎó</a>,½¨ÒéÄúÇÐ»»µ½ SMTP ·½Ê½·¢ËÍÓÊ¼þ.]]></helptext>
-			<mouseover>PHP mail() ÓÊ¼þº¯Êý»òÕßÊ¹ÓÃ SMTP?</mouseover>
+			<title>PHP mail() é‚®ä»¶å‡½æ•°æˆ–è€…ä½¿ç”¨ SMTP?</title>
+			<helptext><![CDATA[åœ¨é€šå¸¸çš„PHPå®‰è£…çŽ¯å¢ƒä¸­, PHP mail() é‚®ä»¶å‡½æ•°éƒ½å¯ä»¥ä½¿ç”¨.å¦‚æžœæ‚¨å¯¹æ­¤ä¸ç¡®è®¤, è¯·è”ç³»æ‚¨çš„æœåŠ¡å™¨æä¾›å•†.å¦‚æžœè¿™ä¸ªå‡½æ•°ä¸å¯ç”¨,æˆ–è€…æ‚¨åœ¨ä½¿ç”¨ä¸­å‘çŽ°å¾ˆå¤š<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=admin&act=emailerror", 1); return false;'>é‚®ä»¶é”™è¯¯</a>,å»ºè®®æ‚¨åˆ‡æ¢åˆ° SMTP æ–¹å¼å‘é€é‚®ä»¶.]]></helptext>
+			<mouseover>PHP mail() é‚®ä»¶å‡½æ•°æˆ–è€…ä½¿ç”¨ SMTP?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>home_url</key>
-			<title>ÍøÕ¾µØÖ·</title>
-			<helptext><![CDATA[ÊäÈëµÄÊ±ºòÇë°üÀ¨ÍêÕûµÄÓòÃû.ÀýÈç: http://www.ÄúµÄÓòÃû.com<br /><br />
-Èç¹ûÄúÃ»ÓÐÊäÈë <i>http://</i>,ÄúµÄÁ´½Ó¾Í²»»áÉúÐ§.]]></helptext>
-			<mouseover>ÇëÈ·ÈÏ°üº¬ http://</mouseover>
+			<title>ç½‘ç«™åœ°å€</title>
+			<helptext><![CDATA[è¾“å…¥çš„æ—¶å€™è¯·åŒ…æ‹¬å®Œæ•´çš„åŸŸå.ä¾‹å¦‚: http://www.æ‚¨çš„åŸŸå.com<br /><br />
+å¦‚æžœæ‚¨æ²¡æœ‰è¾“å…¥ <i>http://</i>,æ‚¨çš„é“¾æŽ¥å°±ä¸ä¼šç”Ÿæ•ˆ.]]></helptext>
+			<mouseover>è¯·ç¡®è®¤åŒ…å« http://</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>upload_dir</key>
-			<title>ÉÏ´«¾ø¶ÔÂ·¾¶</title>
-			<helptext><![CDATA[ÇëÈ·ÈÏÉÏ´«Ä¿Â¼µÄ¾ø¶ÔÂ·¾¶ÊÇÕýÈ·µÄ.<br /><br />
-Èç¹ûÄúÉÏ´«ÈÔÈ»Óöµ½ÎÊÌâ,Çë¼ì²éÔ¶³ÌÎÄ¼þ¼Ð <i>uploads</i> ÊÇ¿ÉÐ´µÄ.<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>ÎÄ¼þÈ¨ÏÞ¼ì²é</a>.]]></helptext>
-			<mouseover>ÉÏ´«Óöµ½ÎÊÌâ?</mouseover>
+			<title>ä¸Šä¼ ç»å¯¹è·¯å¾„</title>
+			<helptext><![CDATA[è¯·ç¡®è®¤ä¸Šä¼ ç›®å½•çš„ç»å¯¹è·¯å¾„æ˜¯æ­£ç¡®çš„.<br /><br />
+å¦‚æžœæ‚¨ä¸Šä¼ ä»ç„¶é‡åˆ°é—®é¢˜,è¯·æ£€æŸ¥è¿œç¨‹æ–‡ä»¶å¤¹ <i>uploads</i> æ˜¯å¯å†™çš„.<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>æ–‡ä»¶æƒé™æ£€æŸ¥</a>.]]></helptext>
+			<mouseover>ä¸Šä¼ é‡åˆ°é—®é¢˜?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>upload_url</key>
-			<title>ÉÏ´«Â·¾¶</title>
-			<helptext><![CDATA[ÇëÑÏ¸ñ°´ÕÕÉèÖÃÌáÐÑÈ·ÈÏÄúµÄÂÛÌ³ÉÏ´«Â·¾¶.<br /><br />
-Èç¹ûÄúÉÏ´«ÈÔÈ»Óöµ½ÎÊÌâ,Çë¼ì²éÔ¶³ÌÎÄ¼þ¼Ð <i>uploads</i> ÊÇ¿ÉÐ´µÄ. <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>ÎÄ¼þÈ¨ÏÞ¼ì²é</a>.]]></helptext>
-			<mouseover>ÉÏ´«Óöµ½ÎÊÌâ?</mouseover>
+			<title>ä¸Šä¼ è·¯å¾„</title>
+			<helptext><![CDATA[è¯·ä¸¥æ ¼æŒ‰ç…§è®¾ç½®æé†’ç¡®è®¤æ‚¨çš„è®ºå›ä¸Šä¼ è·¯å¾„.<br /><br />
+å¦‚æžœæ‚¨ä¸Šä¼ ä»ç„¶é‡åˆ°é—®é¢˜,è¯·æ£€æŸ¥è¿œç¨‹æ–‡ä»¶å¤¹ <i>uploads</i> æ˜¯å¯å†™çš„. <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag&code=filepermissions", 1); return false;'>æ–‡ä»¶æƒé™æ£€æŸ¥</a>.]]></helptext>
+			<mouseover>ä¸Šä¼ é‡åˆ°é—®é¢˜?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>safe_mode_skins</key>
-			<title>Ê¹ÓÃ°²È«Ä£Ê½Æ¤·ô</title>
-			<helptext><![CDATA[ÔÚ<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag", 1); return false;'>ÏµÍ³ÐÅÏ¢</a>Ò³ÃæÄú¿ÉÒÔÈ·ÈÏÄú·þÎñÆ÷µÄ°²È«Ä£Ê½ÓÐÃ»ÓÐ´ò¿ª.Èç¹ûÃ»ÓÐ,Çë´ò¿ªËü.]]></helptext>
-			<mouseover>²»È·ÈÏÊÇ·ñ´ò¿ªÁË°²È«Ä£Ê½?</mouseover>
+			<title>ä½¿ç”¨å®‰å…¨æ¨¡å¼çš®è‚¤</title>
+			<helptext><![CDATA[åœ¨<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=diag", 1); return false;'>ç³»ç»Ÿä¿¡æ¯</a>é¡µé¢æ‚¨å¯ä»¥ç¡®è®¤æ‚¨æœåŠ¡å™¨çš„å®‰å…¨æ¨¡å¼æœ‰æ²¡æœ‰æ‰“å¼€.å¦‚æžœæ²¡æœ‰,è¯·æ‰“å¼€å®ƒ.]]></helptext>
+			<mouseover>ä¸ç¡®è®¤æ˜¯å¦æ‰“å¼€äº†å®‰å…¨æ¨¡å¼?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>search_sql_method</key>
-			<title>»áÔ±ËÑË÷ÀàÐÍ?</title>
-			<helptext><![CDATA[Èç¹ûÄúµÄ·þÎñÆ÷Ö§³ÖÈ«ÎÄËÑË÷,<b>Ç¿ÁÒ</b>½¨ÒéÄúÊ¹ÓÃËü.ËÑË÷¶ÔÂÛÌ³»áÔ±À´ËµÊÇÒ»Ïî·Ç³£ÖØÒªµÄ¹¦ÄÜ.Ê¹ÓÃÈ«ÎÄËÑË÷¿ÉÒÔ¿ìËÙ¡¢Áé»îµØÎª´æ´¢ÔÚÊý¾Ý¿âÖÐµÄÎÄ±¾Êý¾Ý²éÑ¯´´½¨Ë÷Òý.Ö»ÓÐÔÚÌØÊâÇé¿öÏÂ²Å»áÑ¡ÔñÆÕÍ¨ËÑË÷.]]></helptext>
-			<mouseover>»áÔ±ËÑË÷ÀàÐÍ?</mouseover>
+			<title>ä¼šå‘˜æœç´¢ç±»åž‹?</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨çš„æœåŠ¡å™¨æ”¯æŒå…¨æ–‡æœç´¢,<b>å¼ºçƒˆ</b>å»ºè®®æ‚¨ä½¿ç”¨å®ƒ.æœç´¢å¯¹è®ºå›ä¼šå‘˜æ¥è¯´æ˜¯ä¸€é¡¹éžå¸¸é‡è¦çš„åŠŸèƒ½.ä½¿ç”¨å…¨æ–‡æœç´¢å¯ä»¥å¿«é€Ÿã€çµæ´»åœ°ä¸ºå­˜å‚¨åœ¨æ•°æ®åº“ä¸­çš„æ–‡æœ¬æ•°æ®æŸ¥è¯¢åˆ›å»ºç´¢å¼•.åªæœ‰åœ¨ç‰¹æ®Šæƒ…å†µä¸‹æ‰ä¼šé€‰æ‹©æ™®é€šæœç´¢.]]></helptext>
+			<mouseover>ä¼šå‘˜æœç´¢ç±»åž‹?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>spider_visit</key>
-			<title>ËÑË÷Ö©Öë·ÃÎÊ</title>
-			<helptext><![CDATA[ÔÊÐíËÑË÷Ö©Öë·ÃÎÊ»áÊ¹ÓÃ¸ü¶àµÄ·þÎñÆ÷´æ´¢¿Õ¼ä.Èç¹û¿ªÆôÁË´ËÏî,ÇëÈ·ÈÏ<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&code=findsetting&key=log_prune", 1); return false;'>ËÑË÷Ö©Öë¼ÇÂ¼</a>ÒÑ¾­´ò¿ª.]]></helptext>
-			<mouseover>¹ØÓÚËÑË÷Ö©Öë·ÃÎÊµÄÖØÒªÌáÊ¾.</mouseover>
+			<title>æœç´¢èœ˜è››è®¿é—®</title>
+			<helptext><![CDATA[å…è®¸æœç´¢èœ˜è››è®¿é—®ä¼šä½¿ç”¨æ›´å¤šçš„æœåŠ¡å™¨å­˜å‚¨ç©ºé—´.å¦‚æžœå¼€å¯äº†æ­¤é¡¹,è¯·ç¡®è®¤<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&code=findsetting&key=log_prune", 1); return false;'>æœç´¢èœ˜è››è®°å½•</a>å·²ç»æ‰“å¼€.]]></helptext>
+			<mouseover>å…³äºŽæœç´¢èœ˜è››è®¿é—®çš„é‡è¦æç¤º.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>spider_group</key>
-			<title>ÎªËÑË÷Ö©ÖëÑ¡ÔñÓÃ»§×é</title>
-			<helptext>Èç¹ûÄúÎªËÑË÷Ö©ÖëÉèÖÃÁËÒ»¸ö»áÔ±×é,ÄÇÃ´ËüÃÇ½«¼Ì³Ð¸Ã»áÔ±×éµÄËùÓÐÉèÖÃÒÔ¼°·ÃÎÊÈ¨ÏÞ.ËùÒÔ,Çë²»ÒªÉèÖÃËÑË÷Ö©ÖëÎª¹ÜÀíÔ±×é»òÆäËûÌØÊâ»áÔ±×é,·ñÔòËüÃÇ¿ÉÄÜ»á¿´µ½ÄúÒÑ¾­ÉèÖÃÎªÒþ²ØµÄÂÛÌ³,Ð¹Â¶Äú±¾À´²»Ïë¹«¿ªµÄÐÅÏ¢.</helptext>
-			<mouseover>ÎªËÑË÷Ö©ÖëÑ¡ÔñÓÃ»§×é.</mouseover>
+			<title>ä¸ºæœç´¢èœ˜è››é€‰æ‹©ç”¨æˆ·ç»„</title>
+			<helptext>å¦‚æžœæ‚¨ä¸ºæœç´¢èœ˜è››è®¾ç½®äº†ä¸€ä¸ªä¼šå‘˜ç»„,é‚£ä¹ˆå®ƒä»¬å°†ç»§æ‰¿è¯¥ä¼šå‘˜ç»„çš„æ‰€æœ‰è®¾ç½®ä»¥åŠè®¿é—®æƒé™.æ‰€ä»¥,è¯·ä¸è¦è®¾ç½®æœç´¢èœ˜è››ä¸ºç®¡ç†å‘˜ç»„æˆ–å…¶ä»–ç‰¹æ®Šä¼šå‘˜ç»„,å¦åˆ™å®ƒä»¬å¯èƒ½ä¼šçœ‹åˆ°æ‚¨å·²ç»è®¾ç½®ä¸ºéšè—çš„è®ºå›,æ³„éœ²æ‚¨æœ¬æ¥ä¸æƒ³å…¬å¼€çš„ä¿¡æ¯.</helptext>
+			<mouseover>ä¸ºæœç´¢èœ˜è››é€‰æ‹©ç”¨æˆ·ç»„.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>search_engine_bots</key>
-			<title>Ê¹ÓÃÔ¤ÖÃµÄÃûµ¥</title>
-			<helptext><![CDATA[Ô¤ÖÃÃûµ¥ÖÐÍ¨³£ÒÑ¾­°üº¬´ó²¿·ÖËÑË÷Ö©ÖëµÄÃû×Ö.Í¨¹ýËüÃÇÄú¾ÍÄÜÖªµÀÄÄÐ©ËÑË÷ÒýÇæµÄËÑË÷Ö©ÖëÔø¾­À´¹ý,µ«ÊÇÃûµ¥Ì«³¤Ò²»á´øÀ´Ò»Ð©ÎÊÌâ.Ëü»áÈÃÂÛÌ³±äÂý»òÕßÒýÆðÒ»Ð© PHP & SQL ´íÎó.Òò´Ë,½¨Òé<i>²»Òª</i>ÊäÈëÌ«³¤µÄÃûµ¥.ÄúÒ²¿ÉÒÔÌí¼Ó¶ÔÄúµÄÂÛÌ³À´Ëµ±È½ÏÖØÒªµÄÒ»Ð©ËÑË÷Ö©ÖëÃûµ¥.]]></helptext>
-			<mouseover>Ìí¼ÓÔ¤ÖÃÃûµ¥.</mouseover>
+			<title>ä½¿ç”¨é¢„ç½®çš„åå•</title>
+			<helptext><![CDATA[é¢„ç½®åå•ä¸­é€šå¸¸å·²ç»åŒ…å«å¤§éƒ¨åˆ†æœç´¢èœ˜è››çš„åå­—.é€šè¿‡å®ƒä»¬æ‚¨å°±èƒ½çŸ¥é“å“ªäº›æœç´¢å¼•æ“Žçš„æœç´¢èœ˜è››æ›¾ç»æ¥è¿‡,ä½†æ˜¯åå•å¤ªé•¿ä¹Ÿä¼šå¸¦æ¥ä¸€äº›é—®é¢˜.å®ƒä¼šè®©è®ºå›å˜æ…¢æˆ–è€…å¼•èµ·ä¸€äº› PHP & SQL é”™è¯¯.å› æ­¤,å»ºè®®<i>ä¸è¦</i>è¾“å…¥å¤ªé•¿çš„åå•.æ‚¨ä¹Ÿå¯ä»¥æ·»åŠ å¯¹æ‚¨çš„è®ºå›æ¥è¯´æ¯”è¾ƒé‡è¦çš„ä¸€äº›æœç´¢èœ˜è››åå•.]]></helptext>
+			<mouseover>æ·»åŠ é¢„ç½®åå•.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>forum_trash_can_id</key>
-			<title>ÉèÖÃÒ»¸öÂÛÌ³°å¿é×÷Îª»ØÊÕÕ¾</title>
-			<helptext><![CDATA[Èç¹ûÄúÃ»ÓÐÒÑ¾­´æÔÚµÄ»ØÊÕÕ¾°å¿é,Äú¿ÉÒÔÊ¹ÓÃ<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=forum&code=new&type=forum", 1); return false;'>Ìí¼ÓÂÛÌ³°å¿é</a>Ñ¡Ïî.<br /><br />
-Õâ¸öÂÛÌ³°å¿é¿ÉÒÔÔÚÂÛÌ³µÄÈÎºÎ·ÖÇø.Í¨³£Çé¿öÏÂ»ØÊÕÕ¾°å¿é»áÄ¬ÈÏ°²×°,Ö»ÓÐ¹ÜÀíÔ±ÄÜ¹»·ÃÎÊ.ÔÚÕâÀïÄú¿ÉÒÔ°´Ðè²é¿´ËùÓÐÒÑ¾­±»É¾³ýµÄÖ÷Ìâ.]]></helptext>
-			<mouseover>ÉèÖÃÒ»¸öÂÛÌ³°å¿é×÷Îª»ØÊÕÕ¾.</mouseover>
+			<title>è®¾ç½®ä¸€ä¸ªè®ºå›æ¿å—ä½œä¸ºå›žæ”¶ç«™</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨æ²¡æœ‰å·²ç»å­˜åœ¨çš„å›žæ”¶ç«™æ¿å—,æ‚¨å¯ä»¥ä½¿ç”¨<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=forum&code=new&type=forum", 1); return false;'>æ·»åŠ è®ºå›æ¿å—</a>é€‰é¡¹.<br /><br />
+è¿™ä¸ªè®ºå›æ¿å—å¯ä»¥åœ¨è®ºå›çš„ä»»ä½•åˆ†åŒº.é€šå¸¸æƒ…å†µä¸‹å›žæ”¶ç«™æ¿å—ä¼šé»˜è®¤å®‰è£…,åªæœ‰ç®¡ç†å‘˜èƒ½å¤Ÿè®¿é—®.åœ¨è¿™é‡Œæ‚¨å¯ä»¥æŒ‰éœ€æŸ¥çœ‹æ‰€æœ‰å·²ç»è¢«åˆ é™¤çš„ä¸»é¢˜.]]></helptext>
+			<mouseover>è®¾ç½®ä¸€ä¸ªè®ºå›æ¿å—ä½œä¸ºå›žæ”¶ç«™.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>subsm_nopkg_group</key>
-			<title>ÄÄ¸öÓÃ»§×é³ýÍâ?</title>
-			<helptext><![CDATA[Ê¹ÓÃ´ËÏî¹¦ÄÜµÄÊ±ºòÈç¹ûÐèÒªÅÅ³ý²¿·Ö»áÔ±,×îºÃµÄ·½·¨¾ÍÊÇÎªËûÃÇ´´½¨Ò»¸öÌØÊâµÄ»áÔ±×é.ÀýÈçµ±ÄúÉèÖÃ»áÔ±'¼¤»î'µÄÊ±ºò,ÎÊÌâ¾Í»áÍ¹ÏÔ.»áÔ±Ö»Òª¸¶·Ñ¼¤»îÁËÒÔºó¾Í»á½øÈëÒÑ¼¤»î»áÔ±×é.ÎªÃ»ÓÐ¸¶·ÑµÄ»áÔ±´´½¨Ò»¸öÌØÊâµÄ»áÔ±×é¸üÓÐÀûÓÚÄúµÄÂÛÌ³»áÔ±¼¤»î,¶øÇÒÄãÈÔÈ»¿ÉÒÔ¿ØÖÆËûÃÇµÄ·ÃÎÊÈ¨ÏÞ.]]></helptext>
-			<mouseover>ÄÄ¸öÓÃ»§×é³ýÍâ?</mouseover>
+			<title>å“ªä¸ªç”¨æˆ·ç»„é™¤å¤–?</title>
+			<helptext><![CDATA[ä½¿ç”¨æ­¤é¡¹åŠŸèƒ½çš„æ—¶å€™å¦‚æžœéœ€è¦æŽ’é™¤éƒ¨åˆ†ä¼šå‘˜,æœ€å¥½çš„æ–¹æ³•å°±æ˜¯ä¸ºä»–ä»¬åˆ›å»ºä¸€ä¸ªç‰¹æ®Šçš„ä¼šå‘˜ç»„.ä¾‹å¦‚å½“æ‚¨è®¾ç½®ä¼šå‘˜'æ¿€æ´»'çš„æ—¶å€™,é—®é¢˜å°±ä¼šå‡¸æ˜¾.ä¼šå‘˜åªè¦ä»˜è´¹æ¿€æ´»äº†ä»¥åŽå°±ä¼šè¿›å…¥å·²æ¿€æ´»ä¼šå‘˜ç»„.ä¸ºæ²¡æœ‰ä»˜è´¹çš„ä¼šå‘˜åˆ›å»ºä¸€ä¸ªç‰¹æ®Šçš„ä¼šå‘˜ç»„æ›´æœ‰åˆ©äºŽæ‚¨çš„è®ºå›ä¼šå‘˜æ¿€æ´»,è€Œä¸”ä½ ä»ç„¶å¯ä»¥æŽ§åˆ¶ä»–ä»¬çš„è®¿é—®æƒé™.]]></helptext>
+			<mouseover>å“ªä¸ªç”¨æˆ·ç»„é™¤å¤–?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>bot_antispam</key>
-			<title>¹ØÓÚÑéÖ¤Âë</title>
-			<helptext><![CDATA[´ËÏî¹¦ÄÜÊÇÄúµÖÓùÀ¬»øÐÅÏ¢µÄµÚÒ»µÀ·ÀÏß.Ñ¡ÔñÁË"¸ß¼¶"Ñ¡ÏîÔò´ó¶àÊýÀ¬»øÐÅÏ¢¶¼½«±»ÆÁ±Î.Ö»ÓÐÔÚÌáÇ°´ò¿ªÁË´ËÏî¹¦ÄÜÒÔºó²Å»áÉúÐ§.µÚ¶þµÀ·ÀÏß¾ÍÊÇ"×¢²á¼¤»î",Äú¿ÉÒÔÔÚÕâÀï½øÐÐÉèÖÃ "<i>ÐÂÓÃ»§×¢²á¼¤»î?</i>".<br /><br />
-Èç¹ûÄúÊ¹ÓÃÁËÀ¬»ø×¢²á·ÀÓù,Äú¿ÉÄÜ»¹»áÓÃµ½ IP µØÖ·¹ýÂË,Ãû³Æ¹ýÂËºÍ emails ¹ýÂË,Äú¿ÉÒÔµã»÷ÕâÀïÉèÖÃ:<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=babw&code=ban", 1); return false;'>¹ÜÀíÆÁ±Î</a>.]]></helptext>
-			<mouseover>ÎªÊ²Ã´ÎÒÐèÒª´ò¿ªËü?</mouseover>
+			<title>å…³äºŽéªŒè¯ç </title>
+			<helptext><![CDATA[æ­¤é¡¹åŠŸèƒ½æ˜¯æ‚¨æŠµå¾¡åžƒåœ¾ä¿¡æ¯çš„ç¬¬ä¸€é“é˜²çº¿.é€‰æ‹©äº†"é«˜çº§"é€‰é¡¹åˆ™å¤§å¤šæ•°åžƒåœ¾ä¿¡æ¯éƒ½å°†è¢«å±è”½.åªæœ‰åœ¨æå‰æ‰“å¼€äº†æ­¤é¡¹åŠŸèƒ½ä»¥åŽæ‰ä¼šç”Ÿæ•ˆ.ç¬¬äºŒé“é˜²çº¿å°±æ˜¯"æ³¨å†Œæ¿€æ´»",æ‚¨å¯ä»¥åœ¨è¿™é‡Œè¿›è¡Œè®¾ç½® "<i>æ–°ç”¨æˆ·æ³¨å†Œæ¿€æ´»?</i>".<br /><br />
+å¦‚æžœæ‚¨ä½¿ç”¨äº†åžƒåœ¾æ³¨å†Œé˜²å¾¡,æ‚¨å¯èƒ½è¿˜ä¼šç”¨åˆ° IP åœ°å€è¿‡æ»¤,åç§°è¿‡æ»¤å’Œ emails è¿‡æ»¤,æ‚¨å¯ä»¥ç‚¹å‡»è¿™é‡Œè®¾ç½®:<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=babw&code=ban", 1); return false;'>ç®¡ç†å±è”½</a>.]]></helptext>
+			<mouseover>ä¸ºä»€ä¹ˆæˆ‘éœ€è¦æ‰“å¼€å®ƒ?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>guest_captcha</key>
-			<title>ÓÎ¿Í·¢Ìû¿ØÖÆ</title>
-			<helptext><![CDATA[Èç¹ûÄúµÄÂÛÌ³<i>ÈÎºÎ</i>°å¿é¶¼ÔÊÐíÓÎ¿Í·¢Ìû,Ç¿ÁÒ½¨Òé´ËÏîÉèÖÃÎª"¸ß¼¶".À¬»øÐÅÏ¢»úÆ÷ÈËÒ»°ã»áËÑË÷ÔÊÐíÓÎ¿Í·¢ÌûµÄÂÛÌ³À´½øÐÐËûÃÇµÄ¶ñÁÓÐÐÎª,µ«ÊÇËûÃÇÖÐµÄ´ó²¿·Ö¶¼²»ÄÜÍ¨¹ý´ËÏî"¸ß¼¶"ÉèÖÃ,ËùÒÔ,Ñ¡Ôñ"¸ß¼¶"ÒÔºóËûÃÇ¾ÍºÜÄÑµÃ³Ñ.]]></helptext>
-			<mouseover>ÓÎ¿Í·¢Ìû¿ØÖÆ.</mouseover>
+			<title>æ¸¸å®¢å‘å¸–æŽ§åˆ¶</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨çš„è®ºå›<i>ä»»ä½•</i>æ¿å—éƒ½å…è®¸æ¸¸å®¢å‘å¸–,å¼ºçƒˆå»ºè®®æ­¤é¡¹è®¾ç½®ä¸º"é«˜çº§".åžƒåœ¾ä¿¡æ¯æœºå™¨äººä¸€èˆ¬ä¼šæœç´¢å…è®¸æ¸¸å®¢å‘å¸–çš„è®ºå›æ¥è¿›è¡Œä»–ä»¬çš„æ¶åŠ£è¡Œä¸º,ä½†æ˜¯ä»–ä»¬ä¸­çš„å¤§éƒ¨åˆ†éƒ½ä¸èƒ½é€šè¿‡æ­¤é¡¹"é«˜çº§"è®¾ç½®,æ‰€ä»¥,é€‰æ‹©"é«˜çº§"ä»¥åŽä»–ä»¬å°±å¾ˆéš¾å¾—é€ž.]]></helptext>
+			<mouseover>æ¸¸å®¢å‘å¸–æŽ§åˆ¶.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>captcha_allow_fonts</key>
-			<title>ÑéÖ¤ÂëÔ¤ÀÀ</title>
-			<helptext><![CDATA[Èç¹ûÕâÀïÃ»ÓÐÔ¤ÀÀÍ¼Æ¬,ÒâÎ¶×ÅÄúµÄ GD °²×°°æ±¾²»Ö§³ÖÎÄ×ÖÀàÐÍ.Èç¹ûÍ¼Æ¬ÏÔÊ¾²»³öÀ´,Çëµ÷ÕûÉèÖÃÎª<i>·ñ</i>.Èç¹ûÈÔÈ»²»ÏÔÊ¾,Çëµ÷Õû <i>ÊÇ·ñ´ò¿ªÑéÖ¤Âë?</i>Îª<i>ÆÕÍ¨</i>,²¢ÁªÏµÄúµÄ·þÎñÌá¹©ÉÌÉý¼¶ GD °æ±¾.]]></helptext>
-			<mouseover>ÑéÖ¤ÂëÔ¤ÀÀ</mouseover>
+			<title>éªŒè¯ç é¢„è§ˆ</title>
+			<helptext><![CDATA[å¦‚æžœè¿™é‡Œæ²¡æœ‰é¢„è§ˆå›¾ç‰‡,æ„å‘³ç€æ‚¨çš„ GD å®‰è£…ç‰ˆæœ¬ä¸æ”¯æŒæ–‡å­—ç±»åž‹.å¦‚æžœå›¾ç‰‡æ˜¾ç¤ºä¸å‡ºæ¥,è¯·è°ƒæ•´è®¾ç½®ä¸º<i>å¦</i>.å¦‚æžœä»ç„¶ä¸æ˜¾ç¤º,è¯·è°ƒæ•´ <i>æ˜¯å¦æ‰“å¼€éªŒè¯ç ?</i>ä¸º<i>æ™®é€š</i>,å¹¶è”ç³»æ‚¨çš„æœåŠ¡æä¾›å•†å‡çº§ GD ç‰ˆæœ¬.]]></helptext>
+			<mouseover>éªŒè¯ç é¢„è§ˆ</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>ipb_bruteforce_attempts</key>
-			<title>¹ÜÀí±»Ëø¶¨µÄ»áÔ±</title>
-			<helptext><![CDATA[Èç¹û´ËÏî±»´ò¿ª,Äú¿ÉÒÔ<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=lock", 1); return false;'>µã»÷ÕâÀï</a>¹ÜÀí±»Ëø¶¨µÄ»áÔ±.]]></helptext>
-			<mouseover>¹ÜÀí±»Ëø¶¨µÄ»áÔ±.</mouseover>
+			<title>ç®¡ç†è¢«é”å®šçš„ä¼šå‘˜</title>
+			<helptext><![CDATA[å¦‚æžœæ­¤é¡¹è¢«æ‰“å¼€,æ‚¨å¯ä»¥<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=lock", 1); return false;'>ç‚¹å‡»è¿™é‡Œ</a>ç®¡ç†è¢«é”å®šçš„ä¼šå‘˜.]]></helptext>
+			<mouseover>ç®¡ç†è¢«é”å®šçš„ä¼šå‘˜.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>reg_auth_type</key>
-			<title>ÉèÖÃ¼¤»îÑ¡Ïî</title>
-			<helptext><![CDATA[´ËÏî¶ÔÓÚ¿ØÖÆÄúµÄÂÛÌ³×¢²áÕßÀ´Ëµ·Ç³£ÖØÒª.Ëü½«ÈÃÄúºÜ´ó³Ì¶ÈÉÏÔ¶ÀëÀ¬»ø×¢²áÐÅÏ¢µÄÉ§ÈÅ.<br /<br />
-ºÜ¶àÇé¿öÏÂÂÛÌ³¹ÜÀíÔ±¶¼Ï£Íû»áÔ±ÄÜ¹»¼¤»îËûÃÇµÄ<b>µç×ÓÓÊ¼þ</b>µØÖ·.ÕâÑù¿ÉÒÔ±ÜÃâÂÛÌ³»ñµÃÒ»Ð©´íÎóµÄµç×ÓÓÊ¼þÐÅÏ¢.<br /><br />
-´Ó¸ü¸ßµÄ°²È«ÐÔ¿¼ÂÇ,ÄúÒ²¿ÉÒÔÒªÇó<b>¹ÜÀíÔ±</b>¼¤»îÓÊ¼þ.ÕâÑùÄúµÄËùÓÐ»áÔ±¶¼ÊÇ¼¤»î¹ýµÄ.<br /><br />
-ÐèÒª¹ÜÀíÄúµÄ¼¤»îÕÊ»§,Çëµã»÷<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=mod", 1); return false;'>¹ÜÀí¼¤»îÑéÖ¤</a>Ñ¡Ïî.]]></helptext>
-			<mouseover>ÉèÖÃ¼¤»îÑ¡Ïî.</mouseover>
+			<title>è®¾ç½®æ¿€æ´»é€‰é¡¹</title>
+			<helptext><![CDATA[æ­¤é¡¹å¯¹äºŽæŽ§åˆ¶æ‚¨çš„è®ºå›æ³¨å†Œè€…æ¥è¯´éžå¸¸é‡è¦.å®ƒå°†è®©æ‚¨å¾ˆå¤§ç¨‹åº¦ä¸Šè¿œç¦»åžƒåœ¾æ³¨å†Œä¿¡æ¯çš„éªšæ‰°.<br /<br />
+å¾ˆå¤šæƒ…å†µä¸‹è®ºå›ç®¡ç†å‘˜éƒ½å¸Œæœ›ä¼šå‘˜èƒ½å¤Ÿæ¿€æ´»ä»–ä»¬çš„<b>ç”µå­é‚®ä»¶</b>åœ°å€.è¿™æ ·å¯ä»¥é¿å…è®ºå›èŽ·å¾—ä¸€äº›é”™è¯¯çš„ç”µå­é‚®ä»¶ä¿¡æ¯.<br /><br />
+ä»Žæ›´é«˜çš„å®‰å…¨æ€§è€ƒè™‘,æ‚¨ä¹Ÿå¯ä»¥è¦æ±‚<b>ç®¡ç†å‘˜</b>æ¿€æ´»é‚®ä»¶.è¿™æ ·æ‚¨çš„æ‰€æœ‰ä¼šå‘˜éƒ½æ˜¯æ¿€æ´»è¿‡çš„.<br /><br />
+éœ€è¦ç®¡ç†æ‚¨çš„æ¿€æ´»å¸æˆ·,è¯·ç‚¹å‡»<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mtools&code=mod", 1); return false;'>ç®¡ç†æ¿€æ´»éªŒè¯</a>é€‰é¡¹.]]></helptext>
+			<mouseover>è®¾ç½®æ¿€æ´»é€‰é¡¹.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>force_login</key>
-			<title>ÓÎ¿Í²é¿´</title>
-			<helptext>Èç¹ûÄú¿ªÆô´ËÏî,ÓÎ¿ÍÖ»ÓÐÔÚÕýÈ·µÄ×¢²á²¢µÇÂ¼ÒÔºó²ÅÄÜ²é¿´ÂÛÌ³µÄÄÚÈÝ.</helptext>
-			<mouseover>ÓÎ¿Í²é¿´Ñ¡Ïî.</mouseover>
+			<title>æ¸¸å®¢æŸ¥çœ‹</title>
+			<helptext>å¦‚æžœæ‚¨å¼€å¯æ­¤é¡¹,æ¸¸å®¢åªæœ‰åœ¨æ­£ç¡®çš„æ³¨å†Œå¹¶ç™»å½•ä»¥åŽæ‰èƒ½æŸ¥çœ‹è®ºå›çš„å†…å®¹.</helptext>
+			<mouseover>æ¸¸å®¢æŸ¥çœ‹é€‰é¡¹.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>strip_space_chr</key>
-			<title>ÆÁ±ÎÒþ²ØµÄ×Ö·û</title>
-			<helptext><![CDATA[Èç¹ûÄúµÄÂÛÌ³Ê¹ÓÃÓ¢Óï,´ËÏîÏÔµÃÓÈÎªÖØÒª.ÔÚ·ÇÓ¢Óï»·¾³ÏÂ,´ò¿ª±¾¹¦ÄÜ»á²úÉú´íÎó.<br /><br />
-Èç¹ûÄúÔÚÄúµÄÂÛÌ³·¢ÏÖÁ½¸ö¿´ÆðÀ´ÍêÈ«ÏàÍ¬µÄÁ½¸ö»áÔ±´æÔÚ,Çë¿ªÆô´Ë¹¦ÄÜ.ÀýÈç,Ä³¸ö»áÔ±¿ÉÄÜ»áÀûÓÃÄ³Ð©Òþ²ØµÄ×Ö·û×¢²áÒ»¸öºÍÒÑ¾­´æÔÚµÄ»áÔ±Ò»ÑùµÄÃû×Ö.]]></helptext>
-			<mouseover>Ê²Ã´Ê±ºòÐèÒª?</mouseover>
+			<title>å±è”½éšè—çš„å­—ç¬¦</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨çš„è®ºå›ä½¿ç”¨è‹±è¯­,æ­¤é¡¹æ˜¾å¾—å°¤ä¸ºé‡è¦.åœ¨éžè‹±è¯­çŽ¯å¢ƒä¸‹,æ‰“å¼€æœ¬åŠŸèƒ½ä¼šäº§ç”Ÿé”™è¯¯.<br /><br />
+å¦‚æžœæ‚¨åœ¨æ‚¨çš„è®ºå›å‘çŽ°ä¸¤ä¸ªçœ‹èµ·æ¥å®Œå…¨ç›¸åŒçš„ä¸¤ä¸ªä¼šå‘˜å­˜åœ¨,è¯·å¼€å¯æ­¤åŠŸèƒ½.ä¾‹å¦‚,æŸä¸ªä¼šå‘˜å¯èƒ½ä¼šåˆ©ç”¨æŸäº›éšè—çš„å­—ç¬¦æ³¨å†Œä¸€ä¸ªå’Œå·²ç»å­˜åœ¨çš„ä¼šå‘˜ä¸€æ ·çš„åå­—.]]></helptext>
+			<mouseover>ä»€ä¹ˆæ—¶å€™éœ€è¦?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>allow_flash</key>
-			<title>Ê¹ÓÃ Flash ±êÇ©</title>
-			<helptext><![CDATA[Ìû×ÓÖÐ¼äÈç¹ûÈçÒªÊ¹ÓÃ flash (.swf) µçÓ°¾ÍÐèÒªÊ¹ÓÃ´ËÑ¡Ïî. flash ±êÇ©ÕâÑùÊ¹ÓÃ:<br />
+			<title>ä½¿ç”¨ Flash æ ‡ç­¾</title>
+			<helptext><![CDATA[å¸–å­ä¸­é—´å¦‚æžœå¦‚è¦ä½¿ç”¨ flash (.swf) ç”µå½±å°±éœ€è¦ä½¿ç”¨æ­¤é€‰é¡¹. flash æ ‡ç­¾è¿™æ ·ä½¿ç”¨:<br />
 <b>[flash=199,199]</b>http://www.domain.com/flashmovie.swf<b>[/flash]</b><br /><br />
-ÕâÀï <i>199,199</i> ¶¨ÒåÁË flash µçÓ°µÄ¸ß¶ÈºÍ¿í¶È.ÐèÒªÏÞÖÆ´Ë¸ß¶ÈºÍ¿í¶È,Çë<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>µã»÷ÕâÀï</a>. ]]></helptext>
-			<mouseover>ÈçºÎÊ¹ÓÃ Flash ±êÇ©?</mouseover>
+è¿™é‡Œ <i>199,199</i> å®šä¹‰äº† flash ç”µå½±çš„é«˜åº¦å’Œå®½åº¦.éœ€è¦é™åˆ¶æ­¤é«˜åº¦å’Œå®½åº¦,è¯·<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>ç‚¹å‡»è¿™é‡Œ</a>. ]]></helptext>
+			<mouseover>å¦‚ä½•ä½¿ç”¨ Flash æ ‡ç­¾?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_h_flash</key>
-			<title>ÆôÓÃ Flash</title>
-			<helptext><![CDATA[Èç¹ûÏëÆôÓÃ Flash ±êÇ©,Çë<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>µã»÷ÕâÀï</a>.ÄúÒ²¿ÉÒÔÔÚÕâÀïÉèÖÃ:<i>°²È«ºÍÒþË½</i>.]]></helptext>
-			<mouseover>ÈçºÎÆôÓÃ Flash ±êÇ©?</mouseover>
+			<title>å¯ç”¨ Flash</title>
+			<helptext><![CDATA[å¦‚æžœæƒ³å¯ç”¨ Flash æ ‡ç­¾,è¯·<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>ç‚¹å‡»è¿™é‡Œ</a>.æ‚¨ä¹Ÿå¯ä»¥åœ¨è¿™é‡Œè®¾ç½®:<i>å®‰å…¨å’Œéšç§</i>.]]></helptext>
+			<mouseover>å¦‚ä½•å¯ç”¨ Flash æ ‡ç­¾?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_w_flash</key>
-			<title>ÆôÓÃ Flash</title>
-			<helptext><![CDATA[Èç¹ûÏëÆôÓÃ Flash ±êÇ©,Çë<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>µã»÷ÕâÀï</a>.ÄúÒ²¿ÉÒÔÔÚÕâÀïÉèÖÃ:<i>°²È«ºÍÒþË½</i>.]]></helptext>
-			<mouseover>ÈçºÎÆôÓÃ Flash ±êÇ©?</mouseover>
+			<title>å¯ç”¨ Flash</title>
+			<helptext><![CDATA[å¦‚æžœæƒ³å¯ç”¨ Flash æ ‡ç­¾,è¯·<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=flash&code=setting_view", 1); return false;'>ç‚¹å‡»è¿™é‡Œ</a>.æ‚¨ä¹Ÿå¯ä»¥åœ¨è¿™é‡Œè®¾ç½®:<i>å®‰å…¨å’Œéšç§</i>.]]></helptext>
+			<mouseover>å¦‚ä½•å¯ç”¨ Flash æ ‡ç­¾?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_poll_questions</key>
-			<title>´´½¨Í¶Æ±</title>
-			<helptext><![CDATA[Í¶Æ±ÏµÍ³ÊÇÄ¬ÈÏ°²×°µÄ.µ±Äú´´½¨Ò»¸öÂÛÌ³°å¿éµÄÊ±ºò,ÇëÈ·ÈÏ¿ªÆôÁËÍ¶Æ±¹¦ÄÜ.<br /><br />
-µ±Äú´´½¨Í¶Æ±µÄÊ±ºò,Ö÷ÌâÃèÊöµÄÏÂÃæ»áÓÐÒ»ÌõÎÄ×ÖÁ´½Ó,µã»÷¼´¿É´´½¨Í¶Æ±.]]></helptext>
-			<mouseover>ÈçºÎ´´½¨Í¶Æ±?</mouseover>
+			<title>åˆ›å»ºæŠ•ç¥¨</title>
+			<helptext><![CDATA[æŠ•ç¥¨ç³»ç»Ÿæ˜¯é»˜è®¤å®‰è£…çš„.å½“æ‚¨åˆ›å»ºä¸€ä¸ªè®ºå›æ¿å—çš„æ—¶å€™,è¯·ç¡®è®¤å¼€å¯äº†æŠ•ç¥¨åŠŸèƒ½.<br /><br />
+å½“æ‚¨åˆ›å»ºæŠ•ç¥¨çš„æ—¶å€™,ä¸»é¢˜æè¿°çš„ä¸‹é¢ä¼šæœ‰ä¸€æ¡æ–‡å­—é“¾æŽ¥,ç‚¹å‡»å³å¯åˆ›å»ºæŠ•ç¥¨.]]></helptext>
+			<mouseover>å¦‚ä½•åˆ›å»ºæŠ•ç¥¨?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>startpoll_cutoff</key>
-			<title>Ìí¼ÓÍ¶Æ±</title>
-			<helptext><![CDATA[ÎªÁËÔÚÒÑ¾­´æÔÚµÄÖ÷ÌâÉÏÌí¼ÓÍ¶Æ±Ñ¡Ïî,Äú±ØÐëÌí¼ÓÖ÷Ìâ»Ø¸´.µ±µã»÷'Ìí¼Ó»Ø¸´'µÄÊ±ºò,Ò»ÌõÎÄ×ÖÁ´½Ó½«»á³öÏÖ,Äú¾Í¿ÉÒÔµã»÷Ìí¼ÓÍ¶Æ±.]]></helptext>
-			<mouseover>ÎªÒÑ¾­´æÔÚµÄÖ÷ÌâÌí¼ÓÍ¶Æ±.</mouseover>
+			<title>æ·»åŠ æŠ•ç¥¨</title>
+			<helptext><![CDATA[ä¸ºäº†åœ¨å·²ç»å­˜åœ¨çš„ä¸»é¢˜ä¸Šæ·»åŠ æŠ•ç¥¨é€‰é¡¹,æ‚¨å¿…é¡»æ·»åŠ ä¸»é¢˜å›žå¤.å½“ç‚¹å‡»'æ·»åŠ å›žå¤'çš„æ—¶å€™,ä¸€æ¡æ–‡å­—é“¾æŽ¥å°†ä¼šå‡ºçŽ°,æ‚¨å°±å¯ä»¥ç‚¹å‡»æ·»åŠ æŠ•ç¥¨.]]></helptext>
+			<mouseover>ä¸ºå·²ç»å­˜åœ¨çš„ä¸»é¢˜æ·»åŠ æŠ•ç¥¨.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>post_titlechange</key>
-			<title>»áÔ±×Ô¶¨ÒåÍ·ÏÎ</title>
-			<helptext><![CDATA[ÔÊÐí»áÔ±×Ô¶¨ÒåÍ·ÏÎ½«»áÊ¹»áÔ±ÓµÓÐ²»ÊÜ <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mem&code=title", 1); return false;'>»áÔ±µÈ¼¶</a> ÏÞÖÆµÄÍ·ÏÎ.]]></helptext>
-			<mouseover>»áÔ±×Ô¶¨ÒåÍ·ÏÎ</mouseover>
+			<title>ä¼šå‘˜è‡ªå®šä¹‰å¤´è¡”</title>
+			<helptext><![CDATA[å…è®¸ä¼šå‘˜è‡ªå®šä¹‰å¤´è¡”å°†ä¼šä½¿ä¼šå‘˜æ‹¥æœ‰ä¸å— <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mem&code=title", 1); return false;'>ä¼šå‘˜ç­‰çº§</a> é™åˆ¶çš„å¤´è¡”.]]></helptext>
+			<mouseover>ä¼šå‘˜è‡ªå®šä¹‰å¤´è¡”</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>sig_allow_ibc</key>
-			<title>ÔÚÇ©ÃûµµÖÐÊ¹ÓÃ BBCode </title>
-			<helptext><![CDATA[Èç¹ûÄúÏë½ûÖ¹»áÔ±ÔÚÇ©ÃûµµÖÐÊ¹ÓÃÍ¼Æ¬,ÇëÑ¡Ôñ"·ñ".Çë×¢ÒâÕâ½ûÖ¹ÁËËùÓÐ BBCode µÄÊ¹ÓÃ,°üÀ¨ "img" ±êÇ©.¼´Ê¹»áÔ±×Ô¼ºÔÚÇ©ÃûµµÀïÃæÌí¼ÓÕâ¸ö±êÇ©,ËüÒ²ÊÇ²»ÄÜ½âÎöµÄ.]]></helptext>
-			<mouseover>ÔÚÇ©ÃûµµÖÐ½ûÓÃÍ¼Æ¬</mouseover>
+			<title>åœ¨ç­¾åæ¡£ä¸­ä½¿ç”¨ BBCode </title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨æƒ³ç¦æ­¢ä¼šå‘˜åœ¨ç­¾åæ¡£ä¸­ä½¿ç”¨å›¾ç‰‡,è¯·é€‰æ‹©"å¦".è¯·æ³¨æ„è¿™ç¦æ­¢äº†æ‰€æœ‰ BBCode çš„ä½¿ç”¨,åŒ…æ‹¬ "img" æ ‡ç­¾.å³ä½¿ä¼šå‘˜è‡ªå·±åœ¨ç­¾åæ¡£é‡Œé¢æ·»åŠ è¿™ä¸ªæ ‡ç­¾,å®ƒä¹Ÿæ˜¯ä¸èƒ½è§£æžçš„.]]></helptext>
+			<mouseover>åœ¨ç­¾åæ¡£ä¸­ç¦ç”¨å›¾ç‰‡</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>allow_skins</key>
-			<title>ÂÛÌ³Æ¤·ôÑ¡Ôñ</title>
-			<helptext>Èç¹ûÄú½ûÓÃÁË´ËÏîÉèÖÃ,ÄÇÃ´ÂÛÌ³¹ØÓÚÆ¤·ôÑ¡ÔñµÄÏÂÀ­²Ëµ¥½«²»ÔÙÏÔÊ¾.ÄúÒ²²»¿ÉÒÔÎªÓÃ»§×éÉèÖÃ²»Í¬µÄÂÛÌ³Æ¤·ô.ËûÃÇ»áÊ¹ÓÃÄ¬ÈÏµÄÂÛÌ³Æ¤·ôÉèÖÃ.</helptext>
-			<mouseover>ÔÊÐíÊ¹ÓÃÂÛÌ³Æ¤·ô.</mouseover>
+			<title>è®ºå›çš®è‚¤é€‰æ‹©</title>
+			<helptext>å¦‚æžœæ‚¨ç¦ç”¨äº†æ­¤é¡¹è®¾ç½®,é‚£ä¹ˆè®ºå›å…³äºŽçš®è‚¤é€‰æ‹©çš„ä¸‹æ‹‰èœå•å°†ä¸å†æ˜¾ç¤º.æ‚¨ä¹Ÿä¸å¯ä»¥ä¸ºç”¨æˆ·ç»„è®¾ç½®ä¸åŒçš„è®ºå›çš®è‚¤.ä»–ä»¬ä¼šä½¿ç”¨é»˜è®¤çš„è®ºå›çš®è‚¤è®¾ç½®.</helptext>
+			<mouseover>å…è®¸ä½¿ç”¨è®ºå›çš®è‚¤.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_user_name_length</key>
-			<title>êÇ³Æ³¤¶ÈÏÞÖÆ.</title>
-			<helptext><![CDATA[Í¨³£Çé¿öÏÂ,×î´óêÇ³Æ³¤¶ÈÎª32¸ö×Ö·û.Èç¹ûÏëÒª¸ü¸Ä,Çëµã»÷<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=support&code=kb", 1); return false;'>IPB Ö§³Ö¿â</a>ÔÄ¶ÁÏà¹ØÎÄµµ.]]></helptext>
-			<mouseover>êÇ³Æ³¤¶ÈÏÞÖÆ.</mouseover>
+			<title>æ˜µç§°é•¿åº¦é™åˆ¶.</title>
+			<helptext><![CDATA[é€šå¸¸æƒ…å†µä¸‹,æœ€å¤§æ˜µç§°é•¿åº¦ä¸º32ä¸ªå­—ç¬¦.å¦‚æžœæƒ³è¦æ›´æ”¹,è¯·ç‚¹å‡»<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=help&act=support&code=kb", 1); return false;'>IPB æ”¯æŒåº“</a>é˜…è¯»ç›¸å…³æ–‡æ¡£.]]></helptext>
+			<mouseover>æ˜µç§°é•¿åº¦é™åˆ¶.</mouseover>
 		</helpsettings>
 	</helpsettingsgroup>
 
