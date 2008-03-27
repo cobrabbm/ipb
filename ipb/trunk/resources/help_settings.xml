@@ -1,95 +1,95 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <helpsettingsexport exported="1190903778">
 	<helpsettingsgroup>
 		<helpsettings>
 			<key>new_reg_notify</key>
-			<title>Change the email that receives this notification</title>
-			<helptext><![CDATA[This email can only go to one predefined email address. This email is set at:<br />
-<i>TOOLS & SETTINGS</i> -> <i>Email Set-up</i> -> <i>Board incoming email address</i>
+			<title>¸ü¸Ä½ÓÊÕÌáÐÑµÄÄ¬ÈÏÓÊ¼þµØÖ·</title>
+			<helptext><![CDATA[Èç¹ûÄúÏëÒª½ÓÊÕ´ËÌáÐÑ,ÄúÐèÒªÔÚÕâÀïÉèÖÃÓÊ¼þµØÖ·:<br />
+<i>¹¤¾ßÉèÖÃ</i> -> <i>ÓÊ¼þÖÐÐÄ</i> -> <i>ÓÊ¼þÉèÖÃ</i> -> <i>µç×ÓÓÊ¼þÉèÖÃ</i>
 <br />
-<br /><a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=Board+incoming+email+address&code=setting_view", 1); return false;'>Click here</a> to view or edit the current email address.
+<br /><a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&search=Board+incoming+email+address&code=setting_view", 1); return false;'>µã»÷ÕâÀï</a> ²é¿´»òÕßÉèÖÃµ±Ç°µÄÓÊ¼þµØÖ·.
 
 
 ]]></helptext>
-			<mouseover>Change the email that receives this notification.</mouseover>
+			<mouseover>¸ü¸Ä½ÓÊÕÌáÐÑµÄÄ¬ÈÏÓÊ¼þµØÖ·.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>csite_on</key>
-			<title>How to select which forums to export topics from...</title>
-			<helptext><![CDATA[If you have your portal enabled, you will have to select which forums to export topics from. This can be done by <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=portal&code=portal_settings&pc_key=recent_topics", 1); return false;'>click here</a>, or go to:<br/>
-<i>TOOLS & SETTINGS</i> -> <i>Manage Portal Plug-ins</i> -> <i>Invision Power Board Latest Topics</i> -> <i>Edit Settings</i>
+			<title>ÈçºÎÒýÓÃÂÛÌ³µÄÖ÷Ìâ</title>
+			<helptext><![CDATA[Èç¹ûÄúÓÐ¿ÉÓÃµÄ½Ó¿ÚÐèÒªÒýÓÃÂÛÌ³Ö÷Ìâ,Äú¿ÉÒÔ <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=portal&code=portal_settings&pc_key=recent_topics", 1); return false;'>µã»÷ÕâÀï</a>, »òÕßµ½ÕâÀïÉèÖÃ:<br/>
+<i>¹¤¾ßÉèÖÃ</i> -> <i>¹ÜÀíÃÅ»§²å¼þ</i> -> <i>IPB×î½üÖ÷Ìâ</i> -> <i>±à¼­ÉèÖÃ</i>
+
+
 
 ]]></helptext>
-			<mouseover>Export topics to the portal</mouseover>
+			<mouseover>ÒýÓÃÂÛÌ³Ö÷Ìâ</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>csite_fav_contents</key>
-			<title>How to add links to this box</title>
-			<helptext><![CDATA[In order to add links to this box, you will have to use HTML. To find out more about HTML, you can visit <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a>.<br /> <br />
-To add a link, you will need to use the following format:<br />
-&lt;a href="http://www.link_url_here.com"&gt;Link_Name_Here&lt;/a&gt;<br /><br />
-To go to the next line, you will use the tag: &lt;br /&gt;]]></helptext>
-			<mouseover>HTML Help</mouseover>
+			<title>ÈçºÎÌí¼Ó³¬¼¶Á´½Ó</title>
+			<helptext><![CDATA[Èç¹ûÄúÏëÒªÌí¼Ó³¬¼¶Á´½Ó,Äú¾ÍÐèÒªÓÃµ½ HTML. ¹ØÓÚ HTML,Äú¿ÉÒÔ·ÃÎÊÕâÀï»ñµÃ¸ü¶à <a href="http://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a>.<br /> <br />
+Ìí¼ÓÁ´½ÓµÄÊ±ºò,ÐèÒª×ñÑ­ÏÂÃæµÄ¸ñÊ½:<br />
+&lt;a href="http://www.ÄúµÄÁ´½ÓµØÖ·.com"&gt;Á´½ÓÏÔÊ¾µÄÄÚÈÝ&lt;/a&gt;<br /><br />
+Èç¹ûÏëÒª»»ÐÐ,Äú¾ÍÐèÒªÓÃµ½Õâ¸ö±êÇ©: &lt;br /&gt;]]></helptext>
+			<mouseover>HTML °ïÖú</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>max_sig_length</key>
-			<title>Disabling Signatures</title>
-			<helptext><![CDATA[While there is no universal way to remove signatures from accounts, you can stop users from creating new signatures or altering their existing ones. To do this, simply change this setting to: -1<br /><br />
-Note this will not remove currently added signatures. For that, you will need to edit their account and remove the signature manually.]]></helptext>
-			<mouseover>Disabling Signatures</mouseover>
+			<title>½ûÓÃÇ©Ãûµµ</title>
+			<helptext><![CDATA[Äú¿ÉÒÔ×èÖ¹»áÔ±´´½¨ÐÂµÄÇ©Ãûµµ,»òÕßÍ¨ÖªËûÃÇÉ¾³ýÒÑ¾­´æÔÚµÄÇ©Ãûµµ.ÄúÐèÒª×öµÄ¾ÍÊÇÕâÀïÉèÖÃÎª: -1<br /><br />
+ÌáÐÑ:Õâ¸ö²Ù×÷²»»áÉ¾³ýÒÑ¾­´æÔÚµÄÇ©Ãûµµ.³ý·ÇÄúÑ¡Ôñ±à¼­»áÔ±Ö±½ÓÉ¾³ýËûÃÇµÄÇ©Ãûµµ.]]></helptext>
+			<mouseover>½ûÓÃÇ©Ãûµµ</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>cookie_domain</key>
-			<title>Cookie Domain</title>
-			<helptext><![CDATA[You should enter your domain name with a period in front. For example, if your forum is at <i>http://www.your-domain.com/forums/</i>, you'd enter:<br />
-<b>.your-domain.com</b><br />
+			<title>Cookie ×÷ÓÃÓò</title>
+			<helptext><![CDATA[ÄúÐèÒªÔÚÄúµÄÓòÃûÇ°Ãæ¼ÓÒ»¸öÓ¢ÎÄµÄ¾äµã.ÀýÈç,Èç¹ûÄúµÄÕ¾µãÊÇÕâ¸ö <i>http://www.ÄúµÄÓòÃû.com/ÂÛÌ³/</i>, Äú¾ÍÐèÒªÊäÈë:<br />
+<b>.ÄúµÄÓòÃû.com</b><br />
 <br />
-Be sure not to include anything in front of the first period or after the domain extension.<br /><br />
-If you are using a subdomain, such as: <i>http://forum.your-domain.com</i>, your should enter:<br />
-<b>.forum.your-domain.com</b>]]></helptext>
-			<mouseover>What should I enter?</mouseover>
+Çë²»ÒªÔÚÕâÀïÊäÈë³ý´ËÖ®ÍâµÄÈÎºÎ×Ö·û,ÒÔ·ÀÖ¹³ö´í.<br /><br />
+Èç¹ûÄúÊ¹ÓÃµÄÊÇ¶þ¼¶ÓòÃû,ÀýÈç: <i>http://ÂÛÌ³.ÄúµÄÓòÃû.com</i>,ÄÇÃ´,ÄúÐèÒªÊäÈë:<br />
+<b>.ÂÛÌ³.ÄúµÄÓòÃû.com</b>]]></helptext>
+			<mouseover>ÎÒ¸ÃÊäÈëÊ²Ã´?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>cookie_id</key>
-			<title>Cookie Prefix</title>
-			<helptext><![CDATA[This is useful when you have multiple programs running on the same domain, which may interfere with the IP.Board cookies that are set. You can simply put a unique prefix so it does not interfere with other cookies. For example:<br />
+			<title>Cookie Ãû³ÆÇ°×º</title>
+			<helptext><![CDATA[Èç¹ûÔÚÄúµÄÓòÃûÏÂÃæÍ¬Ê±ÓÐºÜ¶à³ÌÐòÔÚÔËÐÐ,ÄÇÃ´Õâ¸öÉèÖÃ½«»á·Ç³£ÓÐÓÃ, ÒòÎªËûÃÇÖ®¼ä¿ÉÄÜ»á»¥Ïà¸ÉÈÅ. ÄúÖ»ÐèÒªÉèÖÃÒ»¸öÇø±ðÓÚÆäËû³ÌÐòµÄÇ°×º¾Í¿ÉÒÔ½â¾ö. ÀýÈç:<br />
 <b>myipb_</b><br />
 <br />
-If you are running multiple installations of IP.Board, you can setup prefixes similar to:<br />
-First forum: <b>forum1_</b><br />
-Second forum: <b>forum2_</b><br />
-And so on.]]></helptext>
-			<mouseover>What is this for?</mouseover>
+Èç¹ûÄúÔËÐÐÁË¼¸¸öIPBÂÛÌ³³ÌÐò,ÄúÒ²¿ÉÒÔÕâÑùÉèÖÃÇ°×º:<br />
+µÚÒ»¸öÂÛÌ³: <b>forum1_</b><br />
+µÚ¶þ¸öÂÛÌ³: <b>forum2_</b><br />
+µÈµÈ.]]></helptext>
+			<mouseover>Õâ¸öÉèÖÃÓÐÊ²Ã´ÓÃ?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>cookie_path</key>
-			<title>Cookie Path</title>
-			<helptext><![CDATA[Setting the Cookie Path should only be needed in rare cases. If you have conflicting cookies, you may want to set it to the folder where your board is located. For example:<br />
+			<title>Cookie Â·¾¶</title>
+			<helptext><![CDATA[SÖ»ÓÐÔÚÒ»Ð©ÌØÊâÇé¿öÏÂ²ÅÐèÒª½øÐÐ´ËÉèÖÃ. Èç¹ûÄúµÄ cookies Ïà»¥³åÍ»,Äú¾Í¿ÉÒÔÔÚÂÛÌ³³ÌÐòÄ¿Â¼Àïµ¥¶À´´½¨Ò»¸öÎÄ¼þ¼Ð×÷Îª cookies ´æ·ÅÂ·¾¶. ÀýÈç:<br />
 <b>/forum</b>]]></helptext>
-			<mouseover>When do I need this?</mouseover>
+			<mouseover>Ê²Ã´Ê±ºòÎÒÐèÒªÉèÖÃ?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>update_topic_views_immediately</key>
-			<title>Topic Views</title>
-			<helptext><![CDATA[Often times with large boards updating the topic views can cause issues. Since the topics database table is accessed every time someone views a topic, it can put a strain on the table and lock queries as a result. Setting this option to <b>No</b> will update the views every 6 hours. While all views will be counted, the topic counter will not be updated right away to help reduce the chance of this table being locked.
-
-<b>This setting is recommended for large/active boards.</b>]]></helptext>
-			<mouseover>How can I tell if I need this?</mouseover>
+			<title>¸üÐÂÖ÷Ìâ²é¿´´ÎÊý </title>
+			<helptext><![CDATA[´óÐÍÂÛÌ³Èç¹ûÆµ·±¸üÐÂÖ÷Ìâ²é¿´´ÎÊý¿ÉÄÜ»á³öÏÖÎÊÌâ. ÓÐÈË²é¿´Êý¾ÝµÄÊ±ºòÖ÷Ìâ±í¾Í»á±»·ÃÎÊ,Æµ·±²Ù×÷¿ÉÄÜ»áËð»µ±íµ¥ÉõÖÁÇëÇó±»ËøËÀ.¸ÃÏîÉèÖÃÎª <b>·ñ</b> ÏµÍ³»á²¢»áÃ¿6Ð¡Ê±×Ô¶¯¸üÐÂÒ»´Î¼ÆÊýÆ÷.Õâ½«»áÏÔÖø¼õÉÙ¶ÔÖ÷Ìâ±íµÄ¸ºÔØ.<b>Ö»ÓÐÔÚ´óÐÍ»îÔ¾µÄÂÛÌ³²ÅÐèÒª½øÐÐ´ËÉèÖÃ.</b>]]></helptext>
+			<mouseover>Èç¹ûÎÒÐèÒªÕâÑù×öÎÒ¸ÄÔõÃ´×ö?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>load_limit</key>
-			<title>Server Load Limit</title>
-			<helptext><![CDATA[The board will take a snapshot of what the current load for your server is, and cache the result for 10 seconds. Note that the load is for the server itself, and it not always related to IP.Board. If you experience high loads, you may want to consult with your webhost and see what is causing it.<br /><br />
+			<title>·þÎñÆ÷¸ºÔØÏÞÖÆ</title>
+			<helptext><![CDATA[ÂÛÌ³½«»á¶ÔÄúµÄ·þÎñÆ÷¸ºÔØ½øÐÐ¼´Ê±¿ìÕÕ,»º³åÕâ¸ö½á¹û´óÔ¼ÐèÒª10Ãë. ÐèÒªÌáÐÑµÄÊÇÏµÍ³¸ºÔØÊÇ¸ú·þÎñÆ÷ÓÐ¹Ø,¸úÂÛÌ³³ÌÐò±¾ÉíÃ»ÓÐ¹ØÏµ.Èç¹ûÄú·¢ÏÖÄúµÄÏµÍ³¸ºÔØÖµºÜ¸ß,ÇëÓëÄúµÄ·þÎñÌá¹©ÉÌÁªÏµ,²éÕÒÊÇÓÉÓÚÊ²Ã´Ô­ÒòÒýÆð.<br /><br />
 <br />
-If your server is <b>Linux</b>, the server load relates to:<br />
+Èç¹ûÄúµÄ·þÎñÆ÷²Ù×÷ÏµÍ³ÊÇ <b>Linux</b>, ÏµÍ³¸ºÔØÈ¡¾öÓÚ:<br />
 How many processes are waiting in queue to use the processor on the server. For example, if you have one CPU on your server, then a load of 1.00 would mean there is one process waiting in queue. If you have two CPUs, then 2.00 would be more suitable for that example. As a safe rule, you can enter a limit of 20.
 <br />
 <br />
@@ -100,24 +100,24 @@ The CPU usage of the server at that time. As with home computers with Windows, t
 
 		<helpsettings>
 			<key>time_offset</key>
-			<title>Server Time Zone</title>
-			<helptext>This is the time zone displayed to guests. Please note it does not take into affect Daylight Saving Time for guests. Guests cannot pick their own time zone until they register or login.</helptext>
-			<mouseover>When is this used?</mouseover>
+			<title>·þÎñÆ÷Ê±Çø</title>
+			<helptext>ÕâÊÇÓÎ¿ÍµÄÄ¬ÈÏÊ±Çø. ÓÎ¿ÍÖ»ÓÐÔÚ×¢²á²¢µÇÂ¼ÒÔºó²Å¿ÉÒÔÉèÖÃ×Ô¼ºµÄÊ±Çø.</helptext>
+			<mouseover>Ê²Ã´Ê±ºòÓÃµ½?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>smtp_host</key>
-			<title>SMTP Information</title>
-			<helptext><![CDATA[This (and all other SMTP settings) are only needed if you have set the board to use SMTP for the setting <i>Mail Delivery Method</i>. If you are using PHP Mail(), all of these settings can be left default.<br /><br />
-If you are unsure of any of the SMTP information, please contact your webhost or email host provider, and they can provide you with this information.]]></helptext>
+			<title>SMTP ÐÅÏ¢</title>
+			<helptext><![CDATA[´ËÏî(ÆäËûÓÐ¹Ø SMTP µÄÉèÖÃÒ²Ò»Ñù)Ö»ÓÐÔÚÄúÔÚ<i>ÓÊ¼þ·¢ËÍ·½Ê½</i>Ñ¡ÔñÁËÊ¹ÓÃ SMTP ²ÅÐèÒªÉèÖÃ. Èç¹ûÄúÊ¹ÓÃ PHP Mail() º¯Êý, ÕâÐ©ÉèÖÃ½«»á²ÉÓÃÄ¬ÈÏÉèÖÃ.<br /><br />
+Èç¹ûÄú²»È·¶¨ÄúµÄ SMTP ÐÅÏ¢,ÇëÁªÏµÄúµÄ·þÎñÆ÷Ìá¹©ÉÌ,Í¨³£ËûÃÇ¶¼»áÌá¹©¸øÄúÏàÓ¦µÄÐÅÏ¢.]]></helptext>
 			<mouseover></mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>mail_method</key>
-			<title>PHP mail() or SMTP?</title>
-			<helptext><![CDATA[For most PHP installations, PHP mail() is enabled. If you are unsure of this, you can ask your webhost if this is enabled. If it is disabled or your are experiencing a lot of <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=admin&act=emailerror", 1); return false;'>Email Errors</a>, you may want to switch to SMTP.]]></helptext>
-			<mouseover>PHP mail() or SMTP?</mouseover>
+			<title>PHP mail() ÓÊ¼þº¯Êý»òÕßÊ¹ÓÃ SMTP?</title>
+			<helptext><![CDATA[ÔÚÍ¨³£µÄPHP°²×°»·¾³ÖÐ, PHP mail() ÓÊ¼þº¯ÊýÊÇ¿ÉÒÔÊ¹ÓÃµÄ.Èç¹ûÄú¶Ô´Ë²»È·ÈÏ, ÇëÁªÏµÄúµÄ·þÎñÆ÷Ìá¹©ÉÌ.Èç¹ûÕâ¸öº¯Êý²»¿ÉÓÃ,»òÕßÄúÔÚÊ¹ÓÃÖÐ·¢ÏÖºÜ¶à <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=admin&act=emailerror", 1); return false;'>ÓÊ¼þ´íÎó</a>,½¨ÒéÄúÇÐ»»µ½ SMTP ·½Ê½·¢ËÍÓÊ¼þ.]]></helptext>
+			<mouseover>PHP mail() ÓÊ¼þº¯Êý»òÕßÊ¹ÓÃ SMTP?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
@@ -153,9 +153,9 @@ If you still have issues uploading, please ensure your <i>uploads</i> directory 
 
 		<helpsettings>
 			<key>search_sql_method</key>
-			<title>Type of search to use?</title>
-			<helptext><![CDATA[If your server is capable of Full Text searching, it is <b>highly</b> recommended to use it. Searching is one of the top resource users for a board. Full Text searching indexes all of your content for faster and more efficient searches. This should only be set to Normal is absolutely needed.]]></helptext>
-			<mouseover>Type of search to use?</mouseover>
+			<title>»áÔ±ËÑË÷ÀàÐÍ?</title>
+			<helptext><![CDATA[Èç¹ûÄúµÄ·þÎñÆ÷Ö§³ÖÈ«ÎÄËÑË÷, <b>Ç¿ÁÒ</b>½¨ÒéÄúÊ¹ÓÃËü. ËÑË÷¶ÔÂÛÌ³»áÔ±À´ËµÊÇÒ»Ïî·Ç³£ÖØÒªµÄ¹¦ÄÜ. Ê¹ÓÃÈ«ÎÄËÑË÷¿ÉÒÔ¿ìËÙ¡¢Áé»îµØÎª´æ´¢ÔÚÊý¾Ý¿âÖÐµÄÎÄ±¾Êý¾Ý²éÑ¯´´½¨Ë÷Òý.Ö»ÓÐÔÚÌØÊâÇé¿öÏÂ²ÅÑ¡ÔñÆÕÍ¨ËÑË÷.]]></helptext>
+			<mouseover>»áÔ±ËÑË÷ÀàÐÍ?</mouseover>
 		</helpsettings>
 
 		<helpsettings>
@@ -288,22 +288,22 @@ When making a new topic, there will be a text link just below the topic title. T
 
 		<helpsettings>
 			<key>post_titlechange</key>
-			<title>Member Titles</title>
-			<helptext><![CDATA[Allowing users to change their own member titles will allow them to override any predefined <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mem&code=title", 1); return false;'>Member Ranks</a> added.]]></helptext>
-			<mouseover>Member titles...</mouseover>
+			<title>»áÔ±×Ô¶¨ÒåÍ·ÏÎ</title>
+			<helptext><![CDATA[ÔÊÐí»áÔ±×Ô¶¨ÒåÍ·ÏÎ½«»áÊ¹»áÔ±ÓµÓÐ²»ÊÜ <a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=mem&code=title", 1); return false;'>»áÔ±µÈ¼¶</a> ÏÞÖÆµÄÍ·ÏÎ.]]></helptext>
+			<mouseover>»áÔ±×Ô¶¨ÒåÍ·ÏÎ</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>sig_allow_ibc</key>
-			<title>BBCode in Signatures</title>
-			<helptext><![CDATA[If you wish to disable images in signatures, please disable this setting. Please note this will disable all BBCode in signatures - not just the "img" tag. The code itself will be seen in the signature if someone attempts to add it, it will not parse.]]></helptext>
-			<mouseover>Disabling images in signatures...</mouseover>
+			<title>ÔÚÇ©ÃûµµÖÐÊ¹ÓÃ BBCode </title>
+			<helptext><![CDATA[Èç¹ûÄúÏë½ûÖ¹»áÔ±ÔÚÇ©ÃûµµÖÐÊ¹ÓÃÍ¼Æ¬,ÇëÑ¡Ôñ"·ñ". Çë×¢ÒâÕâ½ûÖ¹ÁËËùÓÐ BBCode µÄÊ¹ÓÃ,°üÀ¨ "img" ±êÇ©. ¼´Ê¹»áÔ±×Ô¼ºÔÚÇ©ÃûµµÀïÃæÌí¼ÓÕâ¸ö±êÇ©,ËüÒ²ÊÇ²»ÄÜ½âÎöµÄ.]]></helptext>
+			<mouseover>ÔÚÇ©ÃûµµÖÐ½ûÓÃÍ¼Æ¬</mouseover>
 		</helpsettings>
 
 		<helpsettings>
 			<key>allow_skins</key>
-			<title>Skin Selection</title>
-			<helptext>If you disable this setting, the skin drop-down menu at the bottom of your board will no longer appear. You will also no longer be able to assign specific skins to user accounts. They will use whatever the default skin is.</helptext>
+			<title>ÂÛÌ³Æ¤·ôÑ¡Ôñ</title>
+			<helptext>Èç¹ûÄú½ûÓÃÁË´ËÏîÉèÖÃ,ÄÇÃ´ÂÛÌ³¹ØÓÚÆ¤·ôÑ¡ÔñµÄÏÂÀ­²Ëµ¥½«²»ÔÙÏÔÊ¾. ÄúÒ²²»¿ÉÒÔÎªÓÃ»§×éÉèÖÃ²»Í¬µÄÂÛÌ³Æ¤·ô.ËûÃÇ»áÊ¹ÓÃÄ¬ÈÏµÄÂÛÌ³Æ¤·ôÉèÖÃ.</helptext>
 			<mouseover>Allowing skins...</mouseover>
 		</helpsettings>
 
