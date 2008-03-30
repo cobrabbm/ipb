@@ -1529,7 +1529,7 @@ class profile
 				}
 			}
 
-			$row['comment_content'] = $this->ipsclass->txt_wordwrap( $row['comment_content'], '19', ' ' );
+			//$row['comment_content'] = $this->ipsclass->txt_wordwrap( $row['comment_content'], '19', ' ' );
 			
 			$row = $this->personal_portal_set_information( $row, 0, 0 );
 			
@@ -1965,7 +1965,7 @@ class profile
 				}
 			}
 
-			$row['comment_content'] = $this->ipsclass->txt_wordwrap( $row['comment_content'], '19', ' ' );
+			//$row['comment_content'] = $this->ipsclass->txt_wordwrap( $row['comment_content'], '19', ' ' );
 			
 			$row = $this->personal_portal_set_information( $row, 0, 0 );
 			
@@ -2722,7 +2722,7 @@ class profile
 	    			$data = $this->ipsclass->lang['no_info'];
 	    		}
 	    		
-	    		$data = $this->ipsclass->txt_wordwrap( $data, '25', ' ' );
+	    		//$data = $this->ipsclass->txt_wordwrap( $data, '25', ' ' );
     		
 				$member['custom_fields'][] = array( 'name' => $custom_fields->field_names[ $id ], 'data' => $data );
 	    	}
@@ -2773,7 +2773,7 @@ class profile
     	$member['_avatar']           = $this->ipsclass->get_avatar( $member['avatar_location'], $this->ipsclass->member['view_avs'], $member['avatar_size'], $member['avatar_type'] );
 		$member['_email']            = $member['hide_email'] ? $this->ipsclass->lang['private'] : "<a href='{$this->ipsclass->base_url}act=Mail&amp;CODE=00&amp;MID={$member['id']}'>{$this->ipsclass->lang['email']}</a>";
 		$member['_pp_rating_real']   = intval( $member['pp_rating_real'] );
-		$member['_interests']        = $this->ipsclass->txt_wordwrap( $member['interests']  ? $member['interests']  : $this->ipsclass->lang['no_info'], '25', ' ' );
+		$member['_interests']        = $member['interests']  ? $member['interests']  : $this->ipsclass->lang['no_info'];
 		$member['_posts']			 = $this->ipsclass->do_number_format( $member['posts'] );
 		$member['_website'] 		 = ( preg_match( "/^http:\/\/\S+$/", $member['website'] ) ) ? $member['website'] : '';
 		$member['_title']   		 = $member['title'];
@@ -2788,7 +2788,7 @@ class profile
 		$member['pp_bio_content'] = preg_replace( "#\[i\](.+?)\[/i\]#is", "<i>\\1</i>", $member['pp_bio_content'] );
 		$member['pp_bio_content'] = preg_replace( "#\[u\](.+?)\[/u\]#is", "<u>\\1</u>", $member['pp_bio_content'] );
 		$member['pp_bio_content'] = $this->parser->bad_words( $member['pp_bio_content'] );
-		$member['pp_bio_content'] = $this->ipsclass->txt_wordwrap( $member['pp_bio_content'], '25', ' ' );
+		//$member['pp_bio_content'] = $this->ipsclass->txt_wordwrap( $member['pp_bio_content'], '25', ' ' );
 
 		//-----------------------------------------
 		// PHOTO
@@ -3939,7 +3939,7 @@ class profile
     	$info['icq_number']           = $member['icq_number'] ? $member['icq_number'] : $this->ipsclass->lang['no_info'];
     	$info['yahoo']                = $member['yahoo']      ? $member['yahoo']      : $this->ipsclass->lang['no_info'];
     	$info['location']             = $member['location']   ? $member['location']   : $this->ipsclass->lang['no_info'];
-    	$info['interests']			  = $this->ipsclass->txt_wordwrap( $member['interests']  ? $member['interests']  : $this->ipsclass->lang['no_info'], '25', ' ' );
+    	$info['interests']			  = $member['interests']  ? $member['interests']  : $this->ipsclass->lang['no_info'];
     	$info['msn_name']             = $member['msnname']    ? $member['msnname']    : $this->ipsclass->lang['no_info'];
     	$info['member_rank_img']      = $member['member_rank_img'];
     	$info['has_blog']             = isset($member['has_blog']) ? $member['has_blog'] : 0;
@@ -4178,7 +4178,7 @@ class profile
     			$data = $this->ipsclass->lang['no_info'];
     		}
     		
-    		$data = $this->ipsclass->txt_wordwrap( $data, '25', ' ' );
+    		//$data = $this->ipsclass->txt_wordwrap( $data, '25', ' ' );
     		
 			$custom_out .= $this->ipsclass->compiled_templates['skin_profile']->custom_field( $fields->field_names[ $id ], $data );
     	}
