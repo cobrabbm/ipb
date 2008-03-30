@@ -1355,7 +1355,7 @@ class ad_forums
 			
 			$this->ipsclass->main_msg = $forum_cat_lang." 已建立";
 			
-			$this->ipsclass->admin->save_log("建立" $forum_cat_lang." '{$this->ipsclass->input['name']}' 建立");
+			$this->ipsclass->admin->save_log("建立 " .$forum_cat_lang." '{$this->ipsclass->input['name']}' 成功");
 		}
 		else
 		{
@@ -1401,7 +1401,7 @@ class ad_forums
 			
 			$this->ipsclass->main_msg = $forum_cat_lang." 已编辑";
 			
-			$this->ipsclass->admin->save_log("编辑" $forum_cat_lang." '{$this->ipsclass->input['name']}'");
+			$this->ipsclass->admin->save_log("编辑 " .$forum_cat_lang." '{$this->ipsclass->input['name']}' 成功");
 		}
 		
 		$this->recache_forums();
