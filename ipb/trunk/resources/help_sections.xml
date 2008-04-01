@@ -5,7 +5,7 @@
 			<key>dashboard_dashboard_</key>
 			<title>后台帮助系统</title>
 			<helptext><![CDATA[<b>欢迎来到后台帮助系统</b>
-<br />This system will provide more advanced information on specific settings and pages in your Admin Control Panel.
+<br />这个系统将提供您关于一些特殊设置和管理页面方面的更加完善的信息.
 <br />For pages that hold more information, you will see a box just like this one. 
 <br />For individual settings, an image will appear next to them, which you can click for more information. The image will appear as: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
 <br />
@@ -31,24 +31,24 @@ Larger databases may time out using this tool. If this happens for you, please c
 
 		<helpsections>
 			<key>content_forum_new</key>
-			<title>Permission Settings</title>
-			<helptext><![CDATA[When creating a <b>New Forum</b>, be sure to select which groups you want to be able to see the forum, post in the forum, and upload/download attachments. It will be at the bottom of this page. Without doing this, no one will be able to see the forum - not even admins.<br />
-When creating a <b>New Category</b>, you only need to select who you want to be able to see the category.
+			<title>权限设置</title>
+			<helptext><![CDATA[创建一个<b>新论坛板块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内.<br />
+创建<b>新论坛分区</b>的时候,您也需要选择哪些用户组可以查看此论坛分区.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_donew</key>
-			<title>Permission Settings</title>
-			<helptext><![CDATA[When creating a <b>New Forum</b>, be sure to select which groups you want to be able to see the forum, post in the forum, and upload/download attachments. It will be at the bottom of this page. Without doing this, no one will be able to see the forum - not even admins.<br />
-When creating a <b>New Category</b>, you only need to select who you want to be able to see the category.]]></helptext>
+			<title>权限设置</title>
+			<helptext><![CDATA[创建一个<b>新论坛板块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内..<br />
+创建<b>新论坛分区</b>的时候,您也需要选择哪些用户组可以查看此论坛分区.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_</key>
-			<title>Managing your existing forums</title>
-			<helptext><![CDATA[When you need to <b>Edit Settings</b>, change permissions, or delete an existing forum/category, this can be done using the drop-down menu directly to the right of the forum or category. This is useful when changing who can see the forum and who can't.<br />
-To add, remove, or edit a <b>Moderator</b> for a specific forum, simply click the tab on top of the forum list entitled <i>Show Moderator Options</i>. Existing moderators will be shown below their designated forums. To add a new one, click the checkbox to the right of the forum, scroll to the bottom of the page, and enter their name in <i>Add a moderator to all checked forum(s)</i>.]]></helptext>
+			<title>管理已经存在的论坛</title>
+			<helptext><![CDATA[当您需要 <b>编辑设置</b>,更改权限,或者删除一个已经存在的板块/分区的时候,您可以在您的目标板块/分区的右边,点击下拉菜单来执行操作.这在您决定谁是否能看查看目标板块/分区的时候显得特别有用.<br />
+如果您添需要加,删除,或者编辑已经存在的<b>版主</b>,最简单的方法就是点击下面的<i>显示版主</i>.已经存在的版主就会在他们管理的板块旁边显示出来.如果您需要为一个已经存在的板块添加版主,您可以选中此板块,滚动在页面的底部,在输入框内输入此版主的会员名字<i>为所有选择的板块添加版主(s)</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -83,22 +83,22 @@ If you are <b>having issues</b> adding the Copyright Removal license, please <a 
 
 		<helpsections>
 			<key>lookandfeel_sets_</key>
-			<title>Managing Skin Sets</title>
-			<helptext><![CDATA[On this page you will be able to see and alter all of your skins. To edit the skin directly, please click the drop-down to the right of each skin. If you wish to create a new unedited default skin, you can do this by clicking the dropdown menu to the right of <i>Skin Sets</i>. Here is a quick legend of some of the images on this page:<br />
-<img src="{skin_url}/images/skin_default.gif" alt="Defaul Skin" style="float:none;" /> - This image indicates what skin is set as the board default. You can click this image on another skin to make it the default.<br />
-<img src="{skin_url}/images/skin_visible.gif" alt="Visible Skin" style="float:none;" /> - This image indicates if the skin is visible or not. You can hide a skin by clicking this image next to it.<br />
-<img src="{skin_url}/images/skin_forums.gif" alt="Forum Skin" style="float:none;" /> - This image indicates that the skin has been added to specific forums.
+			<title>管理主题设置</title>
+			<helptext><![CDATA[您可以在这里查看和更改您的论坛主题.您可以点击每一款主题右边的下拉菜单直接修改此主题. 如果您需要创建一个新的未编辑默认主题,您可以点击 <i>主题设置</i>右边的下拉菜单来实现.下面是页面图标的相关说明:<br />
+<img src="{skin_url}/images/skin_default.gif" alt="Defaul Skin" style="float:none;" /> - 这个图标显示出哪一款主题正在被用做论坛默认主题.您可以在其他的主题后面点亮此图标来设置此主题为默认主题.<br />
+<img src="{skin_url}/images/skin_visible.gif" alt="Visible Skin" style="float:none;" /> - 这个图标显示哪些论坛主题可用.您可以点击这个图标来隐藏或者显示会员可以自己选择的主题.<br />
+<img src="{skin_url}/images/skin_forums.gif" alt="Forum Skin" style="float:none;" /> - 这个图标显示此主题已经被某一个特殊的板块使用.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_support</key>
-			<title>Submit Support Ticket</title>
-			<helptext><![CDATA[If you are experiencing an issue with your Invision Power Services software and require official assistance or support, you may utilize our ticketing system to submit a ticket. Please allow 24-48 hours for a response during normal business hours.<br/>
+			<title>提交援助申请</title>
+			<helptext><![CDATA[当您在使用论坛软件遇到问题需要 IPS 提供援助的时候,您可以通过申请系统给我们提交申请. 您的申请可能需要 24-48 小时来处理.<br/>
 <br />
-You must have an active support contract with us in order to submit a ticket.<br />
+请您提交申请的时候提供一个可用的联系方式.<br />
 <br />
-<b>NOTE - Internet Explorer users</b>: In some cases, Internet Explorer doesn't allow logging into an external site from a frame. If you are having trouble logging in, please visit the <a href="https://www.invisionpower.com/customer/" target="_blank">Client Area</a> directly.]]></helptext>
+<b>提醒 - Internet Explorer 用户</b>: 在有些情况下, Internet Explorer 不允许使用外部框架.如果您登录出现问题,请直接点击这里:<a href="https://www.invisionpower.com/customer/" target="_blank">客户区域</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -114,12 +114,12 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>content_group_permsplash</key>
-			<title>Forum Permission Management</title>
-			<helptext><![CDATA[This section allows you to manage the permissions sets on your forum. You can click the drop-down menu to the right of the set, and edit it to select which forums they can see, post in, etc.<br />
+			<title>论坛权限管理</title>
+			<helptext><![CDATA[您可以在这里设置您论坛的一些访问权限.您可以直接点击会员组右边的下拉菜单来设置哪些论坛会员可以查看,可以发表等等.<br />
 <br />
-<b>Used by Groups</b> relates to the member groups that use this set of permissions.
-<b>Used by Members</b> relates to the number of members that are using this set of permissions rather than the set of permissions assigned to their group.
-<b>Preview</b> the forums this set of permissions would provide access to in a quick, convenient format.]]></helptext>
+<b>用户组使用</b>显示与此权限有关的用户组.
+<b>会员使用</b> 显示单独使用此权限的特殊会员.
+<b>预览</b> 提供一个方便快捷直观的权限预览图示.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -136,77 +136,77 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>content_mem_add</key>
-			<title>Creating a New User</title>
-			<helptext>Registering users through the Admin CP is especially useful when creating new admin accounts. This will let you register accounts for users without having to go through the normal registration process, and bypassing any validation enabled.</helptext>
+			<title>创建新会员</title>
+			<helptext>当您需要添加管理员帐号的时候建议直接用管理后台添加.这将省去您很多不必要的注册激活等步骤.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_title</key>
-			<title>Setting up Member Ranking</title>
-			<helptext><![CDATA[Ranks are images that show below a user's name on the forum.<br />
-This section allows you to modify, delete, or add extra ranks. You can select the number of pip (images) to show for each rank. Alternatively, you can have it show a custom image instead of the pip images. Note, these custom images must reside in the '/style_images/{img_dir}/folder_team_icons' directory of your installation.
+			<title>设置会员评分</title>
+			<helptext><![CDATA[评分的图标会显示在会员头像之下.<br />
+这项设置允许您更改,删除,或者添加评分.您可以选择星形图标的数量来评分.您可以自定义此显示图片.提醒,图片必须保存在 '/style_images/{img_dir}/folder_team_icons' 此安装目录.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_gallery_show</key>
-			<title>IP.Gallery</title>
-			<helptext><![CDATA[This is a separate product designed to plug directly into your IP.Board. It offers your users an option to upload images to a gallery, as well as create their own albums. To purchase, please contact our <a href="{base_url}&section=help&act=support&code=contact">Sales Team</a>. If you have already purchased this product and would like IPS to install it for you, please create a new <a href="{base_url}&section=help&act=support&code=support">Support Ticket</a>.]]></helptext>
+			<title>IPB图库</title>
+			<helptext><![CDATA[这是一个单独的论坛插件.它为您的论坛提供了一个图库,会员可以上传自己的图片来创建属于自己的相册.需要购买,请联系我们的<a href="{base_url}&section=help&act=support&code=contact">销售团队</a>. 如果您已经购买了此插件,需要IPS为您安装,请提交一份<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_blog_show</key>
-			<title>IP.Blog</title>
-			<helptext><![CDATA[This is a separate product designed to plug directly into your IP.Board. It offers your users an option to create a personal Blog (web log) on your forum. This is similar to an online diary or journal. To purchase, please contact our <a href="{base_url}&section=help&act=support&code=contact">Sales Team</a>. If you have already purchased this product and would like IPS to install it for you, please create a new <a href="{base_url}&section=help&act=support&code=support">Support Ticket</a>.]]></helptext>
+			<title>IPB博客</title>
+			<helptext><![CDATA[这是一个单独的论坛插件.它为您的论坛提供了一个个人博客系统(网页博客).可以作为一个简单的个人日志记录工具.需要购买,请联系我们的<a href="{base_url}&section=help&act=support&code=contact">销售团队</a>.如果您已经购买了此插件,需要IPS为您安装,请提交一份<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_chatpara_show</key>
-			<title>ParaChat Configuration</title>
-			<helptext>ParaChat is a chat system that integrates into your board. It is offered by a third-party company. You can view information about this company in the frame below. If you have purchased this chat from them, you can enter the information they provided you into the box just below this help box.</helptext>
+			<title>ParaChat 配置</title>
+			<helptext>ParaChat 是一个论坛可用的简易聊天软件.由第三方软件提供支持.您可以在下面看到此公司的一些信息. 如果您想要购买 ParaChat,请您填写他们提供的必要信息提交即可.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_chatsigma_show</key>
-			<title>AddOnChat Configuration</title>
-			<helptext>AddOnChat is a chat system that integrates into your board. It is offered by a third-party company. You can view information about this company in the frame below. If you have purchased this chat from them, you can enter the information they provided you into the box just below this help box.</helptext>
+			<title>AddOnChat 配置</title>
+			<helptext>AddOnChat 是一个论坛可用的聊天软件. 由第三方软件提供支持.您可以在下面看到此公司的一些信息. 如果您想要购买 ParaChat,请您填写他们提供的必要信息提交即可.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_</key>
-			<title>Submit Support Ticket</title>
-			<helptext><![CDATA[If you are experiencing an issue with your Invision Power Services software and require official assistance or support, you may utilize our ticketing system to submit a ticket. Please allow 24-48 hours for a response during normal business hours.<br/>
+			<title>提交帮助申请</title>
+			<helptext><![CDATA[如果您在使用 IPB 的过程中需要官方的援助或者支持,您就可以利用我们的申请系统提交一份申请.您的申请会在24-48小时内处理.<br/>
 <br />
-You must have an active support contract with us in order to submit a ticket.<br />
+请您提交申请的时候提供一个可用的联系方式.<br />
 <br />
-<b>NOTE - Internet Explorer users</b>: In some cases, Internet Explorer doesn't allow logging into an external site from a frame. If you are having trouble logging in, please visit the <a href="https://www.invisionpower.com/customer/" target="_blank">Client Area</a> directly.]]></helptext>
+<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="https://www.invisionpower.com/customer/" target="_blank">客户区域</a>访问.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_kb</key>
-			<title>Knowledge Base</title>
-			<helptext><![CDATA[In the Knowledge Base you can find answers to common questions, patches for known issues, and other useful tutorials.
+			<title>IPB 知识库</title>
+			<helptext><![CDATA[这里您可以解决通常情况下您所遇到的问题,获取更新程序,以及一些使用指南.
 <br />
 <br />
-<b>NOTE - Internet Explorer users</b>: In some cases, Internet Explorer doesn't allow logging into an external site from a frame. If you are having trouble logging in, please visit the <a href="https://www.invisionpower.com/customer/" target="_blank">Client Area</a> directly.]]></helptext>
+<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="https://www.invisionpower.com/customer/" target="_blank">客户区域</a>访问.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_bugs</key>
-			<title>Bug Reports</title>
-			<helptext><![CDATA[You may submit and track all bugs reported to us by our users for Invision Power Board in the Bug Tracker below. This is <i>not</i> for support issues, but rather flaws in the software itself.
+			<title>缺陷报告</title>
+			<helptext><![CDATA[你可以在我们的追踪栏目里提交并跟踪您所提交的所有缺陷,它将显示在下面.这里并<i>不</i> 包括发布的报告,仅仅只为了弥补我们的程序内部缺陷.
 <br />
 <br />
-<b>NOTE - Internet Explorer users</b>: In some cases, Internet Explorer doesn't allow logging into an external site from a frame. If you are having trouble logging in, please visit the <a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">Bug Tracker</a> directly.]]></helptext>
+<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">缺陷追踪</a> 访问.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_features</key>
-			<title>Suggest Features</title>
-			<helptext><![CDATA[If you would like to request a feature, or see if a particular feature has already been requested, for Invision Power Services products this forum is the place to do so.
+			<title>新功能建议</title>
+			<helptext><![CDATA[如果您需要一项新功能,或者在其他地方看到而 IPB 没有这些功能,那么您可以在这里反馈给我们.
 <br />
 <br />
-<b>NOTE - Internet Explorer users</b>: In some cases, Internet Explorer doesn't allow logging into an external site from a frame. If you are having trouble logging in, please visit the <a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">Feature Suggestions Forum</a> directly.
+<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">Feature Suggestions Forum</a>访问.
 ]]></helptext>
 		</helpsections>
 
@@ -218,20 +218,20 @@ You must have an active support contract with us in order to submit a ticket.<br
 You can use your client center login information to access resources.invisionpower.com.
 <br />
 <br />
-<b>NOTE - Internet Explorer users</b>: In some cases, Internet Explorer doesn't allow logging into an external site from a frame. If you are having trouble logging in, please visit the <a href="http://resources.invisionpower.com" target="_blank">resources.invisionpower.com</a> directly.
+<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://resources.invisionpower.com" target="_blank">resources.invisionpower.com</a>访问.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_doctor</key>
-			<title>IP.Board Documentation</title>
-			<helptext>You can download the IP.Board Documentation on this page. It will cover the usage of this board from the user-side as well as the admin-side. For skin and modification authors, we also offer a full CSS guide and Developer Documentaiton.</helptext>
+			<title>IPB 文档中心</title>
+			<helptext>这里您可以下载一些 IPB 在线文档资源. 涵盖了包括一般使用者和管理员都需要的信息.对于皮肤和模板设计者,我们提供了全套 CSS 指导和开发文档.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_contact</key>
-			<title>Contact IPS</title>
-			<helptext>If you would like to contact us you can find our current contact information and hours of operation below.</helptext>
+			<title>联系 IPS</title>
+			<helptext>如果您想要联系我们,您可以在下面找到我们当前的联系方式和回馈时间.</helptext>
 		</helpsections>
 
 		<helpsections>
@@ -269,73 +269,73 @@ Anything besides 5 numbers would be rejected. They would not be able to enter mo
 
 		<helpsections>
 			<key>content_forum_empty</key>
-			<title>Emptying a Forum</title>
-			<helptext><![CDATA[<b>THIS WILL DELETE ALL TOPICS, POSTS AND POLLS. THERE IS <u>NO</u> UNDO.</b><br />
-The forum itself will not be deleted - please ensure you wish to carry out this action before continuing.]]></helptext>
+			<title>清空论坛</title>
+			<helptext><![CDATA[<b>此操作将删除论坛所有主题,帖子和投票. 出现<u>否</u>撤销.</b><br />的论坛将不会选中
+ - 继续操作之前请再次确认.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_skinedit</key>
-			<title>Assigning a Specific Skin to a Forum</title>
-			<helptext>You may choose to either add or remove a skin set to this forum. When you select a skin, it will also show on this forum, no matter what the user has set as their skin choice.</helptext>
+			<title>为版面指定主题</title>
+			<helptext>您可以为版面添加或者删除指定主题.当您指定了主题的时候,所有会员都将使用这个主题,他们自己的设置将失效.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_frules</key>
-			<title>Forum Specific Rules</title>
-			<helptext>On this page, you can enter the rules for a specific forum. They can be shown as a link or shown directly on the forum page. They will be seen anytime someone is in this forum, as well as starting/replying to topics in this forum.</helptext>
+			<title>版规设置</title>
+			<helptext>您可以为您的板块设置使用规则.它会直接在板块上面显示出来或者只是显示链接.任何进入此版面的人都会看到版规,即使实在发表/回复主题的时候也一样.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_pedit</key>
-			<title>Forum Access Permissions</title>
-			<helptext><![CDATA[Check the box for access, uncheck to not allow access.<br />
-If you deny show access for a permission set, they will not see the forum.]]></helptext>
+			<title>论坛访问权限</title>
+			<helptext><![CDATA[选中即可访问,反之则禁止访问.<br />
+如果您禁止访问,会员就看不见此板块.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_edit</key>
-			<title>Editing Settings of a Forum</title>
-			<helptext><![CDATA[This section will allow you to edit an existing forum. If you wish to adjust the forum permissions (who has the ability to start, reply and read topics) click on 'Edit Permissions' on the <i>Manage Forums</i> page.<br />
-On this page you can enable posting moderation, topic ratings, polls, HTML, and many other features of the forum.]]></helptext>
+			<title>编辑论坛设置</title>
+			<helptext><![CDATA[如果您需要调整已经存在论坛的权限(谁可以阅读,发表,回复主题),在<i>论坛管理</i>页面点击'编辑权限'即可.<br />
+在此页面您可以开启发表选项,主题评分,投票, HTML,和其他的论坛功能.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_</key>
-			<title>IP.Board Diagnostics Tools</title>
-			<helptext><![CDATA[<b>Please note that these tools are moderately resource intensive - allow some time for them to run.</b><br />
-You are currently on the System Overview page. A quick overview of your server will be provided here, including your SQL and PHP versions, as well as other essential data. You can also view your IP.Board upgrade history at the bottom of this page.<br /><br />
-If you are experiencing <b>IPS Driver Errors</b>, please run the <a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">Database Checker</a>, to see if you are missing any database structure. If you are experiencing <b>forum slowness</b>, ensure your <a href="{base_url}&section=help&act=diag&code=dbindex" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">database indexes</a> are added properly. If you are having issues with <b>uploading</b> to the forum, please check your <a href="{base_url}&section=help&act=diag&code=filepermissions" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">file permissions</a>. Finally, if you are having issues with <b>blank pages</b>, please ensure none of your files have <a href="{base_url}&section=help&act=diag&code=whitespace" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">whitespace</a>.]]></helptext>
+			<title>IPB 诊断工具</title>
+			<helptext><![CDATA[<b>运行这些增强工具需要花费一些时间.</b><br />
+在系统概况里您将看到服务器的一些基本情况,包括您的 SQL 和 PHP 版本.您也可以查看此 IPB 的相关升级历史.<br /><br />
+如果您遇到 <b>IPS 驱动错误</b>,请运行<a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库检察</a>工具.如果您遇到<b>论坛缓慢</b>,确认您的<a href="{base_url}&section=help&act=diag&code=dbindex" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库索引</a>已经开启.如果您遇到<b>上传</b>方面的问题,请检查您的<a href="{base_url}&section=help&act=diag&code=filepermissions" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">文件权限</a>.最后,如果您遇到<b>空白页面</b>,请确认您的安装文件里面没有<a href="{base_url}&section=help&act=diag&code=whitespace" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">空白文件</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_dbchecker</key>
-			<title>Database Structure Check</title>
-			<helptext><![CDATA[If you are missing necessary database tables, or columns in those database tables, you will see database errors (commonly shown as <b>IPS Driver Error</b>) or missing data when browsing IPB. Please use the links or queries provided below to remedy any missing columns or tables.]]></helptext>
+			<title>数据库检查</title>
+			<helptext><![CDATA[如果您遇到数据库方面的错误(通常都会显示<b>IPS 驱动错误</b>).请点击左边的链接开始检查修复.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_dbindex</key>
-			<title>Database Index Check</title>
-			<helptext>Database indexes help your database engine work more efficiently with the data it hosts. If any of the indexes are missing, it can cause your site to run slower than it should. Please use the appropriate links or queries to fix any indexes reported missing below.</helptext>
+			<title>数据库索引检查</title>
+			<helptext>数据库索引能让您的数据库更加快速有效的运行.如果索引出现任何错误,您的论坛可能会变得比预期的缓慢.请点击左边的链接开始检查修复.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_filepermissions</key>
-			<title>File Permission Check</title>
-			<helptext><![CDATA[When the permissions for your files or folders are wrong, it can cause issues such as your attachments, skins, and emoticons not uploading correctly.<br />
-Certain files and directories must have the proper permissions set on them in order for IP.Board to properly write data to your disk. On Windows, you should ensure the files have "Read/Write" permissions, while on Unix/Linux you should ensure the files are "CHMOD 777".]]></helptext>
+			<title>文件权限检查</title>
+			<helptext><![CDATA[如果您的文件或者文件夹权限错误,论坛的某些附件,主题,和表情就不能正常上传.<br />
+IPB 在运行的时候对某一些文件或者文件夹会需要不同的权限设置来写入数据.在 Windows 系统下,您需要确认文件的"读/写" 权限, 如果是 Unix/Linux 您就需要确认文件的"777 属性".]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_whitespace</key>
-			<title>Whitespace Check</title>
-			<helptext><![CDATA[If there is any whitespace before or after the PHP tags in files used by IP.Board, it can result in blank pages or malformed HTML. If any results are returned you should open those files and delete the extra spaces or line breaks at the beginning and/or end of the file.<br />
+			<title>空格文件检查</title>
+			<helptext><![CDATA[如果在 PHP 标签之外出现空格,就会造成空白文件或者输入畸形的 HTML 结果.检查结束以后您需要删除 PHP 标签之外的空格或者空白换行.<br />
 <br />
-The starting PHP tag is:<br />
+PHP 标签开始于:<br />
 <b>&lt;?php</b> or <b>&lt;?</b><br />
 <br />
-The ending PHP tag is:<br />
+PHP 标签结束于:<br />
 <b>?&gt;</b>]]></helptext>
 		</helpsections>
 
@@ -388,73 +388,73 @@ Note: The statistics generated are based on the information currently held in th
 
 		<helpsections>
 			<key>admin_components_</key>
-			<title>Managing Your Components</title>
-			<helptext><![CDATA[All installed components will be shown on this page. To quickly disable or enable a specific component, click the image in the "Enabled" column.<br /><br />
-<img src="{skin_url}/images/aff_tick.png" alt="Green Checkmark" style="float:none;" /> - This image means the component is currently enabled on your IP.Board. Clicking it will change it to the image below.<br />
-<img src="{skin_url}/images/aff_cross.png" alt="Red X" style="float:none;" /> - This image means the component is currently disabled on your IP.Board. Clicking it will change it to the image above.<br /><br />
-To change the settings for your components, please visit the <a href="{base_url}&section=components">Components</a> tab.]]></helptext>
+			<title>管理您的组件</title>
+			<helptext><![CDATA[所有安装过的组件都会在这里显示.您可以点击"允许"栏目下面的图标来快速开启或者禁用组件.<br /><br />
+<img src="{skin_url}/images/aff_tick.png" alt="Green Checkmark" style="float:none;" /> - 这个图标表示此组件已经在论坛被启用.点击它就可以禁用此组件.<br />
+<img src="{skin_url}/images/aff_cross.png" alt="Red X" style="float:none;" /> - 这个图标表示此组件已经在论坛禁用. 点击它就可以启用此组件.<br /><br />
+请访问 <a href="{base_url}&section=components">组件</a>标签来设置您的组件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_emaillog_</key>
-			<title>Member-to-Member Email Logs</title>
-			<helptext>All emails sent from members are recorded here. This does not store bulk emails, subscription emails, or any other emails sent from the board itself.</helptext>
+			<title>会员邮件日志</title>
+			<helptext>论坛所有会员的邮件这里都有记录.但是不会记录一些比较大的邮件,订阅邮件, 和论坛的系统邮件.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_adminlog_</key>
-			<title>Admin Log Manager</title>
-			<helptext>You may view and remove actions performed by your administrators in mission critical areas of the Admin CP (such as forum control, member control, group control, help files, and moderator log management). Note this does not log setting changes.</helptext>
+			<title>管理员操作记录</title>
+			<helptext>您可以查看或者删除管理员话管理员在管理后台的一些操作记录(例如论坛面板,会员面板,群组面板,帮助文件,和版主操作记录).此操作不会再记录.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_emailerror_</key>
-			<title>Email Error Logs</title>
-			<helptext><![CDATA[When the board encounters an error sending the email, it will be logged here for investigation. If all of the board emails are encountering errors, please ensure your <a href="{base_url}&section=tools&act=op&code=findsetting&key=emailset-up">email settings</a> are correct.]]></helptext>
+			<title>邮件错误日志</title>
+			<helptext><![CDATA[当您使用邮件系统的时候遇到错误,错误信息会被记录在这里以备查看.如果论坛所有的邮件系统都出现错误,请确认您的<a href="{base_url}&section=tools&act=op&code=findsetting&key=emailset-up">邮件设置</a>是否正确.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_spiderlog_</key>
-			<title>Search Engine Spider Logs</title>
-			<helptext><![CDATA[If your IP.Board is visited by Search Engine Spiders that index your site, their visits will be logged here. Please note that this section may get very large and take up a lot of space. It is highly recommended to setup <a href="{base_url}&section=tools&act=op&code=findsetting&key=log_prune">Log Pruning</a> to help this.<br />
-To setup which spiders are logged, please visit the <a href="{base_url}&section=tools&act=op&code=findsetting&key=searchenginespiders">Search Engine Spiders</a> configuration page.]]></helptext>
+			<title>搜索引擎日志</title>
+			<helptext><![CDATA[如果您的论坛有搜索引擎蜘蛛访问,那么他们的操作将被记录在这里.需要提醒您的是此功能会使用服务器的大量存储资源来存储日志.建议您设置 <a href="{base_url}&section=tools&act=op&code=findsetting&key=log_prune">精简日志</a>来解决此问题.<br />
+想要记录哪些特殊的搜索引擎,请查看<a href="{base_url}&section=tools&act=op&code=findsetting&key=searchenginespiders">搜索引擎蜘蛛</a>配置页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_warnlog_</key>
-			<title>Warn Logs</title>
-			<helptext><![CDATA[If you have the <a href="{base_url}&section=tools&act=op&code=findsetting&key=warnsetup">Warning System</a> setup, this will log any warnings given to members. Please note that removing the log does not reduce the warning level of that specific member.]]></helptext>
+			<title>警告日志</title>
+			<helptext><![CDATA[如果您设置了<a href="{base_url}&section=tools&act=op&code=findsetting&key=warnsetup">警告系统</a>,这里就会记录所有会员的警告记录.请注意,删除警告记录并不能降低会员的警告级别.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_loginlog_</key>
-			<title>Admin Login Logs</title>
-			<helptext><![CDATA[This will show you every attempt made to log into your Admin CP. It will show you if the login is successful or not under the "Status" column. If you notice an unrecognized IP repeatedly trying to login, it is recommended to add this IP to your <a href="{base_url}&section=content&act=babw&code=ban">Ban Filters</a>.<br />You can also set it up so that if an IP fails to login after a certain amount of tries, they will be locked out. These settings can be found by <a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">clicking here</a>.]]></helptext>
+			<title>管理员登录日志</title>
+			<helptext><![CDATA[这里显示每一次尝试登录管理后台的记录.会现实登录已经成功或者属于非法侵入.如果您发现了一个非法入侵的 IP 地址,建议您把这个地址添加到 <a href="{base_url}&section=content&act=babw&code=ban">过滤列表</a>里.<br />您也可以设置错误登录的次数,超过此数字自动执行操作.<a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">点击这里</a>进行设置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_security_</key>
-			<title>Security Enhancements</title>
-			<helptext><![CDATA[While all of these tools are optional, it is <b><font color="red">highly</font></b> recommended to read through each one carefully and make any changes where needed. If you are unsure of what a certain feature does, please view our <a href="{base_url}&section=help&act=support&code=doctor">Documentation</a>. If you still have questions, please feel free to create a new <a href="{base_url}&section=help&act=support&code=support">support ticket</a>.]]></helptext>
+			<title>安全中心</title>
+			<helptext><![CDATA[所有这些工具都不是必须的,<b><font color="red">强烈</font></b>建议您在运行它们之前先仔细阅读相关的说明.如果您不确定,请阅读我们的<a href="{base_url}&section=help&act=support&code=doctor">文档</a>.如果您有任何问题,请提交一份<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_security_list_admins</key>
-			<title>Members with ACP Access</title>
-			<helptext><![CDATA[Please review everyone on this list. If you see anyone that you don't recognize or that shouldn't have access to your Admin CP, please remove them immediately. You can remove them by using the "Edit" link next to their name.]]></helptext>
+			<title>管理员列表</title>
+			<helptext><![CDATA[如果您在查看列表的时候发现不认识的帐号或者不该具有管理员权限的帐号,请立即移除他们的管理权限.您可以点击会员名字后面的"编辑"来移除.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_acpperms_acpp_list</key>
-			<title>Admin CP Restrictions</title>
-			<helptext>If you have members who can access the Admin CP, but are not placed in the Root Admin group, you can limit what they can do and see inside the Admin CP. Simply search for the member you want to restrict by clicking the drop-down menu below.</helptext>
+			<title>管理面板权限设置</title>
+			<helptext>如果您需要能访问管理面板的管理员,但是他们不在总管理员组里,您可以限制他们在管理面板里的操作. 点击右边的下拉菜单选择搜索添加管理员.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_index-gateways</key>
-			<title>Subscription Manager - Payment Gateways</title>
-			<helptext><![CDATA[Payment Gateways are services that allow you to collect money from users based off subscriptions. In order to use a gateway, you must have an account with the specific company. For example, if you wish to use PayPal, you must have an account on the <a href="https://www.paypal.com" target="_blank">PayPal website</a>.<br />
-To setup a gateway, click the drop-down to the right of the gateway, and select <i>Set Up Payment Gateway...</i>]]></helptext>
+			<title>支付网关管理</title>
+			<helptext><![CDATA[支付网关能让会员方便的支付论坛的付费项目.为了使用网关,您需要在对应的公司开设帐号.例如,如果您想使用 PayPal,您就必须先在<a href="https://www.paypal.com" target="_blank">PayPal 网站</a>注册一个帐号.<br />
+选择网关右边的下拉菜单 <i>设置支付网关...</i>来设置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -906,9 +906,9 @@ To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandf
 
 		<helpsections>
 			<key>tools_op_</key>
-			<title>System Settings</title>
-			<helptext><![CDATA[System Settings is the main control center for how your board operates. The Settings are grouped together in Setting Groups. You can see the Setting Groups lower down this page, in the same column. For altering a specific setting, you can search for it using the search box to the right of the title bar, just below this box.<br />
-Each Setting Group may have a help box for it. Also remember to click the help icon next to specific settings (<img src="{skin_url}/images/about.png" alt="!" style="float:none;" />) for more information on the use of that setting.]]></helptext>
+			<title>系统设置</title>
+			<helptext><![CDATA[这里包括了论坛设置的主要部分,设置选项都进行了分组. 您可以在下面看到这些设置组信息. 如果您需要进行一些特殊设置, 您也可以使用下面窗口右上角的搜索功能来帮助您找到.<br />
+每一个设置组通常都有对应的帮助窗口.您也可以点击特殊设置边上的帮助图标(<img src="{skin_url}/images/about.png" alt="!" style="float:none;" />)来获取更多的信息.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -920,8 +920,8 @@ Each Setting Group may have a help box for it. Also remember to click the help i
 
 		<helpsections>
 			<key>settinggroup_cpusaving</key>
-			<title>Have a busy forum? Forum running slow?</title>
-			<helptext>This is the section to help improve the performance of your board. Please read through each setting carefully, and adjust them accordingly.</helptext>
+			<title>论坛显示繁忙? 或者变得很慢?</title>
+			<helptext>通过这里的设置将提高您的论坛承载性能.请仔细阅读每一个设置选项,并做出恰当的调整.</helptext>
 		</helpsections>
 
 		<helpsections>
@@ -944,19 +944,19 @@ Save this file and reupload it to your board. Your IPB Portal will now be the fr
 
 		<helpsections>
 			<key>settinggroup_securityandprivacy</key>
-			<title>Security Settings</title>
-			<helptext><![CDATA[Security is a vital part of your forum. Please take special note to for each setting on this page. Also be sure to click the extra help icon next to specific settings.<br />
+			<title>安全设置</title>
+			<helptext><![CDATA[安全性是您论坛至关重要的部分.请仔细考虑并结合实际情况设置本页内容,并请点击帮助图标查看更加详细的帮助说明.<br />
 <br />
-This setting group helps you control member validation, spam bots, and other security/privacy features.<br />If you are still unsure after reading the setting description and optional help text, it is best to leave the setting to whatever the default is.]]></helptext>
+这个设置组将帮助您实现会员激活,垃圾信息控制和其他安全私密性的功能.<br />如果您在查看了相关功能说明和帮助信息之后仍然不理解,那么请保留原来的默认设置不作更改.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_attach_attach_edit</key>
-			<title>Attachment Mini-Image</title>
-			<helptext><![CDATA[This image will need to be stored in:<br />
+			<title>附件迷你图</title>
+			<helptext><![CDATA[迷你图存放在:<br />
 /style_images/<i>{imgdir}</i>/folder_mime_types/<br/><br/>
-For example, the information you would enter would be: <i>folder_mime_types/music.gif</i><br />
-Be sure this image is uploaded for each one of your custom image sets.]]></helptext>
+例如,像这样输入: <i>folder_mime_types/music.gif</i><br />
+请确认迷你图片已经上传到您需要的位置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
