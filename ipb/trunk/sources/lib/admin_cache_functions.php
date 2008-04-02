@@ -133,7 +133,7 @@ class admin_cache_functions
 			}
 		}		
 		
-		$this->messages[] = "Done wrapper rebuild... (id: ".implode(',',$theids).")";
+		$this->messages[] = "完成包装重建... (id: ".implode(',',$theids).")";
 	}
 	
 	//============================================================================================================
@@ -278,7 +278,7 @@ class admin_cache_functions
 				$this->_write_template_to_file( $id, $group['group_name'], $start.$out.$end );
 			}
 			
-			$this->messages[] = "Done HTML templates rebuild... (id: $id)";
+			$this->messages[] = "完成 HTML 模板重建... (id: $id)";
 		}
 	}
 	
@@ -326,7 +326,7 @@ class admin_cache_functions
 					{
 						if ( ! is_writeable( CACHE_PATH.'cache/skin_cache/cacheid_'.$id.'/'.$group_name.'.php' ) )
 						{
-							$this->messages[] = "<span class='rss-feed-invalid'>cache/skin_cache/cacheid_{$id}/{$group_name}.php not writeable - cannot cache to PHP file</span>";
+							$this->messages[] = "<span class='rss-feed-invalid'>cache/skin_cache/cacheid_{$id}/{$group_name}.php 无法写入 - 无法写入缓存到 PHP 文件</span>";
 							$good_to_go = 0;
 						}
 						else
@@ -342,7 +342,7 @@ class admin_cache_functions
 			}
 			else
 			{
-				$this->messages[] = "<span class='rss-feed-invalid'>cache/skin_cache/cacheid_{$id} not writeable - cannot cache to PHP file</span>";
+				$this->messages[] = "<span class='rss-feed-invalid'>cache/skin_cache/cacheid_{$id} 无法写入 - 无法写入缓存到 PHP 文件</span>";
 			}
 		}
 		

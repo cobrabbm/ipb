@@ -3258,7 +3258,7 @@ class ad_member
 	
 		if ( $this->ipsclass->vars['auth_allow_dnames'] )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>OR</u> Member's Display Name</b><div class='graytext'>如果您使用下面的搜索条件, 这里可以留空</div>",
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>或者</u> 会员显示名称</b><div class='graytext'>如果您使用下面的搜索条件, 这里可以留空</div>",
 																			 $this->ipsclass->adskin->form_dropdown( 'dnamewhere', array( 0 => array( 'begin'   , '开始于' ),
 																																		 1 => array( 'is'      , '等于'          ),
 																																		 2 => array( 'contains', '包含'    ),
@@ -3286,7 +3286,7 @@ class ad_member
 									                    )      );
 									                    
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>锁定的会员</b>" ,
-												                 $this->ipsclass->adskin->form_dropdown( "suspended", array( 0=>array('0','Either'),1=>array('yes', 'Yes'),2=>array('no', 'No') ), isset($_POST['suspended']) ? $_POST['suspended'] : '' )
+												                 $this->ipsclass->adskin->form_dropdown( "suspended", array( 0=>array('0','或'),1=>array('yes', '是'),2=>array('no', '否') ), isset($_POST['suspended']) ? $_POST['suspended'] : '' )
 									                    )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>IP 地址包含...</b>" ,
@@ -3314,15 +3314,15 @@ class ad_member
 									                    )      );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>注册时间 (MM-DD-YYYY)</b><div class='graytext'>留空第一个空格表示从最早时间开始搜索, 留空第二个空格表示搜索到当前时间</div>",
-												                 $this->ipsclass->adskin->form_simple_input( "registered_first", isset($_POST['registered_first']) ? $_POST['registered_first'] : '', 10 ). ' to ' .$this->ipsclass->adskin->form_simple_input( "registered_last", isset($_POST['registered_last']) ? $_POST['registered_last'] : '', 10 )
+												                 $this->ipsclass->adskin->form_simple_input( "registered_first", isset($_POST['registered_first']) ? $_POST['registered_first'] : '', 10 ). ' 到 ' .$this->ipsclass->adskin->form_simple_input( "registered_last", isset($_POST['registered_last']) ? $_POST['registered_last'] : '', 10 )
 									                    )      );
 									                    						     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>最后发贴时间 (MM-DD-YYYY)</b><div class='graytext'>留空第一个空格表示从最早时间开始搜索, 留空第二个空格表示搜索到当前时间</div>" ,
-												                 $this->ipsclass->adskin->form_simple_input( "last_post_first", isset($_POST['last_post_first']) ? $_POST['last_post_first'] : '', 10 ). ' to ' . $this->ipsclass->adskin->form_simple_input( "last_post_last", isset($_POST['last_post_last']) ? $_POST['last_post_last'] : '', 10 )
+												                 $this->ipsclass->adskin->form_simple_input( "last_post_first", isset($_POST['last_post_first']) ? $_POST['last_post_first'] : '', 10 ). ' 到 ' . $this->ipsclass->adskin->form_simple_input( "last_post_last", isset($_POST['last_post_last']) ? $_POST['last_post_last'] : '', 10 )
 									                    )      );
 									                    
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>最后活动时间 (MM-DD-YYYY)</b><div class='graytext'>留空第一个空格表示从最早时间开始搜索, 留空第二个空格表示搜索到当前时间</div>" ,
-												                 $this->ipsclass->adskin->form_simple_input( "last_activity_first", isset($_POST['last_activity_first']) ? $_POST['last_activity_first'] : '', 10 ). ' to ' . $this->ipsclass->adskin->form_simple_input( "last_activity_last", isset($_POST['last_activity_last']) ? $_POST['last_activity_last'] : '', 10 )
+												                 $this->ipsclass->adskin->form_simple_input( "last_activity_first", isset($_POST['last_activity_first']) ? $_POST['last_activity_first'] : '', 10 ). ' 到 ' . $this->ipsclass->adskin->form_simple_input( "last_activity_last", isset($_POST['last_activity_last']) ? $_POST['last_activity_last'] : '', 10 )
 									                    )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>所属用户组...</b>" ,
@@ -3359,7 +3359,7 @@ class ad_member
 				if ( $fields->cache_data[ $id ]['pf_type'] == 'drop' )
 				{
 					$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>".$fields->field_names[ $id ]."</b>" ,
-												                			 "<select class='dropdown' name='cm_field_{$id}'><option value=''>Any...</option>{$data}</select>"
+												                			 "<select class='dropdown' name='cm_field_{$id}'><option value=''>任何...</option>{$data}</select>"
 									                    			)      );
 				}
 				else
@@ -3649,7 +3649,7 @@ class ad_member
 			
 			if ( ! $r['temp_ban'] )
 			{
- 				$suspend_html = " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=banmember&mid={$r['id']}{$page_query}' title='Suspend Member'>定会员...</a>";
+ 				$suspend_html = " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=banmember&mid={$r['id']}{$page_query}' title='Suspend Member'>锁定会员...</a>";
 			}
 			else
 			{
