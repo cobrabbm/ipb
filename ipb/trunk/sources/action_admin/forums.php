@@ -991,11 +991,11 @@ class ad_forums
 				$perms 		= unserialize(stripslashes($forum['permission_array']));
 				$forum 		= array_merge( $forum, $perms );
 				
-				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='Change to Forum' />";
+				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='更改到论坛' />";
 			}
 			else
 			{
-				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='Change to Category' />";
+				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='更改到分类' />";
 			}
 			
 			//-----------------------------------------
@@ -1070,11 +1070,11 @@ class ad_forums
 			
 			if( $addnew_type == 'category' )
 			{
-				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='Change to Forum' />";
+				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='更改到论坛' />";
 			}
 			else
 			{
-				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='Change to Category' />";
+				$convert	= "<input type='submit' class='realbutton' onclick='do_convert()' value='更改到分类' />";
 			}
 		}
 
@@ -1616,7 +1616,7 @@ class ad_forums
 												  
 		
 		
-		$this->ipsclass->admin->save_log("Forum access permission edited in '{$this->ipsclass->input['name']}'");
+		$this->ipsclass->admin->save_log("论坛 '{$this->ipsclass->input['name']}' 权限编辑成功");
 		
 		$this->recache_forums();
 		
