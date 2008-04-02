@@ -203,7 +203,7 @@ class admin_functions
 			//----------------------------------
 			
 			$this->ipsclass->admin_session['_session_validated'] = 0;
-			$this->ipsclass->admin_session['_session_message']   = "No administration session found";
+			$this->ipsclass->admin_session['_session_message']   = "未发现管理员 Session 记录";
 			return FALSE;
 		}
 		else
@@ -221,7 +221,7 @@ class admin_functions
 				//----------------------------------
 				
 				$this->ipsclass->admin_session['_session_validated'] = 0;
-				$this->ipsclass->admin_session['_session_message']   = "Could not retrieve session record";
+				$this->ipsclass->admin_session['_session_message']   = "无法获取任何管理员 Session 记录";
 				return FALSE;
 			}
 			else if ($row['session_member_id'] == "")
@@ -231,7 +231,7 @@ class admin_functions
 				//----------------------------------
 				
 				$this->ipsclass->admin_session['_session_validated'] = 0;
-				$this->ipsclass->admin_session['_session_message']   = "Could not retrieve a valid member id";
+				$this->ipsclass->admin_session['_session_message']   = "无法获取一个有效的会员 ID 号码";
 				return FALSE;
 			}
 			else
@@ -286,7 +286,7 @@ class admin_functions
 					//----------------------------------
 					
 					$this->ipsclass->admin_session['_session_validated'] = 0;
-					$this->ipsclass->admin_session['_session_message']   = "Member ID invalid";
+					$this->ipsclass->admin_session['_session_message']   = "会员 ID 无效";
 					return FALSE;
 				}
 				else
@@ -302,7 +302,7 @@ class admin_functions
 						//----------------------------------
 						
 						$this->ipsclass->admin_session['_session_validated'] = 0;
-						$this->ipsclass->admin_session['_session_message']   = "Session member password mismatch";
+						$this->ipsclass->admin_session['_session_message']   = "Session 会员密码不匹配";
 						return FALSE;
 					}
 					else

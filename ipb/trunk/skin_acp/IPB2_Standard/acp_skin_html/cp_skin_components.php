@@ -14,7 +14,7 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tablesubheader'>Invision Power Board Information</div>
+ <div class='tablesubheader'>易维论坛信息</div>
  <div class='tablerow1'>
  This section is reserved for any components, such as Invision Gallery, Invision Chat and Invision Blog
  </div>
