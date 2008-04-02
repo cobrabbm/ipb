@@ -25,7 +25,7 @@ $IPBHTML .= <<<EOF
   <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;' title='ID: {$r['id']}'>{$r['name']}</td>
   <td align='right' width='5%' nowrap='nowrap'>
    $reorder
-   <img id="menum-{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /> &nbsp;
+   <img id="menum-{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /> &nbsp;
  </td>
  </tr>
 </table>
@@ -39,7 +39,7 @@ $IPBHTML .= <<<EOF
  <td align='left' width='40%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;' title='ID: {$r['id']}'>{$r['name']}</td>
  <td align='right' width='60%'>
  <input type='button' value='Re-order Children' class='realdarkbutton' onclick='locationjump( "&{$this->ipsclass->form_code}&code=reorder&f={$r['id']}&sub=1" )' />
- <img id="menum-{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /> &nbsp;
+ <img id="menum-{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /> &nbsp;
 </td>
 </tr>
 </table>
@@ -60,10 +60,10 @@ $IPBHTML .= <<<EOF
 <script type="text/javascript">
   menu_build_menu(
   "menum-{$r['id']}",
-  new Array( img_add    + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=new&p={$r['id']}'>New Forum...</a>",
-  			 img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&f={$r['id']}'>Edit Settings...</a>",
-  			 img_delete + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=delete&f={$r['id']}'>Delete Category...</a>",
-  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skinedit&f={$r['id']}'>Skin Options...</a>"
+  new Array( img_add    + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=new&p={$r['id']}'>新建论坛...</a>",
+  			 img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&f={$r['id']}'>编辑设置...</a>",
+  			 img_delete + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=delete&f={$r['id']}'>删除分类...</a>",
+  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skinedit&f={$r['id']}'>皮肤选项...</a>"
 		    ) );
  </script>
 <br />
@@ -129,7 +129,7 @@ function toggle_mod_settings()
 		}
 	}
 	
-	document.getElementById( 'togglemod' ).innerHTML = modshown ? 'Show Moderator Options' : 'Hide Moderator Options';
+	document.getElementById( 'togglemod' ).innerHTML = modshown ? '显示版主选项' : '隐藏版主选项';
 	modshown = modshown == 1 ? 0 : 1;
 }
 //]]>
@@ -139,18 +139,18 @@ EOF;
 if ( $this->ipsclass->input['showall'] )
 {
 $IPBHTML .= <<<EOF
-<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&showall=0'>Show Tieried</a>
+<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&showall=0'>层叠显示</a>
 EOF;
 }
 else
 {
 $IPBHTML .= <<<EOF
-<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&showall=1'>Show All</a>
+<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&showall=1'>显示全部</a>
 EOF;
 }
 $IPBHTML .= <<<EOF
 </div>
-<div class='taboff'><a href='#' onclick='toggle_mod_settings()' id='togglemod'>Show Moderator Options</a></div>
+<div class='taboff'><a href='#' onclick='toggle_mod_settings()' id='togglemod'>显示版主选项</a></div>
 <br clear='all' />
 <div id='mainforumwrapper'>
 EOF;
@@ -172,8 +172,8 @@ $IPBHTML .= <<<EOF
 <script type="text/javascript">
   menu_build_menu(
   "modmenu{$data['mid']}",
-  new Array( img_item   + " <a href='{$this->ipsclass->base_url}&section=content&amp;act=mod&code=remove&mid={$data['mid']}'>Remove...</a>",
-  			 img_item   + " <a href='{$this->ipsclass->base_url}&section=content&amp;act=mod&code=edit&mid={$data['mid']}'>Edit...</a>"
+  new Array( img_item   + " <a href='{$this->ipsclass->base_url}&section=content&amp;act=mod&code=remove&mid={$data['mid']}'>删除...</a>",
+  			 img_item   + " <a href='{$this->ipsclass->base_url}&section=content&amp;act=mod&code=edit&mid={$data['mid']}'>编辑...</a>"
 		    ) );
  </script>
 EOF;
@@ -231,8 +231,8 @@ function gomodform()
 <div class='tableborder'>
 <table cellpadding='4' cellspacing='0' width='100%' border='0' class='tablerow1'>
 <tr>
- <td align='left' valign='middle'>{$choose}&nbsp;<input type='button' class='realbutton' value='Reorder Children' onclick='gochildrenofthecorn()'/></td>
- <td align='right'><input type='button' class='realbutton' value='Add New Category' onclick='locationjump("&{$this->ipsclass->form_code}&code=new&type=category")' />
+ <td align='left' valign='middle'>{$choose}&nbsp;<input type='button' class='realbutton' value='子论坛排序' onclick='gochildrenofthecorn()'/></td>
+ <td align='right'><input type='button' class='realbutton' value='添加新分类' onclick='locationjump("&{$this->ipsclass->form_code}&code=new&type=category")' />
  &nbsp;&nbsp;<input type='submit' value='Reorder Categories' class='realbutton' /></form>
  </td>
 </tr>
@@ -245,11 +245,11 @@ function gomodform()
 <div class='tableborder'>
 <table cellpadding='2' cellspacing='0' width='100%' border='0' class='tablerow1'>
 <tr>
- <td valign='middle'><strong>Add a moderator to all checked forum(s):</strong></td>
+ <td valign='middle'><strong>给以下所选论坛添加版主:</strong></td>
  <td>
- Name <input class='realbutton' type='text' name='name' size='20' value='' /> <strong><i>OR</i></strong> Group {$mem_group}
+ 会员名称 <input class='realbutton' type='text' name='name' size='20' value='' /> <strong><i>或者</i></strong> 用户组 {$mem_group}
  </td>
- <td width='1%' valign='middle'><input type='button' class='realbutton' value='Go &gt;&gt;' onclick='gomodform()' /></td>
+ <td width='1%' valign='middle'><input type='button' class='realbutton' value='执行 &gt;&gt;' onclick='gomodform()' /></td>
 </tr>
 </table>
 </form>
@@ -278,7 +278,7 @@ EOF;
 if ( $r['id'] == $this->ipsclass->vars['forum_trash_can_id'] )
 {
 $IPBHTML .= <<<EOF
- <img src='{$this->ipsclass->adskin->img_url}/images/acp_trashcan.gif' border='0' title='This is the trashcan forum' />
+ <img src='{$this->ipsclass->adskin->img_url}/images/acp_trashcan.gif' border='0' title='这是回收站' />
 EOF;
 }
 
@@ -289,7 +289,7 @@ EOF;
 if ( ($r['skin_id'] != "") and ($r['skin_id'] > 0) )
 {
 $IPBHTML .= <<<EOF
-<br>[ Using Skin Set: {$skin} ]
+<br>[ 使用皮肤设置: {$skin} ]
 EOF;
 }
 
@@ -300,24 +300,24 @@ EOF;
 if ( $r['_modstring'] != "" )
 {
 $IPBHTML .= <<<EOF
-<div style='display:none' id='moddiv-{$r['id']}'><fieldset style='padding:4px;height:45px'><legend>Moderators</legend>{$r['_modstring']}</fieldset></div>
+<div style='display:none' id='moddiv-{$r['id']}'><fieldset style='padding:4px;height:45px'><legend>版主</legend>{$r['_modstring']}</fieldset></div>
 EOF;
 }
 
 $IPBHTML .= <<<EOF
  </td>
- <td class='tablerow1' align='right' width='5%' nowrap='nowrap'><input type='checkbox' title='Check this box to include this forum in the list of forums to add a moderator to' id='id_{$r['id']}' value='1' /> <img id="menu{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /></td>
+ <td class='tablerow1' align='right' width='5%' nowrap='nowrap'><input type='checkbox' title='点击多选框来选择需要添加版主的论坛' id='id_{$r['id']}' value='1' /> <img id="menu{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /></td>
 </tr>
 <script type="text/javascript">
   menu_build_menu(
   "menu{$r['id']}",
-  new Array( img_edit     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&f={$r['id']}'>Edit Settings...</a>",
-  			 img_info     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=pedit&f={$r['id']}'>Permissions...</a>",
-  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=empty&f={$r['id']}'>Empty Forum...</a>",
-  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=delete&f={$r['id']}'>Delete Forum...</a>",
-  			 img_edit     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=frules&f={$r['id']}'>Forum Rules...</a>",
-  			 img_view     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skinedit&f={$r['id']}'>Skin Options...</a>",
-  			 img_info      + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=recount&f={$r['id']}'>Resynchronise...</a>"
+  new Array( img_edit     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&f={$r['id']}'>编辑设置...</a>",
+  			 img_info     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=pedit&f={$r['id']}'>编辑权限...</a>",
+  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=empty&f={$r['id']}'>清空论坛...</a>",
+  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=delete&f={$r['id']}'>删除论坛...</a>",
+  			 img_edit     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=frules&f={$r['id']}'>论坛规则...</a>",
+  			 img_view     + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skinedit&f={$r['id']}'>主题选项...</a>",
+  			 img_info      + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=recount&f={$r['id']}'>重新同步...</a>"
 		    ) );
  </script>
 EOF;
@@ -338,8 +338,8 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <tr>
  <td class='tablerow1' width='100%' colspan='2'>
-	<strong style='font-size:11px;color:red;'>You have not created any forums in this category yet.<br /> It will not be displayed on the site, regardless of permission settings, until it contains at least one forum.</strong>
-	<div class='graytext'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=new&p={$parent_id}'>Click here to create a forum in this category</a></div>
+	<strong style='font-size:11px;color:red;'>当前分类下没有创建任何论坛.<br /> 不论权限设置如何它将不会在论坛显示出来, 除非您给它添加了一个论坛.</strong>
+	<div class='graytext'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=new&p={$parent_id}'>点击这里创建该分类下的一个论坛</a></div>
  </td>
 </tr>
 EOF;
@@ -351,7 +351,7 @@ return $IPBHTML;
 //===========================================================================
 // Forum: Build Permissions
 //===========================================================================
-function render_forum_permissions( $global=array(), $content="", $title='Permission Access Levels' ) {
+function render_forum_permissions( $global=array(), $content="", $title='进入许可级别' ) {
 
 $IPBHTML = "";
 //--starthtml--//
@@ -589,26 +589,26 @@ function checkrow( permid, status )
  <table cellpadding='4' cellspacing='0' border='0' width='100%'>
  <tr>
   <td class='tablesubheader' width='13%'>&nbsp;</td>
-  <td class='tablesubheader' width='14%' align='center'>Show Forum</td>
-  <td class='tablesubheader' width='14%' align='center'>Read Topics</td>
-  <td class='tablesubheader' width='14%' align='center'>Reply Topics</td>
-  <td class='tablesubheader' width='14%' align='center'>Start Topics</td>
-  <td class='tablesubheader' width='14%' align='center'>Upload</td>
-  <td class='tablesubheader' width='14%' align='center'>Download</td>
+  <td class='tablesubheader' width='14%' align='center'>显示</td>
+  <td class='tablesubheader' width='14%' align='center'>阅读</td>
+  <td class='tablesubheader' width='14%' align='center'>回复</td>
+  <td class='tablesubheader' width='14%' align='center'>发帖</td>
+  <td class='tablesubheader' width='14%' align='center'>上传</td>
+  <td class='tablesubheader' width='14%' align='center'>下载</td>
  </tr>
  <tr>
   <td colspan='7' class='tablerow1'>
   <fieldset>
-  <legend><strong>Global Permissions</strong> (All current and future permission sets)</legend>
+  <legend><strong>全局权限</strong> (所有当前和将来的权限设置)</legend>
   <table cellpadding='4' cellspacing='0' border='0' class='tablerow1' width='100%'>
   <tr>
    <td class='tablerow2' width='13%'>&nbsp;</td>
-   <td class='tablerow1' width='14%' style='background-color:#ecd5d8' onclick='check_all("SHOW")'><center><div class='red-perm'>Show Forum</div> {$global['html_show']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#dbe2de' onclick='check_all("READ")'><center><div class='green-perm'>Read Topics</div> {$global['html_read']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#dbe6ea' onclick='check_all("REPLY")'><center><div class='yellow-perm'>Reply Topics</div> {$global['html_reply']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#d2d5f2' onclick='check_all("START")'><center><div class='blue-perm'>Start Topics</div> {$global['html_start']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#ece6d8' onclick='check_all("UPLOAD")'><center><div class='orange-perm'>Upload</div> {$global['html_upload']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#dfdee9' onclick='check_all("DOWNLOAD")'><center><div class='purple-perm'>Download</div> {$global['html_download']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#ecd5d8' onclick='check_all("SHOW")'><center><div class='red-perm'>显示</div> {$global['html_show']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#dbe2de' onclick='check_all("READ")'><center><div class='green-perm'>阅读</div> {$global['html_read']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#dbe6ea' onclick='check_all("REPLY")'><center><div class='yellow-perm'>回复</div> {$global['html_reply']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#d2d5f2' onclick='check_all("START")'><center><div class='blue-perm'>发帖</div> {$global['html_start']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#ece6d8' onclick='check_all("UPLOAD")'><center><div class='orange-perm'>上传</div> {$global['html_upload']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#dfdee9' onclick='check_all("DOWNLOAD")'><center><div class='purple-perm'>下载</div> {$global['html_download']}</center></td>
    </tr>
   </table>
   </fieldset>
@@ -653,12 +653,12 @@ $IPBHTML .= <<<EOF
   <table cellpadding='4' cellspacing='0' border='0' class='tablerow1' width='100%'>
   <tr> 
    <td class='tablerow2' width='13%'><input type='button' id='button' value='+' onclick='checkrow({$data['perm_id']},1)' />&nbsp;<input type='button' id='button' value='-' onclick='checkrow({$data['perm_id']},0)' /></td>
-   <td class='tablerow1' width='14%' style='background-color:#ecd5d8' id='clickable_{$data['perm_id']}' onclick="toggle_box('SHOW_{$data['perm_id']}')"><center><div class='red-perm'>Show Forum</div> {$perm['html_show']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#dbe2de' id='clickable_{$data['perm_id1']}' onclick="toggle_box('READ_{$data['perm_id']}')"><center><div class='green-perm'>Read Topics</div> {$perm['html_read']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#dbe6ea' id='clickable_{$data['perm_id2']}' onclick="toggle_box('REPLY_{$data['perm_id']}')"><center><div class='yellow-perm'>Reply Topics</div> {$perm['html_reply']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#d2d5f2' id='clickable_{$data['perm_id3']}' onclick="toggle_box('START_{$data['perm_id']}')"><center><div class='blue-perm'>Start Topics</div> {$perm['html_start']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#ece6d8' id='clickable_{$data['perm_id4']}' onclick="toggle_box('UPLOAD_{$data['perm_id']}')"><center><div class='orange-perm'>Upload</div> {$perm['html_upload']}</center></td>
-   <td class='tablerow1' width='14%' style='background-color:#dfdee9' id='clickable_{$data['perm_id5']}' onclick="toggle_box('DOWNLOAD_{$data['perm_id']}')"><center><div class='purple-perm'>Download</div> {$perm['html_download']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#ecd5d8' id='clickable_{$data['perm_id']}' onclick="toggle_box('SHOW_{$data['perm_id']}')"><center><div class='red-perm'>显示</div> {$perm['html_show']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#dbe2de' id='clickable_{$data['perm_id1']}' onclick="toggle_box('READ_{$data['perm_id']}')"><center><div class='green-perm'>阅读</div> {$perm['html_read']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#dbe6ea' id='clickable_{$data['perm_id2']}' onclick="toggle_box('REPLY_{$data['perm_id']}')"><center><div class='yellow-perm'>回复</div> {$perm['html_reply']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#d2d5f2' id='clickable_{$data['perm_id3']}' onclick="toggle_box('START_{$data['perm_id']}')"><center><div class='blue-perm'>发帖</div> {$perm['html_start']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#ece6d8' id='clickable_{$data['perm_id4']}' onclick="toggle_box('UPLOAD_{$data['perm_id']}')"><center><div class='orange-perm'>上传</div> {$perm['html_upload']}</center></td>
+   <td class='tablerow1' width='14%' style='background-color:#dfdee9' id='clickable_{$data['perm_id5']}' onclick="toggle_box('DOWNLOAD_{$data['perm_id']}')"><center><div class='purple-perm'>下载</div> {$perm['html_download']}</center></td>
    </tr>
   </table>
   </fieldset>
@@ -689,17 +689,17 @@ EOF;
 if ( $relative['next'] > 0 )
 {
 $IPBHTML .= <<<EOF
-<input type='submit' name='donext' value='Save and Edit Next' class='realdarkbutton' />
+<input type='submit' name='donext' value='保存和编辑下一步' class='realdarkbutton' />
 EOF;
 }
 $IPBHTML .= <<<EOF
-<input type='submit' value='Save Only' class='realbutton' />
-<input type='submit' name='reload' value='Save and Reload' class='realbutton' />
+<input type='submit' value='只保存' class='realbutton' />
+<input type='submit' name='reload' value='保存并重新加载' class='realbutton' />
 EOF;
 if ( $relative['next'] > 0 )
 {
 $IPBHTML .= <<<EOF
-<input type='submit' name='doprevious' value='Save and Edit Previous' class='realdarkbutton' />
+<input type='submit' name='doprevious' value='保存并编辑上一个' class='realdarkbutton' />
 EOF;
 }
 $IPBHTML .= <<<EOF
@@ -740,10 +740,10 @@ function do_convert()
  <tr>
    <td width='40%' class='tablerow1' colspan='2'>
     <fieldset>
-    <legend><strong>Basic Settings</strong></legend>
+    <legend><strong>基本设置</strong></legend>
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tr>
-   		<td width='40%' class='tablerow1'><strong>{$form['addnew_type_upper']} Name</strong></td>
+   		<td width='40%' class='tablerow1'><strong>{$form['addnew_type_upper']} 名称</strong></td>
    		<td width='60%' class='tablerow2'>{$form['name']}</td>
  	</tr>
 EOF;
@@ -752,20 +752,20 @@ if( $form['addnew_type'] != 'category' )
 {
 $IPBHTML .= <<<EOF
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Forum Description</strong><div class='desctext'>You may use HTML - linebreaks automatically converted to &lt;br&gt;</div></td>
+   		<td width='40%' class='tablerow1'><strong>论坛简介</strong><div class='desctext'>您可以使用 HTML 代码 - 换行符将自动转换成 &lt;br&gt;</div></td>
    		<td width='60%' class='tablerow2'>{$form['description']}</td>
  	</tr>
 
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Forum Parent</strong></td>
+   		<td width='40%' class='tablerow1'><strong>上级论坛</strong></td>
    		<td width='60%' class='tablerow2'>{$form['parent_id']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Forum State</strong></td>
+   		<td width='40%' class='tablerow1'><strong>论坛状态</strong></td>
    		<td width='60%' class='tablerow2'>{$form['status']}</td>
  	</tr> 	
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Treat this forum as a category?</strong><div class='desctext'>If this is set to 'Yes' previously posted topics will not display, and posting in this forum will not be allowed.  Users will only be allowed to view the subforums under this forum.  If this is set to yes, the rest of the settings will have no effect.</div></td>
+   		<td width='40%' class='tablerow1'><strong>当前论坛作为分类?</strong><div class='desctext'>如果设置为 '是' 先前的帖子将不会显示, 并且分类中不允许发布主题. 会员将只能浏览当前分类下子论坛的内容. 如果设置为是, 下面其他的设置将不再起作用.</div></td>
    		<td width='60%' class='tablerow2'>{$form['sub_can_post']}</td>
  	</tr>
     </table>
@@ -776,18 +776,18 @@ $IPBHTML .= <<<EOF
  <tr>
    <td width='40%' class='tablerow1' colspan='2'>
     <fieldset>
-    <legend><strong>Forum Redirect Settings</strong></legend>
+    <legend><strong>论坛跳转设置</strong></legend>
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tr>
-   		<td width='40%' class='tablerow1'><strong>Redirection URL</strong></td>
+   		<td width='40%' class='tablerow1'><strong>跳转 URL 地址</strong></td>
    		<td width='60%' class='tablerow2'>{$form['redirect_url']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Enable URL redirection</strong><div class='desctext'>If 'yes' you can skip the rest of this form as the settings will have no effect and this forum will act like as a redirect link. Current posts will not be accessible when enabled.</div></td>
+   		<td width='40%' class='tablerow1'><strong>开启 URL 跳转</strong><div class='desctext'>如果 '开启' 这一选项以下的设置将不会生效, 该论坛将作为一个链接而存在. 该论坛下所有的主题也将不再显示.</div></td>
    		<td width='60%' class='tablerow2'>{$form['redirect_on']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Number of redirect clicks</strong></td>
+   		<td width='40%' class='tablerow1'><strong>跳转次数</strong></td>
    		<td width='60%' class='tablerow2'>{$form['redirect_hits']}</td>
  	</tr>
     </table>
@@ -798,14 +798,14 @@ $IPBHTML .= <<<EOF
  <tr>
    <td width='40%' class='tablerow1' colspan='2'>
     <fieldset>
-    <legend><strong>Permission Settings</strong></legend>
+    <legend><strong>权限设置</strong></legend>
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tr>
-   		<td width='40%' class='tablerow1'><strong>Allow members who can see the forum but cannot read topics to see the topic list</strong><div class='desctext'>If yes, the member will be able to see the topic titles but will not be able to read the topic posts when clicked.</div></td>
+   		<td width='40%' class='tablerow1'><strong>允许可以显示论坛但不能阅读主题的会员查看主题列表</strong><div class='desctext'>如果允许, 会员将会被允许查看主题列表但是仍然不能阅读主题内容.</div></td>
    		<td width='60%' class='tablerow2'>{$form['permission_showtopic']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Custom 'Permission Denied' Message</strong><div class='desctext'>You may use HTML - linebreaks automatically converted to &lt;br&gt;.<br />If left blank, a default 'permission denied' error is used.</div></td>
+   		<td width='40%' class='tablerow1'><strong>自定义 '权限禁止' 提示信息</strong><div class='desctext'>您可以使用 HTML 代码 - 换行符将自动转换成 &lt;br&gt;.<br />如果留空, 将显示默认的 '权限禁止' 信息.</div></td>
    		<td width='60%' class='tablerow2'>{$form['permission_custom_error']}</td>
  	</tr>
     </table>
@@ -816,34 +816,34 @@ $IPBHTML .= <<<EOF
  <tr>
    <td width='40%' class='tablerow1' colspan='2'>
     <fieldset>
-    <legend><strong>Postable Forum Settings: Options</strong></legend>
+    <legend><strong>论坛发帖设置: 选项</strong></legend>
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tr>
-   		<td width='40%' class='tablerow1'><strong>Enable HTML Posting (where allowed)</strong><div class='desctext'>This will allow HTML to be posted and executed.</div></td>
+   		<td width='40%' class='tablerow1'><strong>开启 HTML 发帖 (如果系统允许)</strong><div class='desctext'>开启这一选项将在发布的主题中允许 HTML 代码的执行.</div></td>
    		<td width='60%' class='tablerow2'>{$form['use_html']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Enable BBCode Posting</strong></td>
+   		<td width='40%' class='tablerow1'><strong>开启 BBCode 发帖</strong></td>
    		<td width='60%' class='tablerow2'>{$form['use_ibc']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Enable Quick Reply</strong></td>
+   		<td width='40%' class='tablerow1'><strong>开启快速回复</strong></td>
    		<td width='60%' class='tablerow2'>{$form['quick_reply']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Enable Polls (per user group option)</strong></td>
+   		<td width='40%' class='tablerow1'><strong>开启投票 (用户组选项)</strong></td>
    		<td width='60%' class='tablerow2'>{$form['allow_poll']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Enable Poll Bump</strong><div class='desctext'>If enabled, a poll vote will move the topic to the top of the list when sorted by date.</td>
+   		<td width='40%' class='tablerow1'><strong>开启投票前置</strong><div class='desctext'>如果开启这一选项, 每一个新的投票都将像回帖一样可以使得投票主题前置.</td>
    		<td width='60%' class='tablerow2'>{$form['allow_pollbump']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Enable Topic Rating (per user group option)</strong></td>
+   		<td width='40%' class='tablerow1'><strong>开启主题评分 (用户组选项)</strong></td>
    		<td width='60%' class='tablerow2'>{$form['forum_allow_rating']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Enable Post Count Incrementation</strong><div class='desctext'>If enabled, posts in this forum increase member's cumulative post count.</td>
+   		<td width='40%' class='tablerow1'><strong>开启帖子计数</strong><div class='desctext'>如果开启这一选项, 这一论坛中的帖子将计入会员发帖数.</td>
    		<td width='60%' class='tablerow2'>{$form['inc_postcount']}</td>
  	</tr>
     </table>
@@ -854,22 +854,22 @@ $IPBHTML .= <<<EOF
  <tr>
    <td width='40%' class='tablerow1' colspan='2'>
     <fieldset>
-    <legend><strong>Postable Forum Settings: Moderation</strong></legend>
+    <legend><strong>论坛发帖设置: 管理</strong></legend>
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tr>
-   		<td width='40%' class='tablerow1'><strong>Enable Posting Moderation</strong><div class='desctext'>Requires a moderator to manually add posts/topics to the forum.</div></td>
+   		<td width='40%' class='tablerow1'><strong>开启主题管理?</strong><div class='desctext'>需要版主人工添加帖子或主题到这一论坛.</div></td>
    		<td width='60%' class='tablerow2'>{$form['preview_posts']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Email addresses to send new topic awaiting approval notification</strong><div class='desctext'>This can be left blank</div></td>
+   		<td width='40%' class='tablerow1'><strong>待审核主题列表接收邮件地址</strong><div class='desctext'>可以留空</div></td>
    		<td width='60%' class='tablerow2'>{$form['notify_modq_emails']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Forum Password</strong><div class='desctext'>Leave this box empty if you do not require this.</div></td>
+   		<td width='40%' class='tablerow1'><strong>论坛密码</strong><div class='desctext'>如果您不需要这一设置请留空.</div></td>
    		<td width='60%' class='tablerow2'>{$form['password']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Exempt Groups</strong><div class='desctext'>If you require a password to access this forum, you can select groups who will not need to enter the password in.</div></td>
+   		<td width='40%' class='tablerow1'><strong>特权用户组</strong><div class='desctext'>如果您设置了论坛密码, 您可以选择下面的用户组作为特权用户组而绕过密码验证.</div></td>
    		<td width='60%' class='tablerow2'>{$form['password_override']}</td>
  	</tr> 	
     </table>
@@ -880,22 +880,22 @@ $IPBHTML .= <<<EOF
  <tr>
    <td width='40%' class='tablerow1' colspan='2'>
     <fieldset>
-    <legend><strong>Postable Forum Settings: Sorting and Ordering</strong></legend>
+    <legend><strong>论坛发帖设置: 排序和整理</strong></legend>
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tr>
-   		<td width='40%' class='tablerow1'><strong>Default date cut off for topic display</strong></td>
+   		<td width='40%' class='tablerow1'><strong>默认日期范围</strong></td>
    		<td width='60%' class='tablerow2'>{$form['prune']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Default sort key</strong></td>
+   		<td width='40%' class='tablerow1'><strong>默认排序键值</strong></td>
    		<td width='60%' class='tablerow2'>{$form['sort_key']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Default sort order</strong></td>
+   		<td width='40%' class='tablerow1'><strong>默认排序顺序</strong></td>
    		<td width='60%' class='tablerow2'>{$form['sort_order']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Default sort filter</strong></td>
+   		<td width='40%' class='tablerow1'><strong>默认排序过滤</strong></td>
    		<td width='60%' class='tablerow2'>{$form['topicfilter']}</td>
  	</tr>
     </table>
@@ -944,7 +944,7 @@ return $IPBHTML;
 //===========================================================================
 // Forum: Build Permissions
 //===========================================================================
-function render_cat_permissions( $data=array(), $select_all='', $title='Permission Access Levels' ) {
+function render_cat_permissions( $data=array(), $select_all='', $title='权限许可级别' ) {
 
 $IPBHTML = "";
 //--starthtml--//
@@ -999,17 +999,17 @@ function perm_check_all( obj )
  <div class='tableheaderalt' id='perm-header'>{$title}</div>
  <table cellpadding='4' cellspacing='0' border='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='100%' align='center'>Show Category</td>
+  <td class='tablesubheader' width='100%' align='center'>显示分类</td>
  </tr>
 <tr>
   <td class='tablerow1'>
   <fieldset>
-  <legend><strong>Show Permissions</strong></legend>
+  <legend><strong>显示权限</strong></legend>
   <table cellpadding='4' cellspacing='0' border='0' class='tablerow1' width='100%'>
   <tr>
-   <td class='tablerow2' width='40%' valign='middle' align='right'&nbsp;&nbsp;><span class='desctext'>Show Forum</span></td>
+   <td class='tablerow2' width='40%' valign='middle' align='right'&nbsp;&nbsp;><span class='desctext'>显示论坛</span></td>
    <td class='tablerow1' width='60%'>
-   	<input type='checkbox' name='show_all' id='show_all' value='1' onclick='perm_check_all("show")' {$select_all} /> Select All Current and Future Sets
+   	<input type='checkbox' name='show_all' id='show_all' value='1' onclick='perm_check_all("show")' {$select_all} /> 选择所有当前和将来的设置
    	<br /><select onchange='perm_check("show")' id='show' name='show_permissions[]' size='6' multiple='true'>
 EOF;
 
