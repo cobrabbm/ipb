@@ -6,12 +6,12 @@
 			<title>后台帮助系统</title>
 			<helptext><![CDATA[<b>欢迎来到后台帮助系统</b>
 <br />这个系统将提供您关于一些特殊设置和管理页面方面的更加完善的信息.
-<br />For pages that hold more information, you will see a box just like this one. 
-<br />For individual settings, an image will appear next to them, which you can click for more information. The image will appear as: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
+<br />在其他相关的设置页面,您也会看到类似的帮助信息提示. 
+<br />默认设置下,帮助信息的边上都会有一个图标,表示这里有更多的信息供参考,您可以点击此图标获取.图标如下: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
 <br />
-<br />You can minimize each box by using the minimize icon in the top right of each box. To turn these help boxes off:
-<br /><a href="{base_url}&section=tools&act=op&search=acp+help+system&code=setting_view">Click here</a> to be sent to the settings page for this.
-<br />Alternatively you can simply navigate to the <i>Tools & Settings</i> tab, click on <i>General Configuration</i>, and then set <i>ACP Help System</i> to <i>No</i>.]]></helptext>
+<br />您可以点击帮助信息提示右上角的三角符号把此信息收缩起来:
+<br /><a href="{base_url}&section=tools&act=op&search=acp+help+system&code=setting_view">点击这里</a>可以关闭帮助信息提示功能.
+<br />通过点击 <i>工具设置</i>面板,点击<i>常规设置</i>,设置<i>ACP 帮助系统</i>为<i>否</i>即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
