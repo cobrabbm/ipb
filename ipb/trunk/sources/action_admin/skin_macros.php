@@ -273,7 +273,7 @@ class ad_skin_macros {
 		
 		$this->ipsclass->admin->page_detail = "要编辑宏, 请点击宏旁的“编辑”按钮.";
 										 
-		$this->ipsclass->admin->page_title  = "编辑皮肤 {$skin['set_name']} 的宏替换";
+		$this->ipsclass->admin->page_title  = "编辑主题 {$skin['set_name']} 的宏替换";
 		
 		//-----------------------------------------
 		// Start output
@@ -461,16 +461,16 @@ class ad_skin_macros {
 		$this->ipsclass->html .= "<br />
 							<div><strong>宏替换例程</strong><br />
 							如果您添加了一个变量“green_font”，设置它替换为 '&lt;font color='green'>', 那么那么每一个 <span style='color:red'><b>&lt;{green_font}&gt;</b></span> 将被自动转换成 &lt;font color='green'>
-							<br /><b>&lt;#IMG_DIR#></b> 任何宏都可以使用, 此标记将自动转换为对应皮肤的图像目录
+							<br /><b>&lt;#IMG_DIR#></b> 任何宏都可以使用, 此标记将自动转换为对应主题的图像目录
 							</div><br />
 							<div><strong>宏替换图例:</strong><br />
 							{$this->altered} 此项目有自定义内容.
 							<br />{$this->unaltered} 此项目没有自定义内容.
-							<br />{$this->inherited} 此项目继承了父皮肤的自定义内容.
+							<br />{$this->inherited} 此项目继承了父主题的自定义内容.
 							</div>";
 		
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
-		$this->ipsclass->admin->nav[] = array( '' ,'编辑皮肤 '.$skin['set_name'] .' 的宏替换');
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'主题管理' );
+		$this->ipsclass->admin->nav[] = array( '' ,'编辑主题 '.$skin['set_name'] .' 的宏替换');
 		
 		$this->ipsclass->admin->output();
 		

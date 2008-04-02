@@ -496,7 +496,7 @@ $IPBHTML .= <<<EOF
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=loginauth&amp;code=master_xml_export'>登录模块</a>
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=group&amp;code=master_xml_export'>用户组</a>
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=attach&amp;code=master_xml_export'>附件</a>
-	&middot; <a href='{$this->ipsclass->base_url}&amp;section=lookandfeel&amp;act=sets&amp;code=master_xml_export'>皮肤</a>
+	&middot; <a href='{$this->ipsclass->base_url}&amp;section=lookandfeel&amp;act=sets&amp;code=master_xml_export'>主题</a>
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=task&amp;code=master_xml_export'>任务</a>
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=help&amp;code=master_xml_export'>FAQ</a>
 	&middot; <a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=bbcode&amp;code=bbcode_export'>BBCode</a>
@@ -1029,19 +1029,19 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-   您或者您的会员遇到了皮肤错误. 下面的动作自动完成了:
+   您或者您的会员遇到了主题错误. 下面的动作自动完成了:
    <ul>
-	<li>他们已经被告知清除他们的皮肤设置</li>
+	<li>他们已经被告知清除他们的主题设置</li>
 	<li>他们被告知点击链接来尝试进入后台</li>
-	<li>系统后台已经记录皮肤错误并且重建皮肤文件缓存, 启用默认皮肤并且转而采用安全模式</li>
+	<li>系统后台已经记录主题错误并且重建主题文件缓存, 启用默认主题并且转而采用安全模式</li>
    </ul>
    <b>下一步怎么做</b>
    <ul>
-	<li>首先, 如果您不希望启用安全模式的皮肤, 请设置 'skin_cache' 文件夹属性为可写这样系统才能够向文件夹中写入皮肤文件缓存</li>
-	<li>如果文件夹权限正确, 请您检查 '系统设置 -&gt; 通用系统设置' 点击禁用 '安全模式皮肤' - 如果您不需要这一设置</li>
+	<li>首先, 如果您不希望启用安全模式的主题, 请设置 'skin_cache' 文件夹属性为可写这样系统才能够向文件夹中写入主题文件缓存</li>
+	<li>如果文件夹权限正确, 请您检查 '系统设置 -&gt; 通用系统设置' 点击禁用 '安全模式主题' - 如果您不需要这一设置</li>
 	<li>As a precaution, rebuild all your skins by following the link below</li>
    </ul>
-   <b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>重建所有皮肤缓存 & 移除这一警告</a> &lt;&lt;</b>
+   <b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>重建所有主题缓存 & 移除这一警告</a> &lt;&lt;</b>
 EOF;
 
 //--endhtml--//
@@ -1057,8 +1057,8 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-   您将需要更新所有皮肤缓存来确保新的模板项可以正确添加.
-   <br /><br /><b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>重建所有皮肤缓存 & 移除这一警告</a> &lt;&lt;</b>
+   您将需要更新所有主题缓存来确保新的模板项可以正确添加.
+   <br /><br /><b>&gt;&gt; <a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets&code=rebuildalltemplates&removewarning=1'>重建所有主题缓存 & 移除这一警告</a> &lt;&lt;</b>
 EOF;
 
 //--endhtml--//

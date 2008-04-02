@@ -570,7 +570,7 @@ class ad_sql_module {
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "错误" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("抱歉, 你不能删除或者更新该数据") );
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("抱歉, 您不能删除或者更新该数据") );
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->end_table();	
 				
@@ -744,7 +744,7 @@ class ad_sql_module {
 		
 		if (strtoupper($this->ipsclass->input['tool']) == 'DROP' || strtoupper($this->ipsclass->input['tool']) == 'CREATE' || strtoupper($this->ipsclass->input['tool']) == 'FLUSH')
 		{
-			$this->ipsclass->admin->error("抱歉, 你不能那样做");
+			$this->ipsclass->admin->error("抱歉, 您不能那样做");
 		}
 		
 		foreach($tables as $table)

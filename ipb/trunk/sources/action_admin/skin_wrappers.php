@@ -157,9 +157,9 @@ class ad_skin_wrappers {
 		
 		if ( ! $this->ipsclass->input['savereload'] )
 		{
-			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'皮肤管理' );
+			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'主题管理' );
 			$this->ipsclass->main_msg = "论坛页面结构已更新";
-			$this->ipsclass->admin->done_screen("坛页面结构已更新", "皮肤管理", 'section='.$this->ipsclass->section_code.'&act=sets', "redirect" );
+			$this->ipsclass->admin->done_screen("坛页面结构已更新", "主题管理", 'section='.$this->ipsclass->section_code.'&act=sets', "redirect" );
 		}
 		else
 		{
@@ -286,8 +286,8 @@ class ad_skin_wrappers {
 		// Output
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
-		$this->ipsclass->admin->nav[] = array( '' ,'编辑皮肤 '.$this_set['set_name'] .' 的论坛页面结构' );
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'主题管理' );
+		$this->ipsclass->admin->nav[] = array( '' ,'编辑主题 '.$this_set['set_name'] .' 的论坛页面结构' );
 		
 		$this->ipsclass->admin->output();
 	}

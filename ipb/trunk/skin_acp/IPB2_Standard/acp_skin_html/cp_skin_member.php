@@ -221,7 +221,7 @@ $IPBHTML .= <<<EOF
 				<td width='60%' class='tablerow2'>{$form['language']}</td>
 			 </tr>
 			 <tr>
-				<td width='40%' class='tablerow1'><strong>皮肤选择</strong></td>
+				<td width='40%' class='tablerow1'><strong>主题选择</strong></td>
 				<td width='60%' class='tablerow2'><select name='skin' class='dropdown'><option value='0'>--无 / 使用默认设置--</option>{$form['_skin_list']}</select></td>
 			 </tr>
 			 <tr>

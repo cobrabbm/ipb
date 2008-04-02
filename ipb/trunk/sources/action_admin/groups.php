@@ -2128,7 +2128,7 @@ class ad_groups
 												  $this->ipsclass->adskin->form_multiselect("permid[]", $perm_masks, $arr, 5, 'onfocus="saveit(this)"; onchange="saveit(this)";' )."<br><input style='margin-top:5px' id='editbutton' type='button' onclick='show_me();' value='显示选中的许可集'>"
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>组图标</b><div style='color:gray'>可以使用相对连接, 例如 <b>style_images/1/folder_team_icons/admin.gif</b><br />也可以是一个以 <b>'http://'</b> 开头的完整连接<br/ >使用 <b>style_images/&lt;#IMG_DIR#&gt;/folder_team_icons/{image}</b>（用图片文件名代替 {image}）可以根据会员选择的皮肤来动态调用图片. </div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>组图标</b><div style='color:gray'>可以使用相对连接, 例如 <b>style_images/1/folder_team_icons/admin.gif</b><br />也可以是一个以 <b>'http://'</b> 开头的完整连接<br/ >使用 <b>style_images/&lt;#IMG_DIR#&gt;/folder_team_icons/{image}</b>（用图片文件名代替 {image}）可以根据会员选择的主题来动态调用图片. </div>" ,
 												  $this->ipsclass->adskin->form_textarea("g_icon", htmlspecialchars($group['g_icon']) )
 									     )      );
 		
@@ -2154,7 +2154,7 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "上传权限", "悄悄话和帖子中上传附件的权限" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "上传权限", "短消息和帖子中上传附件的权限" );
 		
 		if( $type == 'edit' AND $group['g_attach_max'] == 0 )
 		{
@@ -2171,7 +2171,7 @@ class ad_groups
 		
 		$ini_max = @ini_get( 'upload_max_filesize' ) ? @ini_get( 'upload_max_filesize' ) : '<i>cannot obtain</i>';
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>全局上传空间( 包括悄悄话和帖子, 单位:KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 -1 禁止上传, 输入 0 取消限制, 只受到 PHP 的最大上传限制.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>全局上传空间( 包括短消息和帖子, 单位:KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 -1 禁止上传, 输入 0 取消限制, 只受到 PHP 的最大上传限制.</div>" ,
 																 $this->ipsclass->adskin->form_input("g_attach_max", $group['g_attach_max'] ). ' (currently: '.$group['g_attach_maxdis'].')' . "<br /><b> {$ini_max}</b>"
 														)      );
 										
@@ -2188,7 +2188,7 @@ class ad_groups
 			$group['g_attach_per_postdis'] = $this->ipsclass->size_format( $group['g_attach_per_post'] * 1024 );
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>每个帖子或悄悄话的最大上传空间 ( 单位 KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 0 取消限制. 这个数字必须比全局限制小.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>每个帖子或短消息的最大上传空间 ( 单位 KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 0 取消限制. 这个数字必须比全局限制小.</div>" ,
 																 $this->ipsclass->adskin->form_input("g_attach_per_post", $group['g_attach_per_post'] ). ' (currently: '.$group['g_attach_per_postdis'].')' . "<br /><b>Note that single file uploads are also limited by your PHP configuration to {$ini_max}</b>"
 														)      );
 									     
@@ -2202,7 +2202,7 @@ class ad_groups
 												  $this->ipsclass->adskin->form_yes_no("g_avatar_upload", $group['g_avatar_upload'] )
 									     )      );
 									     						     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许在悄悄话上传附件?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许在短消息上传附件?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_can_msg_attach", $group['g_can_msg_attach'] )
 									     )      );
 									     
@@ -2253,15 +2253,15 @@ class ad_groups
 												  $this->ipsclass->adskin->form_yes_no("g_edit_profile", $group['g_edit_profile'] )
 									     )      );							     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以使用悄悄话功能?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以使用短消息功能?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_use_pm", $group['g_use_pm'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许批量发送悄悄话的最大会员数?$guest_legend<br>( 输入0或者默认离开表示禁止)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许批量发送短消息的最大会员数?$guest_legend<br>( 输入0或者默认离开表示禁止)" ,
 												  $this->ipsclass->adskin->form_input("g_max_mass_pm", $group['g_max_mass_pm'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>存储悄悄话最大数量?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>存储短消息最大数量?$guest_legend" ,
 												  $this->ipsclass->adskin->form_input("g_max_messages", $group['g_max_messages'] )
 									     )      );
 									     

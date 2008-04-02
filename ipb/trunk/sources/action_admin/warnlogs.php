@@ -507,7 +507,7 @@ class ad_warnlogs {
 		
 		$form_array = array(
 							  0 => array( 'notes'  , '全部记录' ),
-							  1 => array( 'contact', '发送邮件/悄悄话的记录'  ),
+							  1 => array( 'contact', '发送邮件/短消息的记录'  ),
 						   );
 			
 		//-----------------------------------------

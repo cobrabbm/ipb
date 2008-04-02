@@ -48,7 +48,7 @@ $lang = array (
 
 'sm_today_posters'	=> "今日发帖前20名",
 'sm_all_posters'	=> "发帖总数前20名",
-'sm_forum_leaders'	=> "论坛管理团队",
+'sm_forum_leaders'	=> "论坛管理用户组",
 'sm_todays_posts'	=> "今日最活跃主题",
 'sm_my_last_posts'	=> "我最后10篇帖子",
 

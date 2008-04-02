@@ -792,7 +792,7 @@ EOF;
 		if ( intval($cache_array['last_deepscan_check']) < time() - 30 * 86400 )
 		{
 			$content['bad'] .= $this->html->security_item_bad(  'IPB 可执行文件深度扫描',
-			 													'本工具能找出并分析你的 IPB 安装目录中的可执行文件.<br />已经有一月以上没有运行本工具',
+			 													'本工具能找出并分析您的 IPB 安装目录中的可执行文件.<br />已经有一月以上没有运行本工具',
 																'运行工具',
 																$this->ipsclass->form_code_js.'&code=deep_scan',
 																'deepscan' );
@@ -802,7 +802,7 @@ EOF;
 		{
 			$last_run 		  = $this->ipsclass->get_date( $cache_array['last_deepscan_check'], 'SHORT' );
 			$content['good'] .= $this->html->security_item_good(  'IPB 可执行文件深度扫描',
-			 													  '本工具能找出并分析你的 IPB 安装目录中的可执行文件.<br />上次运行本工具: '.$last_run,
+			 													  '本工具能找出并分析您的 IPB 安装目录中的可执行文件.<br />上次运行本工具: '.$last_run,
 																  '运行工具',
 																   $this->ipsclass->form_code_js.'&code=deep_scan',
 																  'deepscan' );

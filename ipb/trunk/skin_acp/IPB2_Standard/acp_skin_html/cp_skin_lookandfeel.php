@@ -240,7 +240,7 @@ $IPBHTML .= <<<EOF
  <div class='tableheaderalt'>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
-  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>皮肤设置</td>
+  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>主题设置</td>
   <td align='right' width='5%' nowrap='nowrap'>
    <img id="menumainone" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /> &nbsp;
  </td>
@@ -296,7 +296,7 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <tr>
  <td class='tablerow1'>
-   <!--$i_sets,$no_sets-->{$line_image}<!--ID:{$r['set_skin_set_id']}--><img src='{$this->ipsclass->skin_acp_url}/images/{$folder_icon}' border='0' alt='皮肤' style='vertical-align:middle' />
+   <!--$i_sets,$no_sets-->{$line_image}<!--ID:{$r['set_skin_set_id']}--><img src='{$this->ipsclass->skin_acp_url}/images/{$folder_icon}' border='0' alt='主题' style='vertical-align:middle' />
    <strong style='{$css_extra}'>{$r['set_name']}</strong>
  </td>
  <td class='tablerow1' width='5%' nowrap='nowrap' align='center'>{$forums} {$hidden} {$default}</td>
@@ -407,7 +407,7 @@ var tabfactory    = new tab_factory();
 			   <td width='60%' class='tablerow2'>{$form['map_url']}</td>
 			  </tr>
 			  <tr>
-			   <td width='40%' class='tablerow1'><strong>模板设置</strong><div class='desctext'>皮肤设置映射到.</div></td>
+			   <td width='40%' class='tablerow1'><strong>模板设置</strong><div class='desctext'>主题设置映射到.</div></td>
 			   <td width='60%' class='tablerow2'><select name='map_skin_set_id'>{$form['skin_list']}</select></td>
 			  </tr>
 			 </table>
@@ -530,7 +530,7 @@ $IPBHTML .= <<<EOF
  <div class='tableheaderalt'>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
-  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>皮肤差异报告</td>
+  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>主题差异报告</td>
  </tr>
 </table>
  </div>
@@ -548,7 +548,7 @@ $IPBHTML .= <<<EOF
 <form action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=skin_diff' enctype='multipart/form-data' method='POST'>
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div class='tableborder'>
- <div class='tableheaderalt'>创建新的皮肤差异报告</div>
+ <div class='tableheaderalt'>创建新的主题差异报告</div>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
   <td class='tablerow1'><strong>输入一个新的差异报告标题</strong><div class='desctext'>这一标题仅仅用来对您的差异报告进行区分</div></td>
@@ -559,7 +559,7 @@ $IPBHTML .= <<<EOF
   <td class='tablerow2'><input class='textinput' type='checkbox' value='1' name='diff_session_ignore_missing' /></td>
  </tr>
  <tr>
-  <td class='tablerow1'><strong>从您的电脑中选择一个有效的 XML 皮肤差异文件.</strong><div class='desctext'>这一文件将和您的主 HTML 模板进行比较 - 因此请在运行比较工具前确认它们是最新的版本</div></td>
+  <td class='tablerow1'><strong>从您的电脑中选择一个有效的 XML 主题差异文件.</strong><div class='desctext'>这一文件将和您的主 HTML 模板进行比较 - 因此请在运行比较工具前确认它们是最新的版本</div></td>
   <td class='tablerow2'><input class='textinput' type='file' size='30' name='FILE_UPLOAD' /></td>
  </tr>
  </table>
@@ -616,7 +616,7 @@ $IPBHTML .= <<<EOF
  <div class='tableheaderalt'>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
-  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>皮肤差异</td>
+  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>主题差异</td>
   <td align='right' width='5%' nowrap='nowrap'>
   &nbsp;
  </td>

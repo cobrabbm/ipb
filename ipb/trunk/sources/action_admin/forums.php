@@ -221,8 +221,8 @@ class ad_forums
 		// Do form..
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "版块皮肤选项";
-		$this->ipsclass->admin->page_detail = "您可以为板块指定一个皮肤, 将会覆盖用户的选择.";
+		$this->ipsclass->admin->page_title  = "版块主题选项";
+		$this->ipsclass->admin->page_detail = "您可以为板块指定一个主题, 将会覆盖用户的选择.";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'   , 'doskinedit'),
 																			 2 => array( 'act'    , 'forum'  ),
@@ -234,13 +234,13 @@ class ad_forums
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"   , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版块 {$forum['name']} 使用的皮肤" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "版块 {$forum['name']} 使用的主题" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择版块使用的皮肤?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>选择版块使用的主题?</b>" ,
 																 "<select class='dropdown' name='fsid'><option value='-1'>--无 / 删除设置--</option>{$skin_list}</select>"
 														 )      );
 														 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>统一所有子版块皮肤</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>统一所有子版块主题</b>" ,
 																 $this->ipsclass->adskin->form_yes_no( 'apply_to_children' )
 														 )      );
 									     
@@ -288,7 +288,7 @@ class ad_forums
 			}
 		}
 		
-		$this->ipsclass->main_msg = "版块皮肤已更新";
+		$this->ipsclass->main_msg = "版块主题已更新";
 		
 		$this->recache_forums();
 		
@@ -1007,7 +1007,7 @@ class ad_forums
 							 <td align='left' width='40%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>Basic Settings for {$forum['name']}</td>
 							 <td align='right' width='60%'>".
 							 $this->ipsclass->adskin->js_make_button("编辑 {$addnew_type} 规则"  , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=frules&f={$this->ipsclass->input['f']}")."&nbsp;".
-						     $this->ipsclass->adskin->js_make_button("编辑皮肤设置", $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=skinedit&f={$this->ipsclass->input['f']}")."&nbsp;".
+						     $this->ipsclass->adskin->js_make_button("编辑主题设置", $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=skinedit&f={$this->ipsclass->input['f']}")."&nbsp;".
 						     $this->ipsclass->adskin->js_make_button("重新统计 {$addnew_type}"     , $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=recount&f={$this->ipsclass->input['f']}")
 							 ."&nbsp;&nbsp;</td>
 							</tr>
@@ -1435,7 +1435,7 @@ class ad_forums
 		
 		if ( ! $this->ipsclass->input['f'] )
 		{
-			$this->ipsclass->admin->error("你没有选择要编辑的板块!");
+			$this->ipsclass->admin->error("您没有选择要编辑的板块!");
 		}
 		
 		//-----------------------------------------

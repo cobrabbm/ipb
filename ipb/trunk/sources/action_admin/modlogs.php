@@ -295,7 +295,7 @@ class ad_modlogs {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有结果</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();

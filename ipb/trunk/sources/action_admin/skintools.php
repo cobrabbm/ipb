@@ -58,8 +58,8 @@ class ad_skintools {
 	function auto_run()
 	{
 		$this->ipsclass->admin->page_detail = "请仔细阅读每个工具的说明.";
-		$this->ipsclass->admin->page_title  = "皮肤工具";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '皮肤工具' );
+		$this->ipsclass->admin->page_title  = "主题工具";
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '主题工具' );
 
 		//-----------------------------------------
 
@@ -300,7 +300,7 @@ class ad_skintools {
 		
 		if ( ! strstr( $final_html, '<!--ipb.logo.end-->' ) )
 		{
-			$this->ipsclass->main_msg = "找不到此皮肤的 Logo 标签 - 请确认您的模板已更新到最新版本.";
+			$this->ipsclass->main_msg = "找不到此主题的 Logo 标签 - 请确认您的模板已更新到最新版本.";
 			$this->easy_logo_start();
 		}
 		
@@ -407,7 +407,7 @@ class ad_skintools {
 		
 		$this->ipsclass->cache_func->_rebuild_all_caches(array($this->ipsclass->input['set_skin_set_id']));
 		
-		$this->ipsclass->main_msg = 'Logo 已更换, 皮肤缓存已重建 (id: '.$this->ipsclass->input['set_skin_set_id'].')';
+		$this->ipsclass->main_msg = 'Logo 已更换, 主题缓存已重建 (id: '.$this->ipsclass->input['set_skin_set_id'].')';
 			
 		$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 		
@@ -517,7 +517,7 @@ class ad_skintools {
 							 <legend><strong>配置</strong></legend>
 							 <table width='100%' cellpadding='5' cellspacing='0' border='0'>
 							 <tr>
-							   <td width='40%' class='tablerow1'>应用到皮肤?<div class='graytext'>如果您在论坛模板中修改过论坛页眉, 本操作将覆盖您的修改</div></td>
+							   <td width='40%' class='tablerow1'>应用到主题?<div class='graytext'>如果您在论坛模板中修改过论坛页眉, 本操作将覆盖您的修改</div></td>
 							   <td width='60%' class='tablerow1'>$skin_list</td>
 							 </tr>
 							 <tr>
@@ -940,7 +940,7 @@ class ad_skintools {
 			
 			$this->ipsclass->html .= "</div></div>";
 			
-			$this->ipsclass->admin->nav[] = array( "", "从皮肤 ".$this_set['set_name']." 的搜索结果" );
+			$this->ipsclass->admin->nav[] = array( "", "从主题 ".$this_set['set_name']." 的搜索结果" );
 			
 			$this->ipsclass->admin->output();
 		}
@@ -1158,7 +1158,7 @@ class ad_skintools {
 		$skin_list = $this->_get_skinlist( 1 );
 		
 		$this->ipsclass->admin->page_detail = "您可以使用本工具批量搜索某个关键字, 替换到其他 HTML.";
-		$this->ipsclass->admin->page_title  = "皮肤搜索 & 替换";
+		$this->ipsclass->admin->page_title  = "主题搜索 & 替换";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'act'  , 'skintools'     ),
 																			 2 => array( 'code' , 'simplesearch'  ),
@@ -1176,7 +1176,7 @@ class ad_skintools {
 													  
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b>",
 															     $skin_list
-															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选皮肤和所有父模板中搜索."
+															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选主题和所有父模板中搜索."
 													    )      );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
@@ -1207,7 +1207,7 @@ class ad_skintools {
 													    
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b><br /><span style='color:gray'>NOTE: The search and replace will only work on the specified skin set. The parent and master skin sets will NOT be searched or any replacements made on them.</span>",
 															     $skin_list
-															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选皮肤和所有父模板中搜索."
+															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选主题和所有父模板中搜索."
 													    )      );
 													    
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>测试搜索和替换?</b><br /><span style='color:gray'>>如果是, 您会看到替换的效果, 但是不会真的替换数据.</span>",
@@ -1242,7 +1242,7 @@ class ad_skintools {
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "您没有选择皮肤";
+			$this->ipsclass->main_msg = "您没有选择主题";
 			$this->show_intro();
 			return;
 		}
@@ -1277,7 +1277,7 @@ class ad_skintools {
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "您没有选择皮肤";
+			$this->ipsclass->main_msg = "您没有选择主题";
 			$this->show_intro();
 			return;
 		}
@@ -1318,7 +1318,7 @@ class ad_skintools {
 			
 			$this->ipsclass->cache_func->_rebuild_templates_from_php($pid);
 			
-			$this->ipsclass->main_msg = '试图从 PHP 缓存文件重建主皮肤...';
+			$this->ipsclass->main_msg = '试图从 PHP 缓存文件重建主主题...';
 				
 			$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 		}
@@ -1365,7 +1365,7 @@ class ad_skintools {
 	{
 		$this->ipsclass->cache_func->_rebuild_all_caches(array($this->ipsclass->input['set_skin_set_id']));
 		
-		$this->ipsclass->main_msg = '皮肤缓存已重建 (id: '.$this->ipsclass->input['set_skin_set_id'].')';
+		$this->ipsclass->main_msg = '主题缓存已重建 (id: '.$this->ipsclass->input['set_skin_set_id'].')';
 			
 		$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 		
@@ -1441,8 +1441,8 @@ class ad_skintools {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主模板" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的主 HTML 模板, 所有的皮肤都是继承自这里.</b>
-																			  <br />运行后, 您需要重建皮肤缓存来更新皮肤.
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的主 HTML 模板, 所有的主题都是继承自这里.</b>
+																			  <br />运行后, 您需要重建主题缓存来更新主题.
 																			  $extra_html",
 																	)      );
 		
@@ -1509,10 +1509,10 @@ class ad_skintools {
 		
 		$this->ipsclass->adskin->td_header[] = array( "{none}"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主皮肤组件" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主主题组件" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的论坛页面结构和 CSS.</b>
-																			  <br />运行后, 您需要重建皮肤缓存来更新皮肤.
+																			  <br />运行后, 您需要重建主题缓存来更新主题.
 																			  $extra_html",
 																	)      );
 		
@@ -1579,10 +1579,10 @@ class ad_skintools {
 		
 		$this->ipsclass->adskin->td_header[] = array( "{none}"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主皮肤宏" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主主题宏" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的主宏.</b>
-																			  <br />运行后, 您需要重建皮肤缓存来更新皮肤.
+																			  <br />运行后, 您需要重建主题缓存来更新主题.
 																			  $extra_html",
 																	)      );
 		
@@ -1602,9 +1602,9 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建皮肤缓存" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主题缓存" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建皮肤缓存...</b><br /><span style='color:gray'>本操作将重建所选皮肤以及所有子皮肤的模板 HTML, 页面结构, 宏和 CSS 缓存.</span><br />[ <a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=sets&code=rebuildalltemplates'>全部重建</a> ]",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建主题缓存...</b><br /><span style='color:gray'>本操作将重建所选主题以及所有子主题的模板 HTML, 页面结构, 宏和 CSS 缓存.</span><br />[ <a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=sets&code=rebuildalltemplates'>全部重建</a> ]",
 															     $skin_list
 													    )      );
 		
@@ -1627,9 +1627,9 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "更新会员皮肤选择" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "更新会员主题选择" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>如果会员使用皮肤...</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>如果会员使用主题...</b>",
 																			 str_replace( "select name='set_skin_set_id'", "select name='set_skin_set_id[]' multiple='multiple' size='6'", $skin_list )
 																	)      );
 													  
@@ -1649,9 +1649,9 @@ class ad_skintools {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "更新版块皮肤选择" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "更新版块主题选择" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>如果版块使用皮肤...</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>如果版块使用主题...</b>",
 																			 str_replace( "select name='set_skin_set_id'", "select name='set_skin_set_id[]' multiple='multiple' size='6'", $skin_list )
 																	)      );
 													  
@@ -1677,9 +1677,9 @@ class ad_skintools {
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主皮肤" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主主题" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>从 CSS 文件和 PHP 文件重建“IPB Master Skin Set.</b><br /><span style='color:gray'>本操作将主皮肤的重建模板 HTML. 请小心使用!</span>",
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>从 CSS 文件和 PHP 文件重建“IPB Master Skin Set.</b><br /><span style='color:gray'>本操作将主主题的重建模板 HTML. 请小心使用!</span>",
 																				 "<input type='checkbox' name='phpyes' value='1' /> PHP 缓存目录.: skin_cache/cacheid_ ".$this->ipsclass->adskin->form_simple_input( 'phplocation', '1', 3 )."<br />".
 																				 "<input type='checkbox' name='cssyes' value='1' /> CSS 缓存文件: style_images/css_ ".$this->ipsclass->adskin->form_simple_input( 'csslocation', '1',3 )
 																		)      );

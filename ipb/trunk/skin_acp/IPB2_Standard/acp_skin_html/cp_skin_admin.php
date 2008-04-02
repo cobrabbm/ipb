@@ -163,7 +163,7 @@ $IPBHTML .= <<<EOF
  <div class='tablesubheader'>&nbsp;</div>
   <table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'>
   <tr>
-    <td class='tablerow1'  width='50%'  valign='middle'><b>输入一个管理员的显示名称</b><div style='color:gray'>管理员是一个由所属一级或者二级团队赋予权限的区别于系统管理员的用户组.</div></td>
+    <td class='tablerow1'  width='50%'  valign='middle'><b>输入一个管理员的显示名称</b><div style='color:gray'>管理员是一个由所属一级或者二级用户组赋予权限的区别于系统管理员的用户组.</div></td>
     <td class='tablerow2'  width='50%'  valign='middle'><input type="text" id='entered_name' name="entered_name" size="30" autocomplete='off' style='width:210px' value="" tabindex="1" /></td>
   </tr>
   <tr>
@@ -382,7 +382,7 @@ $IPBHTML .= <<<EOF
    </div>
    <div class='{$onoff['lookandfeel']}' style='padding:7px'>
    	<input type='hidden' id='tab_lookandfeel' value='{$tabinit['lookandfeel']}' />
-   	<a href='#' id='href_lookandfeel' onclick='permobj.init("lookandfeel", $member_id)'>皮肤模板</a>
+   	<a href='#' id='href_lookandfeel' onclick='permobj.init("lookandfeel", $member_id)'>主题模板</a>
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_tick_small.png' id='img-lookandfeel-tick' onclick="return permobj.save_tab('lookandfeel', $member_id, 1 );" title='Allow Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    	<img src='{$this->ipsclass->skin_acp_url}/images/aff_cross_small.png' id='img-lookandfeel-cross' onclick="return permobj.save_tab('lookandfeel', $member_id, 0 );" title='Deny Access to this tab' style='cursor:pointer' border='0' alt='*' class='img-boxed-off' />
    </div>

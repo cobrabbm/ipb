@@ -32,7 +32,7 @@
 // $PAGES[ $cat_id ][$page_id][3] = URL type: 1 = Board URL 0 = ACP URL
 // $PAGES[ $cat_id ][$page_id][4] = Item icon: 1= redirect 0 = Normal
 
-$CATS[]  = array( '皮肤模板' );
+$CATS[]  = array( '主题模板' );
 
 $PAGES[] = array(
 					1 => array( '模板管理'            , 'section=lookandfeel&amp;act=sets'        ),

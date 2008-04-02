@@ -544,7 +544,7 @@ class ad_skin_template_bits
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->skin_jump_menu_wrap();
 
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'主题管理' );
 		$this->ipsclass->admin->nav[] = array( '' ,'管理模版元素 "'.$this_set['set_name'].'"' );
 
 		$this->ipsclass->admin->output();
@@ -1012,7 +1012,7 @@ class ad_skin_template_bits
 			$groupname = $skin_names[ $groupname ][0];
 		}
 
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'主题管理' );
 		$this->ipsclass->admin->nav[] = array( "{$this->ipsclass->form_code}&code=edit&id={$id}&groupname={$old_groupname}", $groupname );
 
 		//-----------------------------------------

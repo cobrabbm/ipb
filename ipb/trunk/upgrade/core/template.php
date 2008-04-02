@@ -487,18 +487,18 @@ EOF;
 	function install_template_skinrevert( $skin_name="" )
 	{
 $HTML = <<<EOF
-		<br /><h3><b>还原皮肤更改?</b></h3><br />
-		在系统升级过程中, 经常会有皮肤模板的更改或者添加来修正错误.<br /><br />
-		如果您不对皮肤更改进行还原操作, 您将无法看到新版的皮肤升级, 然而如果您对您的皮肤进行了修改那么执行还原操作将使得您 <i><b>丢失</b></i> 您的定制内容.<br /><br />
-		如果您没有对您的皮肤进行过任何更改, 我们强烈建议您选择还原皮肤更改.<br /><br />
-		如果您曾经安装过其他的皮肤文件, 或者您曾经对皮肤进行过大面积的更改, 我们建议您在系统后台运行皮肤差异比较操作来进行手动的修改.<br /><br />
+		<br /><h3><b>还原主题更改?</b></h3><br />
+		在系统升级过程中, 经常会有主题模板的更改或者添加来修正错误.<br /><br />
+		如果您不对主题更改进行还原操作, 您将无法看到新版的主题升级, 然而如果您对您的主题进行了修改那么执行还原操作将使得您 <i><b>丢失</b></i> 您的定制内容.<br /><br />
+		如果您没有对您的主题进行过任何更改, 我们强烈建议您选择还原主题更改.<br /><br />
+		如果您曾经安装过其他的主题文件, 或者您曾经对主题进行过大面积的更改, 我们建议您在系统后台运行主题差异比较操作来进行手动的修改.<br /><br />
 		
 		<h3>Do you wish to revert changes made to '<b>{$skin_name}</b>'?</h3>
             <ul id='links'>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='all' /> 还原我所有的皮肤修改</li>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='1' /> 还原 '{$skin_name}' 的皮肤修改</li>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='none' /> 不要还原我任何的皮肤修改</li>
-                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='0' /> 不要还原 '{$skin_name}' 的皮肤修改</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='all' /> 还原我所有的主题修改</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='1' /> 还原 '{$skin_name}' 的主题修改</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='none' /> 不要还原我任何的主题修改</li>
+                <li><img src='images/link.gif' align='absmiddle' /> <input type='radio' name='do' value='0' /> 不要还原 '{$skin_name}' 的主题修改</li>
             </ul>
 EOF;
 

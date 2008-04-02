@@ -60,7 +60,7 @@ http://ipb.skylook.org/
 
 ○中文支持：
 IPB 中文：http://ipb.skylook.org/
-IPB 中文 是由 Skylook 工作室免费提供的 IPS 中文支持频道，我们目前的服务项目包括：Invision Power Board、Invision Community Blog、Invision Gallery、Invision Download Manager、Invision Power Dynamic 等的前后台汉化语言、中文皮肤、中文插件等。我们的服务大部分是免费的，只要您保留我们作品中的版权信息，就可以无偿使用。
+IPB 中文 是由 Skylook 工作室免费提供的 IPS 中文支持频道，我们目前的服务项目包括：Invision Power Board、Invision Community Blog、Invision Gallery、Invision Download Manager、Invision Power Dynamic 等的前后台汉化语言、中文主题、中文插件等。我们的服务大部分是免费的，只要您保留我们作品中的版权信息，就可以无偿使用。
 
 如果您有任何定制服务的需求或者提供安装帮助等，则需要向本站支付一定费用，具体请您联系 skylook@126.com。
 
