@@ -14,15 +14,15 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>Members With ACP Access</div>
+ <div class='tableheaderalt'>具有后台登录权限的会员</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
-	<td class='tablesubheader' width='30%'>Name</td>
-	<td class='tablesubheader' width='30%'>Primary Group</td>
-	<td class='tablesubheader' width='30%'>Secondary Groups</td>
-	<td class='tablesubheader' width='30%'>IP Address</td>
-	<td class='tablesubheader' width='30%'>Email Address</td>
-	<td class='tablesubheader' width='30%'>Posts</td>
+	<td class='tablesubheader' width='30%'>名称</td>
+	<td class='tablesubheader' width='30%'>原始组别</td>
+	<td class='tablesubheader' width='30%'>附加组别</td>
+	<td class='tablesubheader' width='30%'>IP 地址</td>
+	<td class='tablesubheader' width='30%'>邮件地址</td>
+	<td class='tablesubheader' width='30%'>帖子</td>
 	<td class='tablesubheader' width='30%'>&nbsp;</td>
  </tr>
 	$content
@@ -65,7 +65,7 @@ $IPBHTML .= <<<EOF
 	{$member['posts']}
  </td>
  <td class='tablerow1'>
-	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mem&amp;code=doform&amp;mid={$member['id']}'>Edit</a>
+	<a href='{$this->ipsclass->base_url}&amp;section=content&amp;act=mem&amp;code=doform&amp;mid={$member['id']}'>编辑</a>
  </td>
 </tr>
 EOF;
@@ -89,23 +89,23 @@ $IPBHTML .= <<<EOF
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div style='padding-bottom:10px'>Show: 
 	<select name='filter'>
-	    <option value='all'>Show All</option>
-		<option value='score-5'>Score 5 or more</option>
-		<option value='score-6'>Score 6 or more</option>
-		<option value='score-7'>Score 7 or more</option>
-		<option value='score-8'>Score 8 or more</option>
-		<option value='score-9'>Score 9 or more</option>
-		<option value='large'>Files 55k or larger</option>
-		<option value='recent'>Modified in the past 30 days</option>
+	    <option value='all'>显示全部</option>
+		<option value='score-5'>等级 5 或更高</option>
+		<option value='score-6'>等级 6 或更高</option>
+		<option value='score-7'>等级 7 或更高</option>
+		<option value='score-8'>等级 8 或更高e</option>
+		<option value='score-9'>等级 9 或更高</option>
+		<option value='large'>文件大小 55k 或更大</option>
+		<option value='recent'>最近 30 天修改</option>
 	</select>
-	<input type='submit' value=' Filter ' />
+	<input type='submit' value=' 过滤 ' />
 </div>
 </form>
 <div class='tableborder'>
- <div class='tableheaderalt'>Executable Files</div>
+ <div class='tableheaderalt'>可执行文件</div>
  <div class='tablesubheader' style='padding-right:0px'>
   <div align='right' style='padding-right:10px'>
-     (File Size) &nbsp; Last Modified
+     (文件大小) &nbsp; 最近修改
     </div>
   </div>
  <table cellpadding='0' cellspacing='0' width='100%'>
@@ -161,7 +161,7 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <br />
 <div class='tableborder'>
- <div class='tableheaderalt'>Unauthorized File Checked Folders</div>
+ <div class='tableheaderalt'>已进行非法文件检查的文件夹</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
 	$content
  </table>
@@ -206,10 +206,10 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>Suspicious Files</div>
+ <div class='tableheaderalt'>可疑文件</div>
  <div class='tablesubheader' style='padding-right:0px'>
   <div align='right' style='padding-right:10px'>
-     (File Size) &nbsp; Last Modified
+     (文件大小) &nbsp; 最后更改
     </div>
   </div>
  <table cellpadding='0' cellspacing='0' width='100%'>
@@ -278,12 +278,12 @@ $IPBHTML .= <<<EOF
  			<img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/id_card_ok.png' alt='information' />
 		</td>
 		<td width='100%' valig='top' style='padding-left:10px'>
- 			<h2 style='margin:0px'>Invision Power Board Security Center</h2>
+ 			<h2 style='margin:0px'>IPBChina 论坛安全中心</h2>
 			 <p style='margin:0px'>
 			 	<br />
-			 	The Invision Power Board Security Center is a centralized repository of security tools and settings.
+			 	论坛安全中心是一个安全检查和设置工具的集中地.
 				<br />
-				Your IPB installation is checked and suggestions are made on how to improve the security of your board.
+				系统检查了您的 IPB 安装文件和设置, 以下是给您提供的进一步提升安全性的建议.
 				<br />
 				<br />
 				{$content['bad']}
@@ -328,7 +328,7 @@ $IPBHTML .= <<<EOF
 	</td>
 	<td width='18%' valign='middle'>
 		<div class='formbutton-wrap'>
-		 	<div id='button-link-{$key}'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/run_tool.png' border='0' alt='Run'  title='Run' class='ipd' /> $button</div>
+		 	<div id='button-link-{$key}'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/run_tool.png' border='0' alt='执行'  title='执行' class='ipd' /> $button</div>
 		 </div>
 	</td>
 </tr>
@@ -367,7 +367,7 @@ $IPBHTML .= <<<EOF
 	</td>
 	<td width='18%' valign='middle'>
 		<div class='formbutton-wrap'>
-		 	<div id='button-link-{$key}'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/run_tool.png' border='0' alt='Run'  title='Run' class='ipd' /> $button</div>
+		 	<div id='button-link-{$key}'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/run_tool.png' border='0' alt='执行'  title='执行' class='ipd' /> $button</div>
 		 </div>
 	</td>
 </tr>
@@ -406,7 +406,7 @@ $IPBHTML .= <<<EOF
 	</td>
 	<td width='18%' valign='middle'>
 		<div class='formbutton-wrap'>
-		 	<div id='button-link-{$key}'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/run_tool.png' border='0' alt='Run'  title='Run' class='ipd' /> $button</div>
+		 	<div id='button-link-{$key}'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/run_tool.png' border='0' alt='执行'  title='执行' class='ipd' /> $button</div>
 		 </div>
 	</td>
 </tr>
@@ -442,29 +442,29 @@ $IPBHTML .= <<<EOF
  			<img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/id_card_ok.png' alt='information' />
 		</td>
 		<td width='100%' valig='top' style='padding-left:10px'>
- 			<h2 style='margin:0px'>ACP .htaccess protection</h2>
+ 			<h2 style='margin:0px'>后台 .htaccess 权限保护</h2>
 			 <p style='margin:0px'>
 			 	<br />
-			 	Invision Power Board can write .htaccess protection into your admin directory.
+			 	论坛可以生成 .htaccess 保护文件到您的后台文件夹.
 				<br />
 				<br />
-				<strong>Please note</strong>
+				<strong>请注意</strong>
 				<br />
-				Using this tool will overwrite any current protection in your admin directory. You will also be required to enter the username and password immediately after saving.  Additionally, if you choose to rename the admin directory, please remember to delete this file from the directory via FTP or you will be locked out of the ACP.
+				使用这一工具将覆盖后台当前的保护文件. 在您保存设置后您将被立即要求输入用户名称和用户密码. 额外的, 如果您选择更改后台文件夹的名称, 请记得通过 FTP 删除这个文件否则您将无法登入后台.
 				<br />
 				<br />
 				<fieldset>
-					<legend><strong>Username</strong></legend>
+					<legend><strong>用户名称</strong></legend>
 					<input type='text' name='name' size='40' value='{$_POST['name']}' />
 				</fieldset>
 				<br />
 				<fieldset>
-					<legend><strong>Password</strong></legend>
-					<strong>Please note that only the first 8 characters of your password will be used</strong><br />
+					<legend><strong>用户密码</strong></legend>
+					<strong>请注意您的用户密码将被截取为前 8 个字符</strong><br />
 					<input type='password' name='pass' size='40' value='{$_POST['pass']}' />
 				</fieldset>
 				<br />
-				<input type='submit' value=' Proceed ' />
+				<input type='submit' value=' 执行 ' />
 			 </p>
 		</td>
 	</tr>
@@ -494,18 +494,18 @@ $IPBHTML .= <<<EOF
  			<img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/id_card_ok.png' alt='information' />
 		</td>
 		<td width='100%' valig='top' style='padding-left:10px'>
- 			<h2 style='margin:0px'>ACP .htaccess protection</h2>
+ 			<h2 style='margin:0px'>后台 .htaccess 保护</h2>
 			 <p style='margin:0px'>
 			 	<br />
-			 	<strong>Invision Power Board is unable to write into your admin directory</strong>
+			 	<strong>易维论坛无法写入文件到后台文件夹</strong>
 				<br />
 				<br />
-				Please create a file called ".htpasswd" and copy the contents below into it. Once saved, upload this new file into your 'admin' folder.
+				请手工创建名为 ".htpasswd" 的文件并且将下面的内容复制到文件中. 保存后, 上传这一文件到您的 'admin' 文件夹.
 				<br />
 				<textarea rows='5' cols='70' style='width:98%;height:100px'>$htaccess_pw</textarea>
 				<br />
 				<br />
-				Please create a file called ".htaccess" and copy the contents below into it. Once saved, upload this new file into your 'admin' folder.
+				请手工创建名为 ".htpasswd" 的文件并且将下面的内容复制到文件中. 保存后, 上传这一文件到您的 'admin' 文件夹.
 				<br />
 				<textarea rows='5' cols='70' style='width:98%;height:100px'>$htaccess_auth</textarea>
 			 </p>
@@ -537,24 +537,23 @@ $IPBHTML .= <<<EOF
  			<img src='{$this->ipsclass->skin_acp_url}/images/folder_components/security/id_card_ok.png' alt='information' />
 		</td>
 		<td width='100%' valig='top' style='padding-left:10px'>
- 			<h2 style='margin:0px'>Renaming the ACP directory</h2>
+ 			<h2 style='margin:0px'>重命名后台文件夹</h2>
 			 <p style='margin:0px'>
 			 	<br />
-			 	Invision Power Board has a dedicated directory for the administration center. To further enhance security, you can rename this ACP directory.
+			 	易维论坛有专用的后台管理中心文件夹. 为了更进一步地提高论坛安全性, 您可以重命名后台文件夹.
 				<br />
 				<br />
-				<strong>Step 1:</strong>
+				<strong>步骤 1:</strong>
 				<br />
-				First, you'll need to physically rename the directory. Connect to your server via FTP and then browse to your IPB directory (this is the one that has your
-				index.php file in it).
+				首先, 您必须手工重命名后台文件夹. 用 FTP 软件登录您的论坛服务器浏览您的论坛文件夹 (该文件夹有您的论坛
+				index.php 文件).
 				<br/ >
-				Locate the 'admin' directory. It has just one file inside called 'index.php'. Choose 'rename' from your FTP client menu and rename it. For the purposes of this
-				tutorial, we'll rename it 'admin_secret'.  <b>If you have created .htaccess protection inside the existing directory, you MUST delete it or you will not be able to login to the ACP afterwards.  You may recreate the .htaccess protection after you have completed the next step.</b>
+				定位到 'admin' 文件夹. 它有一个名为 'index.php' 的文件. 从 FTP 软件中选择重命名菜单进行重命名. 比如我们将其重命名为 'admin_secret'.  <b>如果您已经创建了 .htaccess 保护文件在这个文件夹中, 您必须删除该文件否则您无法登录后台管理中心. 您可以在完成下一步后再重新创建 .htaccess 文件保护.</b>
 				<br />
 				<br />
-				<strong>Step 2:</strong>
-				Locate the 'init.php' file. This is in your IPB root directory. Download it and open it in a text editor.
-				<br />Near the top of this file, you'll see:
+				<strong>步骤 2:</strong>
+				打开 'init.php' 文件. 该文件位于您的论坛根目录下. 下载后在文本编辑器中打开.
+				<br />在文件的开头, 你将会看到下面的代码:
 				<br />
 				<pre>//-----------------------------------------------
 // USER CONFIGURABLE ELEMENTS
@@ -576,11 +575,11 @@ define( 'ROOT_PATH', dirname( __FILE__ ) ."/" );
 define( 'IPB_ACP_DIRECTORY', 'admin' );</strong></pre>
 				
 				<br />
-				Change the line: <pre>define( 'IPB_ACP_DIRECTORY', '<strong>admin</strong>' );</pre> to <pre>define( 'IPB_ACP_DIRECTORY', '<strong>admin_secret</strong>' );</pre>
+				改变代码行: <pre>define( 'IPB_ACP_DIRECTORY', '<strong>admin</strong>' );</pre> 为 <pre>define( 'IPB_ACP_DIRECTORY', '<strong>admin_secret</strong>' );</pre> 即可
 				<br />
 				<br />
-				<strong>Your ACP directory has now been renamed.</strong>
-				<br />Remember to remove the ACP link from your board using the Security Center.
+				<strong>您的后台文件夹现在已经成功更改了.</strong>
+				<br />别忘了在后台安全中心删除论坛中的后台链接菜单.
 			 </p>
 		</td>
 	</tr>

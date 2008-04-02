@@ -205,7 +205,7 @@ class ad_skin_import {
 		
 		if ( ! is_writable( CACHE_PATH.'style_images' ) )
 		{
-			$this->ipsclass->main_msg = '无法在'style_images'目录中创建目录 - 请检查文件夹的 CHMOD 值, 如果有必要, 设置为 0777.';
+			$this->ipsclass->main_msg = '无法在 "style_images" 中创建目录 - 请检查文件夹的 CHMOD 值, 如果有必要, 设置为 0777.';
 			$this->show_export_page();
 		}
 		

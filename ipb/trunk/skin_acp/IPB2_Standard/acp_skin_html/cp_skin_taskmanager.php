@@ -15,12 +15,12 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>Task Manager Logs</div>
+ <div class='tableheaderalt'>任务管理日志</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader'>Task Run</td>
-  <td class='tablesubheader'>Date Run</td>
-  <td class='tablesubheader'>Log Info</td>
+  <td class='tablesubheader'>任务执行</td>
+  <td class='tablesubheader'>执行日期</td>
+  <td class='tablesubheader'>日志信息</td>
  </tr>
  $last5
  </table>
@@ -41,12 +41,12 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>Last 5 Run Tasks</div>
+ <div class='tableheaderalt'>最后 5 次执行任务</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader'>Task Run</td>
-  <td class='tablesubheader'>Date Run</td>
-  <td class='tablesubheader'>Log Info</td>
+  <td class='tablesubheader'>任务执行</td>
+  <td class='tablesubheader'>执行日期</td>
+  <td class='tablesubheader'>日志信息</td>
  </tr>
  $last5
  </table>
@@ -57,18 +57,18 @@ $IPBHTML .= <<<EOF
 <form action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_log_show' method='post'>
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div class='tableborder'>
- <div class='tableheaderalt'>View Task Manager Logs</div>
+ <div class='tableheaderalt'>查看任务管理日志</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablerow1'><strong>View logs for task</strong></td>
+  <td class='tablerow1'><strong>查看以下任务日志</strong></td>
   <td class='tablerow2'>{$form['task_title']}</td>
  </tr>
  <tr>
-  <td class='tablerow1'><strong>Show <em>n</em> log entries</strong></td>
+  <td class='tablerow1'><strong>显示 <em>n</em> 个日志条目</strong></td>
   <td class='tablerow2'>{$form['task_count']}</td>
  </tr>
  <tr>
-  <td colspan='2' class='tablefooter' align='center'><input class='realbutton' type='submit' value='View Logs' /></td>
+  <td colspan='2' class='tablefooter' align='center'><input class='realbutton' type='submit' value='查看日志' /></td>
  </tr>
  </table>
 </div>
@@ -79,18 +79,18 @@ $IPBHTML .= <<<EOF
 <form action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_log_delete' method='post'>
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div class='tableborder'>
- <div class='tableheaderalt'>Delete Task Manager Logs</div>
+ <div class='tableheaderalt'>删除任务管理日志</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablerow1'><strong>Delete logs for task</strong></td>
+  <td class='tablerow1'><strong>删除以下任务日志</strong></td>
   <td class='tablerow2'>{$form['task_title_delete']}</td>
  </tr>
  <tr>
-  <td class='tablerow1'><strong>Delete logs older than <em>n</em> days</strong></td>
+  <td class='tablerow1'><strong>删除早于 <em>n</em> 天的任务日志</strong></td>
   <td class='tablerow2'>{$form['task_prune']}</td>
  </tr>
  <tr>
-  <td colspan='2' class='tablefooter' align='center'><input class='realbutton' type='submit' value='DELETE Logs' /></td>
+  <td colspan='2' class='tablefooter' align='center'><input class='realbutton' type='submit' value='删除日志' /></td>
  </tr>
  </table>
 </div>
@@ -137,13 +137,13 @@ function updatepreview()
 	var formobj  = document.adminform;
 	var dd_wday  = new Array();
 	
-	dd_wday[0]   = 'Sunday';
-	dd_wday[1]   = 'Monday';
-	dd_wday[2]   = 'Tuesday';
-	dd_wday[3]   = 'Wednesday';
-	dd_wday[4]   = 'Thursday';
-	dd_wday[5]   = 'Friday';
-	dd_wday[6]   = 'Saturday';
+	dd_wday[0]   = '周日';
+	dd_wday[1]   = '周一';
+	dd_wday[2]   = '周二';
+	dd_wday[3]   = '周三';
+	dd_wday[4]   = '周四';
+	dd_wday[5]   = '周五';
+	dd_wday[6]   = '周六';
 	
 	var output       = '';
 	
@@ -164,17 +164,17 @@ function updatepreview()
 	
 	if ( chosen_mday != -1 )
 	{
-		output_day = 'On day '+chosen_mday+'.';
+		output_day = '在 '+chosen_mday+'.';
 	}
 	
 	if ( chosen_mday == -1 && chosen_wday != -1 )
 	{
-		output_day = 'On ' + dd_wday[ chosen_wday ]+'.';
+		output_day = '在 ' + dd_wday[ chosen_wday ]+'.';
 	}
 	
 	if ( chosen_hour != -1 && chosen_min != -1 )
 	{
-		output_hour = 'At '+chosen_hour+':'+formatnumber(chosen_min)+'.';
+		output_hour = '在 '+chosen_hour+':'+formatnumber(chosen_min)+'.';
 	}
 	else
 	{
@@ -190,16 +190,16 @@ function updatepreview()
 				{
 					if ( chosen_min == -1 )
 					{
-						output_min = 'Every minute';
+						output_min = '每分钟';
 					}
 					else
 					{
-						output_min = 'Every '+chosen_min+' minutes.';
+						output_min = '每隔 '+chosen_min+' 分钟.';
 					}
 				}
 				else
 				{
-					output_min = 'At '+formatnumber(chosen_min)+' minutes past the first available hour';
+					output_min = '在首次执行后 '+formatnumber(chosen_min)+' 分钟';
 				}
 			}
 		}
@@ -207,11 +207,11 @@ function updatepreview()
 		{
 			if ( output_day != '' )
 			{
-				output_hour = 'At ' + chosen_hour + ':00';
+				output_hour = '在 ' + chosen_hour + ':00';
 			}
 			else
 			{
-				output_hour = 'Every ' + chosen_hour + ' hours';
+				output_hour = '每隔 ' + chosen_hour + ' 小时';
 			}
 		}
 	}
@@ -247,36 +247,35 @@ function formatnumber(num)
  </div>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
-   <td width='40%' class='tablerow1'><strong>Task Title</strong></td>
+   <td width='40%' class='tablerow1'><strong>任务名称</strong></td>
    <td width='60%' class='tablerow2'>{$form['task_title']}</td>
  </tr>
  <tr>
-   <td width='40%' class='tablerow1'><strong>Task Short Description</strong></td>
+   <td width='40%' class='tablerow1'><strong>任务简短描述</strong></td>
    <td width='60%' class='tablerow2'>{$form['task_description']}</td>
  </tr>
  <tr>
-   <td width='40%' class='tablerow1'><strong>Task PHP File To Run</strong><div class='desctext'>This is the PHP file that is run when the task is run.</div></td>
-   <td width='60%' class='tablerow2'>./sources/tasks/ {$form['task_file']}</td>
+   <td width='40%' class='tablerow1'><strong>任务执行 PHP 文件</strong><div class='desctext'>这是任务执行时需要的 PHP 文件s='tablerow2'>./sources/tasks/ {$form['task_file']}</td>
  </tr>
  <tr>
    <td width='40%' class='tablerow1' colspan='2'>
     <fieldset>
-    <legend><strong>Time Options</strong></legend>
+    <legend><strong>时间选项</strong></legend>
     <table cellpadding='0' cellspacing='0' border='0' width='100%'>
     <tr>
-   		<td width='40%' class='tablerow1'><strong>Task Time: Minutes</strong><div class='desctext'>Choose 'Every Minute' to run each minute or a number for a specific minute of an hour</div></td>
+   		<td width='40%' class='tablerow1'><strong>任务时间: 分钟</strong><div class='desctext'>选择 '每分钟' 来每隔一分钟执行一次任务或者选择一个特定的一小时内的执行时间</div></td>
    		<td width='60%' class='tablerow2'>{$form['task_minute']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Task Time: Hours</strong><div class='desctext'>Choose 'Every Hour' to run each hour or a number for a specific hour of a day</div></td>
+   		<td width='40%' class='tablerow1'><strong>任务时间: 小时</strong><div class='desctext'>选择 '每小时' 来每隔一小时执行一次任务或者选择一个特定的一天内的执行时间</div></td>
    		<td width='60%' class='tablerow2'>{$form['task_hour']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Task Time: Week Day</strong><div class='desctext'>Choose 'Every Day' to run each day or a week day for a specific week day of a month</div></td>
+   		<td width='40%' class='tablerow1'><strong>任务时间: 星期</strong><div class='desctext'>选择 '每天' 来每隔一天执行一次任务或者选择一个特定的一周内的执行时间</div></td>
    		<td width='60%' class='tablerow2'>{$form['task_week_day']}</td>
  	</tr>
  	<tr>
-   		<td width='40%' class='tablerow1'><strong>Task Time: Month Day</strong><div class='desctext'>Choose 'Every Day' to run each day or a month day for a specific month day of a month</div></td>
+   		<td width='40%' class='tablerow1'><strong>任务时间: 日期</strong><div class='desctext'>选择 '每天' 来每隔一天执行一次任务或者选择一个特定的一月内的执行时间</div></td>
    		<td width='60%' class='tablerow2'>{$form['task_month_day']}</td>
  	</tr>
     </table>
@@ -284,11 +283,11 @@ function formatnumber(num)
   </td>
  </tr>
  <tr>
-   <td width='40%' class='tablerow1'><strong>Enable Task Logging</strong><div class='desctext'>Will write to the task log each time the task is run, not recommended for regular tasks run every few minutes.</div></td>
+   <td width='40%' class='tablerow1'><strong>开启任务日志</strong><div class='desctext'>将会在每次任务执行时写入任务日志, 对于每隔几分钟就会执行一次的常规任务则不推荐开启.</div></td>
    <td width='60%' class='tablerow2'>{$form['task_log']}</td>
  </tr>
  <tr>
-   <td width='40%' class='tablerow1'><strong>Enable Task?</strong><div class='desctext'>If you are using CRON, you might wish to disable this task from the internal manager.</div></td>
+   <td width='40%' class='tablerow1'><strong>任务开启?</strong><div class='desctext'>如果您正在使用定是任务模式, 您可能需要在内部管理器中关闭这一任务.</div></td>
    <td width='60%' class='tablerow2'>{$form['task_enabled']}</td>
  </tr>
 EOF;
@@ -297,11 +296,11 @@ if ( $form['task_key'] != "" )
 {		
 $IPBHTML .= <<<EOF
  <tr>
-   <td width='40%' class='tablerow1'><strong>Task Key</strong><div class='desctext'>This is used to call a task where the ID of the task might change</div></td>
+   <td width='40%' class='tablerow1'><strong>任务键值</strong><div class='desctext'>在任务更换 ID 这个键值将会用来对任务进行标识</div></td>
    <td width='60%' class='tablerow2'>{$form['task_key']}</td>
  </tr>
  <tr>
-   <td width='40%' class='tablerow1'><strong>Task Safe Mode</strong><div class='desctext'>If set to 'yes', this will not be editable by admins</div></td>
+   <td width='40%' class='tablerow1'><strong>任务安全模式</strong><div class='desctext'>如果选择 '是', 这一任务将不能被管理员编辑</div></td>
    <td width='60%' class='tablerow2'>{$form['task_safemode']}</td>
  </tr>
 EOF;
@@ -327,25 +326,25 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>Scheduled Tasks</div>
+ <div class='tableheaderalt'>预定任务</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='40%'>Title</td>
-  <td class='tablesubheader' width='25%'>Next Run</td>
-  <td class='tablesubheader' width='5%'>Min</td>
-  <td class='tablesubheader' width='5%'>Hour</td>
-  <td class='tablesubheader' width='5%'>MDay</td>
-  <td class='tablesubheader' width='5%'>WDay</td>
-  <td class='tablesubheader' width='1%'>Options</td>
+  <td class='tablesubheader' width='40%'>名称</td>
+  <td class='tablesubheader' width='25%'>下次执行</td>
+  <td class='tablesubheader' width='5%'>分</td>
+  <td class='tablesubheader' width='5%'>时</td>
+  <td class='tablesubheader' width='5%'>日期</td>
+  <td class='tablesubheader' width='5%'>星期</td>
+  <td class='tablesubheader' width='1%'>选项</td>
  </tr>
  $content
  </table>
- <div align='center' class='tablefooter'><div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_add'>Add New Task</a></span></div></div>
+ <div align='center' class='tablefooter'><div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_add'>添加新任务</a></span></div></div>
 </div>
 <br />
-<div align='center' class='desctext'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_rebuild_xml'>Rebuild tasks from tasks.xml</a></em></div>
+<div align='center' class='desctext'><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_rebuild_xml'>从 tasks.xml 文件重建任务选项</a></em></div>
 <br />
-<div align='center' class='desctext'><em>All times GMT. GMT time now is: $date</em></div>
+<div align='center' class='desctext'><em>全部时间为格林尼治标准时间. 当前格林尼治标准时间为: $date</em></div>
 EOF;
 //--endhtml--//
 return $IPBHTML;
@@ -371,7 +370,7 @@ EOF;
 if ( $row['task_locked'] > 0 )
 {		
 $IPBHTML .= <<<EOF
- <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_unlock&amp;task_id={$row['task_id']}'><img src='{$this->ipsclass->skin_acp_url}/images/lock_close.gif' border='0' alt='Unlock' class='ipd' /></a>
+ <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_unlock&amp;task_id={$row['task_id']}'><img src='{$this->ipsclass->skin_acp_url}/images/lock_close.gif' border='0' alt='解除锁定' class='ipd' /></a>
 EOF;
 }//endif
 $IPBHTML .= <<<EOF
@@ -382,8 +381,8 @@ $IPBHTML .= <<<EOF
 	   </div>
    </td>
    <td width='1%' nowrap='nowrap'>
-	<a href='#' onclick="toggleview('pop{$row['task_id']}');return false;" title='Show CURL to use in a cron'><img src='{$this->ipsclass->skin_acp_url}/images/task_cron.gif' border='0' alt='Cron' /></a>
-	<a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_run_now&amp;task_id={$row['task_id']}' title='Run task now (id: {$row['task_id']})'><img src='{$this->ipsclass->skin_acp_url}/images/{$row['_image']}'  border='0' alt='Run' /></a>
+	<a href='#' onclick="toggleview('pop{$row['task_id']}');return false;" title='显示定时任务地址'><img src='{$this->ipsclass->skin_acp_url}/images/task_cron.gif' border='0' alt='定时任务' /></a>
+	<a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_run_now&amp;task_id={$row['task_id']}' title='现在执行任务 (ID 号: {$row['task_id']})'><img src='{$this->ipsclass->skin_acp_url}/images/{$row['_image']}'  border='0' alt='执行' /></a>
    </td>
   </tr>
  </table>
@@ -393,14 +392,14 @@ $IPBHTML .= <<<EOF
  <td class='tablerow2'>{$row['task_hour']}</td>
  <td class='tablerow2'>{$row['task_month_day']}</td>
  <td class='tablerow2'>{$row['task_week_day']}</td>
- <td class='tablerow1'><img id="menu{$row['task_id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /></td>
+ <td class='tablerow1'><img id="menu{$row['task_id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /></td>
 </tr>
 <script type="text/javascript">
   menu_build_menu(
   "menu{$row['task_id']}",
-  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_edit&amp;task_id={$row['task_id']}'>Edit Task...</a>",
-  			 img_password   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_unlock&amp;task_id={$row['task_id']}'>Unlock Task...</a>",
-  			 img_delete   + " <a href='#' onclick='confirm_action(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_delete&amp;task_id={$row['task_id']}\"); return false;'>Delete Task...</a>"
+  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_edit&amp;task_id={$row['task_id']}'>编辑任务...</a>",
+  			 img_password   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_unlock&amp;task_id={$row['task_id']}'>解除任务锁定...</a>",
+  			 img_delete   + " <a href='#' onclick='confirm_action(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;do=task_delete&amp;task_id={$row['task_id']}\"); return false;'>删除任务...</a>"
 		    ) );
  </script>
 EOF;
