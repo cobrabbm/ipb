@@ -54,7 +54,7 @@ class ad_skin_sets
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '主题管理' );
 		
 		//-----------------------------------------
 		// LOAD HTML
@@ -449,11 +449,11 @@ class ad_skin_sets
 		{
 			$this->ipsclass->cache_func->_rebuild_all_caches( array($r['set_skin_set_id']) );
 			
-			$this->ipsclass->admin->redirect( "{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&code=rebuildalltemplates&justdone={$r['set_skin_set_id']}", "{$r['set_name']}的皮肤缓存已重建<br />处理下一个皮肤..." );
+			$this->ipsclass->admin->redirect( "{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&code=rebuildalltemplates&justdone={$r['set_skin_set_id']}", "{$r['set_name']}的主题缓存已重建<br />处理下一个主题..." );
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "已重新缓存所有皮肤模板!";
+			$this->ipsclass->main_msg = "已重新缓存所有主题模板!";
 			$this->list_sets();
 		}
 	}
@@ -583,13 +583,13 @@ class ad_skin_sets
 		
 		if ( $this->ipsclass->input['id'] == 1 )
 		{
-			$this->ipsclass->main_msg = "您不能修改主皮肤";
+			$this->ipsclass->main_msg = "您不能修改主主题";
 			$this->list_sets();
 		}
 		
 		if ( ! $this->ipsclass->input['set_name'] )
 		{
-			$this->ipsclass->main_msg = "您必须输入皮肤名称.";
+			$this->ipsclass->main_msg = "您必须输入主题名称.";
 			$this->list_sets();
 		}
 		
@@ -629,7 +629,7 @@ class ad_skin_sets
 		
 		$this->ipsclass->cache_func->_rebuild_all_caches( array( $newid ) );
 			
-		$this->ipsclass->main_msg = '<b>皮肤已添加</b>';
+		$this->ipsclass->main_msg = '<b>主题已添加</b>';
 		
 		$this->ipsclass->main_msg .= "<br />".implode("<br />", array_merge( $message, $this->ipsclass->cache_func->messages) );
 		$this->list_sets();
@@ -654,7 +654,7 @@ class ad_skin_sets
 		
 		if ( $this->ipsclass->input['id'] == 1 )
 		{
-			$this->ipsclass->main_msg = "您不能修改主皮肤";
+			$this->ipsclass->main_msg = "您不能修改主主题";
 			$this->list_sets();
 		}
 		
@@ -706,7 +706,7 @@ class ad_skin_sets
 		
 		$this->ipsclass->cache_func->_rebuild_all_caches( array( $id ) );
 			
-		$this->ipsclass->main_msg = '皮肤自定义内容已删除';
+		$this->ipsclass->main_msg = '主题自定义内容已删除';
 		
 		$this->ipsclass->main_msg .= "<br />".implode("<br />", array_merge( $message, $this->ipsclass->cache_func->messages) );
 		$this->list_sets();
@@ -733,12 +733,12 @@ class ad_skin_sets
 		
 		if ( $this->ipsclass->input['id'] == 1 )
 		{
-			$this->ipsclass->main_msg = "您不能修改主皮肤";
+			$this->ipsclass->main_msg = "您不能修改主主题";
 			$this->list_sets();
 		}
 		
 		$this->ipsclass->admin->page_detail = "<strong>请注意改动将无法撤销!</strong>";
-		$this->ipsclass->admin->page_title  = "恢复皮肤自定义内容";
+		$this->ipsclass->admin->page_title  = "恢复主题自定义内容";
 		
 		//-----------------------------------------
 		// Get macro / template info
@@ -784,7 +784,7 @@ class ad_skin_sets
 		//-----------------------------------------
 		
 		$this->ipsclass->html .= "<div class='tableborder'>
-							<div class='tableheaderalt'>恢复皮肤 {$this_set['set_name']} 的自定义内容</div>
+							<div class='tableheaderalt'>恢复主题 {$this_set['set_name']} 的自定义内容</div>
 							<div class='tablepad'>
 							<fieldset class='tdfset'>
 							 <legend><strong>自定义模板元素</strong></legend>
@@ -836,7 +836,7 @@ class ad_skin_sets
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'Skin Manager Home' );
-		$this->ipsclass->admin->nav[] = array(  '' ,'恢复皮肤 '.$this_set['set_name'] .' 的所有自定义内容' );
+		$this->ipsclass->admin->nav[] = array(  '' ,'恢复主题 '.$this_set['set_name'] .' 的所有自定义内容' );
 	
 		$this->ipsclass->admin->output();
 	}
@@ -849,7 +849,7 @@ class ad_skin_sets
 	function remove_splash()
 	{
 		$this->ipsclass->admin->page_detail = "请仔细阅读页面提示.";
-		$this->ipsclass->admin->page_title  = "删除皮肤";
+		$this->ipsclass->admin->page_title  = "删除主题";
 		
 		//-----------------------------------------
 		// Get this skin set...
@@ -865,18 +865,18 @@ class ad_skin_sets
 													  
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除皮肤 {$this_set['set_name']}" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除主题 {$this_set['set_name']}" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
 																"<div style='color:red;font-weight:bold;font-size:11px'>
 																请注意: 本操作无法撤销</div><br />
-																将永久删除该皮肤所有的自定义内容, 包括模板 HTML, CSS, 页面结构和自定义宏.
+																将永久删除该主题所有的自定义内容, 包括模板 HTML, CSS, 页面结构和自定义宏.
 																<br /><br />
-																该皮肤所有的子皮肤将被设为没有父皮肤的'根'皮肤.
+																该主题所有的子主题将被设为没有父主题的'根'主题.
 																",
 													  )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("永久删除皮肤 {$this_set['set_name']}");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("永久删除主题 {$this_set['set_name']}");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -904,7 +904,7 @@ class ad_skin_sets
 		
 		if ( $this->ipsclass->input['id'] == 1 )
 		{
-			$this->ipsclass->main_msg = '您不能修改主皮肤';
+			$this->ipsclass->main_msg = '您不能修改主主题';
 			$this->list_sets();
 		}
 		
@@ -921,7 +921,7 @@ class ad_skin_sets
 		
 		$this->ipsclass->cache_func->_rebuild_all_caches( array( $this->ipsclass->input['id'] ) );
 		
-		$this->ipsclass->main_msg = '皮肤已设为默认';
+		$this->ipsclass->main_msg = '主题已设为默认';
 		$this->list_sets();
 	}
 	
@@ -946,7 +946,7 @@ class ad_skin_sets
 		
 		if ( $this->ipsclass->input['id'] == 1 )
 		{
-			$this->ipsclass->main_msg = '您不能修改主皮肤';
+			$this->ipsclass->main_msg = '您不能修改主主题';
 			$this->list_sets();
 		}
 		
@@ -975,7 +975,7 @@ class ad_skin_sets
 																	   
 			if ( ! intval($count['count']) )
 			{
-				$this->ipsclass->main_msg = '您不能将最后一个可见皮肤设为隐藏';
+				$this->ipsclass->main_msg = '您不能将最后一个可见主题设为隐藏';
 				$this->list_sets();
 				return;
 			}
@@ -989,7 +989,7 @@ class ad_skin_sets
 		
 		$this->ipsclass->cache_func->_rebuild_all_caches( array( $this->ipsclass->input['id'] ) );
 		
-		$this->ipsclass->main_msg = '皮肤可见设置已修改';
+		$this->ipsclass->main_msg = '主题可见设置已修改';
 		$this->list_sets();
 	}
 	
@@ -1014,7 +1014,7 @@ class ad_skin_sets
 		
 		if ( $this->ipsclass->input['id'] == 1 )
 		{
-			$this->ipsclass->main_msg = '您不能修改主皮肤';
+			$this->ipsclass->main_msg = '您不能修改主主题';
 			$this->list_sets();
 		}
 		
@@ -1030,7 +1030,7 @@ class ad_skin_sets
 		
 		if ( $this_set['set_default'] == 1 )
 		{
-			$this->ipsclass->main_msg = 'IPB 无法删除默认皮肤, 请将另一个皮肤设为默认后重试.';
+			$this->ipsclass->main_msg = 'IPB 无法删除默认主题, 请将另一个主题设为默认后重试.';
 			$this->list_sets();
 		}
 		
@@ -1038,7 +1038,7 @@ class ad_skin_sets
 		
 		if ( $this_count['jazzyjeff'] == 2 )
 		{
-			$this->ipsclass->main_msg = 'IPB 无法删除最后一个可以编辑的皮肤.';
+			$this->ipsclass->main_msg = 'IPB 无法删除最后一个可以编辑的主题.';
 			$this->list_sets();
 		}
 		
@@ -1119,7 +1119,7 @@ class ad_skin_sets
 		
 		$this->ipsclass->cache_func->_rebuild_skin_id_cache();
 		
-		$this->ipsclass->main_msg = '皮肤已删除';
+		$this->ipsclass->main_msg = '主题已删除';
 		
 		$this->ipsclass->main_msg .= "<br />".implode("<br />", array_merge( $message, $this->ipsclass->cache_func->messages) );
 		$this->list_sets();
@@ -1254,7 +1254,7 @@ class ad_skin_sets
 			
 			$this->ipsclass->cache_func->_rebuild_all_caches($affected_ids);
 			
-			$this->ipsclass->main_msg = '皮肤设置已更新';
+			$this->ipsclass->main_msg = '主题设置已更新';
 			
 			$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 			
@@ -1308,7 +1308,7 @@ class ad_skin_sets
 		if ($type == 'add')
 		{
 			$code = 'doadd';
-			$button = '新建皮肤';
+			$button = '新建主题';
 			$row['set_name']    = $row['set_name'];
 			$row['set_default'] = 0;
 		}
@@ -1372,7 +1372,7 @@ class ad_skin_sets
 		//-----------------------------------------
 	
 		$this->ipsclass->admin->page_detail = "请配置以下设置.";
-		$this->ipsclass->admin->page_title  = "皮肤管理";
+		$this->ipsclass->admin->page_title  = "主题管理";
 		
 		//-----------------------------------------
 		
@@ -1396,7 +1396,7 @@ class ad_skin_sets
 							 <legend><strong>基础设置</strong></legend>
 							 <table width='100%' cellpadding='5' cellspacing='0' border='0'>
 							 <tr>
-							   <td width='40%' class='tablerow1'>皮肤名称</td>
+							   <td width='40%' class='tablerow1'>主题名称</td>
 							   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_input('set_name', $row['set_name'])."</td>
 							 </tr>
 							 <tr>
@@ -1407,23 +1407,23 @@ class ad_skin_sets
 		if ( $row['set_default'] )
 		{
 			$this->ipsclass->html .= "<tr>
-							    <td width='40%' class='tablerow1'>默认皮肤?</td>
+							    <td width='40%' class='tablerow1'>默认主题?</td>
 							    <td width='60%' class='tablerow1'><i>Skin set as default already.</i></td>";
 		}
 		else
 		{
 			$this->ipsclass->html .= "<tr>
-							    <td width='40%' class='tablerow1'>默认皮肤?</td>
+							    <td width='40%' class='tablerow1'>默认主题?</td>
 							    <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_checkbox('set_default', $row['set_default'])."</td>";
 		}
 		
 		$this->ipsclass->html .= "</tr>
 							  <tr>
-							   <td width='40%' class='tablerow1'>父皮肤?</td>
+							   <td width='40%' class='tablerow1'>父主题?</td>
 							   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_dropdown('set_skin_set_parent', $parents, $row['set_skin_set_parent'])."</td>
 							 </tr>
 							  <tr>
-							   <td width='40%' class='tablerow1'>皮肤关键字? (Optional)</td>
+							   <td width='40%' class='tablerow1'>主题关键字? (Optional)</td>
 							   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_input('set_key', $row['set_key'])."</td>
 							 </tr>
 							 </table>
@@ -1448,7 +1448,7 @@ class ad_skin_sets
 							   <td width='60%' class='tablerow1'>style_images/ ".$this->ipsclass->adskin->form_dropdown('set_image_dir', $dirs, $row['set_image_dir'])."</td>
 							 </tr>
 							  <tr>
-							   <td width='40%' class='tablerow1'>图释包?<br /><span style='color:gray'>选择要关联到此皮肤的图释包.</span></td>
+							   <td width='40%' class='tablerow1'>图释包?<br /><span style='color:gray'>选择要关联到此主题的图释包.</span></td>
 							   <td width='60%' class='tablerow1'>style_emoticons/ ".$this->ipsclass->adskin->form_dropdown('set_emoticon_folder', $emodirs, $row['set_emoticon_folder'])."</td>
 							 </tr>
 							 </table>
@@ -1502,8 +1502,8 @@ class ad_skin_sets
 		$template_array = array();
 		$content        = "";
 		
-		$this->ipsclass->admin->page_detail = "点击您要编辑的皮肤旁的图标并从弹出菜单中选择项目.";
-		$this->ipsclass->admin->page_title  = "皮肤管";
+		$this->ipsclass->admin->page_detail = "点击您要编辑的主题旁的图标并从弹出菜单中选择项目.";
+		$this->ipsclass->admin->page_title  = "主题管";
 		
 		//-----------------------------------------
 		// Get forum names
@@ -1684,8 +1684,8 @@ class ad_skin_sets
 			
 			if ( $r['set_skin_set_id'] == 1 AND ! IN_DEV )
 			{
-				$menulist = "\"无法编辑或删除主皮肤。<br />如果您要修改默认皮肤, 请单击"
-							 ."<br />皮肤 '<!DEFAULT>' 旁的图标并选择项目.\"";
+				$menulist = "\"无法编辑或删除主主题。<br />如果您要修改默认主题, 请单击"
+							 ."<br />主题 '<!DEFAULT>' 旁的图标并选择项目.\"";
 			}
 			else
 			{
@@ -1802,7 +1802,7 @@ class ad_skin_sets
 							3 => array( 'code'    , 'MOD_mod_xml'    ),
 			)  ); 
                                      
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( '开发工具: 导出皮肤模块文件' );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( '开发工具: 导出主题模块文件' );
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
 				'<b>WHERE</b> group_name <b>LIKE</b> \'%' . $this->ipsclass->adskin->form_input( 'group_name' ) . '%\' <b>AND</b> set_id = ' . $this->ipsclass->adskin->form_input( 'set_id', 1, '', '', 2 ) ) );
 

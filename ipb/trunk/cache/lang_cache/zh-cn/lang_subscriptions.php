@@ -86,7 +86,7 @@ $lang = array (
 's_transid'      => "ID",
 's_balance_cost' => "欠款",
 
-'s_current_bottom' => "如果您有任何关于当前或最近订阅的问题, 请与我们的管理团队联络.",
+'s_current_bottom' => "如果您有任何关于当前或最近订阅的问题, 请与我们的管理用户组联络.",
 
 's_available_subs' => "您可用的订阅项目",
 's_detail'         => "详细资料",

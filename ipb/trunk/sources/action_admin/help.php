@@ -295,7 +295,7 @@ class ad_help
         		
 		if ($this->ipsclass->input['title'] == "")
 		{
-			$this->ipsclass->admin->error("你必须输入标题!");
+			$this->ipsclass->admin->error("您必须输入标题!");
 		}
 		
 		$text = $this->han_editor->process_raw_post( 'text' );

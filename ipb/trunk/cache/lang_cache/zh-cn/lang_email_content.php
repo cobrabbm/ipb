@@ -20,7 +20,7 @@ $lang['footer'] = <<<EOF
 
 注意: 此邮件由系统自动生成,请勿回复.
 
-<#BOARD_NAME#> 管理团队敬启.
+<#BOARD_NAME#> 管理用户组敬启.
 <#BOARD_ADDRESS#>
 
 EOF;

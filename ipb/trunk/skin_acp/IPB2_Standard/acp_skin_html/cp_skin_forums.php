@@ -63,7 +63,7 @@ $IPBHTML .= <<<EOF
   new Array( img_add    + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=new&p={$r['id']}'>新建论坛...</a>",
   			 img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&f={$r['id']}'>编辑设置...</a>",
   			 img_delete + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=delete&f={$r['id']}'>删除分类...</a>",
-  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skinedit&f={$r['id']}'>皮肤选项...</a>"
+  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=skinedit&f={$r['id']}'>主题选项...</a>"
 		    ) );
  </script>
 <br />
@@ -289,7 +289,7 @@ EOF;
 if ( ($r['skin_id'] != "") and ($r['skin_id'] > 0) )
 {
 $IPBHTML .= <<<EOF
-<br>[ 使用皮肤设置: {$skin} ]
+<br>[ 使用主题设置: {$skin} ]
 EOF;
 }
 

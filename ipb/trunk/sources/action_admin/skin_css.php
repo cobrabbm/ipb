@@ -446,9 +446,9 @@ class ad_skin_css
 		
 		if ( ! $this->ipsclass->input['savereload'] )
 		{
-			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'皮肤管理' );
+			$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code ,'主题管理' );
 			$this->ipsclass->main_msg = "样式表已更新 : $extra";
-			$this->ipsclass->admin->redirect( $this->ipsclass->base_url.'&section='.$this->ipsclass->section_code.'&act=sets', "样式表已更新, 返回皮肤管理" );
+			$this->ipsclass->admin->redirect( $this->ipsclass->base_url.'&section='.$this->ipsclass->section_code.'&act=sets', "样式表已更新, 返回主题管理" );
 		}
 		else
 		{
@@ -555,7 +555,7 @@ class ad_skin_css
 			
 		//-----------------------------------------
 	
-		$this->ipsclass->admin->page_detail = "您可以在这里添加或编辑样式表.<br />点击 <a href='#' onclick='ipsclass.pop_up_window(\"{$this->ipsclass->base_url}&act=rtempl&code=css_diff&id={$this->ipsclass->input['id']}\", 800, 600 )'>这里</a>  可以查看当前 CSS 和默认皮肤 CSS 之间的区别.";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加或编辑样式表.<br />点击 <a href='#' onclick='ipsclass.pop_up_window(\"{$this->ipsclass->base_url}&act=rtempl&code=css_diff&id={$this->ipsclass->input['id']}\", 800, 600 )'>这里</a>  可以查看当前 CSS 和默认主题 CSS 之间的区别.";
 		$this->ipsclass->admin->page_title  = "样式表管理";
 		
 		//-----------------------------------------
@@ -636,7 +636,7 @@ class ad_skin_css
 										 
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'皮肤管理' );
+		$this->ipsclass->admin->nav[] = array( 'section='.$this->ipsclass->section_code.'&act=sets' ,'主题管理' );
 		$this->ipsclass->admin->nav[] = array( '' ,'编辑样式表 '.$this_set['set_name'] );
 		
 		$this->ipsclass->admin->output();

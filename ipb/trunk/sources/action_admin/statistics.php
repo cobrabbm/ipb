@@ -300,8 +300,8 @@ class ad_statistics
 			$sql_table = 'message_topics';
 			$sql_field = 'mt_date';
 			
-			$this->ipsclass->admin->page_detail = "显示悄悄话数量.  ( 提示: 所有时间基于 GMT 时间 )";
-			$this->ipsclass->admin->nav[] = array( '', '悄悄话发送数量' );
+			$this->ipsclass->admin->page_detail = "显示短消息数量.  ( 提示: 所有时间基于 GMT 时间 )";
+			$this->ipsclass->admin->nav[] = array( '', '短消息发送数量' );
 		}
 		
 	  
@@ -446,7 +446,7 @@ class ad_statistics
 		{
 			$form_code = 'show_msg';
 			
-			$table     = '悄悄话统计';
+			$table     = '短消息统计';
 		}
 		else if ($mode == 'views')
 		{

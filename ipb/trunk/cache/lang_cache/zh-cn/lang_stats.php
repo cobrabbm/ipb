@@ -33,7 +33,7 @@ $lang = array (
 'top_poster_title'       => "今日发帖前20名",
 
 
-'forum_leaders'          => "管理团队",
+'forum_leaders'          => "管理用户组",
 
 'leader_admins'          => "管理员",
 'leader_global'          => "超级版主",

@@ -531,7 +531,7 @@ class ad_skin_import {
 		// DONE!
 		//-----------------------------------------
 		
-		$this->ipsclass->main_msg = '皮肤包已导入! (id: '.$new_skin_id.')';
+		$this->ipsclass->main_msg = '主题包已导入! (id: '.$new_skin_id.')';
 			
 		$this->ipsclass->main_msg .= "<br />".implode( "<br />", $this->ipsclass->cache_func->messages );
 		
@@ -1313,8 +1313,8 @@ class ad_skin_import {
 		$form_array   = array();
 		$set_to_image = array();
 		
-		$this->ipsclass->admin->page_detail = "您可以在这里将皮肤打包下载. 皮肤 XML 模版 ( 包括 HTML、CSS、宏以及页面结构 ) 都和图像包无关<br />要下载完整的皮肤包, 您需要同时下载皮肤 XML 和图像包.";
-		$this->ipsclass->admin->page_title  = "导出皮肤包";
+		$this->ipsclass->admin->page_detail = "您可以在这里将主题打包下载. 主题 XML 模版 ( 包括 HTML、CSS、宏以及页面结构 ) 都和图像包无关<br />要下载完整的主题包, 您需要同时下载主题 XML 和图像包.";
+		$this->ipsclass->admin->page_title  = "导出主题包";
 		
 		//-----------------------------------------
 		// Get skin list...
@@ -1363,7 +1363,7 @@ class ad_skin_import {
  			{
 				if ( is_dir( CACHE_PATH.'style_images/'.$file ) )
 				{
-					$dirs[] = array( $file, '图像设置: "'.$file.'" (使用的皮肤: '.$set_to_image[ $file ].')' );
+					$dirs[] = array( $file, '图像设置: "'.$file.'" (使用的主题: '.$set_to_image[ $file ].')' );
 				}
  			}
  		}
@@ -1418,12 +1418,12 @@ class ad_skin_import {
 							 <div class='tablepad' style='background-color:#EAEDF0'>
 							 <br />
 							 <fieldset>
-							  <legend><strong>导出皮肤模板</strong>
+							  <legend><strong>导出主题模板</strong>
 							  $start_form_a
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>导出皮肤?</b><div class='graytext'>请选择要导出的皮肤 ( 包括 HTML 模版、宏、CSS以及论坛页面结构 ) .</div></td>
+							   <td class='tablerow1' width='40%'><b>导出主题?</b><div class='graytext'>请选择要导出的主题 ( 包括 HTML 模版、宏、CSS以及论坛页面结构 ) .</div></td>
 							   <td class='tablerow2' width='60%'><select name='skin_id' class='dropdown'>{$skin_list}</select></td>
 							 </tr>
 							 <tr>

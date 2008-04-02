@@ -54,7 +54,7 @@ class ad_adminlogs
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '¹ÜÀíÔ±²Ù×÷¼ÇÂ¼' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ç®¡ç†å‘˜æ“ä½œè®°å½•' );
 		
 		//-----------------------------------------
 		// Make sure we're a root admin, or else!
@@ -62,7 +62,7 @@ class ad_adminlogs
 		
 		if ($this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'])
 		{
-			//$this->ipsclass->admin->error("±§Ç¸, Ö»ÓĞÏµÍ³¹ÜÀíÔ±²ÅÄÜÊ¹ÓÃ±¾¹¦ÄÜ");
+			//$this->ipsclass->admin->error("æŠ±æ­‰, åªæœ‰ç³»ç»Ÿç®¡ç†å‘˜æ‰èƒ½ä½¿ç”¨æœ¬åŠŸèƒ½");
 		}
 		
 		$this->colours  = array(
@@ -106,12 +106,12 @@ class ad_adminlogs
 	{
 		$start = intval($this->ipsclass->input['st']) >=0 ? intval($this->ipsclass->input['st']) : 0;
 		
-		$this->ipsclass->admin->page_detail = "²é¿´Ä³¸ö¹ÜÀíÔ±µÄËùÓĞ¼ÇÂ¼";
-		$this->ipsclass->admin->page_title  = "¹ÜÀíÔ±²Ù×÷¼ÇÂ¼";
+		$this->ipsclass->admin->page_detail = "æŸ¥çœ‹æŸä¸ªç®¡ç†å‘˜çš„æ‰€æœ‰è®°å½•";
+		$this->ipsclass->admin->page_title  = "ç®¡ç†å‘˜æ“ä½œè®°å½•";
 		
 		if ( ( !isset($this->ipsclass->input['search_string']) OR !$this->ipsclass->input['search_string'] ) AND ( !isset($this->ipsclass->input['mid']) OR !$this->ipsclass->input['mid'] ) )
 		{
-			$this->ipsclass->main_msg = "Äú±ØĞëÊäÈëËÑË÷×Ö´®";
+			$this->ipsclass->main_msg = "æ‚¨å¿…é¡»è¾“å…¥æœç´¢å­—ä¸²";
 			$this->list_current();
 			return;
 		}
@@ -157,23 +157,23 @@ class ad_adminlogs
 		$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $row_count,
 														  'PER_PAGE'    => 20,
 														  'CUR_ST_VAL'  => $start,
-														  'L_SINGLE'    => "µ¥Ò³",
-														  'L_MULTI'     => "Ò³Âë: ",
+														  'L_SINGLE'    => "å•é¡µ",
+														  'L_MULTI'     => "é¡µç : ",
 														  'BASE_URL'    => $this->ipsclass->base_url.$query,
 														)
 												 );
 									  
-		$this->ipsclass->admin->page_detail = "Äú¿ÉÒÔ²é¿´»òÉ¾³ıÄúµÄ¹ÜÀíÔ±µÄ²Ù×÷¼ÇÂ¼";
-		$this->ipsclass->admin->page_title  = "¹ÜÀíÔ±²Ù×÷¼ÇÂ¼";
+		$this->ipsclass->admin->page_detail = "æ‚¨å¯ä»¥æŸ¥çœ‹æˆ–åˆ é™¤æ‚¨çš„ç®¡ç†å‘˜çš„æ“ä½œè®°å½•";
+		$this->ipsclass->admin->page_title  = "ç®¡ç†å‘˜æ“ä½œè®°å½•";
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "ÓÃ»§Ãû"            , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Ö´ĞĞ²Ù×÷"        , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "²Ù×÷Ê±¼ä"         , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP µØÖ·"             , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "ç”¨æˆ·å"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ‰§è¡Œæ“ä½œ"        , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ“ä½œæ—¶é—´"         , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP åœ°å€"             , "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "±£´æ¹ÜÀí¼ÇÂ¼" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "ä¿å­˜ç®¡ç†è®°å½•" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'center', 'tablesubheader');
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
@@ -195,7 +195,7 @@ class ad_adminlogs
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>Ã»ÓĞ½á¹û</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>æ²¡æœ‰ç»“æœ</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'center', 'tablesubheader');
@@ -235,8 +235,8 @@ class ad_adminlogs
 	{
 		$form_array = array();
 	
-		$this->ipsclass->admin->page_detail = "Äú¿ÉÒÔÔÚÕâÀï²é¿´»òÉ¾³ı¹ÜÀíÔ±ÔÚºóÌ¨²Ù×÷¼ÇÂ¼ (±ÈÈç°æ¿é¿ØÖÆ, »áÔ±¿ØÖÆ, ÓÃ»§×é¿ØÖÆ, °ïÖúÎÄ¼şÒÔ¼°°æÖ÷²Ù×÷¼ÇÂ¼¹ÜÀí).";
-		$this->ipsclass->admin->page_title  = "¹ÜÀíÔ±²Ù×÷¼ÇÂ¼";
+		$this->ipsclass->admin->page_detail = "æ‚¨å¯ä»¥åœ¨è¿™é‡ŒæŸ¥çœ‹æˆ–åˆ é™¤ç®¡ç†å‘˜åœ¨åå°æ“ä½œè®°å½• (æ¯”å¦‚ç‰ˆå—æ§åˆ¶, ä¼šå‘˜æ§åˆ¶, ç”¨æˆ·ç»„æ§åˆ¶, å¸®åŠ©æ–‡ä»¶ä»¥åŠç‰ˆä¸»æ“ä½œè®°å½•ç®¡ç†).";
+		$this->ipsclass->admin->page_title  = "ç®¡ç†å‘˜æ“ä½œè®°å½•";
 		
 		//-----------------------------------------
 		// LAST FIVE ACTIONS
@@ -245,12 +245,12 @@ class ad_adminlogs
 		$this->ipsclass->DB->cache_add_query( 'adminlogs_view_list_current', array() );
 		$this->ipsclass->DB->cache_exec_query();
 		
-		$this->ipsclass->adskin->td_header[] = array( "ÓÃ»§Ãû"            , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Ö´ĞĞ²Ù×÷"        , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "²Ù×÷Ê±¼ä"         , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "IP µØÖ·"             , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "ç”¨æˆ·å"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ‰§è¡Œæ“ä½œ"        , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ“ä½œæ—¶é—´"         , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "IP åœ°å€"             , "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "×î½üµÄ 5 Ìõ¹ÜÀíÔ±²Ù×÷¼ÇÂ¼" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "æœ€è¿‘çš„ 5 æ¡ç®¡ç†å‘˜æ“ä½œè®°å½•" );
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -270,7 +270,7 @@ class ad_adminlogs
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>No results</center>");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>æ²¡æœ‰ç»“æœ</center>");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -278,12 +278,12 @@ class ad_adminlogs
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "ÓÃ»§Ãû"            , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Ö´ĞĞ²Ù×÷"       , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "²é¿´¸Ã»áÔ±µÄËùÓĞ¼ÇÂ¼"     , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "É¾³ı¸Ã»áÔ±µÄËùÓĞ¼ÇÂ¼"   , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "ç”¨æˆ·å"            , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ‰§è¡Œæ“ä½œ"       , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "æŸ¥çœ‹è¯¥ä¼šå‘˜çš„æ‰€æœ‰è®°å½•"     , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "åˆ é™¤è¯¥ä¼šå‘˜çš„æ‰€æœ‰è®°å½•"   , "30%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "¹ÜÀíÔ±²Ù×÷¼ÇÂ¼Í³¼Æ" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "ç®¡ç†å‘˜æ“ä½œè®°å½•ç»Ÿè®¡" );
 		
 		$this->ipsclass->DB->cache_add_query( 'adminlogs_view_list_current_two', array() );
 		$this->ipsclass->DB->cache_exec_query();
@@ -293,8 +293,8 @@ class ad_adminlogs
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>{$r['name']}</b>",
 													  "<center>{$r['act_count']}</center>",
-													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=view&mid={$r['member_id']}'>²é¿´</a></center>",
-													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=remove&mid={$r['member_id']}'>É¾³ı</a></center>",
+													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=view&mid={$r['member_id']}'>æŸ¥çœ‹</a></center>",
+													  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=remove&mid={$r['member_id']}'>åˆ é™¤</a></center>",
 											 )      );
 		}
 			
@@ -314,27 +314,27 @@ class ad_adminlogs
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "ËÑË÷¹ÜÀíÔ±²Ù×÷¼ÇÂ¼" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "æœç´¢ç®¡ç†å‘˜æ“ä½œè®°å½•" );
 		
 		$form_array = array(
-							  0 => array( 'note'      , 'Ö´ĞĞ²Ù×÷' ),
-							  1 => array( 'ip_address',  'IP µØÖ·'  ),
-							  2 => array( 'member_id' , '»áÔ± ID' ),
+							  0 => array( 'note'      , 'æ‰§è¡Œæ“ä½œ' ),
+							  1 => array( 'ip_address',  'IP åœ°å€'  ),
+							  2 => array( 'member_id' , 'ä¼šå‘˜ ID' ),
 							  3 => array( 'act'        , 'ACT Setting'  ),
 							  4 => array( 'code'       , 'CODE Setting'  ),
 						   );
 			
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ËÑË÷×Ö´®...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>æœç´¢å­—ä¸²...</b>" ,
 										  		  $this->ipsclass->adskin->form_input( "search_string")
 								 )      );
 								 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ËÑË÷·¶Î§...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>æœç´¢èŒƒå›´...</b>" ,
 										  		  $this->ipsclass->adskin->form_dropdown( "search_type", $form_array)
 								 )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("ËÑË÷");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("æœç´¢");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

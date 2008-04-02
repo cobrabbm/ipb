@@ -48,8 +48,8 @@ class ad_skin_diff
 	function auto_run()
 	{
 		$this->ipsclass->admin->page_detail = "对比模版差异.";
-		$this->ipsclass->admin->page_title  = "皮肤模板 HTML 差异";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '皮肤对比' );
+		$this->ipsclass->admin->page_title  = "主题模板 HTML 差异";
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '主题对比' );
 
 		//-----------------------------------------
 		// LOAD HTML

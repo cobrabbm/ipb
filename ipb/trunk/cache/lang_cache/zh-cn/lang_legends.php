@@ -16,7 +16,7 @@ $lang = array (
 
 // 2.2
 'bbc_li'			=> "列出条目",
-'bbc_helloworld'	=> "你好, 世界",
+'bbc_helloworld'	=> "您好, 世界",
 'bbc_testpage'		=> "一个测试页面",
 
 'bbc_ex1' => "这是一段范例文本",

@@ -1324,7 +1324,7 @@ class ad_rebuild {
 	
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 的'联系人'到 IPB 2.2.x 的'好友'" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 2.2.0 引入了'好友'功能, 取代了悄悄话'联系人'.<br />本工具将现有的联系人转换到好友."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "IPB 2.2.0 引入了'好友'功能, 取代了短消息'联系人'.<br />本工具将现有的联系人转换到好友."
 																	)      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( '运行工具');
@@ -1344,8 +1344,8 @@ class ad_rebuild {
 	
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 模版 HTML 到 IPB 2.2.x 模版 HTML Logic" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "的模版格式有一些变化, 本工具将更新您存储在数据库中的主皮肤. 运行本工具后您需要重建缓存.
-																			  <br />针对皮肤: $skin_list 运行本工具"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "的模版格式有一些变化, 本工具将更新您存储在数据库中的主主题. 运行本工具后您需要重建缓存.
+																			  <br />针对主题: $skin_list 运行本工具"
 																	)      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( '运行工具');

@@ -74,7 +74,7 @@ class ad_administration
 		$this->map = array( 'forum_cache'   => '版块信息和数据',
 							'group_cache'   => '用户组信息和数据',
 							'systemvars'    => '系统运行变量',
-							'skin_id_cache' => '皮肤信息和数据',
+							'skin_id_cache' => '主题信息和数据',
 							'moderators'    => '版主信息和数据',
 							'stats'         => '论坛统计，例如帖子数等',
 							'ranks'         => '会员头衔和等级信息',
@@ -341,7 +341,7 @@ class ad_administration
     			$admin->ipsclass =& $this->ipsclass;
     			$admin->_rebuild_skin_id_cache();
 				
-				$this->ipsclass->main_msg = '皮肤缓存已更新';
+				$this->ipsclass->main_msg = '主题缓存已更新';
 				break;
 				
 			//-----------------------------------------

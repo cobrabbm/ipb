@@ -377,7 +377,7 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <div class='{$onoff['dashboard']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/dashboard.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=dashboard'>首页</a></div>
 <div class='{$onoff['content']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/system.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=content'>论坛设置</a></div>
-<div class='{$onoff['lookandfeel']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/lookfeel.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=lookandfeel'>皮肤模板</a></div>
+<div class='{$onoff['lookandfeel']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/lookfeel.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=lookandfeel'>主题模板</a></div>
 <div class='{$onoff['tools']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/tools.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=tools'>工具设置</a></div>
 <div class='{$onoff['components']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/components.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=components'>组件管理</a></div>
 <div class='{$onoff['admin']}'><img src='{$this->ipsclass->skin_acp_url}/images/tabs_main/admin.png' style='vertical-align:middle' /> <a href='{$this->ipsclass->base_url}&section=admin'>管理面板</a></div>
