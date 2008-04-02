@@ -3,9 +3,9 @@
 	<helpsectionsgroup>
 		<helpsections>
 			<key>dashboard_dashboard_</key>
-			<title>ºóÌ¨°ïÖúÏµÍ³</title>
-			<helptext><![CDATA[<b>»¶Ó­À´µ½ºóÌ¨°ïÖúÏµÍ³</b>
-<br />Õâ¸öÏµÍ³½«Ìá¹©Äú¹ØÓÚÒ»Ð©ÌØÊâÉèÖÃºÍ¹ÜÀíÒ³Ãæ·½ÃæµÄ¸ü¼ÓÍêÉÆµÄÐÅÏ¢.
+			<title>åŽå°å¸®åŠ©ç³»ç»Ÿ</title>
+			<helptext><![CDATA[<b>æ¬¢è¿Žæ¥åˆ°åŽå°å¸®åŠ©ç³»ç»Ÿ</b>
+<br />è¿™ä¸ªç³»ç»Ÿå°†æä¾›æ‚¨å…³äºŽä¸€äº›ç‰¹æ®Šè®¾ç½®å’Œç®¡ç†é¡µé¢æ–¹é¢çš„æ›´åŠ å®Œå–„çš„ä¿¡æ¯.
 <br />For pages that hold more information, you will see a box just like this one. 
 <br />For individual settings, an image will appear next to them, which you can click for more information. The image will appear as: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
 <br />
@@ -31,24 +31,24 @@ Larger databases may time out using this tool. If this happens for you, please c
 
 		<helpsections>
 			<key>content_forum_new</key>
-			<title>È¨ÏÞÉèÖÃ</title>
-			<helptext><![CDATA[´´½¨Ò»¸ö<b>ÐÂÂÛÌ³°å¿é</b>µÄÊ±ºò,ÇëÑ¡ÔñÄÄÐ©ÓÃ»§×é¿ÉÒÔ²é¿´´ËÂÛÌ³,ÔÚ´ËÂÛÌ³Í¶Æ±,ÉÏ´«/ÏÂÔØ¸½¼þ.Äú¿ÉÒÔÔÚÏÂÃæÕÒµ½Ïà¹ØÉèÖÃ.Èç¹ûÄú²»ÉèÖÃµÄ»°,ÈÎºÎÈË¶¼²»ÄÜ²é¿´´ËÂÛÌ³,°üÀ¨¹ÜÀíÔ±ÔÚÄÚ.<br />
-´´½¨<b>ÐÂÂÛÌ³·ÖÇø</b>µÄÊ±ºò,ÄúÒ²ÐèÒªÑ¡ÔñÄÄÐ©ÓÃ»§×é¿ÉÒÔ²é¿´´ËÂÛÌ³·ÖÇø.
+			<title>æƒé™è®¾ç½®</title>
+			<helptext><![CDATA[åˆ›å»ºä¸€ä¸ª<b>æ–°è®ºå›æ¿å—</b>çš„æ—¶å€™,è¯·é€‰æ‹©å“ªäº›ç”¨æˆ·ç»„å¯ä»¥æŸ¥çœ‹æ­¤è®ºå›,åœ¨æ­¤è®ºå›æŠ•ç¥¨,ä¸Šä¼ /ä¸‹è½½é™„ä»¶.æ‚¨å¯ä»¥åœ¨ä¸‹é¢æ‰¾åˆ°ç›¸å…³è®¾ç½®.å¦‚æžœæ‚¨ä¸è®¾ç½®çš„è¯,ä»»ä½•äººéƒ½ä¸èƒ½æŸ¥çœ‹æ­¤è®ºå›,åŒ…æ‹¬ç®¡ç†å‘˜åœ¨å†….<br />
+åˆ›å»º<b>æ–°è®ºå›åˆ†åŒº</b>çš„æ—¶å€™,æ‚¨ä¹Ÿéœ€è¦é€‰æ‹©å“ªäº›ç”¨æˆ·ç»„å¯ä»¥æŸ¥çœ‹æ­¤è®ºå›åˆ†åŒº.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_donew</key>
-			<title>È¨ÏÞÉèÖÃ</title>
-			<helptext><![CDATA[´´½¨Ò»¸ö<b>ÐÂÂÛÌ³°å¿é</b>µÄÊ±ºò,ÇëÑ¡ÔñÄÄÐ©ÓÃ»§×é¿ÉÒÔ²é¿´´ËÂÛÌ³,ÔÚ´ËÂÛÌ³Í¶Æ±,ÉÏ´«/ÏÂÔØ¸½¼þ.Äú¿ÉÒÔÔÚÏÂÃæÕÒµ½Ïà¹ØÉèÖÃ.Èç¹ûÄú²»ÉèÖÃµÄ»°,ÈÎºÎÈË¶¼²»ÄÜ²é¿´´ËÂÛÌ³,°üÀ¨¹ÜÀíÔ±ÔÚÄÚ..<br />
-´´½¨<b>ÐÂÂÛÌ³·ÖÇø</b>µÄÊ±ºò,ÄúÒ²ÐèÒªÑ¡ÔñÄÄÐ©ÓÃ»§×é¿ÉÒÔ²é¿´´ËÂÛÌ³·ÖÇø.]]></helptext>
+			<title>æƒé™è®¾ç½®</title>
+			<helptext><![CDATA[åˆ›å»ºä¸€ä¸ª<b>æ–°è®ºå›æ¿å—</b>çš„æ—¶å€™,è¯·é€‰æ‹©å“ªäº›ç”¨æˆ·ç»„å¯ä»¥æŸ¥çœ‹æ­¤è®ºå›,åœ¨æ­¤è®ºå›æŠ•ç¥¨,ä¸Šä¼ /ä¸‹è½½é™„ä»¶.æ‚¨å¯ä»¥åœ¨ä¸‹é¢æ‰¾åˆ°ç›¸å…³è®¾ç½®.å¦‚æžœæ‚¨ä¸è®¾ç½®çš„è¯,ä»»ä½•äººéƒ½ä¸èƒ½æŸ¥çœ‹æ­¤è®ºå›,åŒ…æ‹¬ç®¡ç†å‘˜åœ¨å†…..<br />
+åˆ›å»º<b>æ–°è®ºå›åˆ†åŒº</b>çš„æ—¶å€™,æ‚¨ä¹Ÿéœ€è¦é€‰æ‹©å“ªäº›ç”¨æˆ·ç»„å¯ä»¥æŸ¥çœ‹æ­¤è®ºå›åˆ†åŒº.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_</key>
-			<title>¹ÜÀíÒÑ¾­´æÔÚµÄÂÛÌ³</title>
-			<helptext><![CDATA[µ±ÄúÐèÒª <b>±à¼­ÉèÖÃ</b>,¸ü¸ÄÈ¨ÏÞ,»òÕßÉ¾³ýÒ»¸öÒÑ¾­´æÔÚµÄ°å¿é/·ÖÇøµÄÊ±ºò,Äú¿ÉÒÔÔÚÄúµÄÄ¿±ê°å¿é/·ÖÇøµÄÓÒ±ß,µã»÷ÏÂÀ­²Ëµ¥À´Ö´ÐÐ²Ù×÷.ÕâÔÚÄú¾ö¶¨Ë­ÊÇ·ñÄÜ¿´²é¿´Ä¿±ê°å¿é/·ÖÇøµÄÊ±ºòÏÔµÃÌØ±ðÓÐÓÃ.<br />
-Èç¹ûÄúÌíÐèÒª¼Ó,É¾³ý,»òÕß±à¼­ÒÑ¾­´æÔÚµÄ<b>°æÖ÷</b>,×î¼òµ¥µÄ·½·¨¾ÍÊÇµã»÷ÏÂÃæµÄ<i>ÏÔÊ¾°æÖ÷</i>.ÒÑ¾­´æÔÚµÄ°æÖ÷¾Í»áÔÚËûÃÇ¹ÜÀíµÄ°å¿éÅÔ±ßÏÔÊ¾³öÀ´.Èç¹ûÄúÐèÒªÎªÒ»¸öÒÑ¾­´æÔÚµÄ°å¿éÌí¼Ó°æÖ÷,Äú¿ÉÒÔÑ¡ÖÐ´Ë°å¿é,¹ö¶¯ÔÚÒ³ÃæµÄµ×²¿,ÔÚÊäÈë¿òÄÚÊäÈë´Ë°æÖ÷µÄ»áÔ±Ãû×Ö<i>ÎªËùÓÐÑ¡ÔñµÄ°å¿éÌí¼Ó°æÖ÷(s)</i>.]]></helptext>
+			<title>ç®¡ç†å·²ç»å­˜åœ¨çš„è®ºå›</title>
+			<helptext><![CDATA[å½“æ‚¨éœ€è¦ <b>ç¼–è¾‘è®¾ç½®</b>,æ›´æ”¹æƒé™,æˆ–è€…åˆ é™¤ä¸€ä¸ªå·²ç»å­˜åœ¨çš„æ¿å—/åˆ†åŒºçš„æ—¶å€™,æ‚¨å¯ä»¥åœ¨æ‚¨çš„ç›®æ ‡æ¿å—/åˆ†åŒºçš„å³è¾¹,ç‚¹å‡»ä¸‹æ‹‰èœå•æ¥æ‰§è¡Œæ“ä½œ.è¿™åœ¨æ‚¨å†³å®šè°æ˜¯å¦èƒ½çœ‹æŸ¥çœ‹ç›®æ ‡æ¿å—/åˆ†åŒºçš„æ—¶å€™æ˜¾å¾—ç‰¹åˆ«æœ‰ç”¨.<br />
+å¦‚æžœæ‚¨æ·»éœ€è¦åŠ ,åˆ é™¤,æˆ–è€…ç¼–è¾‘å·²ç»å­˜åœ¨çš„<b>ç‰ˆä¸»</b>,æœ€ç®€å•çš„æ–¹æ³•å°±æ˜¯ç‚¹å‡»ä¸‹é¢çš„<i>æ˜¾ç¤ºç‰ˆä¸»</i>.å·²ç»å­˜åœ¨çš„ç‰ˆä¸»å°±ä¼šåœ¨ä»–ä»¬ç®¡ç†çš„æ¿å—æ—è¾¹æ˜¾ç¤ºå‡ºæ¥.å¦‚æžœæ‚¨éœ€è¦ä¸ºä¸€ä¸ªå·²ç»å­˜åœ¨çš„æ¿å—æ·»åŠ ç‰ˆä¸»,æ‚¨å¯ä»¥é€‰ä¸­æ­¤æ¿å—,æ»šåŠ¨åœ¨é¡µé¢çš„åº•éƒ¨,åœ¨è¾“å…¥æ¡†å†…è¾“å…¥æ­¤ç‰ˆä¸»çš„ä¼šå‘˜åå­—<i>ä¸ºæ‰€æœ‰é€‰æ‹©çš„æ¿å—æ·»åŠ ç‰ˆä¸»(s)</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -83,22 +83,22 @@ If you are <b>having issues</b> adding the Copyright Removal license, please <a 
 
 		<helpsections>
 			<key>lookandfeel_sets_</key>
-			<title>¹ÜÀíÖ÷ÌâÉèÖÃ</title>
-			<helptext><![CDATA[Äú¿ÉÒÔÔÚÕâÀï²é¿´ºÍ¸ü¸ÄÄúµÄÂÛÌ³Ö÷Ìâ.Äú¿ÉÒÔµã»÷Ã¿Ò»¿îÖ÷ÌâÓÒ±ßµÄÏÂÀ­²Ëµ¥Ö±½ÓÐÞ¸Ä´ËÖ÷Ìâ. Èç¹ûÄúÐèÒª´´½¨Ò»¸öÐÂµÄÎ´±à¼­Ä¬ÈÏÖ÷Ìâ,Äú¿ÉÒÔµã»÷ <i>Ö÷ÌâÉèÖÃ</i>ÓÒ±ßµÄÏÂÀ­²Ëµ¥À´ÊµÏÖ.ÏÂÃæÊÇÒ³ÃæÍ¼±êµÄÏà¹ØËµÃ÷:<br />
-<img src="{skin_url}/images/skin_default.gif" alt="Defaul Skin" style="float:none;" /> - Õâ¸öÍ¼±êÏÔÊ¾³öÄÄÒ»¿îÖ÷ÌâÕýÔÚ±»ÓÃ×öÂÛÌ³Ä¬ÈÏÖ÷Ìâ.Äú¿ÉÒÔÔÚÆäËûµÄÖ÷ÌâºóÃæµãÁÁ´ËÍ¼±êÀ´ÉèÖÃ´ËÖ÷ÌâÎªÄ¬ÈÏÖ÷Ìâ.<br />
-<img src="{skin_url}/images/skin_visible.gif" alt="Visible Skin" style="float:none;" /> - Õâ¸öÍ¼±êÏÔÊ¾ÄÄÐ©ÂÛÌ³Ö÷Ìâ¿ÉÓÃ.Äú¿ÉÒÔµã»÷Õâ¸öÍ¼±êÀ´Òþ²Ø»òÕßÏÔÊ¾»áÔ±¿ÉÒÔ×Ô¼ºÑ¡ÔñµÄÖ÷Ìâ.<br />
-<img src="{skin_url}/images/skin_forums.gif" alt="Forum Skin" style="float:none;" /> - Õâ¸öÍ¼±êÏÔÊ¾´ËÖ÷ÌâÒÑ¾­±»Ä³Ò»¸öÌØÊâµÄ°å¿éÊ¹ÓÃ.
+			<title>ç®¡ç†ä¸»é¢˜è®¾ç½®</title>
+			<helptext><![CDATA[æ‚¨å¯ä»¥åœ¨è¿™é‡ŒæŸ¥çœ‹å’Œæ›´æ”¹æ‚¨çš„è®ºå›ä¸»é¢˜.æ‚¨å¯ä»¥ç‚¹å‡»æ¯ä¸€æ¬¾ä¸»é¢˜å³è¾¹çš„ä¸‹æ‹‰èœå•ç›´æŽ¥ä¿®æ”¹æ­¤ä¸»é¢˜. å¦‚æžœæ‚¨éœ€è¦åˆ›å»ºä¸€ä¸ªæ–°çš„æœªç¼–è¾‘é»˜è®¤ä¸»é¢˜,æ‚¨å¯ä»¥ç‚¹å‡» <i>ä¸»é¢˜è®¾ç½®</i>å³è¾¹çš„ä¸‹æ‹‰èœå•æ¥å®žçŽ°.ä¸‹é¢æ˜¯é¡µé¢å›¾æ ‡çš„ç›¸å…³è¯´æ˜Ž:<br />
+<img src="{skin_url}/images/skin_default.gif" alt="Defaul Skin" style="float:none;" /> - è¿™ä¸ªå›¾æ ‡æ˜¾ç¤ºå‡ºå“ªä¸€æ¬¾ä¸»é¢˜æ­£åœ¨è¢«ç”¨åšè®ºå›é»˜è®¤ä¸»é¢˜.æ‚¨å¯ä»¥åœ¨å…¶ä»–çš„ä¸»é¢˜åŽé¢ç‚¹äº®æ­¤å›¾æ ‡æ¥è®¾ç½®æ­¤ä¸»é¢˜ä¸ºé»˜è®¤ä¸»é¢˜.<br />
+<img src="{skin_url}/images/skin_visible.gif" alt="Visible Skin" style="float:none;" /> - è¿™ä¸ªå›¾æ ‡æ˜¾ç¤ºå“ªäº›è®ºå›ä¸»é¢˜å¯ç”¨.æ‚¨å¯ä»¥ç‚¹å‡»è¿™ä¸ªå›¾æ ‡æ¥éšè—æˆ–è€…æ˜¾ç¤ºä¼šå‘˜å¯ä»¥è‡ªå·±é€‰æ‹©çš„ä¸»é¢˜.<br />
+<img src="{skin_url}/images/skin_forums.gif" alt="Forum Skin" style="float:none;" /> - è¿™ä¸ªå›¾æ ‡æ˜¾ç¤ºæ­¤ä¸»é¢˜å·²ç»è¢«æŸä¸€ä¸ªç‰¹æ®Šçš„æ¿å—ä½¿ç”¨.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_support</key>
-			<title>Ìá½»Ô®ÖúÉêÇë</title>
-			<helptext><![CDATA[µ±ÄúÔÚÊ¹ÓÃÂÛÌ³Èí¼þÓöµ½ÎÊÌâÐèÒª IPS Ìá¹©Ô®ÖúµÄÊ±ºò,Äú¿ÉÒÔÍ¨¹ýÉêÇëÏµÍ³¸øÎÒÃÇÌá½»ÉêÇë. ÄúµÄÉêÇë¿ÉÄÜÐèÒª 24-48 Ð¡Ê±À´´¦Àí.<br/>
+			<title>æäº¤æ´åŠ©ç”³è¯·</title>
+			<helptext><![CDATA[å½“æ‚¨åœ¨ä½¿ç”¨è®ºå›è½¯ä»¶é‡åˆ°é—®é¢˜éœ€è¦ IPS æä¾›æ´åŠ©çš„æ—¶å€™,æ‚¨å¯ä»¥é€šè¿‡ç”³è¯·ç³»ç»Ÿç»™æˆ‘ä»¬æäº¤ç”³è¯·. æ‚¨çš„ç”³è¯·å¯èƒ½éœ€è¦ 24-48 å°æ—¶æ¥å¤„ç†.<br/>
 <br />
-ÇëÄúÌá½»ÉêÇëµÄÊ±ºòÌá¹©Ò»¸ö¿ÉÓÃµÄÁªÏµ·½Ê½.<br />
+è¯·æ‚¨æäº¤ç”³è¯·çš„æ—¶å€™æä¾›ä¸€ä¸ªå¯ç”¨çš„è”ç³»æ–¹å¼.<br />
 <br />
-<b>ÌáÐÑ - Internet Explorer ÓÃ»§</b>: ÔÚÓÐÐ©Çé¿öÏÂ, Internet Explorer ²»ÔÊÐíÊ¹ÓÃÍâ²¿¿ò¼Ü.Èç¹ûÄúµÇÂ¼³öÏÖÎÊÌâ,ÇëÖ±½Óµã»÷ÕâÀï:<a href="https://www.invisionpower.com/customer/" target="_blank">¿Í»§ÇøÓò</a>.]]></helptext>
+<b>æé†’ - Internet Explorer ç”¨æˆ·</b>: åœ¨æœ‰äº›æƒ…å†µä¸‹, Internet Explorer ä¸å…è®¸ä½¿ç”¨å¤–éƒ¨æ¡†æž¶.å¦‚æžœæ‚¨ç™»å½•å‡ºçŽ°é—®é¢˜,è¯·ç›´æŽ¥ç‚¹å‡»è¿™é‡Œ:<a href="https://www.invisionpower.com/customer/" target="_blank">å®¢æˆ·åŒºåŸŸ</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -114,12 +114,12 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>content_group_permsplash</key>
-			<title>ÂÛÌ³È¨ÏÞ¹ÜÀí</title>
-			<helptext><![CDATA[Äú¿ÉÒÔÔÚÕâÀïÉèÖÃÄúÂÛÌ³µÄÒ»Ð©·ÃÎÊÈ¨ÏÞ.Äú¿ÉÒÔÖ±½Óµã»÷»áÔ±×éÓÒ±ßµÄÏÂÀ­²Ëµ¥À´ÉèÖÃÄÄÐ©ÂÛÌ³»áÔ±¿ÉÒÔ²é¿´,¿ÉÒÔ·¢±íµÈµÈ.<br />
+			<title>è®ºå›æƒé™ç®¡ç†</title>
+			<helptext><![CDATA[æ‚¨å¯ä»¥åœ¨è¿™é‡Œè®¾ç½®æ‚¨è®ºå›çš„ä¸€äº›è®¿é—®æƒé™.æ‚¨å¯ä»¥ç›´æŽ¥ç‚¹å‡»ä¼šå‘˜ç»„å³è¾¹çš„ä¸‹æ‹‰èœå•æ¥è®¾ç½®å“ªäº›è®ºå›ä¼šå‘˜å¯ä»¥æŸ¥çœ‹,å¯ä»¥å‘è¡¨ç­‰ç­‰.<br />
 <br />
-<b>ÓÃ»§×éÊ¹ÓÃ</b>ÏÔÊ¾Óë´ËÈ¨ÏÞÓÐ¹ØµÄÓÃ»§×é.
-<b>»áÔ±Ê¹ÓÃ</b> ÏÔÊ¾µ¥¶ÀÊ¹ÓÃ´ËÈ¨ÏÞµÄÌØÊâ»áÔ±.
-<b>Ô¤ÀÀ</b> Ìá¹©Ò»¸ö·½±ã¿ì½ÝÖ±¹ÛµÄÈ¨ÏÞÔ¤ÀÀÍ¼Ê¾.]]></helptext>
+<b>ç”¨æˆ·ç»„ä½¿ç”¨</b>æ˜¾ç¤ºä¸Žæ­¤æƒé™æœ‰å…³çš„ç”¨æˆ·ç»„.
+<b>ä¼šå‘˜ä½¿ç”¨</b> æ˜¾ç¤ºå•ç‹¬ä½¿ç”¨æ­¤æƒé™çš„ç‰¹æ®Šä¼šå‘˜.
+<b>é¢„è§ˆ</b> æä¾›ä¸€ä¸ªæ–¹ä¾¿å¿«æ·ç›´è§‚çš„æƒé™é¢„è§ˆå›¾ç¤º.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -136,77 +136,77 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>content_mem_add</key>
-			<title>´´½¨ÐÂ»áÔ±</title>
-			<helptext>µ±ÄúÐèÒªÌí¼Ó¹ÜÀíÔ±ÕÊºÅµÄÊ±ºò½¨ÒéÖ±½ÓÓÃ¹ÜÀíºóÌ¨Ìí¼Ó.Õâ½«Ê¡È¥ÄúºÜ¶à²»±ØÒªµÄ×¢²á¼¤»îµÈ²½Öè.</helptext>
+			<title>åˆ›å»ºæ–°ä¼šå‘˜</title>
+			<helptext>å½“æ‚¨éœ€è¦æ·»åŠ ç®¡ç†å‘˜å¸å·çš„æ—¶å€™å»ºè®®ç›´æŽ¥ç”¨ç®¡ç†åŽå°æ·»åŠ .è¿™å°†çœåŽ»æ‚¨å¾ˆå¤šä¸å¿…è¦çš„æ³¨å†Œæ¿€æ´»ç­‰æ­¥éª¤.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_title</key>
-			<title>ÉèÖÃ»áÔ±ÆÀ·Ö</title>
-			<helptext><![CDATA[ÆÀ·ÖµÄÍ¼±ê»áÏÔÊ¾ÔÚ»áÔ±Í·ÏñÖ®ÏÂ.<br />
-ÕâÏîÉèÖÃÔÊÐíÄú¸ü¸Ä,É¾³ý,»òÕßÌí¼ÓÆÀ·Ö.Äú¿ÉÒÔÑ¡ÔñÐÇÐÎÍ¼±êµÄÊýÁ¿À´ÆÀ·Ö.Äú¿ÉÒÔ×Ô¶¨Òå´ËÏÔÊ¾Í¼Æ¬.ÌáÐÑ,Í¼Æ¬±ØÐë±£´æÔÚ '/style_images/{img_dir}/folder_team_icons' ´Ë°²×°Ä¿Â¼.
+			<title>è®¾ç½®ä¼šå‘˜è¯„åˆ†</title>
+			<helptext><![CDATA[è¯„åˆ†çš„å›¾æ ‡ä¼šæ˜¾ç¤ºåœ¨ä¼šå‘˜å¤´åƒä¹‹ä¸‹.<br />
+è¿™é¡¹è®¾ç½®å…è®¸æ‚¨æ›´æ”¹,åˆ é™¤,æˆ–è€…æ·»åŠ è¯„åˆ†.æ‚¨å¯ä»¥é€‰æ‹©æ˜Ÿå½¢å›¾æ ‡çš„æ•°é‡æ¥è¯„åˆ†.æ‚¨å¯ä»¥è‡ªå®šä¹‰æ­¤æ˜¾ç¤ºå›¾ç‰‡.æé†’,å›¾ç‰‡å¿…é¡»ä¿å­˜åœ¨ '/style_images/{img_dir}/folder_team_icons' æ­¤å®‰è£…ç›®å½•.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_gallery_show</key>
-			<title>IPBÍ¼¿â</title>
-			<helptext><![CDATA[ÕâÊÇÒ»¸öµ¥¶ÀµÄÂÛÌ³²å¼þ.ËüÎªÄúµÄÂÛÌ³Ìá¹©ÁËÒ»¸öÍ¼¿â,»áÔ±¿ÉÒÔÉÏ´«×Ô¼ºµÄÍ¼Æ¬À´´´½¨ÊôÓÚ×Ô¼ºµÄÏà²á.ÐèÒª¹ºÂò,ÇëÁªÏµÎÒÃÇµÄ<a href="{base_url}&section=help&act=support&code=contact">ÏúÊÛÍÅ¶Ó</a>. Èç¹ûÄúÒÑ¾­¹ºÂòÁË´Ë²å¼þ,ÐèÒªIPSÎªÄú°²×°,ÇëÌá½»Ò»·Ý<a href="{base_url}&section=help&act=support&code=support">Ô®ÖúÉêÇë</a>.]]></helptext>
+			<title>IPBå›¾åº“</title>
+			<helptext><![CDATA[è¿™æ˜¯ä¸€ä¸ªå•ç‹¬çš„è®ºå›æ’ä»¶.å®ƒä¸ºæ‚¨çš„è®ºå›æä¾›äº†ä¸€ä¸ªå›¾åº“,ä¼šå‘˜å¯ä»¥ä¸Šä¼ è‡ªå·±çš„å›¾ç‰‡æ¥åˆ›å»ºå±žäºŽè‡ªå·±çš„ç›¸å†Œ.éœ€è¦è´­ä¹°,è¯·è”ç³»æˆ‘ä»¬çš„<a href="{base_url}&section=help&act=support&code=contact">é”€å”®å›¢é˜Ÿ</a>. å¦‚æžœæ‚¨å·²ç»è´­ä¹°äº†æ­¤æ’ä»¶,éœ€è¦IPSä¸ºæ‚¨å®‰è£…,è¯·æäº¤ä¸€ä»½<a href="{base_url}&section=help&act=support&code=support">æ´åŠ©ç”³è¯·</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_blog_show</key>
-			<title>IPB²©¿Í</title>
-			<helptext><![CDATA[ÕâÊÇÒ»¸öµ¥¶ÀµÄÂÛÌ³²å¼þ.ËüÎªÄúµÄÂÛÌ³Ìá¹©ÁËÒ»¸ö¸öÈË²©¿ÍÏµÍ³(ÍøÒ³²©¿Í).¿ÉÒÔ×÷ÎªÒ»¸ö¼òµ¥µÄ¸öÈËÈÕÖ¾¼ÇÂ¼¹¤¾ß.ÐèÒª¹ºÂò,ÇëÁªÏµÎÒÃÇµÄ<a href="{base_url}&section=help&act=support&code=contact">ÏúÊÛÍÅ¶Ó</a>.Èç¹ûÄúÒÑ¾­¹ºÂòÁË´Ë²å¼þ,ÐèÒªIPSÎªÄú°²×°,ÇëÌá½»Ò»·Ý<a href="{base_url}&section=help&act=support&code=support">Ô®ÖúÉêÇë</a>.]]></helptext>
+			<title>IPBåšå®¢</title>
+			<helptext><![CDATA[è¿™æ˜¯ä¸€ä¸ªå•ç‹¬çš„è®ºå›æ’ä»¶.å®ƒä¸ºæ‚¨çš„è®ºå›æä¾›äº†ä¸€ä¸ªä¸ªäººåšå®¢ç³»ç»Ÿ(ç½‘é¡µåšå®¢).å¯ä»¥ä½œä¸ºä¸€ä¸ªç®€å•çš„ä¸ªäººæ—¥å¿—è®°å½•å·¥å…·.éœ€è¦è´­ä¹°,è¯·è”ç³»æˆ‘ä»¬çš„<a href="{base_url}&section=help&act=support&code=contact">é”€å”®å›¢é˜Ÿ</a>.å¦‚æžœæ‚¨å·²ç»è´­ä¹°äº†æ­¤æ’ä»¶,éœ€è¦IPSä¸ºæ‚¨å®‰è£…,è¯·æäº¤ä¸€ä»½<a href="{base_url}&section=help&act=support&code=support">æ´åŠ©ç”³è¯·</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_chatpara_show</key>
-			<title>ParaChat ÅäÖÃ</title>
-			<helptext>ParaChat ÊÇÒ»¸öÂÛÌ³¿ÉÓÃµÄ¼òÒ×ÁÄÌìÈí¼þ.ÓÉµÚÈý·½Èí¼þÌá¹©Ö§³Ö.Äú¿ÉÒÔÔÚÏÂÃæ¿´µ½´Ë¹«Ë¾µÄÒ»Ð©ÐÅÏ¢. Èç¹ûÄúÏëÒª¹ºÂò ParaChat,ÇëÄúÌîÐ´ËûÃÇÌá¹©µÄ±ØÒªÐÅÏ¢Ìá½»¼´¿É.</helptext>
+			<title>ParaChat é…ç½®</title>
+			<helptext>ParaChat æ˜¯ä¸€ä¸ªè®ºå›å¯ç”¨çš„ç®€æ˜“èŠå¤©è½¯ä»¶.ç”±ç¬¬ä¸‰æ–¹è½¯ä»¶æä¾›æ”¯æŒ.æ‚¨å¯ä»¥åœ¨ä¸‹é¢çœ‹åˆ°æ­¤å…¬å¸çš„ä¸€äº›ä¿¡æ¯. å¦‚æžœæ‚¨æƒ³è¦è´­ä¹° ParaChat,è¯·æ‚¨å¡«å†™ä»–ä»¬æä¾›çš„å¿…è¦ä¿¡æ¯æäº¤å³å¯.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_chatsigma_show</key>
-			<title>AddOnChat ÅäÖÃ</title>
-			<helptext>AddOnChat ÊÇÒ»¸öÂÛÌ³¿ÉÓÃµÄÁÄÌìÈí¼þ. ÓÉµÚÈý·½Èí¼þÌá¹©Ö§³Ö.Äú¿ÉÒÔÔÚÏÂÃæ¿´µ½´Ë¹«Ë¾µÄÒ»Ð©ÐÅÏ¢. Èç¹ûÄúÏëÒª¹ºÂò ParaChat,ÇëÄúÌîÐ´ËûÃÇÌá¹©µÄ±ØÒªÐÅÏ¢Ìá½»¼´¿É.</helptext>
+			<title>AddOnChat é…ç½®</title>
+			<helptext>AddOnChat æ˜¯ä¸€ä¸ªè®ºå›å¯ç”¨çš„èŠå¤©è½¯ä»¶. ç”±ç¬¬ä¸‰æ–¹è½¯ä»¶æä¾›æ”¯æŒ.æ‚¨å¯ä»¥åœ¨ä¸‹é¢çœ‹åˆ°æ­¤å…¬å¸çš„ä¸€äº›ä¿¡æ¯. å¦‚æžœæ‚¨æƒ³è¦è´­ä¹° ParaChat,è¯·æ‚¨å¡«å†™ä»–ä»¬æä¾›çš„å¿…è¦ä¿¡æ¯æäº¤å³å¯.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_</key>
-			<title>Ìá½»°ïÖúÉêÇë</title>
-			<helptext><![CDATA[Èç¹ûÄúÔÚÊ¹ÓÃ IPB µÄ¹ý³ÌÖÐÐèÒª¹Ù·½µÄÔ®Öú»òÕßÖ§³Ö,Äú¾Í¿ÉÒÔÀûÓÃÎÒÃÇµÄÉêÇëÏµÍ³Ìá½»Ò»·ÝÉêÇë.ÄúµÄÉêÇë»áÔÚ24-48Ð¡Ê±ÄÚ´¦Àí.<br/>
+			<title>æäº¤å¸®åŠ©ç”³è¯·</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨åœ¨ä½¿ç”¨ IPB çš„è¿‡ç¨‹ä¸­éœ€è¦å®˜æ–¹çš„æ´åŠ©æˆ–è€…æ”¯æŒ,æ‚¨å°±å¯ä»¥åˆ©ç”¨æˆ‘ä»¬çš„ç”³è¯·ç³»ç»Ÿæäº¤ä¸€ä»½ç”³è¯·.æ‚¨çš„ç”³è¯·ä¼šåœ¨24-48å°æ—¶å†…å¤„ç†.<br/>
 <br />
-ÇëÄúÌá½»ÉêÇëµÄÊ±ºòÌá¹©Ò»¸ö¿ÉÓÃµÄÁªÏµ·½Ê½.<br />
+è¯·æ‚¨æäº¤ç”³è¯·çš„æ—¶å€™æä¾›ä¸€ä¸ªå¯ç”¨çš„è”ç³»æ–¹å¼.<br />
 <br />
-<b>Ê¹ÓÃ Internet Explorer µÄÓÃ»§Çë×¢Òâ</b>:ÓÐÊ±, Internet Explorer ²»Ö§³ÖµÇÂ¼°üº¬¿ò¼ÜµÄÍøÒ³.Èç¹ûÄúµÇÂ¼Óöµ½ÎÊÌâ, ÇëÖ±½Óµã»÷<a href="https://www.invisionpower.com/customer/" target="_blank">¿Í»§ÇøÓò</a>·ÃÎÊ.]]></helptext>
+<b>ä½¿ç”¨ Internet Explorer çš„ç”¨æˆ·è¯·æ³¨æ„</b>:æœ‰æ—¶, Internet Explorer ä¸æ”¯æŒç™»å½•åŒ…å«æ¡†æž¶çš„ç½‘é¡µ.å¦‚æžœæ‚¨ç™»å½•é‡åˆ°é—®é¢˜, è¯·ç›´æŽ¥ç‚¹å‡»<a href="https://www.invisionpower.com/customer/" target="_blank">å®¢æˆ·åŒºåŸŸ</a>è®¿é—®.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_kb</key>
-			<title>IPB ÖªÊ¶¿â</title>
-			<helptext><![CDATA[ÕâÀïÄú¿ÉÒÔ½â¾öÍ¨³£Çé¿öÏÂÄúËùÓöµ½µÄÎÊÌâ,»ñÈ¡¸üÐÂ³ÌÐò,ÒÔ¼°Ò»Ð©Ê¹ÓÃÖ¸ÄÏ.
+			<title>IPB çŸ¥è¯†åº“</title>
+			<helptext><![CDATA[è¿™é‡Œæ‚¨å¯ä»¥è§£å†³é€šå¸¸æƒ…å†µä¸‹æ‚¨æ‰€é‡åˆ°çš„é—®é¢˜,èŽ·å–æ›´æ–°ç¨‹åº,ä»¥åŠä¸€äº›ä½¿ç”¨æŒ‡å—.
 <br />
 <br />
-<b>Ê¹ÓÃ Internet Explorer µÄÓÃ»§Çë×¢Òâ</b>:ÓÐÊ±, Internet Explorer ²»Ö§³ÖµÇÂ¼°üº¬¿ò¼ÜµÄÍøÒ³.Èç¹ûÄúµÇÂ¼Óöµ½ÎÊÌâ, ÇëÖ±½Óµã»÷<a href="https://www.invisionpower.com/customer/" target="_blank">¿Í»§ÇøÓò</a>·ÃÎÊ.]]></helptext>
+<b>ä½¿ç”¨ Internet Explorer çš„ç”¨æˆ·è¯·æ³¨æ„</b>:æœ‰æ—¶, Internet Explorer ä¸æ”¯æŒç™»å½•åŒ…å«æ¡†æž¶çš„ç½‘é¡µ.å¦‚æžœæ‚¨ç™»å½•é‡åˆ°é—®é¢˜, è¯·ç›´æŽ¥ç‚¹å‡»<a href="https://www.invisionpower.com/customer/" target="_blank">å®¢æˆ·åŒºåŸŸ</a>è®¿é—®.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_bugs</key>
-			<title>È±ÏÝ±¨¸æ</title>
-			<helptext><![CDATA[Äã¿ÉÒÔÔÚÎÒÃÇµÄ×·×ÙÀ¸Ä¿ÀïÌá½»²¢¸ú×ÙÄúËùÌá½»µÄËùÓÐÈ±ÏÝ,Ëü½«ÏÔÊ¾ÔÚÏÂÃæ.ÕâÀï²¢<i>²»</i> °üÀ¨·¢²¼µÄ±¨¸æ,½ö½öÖ»ÎªÁËÃÖ²¹ÎÒÃÇµÄ³ÌÐòÄÚ²¿È±ÏÝ.
+			<title>ç¼ºé™·æŠ¥å‘Š</title>
+			<helptext><![CDATA[ä½ å¯ä»¥åœ¨æˆ‘ä»¬çš„è¿½è¸ªæ ç›®é‡Œæäº¤å¹¶è·Ÿè¸ªæ‚¨æ‰€æäº¤çš„æ‰€æœ‰ç¼ºé™·,å®ƒå°†æ˜¾ç¤ºåœ¨ä¸‹é¢.è¿™é‡Œå¹¶<i>ä¸</i> åŒ…æ‹¬å‘å¸ƒçš„æŠ¥å‘Š,ä»…ä»…åªä¸ºäº†å¼¥è¡¥æˆ‘ä»¬çš„ç¨‹åºå†…éƒ¨ç¼ºé™·.
 <br />
 <br />
-<b>Ê¹ÓÃ Internet Explorer µÄÓÃ»§Çë×¢Òâ</b>:ÓÐÊ±, Internet Explorer ²»Ö§³ÖµÇÂ¼°üº¬¿ò¼ÜµÄÍøÒ³.Èç¹ûÄúµÇÂ¼Óöµ½ÎÊÌâ, ÇëÖ±½Óµã»÷<a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">È±ÏÝ×·×Ù</a> ·ÃÎÊ.]]></helptext>
+<b>ä½¿ç”¨ Internet Explorer çš„ç”¨æˆ·è¯·æ³¨æ„</b>:æœ‰æ—¶, Internet Explorer ä¸æ”¯æŒç™»å½•åŒ…å«æ¡†æž¶çš„ç½‘é¡µ.å¦‚æžœæ‚¨ç™»å½•é‡åˆ°é—®é¢˜, è¯·ç›´æŽ¥ç‚¹å‡»<a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">ç¼ºé™·è¿½è¸ª</a> è®¿é—®.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_features</key>
-			<title>ÐÂ¹¦ÄÜ½¨Òé</title>
-			<helptext><![CDATA[Èç¹ûÄúÐèÒªÒ»ÏîÐÂ¹¦ÄÜ,»òÕßÔÚÆäËûµØ·½¿´µ½¶ø IPB Ã»ÓÐÕâÐ©¹¦ÄÜ,ÄÇÃ´Äú¿ÉÒÔÔÚÕâÀï·´À¡¸øÎÒÃÇ.
+			<title>æ–°åŠŸèƒ½å»ºè®®</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨éœ€è¦ä¸€é¡¹æ–°åŠŸèƒ½,æˆ–è€…åœ¨å…¶ä»–åœ°æ–¹çœ‹åˆ°è€Œ IPB æ²¡æœ‰è¿™äº›åŠŸèƒ½,é‚£ä¹ˆæ‚¨å¯ä»¥åœ¨è¿™é‡Œåé¦ˆç»™æˆ‘ä»¬.
 <br />
 <br />
-<b>Ê¹ÓÃ Internet Explorer µÄÓÃ»§Çë×¢Òâ</b>:ÓÐÊ±, Internet Explorer ²»Ö§³ÖµÇÂ¼°üº¬¿ò¼ÜµÄÍøÒ³.Èç¹ûÄúµÇÂ¼Óöµ½ÎÊÌâ, ÇëÖ±½Óµã»÷<a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">Feature Suggestions Forum</a>·ÃÎÊ.
+<b>ä½¿ç”¨ Internet Explorer çš„ç”¨æˆ·è¯·æ³¨æ„</b>:æœ‰æ—¶, Internet Explorer ä¸æ”¯æŒç™»å½•åŒ…å«æ¡†æž¶çš„ç½‘é¡µ.å¦‚æžœæ‚¨ç™»å½•é‡åˆ°é—®é¢˜, è¯·ç›´æŽ¥ç‚¹å‡»<a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">Feature Suggestions Forum</a>è®¿é—®.
 ]]></helptext>
 		</helpsections>
 
@@ -218,20 +218,20 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 You can use your client center login information to access resources.invisionpower.com.
 <br />
 <br />
-<b>Ê¹ÓÃ Internet Explorer µÄÓÃ»§Çë×¢Òâ</b>:ÓÐÊ±, Internet Explorer ²»Ö§³ÖµÇÂ¼°üº¬¿ò¼ÜµÄÍøÒ³.Èç¹ûÄúµÇÂ¼Óöµ½ÎÊÌâ, ÇëÖ±½Óµã»÷<a href="http://resources.invisionpower.com" target="_blank">resources.invisionpower.com</a>·ÃÎÊ.
+<b>ä½¿ç”¨ Internet Explorer çš„ç”¨æˆ·è¯·æ³¨æ„</b>:æœ‰æ—¶, Internet Explorer ä¸æ”¯æŒç™»å½•åŒ…å«æ¡†æž¶çš„ç½‘é¡µ.å¦‚æžœæ‚¨ç™»å½•é‡åˆ°é—®é¢˜, è¯·ç›´æŽ¥ç‚¹å‡»<a href="http://resources.invisionpower.com" target="_blank">resources.invisionpower.com</a>è®¿é—®.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_doctor</key>
-			<title>IPB ÎÄµµÖÐÐÄ</title>
-			<helptext>ÕâÀïÄú¿ÉÒÔÏÂÔØÒ»Ð© IPB ÔÚÏßÎÄµµ×ÊÔ´. º­¸ÇÁË°üÀ¨Ò»°ãÊ¹ÓÃÕßºÍ¹ÜÀíÔ±¶¼ÐèÒªµÄÐÅÏ¢.¶ÔÓÚÆ¤·ôºÍÄ£°åÉè¼ÆÕß,ÎÒÃÇÌá¹©ÁËÈ«Ì× CSS Ö¸µ¼ºÍ¿ª·¢ÎÄµµ.</helptext>
+			<title>IPB æ–‡æ¡£ä¸­å¿ƒ</title>
+			<helptext>è¿™é‡Œæ‚¨å¯ä»¥ä¸‹è½½ä¸€äº› IPB åœ¨çº¿æ–‡æ¡£èµ„æº. æ¶µç›–äº†åŒ…æ‹¬ä¸€èˆ¬ä½¿ç”¨è€…å’Œç®¡ç†å‘˜éƒ½éœ€è¦çš„ä¿¡æ¯.å¯¹äºŽçš®è‚¤å’Œæ¨¡æ¿è®¾è®¡è€…,æˆ‘ä»¬æä¾›äº†å…¨å¥— CSS æŒ‡å¯¼å’Œå¼€å‘æ–‡æ¡£.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_contact</key>
-			<title>ÁªÏµ IPS</title>
-			<helptext>Èç¹ûÄúÏëÒªÁªÏµÎÒÃÇ,Äú¿ÉÒÔÔÚÏÂÃæÕÒµ½ÎÒÃÇµ±Ç°µÄÁªÏµ·½Ê½ºÍ»ØÀ¡Ê±¼ä.</helptext>
+			<title>è”ç³» IPS</title>
+			<helptext>å¦‚æžœæ‚¨æƒ³è¦è”ç³»æˆ‘ä»¬,æ‚¨å¯ä»¥åœ¨ä¸‹é¢æ‰¾åˆ°æˆ‘ä»¬å½“å‰çš„è”ç³»æ–¹å¼å’Œå›žé¦ˆæ—¶é—´.</helptext>
 		</helpsections>
 
 		<helpsections>
@@ -269,73 +269,73 @@ Anything besides 5 numbers would be rejected. They would not be able to enter mo
 
 		<helpsections>
 			<key>content_forum_empty</key>
-			<title>Çå¿ÕÂÛÌ³</title>
-			<helptext><![CDATA[<b>´Ë²Ù×÷½«É¾³ýÂÛÌ³ËùÓÐÖ÷Ìâ,Ìû×ÓºÍÍ¶Æ±. ³öÏÖ<u>·ñ</u>³·Ïú.</b><br />µÄÂÛÌ³½«²»»áÑ¡ÖÐ
- - ¼ÌÐø²Ù×÷Ö®Ç°ÇëÔÙ´ÎÈ·ÈÏ.]]></helptext>
+			<title>æ¸…ç©ºè®ºå›</title>
+			<helptext><![CDATA[<b>æ­¤æ“ä½œå°†åˆ é™¤è®ºå›æ‰€æœ‰ä¸»é¢˜,å¸–å­å’ŒæŠ•ç¥¨. å‡ºçŽ°<u>å¦</u>æ’¤é”€.</b><br />çš„è®ºå›å°†ä¸ä¼šé€‰ä¸­
+ - ç»§ç»­æ“ä½œä¹‹å‰è¯·å†æ¬¡ç¡®è®¤.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_skinedit</key>
-			<title>Îª°æÃæÖ¸¶¨Ö÷Ìâ</title>
-			<helptext>Äú¿ÉÒÔÎª°æÃæÌí¼Ó»òÕßÉ¾³ýÖ¸¶¨Ö÷Ìâ.µ±ÄúÖ¸¶¨ÁËÖ÷ÌâµÄÊ±ºò,ËùÓÐ»áÔ±¶¼½«Ê¹ÓÃÕâ¸öÖ÷Ìâ,ËûÃÇ×Ô¼ºµÄÉèÖÃ½«Ê§Ð§.</helptext>
+			<title>ä¸ºç‰ˆé¢æŒ‡å®šä¸»é¢˜</title>
+			<helptext>æ‚¨å¯ä»¥ä¸ºç‰ˆé¢æ·»åŠ æˆ–è€…åˆ é™¤æŒ‡å®šä¸»é¢˜.å½“æ‚¨æŒ‡å®šäº†ä¸»é¢˜çš„æ—¶å€™,æ‰€æœ‰ä¼šå‘˜éƒ½å°†ä½¿ç”¨è¿™ä¸ªä¸»é¢˜,ä»–ä»¬è‡ªå·±çš„è®¾ç½®å°†å¤±æ•ˆ.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_frules</key>
-			<title>°æ¹æÉèÖÃ</title>
-			<helptext>Äú¿ÉÒÔÎªÄúµÄ°å¿éÉèÖÃÊ¹ÓÃ¹æÔò.Ëü»áÖ±½ÓÔÚ°å¿éÉÏÃæÏÔÊ¾³öÀ´»òÕßÖ»ÊÇÏÔÊ¾Á´½Ó.ÈÎºÎ½øÈë´Ë°æÃæµÄÈË¶¼»á¿´µ½°æ¹æ,¼´Ê¹ÊµÔÚ·¢±í/»Ø¸´Ö÷ÌâµÄÊ±ºòÒ²Ò»Ñù.</helptext>
+			<title>ç‰ˆè§„è®¾ç½®</title>
+			<helptext>æ‚¨å¯ä»¥ä¸ºæ‚¨çš„æ¿å—è®¾ç½®ä½¿ç”¨è§„åˆ™.å®ƒä¼šç›´æŽ¥åœ¨æ¿å—ä¸Šé¢æ˜¾ç¤ºå‡ºæ¥æˆ–è€…åªæ˜¯æ˜¾ç¤ºé“¾æŽ¥.ä»»ä½•è¿›å…¥æ­¤ç‰ˆé¢çš„äººéƒ½ä¼šçœ‹åˆ°ç‰ˆè§„,å³ä½¿å®žåœ¨å‘è¡¨/å›žå¤ä¸»é¢˜çš„æ—¶å€™ä¹Ÿä¸€æ ·.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_pedit</key>
-			<title>ÂÛÌ³·ÃÎÊÈ¨ÏÞ</title>
-			<helptext><![CDATA[Ñ¡ÖÐ¼´¿É·ÃÎÊ,·´Ö®Ôò½ûÖ¹·ÃÎÊ.<br />
-Èç¹ûÄú½ûÖ¹·ÃÎÊ,»áÔ±¾Í¿´²»¼û´Ë°å¿é.]]></helptext>
+			<title>è®ºå›è®¿é—®æƒé™</title>
+			<helptext><![CDATA[é€‰ä¸­å³å¯è®¿é—®,åä¹‹åˆ™ç¦æ­¢è®¿é—®.<br />
+å¦‚æžœæ‚¨ç¦æ­¢è®¿é—®,ä¼šå‘˜å°±çœ‹ä¸è§æ­¤æ¿å—.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_edit</key>
-			<title>±à¼­ÂÛÌ³ÉèÖÃ</title>
-			<helptext><![CDATA[Èç¹ûÄúÐèÒªµ÷ÕûÒÑ¾­´æÔÚÂÛÌ³µÄÈ¨ÏÞ(Ë­¿ÉÒÔÔÄ¶Á,·¢±í,»Ø¸´Ö÷Ìâ),ÔÚ<i>ÂÛÌ³¹ÜÀí</i>Ò³Ãæµã»÷'±à¼­È¨ÏÞ'¼´¿É.<br />
-ÔÚ´ËÒ³ÃæÄú¿ÉÒÔ¿ªÆô·¢±íÑ¡Ïî,Ö÷ÌâÆÀ·Ö,Í¶Æ±, HTML,ºÍÆäËûµÄÂÛÌ³¹¦ÄÜ.]]></helptext>
+			<title>ç¼–è¾‘è®ºå›è®¾ç½®</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨éœ€è¦è°ƒæ•´å·²ç»å­˜åœ¨è®ºå›çš„æƒé™(è°å¯ä»¥é˜…è¯»,å‘è¡¨,å›žå¤ä¸»é¢˜),åœ¨<i>è®ºå›ç®¡ç†</i>é¡µé¢ç‚¹å‡»'ç¼–è¾‘æƒé™'å³å¯.<br />
+åœ¨æ­¤é¡µé¢æ‚¨å¯ä»¥å¼€å¯å‘è¡¨é€‰é¡¹,ä¸»é¢˜è¯„åˆ†,æŠ•ç¥¨, HTML,å’Œå…¶ä»–çš„è®ºå›åŠŸèƒ½.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_</key>
-			<title>IPB Õï¶Ï¹¤¾ß</title>
-			<helptext><![CDATA[<b>ÔËÐÐÕâÐ©ÔöÇ¿¹¤¾ßÐèÒª»¨·ÑÒ»Ð©Ê±¼ä.</b><br />
-ÔÚÏµÍ³¸Å¿öÀïÄú½«¿´µ½·þÎñÆ÷µÄÒ»Ð©»ù±¾Çé¿ö,°üÀ¨ÄúµÄ SQL ºÍ PHP °æ±¾.ÄúÒ²¿ÉÒÔ²é¿´´Ë IPB µÄÏà¹ØÉý¼¶ÀúÊ·.<br /><br />
-Èç¹ûÄúÓöµ½ <b>IPS Çý¶¯´íÎó</b>,ÇëÔËÐÐ<a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">Êý¾Ý¿â¼ì²ì</a>¹¤¾ß.Èç¹ûÄúÓöµ½<b>ÂÛÌ³»ºÂý</b>,È·ÈÏÄúµÄ<a href="{base_url}&section=help&act=diag&code=dbindex" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">Êý¾Ý¿âË÷Òý</a>ÒÑ¾­¿ªÆô.Èç¹ûÄúÓöµ½<b>ÉÏ´«</b>·½ÃæµÄÎÊÌâ,Çë¼ì²éÄúµÄ<a href="{base_url}&section=help&act=diag&code=filepermissions" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">ÎÄ¼þÈ¨ÏÞ</a>.×îºó,Èç¹ûÄúÓöµ½<b>¿Õ°×Ò³Ãæ</b>,ÇëÈ·ÈÏÄúµÄ°²×°ÎÄ¼þÀïÃæÃ»ÓÐ<a href="{base_url}&section=help&act=diag&code=whitespace" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">¿Õ°×ÎÄ¼þ</a>.]]></helptext>
+			<title>IPB è¯Šæ–­å·¥å…·</title>
+			<helptext><![CDATA[<b>è¿è¡Œè¿™äº›å¢žå¼ºå·¥å…·éœ€è¦èŠ±è´¹ä¸€äº›æ—¶é—´.</b><br />
+åœ¨ç³»ç»Ÿæ¦‚å†µé‡Œæ‚¨å°†çœ‹åˆ°æœåŠ¡å™¨çš„ä¸€äº›åŸºæœ¬æƒ…å†µ,åŒ…æ‹¬æ‚¨çš„ SQL å’Œ PHP ç‰ˆæœ¬.æ‚¨ä¹Ÿå¯ä»¥æŸ¥çœ‹æ­¤ IPB çš„ç›¸å…³å‡çº§åŽ†å².<br /><br />
+å¦‚æžœæ‚¨é‡åˆ° <b>IPS é©±åŠ¨é”™è¯¯</b>,è¯·è¿è¡Œ<a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">æ•°æ®åº“æ£€å¯Ÿ</a>å·¥å…·.å¦‚æžœæ‚¨é‡åˆ°<b>è®ºå›ç¼“æ…¢</b>,ç¡®è®¤æ‚¨çš„<a href="{base_url}&section=help&act=diag&code=dbindex" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">æ•°æ®åº“ç´¢å¼•</a>å·²ç»å¼€å¯.å¦‚æžœæ‚¨é‡åˆ°<b>ä¸Šä¼ </b>æ–¹é¢çš„é—®é¢˜,è¯·æ£€æŸ¥æ‚¨çš„<a href="{base_url}&section=help&act=diag&code=filepermissions" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">æ–‡ä»¶æƒé™</a>.æœ€åŽ,å¦‚æžœæ‚¨é‡åˆ°<b>ç©ºç™½é¡µé¢</b>,è¯·ç¡®è®¤æ‚¨çš„å®‰è£…æ–‡ä»¶é‡Œé¢æ²¡æœ‰<a href="{base_url}&section=help&act=diag&code=whitespace" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">ç©ºç™½æ–‡ä»¶</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_dbchecker</key>
-			<title>Êý¾Ý¿â¼ì²é</title>
-			<helptext><![CDATA[Èç¹ûÄúÓöµ½Êý¾Ý¿â·½ÃæµÄ´íÎó(Í¨³£¶¼»áÏÔÊ¾<b>IPS Çý¶¯´íÎó</b>).Çëµã»÷×ó±ßµÄÁ´½Ó¿ªÊ¼¼ì²éÐÞ¸´.]]></helptext>
+			<title>æ•°æ®åº“æ£€æŸ¥</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨é‡åˆ°æ•°æ®åº“æ–¹é¢çš„é”™è¯¯(é€šå¸¸éƒ½ä¼šæ˜¾ç¤º<b>IPS é©±åŠ¨é”™è¯¯</b>).è¯·ç‚¹å‡»å·¦è¾¹çš„é“¾æŽ¥å¼€å§‹æ£€æŸ¥ä¿®å¤.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_dbindex</key>
-			<title>Êý¾Ý¿âË÷Òý¼ì²é</title>
-			<helptext>Êý¾Ý¿âË÷ÒýÄÜÈÃÄúµÄÊý¾Ý¿â¸ü¼Ó¿ìËÙÓÐÐ§µÄÔËÐÐ.Èç¹ûË÷Òý³öÏÖÈÎºÎ´íÎó,ÄúµÄÂÛÌ³¿ÉÄÜ»á±äµÃ±ÈÔ¤ÆÚµÄ»ºÂý.Çëµã»÷×ó±ßµÄÁ´½Ó¿ªÊ¼¼ì²éÐÞ¸´.</helptext>
+			<title>æ•°æ®åº“ç´¢å¼•æ£€æŸ¥</title>
+			<helptext>æ•°æ®åº“ç´¢å¼•èƒ½è®©æ‚¨çš„æ•°æ®åº“æ›´åŠ å¿«é€Ÿæœ‰æ•ˆçš„è¿è¡Œ.å¦‚æžœç´¢å¼•å‡ºçŽ°ä»»ä½•é”™è¯¯,æ‚¨çš„è®ºå›å¯èƒ½ä¼šå˜å¾—æ¯”é¢„æœŸçš„ç¼“æ…¢.è¯·ç‚¹å‡»å·¦è¾¹çš„é“¾æŽ¥å¼€å§‹æ£€æŸ¥ä¿®å¤.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_filepermissions</key>
-			<title>ÎÄ¼þÈ¨ÏÞ¼ì²é</title>
-			<helptext><![CDATA[Èç¹ûÄúµÄÎÄ¼þ»òÕßÎÄ¼þ¼ÐÈ¨ÏÞ´íÎó,ÂÛÌ³µÄÄ³Ð©¸½¼þ,Ö÷Ìâ,ºÍ±íÇé¾Í²»ÄÜÕý³£ÉÏ´«.<br />
-IPB ÔÚÔËÐÐµÄÊ±ºò¶ÔÄ³Ò»Ð©ÎÄ¼þ»òÕßÎÄ¼þ¼Ð»áÐèÒª²»Í¬µÄÈ¨ÏÞÉèÖÃÀ´Ð´ÈëÊý¾Ý.ÔÚ Windows ÏµÍ³ÏÂ,ÄúÐèÒªÈ·ÈÏÎÄ¼þµÄ"¶Á/Ð´" È¨ÏÞ, Èç¹ûÊÇ Unix/Linux Äú¾ÍÐèÒªÈ·ÈÏÎÄ¼þµÄ"777 ÊôÐÔ".]]></helptext>
+			<title>æ–‡ä»¶æƒé™æ£€æŸ¥</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨çš„æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹æƒé™é”™è¯¯,è®ºå›çš„æŸäº›é™„ä»¶,ä¸»é¢˜,å’Œè¡¨æƒ…å°±ä¸èƒ½æ­£å¸¸ä¸Šä¼ .<br />
+IPB åœ¨è¿è¡Œçš„æ—¶å€™å¯¹æŸä¸€äº›æ–‡ä»¶æˆ–è€…æ–‡ä»¶å¤¹ä¼šéœ€è¦ä¸åŒçš„æƒé™è®¾ç½®æ¥å†™å…¥æ•°æ®.åœ¨ Windows ç³»ç»Ÿä¸‹,æ‚¨éœ€è¦ç¡®è®¤æ–‡ä»¶çš„"è¯»/å†™" æƒé™, å¦‚æžœæ˜¯ Unix/Linux æ‚¨å°±éœ€è¦ç¡®è®¤æ–‡ä»¶çš„"777 å±žæ€§".]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_whitespace</key>
-			<title>¿Õ¸ñÎÄ¼þ¼ì²é</title>
-			<helptext><![CDATA[Èç¹ûÔÚ PHP ±êÇ©Ö®Íâ³öÏÖ¿Õ¸ñ,¾Í»áÔì³É¿Õ°×ÎÄ¼þ»òÕßÊäÈë»ûÐÎµÄ HTML ½á¹û.¼ì²é½áÊøÒÔºóÄúÐèÒªÉ¾³ý PHP ±êÇ©Ö®ÍâµÄ¿Õ¸ñ»òÕß¿Õ°×»»ÐÐ.<br />
+			<title>ç©ºæ ¼æ–‡ä»¶æ£€æŸ¥</title>
+			<helptext><![CDATA[å¦‚æžœåœ¨ PHP æ ‡ç­¾ä¹‹å¤–å‡ºçŽ°ç©ºæ ¼,å°±ä¼šé€ æˆç©ºç™½æ–‡ä»¶æˆ–è€…è¾“å…¥ç•¸å½¢çš„ HTML ç»“æžœ.æ£€æŸ¥ç»“æŸä»¥åŽæ‚¨éœ€è¦åˆ é™¤ PHP æ ‡ç­¾ä¹‹å¤–çš„ç©ºæ ¼æˆ–è€…ç©ºç™½æ¢è¡Œ.<br />
 <br />
-PHP ±êÇ©¿ªÊ¼ÓÚ:<br />
+PHP æ ‡ç­¾å¼€å§‹äºŽ:<br />
 <b>&lt;?php</b> or <b>&lt;?</b><br />
 <br />
-PHP ±êÇ©½áÊøÓÚ:<br />
+PHP æ ‡ç­¾ç»“æŸäºŽ:<br />
 <b>?&gt;</b>]]></helptext>
 		</helpsections>
 
@@ -388,73 +388,73 @@ Note: The statistics generated are based on the information currently held in th
 
 		<helpsections>
 			<key>admin_components_</key>
-			<title>¹ÜÀíÄúµÄ×é¼þ</title>
-			<helptext><![CDATA[ËùÓÐ°²×°¹ýµÄ×é¼þ¶¼»áÔÚÕâÀïÏÔÊ¾.Äú¿ÉÒÔµã»÷"ÔÊÐí"À¸Ä¿ÏÂÃæµÄÍ¼±êÀ´¿ìËÙ¿ªÆô»òÕß½ûÓÃ×é¼þ.<br /><br />
-<img src="{skin_url}/images/aff_tick.png" alt="Green Checkmark" style="float:none;" /> - Õâ¸öÍ¼±ê±íÊ¾´Ë×é¼þÒÑ¾­ÔÚÂÛÌ³±»ÆôÓÃ.µã»÷Ëü¾Í¿ÉÒÔ½ûÓÃ´Ë×é¼þ.<br />
-<img src="{skin_url}/images/aff_cross.png" alt="Red X" style="float:none;" /> - Õâ¸öÍ¼±ê±íÊ¾´Ë×é¼þÒÑ¾­ÔÚÂÛÌ³½ûÓÃ. µã»÷Ëü¾Í¿ÉÒÔÆôÓÃ´Ë×é¼þ.<br /><br />
-Çë·ÃÎÊ <a href="{base_url}&section=components">×é¼þ</a>±êÇ©À´ÉèÖÃÄúµÄ×é¼þ.]]></helptext>
+			<title>ç®¡ç†æ‚¨çš„ç»„ä»¶</title>
+			<helptext><![CDATA[æ‰€æœ‰å®‰è£…è¿‡çš„ç»„ä»¶éƒ½ä¼šåœ¨è¿™é‡Œæ˜¾ç¤º.æ‚¨å¯ä»¥ç‚¹å‡»"å…è®¸"æ ç›®ä¸‹é¢çš„å›¾æ ‡æ¥å¿«é€Ÿå¼€å¯æˆ–è€…ç¦ç”¨ç»„ä»¶.<br /><br />
+<img src="{skin_url}/images/aff_tick.png" alt="Green Checkmark" style="float:none;" /> - è¿™ä¸ªå›¾æ ‡è¡¨ç¤ºæ­¤ç»„ä»¶å·²ç»åœ¨è®ºå›è¢«å¯ç”¨.ç‚¹å‡»å®ƒå°±å¯ä»¥ç¦ç”¨æ­¤ç»„ä»¶.<br />
+<img src="{skin_url}/images/aff_cross.png" alt="Red X" style="float:none;" /> - è¿™ä¸ªå›¾æ ‡è¡¨ç¤ºæ­¤ç»„ä»¶å·²ç»åœ¨è®ºå›ç¦ç”¨. ç‚¹å‡»å®ƒå°±å¯ä»¥å¯ç”¨æ­¤ç»„ä»¶.<br /><br />
+è¯·è®¿é—® <a href="{base_url}&section=components">ç»„ä»¶</a>æ ‡ç­¾æ¥è®¾ç½®æ‚¨çš„ç»„ä»¶.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_emaillog_</key>
-			<title>»áÔ±ÓÊ¼þÈÕÖ¾</title>
-			<helptext>ÂÛÌ³ËùÓÐ»áÔ±µÄÓÊ¼þÕâÀï¶¼ÓÐ¼ÇÂ¼.µ«ÊÇ²»»á¼ÇÂ¼Ò»Ð©±È½Ï´óµÄÓÊ¼þ,¶©ÔÄÓÊ¼þ, ºÍÂÛÌ³µÄÏµÍ³ÓÊ¼þ.</helptext>
+			<title>ä¼šå‘˜é‚®ä»¶æ—¥å¿—</title>
+			<helptext>è®ºå›æ‰€æœ‰ä¼šå‘˜çš„é‚®ä»¶è¿™é‡Œéƒ½æœ‰è®°å½•.ä½†æ˜¯ä¸ä¼šè®°å½•ä¸€äº›æ¯”è¾ƒå¤§çš„é‚®ä»¶,è®¢é˜…é‚®ä»¶, å’Œè®ºå›çš„ç³»ç»Ÿé‚®ä»¶.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_adminlog_</key>
-			<title>¹ÜÀíÔ±²Ù×÷¼ÇÂ¼</title>
-			<helptext>Äú¿ÉÒÔ²é¿´»òÕßÉ¾³ý¹ÜÀíÔ±»°¹ÜÀíÔ±ÔÚ¹ÜÀíºóÌ¨µÄÒ»Ð©²Ù×÷¼ÇÂ¼(ÀýÈçÂÛÌ³Ãæ°å,»áÔ±Ãæ°å,Èº×éÃæ°å,°ïÖúÎÄ¼þ,ºÍ°æÖ÷²Ù×÷¼ÇÂ¼).´Ë²Ù×÷²»»áÔÙ¼ÇÂ¼.</helptext>
+			<title>ç®¡ç†å‘˜æ“ä½œè®°å½•</title>
+			<helptext>æ‚¨å¯ä»¥æŸ¥çœ‹æˆ–è€…åˆ é™¤ç®¡ç†å‘˜è¯ç®¡ç†å‘˜åœ¨ç®¡ç†åŽå°çš„ä¸€äº›æ“ä½œè®°å½•(ä¾‹å¦‚è®ºå›é¢æ¿,ä¼šå‘˜é¢æ¿,ç¾¤ç»„é¢æ¿,å¸®åŠ©æ–‡ä»¶,å’Œç‰ˆä¸»æ“ä½œè®°å½•).æ­¤æ“ä½œä¸ä¼šå†è®°å½•.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_emailerror_</key>
-			<title>ÓÊ¼þ´íÎóÈÕÖ¾</title>
-			<helptext><![CDATA[µ±ÄúÊ¹ÓÃÓÊ¼þÏµÍ³µÄÊ±ºòÓöµ½´íÎó,´íÎóÐÅÏ¢»á±»¼ÇÂ¼ÔÚÕâÀïÒÔ±¸²é¿´.Èç¹ûÂÛÌ³ËùÓÐµÄÓÊ¼þÏµÍ³¶¼³öÏÖ´íÎó,ÇëÈ·ÈÏÄúµÄ<a href="{base_url}&section=tools&act=op&code=findsetting&key=emailset-up">ÓÊ¼þÉèÖÃ</a>ÊÇ·ñÕýÈ·.]]></helptext>
+			<title>é‚®ä»¶é”™è¯¯æ—¥å¿—</title>
+			<helptext><![CDATA[å½“æ‚¨ä½¿ç”¨é‚®ä»¶ç³»ç»Ÿçš„æ—¶å€™é‡åˆ°é”™è¯¯,é”™è¯¯ä¿¡æ¯ä¼šè¢«è®°å½•åœ¨è¿™é‡Œä»¥å¤‡æŸ¥çœ‹.å¦‚æžœè®ºå›æ‰€æœ‰çš„é‚®ä»¶ç³»ç»Ÿéƒ½å‡ºçŽ°é”™è¯¯,è¯·ç¡®è®¤æ‚¨çš„<a href="{base_url}&section=tools&act=op&code=findsetting&key=emailset-up">é‚®ä»¶è®¾ç½®</a>æ˜¯å¦æ­£ç¡®.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_spiderlog_</key>
-			<title>ËÑË÷ÒýÇæÈÕÖ¾</title>
-			<helptext><![CDATA[Èç¹ûÄúµÄÂÛÌ³ÓÐËÑË÷ÒýÇæÖ©Öë·ÃÎÊ,ÄÇÃ´ËûÃÇµÄ²Ù×÷½«±»¼ÇÂ¼ÔÚÕâÀï.ÐèÒªÌáÐÑÄúµÄÊÇ´Ë¹¦ÄÜ»áÊ¹ÓÃ·þÎñÆ÷µÄ´óÁ¿´æ´¢×ÊÔ´À´´æ´¢ÈÕÖ¾.½¨ÒéÄúÉèÖÃ <a href="{base_url}&section=tools&act=op&code=findsetting&key=log_prune">¾«¼òÈÕÖ¾</a>À´½â¾ö´ËÎÊÌâ.<br />
-ÏëÒª¼ÇÂ¼ÄÄÐ©ÌØÊâµÄËÑË÷ÒýÇæ,Çë²é¿´<a href="{base_url}&section=tools&act=op&code=findsetting&key=searchenginespiders">ËÑË÷ÒýÇæÖ©Öë</a>ÅäÖÃÒ³Ãæ.]]></helptext>
+			<title>æœç´¢å¼•æ“Žæ—¥å¿—</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨çš„è®ºå›æœ‰æœç´¢å¼•æ“Žèœ˜è››è®¿é—®,é‚£ä¹ˆä»–ä»¬çš„æ“ä½œå°†è¢«è®°å½•åœ¨è¿™é‡Œ.éœ€è¦æé†’æ‚¨çš„æ˜¯æ­¤åŠŸèƒ½ä¼šä½¿ç”¨æœåŠ¡å™¨çš„å¤§é‡å­˜å‚¨èµ„æºæ¥å­˜å‚¨æ—¥å¿—.å»ºè®®æ‚¨è®¾ç½® <a href="{base_url}&section=tools&act=op&code=findsetting&key=log_prune">ç²¾ç®€æ—¥å¿—</a>æ¥è§£å†³æ­¤é—®é¢˜.<br />
+æƒ³è¦è®°å½•å“ªäº›ç‰¹æ®Šçš„æœç´¢å¼•æ“Ž,è¯·æŸ¥çœ‹<a href="{base_url}&section=tools&act=op&code=findsetting&key=searchenginespiders">æœç´¢å¼•æ“Žèœ˜è››</a>é…ç½®é¡µé¢.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_warnlog_</key>
-			<title>¾¯¸æÈÕÖ¾</title>
-			<helptext><![CDATA[Èç¹ûÄúÉèÖÃÁË<a href="{base_url}&section=tools&act=op&code=findsetting&key=warnsetup">¾¯¸æÏµÍ³</a>,ÕâÀï¾Í»á¼ÇÂ¼ËùÓÐ»áÔ±µÄ¾¯¸æ¼ÇÂ¼.Çë×¢Òâ,É¾³ý¾¯¸æ¼ÇÂ¼²¢²»ÄÜ½µµÍ»áÔ±µÄ¾¯¸æ¼¶±ð.]]></helptext>
+			<title>è­¦å‘Šæ—¥å¿—</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨è®¾ç½®äº†<a href="{base_url}&section=tools&act=op&code=findsetting&key=warnsetup">è­¦å‘Šç³»ç»Ÿ</a>,è¿™é‡Œå°±ä¼šè®°å½•æ‰€æœ‰ä¼šå‘˜çš„è­¦å‘Šè®°å½•.è¯·æ³¨æ„,åˆ é™¤è­¦å‘Šè®°å½•å¹¶ä¸èƒ½é™ä½Žä¼šå‘˜çš„è­¦å‘Šçº§åˆ«.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_loginlog_</key>
-			<title>¹ÜÀíÔ±µÇÂ¼ÈÕÖ¾</title>
-			<helptext><![CDATA[ÕâÀïÏÔÊ¾Ã¿Ò»´Î³¢ÊÔµÇÂ¼¹ÜÀíºóÌ¨µÄ¼ÇÂ¼.»áÏÖÊµµÇÂ¼ÒÑ¾­³É¹¦»òÕßÊôÓÚ·Ç·¨ÇÖÈë.Èç¹ûÄú·¢ÏÖÁËÒ»¸ö·Ç·¨ÈëÇÖµÄ IP µØÖ·,½¨ÒéÄú°ÑÕâ¸öµØÖ·Ìí¼Óµ½ <a href="{base_url}&section=content&act=babw&code=ban">¹ýÂËÁÐ±í</a>Àï.<br />ÄúÒ²¿ÉÒÔÉèÖÃ´íÎóµÇÂ¼µÄ´ÎÊý,³¬¹ý´ËÊý×Ö×Ô¶¯Ö´ÐÐ²Ù×÷.<a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">µã»÷ÕâÀï</a>½øÐÐÉèÖÃ.]]></helptext>
+			<title>ç®¡ç†å‘˜ç™»å½•æ—¥å¿—</title>
+			<helptext><![CDATA[è¿™é‡Œæ˜¾ç¤ºæ¯ä¸€æ¬¡å°è¯•ç™»å½•ç®¡ç†åŽå°çš„è®°å½•.ä¼šçŽ°å®žç™»å½•å·²ç»æˆåŠŸæˆ–è€…å±žäºŽéžæ³•ä¾µå…¥.å¦‚æžœæ‚¨å‘çŽ°äº†ä¸€ä¸ªéžæ³•å…¥ä¾µçš„ IP åœ°å€,å»ºè®®æ‚¨æŠŠè¿™ä¸ªåœ°å€æ·»åŠ åˆ° <a href="{base_url}&section=content&act=babw&code=ban">è¿‡æ»¤åˆ—è¡¨</a>é‡Œ.<br />æ‚¨ä¹Ÿå¯ä»¥è®¾ç½®é”™è¯¯ç™»å½•çš„æ¬¡æ•°,è¶…è¿‡æ­¤æ•°å­—è‡ªåŠ¨æ‰§è¡Œæ“ä½œ.<a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">ç‚¹å‡»è¿™é‡Œ</a>è¿›è¡Œè®¾ç½®.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_security_</key>
-			<title>°²È«ÖÐÐÄ</title>
-			<helptext><![CDATA[ËùÓÐÕâÐ©¹¤¾ß¶¼²»ÊÇ±ØÐëµÄ,<b><font color="red">Ç¿ÁÒ</font></b>½¨ÒéÄúÔÚÔËÐÐËüÃÇÖ®Ç°ÏÈ×ÐÏ¸ÔÄ¶ÁÏà¹ØµÄËµÃ÷.Èç¹ûÄú²»È·¶¨,ÇëÔÄ¶ÁÎÒÃÇµÄ<a href="{base_url}&section=help&act=support&code=doctor">ÎÄµµ</a>.Èç¹ûÄúÓÐÈÎºÎÎÊÌâ,ÇëÌá½»Ò»·Ý<a href="{base_url}&section=help&act=support&code=support">Ô®ÖúÉêÇë</a>.]]></helptext>
+			<title>å®‰å…¨ä¸­å¿ƒ</title>
+			<helptext><![CDATA[æ‰€æœ‰è¿™äº›å·¥å…·éƒ½ä¸æ˜¯å¿…é¡»çš„,<b><font color="red">å¼ºçƒˆ</font></b>å»ºè®®æ‚¨åœ¨è¿è¡Œå®ƒä»¬ä¹‹å‰å…ˆä»”ç»†é˜…è¯»ç›¸å…³çš„è¯´æ˜Ž.å¦‚æžœæ‚¨ä¸ç¡®å®š,è¯·é˜…è¯»æˆ‘ä»¬çš„<a href="{base_url}&section=help&act=support&code=doctor">æ–‡æ¡£</a>.å¦‚æžœæ‚¨æœ‰ä»»ä½•é—®é¢˜,è¯·æäº¤ä¸€ä»½<a href="{base_url}&section=help&act=support&code=support">æ´åŠ©ç”³è¯·</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_security_list_admins</key>
-			<title>¹ÜÀíÔ±ÁÐ±í</title>
-			<helptext><![CDATA[Èç¹ûÄúÔÚ²é¿´ÁÐ±íµÄÊ±ºò·¢ÏÖ²»ÈÏÊ¶µÄÕÊºÅ»òÕß²»¸Ã¾ßÓÐ¹ÜÀíÔ±È¨ÏÞµÄÕÊºÅ,ÇëÁ¢¼´ÒÆ³ýËûÃÇµÄ¹ÜÀíÈ¨ÏÞ.Äú¿ÉÒÔµã»÷»áÔ±Ãû×ÖºóÃæµÄ"±à¼­"À´ÒÆ³ý.]]></helptext>
+			<title>ç®¡ç†å‘˜åˆ—è¡¨</title>
+			<helptext><![CDATA[å¦‚æžœæ‚¨åœ¨æŸ¥çœ‹åˆ—è¡¨çš„æ—¶å€™å‘çŽ°ä¸è®¤è¯†çš„å¸å·æˆ–è€…ä¸è¯¥å…·æœ‰ç®¡ç†å‘˜æƒé™çš„å¸å·,è¯·ç«‹å³ç§»é™¤ä»–ä»¬çš„ç®¡ç†æƒé™.æ‚¨å¯ä»¥ç‚¹å‡»ä¼šå‘˜åå­—åŽé¢çš„"ç¼–è¾‘"æ¥ç§»é™¤.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_acpperms_acpp_list</key>
-			<title>¹ÜÀíÃæ°åÈ¨ÏÞÉèÖÃ</title>
-			<helptext>Èç¹ûÄúÐèÒªÄÜ·ÃÎÊ¹ÜÀíÃæ°åµÄ¹ÜÀíÔ±,µ«ÊÇËûÃÇ²»ÔÚ×Ü¹ÜÀíÔ±×éÀï,Äú¿ÉÒÔÏÞÖÆËûÃÇÔÚ¹ÜÀíÃæ°åÀïµÄ²Ù×÷. µã»÷ÓÒ±ßµÄÏÂÀ­²Ëµ¥Ñ¡ÔñËÑË÷Ìí¼Ó¹ÜÀíÔ±.</helptext>
+			<title>ç®¡ç†é¢æ¿æƒé™è®¾ç½®</title>
+			<helptext>å¦‚æžœæ‚¨éœ€è¦èƒ½è®¿é—®ç®¡ç†é¢æ¿çš„ç®¡ç†å‘˜,ä½†æ˜¯ä»–ä»¬ä¸åœ¨æ€»ç®¡ç†å‘˜ç»„é‡Œ,æ‚¨å¯ä»¥é™åˆ¶ä»–ä»¬åœ¨ç®¡ç†é¢æ¿é‡Œçš„æ“ä½œ. ç‚¹å‡»å³è¾¹çš„ä¸‹æ‹‰èœå•é€‰æ‹©æœç´¢æ·»åŠ ç®¡ç†å‘˜.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_index-gateways</key>
-			<title>Ö§¸¶Íø¹Ø¹ÜÀí</title>
-			<helptext><![CDATA[Ö§¸¶Íø¹ØÄÜÈÃ»áÔ±·½±ãµÄÖ§¸¶ÂÛÌ³µÄ¸¶·ÑÏîÄ¿.ÎªÁËÊ¹ÓÃÍø¹Ø,ÄúÐèÒªÔÚ¶ÔÓ¦µÄ¹«Ë¾¿ªÉèÕÊºÅ.ÀýÈç,Èç¹ûÄúÏëÊ¹ÓÃ PayPal,Äú¾Í±ØÐëÏÈÔÚ<a href="https://www.paypal.com" target="_blank">PayPal ÍøÕ¾</a>×¢²áÒ»¸öÕÊºÅ.<br />
-Ñ¡ÔñÍø¹ØÓÒ±ßµÄÏÂÀ­²Ëµ¥ <i>ÉèÖÃÖ§¸¶Íø¹Ø...</i>À´ÉèÖÃ.]]></helptext>
+			<title>æ”¯ä»˜ç½‘å…³ç®¡ç†</title>
+			<helptext><![CDATA[æ”¯ä»˜ç½‘å…³èƒ½è®©ä¼šå‘˜æ–¹ä¾¿çš„æ”¯ä»˜è®ºå›çš„ä»˜è´¹é¡¹ç›®.ä¸ºäº†ä½¿ç”¨ç½‘å…³,æ‚¨éœ€è¦åœ¨å¯¹åº”çš„å…¬å¸å¼€è®¾å¸å·.ä¾‹å¦‚,å¦‚æžœæ‚¨æƒ³ä½¿ç”¨ PayPal,æ‚¨å°±å¿…é¡»å…ˆåœ¨<a href="https://www.paypal.com" target="_blank">PayPal ç½‘ç«™</a>æ³¨å†Œä¸€ä¸ªå¸å·.<br />
+é€‰æ‹©ç½‘å…³å³è¾¹çš„ä¸‹æ‹‰èœå• <i>è®¾ç½®æ”¯ä»˜ç½‘å…³...</i>æ¥è®¾ç½®.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -906,9 +906,9 @@ To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandf
 
 		<helpsections>
 			<key>tools_op_</key>
-			<title>ÏµÍ³ÉèÖÃ</title>
-			<helptext><![CDATA[ÕâÀï°üÀ¨ÁËÂÛÌ³ÉèÖÃµÄÖ÷Òª²¿·Ö,ÉèÖÃÑ¡Ïî¶¼½øÐÐÁË·Ö×é. Äú¿ÉÒÔÔÚÏÂÃæ¿´µ½ÕâÐ©ÉèÖÃ×éÐÅÏ¢. Èç¹ûÄúÐèÒª½øÐÐÒ»Ð©ÌØÊâÉèÖÃ, ÄúÒ²¿ÉÒÔÊ¹ÓÃÏÂÃæ´°¿ÚÓÒÉÏ½ÇµÄËÑË÷¹¦ÄÜÀ´°ïÖúÄúÕÒµ½.<br />
-Ã¿Ò»¸öÉèÖÃ×éÍ¨³£¶¼ÓÐ¶ÔÓ¦µÄ°ïÖú´°¿Ú.ÄúÒ²¿ÉÒÔµã»÷ÌØÊâÉèÖÃ±ßÉÏµÄ°ïÖúÍ¼±ê(<img src="{skin_url}/images/about.png" alt="!" style="float:none;" />)À´»ñÈ¡¸ü¶àµÄÐÅÏ¢.]]></helptext>
+			<title>ç³»ç»Ÿè®¾ç½®</title>
+			<helptext><![CDATA[è¿™é‡ŒåŒ…æ‹¬äº†è®ºå›è®¾ç½®çš„ä¸»è¦éƒ¨åˆ†,è®¾ç½®é€‰é¡¹éƒ½è¿›è¡Œäº†åˆ†ç»„. æ‚¨å¯ä»¥åœ¨ä¸‹é¢çœ‹åˆ°è¿™äº›è®¾ç½®ç»„ä¿¡æ¯. å¦‚æžœæ‚¨éœ€è¦è¿›è¡Œä¸€äº›ç‰¹æ®Šè®¾ç½®, æ‚¨ä¹Ÿå¯ä»¥ä½¿ç”¨ä¸‹é¢çª—å£å³ä¸Šè§’çš„æœç´¢åŠŸèƒ½æ¥å¸®åŠ©æ‚¨æ‰¾åˆ°.<br />
+æ¯ä¸€ä¸ªè®¾ç½®ç»„é€šå¸¸éƒ½æœ‰å¯¹åº”çš„å¸®åŠ©çª—å£.æ‚¨ä¹Ÿå¯ä»¥ç‚¹å‡»ç‰¹æ®Šè®¾ç½®è¾¹ä¸Šçš„å¸®åŠ©å›¾æ ‡(<img src="{skin_url}/images/about.png" alt="!" style="float:none;" />)æ¥èŽ·å–æ›´å¤šçš„ä¿¡æ¯.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -920,8 +920,8 @@ To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandf
 
 		<helpsections>
 			<key>settinggroup_cpusaving</key>
-			<title>ÂÛÌ³ÏÔÊ¾·±Ã¦? »òÕß±äµÃºÜÂý?</title>
-			<helptext>Í¨¹ýÕâÀïµÄÉèÖÃ½«Ìá¸ßÄúµÄÂÛÌ³³ÐÔØÐÔÄÜ.Çë×ÐÏ¸ÔÄ¶ÁÃ¿Ò»¸öÉèÖÃÑ¡Ïî,²¢×ö³öÇ¡µ±µÄµ÷Õû.</helptext>
+			<title>è®ºå›æ˜¾ç¤ºç¹å¿™? æˆ–è€…å˜å¾—å¾ˆæ…¢?</title>
+			<helptext>é€šè¿‡è¿™é‡Œçš„è®¾ç½®å°†æé«˜æ‚¨çš„è®ºå›æ‰¿è½½æ€§èƒ½.è¯·ä»”ç»†é˜…è¯»æ¯ä¸€ä¸ªè®¾ç½®é€‰é¡¹,å¹¶åšå‡ºæ°å½“çš„è°ƒæ•´.</helptext>
 		</helpsections>
 
 		<helpsections>
@@ -944,19 +944,19 @@ Save this file and reupload it to your board. Your IPB Portal will now be the fr
 
 		<helpsections>
 			<key>settinggroup_securityandprivacy</key>
-			<title>°²È«ÉèÖÃ</title>
-			<helptext><![CDATA[°²È«ÐÔÊÇÄúÂÛÌ³ÖÁ¹ØÖØÒªµÄ²¿·Ö.Çë×ÐÏ¸¿¼ÂÇ²¢½áºÏÊµ¼ÊÇé¿öÉèÖÃ±¾Ò³ÄÚÈÝ,²¢Çëµã»÷°ïÖúÍ¼±ê²é¿´¸ü¼ÓÏêÏ¸µÄ°ïÖúËµÃ÷.<br />
+			<title>å®‰å…¨è®¾ç½®</title>
+			<helptext><![CDATA[å®‰å…¨æ€§æ˜¯æ‚¨è®ºå›è‡³å…³é‡è¦çš„éƒ¨åˆ†.è¯·ä»”ç»†è€ƒè™‘å¹¶ç»“åˆå®žé™…æƒ…å†µè®¾ç½®æœ¬é¡µå†…å®¹,å¹¶è¯·ç‚¹å‡»å¸®åŠ©å›¾æ ‡æŸ¥çœ‹æ›´åŠ è¯¦ç»†çš„å¸®åŠ©è¯´æ˜Ž.<br />
 <br />
-Õâ¸öÉèÖÃ×é½«°ïÖúÄúÊµÏÖ»áÔ±¼¤»î,À¬»øÐÅÏ¢¿ØÖÆºÍÆäËû°²È«Ë½ÃÜÐÔµÄ¹¦ÄÜ.<br />Èç¹ûÄúÔÚ²é¿´ÁËÏà¹Ø¹¦ÄÜËµÃ÷ºÍ°ïÖúÐÅÏ¢Ö®ºóÈÔÈ»²»Àí½â,ÄÇÃ´Çë±£ÁôÔ­À´µÄÄ¬ÈÏÉèÖÃ²»×÷¸ü¸Ä.]]></helptext>
+è¿™ä¸ªè®¾ç½®ç»„å°†å¸®åŠ©æ‚¨å®žçŽ°ä¼šå‘˜æ¿€æ´»,åžƒåœ¾ä¿¡æ¯æŽ§åˆ¶å’Œå…¶ä»–å®‰å…¨ç§å¯†æ€§çš„åŠŸèƒ½.<br />å¦‚æžœæ‚¨åœ¨æŸ¥çœ‹äº†ç›¸å…³åŠŸèƒ½è¯´æ˜Žå’Œå¸®åŠ©ä¿¡æ¯ä¹‹åŽä»ç„¶ä¸ç†è§£,é‚£ä¹ˆè¯·ä¿ç•™åŽŸæ¥çš„é»˜è®¤è®¾ç½®ä¸ä½œæ›´æ”¹.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_attach_attach_edit</key>
-			<title>¸½¼þÃÔÄãÍ¼</title>
-			<helptext><![CDATA[ÃÔÄãÍ¼´æ·ÅÔÚ:<br />
+			<title>é™„ä»¶è¿·ä½ å›¾</title>
+			<helptext><![CDATA[è¿·ä½ å›¾å­˜æ”¾åœ¨:<br />
 /style_images/<i>{imgdir}</i>/folder_mime_types/<br/><br/>
-ÀýÈç,ÏñÕâÑùÊäÈë: <i>folder_mime_types/music.gif</i><br />
-ÇëÈ·ÈÏÃÔÄãÍ¼Æ¬ÒÑ¾­ÉÏ´«µ½ÄúÐèÒªµÄÎ»ÖÃ.]]></helptext>
+ä¾‹å¦‚,åƒè¿™æ ·è¾“å…¥: <i>folder_mime_types/music.gif</i><br />
+è¯·ç¡®è®¤è¿·ä½ å›¾ç‰‡å·²ç»ä¸Šä¼ åˆ°æ‚¨éœ€è¦çš„ä½ç½®.]]></helptext>
 		</helpsections>
 
 		<helpsections>
