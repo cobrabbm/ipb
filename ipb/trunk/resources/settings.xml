@@ -255,8 +255,8 @@
 
 		<setting>
 			<conf_id>11</conf_id>
-			<conf_title>Show forthcoming calendar events?</conf_title>
-			<conf_description><![CDATA[If set to "yes", this will show single forthcoming calendar events on the board index view. It will not show recurring events or ranged events.]]></conf_description>
+			<conf_title>显示即将到来的日历事件?</conf_title>
+			<conf_description><![CDATA[如果设置为 "是", 将在论坛首页下方显示即将到来的单日事件. 周期事件和循环事件将不被显示.]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>show_calendar</conf_key>
@@ -266,7 +266,7 @@
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>4</conf_position>
-			<conf_start_group>Forcoming Calendar Events</conf_start_group>
+			<conf_start_group>即将到来的日历事件</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
 			<conf_title_keyword>calendar</conf_title_keyword>
@@ -276,7 +276,7 @@
 		<setting>
 			<conf_id>12</conf_id>
 			<conf_title>没有事件显示时自动隐藏?</conf_title>
-			<conf_description><![CDATA[If set to "yes", this will remove the forcoming calendar events block from the board index view if there are none to show.]]></conf_description>
+			<conf_description><![CDATA[如果设置为 "是", 在没有即将到来的事件时事件栏目将会隐藏.]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>autohide_calendar</conf_key>
@@ -933,7 +933,7 @@
 		<setting>
 			<conf_id>40</conf_id>
 			<conf_title>服务器本地时区</conf_title>
-			<conf_description><![CDATA[<span style='color:red'>如果您选择了正确的时区,但是仍然有一个小时的时,那时因为夏令时在起作用.您的会员们可以在他们的控制面板的"论坛设置"中调整时差.</span>]]></conf_description>
+			<conf_description><![CDATA[<span style='color:red'>如果您选择了正确的时区, 但是仍然有一个小时的时差, 那是因为夏令时在起作用. 您的会员们可以在他们的控制面板的 "论坛设置" 中调整时差.</span>]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>time_offset</conf_key>
@@ -954,7 +954,7 @@
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>1</conf_position>
-			<conf_start_group>Time Adjustments</conf_start_group>
+			<conf_start_group>时间校正</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
 			<conf_title_keyword>date</conf_title_keyword>
@@ -964,7 +964,7 @@
 		<setting>
 			<conf_id>41</conf_id>
 			<conf_title>服务器时间校正 [分钟]</conf_title>
-			<conf_description><![CDATA[在您设置好服务器时区后,如果还需要服务器时间后退,那么使用减号符号"-"(不加引号).当前论坛时间为(根据上面的时区和这里的调整得到):<br><-T->]]></conf_description>
+			<conf_description><![CDATA[在您设置好服务器时区后, 如果还需要服务器时间后退,那么使用减号符号 "-" (不加引号). 当前论坛时间为 (根据上面的时区和这里的调整得到):<br><-T->]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>time_adjust</conf_key>
@@ -988,7 +988,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>42</conf_id>
 			<conf_title>短时间格式</conf_title>
-			<conf_description><![CDATA[请参考<a href='http://www.php.net/date' target='_blank'>PHP Date</a>]]></conf_description>
+			<conf_description><![CDATA[请参考<a href='http://www.php.net/date' target='_blank'>PHP 日期格式</a>]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>clock_short</conf_key>
@@ -1008,7 +1008,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>43</conf_id>
 			<conf_title>注册时间格式</conf_title>
-			<conf_description><![CDATA[请参考<a href='http://www.php.net/date' target='_blank'>PHP Date]]></conf_description>
+			<conf_description><![CDATA[请参考<a href='http://www.php.net/date' target='_blank'>PHP 日期格式]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>clock_joined</conf_key>
@@ -1028,7 +1028,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>44</conf_id>
 			<conf_title>长时间格式</conf_title>
-			<conf_description><![CDATA[请参考<a href='http://www.php.net/date' target='_blank'>PHP Date</a>]]></conf_description>
+			<conf_description><![CDATA[请参考<a href='http://www.php.net/date' target='_blank'>PHP 日期格式</a>]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>clock_long</conf_key>
@@ -1048,7 +1048,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>45</conf_id>
 			<conf_title>使用相对时间设置?</conf_title>
-			<conf_description><![CDATA[在帖子/最后发帖信息中使用"今天","昨天".]]></conf_description>
+			<conf_description><![CDATA[在帖子/最后发帖信息中使用 "今天" , "昨天".]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>time_use_relative</conf_key>
@@ -1071,7 +1071,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>46</conf_id>
 			<conf_title>相对时间格式</conf_title>
-			<conf_description><![CDATA[{--} 将被"今天"或"昨天"替换]]></conf_description>
+			<conf_description><![CDATA[{--} 将被 "今天" 或 "昨天" 替换]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>time_use_relative_format</conf_key>
@@ -1091,7 +1091,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>47</conf_id>
 			<conf_title>自动检测夏令时</conf_title>
-			<conf_description><![CDATA[自动检测夏令时开启时,您的会员的配置信息将会自动调整到正确的时间.]]></conf_description>
+			<conf_description><![CDATA[自动检测夏令时开启时, 您的会员的配置信息将会自动调整到正确的时间.]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>time_dst_auto_correction</conf_key>
@@ -1119,8 +1119,8 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 
 		<setting>
 			<conf_id>48</conf_id>
-			<conf_title><![CDATA[打开"昵称"功能]]></conf_title>
-			<conf_description><![CDATA[如果打开,会员将可以为自己起一个和"登录用户名"不同的"昵称".如果您使用非内部认证模块,必须打开此功能.]]></conf_description>
+			<conf_title><![CDATA[打开 "昵称" 功能]]></conf_title>
+			<conf_description><![CDATA[如果打开, 会员将可以为自己起一个和 "登录用户名" 不同的 "昵称". 如果您使用非内部认证模块, 必须打开此功能.]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>auth_allow_dnames</conf_key>
@@ -1160,7 +1160,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>49</conf_id>
 			<conf_title>禁止昵称同登录用户名重复</conf_title>
-			<conf_description><![CDATA[如果"是",用户不能选择一个别人正在使用的昵称,也不能和其他人的用户名相同.如果"否",用户仅仅不能选择一个别人正在使用的昵称.]]></conf_description>
+			<conf_description><![CDATA[如果 "是", 用户不能选择一个别人正在使用的昵称, 也不能和其他人的用户名相同. 如果 "否",用户仅仅不能选择一个别人正在使用的昵称.]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>auth_dnames_nologinname</conf_key>
@@ -1180,7 +1180,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>178</conf_id>
 			<conf_title>可用在用户名中的字符</conf_title>
-			<conf_description><![CDATA[如果这里被设置好,IPB 论坛将保证所有的用户名在注册的时候仅可以包含这些列出来的字符.<br /><br />若要实现按字母排序的用户名,则使用用:<b>a-zA-Z0-9</b>]]></conf_description>
+			<conf_description><![CDATA[如果这里被设置好, IPB 论坛将保证所有的用户名在注册的时候仅可以包含这些列出来的字符.<br /><br />若要实现按字母排序的用户名, 则使用: <b>a-zA-Z0-9</b>]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>username_characters</conf_key>
@@ -1200,7 +1200,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>179</conf_id>
 			<conf_title>用来显示的错误信息</conf_title>
-			<conf_description><![CDATA[若您指定了可在用户名中使用的字符,而一位用户试图用非法字符来注册时,将会显示的错误信息.<br /><b>小贴士:</b>您可以使用 {chars} 来显示被允许用来注册用户名的字符.]]></conf_description>
+			<conf_description><![CDATA[若您指定了可在用户名中使用的字符, 而一位用户试图用非法字符来注册时, 将会显示的错误信息.<br /><b>小贴士:</b>您可以使用 {chars} 来显示被允许用来注册用户名的字符.]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>username_errormsg</conf_key>
@@ -1220,7 +1220,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>301</conf_id>
 			<conf_title>不允许在用户名中使用分隔线</conf_title>
-			<conf_description><![CDATA[您想明确的阻止新换行,分隔线和HTML标签使用在用户名和昵称中?]]></conf_description>
+			<conf_description><![CDATA[您想明确的阻止新换行, 分隔线和HTML标签使用在用户名和昵称中?]]></conf_description>
 			<conf_group>8</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>usernames_nobr</conf_key>
@@ -1289,7 +1289,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>52</conf_id>
 			<conf_title>邮件发送方式</conf_title>
-			<conf_description><![CDATA[如果 PHP 的 mail() 函数无效时,请使用 SMTP 发送邮件. 如果您不确定,请联系您的服务器提供商.]]></conf_description>
+			<conf_description><![CDATA[如果 PHP 的 mail() 函数无效时,请使用 SMTP 发送邮件. 如果您不确定, 请联系您的服务器提供商.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>mail_method</conf_key>
@@ -1309,7 +1309,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>53</conf_id>
 			<conf_title>SMTP 邮件服务器地址?</conf_title>
-			<conf_description><![CDATA[默认是"localhost"]]></conf_description>
+			<conf_description><![CDATA[默认是 "localhost"]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>smtp_host</conf_key>
@@ -1348,8 +1348,8 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 
 		<setting>
 			<conf_id>55</conf_id>
-			<conf_title><![CDATA[为发送和接收邮件地址添加"<"和">"?]]></conf_title>
-			<conf_description><![CDATA[某些 SMTP 服务器要求邮件地址用尖括号"<"和">"包括.如果您在邮件错误记录中看到错误,那么请打开此选项.]]></conf_description>
+			<conf_title><![CDATA[为发送和接收邮件地址添加 "<" 和 ">"?]]></conf_title>
+			<conf_description><![CDATA[某些 SMTP 服务器要求邮件地址用尖括号 "<" 和 ">" 包括. 如果您在邮件错误记录中看到错误, 那么请打开此选项.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>mail_wrap_brackets</conf_key>
@@ -1369,7 +1369,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>56</conf_id>
 			<conf_title>SMTP 用户名</conf_title>
-			<conf_description><![CDATA[如果使用"localhost",绝大多数情况下不需要填写.]]></conf_description>
+			<conf_description><![CDATA[如果使用 "localhost", 绝大多数情况下不需要填写.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>smtp_user</conf_key>
@@ -1389,7 +1389,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>57</conf_id>
 			<conf_title>SMTP 密码</conf_title>
-			<conf_description><![CDATA[如果使用"localhost",绝大多数情况下不需要填写.]]></conf_description>
+			<conf_description><![CDATA[如果使用 "localhost", 绝大多数情况下不需要填写.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>smtp_pass</conf_key>
@@ -1409,7 +1409,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>58</conf_id>
 			<conf_title>PHP Mail 附加选项</conf_title>
-			<conf_description><![CDATA[例如:-femail@address.com 将会强制加上一个"From"头.]]></conf_description>
+			<conf_description><![CDATA[例如:-femail@address.com 将会强制加上一个 "From" 头.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>php_mail_extra</conf_key>
@@ -1438,7 +1438,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>59</conf_id>
 			<conf_title>论坛名称</conf_title>
-			<conf_description>这是您的论坛的名称,它是论坛导航栏的第一个连接.</conf_description>
+			<conf_description>这是您的论坛的名称, 它是论坛导航栏的第一个连接.</conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>board_name</conf_key>
@@ -1458,7 +1458,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>60</conf_id>
 			<conf_title>网站名称</conf_title>
-			<conf_description><![CDATA[这是您的网站名称,如果您同时填写了网站地址,它们将在论坛顶部显示.]]></conf_description>
+			<conf_description><![CDATA[这是您的网站名称, 如果您同时填写了网站地址, 它们将在论坛顶部显示.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>home_name</conf_key>
@@ -1478,7 +1478,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>61</conf_id>
 			<conf_title>网站地址</conf_title>
-			<conf_description><![CDATA[这是您的网站地址,如果您同时填写了网站名称,它们将在论坛顶部显示.]]></conf_description>
+			<conf_description><![CDATA[这是您的网站地址, 如果您同时填写了网站名称, 它们将在论坛顶部显示.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>home_url</conf_key>
@@ -1498,7 +1498,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>62</conf_id>
 			<conf_title>上传 URL</conf_title>
-			<conf_description><![CDATA[访问"uploads"文件夹的路径.<!--SUGGEST-->]]></conf_description>
+			<conf_description><![CDATA[访问 "uploads" 文件夹的路径.<!--SUGGEST-->]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>upload_url</conf_key>
@@ -1515,7 +1515,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
  {
   $this_script = str_replace( '/'.IPB_ACP_DIRECTORY.'/index.php', '/uploads', $this_script );
 
-  $r['conf_description'] = str_replace( "<!--SUGGEST-->", "<br />IPB 检测到上传 URL为:<br />http://".$this_host.$this_script, $r['conf_description'] );
+  $r['conf_description'] = str_replace( "<!--SUGGEST-->", "<br />IPB 检测到上传 URL 为:<br />http://".$this_host.$this_script, $r['conf_description'] );
  }
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -1530,7 +1530,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>63</conf_id>
 			<conf_title><![CDATA[Path to &#39;upload&#39; directory]]></conf_title>
-			<conf_description><![CDATA[这是磁盘路径,不是 URL.
+			<conf_description><![CDATA[这是磁盘路径, 不是 URL.
 <!--SUGGEST-->]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
@@ -1562,7 +1562,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 			<conf_id>64</conf_id>
 			<conf_title>缓存路径</conf_title>
 			<conf_description><![CDATA[<b>可以留空</b>
-<br />如果使用集群服务器,可以在这里指定 IPB 写文件的路径(skin_cache,style_avatars,style_emoticons,style_images),如果输入路径,请确保以斜线结束.]]></conf_description>
+<br />如果使用集群服务器, 可以在这里指定 IPB 写文件的路径(skin_cache,style_avatars,style_emoticons,style_images),如果输入路径, 请确保以斜线结束.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_cache_path</conf_key>
@@ -1603,7 +1603,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 			<conf_id>66</conf_id>
 			<conf_title>图片 URL</conf_title>
 			<conf_description><![CDATA[<b>可以留空</b>
-<br />如果您想从不同的服务器来处理图片或者使用集群服务器,可以在这里设置.URL 必须以 http:// 开头]]></conf_description>
+<br />如果您想从不同的服务器来处理图片或者使用集群服务器, 可以在这里设置. URL 地址必须以 http:// 开头]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_img_url</conf_key>
@@ -1643,7 +1643,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 		<setting>
 			<conf_id>68</conf_id>
 			<conf_title>自动跳转类型</conf_title>
-			<conf_description><![CDATA[页面跳转类型,请根据您的服务器的操作系统选择.]]></conf_description>
+			<conf_description><![CDATA[页面跳转类型, 请根据您的服务器的操作系统选择.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>header_redirect</conf_key>
@@ -1665,7 +1665,7 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 		<setting>
 			<conf_id>69</conf_id>
 			<conf_title><![CDATA[关闭转向页面显示?]]></conf_title>
-			<conf_description><![CDATA[打开后,用户发帖,搜索等操作之后将不显示重定向消息页面.这些页面可以让用户知道其操作已经被处理.关闭这些页面将节省带宽并且减少服务器负载]]></conf_description>
+			<conf_description><![CDATA[打开后, 用户发帖、搜索等操作之后将不显示重定向消息页面. 这些页面可以让用户知道其操作已经被处理. 关闭这些页面将节省带宽并且减少服务器负载]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_remove_redirect_pages</conf_key>
@@ -1691,10 +1691,10 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 			<conf_key>debug_level</conf_key>
 			<conf_value></conf_value>
 			<conf_default>0</conf_default>
-			<conf_extra><![CDATA[0=0: None - Don't show any debug information
-1=1: Show server load, page generation times and query count
-2=2: Show level 1 (above) and GET and POST information
-3=3: Show level 1 + 2 and database queries]]></conf_extra>
+			<conf_extra><![CDATA[0=0: 不显示 - 不显示任何调试信息
+1=1: 显示系统加载, 页面初始化时间和查询次数
+2=2: 显示级别 1 (包括以上) 以及 GET 和 POST 信息
+3=3: 显示级别 1 + 2 和数据库查询]]></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>14</conf_position>
@@ -1728,7 +1728,7 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 		<setting>
 			<conf_id>72</conf_id>
 			<conf_title>使用安全模式皮肤</conf_title>
-			<conf_description><![CDATA[本设置在安装过程中自动处理,您可以在这里修改,使用安全模式后将不缓存 PHP 文件.]]></conf_description>
+			<conf_description><![CDATA[本设置在安装过程中自动处理, 您可以在这里修改, 使用安全模式后将不缓存 PHP 文件.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>safe_mode_skins</conf_key>
@@ -1748,7 +1748,7 @@ html=HTML META redirect (If all else fails...)</conf_extra>
 		<setting>
 			<conf_id>73</conf_id>
 			<conf_title>数字格式</conf_title>
-			<conf_description><![CDATA[您可以选择一个分隔数字千位和百位之间的符号,(例如:美国和英国使用逗号)]]></conf_description>
+			<conf_description><![CDATA[您可以选择一个分隔数字千位和百位之间的符号, (例如: 美国和英国使用逗号)]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>number_format</conf_key>
@@ -1792,7 +1792,7 @@ space=Space
 		<setting>
 			<conf_id>75</conf_id>
 			<conf_title>GD 版本</conf_title>
-			<conf_description><![CDATA["GD"是 PHP 的嵌入图形库,"GD2"是最新版本,拥有更强的图形功能,如果您使用"GD2"出错,请使用 "GD1".]]></conf_description>
+			<conf_description><![CDATA["GD" 是 PHP 的嵌入图形库, "GD2" 是最新版本, 拥有更强的图形功能, 如果您使用 "GD2" 出错, 请使用 "GD1".]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>gd_version</conf_key>
@@ -1812,8 +1812,8 @@ space=Space
 
 		<setting>
 			<conf_id>295</conf_id>
-			<conf_title>ACP 帮助系统</conf_title>
-			<conf_description>您是否想打开ACP的帮助系统来提供一些额外的有用的信息?</conf_description>
+			<conf_title>后台帮助系统</conf_title>
+			<conf_description>您是否想打开后台的帮助系统来提供一些额外的有用的信息?</conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>acp_tutorial_mode</conf_key>
@@ -1833,8 +1833,8 @@ space=Space
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>chat04</conf_title_keyword>
-			<conf_title_title>Invision Chat Settings</conf_title_title>
-			<conf_title_desc>This will allow you to customize your Invision Chat integration settings for the new 2004 edition</conf_title_desc>
+			<conf_title_title>Invision Chat 设置</conf_title_title>
+			<conf_title_desc>这将允许您自定义 Invision Chat 设置来编辑 2004 版本</conf_title_desc>
 			<conf_title_noshow>1</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -2635,8 +2635,8 @@ if ( $show == 1 )
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>ipconverge</conf_title_keyword>
-			<conf_title_title>IP.Converge设置</conf_title_title>
-			<conf_title_desc>Hidden settings</conf_title_desc>
+			<conf_title_title>IP.Converge 设置</conf_title_title>
+			<conf_title_desc>隐藏设置</conf_title_desc>
 			<conf_title_noshow>1</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -2644,7 +2644,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>111</conf_id>
 			<conf_title>打开 IP.Converge?</conf_title>
-			<conf_description><![CDATA[If 'yes', this IPB will authenticate against IP.Converge.]]></conf_description>
+			<conf_description><![CDATA[如果设置为 '是', 论坛将采用 IP.Converge 的验证方式.]]></conf_description>
 			<conf_group>34</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipconverge_enabled</conf_key>
@@ -2663,8 +2663,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>112</conf_id>
-			<conf_title>IP.Converge URL</conf_title>
-			<conf_description>The root URL of the converge application.</conf_description>
+			<conf_title>IP.Converge URL 地址</conf_title>
+			<conf_description>聚合系统根目录 URL 地址.</conf_description>
 			<conf_group>34</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipconverge_url</conf_key>
@@ -2683,8 +2683,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>113</conf_id>
-			<conf_title>IP.Converge Product ID</conf_title>
-			<conf_description>The product ID assigned from the IP.Converge server</conf_description>
+			<conf_title>IP.Converge 产品 ID</conf_title>
+			<conf_description>产品 ID 分配自 IP.Converge 服务器</conf_description>
 			<conf_group>34</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipconverge_pid</conf_key>
@@ -2705,7 +2705,7 @@ if ( $show == 1 )
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>ipbcopyright</conf_title_keyword>
 			<conf_title_title>IPB 版权移除</conf_title_title>
-			<conf_title_desc>This section allows you to manage your copyright removal key.</conf_title_desc>
+			<conf_title_desc>这一设置允许您管理您的版权移除工具.</conf_title_desc>
 			<conf_title_noshow>1</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -2754,7 +2754,7 @@ if ( $show == 1 )
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>ipbreg</conf_title_keyword>
 			<conf_title_title>IPB 许可设置</conf_title_title>
-			<conf_title_desc>您可以在这里编辑您的IPB授权设置This section will allow you to edit your IPB registered license settings.</conf_title_desc>
+			<conf_title_desc>您可以在这里编辑您的IPB授权设置.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -2762,7 +2762,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>116</conf_id>
 			<conf_title>IPB 授权码</conf_title>
-			<conf_description><![CDATA[这是 IPB 注册码,不是您的客户码或客户中心密码.要获得注册码,登录到您的客户中心然后点击"Your Purchases"下方的"Invision Power Board".不要随便删除或编辑这里!]]></conf_description>
+			<conf_description><![CDATA[这是 IPB 注册码,不是您的客户码或客户中心密码. 要获得注册码, 登录到您的客户中心然后点击 "Your Purchases" 下方的 "Invision Power Board". 不要随便删除或编辑这里!]]></conf_description>
 			<conf_group>16</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_reg_number</conf_key>
@@ -2782,7 +2782,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>117</conf_id>
 			<conf_title>显示注册信息?</conf_title>
-			<conf_description><![CDATA[如果选择是,论坛最底部将显示注册信息.]]></conf_description>
+			<conf_description><![CDATA[如果选择是, 论坛最底部将显示注册信息.]]></conf_description>
 			<conf_group>16</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_reg_show</conf_key>
@@ -2822,15 +2822,15 @@ if ( $show == 1 )
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>ipbloginhandler</conf_title_keyword>
-			<conf_title_title>IPB Log in Handler</conf_title_title>
-			<conf_title_desc>Hidden settings, so there.</conf_title_desc>
+			<conf_title_title>IPB 登录信息处理器</conf_title_title>
+			<conf_title_desc>隐藏选项等.</conf_title_desc>
 			<conf_title_noshow>1</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
 
 		<setting>
 			<conf_id>119</conf_id>
-			<conf_title>Log in Method Key</conf_title>
+			<conf_title>登录方式键值</conf_title>
 			<conf_description></conf_description>
 			<conf_group>36</conf_group>
 			<conf_type>input</conf_type>
@@ -2871,8 +2871,8 @@ if ( $show == 1 )
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>ipbportal</conf_title_keyword>
-			<conf_title_title>IPB 门户</conf_title_title>
-			<conf_title_desc>These settings enable you to enable or disable IPB Portal and control the options IPB Portal offers.</conf_title_desc>
+			<conf_title_title>IPB 门户系统</conf_title_title>
+			<conf_title_desc>这一设置允许您开启或者关闭论坛门户系统并且也可以在这里进行门户系统的配置.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -2880,7 +2880,7 @@ if ( $show == 1 )
 		<setting>
 			<conf_id>121</conf_id>
 			<conf_title>打开 IPB 门户?</conf_title>
-			<conf_description><![CDATA[如果是,IPB Portal 可以通过"index.php?act=home"或者一个特殊的"index.php"脚本文件(请查阅文档获得详情).]]></conf_description>
+			<conf_description><![CDATA[如果选择是, 论坛门户系统可以通过 "index.php?act=home" 或者一个特殊的 "index.php"脚本文件 (请查阅文档获得详情).]]></conf_description>
 			<conf_group>18</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>csite_on</conf_key>
@@ -2985,10 +2985,10 @@ if ( $show == 1 )
 			<conf_type>textarea</conf_type>
 			<conf_key>csite_nav_contents</conf_key>
 			<conf_value></conf_value>
-			<conf_default><![CDATA[{board_url}act=idx [Forums]
-{board_url}act=Search&CODE=getactive [Today's Active Topics]
-{board_url}act=Stats [Today's Top 20 Posters]
-{board_url}act=Stats&CODE=leaders [Contact Staff]]]></conf_default>
+			<conf_default><![CDATA[{board_url}act=idx [论坛地址]
+{board_url}act=Search&CODE=getactive [今日活跃主题]
+{board_url}act=Stats [今日发帖前 20 名]
+{board_url}act=Stats&CODE=leaders [联系管理员]]]></conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp><![CDATA[if ( $show == 1)
 {
@@ -3396,7 +3396,7 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>145</conf_id>
-			<conf_title>Enter URL to poll topic for inclusion</conf_title>
+			<conf_title>输入 URL to poll topic for inclusion</conf_title>
 			<conf_description>Leave blank to not show a poll or the poll box</conf_description>
 			<conf_group>37</conf_group>
 			<conf_type>input</conf_type>
