@@ -461,7 +461,7 @@ class ad_skin_template_bits
 			else
 			{
 				$g['easy_name'] = "<b>".$g['group_name']."</b> (非默认组)";
-				$g['easy_desc'] = "该组不是标准 IPB 安装的一部分，没有说明";
+				$g['easy_desc'] = "该组不是标准 IPB 安装的一部分, 没有说明";
 			}
 
 			if ( isset($skin_names[ $g['group_name'] ][2]) )
@@ -638,7 +638,7 @@ class ad_skin_template_bits
 					 <div class='tablerow1'>
 					 <table width='100%' cellpadding='5' cellspacing='0' border='0'>
 					 <tr>
-					   <td width='40%' class='tablerow1'>元素名称<br /><span style='color:gray'>只能使用字母、数字和下划线，不能使用空格.</span></td>
+					   <td width='40%' class='tablerow1'>元素名称<br /><span style='color:gray'>只能使用字母、数字和下划线, 不能使用空格.</span></td>
 					   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_input('func_name', $this->ipsclass->txt_stripslashes($_POST['func_name']))."</td>
 					 </tr>
 					 <tr>

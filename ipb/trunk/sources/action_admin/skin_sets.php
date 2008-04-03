@@ -1684,7 +1684,7 @@ class ad_skin_sets
 			
 			if ( $r['set_skin_set_id'] == 1 AND ! IN_DEV )
 			{
-				$menulist = "\"无法编辑或删除主主题。<br />如果您要修改默认主题, 请单击"
+				$menulist = "\"无法编辑或删除主主题. <br />如果您要修改默认主题, 请单击"
 							 ."<br />主题 '<!DEFAULT>' 旁的图标并选择项目.\"";
 			}
 			else

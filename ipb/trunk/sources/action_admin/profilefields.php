@@ -425,7 +425,7 @@ class ad_profilefields {
 												                 $this->ipsclass->adskin->form_input("pf_input_format", $fields['pf_input_format'] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可选内容（用于下拉框）</b><div class='graytext'>每行一项内容<br>例如，性别信息：<br>m=男<br>f=女<br>u=保密<br>显示效果为：<br><select name='pants'><option value='m'>男</option><option value='f'>女</option><option value='u'>保密</option></select><br>m、f 或 u 保存在数据库。而在资料中显示时，将使用等号后面的内容（f=女, 显示“女”）</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可选内容（用于下拉框）</b><div class='graytext'>每行一项内容<br>例如, 性别信息：<br>m=男<br>f=女<br>u=保密<br>显示效果为：<br><select name='pants'><option value='m'>男</option><option value='f'>女</option><option value='u'>保密</option></select><br>m、f 或 u 保存在数据库. 而在资料中显示时, 将使用等号后面的内容（f=女, 显示“女”）</div>" ,
 												                 $this->ipsclass->adskin->form_textarea("pf_content", $fields['pf_content'] )
 									                    )      );
 		
@@ -449,7 +449,7 @@ class ad_profilefields {
 												                 $this->ipsclass->adskin->form_yes_no("pf_admin_only", $fields['pf_admin_only'] )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>主题查看格式</b><div class='graytext'>如果您不想在主题旁的作者栏显示本信息, 请留空。<br />{title} 表示信息标题, {content} 表示会员添加的内容. {key} 表示下拉框所选内容的值. <br />例如: {title}:{content}&lt;br /&gt;<br />例如: {title}:&lt;img src='imgs/{key}'&gt;</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>主题查看格式</b><div class='graytext'>如果您不想在主题旁的作者栏显示本信息, 请留空. <br />{title} 表示信息标题, {content} 表示会员添加的内容. {key} 表示下拉框所选内容的值. <br />例如: {title}:{content}&lt;br /&gt;<br />例如: {title}:&lt;img src='imgs/{key}'&gt;</div>" ,
 												                 $this->ipsclass->adskin->form_textarea("pf_topic_format", $fields['pf_topic_format'] )
 									                    )      );					     							     
 		
@@ -472,7 +472,7 @@ class ad_profilefields {
 	{
 		$this->ipsclass->admin->page_title   = "会员附加信息";
 		
-		$this->ipsclass->admin->page_detail  = "会员附加信息可以在会员资料中添加可选或必填的信息。如果您想要记录的会员数据 IPB 没有内置，这里可以为您实现。";
+		$this->ipsclass->admin->page_detail  = "会员附加信息可以在会员资料中添加可选或必填的信息. 如果您想要记录的会员数据 IPB 没有内置, 这里可以为您实现. ";
 		
 		$this->ipsclass->adskin->td_header[] = array( "信息标题"		, "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "信息类型"		, "10%" );

@@ -245,9 +245,9 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='global-memberbar'>
- Welcome <strong>{$this->ipsclass->member['members_display_name']}</strong> [
- <a href='{$this->ipsclass->vars['board_url']}/index.php' target='_blank'>View IPB</a> &middot;
- <a href='{$this->ipsclass->base_url}&amp;act=login&amp;code=login-out'>Log Out</a>
+ 欢迎您, <strong>{$this->ipsclass->member['members_display_name']}</strong> [
+ <a href='{$this->ipsclass->vars['board_url']}/index.php' target='_blank'>论坛首页</a> &middot;
+ <a href='{$this->ipsclass->base_url}&amp;act=login&amp;code=login-out'>退出管理</a>
  ]
 </div>
 EOF;

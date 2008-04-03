@@ -139,12 +139,12 @@ class ad_statistics
 		
 		if ( ! checkdate($this->ipsclass->input['to_month']   ,$this->ipsclass->input['to_day']   ,$this->ipsclass->input['to_year']) )
 		{
-			$this->ipsclass->admin->error("结束日期: 时间不正确，请检查输入后重试");
+			$this->ipsclass->admin->error("结束日期: 时间不正确, 请检查输入后重试");
 		}
 		
 		if ( ! checkdate($this->ipsclass->input['from_month'] ,$this->ipsclass->input['from_day'] ,$this->ipsclass->input['from_year']) )
 		{
-			$this->ipsclass->admin->error("开始日期：时间不正确，请检查输入后重试");
+			$this->ipsclass->admin->error("开始日期：时间不正确, 请检查输入后重试");
 		}
 		
 		//-----------------------------------------
@@ -244,12 +244,12 @@ class ad_statistics
 		
 		if ( ! checkdate($this->ipsclass->input['to_month']   ,$this->ipsclass->input['to_day']   ,$this->ipsclass->input['to_year']) )
 		{
-			$this->ipsclass->admin->error("结束日期：时间不正确，请检查输入后重试");
+			$this->ipsclass->admin->error("结束日期：时间不正确, 请检查输入后重试");
 		}
 		
 		if ( ! checkdate($this->ipsclass->input['from_month'] ,$this->ipsclass->input['from_day'] ,$this->ipsclass->input['from_year']) )
 		{
-			$this->ipsclass->admin->error("开始日期：时间不正确，请检查输入后重试");
+			$this->ipsclass->admin->error("开始日期：时间不正确, 请检查输入后重试");
 		}
 		
 		//-----------------------------------------

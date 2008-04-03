@@ -56,10 +56,10 @@ class ad_attachments {
 	{
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_attachments');
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '¸½¼ş¹ÜÀí' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'é™„ä»¶ç®¡ç†' );
 		
-		$this->ipsclass->admin->page_detail = "Äú¿ÉÒÔÔÚÕâÀï¹ÜÀí»áÔ±ÉÏ´«µÄ¸½¼şÒÔ¼°¸½¼şÉÏ´«Ğí¿É";
-		$this->ipsclass->admin->page_title  = "¸½¼ş¹ÜÀí";
+		$this->ipsclass->admin->page_detail = "æ‚¨å¯ä»¥åœ¨è¿™é‡Œç®¡ç†ä¼šå‘˜ä¸Šä¼ çš„é™„ä»¶ä»¥åŠé™„ä»¶ä¸Šä¼ è®¸å¯";
+		$this->ipsclass->admin->page_title  = "é™„ä»¶ç®¡ç†";
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => 'set_image_dir', 'from' => 'skin_sets', 'where' => 'set_default=1' ) );
 		$this->ipsclass->DB->simple_exec();
@@ -339,14 +339,14 @@ class ad_attachments {
 																	)      );
 									                    		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "¸½¼şÃû³Æ", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "é™„ä»¶åç§°", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "¸½¼ş: ËÑË÷½á¹û" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "é™„ä»¶: æœç´¢ç»“æœ" );
 
 		while ( $r = $this->ipsclass->DB->fetch_row() )
 		{
@@ -362,7 +362,7 @@ class ad_attachments {
 													        )      );
 		}
 		
-		$removebutton = "<input type='submit' value='É¾³ıÑ¡ÖĞµÄ¸½¼ş' class='realdarkbutton'></form>";
+		$removebutton = "<input type='submit' value='åˆ é™¤é€‰ä¸­çš„é™„ä»¶' class='realdarkbutton'></form>";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( $removebutton, "right", "tablesubheader");
 		
@@ -394,70 +394,70 @@ class ad_attachments {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "ËÑË÷¸½¼ş" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "æœç´¢é™„ä»¶" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'  , 'attach_search_complete' ),
 																			 2 => array( 'act'   , 'attach'  ),
 																			 3 => array( 'section', $this->ipsclass->section_code ),
 																	)      );
 									                    
-		$gt_array = array( 0 => array( 'gt', '´óÓÚ' ), 1 => array( 'lt', 'Ğ¡ÓÚ' ) );
+		$gt_array = array( 0 => array( 'gt', 'å¤§äº' ), 1 => array( 'lt', 'å°äº' ) );
 		
 		//-----------------------------------------
 		// FORM
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÎÄ¼şºó×º</b><div style='color:gray'>Áô¿ÕºöÂÔ</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>æ–‡ä»¶åç¼€</b><div style='color:gray'>ç•™ç©ºå¿½ç•¥</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'extension', isset($_POST['extension']) ? $_POST['extension'] : '', 10 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÎÄ¼ş´óĞ¡ </b><div style='color:gray'>Áô¿ÕºöÂÔ</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>æ–‡ä»¶å¤§å° </b><div style='color:gray'>ç•™ç©ºå¿½ç•¥</div>",
 																 $this->ipsclass->adskin->form_dropdown( 'filesize_gt', $gt_array, isset($_POST['filesize_gt']) ? $_POST['filesize_gt'] : '' ).' '.
 												 				 $this->ipsclass->adskin->form_simple_input( 'filesize', isset($_POST['filesize']) ? $_POST['filesize'] : '', 10 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>·¢±íÊ±¼äÔÚ<div style='color:gray'>Áô¿ÕºöÂÔ</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>å‘è¡¨æ—¶é—´åœ¨<div style='color:gray'>ç•™ç©ºå¿½ç•¥</div>",
 																 $this->ipsclass->adskin->form_dropdown( 'days_gt', $gt_array, isset($_POST['days_gt']) ? $_POST['days_gt'] : '' ).' '.
-												 				 $this->ipsclass->adskin->form_simple_input( 'days', isset($_POST['days']) ? $_POST['days'] : '', 10 ).' ÌìÖ®Ç°',
+												 				 $this->ipsclass->adskin->form_simple_input( 'days', isset($_POST['days']) ? $_POST['days'] : '', 10 ).' å¤©ä¹‹å‰',
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÏÂÔØ´ÎÊı</b><div style='color:gray'>Áô¿ÕºöÂÔ</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ä¸‹è½½æ¬¡æ•°</b><div style='color:gray'>ç•™ç©ºå¿½ç•¥</div>",
 																 $this->ipsclass->adskin->form_dropdown( 'hits_gt', $gt_array, isset($_POST['hits_gt']) ? $_POST['hits_gt'] : '' ).' '.
-												 				 $this->ipsclass->adskin->form_simple_input( 'hits', isset($_POST['hits']) ? $_POST['hits'] : '', 10 ).' ´Î',
+												 				 $this->ipsclass->adskin->form_simple_input( 'hits', isset($_POST['hits']) ? $_POST['hits'] : '', 10 ).' æ¬¡',
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÎÄ¼şÃû</b><div style='color:gray'>Áô¿ÕºöÂÔ</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>æ–‡ä»¶å</b><div style='color:gray'>ç•™ç©ºå¿½ç•¥</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'filename', isset($_POST['filename']) ? $_POST['filename'] : '', 30 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÉÏ´«»áÔ±</b><div style='color:gray'>Áô¿ÕºöÂÔ</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ä¸Šä¼ ä¼šå‘˜</b><div style='color:gray'>ç•™ç©ºå¿½ç•¥</div>",
 												 				 $this->ipsclass->adskin->form_input( 'authorname', isset($_POST['authorname']) ? $_POST['authorname'] : '', 'text', "id='authorname'" ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>½öËÑË÷Í¼Æ¬?</b><div style='color:gray'>Èç¹û 'ÊÇ', ËÑË÷½µÖ®·µ»ØÍ¼Æ¬¸½¼ş.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ä»…æœç´¢å›¾ç‰‡?</b><div style='color:gray'>å¦‚æœ 'æ˜¯', æœç´¢é™ä¹‹è¿”å›å›¾ç‰‡é™„ä»¶.</div>",
 												 				 $this->ipsclass->adskin->form_yes_no( 'onlyimage', isset($_POST['onlyimage']) ? $_POST['onlyimage'] : '', 30 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ËÑË÷½á¹ûÅÅĞò</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>æœç´¢ç»“æœæ’åº</b>",
 																 $this->ipsclass->adskin->form_dropdown( 'orderby', array( 0 => array( 'date'    , 'Attach Date'      ),
 																 										             1 => array( 'hits'    , 'Attach Views'     ),
 																 										             2 => array( 'filesize', 'Attach File Size' ),
 																 										             3 => array( 'file'    , 'Attach File Name' ),
 																 										           ), isset($_POST['orderby']) ? $_POST['orderby'] : '' ).' '.
-																 $this->ipsclass->adskin->form_dropdown( 'sort'   , array( 0 => array( 'desc'   , 'µ¹Ğò [9-0]'  ),
+																 $this->ipsclass->adskin->form_dropdown( 'sort'   , array( 0 => array( 'desc'   , 'å€’åº [9-0]'  ),
 																 													 1 => array( 'asc'    , 'Ascending [0-9]'   ),
 																 										           ), isset($_POST['sort']) ? $_POST['sort'] : '' )
 																 										        
 												 				 
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÏÔÊ¾½á¹ûÊıÁ¿</b><div style='color:gray'>×î´ó 100</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>æ˜¾ç¤ºç»“æœæ•°é‡</b><div style='color:gray'>æœ€å¤§ 100</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'show', isset($_POST['show']) ? $_POST['show'] : 25, 10 ),
 														)      );
 														
 		
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("ËÑË÷");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("æœç´¢");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -539,7 +539,7 @@ class ad_attachments {
 			}
 		}
 		
-		$this->ipsclass->main_msg = "¸½¼şÒÑÉ¾³ı";
+		$this->ipsclass->main_msg = "é™„ä»¶å·²åˆ é™¤";
 		
 		if ( $this->ipsclass->input['return'] == 'stats' )
 		{
@@ -592,12 +592,12 @@ class ad_attachments {
 		// Get quick stats
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "¸½¼ş¸Å¿ö" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "é™„ä»¶æ¦‚å†µ" );
 		
 		$stats = $this->ipsclass->DB->simple_exec_query( array( 'select' => 'count(*) as count, sum(attach_filesize) as sum',
  																'from'   => 'attachments' ) );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>¸½¼şÊıÁ¿</b>" , $this->ipsclass->do_number_format($stats['count']),
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>é™„ä»¶æ•°é‡</b>" , $this->ipsclass->do_number_format($stats['count']),
 																 			 "<b>Attachments Disk Usage</b>", $this->ipsclass->size_format($stats['sum']),
 													  				 )      );
 		
@@ -614,14 +614,14 @@ class ad_attachments {
 		//-----------------------------------------
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "ÎÄ¼şÃû³Æ", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ–‡ä»¶åç§°", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "×îĞÂµÄ 5 ¸ö¸½¼ş" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "æœ€æ–°çš„ 5 ä¸ªé™„ä»¶" );
 		
 		$this->ipsclass->DB->build_query( array( 'select'   => 'a.*',
 												 'from'     => array( 'attachments' => 'a' ),
@@ -669,14 +669,14 @@ class ad_attachments {
 		//-----------------------------------------
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "ÎÄ¼şÃû³Æ", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ–‡ä»¶åç§°", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "×î´óµÄ 5 ¸ö¸½¼ş" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "æœ€å¤§çš„ 5 ä¸ªé™„ä»¶" );
 		
 		$this->ipsclass->DB->build_query( array( 'select'   => 'a.*',
 												 'from'     => array( 'attachments' => 'a' ),
@@ -724,14 +724,14 @@ class ad_attachments {
 		//-----------------------------------------
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
-		$this->ipsclass->adskin->td_header[] = array( "ÎÄ¼şÃû³Æ", "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "æ–‡ä»¶åç§°", "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "Viewed"    , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "µã»÷´ÎÊı×î¶àµÄ 5 ¸ö¸½¼ş" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "ç‚¹å‡»æ¬¡æ•°æœ€å¤šçš„ 5 ä¸ªé™„ä»¶" );
 		
 		$this->ipsclass->DB->build_query( array( 'select'   => 'a.*',
 												 'from'     => array( 'attachments' => 'a' ),
@@ -774,7 +774,7 @@ class ad_attachments {
 																		)      );
 		}
 		
-		$removebutton = "<input type='submit' value='É¾³ıÑ¡ÖĞµÄ¸½¼ş' class='realdarkbutton'></form>";
+		$removebutton = "<input type='submit' value='åˆ é™¤é€‰ä¸­çš„é™„ä»¶' class='realdarkbutton'></form>";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( $removebutton, "right", "tablesubheader");
 		
@@ -803,7 +803,7 @@ class ad_attachments {
 		
 		if ( ! $content )
 		{
-			$this->ipsclass->main_msg = "ÉÏ´«Ê§°Ü, ÎÄ¼ş ipb_attachtypes.xml ²»´æÔÚ»òÎÄ¼şÎª¿Õ";
+			$this->ipsclass->main_msg = "ä¸Šä¼ å¤±è´¥, æ–‡ä»¶ ipb_attachtypes.xml ä¸å­˜åœ¨æˆ–æ–‡ä»¶ä¸ºç©º";
 			$this->attach_type_start();
 		}
 		
@@ -861,7 +861,7 @@ class ad_attachments {
 		
 		$this->attach_type_rebuildcache();
                     
-		$this->ipsclass->main_msg = "¸½¼şÀàĞÍ XML ÎÄ¼şµ¼ÈëÍê±Ï";
+		$this->ipsclass->main_msg = "é™„ä»¶ç±»å‹ XML æ–‡ä»¶å¯¼å…¥å®Œæ¯•";
 		
 		$this->attach_type_start();
 	
@@ -937,7 +937,7 @@ class ad_attachments {
 		
 		$this->attach_type_rebuildcache();
 		
-		$this->ipsclass->main_msg = "¸½¼şÀàĞÍÒÑÉ¾³ı";
+		$this->ipsclass->main_msg = "é™„ä»¶ç±»å‹å·²åˆ é™¤";
 		
 		$this->attach_type_start();
 	}
@@ -958,7 +958,7 @@ class ad_attachments {
 		
 		if ( ! $this->ipsclass->input['atype_extension'] or ! $this->ipsclass->input['atype_mimetype'] )
 		{
-			$this->ipsclass->main_msg = "Äú±ØĞëÊäÈëÖÁÉÙÎÄ¼şºó×ººÍ mime-type ²ÅÄÜ¼ÌĞø.";
+			$this->ipsclass->main_msg = "æ‚¨å¿…é¡»è¾“å…¥è‡³å°‘æ–‡ä»¶åç¼€å’Œ mime-type æ‰èƒ½ç»§ç»­.";
 			$this->attach_type_form( $type );
 		}
 		
@@ -979,20 +979,20 @@ class ad_attachments {
 			
 			if ( $attach['atype_id'] )
 			{
-				$this->ipsclass->main_msg = "ÎÄ¼şºó×º '{$save_array['atype_extension']}' ÒÑ¾­´æÔÚ, ÇëÊäÈëÁíÍâÒ»¸ö.";
+				$this->ipsclass->main_msg = "æ–‡ä»¶åç¼€ '{$save_array['atype_extension']}' å·²ç»å­˜åœ¨, è¯·è¾“å…¥å¦å¤–ä¸€ä¸ª.";
 				$this->attach_type_form($type);
 			}
 			
 			$this->ipsclass->DB->do_insert( 'attachments_type', $save_array );
 			
-			$this->ipsclass->main_msg = "¸½¼şÀàĞÍÒÑÌí¼Ó";
+			$this->ipsclass->main_msg = "é™„ä»¶ç±»å‹å·²æ·»åŠ ";
 			
 		}
 		else
 		{
 			$this->ipsclass->DB->do_update( 'attachments_type', $save_array, 'atype_id='.$this->ipsclass->input['id'] );
 			
-			$this->ipsclass->main_msg = "¸½¼şÀàĞÍÒÑ±à¼­";
+			$this->ipsclass->main_msg = "é™„ä»¶ç±»å‹å·²ç¼–è¾‘";
 		}
 		
 		$this->attach_type_rebuildcache();
@@ -1012,12 +1012,12 @@ class ad_attachments {
 		$this->ipsclass->input['id']     = isset($this->ipsclass->input['id']) ? intval($this->ipsclass->input['id']) : 0;
 		$this->ipsclass->input['baseon'] = isset($this->ipsclass->input['baseon']) ? intval($this->ipsclass->input['baseon']) : 0;
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Ìí¼Ó/±à¼­¸½¼şÀàĞÍ' );
+		$this->ipsclass->admin->nav[] = array( '', 'æ·»åŠ /ç¼–è¾‘é™„ä»¶ç±»å‹' );
 		
 		if ( $type == 'add' )
 		{
 			$code   = 'attach_doadd';
-			$button = 'Ìí¼Ó¸½¼şÀàĞÍ';
+			$button = 'æ·»åŠ é™„ä»¶ç±»å‹';
 			
 			if ( $this->ipsclass->input['baseon'] )
 			{
@@ -1043,7 +1043,7 @@ class ad_attachments {
 		
 			while( $r = $this->ipsclass->DB->fetch_row() )
 			{
-				$dd .= "<option value='{$r['atype_id']}'>ĞÂ¸½¼şÀàĞÍ»ùÓÚ: {$r['atype_extension']}</option>\n";
+				$dd .= "<option value='{$r['atype_id']}'>æ–°é™„ä»¶ç±»å‹åŸºäº: {$r['atype_extension']}</option>\n";
 			}
 			
 			$title = "
@@ -1058,7 +1058,7 @@ class ad_attachments {
 		else
 		{
 			$code   = 'attach_doedit';
-			$button = '±à¼­¸½¼şÀàĞÍ';
+			$button = 'ç¼–è¾‘é™„ä»¶ç±»å‹';
 			$title  = $button;
 			$attach = $this->ipsclass->DB->simple_exec_query( array( 'select' => '*', 'from' => 'attachments_type', 'where' => 'atype_id='.$this->ipsclass->input['id'] ) );
 		
@@ -1088,23 +1088,23 @@ class ad_attachments {
 		// FORM
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>¸½¼şÎÄ¼şºó×º</b><div style='color:gray'>ÎÄ¼şºó×ºÍ¨³£Îª3¸ö×Ö·û.<br />Äú²»ĞèÒªÊäÈë '.' </div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>é™„ä»¶æ–‡ä»¶åç¼€</b><div style='color:gray'>æ–‡ä»¶åç¼€é€šå¸¸ä¸º3ä¸ªå­—ç¬¦.<br />æ‚¨ä¸éœ€è¦è¾“å…¥ '.' </div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'atype_extension', ( isset($_POST['atype_extension']) AND $_POST['atype_extension'] ) ? $_POST['atype_extension'] : $attach['atype_extension'], 10 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>¸½¼ş Mime-Type</b><div style='color:gray'>²»ÄÜÈ·¶¨ÕıÈ·µÄ mime-type? <a href='http://www.utoronto.ca/webdocs/HTMLdocs/Book/Book-3ed/appb/mimetype.html' target='_blank'>ÔÚÕâÀïÕÒÕÒ</a></div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>é™„ä»¶ Mime-Type</b><div style='color:gray'>ä¸èƒ½ç¡®å®šæ­£ç¡®çš„ mime-type? <a href='http://www.utoronto.ca/webdocs/HTMLdocs/Book/Book-3ed/appb/mimetype.html' target='_blank'>åœ¨è¿™é‡Œæ‰¾æ‰¾</a></div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'atype_mimetype', ( isset($_POST['atype_mimetype']) AND $_POST['atype_mimetype'] ) ? $_POST['atype_mimetype'] : $attach['atype_mimetype'], 40 ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÔÊĞíÉÏ´«´ËÀàĞÍµÄ¸½¼ş?</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>å…è®¸ä¸Šä¼ æ­¤ç±»å‹çš„é™„ä»¶?</b>",
 												 				 $this->ipsclass->adskin->form_yes_no( 'atype_post', ( isset($_POST['atype_post']) AND $_POST['atype_post'] ) ? $_POST['atype_post'] : $attach['atype_post'] ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>ÔÊĞí´ËÀàĞÍµÄ¸½¼ş×÷ÎªÍ·ÏñºÍ¸öÈËÕÕÆ¬?</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>å…è®¸æ­¤ç±»å‹çš„é™„ä»¶ä½œä¸ºå¤´åƒå’Œä¸ªäººç…§ç‰‡?</b>",
 												 				 $this->ipsclass->adskin->form_yes_no( 'atype_photo', ( isset($_POST['atype_photo']) AND $_POST['atype_photo'] ) ? $_POST['atype_photo'] : $attach['atype_photo'] ),
 														)      );
 														
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>¸½¼şÍ¼±ê</b><div style='color:gray'>ÔÚÌû×ÓÖĞ±íÊ¾¸½¼şÀàĞÍµÄĞ¡Í¼±ê .</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>é™„ä»¶å›¾æ ‡</b><div style='color:gray'>åœ¨å¸–å­ä¸­è¡¨ç¤ºé™„ä»¶ç±»å‹çš„å°å›¾æ ‡ .</div>",
 												 				 $this->ipsclass->adskin->form_simple_input( 'atype_img', ( isset($_POST['atype_img']) AND $_POST['atype_img'] ) ? $_POST['atype_img'] : $attach['atype_img'], 40 ),
 														)      );	
 		
@@ -1160,14 +1160,14 @@ class ad_attachments {
 																	) , "uploadform", " enctype='multipart/form-data'"     );
 													
 													  			
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "µ¼Èë¸½¼şÀàĞÍÁĞ±í" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "å¯¼å…¥é™„ä»¶ç±»å‹åˆ—è¡¨" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													 		    "<b>ÉÏ´« XML ¸½¼şÀàĞÍÁĞ±í</b><div style='color:gray'>ÎÄ¼şÃû±ØĞëÊÇ 'ipb_attachtypes.xml' »ò 'ipb_attachtypes.xml.gz'. ÖØ¸´µÄÏîÄ¿²»»á±»µ¼Èë.</div>",
+													 		    "<b>ä¸Šä¼  XML é™„ä»¶ç±»å‹åˆ—è¡¨</b><div style='color:gray'>æ–‡ä»¶åå¿…é¡»æ˜¯ 'ipb_attachtypes.xml' æˆ– 'ipb_attachtypes.xml.gz'. é‡å¤çš„é¡¹ç›®ä¸ä¼šè¢«å¯¼å…¥.</div>",
 													  		    $this->ipsclass->adskin->form_upload(  )
 													    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("µ¼Èë");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("å¯¼å…¥");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

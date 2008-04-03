@@ -41,7 +41,7 @@ class ad_sql
 	{
 		if ( TRIAL_VERSION )
 		{
-			print "This feature is disabled in the trial version.";
+			print "该功能在试用版本中不被提供.";
 			exit();
 		}
 		
@@ -51,7 +51,7 @@ class ad_sql
 		
 		if ($this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'])
 		{
-			$this->ipsclass->admin->error("Sorry, these functions are for the root admin group only");
+			$this->ipsclass->admin->error("非常抱歉, 这些功能只对系统管理员开放.");
 		}
 		
 		require_once( ROOT_PATH.'sources/action_admin/sql_'.strtolower($this->ipsclass->vars['sql_driver']).'.php' );

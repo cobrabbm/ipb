@@ -417,7 +417,7 @@ class ad_warnlogs {
 	{
 		$form_array = array();
 	
-		$this->ipsclass->admin->page_detail = "您可以查看或编辑您的版主对会员的警告操作纪录。<br />提示：删除记录不会降低会员的警告级别";
+		$this->ipsclass->admin->page_detail = "您可以查看或编辑您的版主对会员的警告操作纪录. <br />提示：删除记录不会降低会员的警告级别";
 		$this->ipsclass->admin->page_title  = "警告记录管理";
 		
 		$this->ipsclass->html .= ""; // removed js popwin

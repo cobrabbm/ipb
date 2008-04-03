@@ -75,7 +75,7 @@ class ad_task_manager
 		// Continue
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_detail = "任务管理器包含了您所有的计划任务. <br />请注意, 由于任务是在论坛被访问的时候执行的, 任务下次执行的时间只是一个参考, 如果没有人访问您的论坛，任务不会执行.";
+		$this->ipsclass->admin->page_detail = "任务管理器包含了您所有的计划任务. <br />请注意, 由于任务是在论坛被访问的时候执行的, 任务下次执行的时间只是一个参考, 如果没有人访问您的论坛, 任务不会执行.";
 		$this->ipsclass->admin->page_title  = "任务管理";
 
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '任务管理' );
@@ -582,7 +582,7 @@ class ad_task_manager
 		
 		if ( ! $this_task['task_enabled'] )
 		{
-			$this->ipsclass->main_msg = "任务被禁用，请开启后再次执行.";
+			$this->ipsclass->main_msg = "任务被禁用, 请开启后再次执行.";
 			$this->task_show_tasks();
 		}
 		

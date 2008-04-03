@@ -453,7 +453,7 @@ class ad_bbcode {
 		
 		if ( ! strstr( $this->ipsclass->input['bbcode_replace'], '{option}' ) AND $this->ipsclass->input['bbcode_useoption'] )
 		{
-			$this->ipsclass->main_msg = "您必须在 BBCode 置换中使用 {option}，或关闭“标签中有可选参数";
+			$this->ipsclass->main_msg = "您必须在 BBCode 置换中使用 {option}, 或关闭“标签中有可选参数";
 			$this->bbcode_form($type);
 		}
 		
@@ -547,11 +547,11 @@ class ad_bbcode {
 															   $this->ipsclass->adskin->form_textarea( 'bbcode_desc', ( isset($this->ipsclass->input['bbcode_desc']) AND $this->ipsclass->input['bbcode_desc'] ) ? $this->ipsclass->input['bbcode_desc'] : $bbcode['bbcode_desc'] )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 示例</b><div style='color:gray'>用于 BBCode 弹出提示<br />在示例中使用标签: [tag]这里是示例！[/tag]</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 示例</b><div style='color:gray'>用于 BBCode 弹出提示<br />在示例中使用标签: [tag]这里是示例![/tag]</div>",
 															   $this->ipsclass->adskin->form_textarea( 'bbcode_example', ( isset($this->ipsclass->input['bbcode_example']) AND $this->ipsclass->input['bbcode_example'] ) ? $this->ipsclass->input['bbcode_example'] : $bbcode['bbcode_example'] )
 													 )      );
 													 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 标记</b><div style='color:gray'>例如: 如果标记是 [tag]，那么输入 <b>tag</b></div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>BBCode 标记</b><div style='color:gray'>例如: 如果标记是 [tag], 那么输入 <b>tag</b></div>",
 															   '[ '.$this->ipsclass->adskin->form_simple_input( 'bbcode_tag', ( isset($this->ipsclass->input['bbcode_tag']) AND $this->ipsclass->input['bbcode_tag'] ) ? $this->ipsclass->input['bbcode_tag'] : $bbcode['bbcode_tag'], 10).' ]'
 													 )      );
 													 
@@ -559,7 +559,7 @@ class ad_bbcode {
 															   $this->ipsclass->adskin->form_yes_no( 'bbcode_useoption', ( isset($this->ipsclass->input['bbcode_useoption']) AND $this->ipsclass->input['bbcode_useoption'] ) ? $this->ipsclass->input['bbcode_useoption'] : $bbcode['bbcode_useoption'] )
 													 )      );
 													
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>转换参数</b><div style='color:gray'>如果您想将 {content} 和 {option} 交换，就打开本开关（例如创建[tag={content}]{option}[/tag]这样的标记）</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>转换参数</b><div style='color:gray'>如果您想将 {content} 和 {option} 交换, 就打开本开关（例如创建[tag={content}]{option}[/tag]这样的标记）</div>",
 															   				 $this->ipsclass->adskin->form_yes_no( 'bbcode_switch_option', ( isset($this->ipsclass->input['bbcode_switch_option']) AND $this->ipsclass->input['bbcode_switch_option'] ) ? $this->ipsclass->input['bbcode_switch_option'] : $bbcode['bbcode_switch_option'] )
 													 				)      );
 													 
@@ -570,15 +570,15 @@ class ad_bbcode {
 		// Insert Special Options
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>插入到编辑器的“插入特殊”菜单</b>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>插入到编辑器的 “插入特殊” 菜单</b>",
 															   				 $this->ipsclass->adskin->form_yes_no( 'bbcode_add_into_menu', ( isset($this->ipsclass->input['bbcode_add_into_menu']) AND $this->ipsclass->input['bbcode_add_into_menu'] ) ? $this->ipsclass->input['bbcode_add_into_menu'] : $bbcode['bbcode_add_into_menu'] )
 													 				)      );
 													
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入“option”对话框文字</b><div style='color:gray'>Help text to use above the 'Option' text field. This will appear when the tag is chosen from the 'Insert Special' menu.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入 '选项' 对话框文字</b><div style='color:gray'>显示在 '选项' 文本框上方的帮助提示. 该内容将在您点击了 '特殊输入' 菜单的相应条目时出现.</div>",
 															   			 	 $this->ipsclass->adskin->form_simple_input( 'bbcode_menu_option_text', ( isset($this->ipsclass->input['bbcode_menu_option_text']) AND $this->ipsclass->input['bbcode_menu_option_text'] ) ? $this->ipsclass->input['bbcode_menu_option_text'] : $bbcode['bbcode_menu_option_text'], 50)
 													 				)      );
 													
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入 'content' 对话框文字 </b><div style='color:gray'>Help text to use above the 'Content' text field. This will appear when the tag is chosen from the 'Insert Special' menu.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入 '内容' 对话框文字 </b><div style='color:gray'>显示在 '内容' 文本框上方的帮助提示. 该内容将在您点击了 '特殊输入' 菜单的相应条目时出现.</div>",
 															   			 	 $this->ipsclass->adskin->form_simple_input( 'bbcode_menu_content_text', ( isset($this->ipsclass->input['bbcode_menu_content_text']) AND $this->ipsclass->input['bbcode_menu_content_text'] ) ? $this->ipsclass->input['bbcode_menu_content_text'] : $bbcode['bbcode_menu_content_text'], 50)
 													 				)      );
 		
@@ -586,8 +586,8 @@ class ad_bbcode {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
-		$this->ipsclass->html .= "<br /><div class='tableborder'><div class='tablerow1' style='padding:6px'><b>更多信息</b><br />添加 BBCode 置换时，不要忘记在解析标记内容的位置输入 {content}。<br />
-						    如果您要创建一个 <b>[tag=option][/tag]</b> 这样的标签，不要忘记在 BBCode 置换中可选参数的位置输入 {option} 。</div></div>";
+		$this->ipsclass->html .= "<br /><div class='tableborder'><div class='tablerow1' style='padding:6px'><b>更多信息</b><br />添加 BBCode 置换时, 不要忘记在解析标记内容的位置输入 {content}. <br />
+						    如果您要创建一个 <b>[tag=option][/tag]</b> 这样的标签, 不要忘记在 BBCode 置换中可选参数的位置输入 {option} . </div></div>";
 		
 		//-----------------------------------------
 		
@@ -670,7 +670,7 @@ class ad_bbcode {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导入 BBCode 列表" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													 		 "<b>上传 XML BBCode 列表</b><div style='color:gray'>文件名必须为“bbcode.xml”或“bbcode.xml.gz”。不会导入重复的 [tag] 项目。</div>",
+													 		 "<b>上传 XML BBCode 列表</b><div style='color:gray'>文件名必须为“bbcode.xml”或“bbcode.xml.gz”. 不会导入重复的 [tag] 项目. </div>",
 													  		 $this->ipsclass->adskin->form_upload(  )
 													   )      );
 		

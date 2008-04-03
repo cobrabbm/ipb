@@ -1214,7 +1214,7 @@ class ad_member
 		
 		if ( $display_name == $member['members_display_name'] )
 		{
-			$this->member_change_display_name("新昵称和旧的一样，老大，您不是开玩笑吧");
+			$this->member_change_display_name("新昵称和旧的一样, 老大, 您不是开玩笑吧");
 			exit();
 		}
 		
@@ -1486,7 +1486,7 @@ class ad_member
 			}
 		}
 		
-		$contents = "{old_name},\n管理员更改了您在 {$this->ipsclass->vars['board_name']} 的昵称。\n\n您的新昵称是：{new_name}\n\n论坛地址：：{$this->ipsclass->vars['board_url']}/index.php";
+		$contents = "{old_name},\n管理员更改了您在 {$this->ipsclass->vars['board_name']} 的昵称. \n\n您的新昵称是：{new_name}\n\n论坛地址：：{$this->ipsclass->vars['board_url']}/index.php";
 		
 		//-----------------------------------------
 		// FORM
@@ -1600,7 +1600,7 @@ class ad_member
 		
 		if ($this->ipsclass->input['new_name'] == $member['name'])
 		{
-			$this->member_change_name_start("新会员名和旧的一样，老大，您不是开玩笑吧");
+			$this->member_change_name_start("新会员名和旧的一样, 老大, 您不是开玩笑吧");
 			exit();
 		}
 		
@@ -1619,7 +1619,7 @@ class ad_member
 			
 			if( $check['id'] != $member['id'] )
 			{
-				$this->member_change_name_start("会员名 '$new_name' 已经存在，请重新输入");
+				$this->member_change_name_start("会员名 '$new_name' 已经存在, 请重新输入");
 				exit();
 			}
 		}
@@ -1865,7 +1865,7 @@ class ad_member
 												                 $this->ipsclass->adskin->form_input( "new_name", $this->ipsclass->input['new_name'] )
 									                    )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发送邮件提醒该会员?</b><br>( 如果是，您可以在下面编辑邮件内容 )" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发送邮件提醒该会员?</b><br>( 如果是, 您可以在下面编辑邮件内容 )" ,
 												                 $this->ipsclass->adskin->form_yes_no( "send_email", 1 )
 									                    )      );
 									     

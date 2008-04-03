@@ -1439,7 +1439,7 @@ class ad_rebuild {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除升级到 IPB 2.0.x 后重复的系统设置组" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "经过升级或由其他论坛转换而来的论坛, 您会发现, 由于运行了2次升级工具或者超时错误, 系统设置中将会有一些重复的设置.
-																			  <br />本工具将找出这些重复的设置项，并且保留 ID 较大的."
+																			  <br />本工具将找出这些重复的设置项, 并且保留 ID 较大的."
 																	)      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
@@ -1460,7 +1460,7 @@ class ad_rebuild {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "查找并恢复“疑似重复”的会员" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "过升级或由其他论坛转换而来的论坛, 您会发现, 由于几个会员使用了重复的邮件地址, 他们的帐户被移动到等待验证用户组.
-																  <br />本工具将找出这些会员，并恢复他们到默认的用户组, 同时提醒他们更改邮件地址."
+																  <br />本工具将找出这些会员, 并恢复他们到默认的用户组, 同时提醒他们更改邮件地址."
 														)      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');

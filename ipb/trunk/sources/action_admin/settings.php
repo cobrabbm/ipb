@@ -401,7 +401,7 @@ class ad_settings {
 
 		if ( ! $content )
 		{
-			$this->ipsclass->admin->error( "导入文件格式不正确，或者已损坏" );
+			$this->ipsclass->admin->error( "导入文件格式不正确, 或者已损坏" );
 		}
 
 		if ( $tool == 'check' )
@@ -1492,7 +1492,7 @@ class ad_settings {
 				$this->ipsclass->my_group_helpkey = $_data['conf_title_keyword'];
 			}
 
-			$title      = "Settings for group: {$group_title}";
+			$title      = "当前设置组: {$group_title}";
 			$conf_entry = $conf_fields;
 		}
 		else
@@ -1627,7 +1627,7 @@ class ad_settings {
 					}
 				}
 
-				$title = "Settings for group: {$group_title}";
+				$title = "当前设置组: {$group_title}";
 			}
 		}
 
@@ -2769,16 +2769,16 @@ return "
 <div style='line-height:150%'>
 <span style='font-weight:bold;font-size:14px;'>无法自动创建全文索引</span>
 <br /><br />
-您的帖子太多，无法自动创建全文索引，索引完成之前 PHP 就会超时，这将会破坏索引。
+您的帖子太多, 无法自动创建全文索引, 索引完成之前 PHP 就会超时, 这将会破坏索引. 
 <br />
-创建全文索引是相当慢的操作，但是这非常值得去做，因为当会员使用搜索时，会节约大量的时间和 CPU 资源。
+创建全文索引是相当慢的操作, 但是这非常值得去做, 因为当会员使用搜索时, 会节约大量的时间和 CPU 资源. 
 <br />
-平均来说，普通的服务器每小时能索引大约 80,000 个帖子，这是非常消耗系统资源的操作，如果您使用 MySQL 4.0.12 以上版本，那么所需的时间将会显著缩短。s
+平均来说, 普通的服务器每小时能索引大约 80,000 个帖子, 这是非常消耗系统资源的操作, 如果您使用 MySQL 4.0.12 以上版本, 那么所需的时间将会显著缩短. s
 <br />
 <br />
 <strong style='color:red;font-size:14px'>如何手工创建索引</strong>
 <br />
-如果您有一个 MySQL 的客户端工具（比如：telnet）可以访问 mySQL，操作将是非常简单的。如果没有，那么请您联系您的主机提供商，请他们为您创建。
+如果您有一个 MySQL 的客户端工具（比如：telnet）可以访问 mySQL, 操作将是非常简单的. 如果没有, 那么请您联系您的主机提供商, 请他们为您创建. 
 <br /><br />
 <strong>第一步：初始化 mysql</strong>
 <br />
@@ -2786,7 +2786,7 @@ return "
 <br />
 <pre>mysql -u{your_sql_user_name} -p{your_sql_password}</pre>
 <br />
-您的 MySQL 会员名和密码就是您存放在 conf_global.php 文件中的。
+您的 MySQL 会员名和密码就是您存放在 conf_global.php 文件中的. 
 <br />
 <br />
 <strong>第二步：选择您的数据库</strong>
@@ -2795,7 +2795,7 @@ return "
 <br />
 <pre>use {your_database_name_here};</pre>
 <br />
-请确认您使用了半角的分号。您的 MySQL 数据库就是您存放在 conf_global.php 文件中的。
+请确认您使用了半角的分号. 您的 MySQL 数据库就是您存放在 conf_global.php 文件中的. 
 <br /><br />
 <strong>第三步：索引主题数据表</strong>
 <br />
@@ -2812,7 +2812,7 @@ This query can take a while depending on the number of topics you have.
 <br />
 <pre>alter table " . SQL_PREFIX . "posts add fulltext(post);</pre>
 <br />
-如果您不是采用 'ibf_' 作为您的数据表的前缀，则需要替换上面的文本。根据您的帖子数量，这条命令会持续一段时间。平均每小时 MySQL 可以索引大约 80,000 个帖子。如果您使用 MySQL 4.0.12 以上版本，那么所需的时间将会显著缩短。</div>
+如果您不是采用 'ibf_' 作为您的数据表的前缀, 则需要替换上面的文本. 根据您的帖子数量, 这条命令会持续一段时间. 平均每小时 MySQL 可以索引大约 80,000 个帖子. 如果您使用 MySQL 4.0.12 以上版本, 那么所需的时间将会显著缩短. </div>
 ";
 	}
 

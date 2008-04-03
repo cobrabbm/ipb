@@ -860,7 +860,7 @@ class ad_skintools {
 		{
 			$this->ipsclass->html .= "<div class='tableborder'>
 								 <div class='tableheaderalt'>搜索 & 替换结果</div>
-								 <div class='tablepad' style='padding:5px'><b style='font-size:12px'>找到 {$matches} 项匹配关键字：“".htmlentities($before)."”，替换为“".htmlentities($after)."”</b><br /><br />";
+								 <div class='tablepad' style='padding:5px'><b style='font-size:12px'>找到 {$matches} 项匹配关键字：“".htmlentities($before)."”, 替换为“".htmlentities($after)."”</b><br /><br />";
 								 
 			//-----------------------------------------
 			// Go fru dem all and print..
@@ -1197,11 +1197,11 @@ class ad_skintools {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索和替换" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索条件...</b><br /><span style='color:gray'>可以输入词语或者 HTML 代码.<br />如果开启了“正则模式”，您可以输入正则表达式.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索条件...</b><br /><span style='color:gray'>可以输入词语或者 HTML 代码.<br />如果开启了“正则模式”, 您可以输入正则表达式.</span>",
 															      $this->ipsclass->adskin->form_textarea( 'searchfor', $_POST['searchfor'] )
 													    )      );
 													  
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>替换为...</b><br /><span style='color:gray'>可以输入 HTML 代码<br />如果开启了'正则模式'，您可以输入正则表达式.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>替换为...</b><br /><span style='color:gray'>可以输入 HTML 代码<br />如果开启了'正则模式', 您可以输入正则表达式.</span>",
 															     $this->ipsclass->adskin->form_textarea( 'replacewith', $_POST['replacewith'] )
 													    )      );
 													    
@@ -1313,7 +1313,7 @@ class ad_skintools {
 		{
 			if ( ! file_exists( CACHE_PATH.'cache/skin_cache/cacheid_'.$pid ) )
 			{
-				$this->ipsclass->main_msg = '由于文件夹”cacheid_$pid“不存在，无法重建主模板';
+				$this->ipsclass->main_msg = '由于文件夹”cacheid_$pid“不存在, 无法重建主模板';
 			}
 			
 			$this->ipsclass->cache_func->_rebuild_templates_from_php($pid);
