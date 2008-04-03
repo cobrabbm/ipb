@@ -1133,7 +1133,7 @@ class ad_emoticons {
 			}
 			else
 			{
-				$this->ipsclass->main_msg = "IPB 无法创建文件夹，请手工通过 FTP 在目录“style_emoticons”内建立文件夹";
+				$this->ipsclass->main_msg = "IPB 无法创建文件夹, 请手工通过 FTP 在目录“style_emoticons”内建立文件夹";
 				$this->emoticon_pack_splash();
 			}
 		}

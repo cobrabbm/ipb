@@ -380,7 +380,7 @@ class ad_sql_module {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "简单备份" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>备份 MySQL 数据库</b><br><br>您点击下面的连接后，请等待直到浏览器弹出对话框。本操作需要的时间基于您的数据库大小.
+													"<b>备份 MySQL 数据库</b><br><br>您点击下面的连接后, 请等待直到浏览器弹出对话框. 本操作需要的时间基于您的数据库大小.
 													<br><br>
 													<b><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=dosafebackup&create_tbl={$this->ipsclass->input['create_tbl']}&addticks={$this->ipsclass->input['addticks']}&skip={$this->ipsclass->input['skip']}&enable_gzip={$this->ipsclass->input['enable_gzip']}'>点击这里开始备份</a></b>"
 									     )      );
@@ -401,7 +401,7 @@ class ad_sql_module {
 		
 		$this->ipsclass->admin->page_detail = "您可以在这里备份您的数据库.
 							  <br><br><b>简单备份</b>
-							  <br>本功能将生成一个备份文件并提示您下载保存.本功能可以在 PHP 安全模式下运行，不过只能使用于小数据库.
+							  <br>本功能将生成一个备份文件并提示您下载保存.本功能可以在 PHP 安全模式下运行, 不过只能使用于小数据库.
 							  <br><br>
 							  <b>高级备份</b>
 							  <br>本功能可以将备份文件分割为几个小文件.

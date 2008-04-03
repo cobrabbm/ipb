@@ -81,7 +81,7 @@ class ad_acppermissions
 		
 		if ( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
 		{
-			$this->ipsclass->admin->error("¶Ô²»Æğ£¬Ö»ÓĞÏµÍ³¹ÜÀíÔ±²ÅÄÜ·ÃÎÊÕâÀï");
+			$this->ipsclass->admin->error("å¯¹ä¸èµ·, åªæœ‰ç³»ç»Ÿç®¡ç†å‘˜æ‰èƒ½è®¿é—®è¿™é‡Œ");
 		}
 		
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_admin');
@@ -168,7 +168,7 @@ class ad_acppermissions
 		
 		if ( ! $member_id )
 		{
-			$this->ipsclass->main_msg = "No member ID passed";
+			$this->ipsclass->main_msg = "æ²¡æœ‰ä¼šå‘˜ ID é€šè¿‡";
 		}
 		
 		//-------------------------------
@@ -181,7 +181,7 @@ class ad_acppermissions
 		// Print
 		//-------------------------------
 		
-		$this->ipsclass->main_msg = "Member's restrictions lifted";
+		$this->ipsclass->main_msg = "ä¼šå‘˜é™åˆ¶å·²ç»åˆ—å‡º";
 		$this->acpperms_list();
 	}
 	
@@ -457,20 +457,20 @@ class ad_acppermissions
 		$main			  = '';
 		$main_content     = '';
 		$main_img_classes = array( 'tick' => 'img-boxed-off', 'cross' => 'img-boxed-off' );
-		$lang_map         = array( 'add'     => 'ÔÊĞíÌí¼Ó',
-								   'edit'    => 'ÔÊĞí±à¼­',
-								   'remove'  => 'ÔÊĞíÉ¾³ı',
-								   'import'  => 'ÔÊĞíµ¼Èë',
-								   'export'  => 'ÔÊĞíµ¼³ö',
-								   'rebuild' => 'ÔÊĞíÖØ½¨',
-								   'recount' => 'ÔÊĞíÖØĞÂÍ³¼Æ',
-								   'recache' => 'ÔÊĞíÖØ½¨»º´æ',
-								   'view'    => 'ÔÊĞí²é¿´',
-								   'search'  => 'ÔÊĞíËÑË÷',
-								   'log'     => 'ÔÊĞí¹ÜÀí¼ÇÂ¼',
-								   'show'    => 'ÔÊĞí»ù±¾ä¯ÀÀ',
-								   'upload'  => "ÔÊĞíÉÏ´«",
-								   'do'		 => "ÔÊĞíÖ´ĞĞ",
+		$lang_map         = array( 'add'     => 'å…è®¸æ·»åŠ ',
+								   'edit'    => 'å…è®¸ç¼–è¾‘',
+								   'remove'  => 'å…è®¸åˆ é™¤',
+								   'import'  => 'å…è®¸å¯¼å…¥',
+								   'export'  => 'å…è®¸å¯¼å‡º',
+								   'rebuild' => 'å…è®¸é‡å»º',
+								   'recount' => 'å…è®¸é‡æ–°ç»Ÿè®¡',
+								   'recache' => 'å…è®¸é‡å»ºç¼“å­˜',
+								   'view'    => 'å…è®¸æŸ¥çœ‹',
+								   'search'  => 'å…è®¸æœç´¢',
+								   'log'     => 'å…è®¸ç®¡ç†è®°å½•',
+								   'show'    => 'å…è®¸åŸºæœ¬æµè§ˆ',
+								   'upload'  => "å…è®¸ä¸Šä¼ ",
+								   'do'		 => "å…è®¸æ‰§è¡Œ",
 								  );
 		
 		//-------------------------------
@@ -706,7 +706,7 @@ class ad_acppermissions
 		
 		if ( ! $name )
 		{
-			$this->ipsclass->main_msg = "Ìá½»±íµ¥Ö®Ç°£¬Äú±ØĞëÊäÈë¹ÜÀíÔ±Ãû³Æ.";
+			$this->ipsclass->main_msg = "æäº¤è¡¨å•ä¹‹å‰, æ‚¨å¿…é¡»è¾“å…¥ç®¡ç†å‘˜åç§°.";
 			$this->acpperms_member_add();
 		}
 		
@@ -725,7 +725,7 @@ class ad_acppermissions
 		
 		if ( ! $member['id'] )
 		{
-			$this->ipsclass->main_msg = "ÕÒ²»µ½»áÔ± {$name}.";
+			$this->ipsclass->main_msg = "æ‰¾ä¸åˆ°ä¼šå‘˜ {$name}.";
 			$this->acpperms_member_add();
 		}
 		
@@ -737,7 +737,7 @@ class ad_acppermissions
 		
 		if ( $test['row_member_id'] )
 		{
-			$this->ipsclass->main_msg = "{$name} µÄºóÌ¨·ÃÎÊĞí¿ÉÉèÖÃÍê±Ï.";
+			$this->ipsclass->main_msg = "{$name} çš„åå°è®¿é—®è®¸å¯è®¾ç½®å®Œæ¯•.";
 			$this->acpperms_member_add();
 		}
 		
@@ -747,7 +747,7 @@ class ad_acppermissions
 		
 		if ( $this->ipsclass->vars['admin_group'] == $member['mgroup'] )
 		{
-			$this->ipsclass->main_msg = "{$name} ÊÇÏµÍ³¹ÜÀíÔ±,²»ÄÜ¶ÔËûµÄĞí¿É½øĞĞÉèÖÃ.";
+			$this->ipsclass->main_msg = "{$name} æ˜¯ç³»ç»Ÿç®¡ç†å‘˜,ä¸èƒ½å¯¹ä»–çš„è®¸å¯è¿›è¡Œè®¾ç½®.";
 			$this->acpperms_member_add();
 		}
 		
@@ -780,7 +780,7 @@ class ad_acppermissions
 		
 		if ( ! $isok )
 		{
-			$this->ipsclass->main_msg = "{$member['members_display_name']} ²»ÄÜ·ÃÎÊºóÌ¨.";
+			$this->ipsclass->main_msg = "{$member['members_display_name']} ä¸èƒ½è®¿é—®åå°.";
 			$this->acpperms_member_add();
 		}
 		
@@ -794,7 +794,7 @@ class ad_acppermissions
 																		'row_perm_cache' => serialize( array() ),
 																		'row_updated'	 => time() ) );
 																		
-		$this->ipsclass->main_msg = "{$member['members_display_name']} ±»¼ÓÈëÏŞÖÆÁĞ±í, ÔÚÄú¶ÔËûµÄ·ÃÎÊĞí¿É½øĞĞÉèÖÃÖ®Ç°,Ëû²»ÄÜ·ÃÎÊºóÌ¨.";
+		$this->ipsclass->main_msg = "{$member['members_display_name']} è¢«åŠ å…¥é™åˆ¶åˆ—è¡¨, åœ¨æ‚¨å¯¹ä»–çš„è®¿é—®è®¸å¯è¿›è¡Œè®¾ç½®ä¹‹å‰,ä»–ä¸èƒ½è®¿é—®åå°.";
 		$this->acpperms_list();
 	}
 	
@@ -811,8 +811,8 @@ class ad_acppermissions
 	*/
 	function acpperms_member_add()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É' );
-		$this->ipsclass->admin->nav[] = array( ''                        , 'Ìí¼Ó¹ÜÀíÔ±' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯' );
+		$this->ipsclass->admin->nav[] = array( ''                        , 'æ·»åŠ ç®¡ç†å‘˜' );
 		
 		//-------------------------------
 		// INIT
@@ -824,8 +824,8 @@ class ad_acppermissions
 		
 		$this->ipsclass->html .= $this->html->acp_perms_add_admin_form();
 		
-		$this->ipsclass->admin->page_title  = "¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É";
-		$this->ipsclass->admin->page_detail = "Äú¿ÉÒÔÔÚÕâÀï¹ÜÀíËùÓĞ¹ÜÀíÔ±µÄºóÌ¨·ÃÎÊĞí¿É.";
+		$this->ipsclass->admin->page_title  = "ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯";
+		$this->ipsclass->admin->page_detail = "æ‚¨å¯ä»¥åœ¨è¿™é‡Œç®¡ç†æ‰€æœ‰ç®¡ç†å‘˜çš„åå°è®¿é—®è®¸å¯.";
 		$this->ipsclass->admin->output();
 	}
 	
@@ -862,13 +862,13 @@ class ad_acppermissions
 			
 			if ( ! $this->ipsclass->input['file_location'] )
 			{
-				$this->ipsclass->main_msg = "Ã»ÓĞÖ¸¶¨ÎÄ¼şÃû, »òÕßÃ»ÓĞÉÏ´«ÎÄ¼ş.";
+				$this->ipsclass->main_msg = "æ²¡æœ‰æŒ‡å®šæ–‡ä»¶å, æˆ–è€…æ²¡æœ‰ä¸Šä¼ æ–‡ä»¶.";
 				$this->acpperms_list();
 			}
 			
 			if ( ! file_exists( ROOT_PATH . $this->ipsclass->input['file_location'] ) )
 			{
-				$this->ipsclass->main_msg = "ÎŞ·¨ÕÒµ½ÎÄ¼ş: " . ROOT_PATH . $this->ipsclass->input['file_location'];
+				$this->ipsclass->main_msg = "æ— æ³•æ‰¾åˆ°æ–‡ä»¶: " . ROOT_PATH . $this->ipsclass->input['file_location'];
 				$this->acpperms_list();
 			}
 			
@@ -994,7 +994,7 @@ class ad_acppermissions
 	*/
 	function acpperms_dev_report_language()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É: ¿ª·¢¹¤¾ß' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯: å¼€å‘å·¥å…·' );
 		
 		//-------------------------------
 		// INIT
@@ -1062,8 +1062,8 @@ class ad_acppermissions
 		
 		$this->ipsclass->html .= "<textarea style='width:100%;height:400px'><"."?php\n#Don't complete empty sections, they are done automatically\n\$lang = array(\n{$content}\n);\n?"."></textarea>";
 		
-		$this->ipsclass->admin->page_title  = "¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É";
-		$this->ipsclass->admin->page_detail = "Äú¿ÉÒÔÔÚÕâÀï¹ÜÀíÄúËùÓĞµÄ¹ÜÀíÔ±µÄºóÌ¨·ÃÎÊĞí¿É.";
+		$this->ipsclass->admin->page_title  = "ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯";
+		$this->ipsclass->admin->page_detail = "æ‚¨å¯ä»¥åœ¨è¿™é‡Œç®¡ç†æ‚¨æ‰€æœ‰çš„ç®¡ç†å‘˜çš„åå°è®¿é—®è®¸å¯.";
 		$this->ipsclass->admin->output();
 	}
 	
@@ -1080,7 +1080,7 @@ class ad_acppermissions
 	*/
 	function acpperms_dev_report_missing()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É: ¿ª·¢¹¤¾ß' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯: å¼€å‘å·¥å…·' );
 		
 		//-------------------------------
 		// INIT
@@ -1106,18 +1106,18 @@ class ad_acppermissions
 			
 			if ( ! count($master[ $_name ]['perm_bits']) )
 			{
-				$content .= "<span style='color:red;font-weight:bold'>ÎÄ¼ş {$_name}.php Ã»ÓĞ·ÃÎÊĞí¿ÉĞÅÏ¢....</span><br />";
+				$content .= "<span style='color:red;font-weight:bold'>æ–‡ä»¶ {$_name}.php æ²¡æœ‰è®¿é—®è®¸å¯ä¿¡æ¯....</span><br />";
 			}
 			else
 			{
-				$content .= "<span style='color:green'>ÎÄ¼ş {$_name}.php º¬ÓĞ·ÃÎÊĞí¿ÉĞÅÏ¢....</span><br />";
+				$content .= "<span style='color:green'>æ–‡ä»¶ {$_name}.php å«æœ‰è®¿é—®è®¸å¯ä¿¡æ¯....</span><br />";
 			}
 		}
 		
 		$this->ipsclass->html .= $content;
 		
-		$this->ipsclass->admin->page_title  = "¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É";
-		$this->ipsclass->admin->page_detail = "Äú¿ÉÒÔÔÚÕâÀï¹ÜÀíÄúËùÓĞµÄ¹ÜÀíÔ±µÄºóÌ¨·ÃÎÊĞí¿É.";
+		$this->ipsclass->admin->page_title  = "ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯";
+		$this->ipsclass->admin->page_detail = "æ‚¨å¯ä»¥åœ¨è¿™é‡Œç®¡ç†æ‚¨æ‰€æœ‰çš„ç®¡ç†å‘˜çš„åå°è®¿é—®è®¸å¯.";
 		$this->ipsclass->admin->output();
 	}
 	
@@ -1306,7 +1306,7 @@ class ad_acppermissions
 	*/
 	function acpperms_list()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯' );
 		
 		//-------------------------------
 		// INIT
@@ -1345,8 +1345,8 @@ class ad_acppermissions
 		
 		$this->ipsclass->html .= $this->html->acp_perms_overview( $content );
 		
-		$this->ipsclass->admin->page_title  = "¹ÜÀíÔ±ºóÌ¨·ÃÎÊĞí¿É";
-		$this->ipsclass->admin->page_detail = "Äú¿ÉÒÔÔÚÕâÀï¹ÜÀíÄúËùÓĞµÄ¹ÜÀíÔ±µÄºóÌ¨·ÃÎÊĞí¿É.";
+		$this->ipsclass->admin->page_title  = "ç®¡ç†å‘˜åå°è®¿é—®è®¸å¯";
+		$this->ipsclass->admin->page_detail = "æ‚¨å¯ä»¥åœ¨è¿™é‡Œç®¡ç†æ‚¨æ‰€æœ‰çš„ç®¡ç†å‘˜çš„åå°è®¿é—®è®¸å¯.";
 		$this->ipsclass->admin->output();
 	}
 	

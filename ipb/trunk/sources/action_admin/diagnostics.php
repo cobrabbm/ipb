@@ -521,7 +521,7 @@ class ad_diagnostics
 	
 	function db_index_check()
 	{
-		$this->ipsclass->admin->page_detail = "数据库索引使您的数据库效率更高。 如果有索引丢失， 您的论坛运行速度将减慢。 所以，请修复检测到得错误.";
+		$this->ipsclass->admin->page_detail = "数据库索引使您的数据库效率更高.  如果有索引丢失,  您的论坛运行速度将减慢.  所以, 请修复检测到得错误.";
 		$this->ipsclass->admin->page_title  = "IPB 诊断";
 		
 		$this->ipsclass->admin->nav[] = array( '', '数据库索引核对结果' );
@@ -1075,6 +1075,7 @@ class ad_diagnostics
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "系统进程" );
+
 		
 		if( strstr( strtolower(PHP_OS), 'win' ) )
 		{
@@ -1086,13 +1087,19 @@ class ad_diagnostics
 			$tasks = @shell_exec( "top -b -n 1" );
 			$tasks = str_replace( " ", "&nbsp;", $tasks );
 		}
-		
+
 		if( !$tasks )
 		{
 			$tasks = "<i>无法获得进程信息</i>";
 		}
 		else
 		{
+			/* UTF-8 Char set - Skylook @ IPBChina.CON
+			if ( strtolower($this->ipsclass->vars['gb_char_set']) != 'utf-8' )
+			{
+				$tasks = $this->ipsclass->txt_convert_charsets( $tasks, 'UTF-8' );
+			}	
+			*/
 			$tasks = "<pre>".$tasks."</pre>";
 		}
 		

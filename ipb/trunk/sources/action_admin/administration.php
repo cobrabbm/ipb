@@ -76,7 +76,7 @@ class ad_administration
 							'systemvars'    => '系统运行变量',
 							'skin_id_cache' => '主题信息和数据',
 							'moderators'    => '版主信息和数据',
-							'stats'         => '论坛统计，例如帖子数等',
+							'stats'         => '论坛统计, 例如帖子数等',
 							'ranks'         => '会员头衔和等级信息',
 							'profilefields' => '自定义数据信息',
 							'birthdays'     => '会员生日',

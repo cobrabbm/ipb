@@ -1160,7 +1160,7 @@ class admin_functions
 	
 		$html = str_replace( '<%CONTENT%>', $this->ipsclass->skin_acp_global->global_frame_wrapper(), $this->ipsclass->skin_acp_global->global_main_wrapper() );
 		
-		$navigation = array( "<a href='{$this->ipsclass->base_url}&act=index'>ACP Home</a>" );
+		$navigation = array( "<a href='{$this->ipsclass->base_url}&act=index'>后台管理中心</a>" );
 		
 		if ( count($this->nav) > 0 )
 		{

@@ -460,7 +460,7 @@ class ad_skin_macros {
 		
 		$this->ipsclass->html .= "<br />
 							<div><strong>宏替换例程</strong><br />
-							如果您添加了一个变量“green_font”，设置它替换为 '&lt;font color='green'>', 那么那么每一个 <span style='color:red'><b>&lt;{green_font}&gt;</b></span> 将被自动转换成 &lt;font color='green'>
+							如果您添加了一个变量“green_font”, 设置它替换为 '&lt;font color='green'>', 那么那么每一个 <span style='color:red'><b>&lt;{green_font}&gt;</b></span> 将被自动转换成 &lt;font color='green'>
 							<br /><b>&lt;#IMG_DIR#></b> 任何宏都可以使用, 此标记将自动转换为对应主题的图像目录
 							</div><br />
 							<div><strong>宏替换图例:</strong><br />

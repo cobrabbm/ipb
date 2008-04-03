@@ -169,7 +169,7 @@ class display {
         				  <div align='center' class='copyright'>
         				  	Powered By <a href='http://www.invisionboard.com' style='text-decoration:none' target='_blank'>IP.Board</a>
         				  	{$version} &copy; ".date("Y")." &nbsp;<a href='http://www.invisionpower.com' style='text-decoration:none' target='_blank'>IPS, Inc</a>.<br />
-        					易维论坛 {$version} {$ipbchina_version} By <a href='http://www.ipbchina.com/'>IPBChina.com</a>
+        					易维论坛 v{$version} {$ipbchina_version} By <a href='http://www.ipbchina.com/' style='text-decoration:none' target='_blank'>IPBChina.COM</a>
         				  ";
         				  
         	if ( $this->ipsclass->vars['ipb_reg_show'] and $this->ipsclass->vars['ipb_reg_name'] )

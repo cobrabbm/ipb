@@ -53,7 +53,7 @@ class ad_logs_login
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'ACP Log-in Logs' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '后台登陆日志' );
 		
 		//-----------------------------------------
 		// LOAD HTML
@@ -96,7 +96,7 @@ class ad_logs_login
 															
 		if ( ! $log['admin_id'] )
 		{
-			$this->ipsclass->main_msg = "No log for that ID found";
+			$this->ipsclass->main_msg = "没有找到任何该 ID 的登录日志";
 			$this->login_logs_view();
 			return;
 		}
