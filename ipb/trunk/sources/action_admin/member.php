@@ -895,11 +895,11 @@ class ad_member
 												  			     $this->ipsclass->adskin->form_input('password' ),
 									     			    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>创建新的密码?</b><div style='color:gray'>如果是, 将会生成一个新的密码 Salt. 用户有登录问题时有用.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>创建新的密码?</b><div style='color:gray'>如果是, 将会生成一个新的密码 Salt. 会员有登录问题时有用.</div>" ,
 												  				 $this->ipsclass->adskin->form_yes_no( "newsalt", 1 )
 									     				)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>创建新的登录密钥</b><div style='color:gray'>如果选是, 将会生成新的 Cookie 登录密钥, 用户有登录问题时有用. 当前所有的 Cookie 都将失效.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>创建新的登录密钥</b><div style='color:gray'>如果选是, 将会生成新的 Cookie 登录密钥, 会员有登录问题时有用. 当前所有的 Cookie 都将失效.</div>" ,
 												  				 $this->ipsclass->adskin->form_yes_no( "newkey", 1 )
 									     				)      );
 									     									     
@@ -991,7 +991,7 @@ class ad_member
 												                 $this->ipsclass->adskin->form_yes_no( "send_email", 0 )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {membername} = 会员用户名, {date_end} = 锁定结束时间)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {membername} = 会员会员名, {date_end} = 锁定结束时间)" ,
 												                 $this->ipsclass->adskin->form_textarea( "email_contents", $contents )
 									                    ), "", 'top'       );
 									     									     
@@ -1562,7 +1562,7 @@ class ad_member
 		
 		if ($this->ipsclass->input['new_name'] == "")
 		{
-			$this->member_change_name_start("您必须输入会员的新用户名");
+			$this->member_change_name_start("您必须输入会员的新会员名");
 			exit();
 		}
 		
@@ -1600,7 +1600,7 @@ class ad_member
 		
 		if ($this->ipsclass->input['new_name'] == $member['name'])
 		{
-			$this->member_change_name_start("新用户名和旧的一样，老大，您不是开玩笑吧");
+			$this->member_change_name_start("新会员名和旧的一样，老大，您不是开玩笑吧");
 			exit();
 		}
 		
@@ -1619,7 +1619,7 @@ class ad_member
 			
 			if( $check['id'] != $member['id'] )
 			{
-				$this->member_change_name_start("用户名 '$new_name' 已经存在，请重新输入");
+				$this->member_change_name_start("会员名 '$new_name' 已经存在，请重新输入");
 				exit();
 			}
 		}
@@ -1637,7 +1637,7 @@ class ad_member
 				
 				if ( $this->ipsclass->DB->get_num_rows() )
 				{
-					$this->member_change_name_start("用户名 '$new_name' 是另一个会员的昵称, 请重新输入");
+					$this->member_change_name_start("会员名 '$new_name' 是另一个会员的昵称, 请重新输入");
 					exit();
 				}
 			}
@@ -1749,12 +1749,12 @@ class ad_member
 			$msg = str_replace( "{new_name}", $new_name      , $msg );
 			
 			$this->email->message = stripslashes($this->email->clean_message($msg));
-			$this->email->subject = "用户名修改提醒";
+			$this->email->subject = "会员名修改提醒";
 			$this->email->to      = $member['email'];
 			$this->email->send_mail();
 		}
 		
-		$this->ipsclass->admin->save_log("修改会员 '{$member['name']}' 用户名为 '$new_name'");
+		$this->ipsclass->admin->save_log("修改会员 '{$member['name']}' 会员名为 '$new_name'");
 		
 		if ( USE_MODULES == 1 )
 		{
@@ -1775,7 +1775,7 @@ class ad_member
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
 		
-		$this->ipsclass->admin->done_screen("会员用户名已修改", "会员搜索", "{$this->ipsclass->form_code}".$page_query, "redirect" );
+		$this->ipsclass->admin->done_screen("会员会员名已修改", "会员搜索", "{$this->ipsclass->form_code}".$page_query, "redirect" );
 	}
 	
 	
@@ -1788,9 +1788,9 @@ class ad_member
 	
 	function member_change_name_start($message="")
 	{
-		$this->ipsclass->admin->page_title = "修改会员用户名";
-		$this->ipsclass->admin->page_detail = "您可以在下面修改会员的用户名.";
-		$this->ipsclass->admin->nav[] 		= array( '', '修改会员用户名' );
+		$this->ipsclass->admin->page_title = "修改会员会员名";
+		$this->ipsclass->admin->page_detail = "您可以在下面修改会员的会员名.";
+		$this->ipsclass->admin->nav[] 		= array( '', '修改会员会员名' );
 		
 		//-----------------------------------------
 		// check
@@ -1821,7 +1821,7 @@ class ad_member
 			}
 		}
 		
-		$contents = "{old_name},\n {$this->ipsclass->vars['board_name']} 的管理员修改了您的用户名. \n\n您的新用户名是: {new_name}\n\n您下次登录时需要使用这个新用户名, 所以请您牢记. \n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
+		$contents = "{old_name},\n {$this->ipsclass->vars['board_name']} 的管理员修改了您的会员名. \n\n您的新会员名是: {new_name}\n\n您下次登录时需要使用这个新会员名, 所以请您牢记. \n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
 		
 		//-----------------------------------------
 		// Redirect
@@ -1847,7 +1847,7 @@ class ad_member
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "修改会员用户名" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "修改会员会员名" );
 		
 		if ($message != "")
 		{
@@ -1857,11 +1857,11 @@ class ad_member
 		}
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>当前用户名</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>当前会员名</b>" ,
 												                 $member['name'],
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>新用户名</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>新会员名</b>" ,
 												                 $this->ipsclass->adskin->form_input( "new_name", $this->ipsclass->input['new_name'] )
 									                    )      );
 
@@ -1869,11 +1869,11 @@ class ad_member
 												                 $this->ipsclass->adskin->form_yes_no( "send_email", 1 )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {old_name} = 旧用户名, {new_name} = 新用户名)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {old_name} = 旧会员名, {new_name} = 新会员名)" ,
 												                 $this->ipsclass->adskin->form_textarea( "email_contents", $contents )
 									                    )      );
 									     									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("修改会员用户名");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("修改会员会员名");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2731,7 +2731,7 @@ class ad_member
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "会员注册" );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>用户名</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员名</b>" ,
 																			 $this->ipsclass->adskin->form_input( "name", isset($_POST['name']) ? $this->ipsclass->txt_stripslashes($_POST['name']) : '' )
 																	)      );
 																	
@@ -2757,7 +2757,7 @@ class ad_member
 												 							 					  )
 									   							    )      );
 									   							    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>COPPA 用户?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>COPPA 会员?</b>" ,
 												  							$this->ipsclass->adskin->form_yes_no( "coppa", isset($_POST['coppa']) ? $_POST['coppa'] : '' ) .
 												  							'&nbsp&nbsp;&nbsp;' . $this->ipsclass->adskin->form_checkbox( "sendemail", isset($_POST['sendemail']) ? $_POST['sendemail'] : 1 ) . "Send Confirmation Email?"
 									     							)      );
@@ -2898,7 +2898,7 @@ class ad_member
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->main_msg = "用户名已存在, 请重新输入";
+			$this->ipsclass->main_msg = "会员名已存在, 请重新输入";
 			$this->member_add_form();
 			return;
 		}
@@ -2916,7 +2916,7 @@ class ad_member
 				
 				if ( $this->ipsclass->DB->get_num_rows() )
 				{
-					$this->ipsclass->main_msg = "该用户名是某个会员的昵称, 请重新输";
+					$this->ipsclass->main_msg = "该会员名是某个会员的昵称, 请重新输";
 					$this->member_add_form();
 					return;
 				}
@@ -2932,7 +2932,7 @@ class ad_member
 			
 			if ( $name_check['id'] )
 			{
-				$this->ipsclass->main_msg = "该用户名是某个会员的昵称, 请重新输入";
+				$this->ipsclass->main_msg = "该会员名是某个会员的昵称, 请重新输入";
 				$this->member_add_form();
 				return;
 			}
@@ -2952,7 +2952,7 @@ class ad_member
 				
 				if ( $this->ipsclass->DB->get_num_rows() )
 				{
-					$this->ipsclass->main_msg = "该用户名是某个会员的昵称, 请重新输入";
+					$this->ipsclass->main_msg = "该会员名是某个会员的昵称, 请重新输入";
 					$this->member_add_form();
 					return;
 				}
@@ -2965,7 +2965,7 @@ class ad_member
 		
 		if ( $this->ipsclass->txt_mb_strlen( $in_username ) > 32 )
 		{
-			$this->ipsclass->main_msg = "用户名不能大于 32 个字符!";
+			$this->ipsclass->main_msg = "会员名不能大于 32 个字符!";
 			$this->member_add_form();
 			return;
 		}		
@@ -3246,7 +3246,7 @@ class ad_member
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "搜索会员" );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员用户名</b><div class='graytext'>如果您使用下面的搜索条件, 这里可以留空</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员会员名</b><div class='graytext'>如果您使用下面的搜索条件, 这里可以留空</div>",
 																			 $this->ipsclass->adskin->form_dropdown( 'namewhere', array( 0 => array( 'begin'   , '开始于' ),
 																																		 1 => array( 'is'      , '等于'          ),
 																																		 2 => array( 'contains', '包含'    ),
@@ -3352,7 +3352,7 @@ class ad_member
     	
     	if ( count( $fields->out_fields ) )
     	{
-    		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "用户附加信息", "left", "tablesubheader" );
+    		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "会员附加信息", "left", "tablesubheader" );
     		
 			foreach( $fields->out_fields as $id => $data )
 			{
@@ -3718,7 +3718,7 @@ EOF;
 			{
 				$people .= <<<EOF
 							new Array( img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=doform&mid={$r['id']}{$page_query}'>修改会员资料...</a>",
-						  			  img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=changename&mid={$r['id']}{$page_query}'>修改会员用户名...</a>",
+						  			  img_edit + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=changename&mid={$r['id']}{$page_query}'>修改会员会员名...</a>",
 EOF;
 				if ( $this->ipsclass->vars['auth_allow_dnames'] )
 				{

@@ -83,7 +83,7 @@ $PAGES[] = array(
 $CATS[]  = array( 'API 管理' );
 
 $PAGES[] = array(
-					1 => array( '管理 XML-RPC 用户', 'section=admin&amp;act=api&amp;code=api_list' ),
+					1 => array( '管理 XML-RPC 会员', 'section=admin&amp;act=api&amp;code=api_list' ),
 					2 => array( '查看 XML-RPC 日志'   , 'section=admin&amp;act=api&amp;code=log_list' ),
 			       ); 
 

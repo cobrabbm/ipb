@@ -291,7 +291,7 @@ class ad_moderator {
 		
 			if ( ! $mem = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->ipsclass->admin->error("无法匹配您输入的会员用户名.");
+				$this->ipsclass->admin->error("无法匹配您输入的会员会员名.");
 			}
 			
 			//-----------------------------------------
@@ -624,7 +624,7 @@ class ad_moderator {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许警告用户?</b><div class='desctext'>提示,如果打开此权限, 该版主可以在任何论坛版块警告任何会员</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许警告会员?</b><div class='desctext'>提示,如果打开此权限, 该版主可以在任何论坛版块警告任何会员</div>" ,
 												  $this->ipsclass->adskin->form_yes_no("allow_warn", $mod['allow_warn'] )
 									     )      );							     
 									     	

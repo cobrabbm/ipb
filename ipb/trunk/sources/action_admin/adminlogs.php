@@ -168,7 +168,7 @@ class ad_adminlogs
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "用户名"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名"            , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "执行操作"        , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "操作时间"         , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "IP 地址"             , "20%" );
@@ -245,7 +245,7 @@ class ad_adminlogs
 		$this->ipsclass->DB->cache_add_query( 'adminlogs_view_list_current', array() );
 		$this->ipsclass->DB->cache_exec_query();
 		
-		$this->ipsclass->adskin->td_header[] = array( "用户名"            , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名"            , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "执行操作"        , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "操作时间"         , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "IP 地址"             , "20%" );
@@ -278,7 +278,7 @@ class ad_adminlogs
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "用户名"            , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名"            , "30%" );
 		$this->ipsclass->adskin->td_header[] = array( "执行操作"       , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "查看该会员的所有记录"     , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "删除该会员的所有记录"   , "30%" );

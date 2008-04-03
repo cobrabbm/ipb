@@ -23,7 +23,7 @@ $lang = array (
 'coppa_additional_info'			=> '儿童网上隐私保护信息',
 'coppa_clickhere'				=> '点击这里打印监护人许可证明表单',
 'coppa_admin_reminder'			=> '管理员提示',
-'coppa_admin_remtext'			=> "请不要忘记在收到许可证明后创建这一帐号并且通知用户帐号已经创建的信息",
+'coppa_admin_remtext'			=> "请不要忘记在收到许可证明后创建这一帐号并且通知会员帐号已经创建的信息",
 
 // 2.2: UPDATED
 

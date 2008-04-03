@@ -122,7 +122,7 @@ class ad_login
 		
 		$mem = $this->han_login->member;
 
-		$username_incorrect = "用户名或密码错误";
+		$username_incorrect = "会员名或密码错误";
 		
 		if( $this->ipsclass->vars['ipbli_usertype'] != 'username' )
 		{

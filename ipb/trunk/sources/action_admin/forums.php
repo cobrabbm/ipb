@@ -222,7 +222,7 @@ class ad_forums
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->page_title  = "版块主题选项";
-		$this->ipsclass->admin->page_detail = "您可以为板块指定一个主题, 将会覆盖用户的选择.";
+		$this->ipsclass->admin->page_detail = "您可以为板块指定一个主题, 将会覆盖会员的选择.";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'   , 'doskinedit'),
 																			 2 => array( 'act'    , 'forum'  ),

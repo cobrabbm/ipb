@@ -18,7 +18,7 @@ $lang = array (
 
 // 2.3
 'han_login_create_failed'	=> "当试图创建您的帐号信息时发生了一个不可恢复的错误. 系统返回的错误如下:<br /><#EXTRA#>",
-'han_login_pass_failed'		=> "更改您的用户密码的操作失败. 请您联系系统管理员.",
+'han_login_pass_failed'		=> "更改您的会员密码的操作失败. 请您联系系统管理员.",
 
 // 2.2.2
 
@@ -37,7 +37,7 @@ $lang = array (
 
 'cannot_block'				=> "您没有拒收该会员短消息的权限.",
 'invalid_use'				=> "处理申请的过程中发生错误. 请返回后重试, 或者联系管理员以获得帮助.", 
-'no_usepm_member_full' 		=> "这封短消息无法正常发送因为该用户的收件箱已满.",
+'no_usepm_member_full' 		=> "这封短消息无法正常发送因为该会员的收件箱已满.",
 
 //2.1
 'ucp_name_change'   => '非常抱歉, 24 小时内您只能更改一次昵称.',

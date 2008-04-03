@@ -1460,7 +1460,7 @@ class ad_rebuild {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "查找并恢复“疑似重复”的会员" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "过升级或由其他论坛转换而来的论坛, 您会发现, 由于几个会员使用了重复的邮件地址, 他们的帐户被移动到等待验证用户组.
-																  <br />本工具将找出这些会员，并恢复他们到默认的会员组, 同时提醒他们更改邮件地址."
+																  <br />本工具将找出这些会员，并恢复他们到默认的用户组, 同时提醒他们更改邮件地址."
 														)      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('运行工具');
@@ -2963,13 +2963,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建用户名" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建会员名" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建用户名</b><div style='color:gray'>本操作将重置保存在帖子, 主题, 操作记录内的用户名. 如果您刚刚手工修改会员的用户名, 本操作很有效.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建会员名</b><div style='color:gray'>本操作将重置保存在帖子, 主题, 操作记录内的会员名. 如果您刚刚手工修改会员的会员名, 本操作很有效.</div>",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建用户名');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建会员名');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -2985,13 +2985,13 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计用户帖子数" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计会员帖子数" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重计用户帖子数</b><div style='color:gray'>本操作将根据当前数据库内的数据重新统计会员的帖子数. 由于不会统计被删除和清理的帖子, 本操作将会减少他们的帖子数. 如果您希望保留会员目前的帖子数, 那么请不要使用本工具.</div>THERE IS NO UNDO!",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重计会员帖子数</b><div style='color:gray'>本操作将根据当前数据库内的数据重新统计会员的帖子数. 由于不会统计被删除和清理的帖子, 本操作将会减少他们的帖子数. 如果您希望保留会员目前的帖子数, 那么请不要使用本工具.</div>THERE IS NO UNDO!",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
 										 		   	    )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重计用户帖子数');
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重计会员帖子数');
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -3008,7 +3008,7 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计用户帖子数" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计会员帖子数" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建个人照片缩略图</b><div style='color:gray'>本操作将重建您会员照片的缩略图的到当前设置的大小. 如果您刚刚调整了缩略图大小, 需要更新的话, 请执行本操作</div>This is moderately resource intensive.",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;Per Cycle"

@@ -425,7 +425,7 @@ return <<<EOF
             </td>
         </tr>
         <tr>
-            <td class='title'>数据库用户:</td>
+            <td class='title'>数据库会员:</td>
             <td class='content'>
             	<input type='text' class='sql_form' name='db_user' value='{$_REQUEST['db_user']}'>
             </td>

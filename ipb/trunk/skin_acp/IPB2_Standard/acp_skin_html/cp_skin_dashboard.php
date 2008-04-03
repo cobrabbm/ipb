@@ -69,13 +69,13 @@ $IPBHTML .= <<<EOF
 				 <table width='100%' cellpadding='4' cellspacing='0'>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>寻找或修改会员</strong> <span class='desctext' title='输入一部分或全部用户名'>?</span>
+					<strong>寻找或修改会员</strong> <span class='desctext' title='输入一部分或全部会员名'>?</span>
 					<br /><form name='DOIT' id='DOIT' action='{$this->ipsclass->adskin->base_url}&section=content&act=mem&code=searchresults&searchtype=normal&' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='33' class='textinput' id='members_display_name' name='members_display_name' value='' /> <input type='submit' value='查找...' class='realbutton' onclick='edit_member()' /></form>
 				  </td>
 				 </tr>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>添加新会员</strong> <span class='desctext' title='输入用户名和用户组'>?</span>
+					<strong>添加新会员</strong> <span class='desctext' title='输入会员名和用户组'>?</span>
 				    <br /><form name='newmem' id='newmem' action='{$this->ipsclass->adskin->base_url}&section=content&act=mem&code=add' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='17' class='textinput' name='name' value='' /> <select name='mgroup'>{$g_dd}</select> <input type='submit' value='添加...' class='realbutton' /></form></td>
 				 </tr>
 				 <tr>
@@ -278,7 +278,7 @@ function edit_member()
 {
 	if (document.getElementById('DOIT').members_display_name.value == "")
 	{
-		alert("您必须输输入一个用户名称!");
+		alert("您必须输输入一个会员名称!");
 		return false;
 	}
 }
