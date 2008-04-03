@@ -273,11 +273,11 @@ function do_validate()
 		  <td colspan='2' width='100%' id='rss_import_auth_userinfo' {$form['rss_div_show']}>
 		   <table cellpadding='0' cellspacing='0' border='0' width='100%'>
 		    <tr>
-		  		<td width='40%' class='tablerow1'><strong>RSS 导入源用户名称</strong></td>
+		  		<td width='40%' class='tablerow1'><strong>RSS 导入源会员名称</strong></td>
 		 		<td width='60%' class='tablerow2'>{$form['rss_import_auth_user']}</td>
 		 	</tr>
 		 	<tr>
-		  		<td width='40%' class='tablerow1'><strong>RSS 导入源用户密码</strong></td>
+		  		<td width='40%' class='tablerow1'><strong>RSS 导入源会员密码</strong></td>
 		  		<td width='60%' class='tablerow2'>{$form['rss_import_auth_pass']}</td>
 			</tr>
 		  </table>

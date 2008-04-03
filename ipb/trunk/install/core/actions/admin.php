@@ -20,12 +20,12 @@ class action_admin
 		{
 			if( ! $this->install->ipsclass->input['username'] )
 			{
-				$errors[] = '您必须指定一个管理员用户名称';	
+				$errors[] = '您必须指定一个管理员会员名称';	
 			}
 			
 			if( ! $this->install->ipsclass->input['password'] )
 			{
-				$errors[] = '您必须指定一个管理员用户密码';	
+				$errors[] = '您必须指定一个管理员会员密码';	
 			}
 			else 
 			{

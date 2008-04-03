@@ -845,7 +845,7 @@ class ad_postoffice
 							</tr>
 							<tr>
 							 <td><strong>{reg_total}</strong></td>
-							 <td><em>注册用户总数</em></td>
+							 <td><em>注册会员总数</em></td>
 							 <td><strong>{total_posts}</strong></td>
 							 <td><em>帖子总数</em></td>
 							</tr>
@@ -859,7 +859,7 @@ class ad_postoffice
 							 <td><strong>{member_id}</strong></td>
 							 <td><em>发件人会员ID</em></td>
 							 <td><strong>{member_name}</strong></td>
-							 <td><em>发件人用户名</em></td>
+							 <td><em>发件人会员名</em></td>
 							</tr>
 							<tr>
 							 <td><strong>{member_joined}</strong></td>
@@ -1047,8 +1047,8 @@ EOF;
 	function _get_default_mail_contents()
 	{
 		$mail = "{member_name},\n\n\n\n-------------------------------------\n{board_name} 统计：\n"
-			  ."-------------------------------------\n注册用户数:{reg_total}\n帖子总数:{total_posts}\n"
-			  ."于 {busy_time}，有 {busy_count} 位用户同时在线.\n\n"
+			  ."-------------------------------------\n注册会员数:{reg_total}\n帖子总数:{total_posts}\n"
+			  ."于 {busy_time}，有 {busy_count} 位会员同时在线.\n\n"
 			  ."-------------------------------------\n快速连接\n"
 			  ."-------------------------------------\n论坛地址:{board_url}\n登录地址:{board_url}?act=Login&CODE=00\n"
 			  ."找回密码:{board_url}?act=Reg&CODE=10\n\n"

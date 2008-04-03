@@ -672,7 +672,7 @@ class ad_groups
 		// Get all members using that ID then!
 		//-----------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "用户详细信息" , "50%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员详细信息" , "50%" );
 		$this->ipsclass->adskin->td_header[] = array( "操作"       , "50%" );
 		
 		//-----------------------------------------
@@ -1544,7 +1544,7 @@ class ad_groups
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除确认: ".$group['g_title'] );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>该组内的用户数量</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>该组内的会员数量</b>" ,
 												  "<b>".$black_adder['users']."</b>",
 									     )      );
 
@@ -1552,7 +1552,7 @@ class ad_groups
 												  "<b>".$extra_group['users']."</b>",
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>将该组内的用户移动到...</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>将该组内的会员移动到...</b>" ,
 												  $this->ipsclass->adskin->form_dropdown("to_id", $mem_groups )
 									     )      );
 		
@@ -2298,11 +2298,11 @@ class ad_groups
 												  $this->ipsclass->adskin->form_yes_no("g_edit_posts", $group['g_edit_posts'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>编辑时间限制（单位: 分钟）$guest_legend<br>超过时间后拒绝用户编辑帖子. 输入 0 或者留空表示没有限制" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>编辑时间限制（单位: 分钟）$guest_legend<br>超过时间后拒绝会员编辑帖子. 输入 0 或者留空表示没有限制" ,
 												  $this->ipsclass->adskin->form_input("g_edit_cutoff", $group['g_edit_cutoff'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许用户删除“由......编辑”的说明?$guest_legend</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许会员删除“由......编辑”的说明?$guest_legend</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_append_edit", $group['g_append_edit'] )
 									     )      );							     
 									     
@@ -2359,11 +2359,11 @@ class ad_groups
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "昵称权限", "仅在打开昵称功能时有效" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>更改昵称时间限制</strong><div class='desctext'>这个限制表示限制的天数. 例如 30 表示在 30 天内用户只能修改 X 次昵称</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>更改昵称时间限制</strong><div class='desctext'>这个限制表示限制的天数. 例如 30 表示在 30 天内会员只能修改 X 次昵称</div>" ,
 												  $this->ipsclass->adskin->form_input("g_dname_date", $group['g_dname_date'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>更改昵称次数限制</strong><div class='desctext'>这个限制表示一个时间段内的最大修改次数. 输入 0 禁止用户更改昵称.</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<strong>更改昵称次数限制</strong><div class='desctext'>这个限制表示一个时间段内的最大修改次数. 输入 0 禁止会员更改昵称.</div>" ,
 												  $this->ipsclass->adskin->form_input("g_dname_changes", $group['g_dname_changes'] )
 									     )      );
 									     

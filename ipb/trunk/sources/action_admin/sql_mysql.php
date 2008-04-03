@@ -1154,7 +1154,7 @@ class ad_sql_module {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "执行查询" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>手工查询</b><br>仅供高级用户使用",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>手工查询</b><br>仅供高级会员使用",
 												  $this->ipsclass->adskin->form_textarea("query", "" ),
 												 )      );
 												 

@@ -225,7 +225,7 @@ class ad_banandbadword {
 		$this->ipsclass->admin->page_title = "论坛屏蔽项目";
 		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code.'&code=ban', '论坛屏蔽' );
 		
-		$this->ipsclass->admin->page_detail = "您可以设置一些需要屏蔽的项目, 例如 IP 地址, 邮件地址, 或者保留用户名. 
+		$this->ipsclass->admin->page_detail = "您可以设置一些需要屏蔽的项目, 例如 IP 地址, 邮件地址, 或者保留会员名. 
 										 <br /><strong>您可以使用 * 作为通配符 ( 例如：127.0.*，*@yahoo.com，bannedname* ). </strong>";
 
 		//-----------------------------------------
@@ -305,7 +305,7 @@ class ad_banandbadword {
 		// Banned Names
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("不可注册的用户名", "left", "tablesubheader");
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("不可注册的会员名", "left", "tablesubheader");
 		
 		if ( isset($ban['name']) AND is_array( $ban['name'] ) AND count( $ban['name'] ) )
 		{
@@ -319,7 +319,7 @@ class ad_banandbadword {
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("没有用户名", "left", "tablerow1");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("没有会员名", "left", "tablerow1");
 		}
 		
 		$end_it_now = "<div align='left' style='float:left;width:auto;'>

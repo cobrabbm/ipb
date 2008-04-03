@@ -270,8 +270,8 @@ class ad_statistics
 			$sql_table = 'members';
 			$sql_field = 'joined';
 			
-			$this->ipsclass->admin->page_detail = "显示注册用户数. ( 提示: 所有时间基于 GMT 时间 ) ";
-			$this->ipsclass->admin->nav[] = array( '', '用户数量' );
+			$this->ipsclass->admin->page_detail = "显示注册会员数. ( 提示: 所有时间基于 GMT 时间 ) ";
+			$this->ipsclass->admin->nav[] = array( '', '会员数量' );
 		}
 		else if ($mode == 'topic')
 		{

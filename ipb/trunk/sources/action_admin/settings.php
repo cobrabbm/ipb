@@ -1382,7 +1382,7 @@ class ad_settings {
 
 		if ( IN_DEV )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用默认设置 ( 用户不能删除 )?</b>" ,
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用默认设置 ( 会员不能删除 )?</b>" ,
 												  			       $this->ipsclass->adskin->form_yes_no( 'conf_protected', ( isset($_POST['conf_protected']) AND $_POST['conf_protected'] ) ? $_POST['conf_protected'] : $conf['conf_protected'] )
 										 		    	  )      );
 		}
@@ -2786,7 +2786,7 @@ return "
 <br />
 <pre>mysql -u{your_sql_user_name} -p{your_sql_password}</pre>
 <br />
-您的 MySQL 用户名和密码就是您存放在 conf_global.php 文件中的。
+您的 MySQL 会员名和密码就是您存放在 conf_global.php 文件中的。
 <br />
 <br />
 <strong>第二步：选择您的数据库</strong>

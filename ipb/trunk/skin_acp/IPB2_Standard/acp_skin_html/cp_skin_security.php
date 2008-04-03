@@ -450,17 +450,17 @@ $IPBHTML .= <<<EOF
 				<br />
 				<strong>请注意</strong>
 				<br />
-				使用这一工具将覆盖后台当前的保护文件. 在您保存设置后您将被立即要求输入用户名称和用户密码. 额外的, 如果您选择更改后台文件夹的名称, 请记得通过 FTP 删除这个文件否则您将无法登入后台.
+				使用这一工具将覆盖后台当前的保护文件. 在您保存设置后您将被立即要求输入会员名称和会员密码. 额外的, 如果您选择更改后台文件夹的名称, 请记得通过 FTP 删除这个文件否则您将无法登入后台.
 				<br />
 				<br />
 				<fieldset>
-					<legend><strong>用户名称</strong></legend>
+					<legend><strong>会员名称</strong></legend>
 					<input type='text' name='name' size='40' value='{$_POST['name']}' />
 				</fieldset>
 				<br />
 				<fieldset>
-					<legend><strong>用户密码</strong></legend>
-					<strong>请注意您的用户密码将被截取为前 8 个字符</strong><br />
+					<legend><strong>会员密码</strong></legend>
+					<strong>请注意您的会员密码将被截取为前 8 个字符</strong><br />
 					<input type='password' name='pass' size='40' value='{$_POST['pass']}' />
 				</fieldset>
 				<br />

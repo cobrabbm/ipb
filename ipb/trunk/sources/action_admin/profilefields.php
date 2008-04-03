@@ -53,7 +53,7 @@ class ad_profilefields {
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '用户附加信息' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '会员附加信息' );
 		
 		//-----------------------------------------
 		// get class
@@ -141,9 +141,9 @@ class ad_profilefields {
 			$this->ipsclass->admin->error("Could not resolve the group ID, please try again");
 		}
 		
-		$this->ipsclass->admin->page_title = "删除用户附加信息";
+		$this->ipsclass->admin->page_title = "删除会员附加信息";
 		
-		$this->ipsclass->admin->page_detail = "请确认您正试图删除用户附加信息, <b>所有的数据将丢失!</b>.";
+		$this->ipsclass->admin->page_detail = "请确认您正试图删除会员附加信息, <b>所有的数据将丢失!</b>.";
 		
 		//-----------------------------------------
 		
@@ -172,7 +172,7 @@ class ad_profilefields {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除确认" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>用户附加信息已删除</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员附加信息已删除</b>" ,
 												                 "<b>".$field['pf_title']."</b>",
 									                   )      );
 									     
@@ -210,7 +210,7 @@ class ad_profilefields {
 		
 		$this->rebuild_cache();
 		
-		$this->ipsclass->admin->done_screen("附加信息已删除", "用户附加信息管理", "{$this->ipsclass->form_code}", 'redirect' );
+		$this->ipsclass->admin->done_screen("附加信息已删除", "会员附加信息管理", "{$this->ipsclass->form_code}", 'redirect' );
 		
 	}
 	
@@ -303,7 +303,7 @@ class ad_profilefields {
 	function main_form($type='edit')
 	{
 		$this->ipsclass->input['id'] = intval($this->ipsclass->input['id']);
-		$this->ipsclass->admin->nav[] = array( '', '添加/编辑用户附加信息' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑会员附加信息' );
 		
 		if ($type == 'edit')
 		{
@@ -449,7 +449,7 @@ class ad_profilefields {
 												                 $this->ipsclass->adskin->form_yes_no("pf_admin_only", $fields['pf_admin_only'] )
 									                    )      );
 									                    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>主题查看格式</b><div class='graytext'>如果您不想在主题旁的作者栏显示本信息, 请留空。<br />{title} 表示信息标题, {content} 表示用户添加的内容. {key} 表示下拉框所选内容的值. <br />例如: {title}:{content}&lt;br /&gt;<br />例如: {title}:&lt;img src='imgs/{key}'&gt;</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>主题查看格式</b><div class='graytext'>如果您不想在主题旁的作者栏显示本信息, 请留空。<br />{title} 表示信息标题, {content} 表示会员添加的内容. {key} 表示下拉框所选内容的值. <br />例如: {title}:{content}&lt;br /&gt;<br />例如: {title}:&lt;img src='imgs/{key}'&gt;</div>" ,
 												                 $this->ipsclass->adskin->form_textarea("pf_topic_format", $fields['pf_topic_format'] )
 									                    )      );					     							     
 		
@@ -470,9 +470,9 @@ class ad_profilefields {
 	
 	function main_screen()
 	{
-		$this->ipsclass->admin->page_title   = "用户附加信息";
+		$this->ipsclass->admin->page_title   = "会员附加信息";
 		
-		$this->ipsclass->admin->page_detail  = "用户附加信息可以在用户资料中添加可选或必填的信息。如果您想要记录的用户数据 IPB 没有内置，这里可以为您实现。";
+		$this->ipsclass->admin->page_detail  = "会员附加信息可以在会员资料中添加可选或必填的信息。如果您想要记录的会员数据 IPB 没有内置，这里可以为您实现。";
 		
 		$this->ipsclass->adskin->td_header[] = array( "信息标题"		, "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "信息类型"		, "10%" );
@@ -485,7 +485,7 @@ class ad_profilefields {
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "用户附加信息管理" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "会员附加信息管理" );
 		
 		$real_types = array( 'drop' => '下拉框',
 							 'area' => '多行文本',

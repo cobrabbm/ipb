@@ -266,7 +266,7 @@ $lang = array (
 'edit_avatar'		=> "编辑我的个人头像",
 
 
-'mgroup'			=> "会员组别",
+'mgroup'			=> "用户组别",
 'mtitle'			=> "会员头衔",
 'homepage'			=> "个人主页",
 'birthday'			=> "出生日期",

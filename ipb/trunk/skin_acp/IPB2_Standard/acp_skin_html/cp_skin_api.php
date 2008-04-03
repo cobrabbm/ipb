@@ -121,7 +121,7 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>XML-RPC API 用户</div>
+ <div class='tableheaderalt'>XML-RPC API 会员</div>
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
@@ -148,8 +148,8 @@ $IPBHTML .= <<<EOF
   menu_build_menu(
   "menu{$user['api_user_id']}",
   new Array(
-			img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_edit&amp;api_user_id={$user['api_user_id']}'>编辑 API 用户...</a>",
-  			img_delete + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_remove&amp;api_user_id={$user['api_user_id']}\");'>删除 API 用户...</a>"
+			img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_edit&amp;api_user_id={$user['api_user_id']}'>编辑 API 会员...</a>",
+  			img_delete + " <a href='#' onclick='maincheckdelete(\"{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_remove&amp;api_user_id={$user['api_user_id']}\");'>删除 API 会员...</a>"
   		    ) );
  </script>
 EOF;
@@ -159,7 +159,7 @@ else
 {
 $IPBHTML .= <<<EOF
  <tr>
-	<td colspan='5' class='tablerow1' style='text-align:center;font-size:14px'><em>当前没有任何激活的 API 用户.<br /><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>您想要创建一个吗?</a></em></td>
+	<td colspan='5' class='tablerow1' style='text-align:center;font-size:14px'><em>当前没有任何激活的 API 会员.<br /><a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>您想要创建一个吗?</a></em></td>
  </tr>
 EOF;
 }
@@ -171,7 +171,7 @@ $IPBHTML .= <<<EOF
 <script type="text/javascript">
   menu_build_menu(
   "menumainone",
-  new Array( img_add   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>创建新的 API 用户...</a>" ) );
+  new Array( img_add   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=api_add'>创建新的 API 会员...</a>" ) );
 </script>
 EOF;
 
@@ -204,7 +204,7 @@ var tabfactory    = new tab_factory();
  <tr>
    <td class='tablerow1'>
       <fieldset>
-       <legend><strong>API 用户基本信息</strong></legend>
+       <legend><strong>API 会员基本信息</strong></legend>
  		<table cellpadding='0' cellspacing='0' border='0' width='100%'>
 EOF;
 if ( $type == 'add' )
@@ -212,7 +212,7 @@ if ( $type == 'add' )
 $IPBHTML .= <<<EOF
 	<tr>
 	  <td width='40%' class='tablerow1'>
-		<strong>API 用户键值</strong>
+		<strong>API 会员键值</strong>
 		<div class='desctext'>该键值由系统自动生成, 如果您刷新键值也将改变.</div>
 		<input type='hidden' name='api_user_key' value='{$form['_api_user_key']}' />
 	  </td>
@@ -223,7 +223,7 @@ EOF;
 
 $IPBHTML .= <<<EOF
  		<tr>
-   		  <td width='40%' class='tablerow1'><strong>API 用户名称</strong><div class='desctext'>这一名称仅仅是作为给身份认证记录的名字.</div></td>
+   		  <td width='40%' class='tablerow1'><strong>API 会员名称</strong><div class='desctext'>这一名称仅仅是作为给身份认证记录的名字.</div></td>
    		  <td width='60%' class='tablerow2'>{$form['api_user_name']}</td>
  		</tr>
 		<tr>
