@@ -4656,7 +4656,7 @@ pm=短消息</conf_extra>
 			<conf_type>input</conf_type>
 			<conf_key>pre_pinned</conf_key>
 			<conf_value></conf_value>
-			<conf_default>Pinned: </conf_default>
+			<conf_default>置顶: </conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -4696,7 +4696,7 @@ pm=短消息</conf_extra>
 			<conf_type>input</conf_type>
 			<conf_key>pre_polls</conf_key>
 			<conf_value></conf_value>
-			<conf_default>Poll: </conf_default>
+			<conf_default>投票: </conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -5051,7 +5051,7 @@ desc=降序 (9-0)</conf_extra>
 		<setting>
 			<conf_id>221</conf_id>
 			<conf_title><![CDATA[合并会员一段时间内的重复发贴]]></conf_title>
-			<conf_description><![CDATA[当某会员在短时间内连续2次在同一个主题发贴时,将会合并帖子.输入这个时间的值(单位:分钟),输 0将关闭本功能.]]></conf_description>
+			<conf_description><![CDATA[当某会员在短时间内连续 2 次在同一个主题发贴时, 将会合并帖子. 输入这个时间的值 (单位: 分钟), 输如 0 将关闭本功能.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>post_merge_conc</conf_key>
@@ -5174,8 +5174,8 @@ http://*.google.com/*]]></conf_description>
 		<setting>
 			<conf_id>227</conf_id>
 			<conf_title>黑名单设置</conf_title>
-			<conf_description><![CDATA[您可以明确指定允许的连接.可以使用 * 作为通配符.每行一个.<br />
-例如:http://www.yourdomain.com*
+			<conf_description><![CDATA[您可以明确指定允许的连接. 可以使用 * 作为通配符. 每行一个.<br />
+例如: http://www.yourdomain.com*
 <br />
 http://competitor_domain.com*]]></conf_description>
 			<conf_group>28</conf_group>
@@ -5197,7 +5197,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>228</conf_id>
 			<conf_title>直接显示帖子中的图片</conf_title>
-			<conf_description><![CDATA[如果选择 '是',帖子中的任何图片附件将会直接显示图片本身而不是下载链接.打开后将允许用户发帖的时候用[attachmentid]标记来给图片定位.]]></conf_description>
+			<conf_description><![CDATA[如果选择 '是', 帖子中的任何图片附件将会直接显示图片本身而不是下载链接. 打开后将允许用户发帖的时候用[attachmentid]标记来给图片定位.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>show_img_upload</conf_key>
@@ -5217,7 +5217,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>229</conf_id>
 			<conf_title>每行最多显示缩略图数量</conf_title>
-			<conf_description>附件图片缩略图超过这个数字时会换行,否则将在同一行显示.请不要设置的很大, 以免撑破表格.</conf_description>
+			<conf_description>附件图片缩略图超过这个数字时会换行, 否则将在同一行显示. 请不要设置的很大, 以免撑破表格.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>topic_attach_no_per_row</conf_key>
@@ -5237,7 +5237,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>230</conf_id>
 			<conf_title>显示附件图片的缩略图</conf_title>
-			<conf_description><![CDATA[如果上面的选项设置为"是",打开本功能可以将附件图片显示为缩略图,这将加快帖子的显示速度.]]></conf_description>
+			<conf_description><![CDATA[如果上面的选项设置为 "是", 打开本功能可以将附件图片显示为缩略图, 这将加快帖子的显示速度.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>siu_thumb</conf_key>
@@ -5257,7 +5257,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>231</conf_id>
 			<conf_title><![CDATA[附件图片缩略图宽度]]></conf_title>
-			<conf_description><![CDATA[仅当上面的2个选项打开时生效.您可以定义缩略图的宽度.如果图片小于这里的大小,将直接显示图片.]]></conf_description>
+			<conf_description><![CDATA[仅当上面的 2 个选项打开时生效. 您可以定义缩略图的宽度. 如果图片小于这里的大小, 将直接显示图片.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>siu_width</conf_key>
@@ -5277,7 +5277,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>232</conf_id>
 			<conf_title><![CDATA[附件图片缩略图高度]]></conf_title>
-			<conf_description><![CDATA[仅当上面的2个选项打开时生效.您可以定义缩略图的高度.如果图片小于这里的大小,将直接显示图片.]]></conf_description>
+			<conf_description><![CDATA[仅当上面的 2 个选项打开时生效. 您可以定义缩略图的高度. 如果图片小于这里的大小, 将直接显示图片.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>siu_height</conf_key>
@@ -5357,7 +5357,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>236</conf_id>
 			<conf_title>每个投票允许最多问题数量</conf_title>
-			<conf_description>在每个投票内,用户最多可以问多少问题.</conf_description>
+			<conf_description>在每个投票内, 用户最多可以问多少问题.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>max_poll_questions</conf_key>
@@ -5417,7 +5417,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>239</conf_id>
 			<conf_title>允许投票发起人自己投票</conf_title>
-			<conf_description><![CDATA[如果选择"是"，投票发起人也可以投票.]]></conf_description>
+			<conf_description><![CDATA[如果选择 "是"，投票发起人也可以投票.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>allow_creator_vote</conf_key>
@@ -5456,8 +5456,8 @@ http://competitor_domain.com*]]></conf_description>
 
 		<setting>
 			<conf_id>241</conf_id>
-			<conf_title>允许用户在主题中增加投票的有效时间(单位:小时)</conf_title>
-			<conf_description>允许会员先发表主题再增加投票,对版主和管理员无效</conf_description>
+			<conf_title>允许用户在主题中增加投票的有效时间 (单位: 小时)</conf_title>
+			<conf_description>允许会员先发表主题再增加投票, 对版主和管理员无效</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>startpoll_cutoff</conf_key>

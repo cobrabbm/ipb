@@ -14,9 +14,9 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tablesubheader'>��ά��̳��Ϣ</div>
+ <div class='tablesubheader'>易维论坛信息</div>
  <div class='tablerow1'>
- This section is reserved for any components, such as Invision Gallery, Invision Chat and Invision Blog
+ 这一部分被保留用来添加论坛组件信息, 比如博客、相册、聊天室等等组件.
  </div>
 </div>
 

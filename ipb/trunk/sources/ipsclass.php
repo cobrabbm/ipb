@@ -88,6 +88,8 @@ class ipsclass {
 	* @var string
 	*/
 	var $version      = IPBVERSION;
+
+	var $ipbchina_version      = IPBCHINA_VERSION;
 	
 	/**
 	* LONG version number (Eg: 21000.BUILD_DATE.REASON)
