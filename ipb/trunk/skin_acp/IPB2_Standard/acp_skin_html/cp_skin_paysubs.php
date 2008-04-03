@@ -15,10 +15,10 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>°²×°ĞÂµÄÖ§¸¶Íø¹Ø</div>
+ <div class='tableheaderalt'>å®‰è£…æ–°çš„æ”¯ä»˜ç½‘å…³</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='90%'>Íø¹ÜÃû³Æ</td>
+  <td class='tablesubheader' width='90%'>ç½‘ç®¡åç§°</td>
   <td class='tablesubheader' width='10%' align='center'>&nbsp;</td>
  </tr>
  {$content}
@@ -45,13 +45,13 @@ EOF;
 if ( $installed == 1 )
 {
 $IPBHTML .= <<<EOF
-<td class='tablerow2' align='center'><em>ÒÑ°²×°</em></td>
+<td class='tablerow2' align='center'><em>å·²å®‰è£…</em></td>
 EOF;
 }
 else
 {
 $IPBHTML .= <<<EOF
-<td class='tablerow2' align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=install-gateway&name=$gateway'>°²×°</a></td>
+<td class='tablerow2' align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=install-gateway&name=$gateway'>å®‰è£…</a></td>
 EOF;
 }
 $IPBHTML .= <<<EOF
@@ -72,7 +72,7 @@ $IPBHTML = "";
 //--starthtml--//
 
 $IPBHTML .= <<<EOF
-img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit_package_gateway_info&method=--methodid--&sub={$row['sub_id']}'>±à¼­Íø¹Ø·½·¨: {$row['sub_title']}...</a>",
+img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit_package_gateway_info&method=--methodid--&sub={$row['sub_id']}'>ç¼–è¾‘ç½‘å…³æ–¹æ³•: {$row['sub_title']}...</a>",
 EOF;
 
 //--endhtml--//
@@ -91,40 +91,40 @@ $IPBHTML .= <<<EOF
 <form action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=find_transactions' method="POST">
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div class='tableborder'>
- <div class='tableheaderalt'>²éÕÒ/±à¼­½»Ò×·½Ê½</div>
+ <div class='tableheaderalt'>æŸ¥æ‰¾/ç¼–è¾‘äº¤æ˜“æ–¹å¼</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablerow2' width='40%'><strong>Ö§¸¶×´Ì¬</strong></td>
+  <td class='tablerow2' width='40%'><strong>æ”¯ä»˜çŠ¶æ€</strong></td>
   <td class='tablerow1' width='60%'>{$form['status']}</td>
  </tr>
  <tr>
-  <td class='tablerow2'><strong>¶©ÔÄ°ü¹ü</strong></td>
+  <td class='tablerow2'><strong>è®¢é˜…åŒ…è£¹</strong></td>
   <td class='tablerow1'>{$form['package']}</td>
  </tr>
  <tr>
   <td class='tablerow2'><strong>Optional Query</strong></td>
-  <td class='tablerow1'>{$form['searchtype']} °üº¬... {$form['search']}</td>
+  <td class='tablerow1'>{$form['searchtype']} åŒ…å«... {$form['search']}</td>
  </tr>
  <tr>
-  <td class='tablerow2'><strong>¶©ÔÄ½«ÔÚ <em>n</em> Ììºó¹ıÆÚ</strong><div class='desctext'>¿ÉÑ¡</div></td>
+  <td class='tablerow2'><strong>è®¢é˜…å°†åœ¨ <em>n</em> å¤©åè¿‡æœŸ</strong><div class='desctext'>å¯é€‰</div></td>
   <td class='tablerow1'>{$form['expiredays']}</td>
  </tr>
  </table>
- <div class='tablesubheader' align='center'><input type='submit' class='realbutton' value=' Ö´ĞĞ &gt;&gt; ' /></div>
+ <div class='tablesubheader' align='center'><input type='submit' class='realbutton' value=' æ‰§è¡Œ &gt;&gt; ' /></div>
 </div>
 </form>
 <br />
 <form action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=find_logs' method="POST">
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 <div class='tableborder'>
- <div class='tableheaderalt'>ËÑË÷½»Ò×ÈÕÖ¾</div>
+ <div class='tableheaderalt'>æœç´¢äº¤æ˜“æ—¥å¿—</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablerow2' width='40%'><strong>ËÑË÷</strong></td>
-  <td class='tablerow1' width='60%'>{$form['searchtype2']} °üÀ¨... {$form['search2']}</td>
+  <td class='tablerow2' width='40%'><strong>æœç´¢</strong></td>
+  <td class='tablerow1' width='60%'>{$form['searchtype2']} åŒ…æ‹¬... {$form['search2']}</td>
  </tr>
  </table>
- <div class='tablesubheader' align='center'><input type='submit' class='realbutton' value=' Ö´ĞĞ &gt;&gt; ' /></div>
+ <div class='tablesubheader' align='center'><input type='submit' class='realbutton' value=' æ‰§è¡Œ &gt;&gt; ' /></div>
 </div>
 </form>
 EOF;
@@ -147,17 +147,17 @@ $IPBHTML .= <<<EOF
   <td class='tablerow2' align='center'>{$row['_duration']}</td>
   <td class='tablerow2' align='center'><span style='color:green'>{$row['_active']}</span></td>
   <td class='tablerow2' align='center'><span style='color:red'>{$row['_expired']}</span></td>															
-  <td class='tablerow1' align='center'><img id="menu{$row['sub_id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Ñ¡Ïî' class='ipd' /></td>
+  <td class='tablerow1' align='center'><img id="menu{$row['sub_id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='é€‰é¡¹' class='ipd' /></td>
 </tr>
 <script type="text/javascript">
   menu_build_menu(
   "menu{$row['sub_id']}",
-  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=editpackage&id={$row['sub_id']}'>±à¼­°ü¹ü...</a>",
-  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removepackage&id={$row['sub_id']}'>É¾³ı°ü¹ü...</a>",
-  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=all&id={$row['sub_id']}'>È¡ÏûËùÓĞ»áÔ±¶©ÔÄ...</a>",
-  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=expired&id={$row['sub_id']}'>È¡Ïû¹ıÆÚ»áÔ±¶©ÔÄ...</a>",
-  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=dosearch&package={$row['sub_id']}'>ÏÔÊ¾¶©ÔÄ»áÔ±...</a>",
-  			 img_view   + " <a href='#' onclick='pop_win(\"&{$this->ipsclass->form_code}&code=overview&package={$row['sub_id']}\", \"Overview\", 600,200)'>Ö´ĞĞÔ¤ÀÀ...</a>"
+  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=editpackage&id={$row['sub_id']}'>ç¼–è¾‘åŒ…è£¹...</a>",
+  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removepackage&id={$row['sub_id']}'>åˆ é™¤åŒ…è£¹...</a>",
+  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=all&id={$row['sub_id']}'>å–æ¶ˆæ‰€æœ‰ä¼šå‘˜è®¢é˜…...</a>",
+  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=expired&id={$row['sub_id']}'>å–æ¶ˆè¿‡æœŸä¼šå‘˜è®¢é˜…...</a>",
+  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=dosearch&package={$row['sub_id']}'>æ˜¾ç¤ºè®¢é˜…ä¼šå‘˜...</a>",
+  			 img_view   + " <a href='#' onclick='pop_win(\"&{$this->ipsclass->form_code}&code=overview&package={$row['sub_id']}\", \"Overview\", 600,200)'>æ‰§è¡Œé¢„è§ˆ...</a>"
  		    ) );
  </script>
  
@@ -177,19 +177,19 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>¶©ÔÄ°ü¹ü</div>
+ <div class='tableheaderalt'>è®¢é˜…åŒ…è£¹</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='28%'>¶©ÔÄ¼Æ»®</td>
-  <td class='tablesubheader' width='10%' align='center'>»¨·Ñ</td>
-  <td class='tablesubheader' width='10%' align='center'>³ÖĞøÊ±¼ä</td>
-  <td class='tablesubheader' width='10%' align='center'>¼¤»î»áÔ±</td>
-  <td class='tablesubheader' width='12%' align='center'>¹ıÆÚ»áÔ±</td>
+  <td class='tablesubheader' width='28%'>è®¢é˜…è®¡åˆ’</td>
+  <td class='tablesubheader' width='10%' align='center'>èŠ±è´¹</td>
+  <td class='tablesubheader' width='10%' align='center'>æŒç»­æ—¶é—´</td>
+  <td class='tablesubheader' width='10%' align='center'>æ¿€æ´»ä¼šå‘˜</td>
+  <td class='tablesubheader' width='12%' align='center'>è¿‡æœŸä¼šå‘˜</td>
   <td class='tablesubheader' width='1%' align='center'>&nbsp;</td>
  </tr>
  {$content}
  </table>
- <div class='tablefooter' align='center'><div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=addpackage'>Ìí¼ÓĞÂµÄ¶©ÔÄ°ü¹ü</a></span></div></div>
+ <div class='tablefooter' align='center'><div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=addpackage'>æ·»åŠ æ–°çš„è®¢é˜…åŒ…è£¹</a></span></div></div>
 </div>
 
 EOF;
@@ -212,17 +212,17 @@ $IPBHTML .= <<<EOF
   <td class='tablerow2' align='center'>{$row['_duration']}</td>
   <td class='tablerow2' align='center'><span style='color:green'>{$row['_active']}</span></td>
   <td class='tablerow2' align='center'><span style='color:red'>{$row['_expired']}</span></td>															
-  <td class='tablerow1' align='center'><img id="menu{$row['sub_id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Ñ¡Ïî' class='ipd' /></td>
+  <td class='tablerow1' align='center'><img id="menu{$row['sub_id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='é€‰é¡¹' class='ipd' /></td>
 </tr>
 <script type="text/javascript">
   menu_build_menu(
   "menu{$row['sub_id']}",
-  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=editpackage&id={$row['sub_id']}'>±à¼­°ü¹ü...</a>",
-  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removepackage&id={$row['sub_id']}'>É¾³ı°ü¹ü...</a>",
-  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=all&id={$row['sub_id']}'>È¡ÏûËùÓĞ»áÔ±¶©ÔÄ...</a>",
-  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=expired&id={$row['sub_id']}'>È¡Ïû¹ıÆÚ»áÔ±¶©ÔÄ...</a>",
-  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=find_transactions&package={$row['sub_id']}'>ÏÔÊ¾¶©ÔÄ»áÔ±...</a>"
-  			 //img_item   + " <a href='#' onclick='pop_win(\"&{$this->ipsclass->form_code}&code=overview&package={$row['sub_id']}\", \"Overview\", 600,200)'>Ö´ĞĞÔ¤ÀÀ...</a>"
+  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=editpackage&id={$row['sub_id']}'>ç¼–è¾‘åŒ…è£¹...</a>",
+  			 img_delete   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removepackage&id={$row['sub_id']}'>åˆ é™¤åŒ…è£¹...</a>",
+  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=all&id={$row['sub_id']}'>å–æ¶ˆæ‰€æœ‰ä¼šå‘˜è®¢é˜…...</a>",
+  			 img_item   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=removemembers&type=expired&id={$row['sub_id']}'>å–æ¶ˆè¿‡æœŸä¼šå‘˜è®¢é˜…...</a>",
+  			 img_view   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=find_transactions&package={$row['sub_id']}'>æ˜¾ç¤ºè®¢é˜…ä¼šå‘˜...</a>"
+  			 //img_item   + " <a href='#' onclick='pop_win(\"&{$this->ipsclass->form_code}&code=overview&package={$row['sub_id']}\", \"Overview\", 600,200)'>æ‰§è¡Œé¢„è§ˆ...</a>"
  		    ) );
  </script>
  
@@ -243,20 +243,20 @@ $IPBHTML = "";
 
 $IPBHTML .= <<<EOF
 <div class='tableborder'>
- <div class='tableheaderalt'>¿ÉÓÃÖ§¸¶Íø¹Ø</div>
+ <div class='tableheaderalt'>å¯ç”¨æ”¯ä»˜ç½‘å…³</div>
  <table cellpadding='4' cellspacing='0' width='100%'>
  <tr>
-  <td class='tablesubheader' width='20%'>Ö§¸¶Íø¹Ø</td>
-  <td class='tablesubheader' width='10%'>»î¶¯</td>
-  <td class='tablesubheader' width='10%'>½»Ò×</td>
-  <td class='tablesubheader' width='10%'>×î½ü</td>
-  <td class='tablesubheader' width='10%'>´ı¾ö¶¨</td>
-  <td class='tablesubheader' width='10%'>Ê§°Ü</td>
+  <td class='tablesubheader' width='20%'>æ”¯ä»˜ç½‘å…³</td>
+  <td class='tablesubheader' width='10%'>æ´»åŠ¨</td>
+  <td class='tablesubheader' width='10%'>äº¤æ˜“</td>
+  <td class='tablesubheader' width='10%'>æœ€è¿‘</td>
+  <td class='tablesubheader' width='10%'>å¾…å†³å®š</td>
+  <td class='tablesubheader' width='10%'>å¤±è´¥</td>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
  </tr>
  {$content}
  <tr>
-  <td class='tablerow1' colspan='3' align='right'><strong>ÀÛ¼ÆÊÕÈë: ({$totals['_culm']})</strong></td>
+  <td class='tablerow1' colspan='3' align='right'><strong>ç´¯è®¡æ”¶å…¥: ({$totals['_culm']})</strong></td>
   <td class='tablerow1' align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=find_transactions&status=paid'>{$totals['_paid']}</a></td>
   <td class='tablerow1' align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=find_transactions&status=pending'>{$totals['_pending']}</a></td>
   <td class='tablerow1' align='center'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=find_transactions&status=failed'>{$totals['_failed']}</a></td>
@@ -294,7 +294,7 @@ $IPBHTML .= <<<EOF
   menu_build_menu(
   "menu{$row['submethod_id']}",
   new Array( $menu
-  		     img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=editmethod&id={$row['submethod_id']}'>½¨Á¢Ö§¸¶Íø¹Ø...</a>"
+  		     img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=editmethod&id={$row['submethod_id']}'>å»ºç«‹æ”¯ä»˜ç½‘å…³...</a>"
  		    ) );
  </script>
  

@@ -589,7 +589,7 @@ $IPBHTML .= <<<EOF
 <div align='center'>
 <form action='{$this->ipsclass->base_url}&amp;section=dashboard&amp;act=dashboard&amp;save=1' method='post'>
 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
-<textarea name='notes' style='background-color:#F9FFA2;border:1px solid #CCC;width:95%;font-family:verdana;font-size:10px' rows='8' cols='25'>{$notes}</textarea>
+<textarea name='notes' style='background-color:#F9FFA2;border:1px solid #CCC;width:95%;font-family:verdana;font-size:12px' rows='8' cols='25'>{$notes}</textarea>
 <div><br /><input type='submit' value='保存管理日志' class='realbutton' /></div>
 </form>
 </div>
