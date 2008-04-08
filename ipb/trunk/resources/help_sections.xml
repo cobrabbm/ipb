@@ -16,17 +16,17 @@
 
 		<helpsections>
 			<key>tools_postoffice_mail_new</key>
-			<title>Sending Bulk Emails</title>
-			<helptext>When you send an email, a task on the board is triggered to send a certain amount of emails at once. Please note that in order for these tasks to run there must be activity the board itself. If you notice the Post Office is not sending your emails, please browse your board and actively browse for around 10 or so minutes. This should trigger the tasks needed to send the emails.</helptext>
+			<title>发送批量邮件</title>
+			<helptext>当您发送邮件的时候,论坛会触发一个邮件发送任务,请注意，这个操作是系统自动的.如果您发现系统并没有执行这个操作,请打开您的论坛,并且随意点击几个论坛功能,这样就能触发系统执行邮件发送.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_sql_backup</key>
-			<title>What settings should I pick?</title>
-			<helptext><![CDATA[<b>Simple Backup</b><br />
-This function compiles a single back up file and prompts a browser dialogue box for you to save the file. This can only be used on small databases<br />
-Normally the best results come from leaving the settings how they are. If you do experience issues, you may want to skip the non-essential data and enabling GZIP.<br />
-Larger databases may time out using this tool. If this happens for you, please contact your webhost. They should be able to provide you with a backup. If you have SSH access to your site, our <a href="{base_url}&section=help&act=support&code=kb">Knowledge Base</a> provides manual backup instructions using SSH.]]></helptext>
+			<title>我应该如何选择设置备份?</title>
+			<helptext><![CDATA[<b>简单备份</b><br />
+这项功能仅仅只提供了一个简单的备份方式,您可以通过对话框的提示来保存您的文件.小型数据库可以用这种方式备份.<br />
+通常情况下,备份结果的好坏跟设置是有很大关系的.如果您比较有经验,您也可以跳过非核心数据的备份并且打开 GZIP 压缩数据.<br />
+如果您的数据库比较大,那么这项操作可能需要很长时间.如果中间出现什么问题,您可以联系您的服务提供商,他们应该能够提供关于数据备份方面的帮助.如果您的网站有 SSH 链接,我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a> 提供了运用 SSH 手动备份的信息.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -53,32 +53,32 @@ Larger databases may time out using this tool. If this happens for you, please c
 
 		<helpsections>
 			<key>content_mem_search</key>
-			<title><![CDATA[Finding & Pruning Members]]></title>
-			<helptext><![CDATA[You can <b>Search</b> for a member on your forum from here. Just enter any or none of the fields to bring up the results. On the next page you can edit their account by clicking the drop-down next to their name.<br />
-To <b>Prune / Mass Delete</b> members, simply select <i>Find Members to Prune (Mass Delete)</i> for the field <i>Type of Search</i>. You will also need to select some restrictions on who to prune, so fill in the other fields as desired.]]></helptext>
+			<title><![CDATA[查找清理会员]]></title>
+			<helptext><![CDATA[您可以在这里<b>搜索</b>您论坛里的任何会员.输入一个关键字就可以.您可以点击会员名称后面的下拉菜单来编辑会员资料.<br />
+如果您需要执行<b>批量删除/清理</b>会员,最简单的方法就是在<i>搜索类型</i>里选择<i>查找批量会员</i>.您只需要在条件选择里输入您想要匹配的查找条件即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_changepassword</key>
-			<title><![CDATA[Password Salt & Login Key]]></title>
-			<helptext>In most cases, you can leave these two settings how they are. These are just unique member settings held in the database used for logging in.</helptext>
+			<title><![CDATA[密码策略 & 登录密匙]]></title>
+			<helptext>在通常情况下,您可以把这两项留空默认设置.他们只是在某一些用户登录数据的地方使用.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mtools_mod</key>
-			<title>Manage User Registration/Email Change Queues</title>
-			<helptext><![CDATA[This section will allow you to approve any members awaiting validation. Next to their name it will show if they are waiting <a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">Admin Validation</a>, <a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">Email Validation</a>, <a href="{base_url}&section=tools&act=op&code=findsetting&key=coppa">COPPA Validation</a>, or if they are awaiting an Email Change validation email.<br /><br />
-You can approve or deny registrations by using the checkboxes to the right of their name, and the drop-down menu at the bottom of the list.<br /><br />
-If users are having trouble receiving their validation emails, you can re-send them from this page using the same drop-down menu as used for approving or denying members.]]></helptext>
+			<title>用户在注册管理/更改队列邮件</title>
+			<helptext><![CDATA[这项功能允许您审核任何一个需要审核的会员申请.在需要审核的会员名称后面会出现<a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">管理审核</a>, <a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">邮件确认</a>, <a href="{base_url}&section=tools&act=op&code=findsetting&key=coppa">COPPA 验证</a>,或者,如果他们在等待一个确认审核通过修改邮件.<br /><br />
+您可以试用会员名称后面的点选框,还有表格下方的下拉菜单来决定是通过或者拒绝审核.<br /><br />
+如果会员不能收到您的确认邮件,您也可以选中会员名称以后在下拉菜单中选择"重发确认邮件".]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_copyright_show</key>
-			<title>Copyright Removal</title>
-			<helptext><![CDATA[<b>Please Note</b>: This is <u>not</u> the same as the IPB License Key. The Copyright Removal is a separate license that must be purchased.<br />
+			<title>版权移除</title>
+			<helptext><![CDATA[<b>请注意</b>:这与 IPB 许可文件<u>不同</u>.版权的移除是另外一项必须购买的功能.<br />
 <br />
-<b>To purchase</b> this license, please <a href="{base_url}&section=help&act=support&code=contact">contact our sales department</a>.<br />
-If you are <b>having issues</b> adding the Copyright Removal license, please <a href="{base_url}&section=help&act=support&code=support">create a new support ticket</a>. Ensure that you include your board URL, access to a ROOT Admin account to your board, and the key you are trying to use.]]></helptext>
+<b>购买</b>这个许可,请<a href="{base_url}&section=help&act=support&code=contact">联系我们的销售部门</a>.<br />
+如果您在添加版权移除许可的时候<b>遇到问题</b>,请<a href="{base_url}&section=help&act=support&code=support">提交一份新的援助申请</a>.请确认包含您的论坛地址,一个论坛总管理员帐号,和您使用的许可文件在内.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -103,7 +103,7 @@ If you are <b>having issues</b> adding the Copyright Removal license, please <a 
 
 		<helpsections>
 			<key>components_helptext_new</key>
-			<title>Internal Help Key</title>
+			<title>内部帮助关键词</title>
 			<helptext><![CDATA[settinggoup_----- = Setting Group<br>
 section_act_code = ACP page<br>
 section_act_ = splash page<br>
@@ -124,14 +124,14 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>content_multimod_</key>
-			<title>Topic Multi-Moderation</title>
-			<helptext><![CDATA[With multi-moderation, you can combine multiple moderator actions into one easy shortcut. For example if your forum doesn't allow advertisement topics, you can create one for advertisement/spam messages. You can have a single moderator option to close the topic and add a stock reply to it. The possibilities are really open to what your specific needs are.]]></helptext>
+			<title>主题管理</title>
+			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛板块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_multimod_new</key>
-			<title>Topic Multi-Moderation</title>
-			<helptext><![CDATA[With multi-moderation, you can combine multiple moderator actions into one easy shortcut. For example if your forum doesn't allow advertisement topics, you can create one for advertisement/spam messages. You can have a single moderator option to close the topic and add a stock reply to it. The possibilities are really open to what your specific needs are.]]></helptext>
+			<title>主题管理</title>
+			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛板块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -193,8 +193,8 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>help_support_bugs</key>
-			<title>缺陷报告</title>
-			<helptext><![CDATA[你可以在我们的追踪栏目里提交并跟踪您所提交的所有缺陷,它将显示在下面.这里并<i>不</i> 包括发布的报告,仅仅只为了弥补我们的程序内部缺陷.
+			<title>Bug 报告</title>
+			<helptext><![CDATA[你可以在我们的追踪栏目里提交并跟踪您所提交的所有 Bug,它将显示在下面.这里并<i>不</i> 包括发布的报告,仅仅只为了弥补我们的程序内部 Bug.
 <br />
 <br />
 <b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">缺陷追踪</a> 访问.]]></helptext>
@@ -206,16 +206,16 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 			<helptext><![CDATA[如果您需要一项新功能,或者在其他地方看到而 IPB 没有这些功能,那么您可以在这里反馈给我们.
 <br />
 <br />
-<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">Feature Suggestions Forum</a>访问.
+<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">意见建议</a>访问.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_resources</key>
-			<title>resources.invisionpower.com - Official Resource Site</title>
-			<helptext><![CDATA[resources.invisionpower.com is a customer-only resource site where you can find helpful articles, modifications, skins, and customer-to-customer support. Note that all content and advice found on resources.invisionpower.com is provided as-is by the individual user, and is not endorsed nor support by Invision Power Services, Inc. If you are just looking to chat or would like to look for additional resources for your board, this is the first place to go.<br />
+			<title>resources.invisionpower.com - 官方资源站点</title>
+			<helptext><![CDATA[resources.invisionpower.com 是一个全面的客户服务站点,在这里你可以找到很多有用的文章, 修正,主题,以及客户之间的互助信息.需要提醒的是在 resources.invisionpower.com 上所有的内容都是客户与客户之间的交流与互助信息,并不是 IPS 官方的支持信息.如果您想要与其他 IPB 使用者交流,或者获得其他客户分享出来的一些资源,那么,这里将是您的首选.<br />
 <br/>
-You can use your client center login information to access resources.invisionpower.com.
+您可以使用您的客户端直接访问 resources.invisionpower.com.
 <br />
 <br />
 <b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://resources.invisionpower.com" target="_blank">resources.invisionpower.com</a>访问.
@@ -236,35 +236,35 @@ You can use your client center login information to access resources.invisionpow
 
 		<helpsections>
 			<key>content_mem_</key>
-			<title><![CDATA[Finding & Pruning Members]]></title>
-			<helptext><![CDATA[You can <b>Search</b> for a member on your forum from here. Just enter any or none of the fields to bring up the results. On the next page you can edit their account by clicking the drop-down next to their name.<br />
-To <b>Prune / Mass Delete</b> members, simply select <i>Find Members to Prune (Mass Delete)</i> for the field <i>Type of Search</i>. You will also need to select some restrictions on who to prune, so fill in the other fields as desired.]]></helptext>
+			<title><![CDATA[查找清理会员]]></title>
+			<helptext><![CDATA[您可以在这里<b>搜索</b>您论坛里的任何会员.输入一个关键字就可以.您可以点击会员名称后面的下拉菜单来编辑会员资料.<br />
+如果您需要执行<b>批量删除/清理</b>会员,最简单的方法就是在<i>搜索类型</i>里选择<i>查找批量会员</i>.您只需要在条件选择里输入您想要匹配的查找条件即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_</key>
-			<title>User Groups</title>
-			<helptext><![CDATA[User Grouping is a quick and powerful way to organize your members. There are 4 preset groups that you cannot remove (Validating, Guest, Member and Admin) although you may edit these at will. A good example of user grouping is to set up a group called 'Moderators' and allow them access to certain forums other groups do not have access to.]]></helptext>
+			<title>会员组</title>
+			<helptext><![CDATA[会员组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的会员组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mtools_lock</key>
-			<title>Managing Locked User Accounts</title>
-			<helptext><![CDATA[This section allows you to see which member accounts are currently locked. It also allows you a way to manually unlock these accounts. An account will become locked after the same IP address fails to log into it after a certain amount of time.<br />
-You can manage these settings by <a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">clicking here</a>.]]></helptext>
+			<title>管理锁定的会员</title>
+			<helptext><![CDATA[这里您可以查看哪些会员被锁定.您也可以在这里解除会员的锁定.如果您锁定了 Ip 地址,那么所有使用这个地址的会员都将被锁定.<br />
+您可以<a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">点击这里</a>设置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_field_add</key>
-			<title><![CDATA[Tip regarding "Expected Input Format"]]></title>
-			<helptext><![CDATA[If you enter <b>n</b>, for example, the user will only be able to enter <i>one</i> number. This limits the amount of information they can enter. So as an example, if you wanted a (5 character) 'Zip Code' field, you would put the expected input format as: <b>nnnnn</b><br/>
-Anything besides 5 numbers would be rejected. They would not be able to enter more or less numbers either.]]></helptext>
+			<title><![CDATA[关于"预输入模式"的提示]]></title>
+			<helptext><![CDATA[输入您输入<b>n</b>,体力,会员将只能输入<i>一个</i>数字.用它来控制一些输入时需要限制字数的地方.比如说,如果您需要一个(5字符) '压缩代码',那么您只要这样输入: <b>nnnnn</b><br/>
+超过5位之外的字符是没有任何作用的.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_field_</key>
-			<title>Adding Custom Profile Fields</title>
-			<helptext>Custom Profile fields can be used to add optional or required fields to be completed when registering or editing a profile. This is useful if you wish to record data from your members that is not already present in the default board.</helptext>
+			<title>添加自定义属性</title>
+			<helptext>自定义属性在您注册或者编辑一个属性的时候有用.例如您想要记录在默认论坛上正在访问的会员名字.</helptext>
 		</helpsections>
 
 		<helpsections>
@@ -311,7 +311,7 @@ Anything besides 5 numbers would be rejected. They would not be able to enter mo
 		<helpsections>
 			<key>help_diag_dbchecker</key>
 			<title>数据库检查</title>
-			<helptext><![CDATA[如果您遇到数据库方面的错误(通常都会显示<b>IPS 驱动错误</b>).请点击左边的链接开始检查修复.]]></helptext>
+			<helptext><![CDATA[如果您遇到数据库方面的错误(通常都会显示<b> IPS 驱动错误</b>).请点击左边的链接开始检查修复.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -341,49 +341,49 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>admin_sql_</key>
-			<title>Managing Your Database</title>
-			<helptext><![CDATA[In this section you can manage your database. For most beginners, this section is of little use unless there is an <b>IPS Driver Error</b>. If you are encountering such an error, please check the "Rows" column in this section. If you see any of the row without a number whatsoever, please check the checkmark next to that database table. At the bottom, use the drop-down menu and select "Repair Selected Tables."<br />
-If you continue to get <b>IPS Driver Errors</b>, please run the <a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">Database Checker</a>.]]></helptext>
+			<title>数据库管理</title>
+			<helptext><![CDATA[您可以在这里对您的数据库进行管理.对于初学者来说,除非您遇到<b>IPS 驱动错误</b>这种错误信息,否则，这里可以不用深入研究.如果您遇到了此类错误,请点击下列相关的数据表.如果您看到任何一行连一个数字都没有,那么请选中此表后面的点选框.然后在列表最下面的下拉菜单中选择"修复数据表."<br />
+如果您还是遇到<b>IPS 驱动错误</b>,请运行<a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库检查</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_reg</key>
-			<title>Registration Statistics</title>
-			<helptext><![CDATA[The Statistics Center allows you to view the stats of your forum, ranging from number of number of PMs to number of Topic Views, and so on.
+			<title>注册状态统计</title>
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-Note: The statistics generated are based on the information currently held in the database, they do not take into account pruned forums or delete posts, etc.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_topic</key>
-			<title>Topic Statistics</title>
-			<helptext><![CDATA[The Statistics Center allows you to view the stats of your forum, ranging from number of number of PMs to number of Topic Views, and so on.
+			<title>新主题统计</title>
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-Note: The statistics generated are based on the information currently held in the database, they do not take into account pruned forums or delete posts, etc.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_post</key>
-			<title>Posts Statistics</title>
-			<helptext><![CDATA[The Statistics Center allows you to view the stats of your forum, ranging from number of number of PMs to number of Topic Views, and so on.
+			<title>发帖统计</title>
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-Note: The statistics generated are based on the information currently held in the database, they do not take into account pruned forums or delete posts, etc.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_msg</key>
-			<title>Personal Message Statistics</title>
-			<helptext><![CDATA[The Statistics Center allows you to view the stats of your forum, ranging from number of number of PMs to number of Topic Views, and so on.
+			<title>私人短消息统计</title>
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-Note: The statistics generated are based on the information currently held in the database, they do not take into account pruned forums or delete posts, etc.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_views</key>
-			<title>Topic View Statistics</title>
-			<helptext><![CDATA[The Statistics Center allows you to view the stats of your forum, ranging from number of number of PMs to number of Topic Views, and so on.
+			<title>主题查看统计</title>
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-Note: The statistics generated are based on the information currently held in the database, they do not take into account pruned forums or delete posts, etc.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -392,13 +392,13 @@ Note: The statistics generated are based on the information currently held in th
 			<helptext><![CDATA[所有安装过的组件都会在这里显示.您可以点击"允许"栏目下面的图标来快速开启或者禁用组件.<br /><br />
 <img src="{skin_url}/images/aff_tick.png" alt="Green Checkmark" style="float:none;" /> - 这个图标表示此组件已经在论坛被启用.点击它就可以禁用此组件.<br />
 <img src="{skin_url}/images/aff_cross.png" alt="Red X" style="float:none;" /> - 这个图标表示此组件已经在论坛禁用. 点击它就可以启用此组件.<br /><br />
-请访问 <a href="{base_url}&section=components">组件</a>标签来设置您的组件.]]></helptext>
+请访问<a href="{base_url}&section=components">组件</a>标签来设置您的组件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_emaillog_</key>
 			<title>会员邮件日志</title>
-			<helptext>论坛所有会员的邮件这里都有记录.但是不会记录一些比较大的邮件,订阅邮件, 和论坛的系统邮件.</helptext>
+			<helptext>论坛所有会员的邮件这里都有记录.但是不会记录一些比较大的邮件,订阅邮件,和论坛的系统邮件.</helptext>
 		</helpsections>
 
 		<helpsections>
@@ -459,449 +459,446 @@ Note: The statistics generated are based on the information currently held in th
 
 		<helpsections>
 			<key>content_msubs_editmethod</key>
-			<title>Subscription Manager - Editing a Gateway</title>
-			<helptext><![CDATA[This page is used to configure the payment gateway information. If you are unsure of any of this information, such as <i>Seller ID</i>, <i>Gateway Associated Email Address</i>, <i>etc.</i>, please contact this specific gateway provider, and they can supply you with the information needed.]]></helptext>
+			<title>订阅管理 - 编辑网关</title>
+			<helptext><![CDATA[这里设置关于支付网关的一些信息.如果您对此并不确认,例如 <i>出售者 ID</i>,<i>联合网关邮件地址</i>, <i>等等.</i>,请联系您的特殊网关提供商,他们会给您提供必要的帮助.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_index-packages</key>
-			<title>Subscription Manager - Managing Your Packages</title>
-			<helptext><![CDATA[A package is what the user will subscribe to. Common setups for this include:<br />
-Setting up a recurring package every month that promotes users to another group. This is useful if you wish to allow paying members access to separate sections of the board.<br />
-Setting up a <i>Donator</i> type group that never expires. This will allow people who provide money to your board to be placed in a specially selected group.]]></helptext>
+			<title>订阅管理 - 管理订阅包</title>
+			<helptext><![CDATA[订阅包裹一般包括:<br />
+设置会员每个月提升到另外一个会员组.如果您允许会员通过付费的方式成灰管理者,这也非常有用.<br />
+设置从不过期的<i>捐赠者</i>会员组.它则允许会员通过支付一些费用加入到您的论坛特殊组里.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_currency</key>
-			<title>Subscription Manager - Currency Manager</title>
-			<helptext><![CDATA[<b>Currency Information</b><br />
-The currency you set as default becomes the currency the subscriptions are based in. For example, if you chose USD as default, entering a value of 1.00 for a subscription package means that the subscription package costs 1.00 USD. If you choose another default you may want to edit all the subscription values as they will become incorrect. Also if you choose another default, you will also want to edit the exchange values.<br />
+			<title>订阅管理 - 货币管理</title>
+			<helptext><![CDATA[<b>货币信息</b><br />
+货币是交易的基础.例如,您可以选择 USD 作为基础货币,输入一个数值 1.00 意味着这项订阅值 1.00 个 USD.如果您选择其他货币也是一样的道理.您同样需要设置交易的数值.<br />
 <br />
-For up-to-date currency conversion, visit <a href="http://www.xe.com" target="_blank">XE.com</a>.]]></helptext>
+最新的货币转换汇率,您可以查询<a href="http://www.xe.com" target="_blank">XE.com</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_addtransaction</key>
-			<title>Subscription Manager - Manually Add Transaction</title>
-			<helptext><![CDATA[Using this section, you can manually add a transaction for a user. Please note that if this is done, this user will not have to pay for the transaction, but will have the privileges of anyone who has paid.<br />
-<b>Note</b>: If you wish to have this user revert back to their previous group after the subscription ends, be sure to put their <u>current</u> under <i>Previous Group</i>.]]></helptext>
+			<title>订阅管理 - 手工添加交易</title>
+			<helptext><![CDATA[您可以为会员手工添加交易.请注意,添加以后这个会员不用为这个项目付费,但是他仍然拥有与付费会员一样的特权.<br />
+<b>提醒</b>:如果您需要恢复您刚才的操作,请确认添加他们到 <u>以前的</u><i>用户组</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_install-index</key>
-			<title>Subscription Manager - Adding a New Gateway</title>
-			<helptext><![CDATA[<b>Note</b>: This section is mostly for advanced users who are familiar with PHP and coding custom modules.<br />
-To install a new payment gateway module, simply upload the file 'class_gw_{name}.php' into '/sources/classes/paymentgateways' and then click on the 'install' link. Modules showing as 'installed' are active and can be set up from within the '<i>Manage Payment Gateways</i>' link.]]></helptext>
+			<title>订阅管理 - 添加新的支付网关</title>
+			<helptext><![CDATA[<b>提醒</b>:这个选项仅只提供给具有高级 PHP 使用与设置经验的用户使用.<br />
+安装您的支付网关模板,上传 'class_gw_{name}.php' 到 '/sources/classes/paymentgateways' 然后点击下面的 '安装'链接. 如果您看到模板显示为'已安装'则表示安装成功,您可以点击'<i>管理支付网关s</i>'链接来进行管理.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_calendars_calendar_list</key>
-			<title>Applying Permissions to a Calendar</title>
-			<helptext>Using the drop-down to the right of each calendar, you can edit the settings for it. On this page you will have the option to select which groups can create new events, see events, and so on. It is important to set this information, or no one will be able to use your calendar.</helptext>
+			<title>为日历添加权限</title>
+			<helptext>使用每一个日历右边的下拉菜单,您可以在这里设置它.您可以设置哪个用户组可以添加事件,查看事件, 等等.如果您希望您的会员有人能使用日历的话,您就需要在这里先设置.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_badword</key>
-			<title>Using Badword Filters</title>
-			<helptext><![CDATA[The badword filter allows you to globally replace words from a members post, signature and topic title. You can add/edit and remove bad word filters in this section. As a note, by default the Admin group can bypass the badword list. You can change this by editing this group on the <a href="{base_url}&section=content&act=group">Manage User Groups</a> page.<br />
+			<title>使用词汇过滤器</title>
+			<helptext><![CDATA[词汇过滤器可以过滤会员发帖,签名和发表主题时候的一些词汇.您可以在这里编辑/添加/删除这些需要过滤的词汇.需要注意的是,默认情况下管理员组是不受这项功能限制的.您可以通过修改<a href="{base_url}&section=content&act=group">管理用户组</a>页面来限制管理员的权限.<br />
 <br />
-<b>Loose matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' and 'hello' with either your replacement if entered or 6 hashes (case insensitive).<br />
-<b>Exact matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' only with either your replacement if entered or 6 hashes (case insensitive).<br />
-<b>Import a Badword List</b>: You can use this if you have a pre-made badword list XML file. An example one is available in our <a href="{base_url}&section=help&act=support&code=kb">Knowledge Base</a>. Simply search for <i>badword</i>.]]></helptext>
+<b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
+<b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
+<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表.在我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a>里面有一个演示的例子.简单搜索<i>过滤词汇</i>即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_ban</key>
-			<title>Banning Members</title>
-			<helptext><![CDATA[To ban an existing member, simply go to the <a href="{base_url}&section=content&act=mem&code=search">Manage Members</a> page, find and edit their account, and finally switch their Primary User Group to <i>Banned</i>. This will stop them from viewing the board when logged in. To ban certain IPs from viewing the board, or to ban certain emails or username names from signing up, you can use this section.<br />
+			<title>封禁会员</title>
+			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的会员组切换到 <i>已封禁</i>会员组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
 <br />
-<b>Note</b>: You can use * as a wildcard in any Username, IP, or Email filter. (Example: 127.0.*, *@yahoo.com, bannedname*). Also ensure there are no spaces before or after your ban filter - in some cases this will cause the filter to not work properly.]]></helptext>
+<b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_attach_types</key>
-			<title>Adding New Attachment Types</title>
-			<helptext><![CDATA[On this page you can alter existing attachment types and add new ones. To add a new one, use the 'Add New Attachment Type' button at the bottom of the page. This is useful if your board is geared towards a specific subject where non-standard attachments need to be uploaded.]]></helptext>
+			<title>添加新的附件类型</title>
+			<helptext><![CDATA[这里您可以添加一个新的允许上传附件类型.点击页面上'添加新的上传文件类型'按钮.如果您的论坛需要上传一些特别的文件类型这项设置就是非常有用的.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_attach_attach_add</key>
-			<title>Attachment Mini-Image</title>
-			<helptext><![CDATA[This image will need to be stored in:<br />
+			<title>附件缩略图</title>
+			<helptext><![CDATA[缩略图片会存储在:<br />
 /style_images/<i>{imgdir}</i>/folder_mime_types/<br/><br/>
-For example, the information you would enter would be: <i>folder_mime_types/music.gif</i><br />
-Be sure this image is uploaded for each one of your custom image sets.]]></helptext>
+例如,您可能需要输入下面的信息: <i>folder_mime_types/music.gif</i><br />
+来手工分类您的上传文件缩略图类型.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_changename</key>
-			<title>Changing a Login Name</title>
-			<helptext><![CDATA[Please note that this is the name the user will login with. This does not change the name that is displayed on the board. To change that, select the <i>Edit Member's Display Name...</i> from the drop-down menu on the previous page.]]></helptext>
+			<title>更改登录名称</title>
+			<helptext><![CDATA[请注意,这是会员登录您的论坛使用的名称.并不一定是在论坛中显示的名称.选择下一页中的<i>编辑用户显示名称...</i>可以更改论坛中显示的名称.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_change_display_name</key>
-			<title>Changing a Display Name</title>
-			<helptext><![CDATA[Please note this is the name the user is shown as. This does not change the name they login with. To change that, select the <i>Edit Member's Log In User Name...</i> from the drop-down menu on the previous page.]]></helptext>
+			<title>更改显示名称</title>
+			<helptext><![CDATA[请注意,这是会员在论坛中显示出来的名称.并不一定是会员的登录名称.选择上一页的 <i>Edit 编辑会员登录名称...</i>可以更改会员登录名称.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_banmember</key>
-			<title>Suspending a Member</title>
-			<helptext>The suspension system is an automated temporary ban. Simply choose the duration of the suspension and submit the form below. It will suspend this member for the amount of time given, and automatically unsuspend them when that time is up.</helptext>
+			<title>暂停会员</title>
+			<helptext>会员暂停系统是一个系统自动的操作.通常情况下,在管理者给会员添加一个警告等级的时候选择了暂停会员,此系统就会自动启用.一旦暂停时间到系统会自动解开会员.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_deleteposts</key>
-			<title>Deleting Member Posts / Topics</title>
-			<helptext><![CDATA[<b>Note</b>: There is <b><u><i>NO</i></u></b>  undo for this. If you run this, all of the posts and topics from the members will be lost. If you have a <a href="{base_url}&section=tools&act=op&code=findsetting&key=trashcanset-up">Trash Can Forum</a> setup, you can select the <i>Use Trash Can?</i> option to move them there.]]></helptext>
+			<title>删除会员帖子/主题</title>
+			<helptext><![CDATA[<b>提醒</b>:此项操作是<b><u><i>不可恢复</i></u></b>的.如果您选择运行,所有的会员帖子/主题都会丢失.您设置了一个<a href="{base_url}&section=tools&act=op&code=findsetting&key=trashcanset-up">回收站板块</a>的话,您可以选择<i>使用回收站?</i>来暂时存储以备将来查用.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_calendars_calendar_add</key>
-			<title>Calendar Permissions</title>
-			<helptext><![CDATA[Please ensure that the <i>Calendar Permissions</i> of this section are filled out. Otherwise no one will be able to see this calendar - not even you.]]></helptext>
+			<title>日历权限</title>
+			<helptext><![CDATA[请确认<i>日历权限</i>被开启.否则没人可以使用日立,包括您在内.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_add</key>
-			<title>Creating a New Group</title>
-			<helptext><![CDATA[Most of the time when a new group is created, separate permissions for this group are wanted. If this is the case for you, please first create a new permission set on the <a href="{base_url}&section=content&act=group&code=permsplash">Manage Permissions</a> page. Once you have created a new permission set for this group, come back to this page and for the option <i>'Use which permission sets...'</i>, select the newly created permission set. Now when you go to edit your forum permissions, your new group/set will appear.]]></helptext>
+			<title>创建一个新会员组</title>
+			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的会员组来使用这个权限.如果您第一次来到这里,请点击<a href="{base_url}&section=content&act=group&code=permsplash">权限管理</a>来访问权限设置页面.在您为某些特殊用户组创建了新的权限以后,可以点击<i>'应用权限到...'</i>,选择使用这个权限的会员组.现在,当您编辑论坛权限的时候,您的新权限也会出现.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_dopermadd</key>
-			<title>Create a New User Group?</title>
-			<helptext><![CDATA[Since you have just created a new permission set, if you wish to create a new user group to use this set, simply go to the <a href="{base_url}&section=content&act=group&code=add">Manage User Groups</a> section.]]></helptext>
+			<title>创建一个新会员组</title>
+			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的会员组来使用这个权限,点击<a href="{base_url}&section=content&act=group&code=add">管理会员组</a>就可以进行操作.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>dashboard_dashboard_login-complete</key>
-			<title>ACP Help System</title>
-			<helptext><![CDATA[<b>Welcome to the ACP Help System</b>
-<br />This system will provide more advanced information on specific settings and pages in your Admin Control Panel.
-<br />For pages that hold more information, you will see a box just like this one. 
-<br />For individual settings, an image will appear next to them, which you can click for more information. The image will appear as: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
+			<title>管理面板帮助系统</title>
+			<helptext><![CDATA[<b>欢迎来到管理后台帮助系统</b>
+<br />这套系统将提供给您更多有用的高级设置信息,以便于您更好的利用这个管理面板.
+<br />在包含更多设置信息的页面您将看到跟这里一样的帮助信息. 
+<br />在一些单独的设置选项中,在选项后面会有一个图标,您点击就可以获得更多的信息.图标是这样: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
 <br />
-<br />You can minimize each box by using the minimize icon in the top right of each box. To turn these help boxes off:
-<br /><a href="{base_url}&section=tools&act=op&search=acp+help+system&code=setting_view">Click here</a> to be sent to the settings page for this.
-<br />Alternatively you can simply navigate to the <i>Tools & Settings</i> tab, click on <i>General Configuration</i>, and then set <i>ACP Help System</i> to <i>No</i>.]]></helptext>
+<br />您可以点击表单右上角的三角按钮把这些信息隐藏.如果您想关闭帮助系统:
+<br /><a href="{base_url}&section=tools&act=op&search=acp+help+system&code=setting_view">点击这里</a>就会到达相关的设置页面.
+<br />此外,您也可以选择 <i>工具设置</i>项,点击 <i>常规配置</i>,然后选择<i>后台帮助系统</i>为<i>否</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_wrap_edit</key>
-			<title>Editing the Board Header and Footer Wrapper</title>
-			<helptext><![CDATA[This section controls the basic layout of your board. You will be able to move certain sections around in this section. For example if you wanted, you could move the member bar above the board header, etc.<br />
-Editing this will copy the changes to any children skins of this set.<br /><br />
-If you would like assistance with custom skin changes, it is recommended to visit our official resource site <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>.]]></helptext>
+			<title>编辑论坛顶部和底部显示内容</title>
+			<helptext><![CDATA[这里可以设置您论坛的基本排列方式. 您也可以开启或者删除某一些设置.例如,如果您愿意的话,您可以选择删除会员工具栏,等等.<br />
+您也可以把这些设置拷贝到子模板里面.<br /><br />
+如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_templ_template-sections-list</key>
-			<title>Editing Your Templates</title>
-			<helptext><![CDATA[This section will provide you a way of editing the template HTML. This is useful if you want to tweak a certain section of your board. The templates use standard HTML formatting in most areas. Templates are seperated by where they appear on the board -- For example, the board header is in the 'All Global HTML' section, while the code for topics is held in the 'Topic View' area, and so on.
+			<title>编辑您的模板</title>
+			<helptext><![CDATA[您可以通过这里修改您的 HTML 模板.模板很多地方都是使用标准 HTML 格式.模板设置很多地方都是固定的 -- 例如,论坛头部设置在'所有全局 HTML' 这里,主题显示的控制代码在'主题显示'区,等等.
 <br /><br />
-If you would like assistance with custom skin changes, it is recommended to visit our official resource site <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>.]]></helptext>
+如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_style_edit</key>
-			<title>Edit the CSS (Stylesheet) Colors</title>
-			<helptext><![CDATA[The CSS (Stylesheet) controls the colors and appearance of your board. Using this form, you can edit the way your board looks.
-<br /><br /><b>Need help?</b> View the <a href="{skin_url}/colours.html" target="_blank"><b>Online Color Picker</b></a> for help with the color codes. A full CSS/colors guide is available on our <a href="{base_url}&section=help&act=support&code=doctor"><b>Documentation</b></a> page.
-If you would like assistance with custom skin changes, it is recommended to visit our official resource site <a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a>.]]></helptext>
+			<title>编辑 CSS 表单/颜色</title>
+			<helptext><![CDATA[CSS 控制您的论坛显示颜色和外观.您可以用它编辑您的论坛显示样式.
+<br /><br /><b>需要帮助?</b>查看<a href="{skin_url}/colours.html" target="_blank"><b>在线颜色拾取器</b></a>查看色彩代码.我们的站点提供了一份全面的 CSS/色彩 使用<a href="{base_url}&section=help&act=support&code=doctor"><b>文档</b></a>.
+如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a>站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_style_colouredit</key>
-			<title>Edit the CSS (Stylesheet) Colors</title>
-			<helptext><![CDATA[The CSS (Stylesheet) controls the colors and appearance of your board. Using this form, you can edit the way your board looks.
-<br /><br /><b>Need help?</b> View the <a href="{skin_url}/colours.html" target="_blank"><b>Online Color Picker</b></a> for help with the color codes. A full CSS/colors guide is available on our <a href="{base_url}&section=help&act=support&code=doctor"><b>Documentation</b></a> page.
-If you would like assistance with custom skin changes, it is recommended to visit our official resource site <a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a>.]]></helptext>
+			<title>编辑 CSS 表单/颜色</title>
+			<helptext><![CDATA[CSS 控制您的论坛显示颜色和外观.您可以用它编辑您的论坛显示样式.
+<br /><br /><b>需要帮助?</b> 查看<a href="{skin_url}/colours.html" target="_blank"><b>在线颜色拾取器</b></a>查看色彩代码.我们的站点提供了一份全面的 CSS/色彩 使用<a href="{base_url}&section=help&act=support&code=doctor"><b>文档</b></a>.
+如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a>站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_import_</key>
-			<title><![CDATA[Exporting & Importing]]></title>
-			<helptext><![CDATA[On this page you can create a backup of your current skin and import new skins to your board.<br /><br />
-<b>Exporting...</b> The skin set is comprised of two separate XML files - the Skin Template XML and the Images XML. Be sure to select both of these when exporting if you want to export your entire skin. Exporting is useful when backing up your skin.<br />
-<b>Importing...</b> This where you import new skins. You can download new skins using a resource site such as <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>. When a skin has been downloaded, it will come with two files - one for the skin template and one for the images. Be sure to import both of these taking note to each field when importing, and adjusting accordingly.]]></helptext>
+			<title><![CDATA[导出 & 导入]]></title>
+			<helptext><![CDATA[您可以备份您的当前主题,或者导入一个新的论坛主题.<br /><br />
+<b>导出...</b>主题包括两个 XML 文件 - 模板主题 XML 和图片 XML.完整导出主题的时候需要两个都选中.特别是在您备份您的主题的时候特别重要.<br />
+<b>导入...</b> 这里可以导入新的论坛主题.您可以到网上下载一些新的论坛主题,例如 <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>.主题下载以后会有两个文件- 一个是模板主题,另一个就是图片文件.请确认这两个文件都完整,导入以后就能正确使用.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skindiff_</key>
-			<title>Skin Template HTML Differences</title>
-			<helptext><![CDATA[This tool is useful when comparing the changes made to one of your skin sets against that of the master default template. To run a differences report on an existing skin, please go to the <a href="{base_url}&section=lookandfeel&act=sets">Skin Manager</a>, and select <i>Generate Differences Report...</i> from the drop-down next to the skin. 
+			<title>模板主题 HTML 差异</title>
+			<helptext><![CDATA[如果您的主题与系统默认主题不同的话,这个工具就非常有用.请点击<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>,并且选中主题后面的下拉菜单,选择<i>常规差异性报告...</i>开始比较两个主题之间的差异. 
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skinremap_</key>
-			<title>Skin Remapping</title>
-			<helptext><![CDATA[This sections allows you to force a skin set to be used based off the URL someone is viewing. An <i>example</i> of usage is if you wish to make all profiles have use the same skin set:<br /><br />
-For <b>Type</b> use <i>Contains</i>. This will look for any URL that contains your specified input. For <b>URL</b> enter <i>showuser</i> . Finally select the <b>Skin Set</b> to assign to this. Now whenever someone views a profile (which has "showuser" in the URL) it will show the skin you have selected.<br />
-Note this is not limited to profiles - this tool can control any section of the forum you want. You just need to enter the URL of the page(s) you want to have a different skin.]]></helptext>
+			<title>主题重测图</title>
+			<helptext><![CDATA[这个选项允许你使用与您提供的 URL 地址像类似的强制设置.这里有你想要使用相同的主题设置<i>例子</i>:<br /><br />
+<b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
+您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skinremap_remap_edit</key>
-			<title>Skin Remapping</title>
-			<helptext><![CDATA[This sections allows you to force a skin set to be used based off the URL someone is viewing. An <i>example</i> of usage is if you wish to make all profiles have use the same skin set:<br /><br />
-For <b>Type</b> use <i>Contains</i>. This will look for any URL that contains your specified input. For <b>URL</b> enter <i>showuser</i> . Finally select the <b>Skin Set</b> to assign to this. Now whenever someone views a profile (which has "showuser" in the URL) it will show the skin you have selected.<br />
-Note this is not limited to profiles - this tool can control any section of the forum you want. You just need to enter the URL of the page(s) you want to have a different skin.]]></helptext>
+			<title>主题重测图</title>
+			<helptext><![CDATA[这个选项允许你使用与您提供的 URL 地址像类似的强制设置.这里有你想要使用相同的主题设置<i>例子</i>:<br /><br />
+<b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
+您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skinremap_remap_add</key>
-			<title>Skin Remapping</title>
-			<helptext><![CDATA[This sections allows you to force a skin set to be used based off the URL someone is viewing. An <i>example</i> of usage is if you wish to make all profiles have use the same skin set:<br /><br />
-For <b>Type</b> use <i>Contains</i>. This will look for any URL that contains your specified input. For <b>URL</b> enter <i>showuser</i> . Finally select the <b>Skin Set</b> to assign to this. Now whenever someone views a profile (which has "showuser" in the URL) it will show the skin you have selected.<br />
-Note this is not limited to profiles - this tool can control any section of the forum you want. You just need to enter the URL of the page(s) you want to have a different skin.]]></helptext>
+			<title>主题重测图</title>
+			<helptext><![CDATA[这个选项允许你使用与您提供的 URL 地址像类似的强制设置.这里有你想要使用相同的主题设置<i>例子</i>:<br /><br />
+<b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
+您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_ban_add</key>
-			<title>Banning Members</title>
-			<helptext><![CDATA[To ban an existing member, simply go to the <a href="{base_url}&section=content&act=mem&code=search">Manage Members</a> page, find and edit their account, and finally switch their Primary User Group to <i>Banned</i>. This will stop them from viewing the board when logged in. To ban certain IPs from viewing the board, or to ban certain emails or username names from signing up, you can use this section.<br />
+			<title>封禁会员</title>
+			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的会员组切换到 <i>已封禁</i>会员组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
 <br />
-<b>Note</b>: You can use * as a wildcard in any Username, IP, or Email filter. (Example: 127.0.*, *@yahoo.com, bannedname*). Also ensure there are no spaces before or after your ban filter - in some cases this will cause the filter to not work properly.]]></helptext>
+<b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_ban_delete</key>
-			<title>Banning Members</title>
-			<helptext><![CDATA[To ban an existing member, simply go to the <a href="{base_url}&section=content&act=mem&code=search">Manage Members</a> page, find and edit their account, and finally switch their Primary User Group to <i>Banned</i>. This will stop them from viewing the board when logged in. To ban certain IPs from viewing the board, or to ban certain emails or username names from signing up, you can use this section.<br />
+			<title>封禁会员</title>
+			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的会员组切换到 <i>已封禁</i>会员组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
 <br />
-<b>Note</b>: You can use * as a wildcard in any Username, IP, or Email filter. (Example: 127.0.*, *@yahoo.com, bannedname*). Also ensure there are no spaces before or after your ban filter - in some cases this will cause the filter to not work properly.]]></helptext>
+<b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skintools_easylogo</key>
-			<title>Changing Your Logo</title>
-			<helptext><![CDATA[Using this tool, you can upload or link to a new logo for your skin. Be sure to select the skin you want to apply the logo to by using the drop-down menu next to <i>Apply to which skin set?</i>. Note that some custom third-party skins may not have the proper HTML to allow the logo to be changed. For assistance with these custom skins, it is recommended to contact the skin author.]]></helptext>
+			<title>更改您的 LOGO</title>
+			<helptext><![CDATA[您可以您的主题中上传或者链接一个新的 logo.记得在您需要设置 logo 的主题下拉菜单中选择<i>应用到哪个模板?</i>.有时候某些自定义的第三方主题会使用自己的方式定制 logo.如果您在使用这些主题的时候遇到问题,请联系主题的原作者.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_badword_add</key>
-			<title>Using Badword Filters</title>
-			<helptext><![CDATA[The badword filter allows you to globally replace words from a members post, signature and topic title. You can add/edit and remove bad word filters in this section. As a note, by default the Admin group can bypass the badword list. You can change this by editing this group on the <a href="{base_url}&section=content&act=group">Manage User Groups</a> page.<br />
+			<title>使用论坛词汇过滤器</title>
+			<helptext><![CDATA[词汇过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理会员组</a>页面更改管理员组的权限.<br />
 <br />
-<b>Loose matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' and 'hello' with either your replacement if entered or 6 hashes (case insensitive).<br />
-<b>Exact matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' only with either your replacement if entered or 6 hashes (case insensitive).<br />
-<b>Import a Badword List</b>: You can use this if you have a pre-made badword list XML file. An example one is available in our <a href="{base_url}&section=help&act=support&code=kb">Knowledge Base</a>. Simply search for <i>badword</i>.]]></helptext>
+<b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
+<b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
+<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表.在我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a>里面有一个演示的例子.简单搜索<i>过滤词汇</i>即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_badword_remove</key>
-			<title>Using Badword Filters</title>
-			<helptext><![CDATA[The badword filter allows you to globally replace words from a members post, signature and topic title. You can add/edit and remove bad word filters in this section. As a note, by default the Admin group can bypass the badword list. You can change this by editing this group on the <a href="{base_url}&section=content&act=group">Manage User Groups</a> page.<br />
+			<title>使用论坛词汇过滤器</title>
+			<helptext><![CDATA[词汇过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理会员组</a>页面更改管理员组的权限.<br />
 <br />
-<b>Loose matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' and 'hello' with either your replacement if entered or 6 hashes (case insensitive).<br />
-<b>Exact matching</b>: If you entered 'hell' as a bad word, it will replace 'hell' only with either your replacement if entered or 6 hashes (case insensitive).<br />
-<b>Import a Badword List</b>: You can use this if you have a pre-made badword list XML file. An example one is available in our <a href="{base_url}&section=help&act=support&code=kb">Knowledge Base</a>. Simply search for <i>badword</i>.]]></helptext>
+<b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
+<b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
+<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表.在我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a>里面有一个演示的例子.简单搜索<i>过滤词汇</i>即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_lang_import</key>
-			<title>Importing Language Packs</title>
-			<helptext><![CDATA[Uploading new language packs is accomplished on this page. To obtain a pre-made language pack, it is recommended to visit our official resource site <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>. Once you have the XML file for the language pack downloaded, simply upload it through the form below. One it is added, you can click to <a href="{base_url}&section=lookandfeel&act=lang">Manage Your Languages</a>.]]></helptext>
+			<title>导入语言包</title>
+			<helptext><![CDATA[在这个页面您可以导入您的论坛需要使用的新语言文件.在我们的网站<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>上已经有一些语言文件包供您选择.一旦您下载了 XML 语言文件包,您可以通过这里上传即可.添加过的语言文件可以在这里查看<a href="{base_url}&section=lookandfeel&act=lang">语言文件管理</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_lang_</key>
-			<title><![CDATA[Managing & Editing Languages]]></title>
-			<helptext><![CDATA[The language system controls all of the text that is shown on your board as well as the text sent in board emails. This section allows you to view your currently installed skin sets, edit the language bits, see how many members are using the language, among other things. To <b>edit</b> a language, simply click the <i>Edit</i> link next to the language.]]></helptext>
+			<title><![CDATA[管理 & 编辑语言]]></title>
+			<helptext><![CDATA[语言控制着您的论坛上所有的文字显示方式,包括论坛邮件等.这里允许您查看您默认安装的语言设置,编辑语言设置,查看有多少会员在使用这个语言,等等.<b>编辑</b>语言,请点击语言文件后的<i>编辑</i>链接.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_lang_edit</key>
-			<title>Editing Language Files</title>
-			<helptext><![CDATA[Editing your language files is similiar to edit the skin HTML templates. Languages are grouped by how and where they display on the board. For example, to edit the text in the global header, you would edit the file <i>lang_global</i>. To edit the language sent in emails from the board, edit the file <i>lang_email_content</i>.]]></helptext>
+			<title>编辑语言文件</title>
+			<helptext><![CDATA[编辑语言文件是非常简单的.语言在论坛中如何显示,显示什么都由语言文件控制.例如,编辑首页全局的文字显示,您需要编辑 <i>lang_global</i> 文件. 为了编辑论坛发送邮件的语言,则是编辑 <i>lang_email_content</i> 文件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_viewallbugs</key>
-			<title>bfarber says:</title>
-			<helptext><![CDATA["It was before me!"]]></helptext>
+			<title>bfarber 说:</title>
+			<helptext><![CDATA["它在我前面!"]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo</key>
-			<title>Emoticon Manager</title>
-			<helptext><![CDATA[The emoticon manager lets you manage your emoticon folders, as well as upload new emoticons.<br />
-To <b>edit</b> emoticons, click the name of the set you wish to edit. This will show all emoticons currently in that set.<br />
-To <b>upload</b> new emoticons, be sure to click the checkbox next to each folder you want to upload the emoticon into, and then upload the emoticons using the forms at the bottom of the page. Note all emoticons will be copied to the 'default' folder as well as the folder selected.<br />
-To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandfeel&act=sets">Skin Manager</a> section. Next to the skin you wish to assign one to, click <i>Edit Settings</i>, and there will be an option to assign an emoticon set.]]></helptext>
+			<title>表情管理</title>
+			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
+如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_upload</key>
-			<title>Emoticon Manager</title>
-			<helptext><![CDATA[The emoticon manager lets you manage your emoticon folders, as well as upload new emoticons.<br />
-To <b>edit</b> emoticons, click the name of the set you wish to edit. This will show all emoticons currently in that set.<br />
-To <b>upload</b> new emoticons, be sure to click the checkbox next to each folder you want to upload the emoticon into, and then upload the emoticons using the forms at the bottom of the page. Note all emoticons will be copied to the 'default' folder as well as the folder selected.<br />
-To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandfeel&act=sets">Skin Manager</a> section. Next to the skin you wish to assign one to, click <i>Edit Settings</i>, and there will be an option to assign an emoticon set.]]></helptext>
+			<title>表情管理</title>
+			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
+如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setadd</key>
-			<title>Emoticon Manager</title>
-			<helptext><![CDATA[The emoticon manager lets you manage your emoticon folders, as well as upload new emoticons.<br />
-To <b>edit</b> emoticons, click the name of the set you wish to edit. This will show all emoticons currently in that set.<br />
-To <b>upload</b> new emoticons, be sure to click the checkbox next to each folder you want to upload the emoticon into, and then upload the emoticons using the forms at the bottom of the page. Note all emoticons will be copied to the 'default' folder as well as the folder selected.<br />
-To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandfeel&act=sets">Skin Manager</a> section. Next to the skin you wish to assign one to, click <i>Edit Settings</i>, and there will be an option to assign an emoticon set.]]></helptext>
+			<title>表情管理</title>
+			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
+如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_manage</key>
-			<title>Editing Your Emoticons</title>
-			<helptext><![CDATA[The most common format for emoticons is similar to:<br />
-:namehere:<br />
-<b>Note</b>: It is recommended to NOT include these special characters: ' , "<br />
-This can cause the emoticon not to display properly.
+			<title>编辑您的表情</title>
+			<helptext><![CDATA[表情引用的一般格式为:<br />
+:名称:<br />
+<b>提醒</b>:名称中不能包括这个字符: ","<br />它会使表情文件不能正常显示.
 <br /><br />
-To make it so the emoticon will show up next to the editor when making a post, set it to <i>Clickable</i>. To add an unassigned emoticon to the set, check <i>Add</i> next to each one.]]></helptext>
+当发表一个帖子的时候,您可以设置直接引用表情文件,设置为<i>可点击</i>.添加一个没有被分配的表情到设置组,点击<i>添加</i>继续添加其他的表情.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setremove</key>
-			<title>Emoticon Manager</title>
-			<helptext><![CDATA[The emoticon manager lets you manage your emoticon folders, as well as upload new emoticons.<br />
-To <b>edit</b> emoticons, click the name of the set you wish to edit. This will show all emoticons currently in that set.<br />
-To <b>upload</b> new emoticons, be sure to click the checkbox next to each folder you want to upload the emoticon into, and then upload the emoticons using the forms at the bottom of the page. Note all emoticons will be copied to the 'default' folder as well as the folder selected.<br />
-To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandfeel&act=sets">Skin Manager</a> section. Next to the skin you wish to assign one to, click <i>Edit Settings</i>, and there will be an option to assign an emoticon set.]]></helptext>
+			<title>表情管理</title>
+			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
+如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setedit</key>
-			<title>Emoticon Manager</title>
-			<helptext><![CDATA[The emoticon manager lets you manage your emoticon folders, as well as upload new emoticons.<br />
-To <b>edit</b> emoticons, click the name of the set you wish to edit. This will show all emoticons currently in that set.<br />
-To <b>upload</b> new emoticons, be sure to click the checkbox next to each folder you want to upload the emoticon into, and then upload the emoticons using the forms at the bottom of the page. Note all emoticons will be copied to the 'default' folder as well as the folder selected.<br />
-To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandfeel&act=sets">Skin Manager</a> section. Next to the skin you wish to assign one to, click <i>Edit Settings</i>, and there will be an option to assign an emoticon set.]]></helptext>
+			<title>表情管理</title>
+			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
+如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_doedit</key>
-			<title>Editing Your Emoticons</title>
-			<helptext><![CDATA[The most common format for emoticons is similiar to:<br />
-:namehere:<br />
-<b>Note</b>: It is recommended to NOT include these special characters: ' , "<br />
-This can cause the emoticon not to display properly.
+			<title>编辑您的表情</title>
+			<helptext><![CDATA[表情引用的一般格式为:<br />
+:名称:<br />
+<b>提醒</b>:名称中不能包括这个字符: ","<br />它会使表情文件不能正常显示.
 <br /><br />
-To make it so the emoticon will show up next to the editor when making a post, set it to <i>Clickable</i>. To add an unassigned emoticon to the set, check <i>Add</i> next to each one.]]></helptext>
+当发表一个帖子的时候,您可以设置直接引用表情文件,设置为<i>可点击</i>.添加一个没有被分配的表情到设置组,点击<i>添加</i>继续添加其他的表情.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_doadd</key>
-			<title>Editing Your Emoticons</title>
-			<helptext><![CDATA[The most common format for emoticons is similiar to:<br />
-:namehere:<br />
-<b>Note</b>: It is recommended to NOT include these special characters: ' , "<br />
-This can cause the emoticon not to display properly.
+			<title>编辑您的表情</title>
+			<helptext><![CDATA[表情引用的一般格式为:<br />
+:名称:<br />
+<b>提醒</b>:名称中不能包括这个字符: ","<br />它会使表情文件不能正常显示.
 <br /><br />
-To make it so the emoticon will show up next to the editor when making a post, set it to <i>Clickable</i>. To add an unassigned emoticon to the set, check <i>Add</i> next to each one.]]></helptext>
+当发表一个帖子的时候,您可以设置直接引用表情文件,设置为<i>可点击</i>.添加一个没有被分配的表情到设置组,点击<i>添加</i>继续添加其他的表情.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_packimport</key>
-			<title>Emoticon Manager</title>
-			<helptext><![CDATA[The emoticon manager lets you manage your emoticon folders, as well as upload new emoticons.<br />
-To <b>edit</b> emoticons, click the name of the set you wish to edit. This will show all emoticons currently in that set.<br />
-To <b>upload</b> new emoticons, be sure to click the checkbox next to each folder you want to upload the emoticon into, and then upload the emoticons using the forms at the bottom of the page. Note all emoticons will be copied to the 'default' folder as well as the folder selected.<br />
-To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandfeel&act=sets">Skin Manager</a> section. Next to the skin you wish to assign one to, click <i>Edit Settings</i>, and there will be an option to assign an emoticon set.]]></helptext>
+			<title>表情管理</title>
+			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
+如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_packsplash</key>
-			<title><![CDATA[Exporting & Importing Emoticons]]></title>
-			<helptext><![CDATA[<b>Exporting</b> emoticons allows you to create an XML file backup of your emoticons. It is useful if you wish to share your emoticon set with another board.<br />
-<b>Importing</b> emoticon sets can be done on this page as well. Importing a full pack allows you to import a complete set at one time. To obtain pre-made emoticon packs, it is recommended to visit our official resource site <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>.]]></helptext>
+			<title><![CDATA[导入 & 导出表情]]></title>
+			<helptext><![CDATA[<b>导出</b>表情则会创建一份 XML 文件来备份您的表情.如果您想要在不同的论坛分享您的表情这就非常有用.<br />
+<b>导入</b>表情可以允许您一次导入很多表情图标.您也可以访问我们的网站<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>来获取已有的表情文件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_task_</key>
-			<title>Task Manager</title>
-			<helptext><![CDATA[The task manager contains scheduled tasks for your board. Please note that these tasks are run only when the board is accessed, so the 'Next Run' time is to be used as a guide only, as it depends on how often your board gets traffic.
-<br /><br />Icon legend:</b><br />
-<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - This image is for advanced users who wish to set up a cron job for the tasks. This is useful if the board is not accessed often, but you want the tasks to run exactly on time.<br />
-<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - If this image turns red, it means this task needs to be run. To run a task, simply click on this icon and it will run the selected task.]]></helptext>
+			<title>任务管理</title>
+			<helptext><![CDATA[任务管理可以管理您论坛的所有计划任务.请注意人物必须在您的论坛正常运行的情况下才能完成,所以'下次执行'时间仅仅作为一个参考,真正的运行情况还是取决于您的论坛运行状态.
+<br /><br />图标图例:</b><br />
+<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - 这个图标说明您可以设置这项任务重复执行.如果您的论坛不是经常运行,但是您希望这项任务能够正确完成,那么这个选项将非常有用.<br />
+<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - 如果这个图标是红色的,那就表示这项任务需要执行. 点击您想要执行的任务后面的图标即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_task_task_run_now</key>
-			<title>Task Manager</title>
-			<helptext><![CDATA[The task manager contains scheduled tasks for your board. Please note that these tasks are run only when the board is accessed, so the 'Next Run' time is to be used as a guide only, as it depends on how often your board gets traffic.
-<br /><br />Icon legend:</b><br />
-<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - This image is for advanced users who wish to set up a cron job for the tasks. This is useful if the board is not accessed often, but you want the tasks to run exactly on time.<br />
-<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - If this image turns red, it means this task needs to be ran. To run a task, simply click on this icon and it will run the selected task.]]></helptext>
+			<title>任务管理</title>
+			<helptext><![CDATA[任务管理可以管理您论坛的所有计划任务.请注意人物必须在您的论坛正常运行的情况下才能完成,所以'下次执行'时间仅仅作为一个参考,真正的运行情况还是取决于您的论坛运行状态.
+<br /><br />图标图例:</b><br />
+<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - 这个图标说明您可以设置这项任务重复执行.如果您的论坛不是经常运行,但是您希望这项任务能够正确完成,那么这个选项将非常有用.<br />
+<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - 如果这个图标是红色的,那就表示这项任务需要执行. 点击您想要执行的任务后面的图标即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_</key>
-			<title>Login Authentication Manager</title>
-			<helptext><![CDATA[The Login Manager allows you to authenticate your board against an outside user database. Please note this feature is for advanced users. For information on how to use this feature, it is recommended to read the board and developer documentation on the <a href="{base_url}&section=help&act=support&code=doctor">Documentation</a> page.]]></helptext>
+			<title>登录入口管理</title>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_login_add</key>
-			<title>Login Authentication Manager</title>
-			<helptext><![CDATA[The Login Manager allows you to authenticate your board against an outside user database. Please note this feature is for advanced users. For information on how to use this feature, it is recommended to read the board and developer documentation on the <a href="{base_url}&section=help&act=support&code=doctor">Documentation</a> page.]]></helptext>
+			<title>登录入口管理</title>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_login_edit_details</key>
-			<title>Login Authentication Manager</title>
-			<helptext><![CDATA[The Login Manager allows you to authenticate your board against an outside user database. Please note this feature is for advanced users. For information on how to use this feature, it is recommended to read the board and developer documentation on the <a href="{base_url}&section=help&act=support&code=doctor">Documentation</a> page.]]></helptext>
+			<title>登录入口管理</title>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_login_diagnostics</key>
-			<title>Login Authentication Manager</title>
-			<helptext><![CDATA[The Login Manager allows you to authenticate your board against an outside user database. Please note this feature is for advanced users. For information on how to use this feature, it is recommended to read the board and developer documentation on the <a href="{base_url}&section=help&act=support&code=doctor">Documentation</a> page.]]></helptext>
+			<title>登录入口管理</title>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_portal_</key>
-			<title>Portal Plug-ins</title>
-			<helptext><![CDATA[The portal plug-ins are modules that control what is seen on the <a href="{base_url}&section=tools&act=op&code=findsetting&key=ipbportal">IPB Portal</a> page. You can edit the settings for each plug-in by clicking the drop-down to the right of each one.]]></helptext>
+			<title>管理门户插件</title>
+			<helptext><![CDATA[门户插件是控制您的<a href="{base_url}&section=tools&act=op&code=findsetting&key=ipbportal">IPB 门户</a>页面显示模板的插件. 您可以通过点击每一个插件右边的下拉菜单来设置他们的功能.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_postoffice_</key>
-			<title><![CDATA[Previous & Current Bulk Emails]]></title>
-			<helptext><![CDATA[This page allows you to view any past and current bulk emails. You can resend any previous ones, and check the status of ones that are currently being sent. To send a new bulk email, simply click the <i>Create New Email</i> link in the menu to the left of this page.]]></helptext>
+			<title><![CDATA[先前 & 当前的群发邮件]]></title>
+			<helptext><![CDATA[这里可以查看任何过往的或者当前的所有群发邮件.您可以重发它们中的任何一封,或者管理正在执行中的发送任务.点击页面左侧的菜单 <i>创建新邮件</i>链接就可以发送一份新的群发邮件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_doadd</key>
-			<title>User Groups</title>
-			<helptext><![CDATA[User Grouping is a quick and powerful way to organize your members. There are 4 preset groups that you cannot remove (Validating, Guest, Member and Admin) although you may edit these at will. A good example of user grouping is to set up a group called 'Moderators' and allow them access to certain forums other groups do not have access to.]]></helptext>
+			<title>会员组管理</title>
+			<helptext><![CDATA[会员组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的会员组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_dodelete</key>
-			<title>User Groups</title>
-			<helptext><![CDATA[User Grouping is a quick and powerful way to organize your members. There are 4 preset groups that you cannot remove (Validating, Guest, Member and Admin) although you may edit these at will. A good example of user grouping is to set up a group called 'Moderators' and allow them access to certain forums other groups do not have access to.]]></helptext>
+			<title>会员组管理</title>
+			<helptext><![CDATA[会员组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的会员组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_delete</key>
-			<title>Deleting a User Group</title>
-			<helptext><![CDATA[<b>Note</b>: There is NO UNDO for this. If you delete the group, the only way to get it back it is to recreate the group and move all the members back into it one by one.]]></helptext>
+			<title>删除会员组</title>
+			<helptext><![CDATA[<b>提醒</b>:这项操作不可撤销.如果您删除了这个会员组,唯一可用的还原方法就是您手工一个一个的再把会员添加到这个组内.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_rebuild_</key>
-			<title><![CDATA[Recounting & Rebuilding]]></title>
-			<helptext><![CDATA[Please read each description carefully. Some tools are resource intensive, while others have no way to undo the changes made. Tools such as <i>Rebuild Post Content</i> may take a long time to complete - please be patient and do not close the window until it is completed.<br />
-<b>Rebuild Post Content</b> is useful if you recently upgraded your board and certain elements are not showing correctly. If your BBCode, emoticons, or formatting is not showing up correctly, you may want to consider running this tool.]]></helptext>
+			<title><![CDATA[重记 & 重建]]></title>
+			<helptext><![CDATA[请仔细阅读每一项描述.某一些工具是非常危险的,甚至没有人能够还原它的操作.例如<i>重建帖子内容</i>需要花费很长时间才能完成 - 在它完成之前请耐心等待,千万不要关闭页面退出.<br />
+<b>重建帖子内容</b>在您的论坛中某一些基础的功能不能正常使用的时候非常有用.如果您的 BB 代码,表情,或者格式显示不正常, 您就需要运行这个工具来调整.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_help_</key>
-			<title>Board Help Files</title>
-			<helptext><![CDATA[Help Files are displayed to your users when they click the <i>Help</i> link in the board header. The articles cover basic usage of the default board. If you have common questions or areas that need clarification, you can add your own articles here for your users to view.]]></helptext>
+			<title>论坛帮助文件</title>
+			<helptext><![CDATA[<i>帮助</i>链接会显示在论坛顶部右侧的会员工具栏里.那里有论坛使用的一般功能帮助.如果您有比较特殊的条款信息,您也可以自己添加上去.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -913,9 +910,9 @@ To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandf
 
 		<helpsections>
 			<key>settinggroup_cookies</key>
-			<title>Having Trouble Staying Logged In?</title>
-			<helptext><![CDATA[Cookies are stored on each user's computer, and helps them stay logged in after they have left the board. For help on what to enter for the settings, click the help icon next to the settings. If your users are having trouble staying logged in, please check:<br />
-<b>Create a stronghold auto-log in cookie?</b> - As noted in the setting description, this enhances the security of your cookies. But it can also cause issues with users who have dynamic IP addresses. You may wish to turn this off to see if this helps the users stay logged in.]]></helptext>
+			<title>登录有问题?</title>
+			<helptext><![CDATA[为了保证会员登录以后能正常使用论坛,他们的 Cookies 信息会被记录到他们登录的电脑上. 如果不知道怎么设置,请点击帮助图标.如果您的会员登录有问题,请点击:<br />
+<b>创建一个自动 cookie 记录点?</b> - 如果这项功能的说明一样,它提高了您的 cookies 安全性.但是,对于那些使用动态 IP 地址登录的会员来说又会遇到其他问题.您可以把这项功能关闭了试试看是否能帮助到他们.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -926,20 +923,20 @@ To <b>assign a set to a skin</b>, visit the <a href="{base_url}&section=lookandf
 
 		<helpsections>
 			<key>settinggroup_log_prune</key>
-			<title>Pruning Board Logs</title>
-			<helptext><![CDATA[Logging is enabled by default in many areas. When logging is enabled, it can take up a large amount of database storage space. It is recommended to enable log pruning of any logs you do not view as important to your board's record keeping.]]></helptext>
+			<title>清理日志</title>
+			<helptext><![CDATA[在很多地方都有默认的日志记录.同时,日志会占用大量的数据库存储空间.建议您可以使用此项功能清理一些您的论坛不再需要的旧日志.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>settinggroup_ipbportal</key>
-			<title>Making Portal The Front Page</title>
-			<helptext><![CDATA[To do this, you need to edit a single PHP file for your board. <b>If you are not comfortable doing this, we urge you to <a href="{base_url}&section=help&act=support&code=support">submit a ticket</a> for assistance.</b><br /><br />
-Find the file <i>init.php</i> in the root directory of your forum. Open it in a text editor and find the line:<br />
+			<title>创建门户首页</title>
+			<helptext><![CDATA[首先,您需要创建一个 PHP 页面.<b>如果您不擅长做这个,我们建议您<a href="{base_url}&section=help&act=support&code=support">提交原著申请</a>给我们的客服.</b><br /><br />
+在您的论坛根目录里找到<i>init.php</i>文件.打开它,找到这行:<br />
 <i><b>define( 'IPB_MAKE_PORTAL_HOMEPAGE', 0 );</b></i><br /><br />
-Change it to:<br />
+改成:<br />
 <i><b>define( 'IPB_MAKE_PORTAL_HOMEPAGE', 1 );</b></i>
 <br /><br />
-Save this file and reupload it to your board. Your IPB Portal will now be the front page of your board.]]></helptext>
+保存文件,并且上传到您的论坛空间.您的 IPB 门户就建立好了.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -962,7 +959,7 @@ Save this file and reupload it to your board. Your IPB Portal will now be the fr
 		<helpsections>
 			<key>components_idm_show</key>
 			<title>IP.Downloads</title>
-			<helptext><![CDATA[This is a separate product designed to plug directly into your IP.Board. It offers your users an option to share files. You can create different categories for files to be posted into, allowing one place to upload, download, and share all types of files. To purchase, please contact our <a href="{base_url}&section=help&act=support&code=contact">Sales Team</a>. If you have already purchased this product and would like IPS to install it for you, please create a new <a href="{base_url}&section=help&act=support&code=support">Support Ticket</a>.]]></helptext>
+			<helptext><![CDATA[这是 IP.Board 中很有用的一个插件.有了它您就可以与您的会员共享文件.您也可以创建不同的文件分类,设置一个空间上传,下载和共享所有格式的文件.购买这个插件,请联系我们的<a href="{base_url}&section=help&act=support&code=contact">销售部门</a>.如果您已经购买了这个插件,需要 IPS 为您安装它,请提交一份新的<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 	</helpsectionsgroup>
 
