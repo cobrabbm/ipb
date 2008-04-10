@@ -84,7 +84,7 @@ class admin_functions
 			}
 			else
 			{
-				$this->error( "Security Mismatch - please go back and reload the form before attempting to submit the form / press the button again", 0 );
+				$this->error( "安全匹配错误 - 请返回重新加载表单然后再次点击提交", 0 );
 				exit();
 			}
 		}
@@ -128,7 +128,7 @@ class admin_functions
 		if ( ! $this->ipsclass->member['_perm_cache'][ $perm_main ] )
 		{
 			$this->ipsclass->kill_menu = 1;
-			$this->ipsclass->admin->error("You do not have permission to access the tab: ".$this->perm_lang[ $perm_main ] );
+			$this->ipsclass->admin->error("您没有权限使用这一标签页: ".$this->perm_lang[ $perm_main ] );
 			exit();
 		}
 	
@@ -143,11 +143,11 @@ class admin_functions
 			{
 				if ( $this->perm_lang[ $perm_main .':'. $perm_child ] )
 				{
-					$this->ipsclass->admin->error("You do not have permission to access the feature: ".$this->perm_lang[ $perm_main .':'. $perm_child ]);
+					$this->ipsclass->admin->error("您没有权限使用这一功能: ".$this->perm_lang[ $perm_main .':'. $perm_child ]);
 				}
 				else
 				{
-					$this->ipsclass->admin->error("You do not have permission to access that feature");
+					$this->ipsclass->admin->error("您没有权限使用这一功能");
 				}
 				
 				exit();
@@ -163,7 +163,7 @@ class admin_functions
 		{
 			if ( ! $this->ipsclass->member['_perm_cache'][ $perm_main .':'. $perm_child .':'. $perm_bit ] )
 			{
-				$this->ipsclass->admin->error("You do not have permission to access that feature function");
+				$this->ipsclass->admin->error("您没有权限使用这一功能");
 				exit();
 			}
 		}
@@ -314,7 +314,7 @@ class admin_functions
 						if ($this->ipsclass->member['g_access_cp'] != 1)
 						{
 							$this->ipsclass->admin_session['_session_validated'] = 0;
-							$this->ipsclass->admin_session['_session_message']   = "You do not have access to the administrative CP";
+							$this->ipsclass->admin_session['_session_message']   = "您没有权限进入管理员后台面板";
 							return FALSE;
 						}
 						else
@@ -336,7 +336,7 @@ class admin_functions
 			if ( $this->ipsclass->admin_session['session_running_time'] < ( time() - 60*60*2) )
 			{
 				$this->ipsclass->admin_session['_session_validated'] = 0;
-				$this->ipsclass->admin_session['_session_message']   = "This administration session has expired";
+				$this->ipsclass->admin_session['_session_message']   = "该管理员 Session 记录已经过期";
 			}
 			
 			//------------------------------
@@ -351,7 +351,7 @@ class admin_functions
 				if ( $first_ip != $second_ip )
 				{
 					$this->ipsclass->admin_session['_session_validated'] = 0;
-					$this->ipsclass->admin_session['_session_message']   = "Your current IP address does not match the one in our records";
+					$this->ipsclass->admin_session['_session_message']   = "您当前的 IP 记录和我们库中的记录不一致";
 					return FALSE;
 				}
 			}
@@ -736,7 +736,7 @@ class admin_functions
 	
 		if ( ! is_dir($from_path) )
 		{
-			$this->errors = "Could not locate directory '$from_path'";
+			$this->errors = "无法定位文件夹 '$from_path'";
 			return FALSE;
 		}
 	
@@ -744,7 +744,7 @@ class admin_functions
 		{
 			if ( ! @mkdir($to_path, $mode) )
 			{
-				$this->errors = "Could not create directory '$to_path' please check the CHMOD permissions and re-try";
+				$this->errors = "无法创建文件夹 '$to_path' 请检查文件夹属性后重试";
 				return FALSE;
 			}
 			else
@@ -855,7 +855,7 @@ class admin_functions
 		
 		if (! is_array($new) )
 		{
-			$this->ipsclass->admin->error("Error whilst attempting to rebuild the board config file, attempt aborted");
+			$this->ipsclass->admin->error("当试图重建论坛设置文件时出现错误, 重建动作取消");
 		}
 		
 		//-----------------------------------------
@@ -924,7 +924,7 @@ class admin_functions
 		}
 		else
 		{
-			$this->ipsclass->admin->error("Fatal Error: Could not open conf_global for writing - no changes applied. Try changing the CHMOD to 0777");
+			$this->ipsclass->admin->error("重大错误: 无法打开 conf_global 进行写入操作 - 没有任何更改应用. 请尝试设置属性为 0777");
 		}
 		
 		// Pass back the new $INFO array to anyone who cares...
@@ -1080,7 +1080,7 @@ class admin_functions
 		
 		if ( $this->ipsclass->can_use_fancy_js )
 		{
-			$this->ipsclass->html .= "<script type='text/javascript'>ajax_refresh( '$url', '$text', $addtotext );</script>\n<div style='height:300px;overflow:auto;font-weight:bold;line-height:140%;padding:5px;border:1px solid #000' id='refreshbox'>Initializing...</div>";
+			$this->ipsclass->html .= "<script type='text/javascript'>ajax_refresh( '$url', '$text', $addtotext );</script>\n<div style='height:300px;overflow:auto;font-weight:bold;line-height:140%;padding:5px;border:1px solid #000' id='refreshbox'>正在初始化...</div>";
 		}
 		else
 		{
@@ -1112,7 +1112,7 @@ class admin_functions
 	// Multi-redirect (hit)
 	/*-------------------------------------------------------------------------*/
 	
-	function output_multiple_redirect_done($text='Completed!')
+	function output_multiple_redirect_done($text='完成!')
 	{
 		if ( $this->ipsclass->can_use_fancy_js )
 		{
@@ -1149,8 +1149,8 @@ class admin_functions
         {
         	flush();
         	print "<html><head><title>SQL Debugger</title><body bgcolor='white'><style type='text/css'> TABLE, TD, TR, BODY { font-family: verdana,arial, sans-serif;color:black;font-size:11px }</style>";
-        	print "<h1 align='center'>SQL Total Time: {$this->ipsclass->DB->sql_time} for {$this->ipsclass->DB->query_cnt} queries</h1><br />".$this->ipsclass->DB->debug_html;
-        	print "<br /><div align='center'><strong>Total SQL Time: {$this->ipsclass->DB->sql_time}</div></body></html>";
+        	print "<h1 align='center'>SQL 执行时间: {$this->ipsclass->DB->sql_time} 总计 {$this->ipsclass->DB->query_cnt} 次查询</h1><br />".$this->ipsclass->DB->debug_html;
+        	print "<br /><div align='center'><strong>SQL 总计执行时间: {$this->ipsclass->DB->sql_time}</div></body></html>";
         	exit();
         }
         
@@ -1300,7 +1300,7 @@ class admin_functions
 		
 		global $Debug;
 		
-		$query_html .= "<div align='center'><br />Time: ".$Debug->endTimer()."</div>";
+		$query_html .= "<div align='center'><br />时间: ".$Debug->endTimer()."</div>";
 		
 		//-----------------------------------------
 		// Other tags...
@@ -1503,7 +1503,7 @@ class admin_functions
 	
 	function error($error="", $is_popup=0)
 	{
-		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( "Admin CP Message", $error . '<br /><br />' );
+		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( "后台信息", $error . '<br /><br />' );
 		//$this->page_title  = "Admin CP Message";
 		//$this->page_detail = $error;//"&nbsp;";
 		
@@ -1532,19 +1532,19 @@ class admin_functions
 	{
 		if ( $redirect )
 		{
-			$this->redirect( $this->ipsclass->base_url.'&'.$link_url, "<b>$title</b><br />Redirecting to: ".$link_text );
+			$this->redirect( $this->ipsclass->base_url.'&'.$link_url, "<b>$title</b><br />正在跳转到: ".$link_text );
 		}
 		
 		$this->page_title  = $title;
-		$this->page_detail = "The action was executed successfully";
+		$this->page_detail = "该动作成功执行";
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table("Result");
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table("结果");
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<a href='{$this->ipsclass->base_url}&{$link_url}'>Go to: $link_text</a>", "center" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<a href='{$this->ipsclass->base_url}&{$link_url}'>到: $link_text</a>", "center" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<a href='{$this->ipsclass->base_url}&act=index'>Go to: Administration Home</a>", "center" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<a href='{$this->ipsclass->base_url}&act=index'>到: 管理首页</a>", "center" );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 			
@@ -1555,18 +1555,18 @@ class admin_functions
 	// INFO screen
 	/*-------------------------------------------------------------------------*/
 	
-	function info_screen($text="", $title='Safe Mode Restriction Warning')
+	function info_screen($text="", $title='安全模式限制警告')
 	{
 		$this->page_title  = $title;
-		$this->page_detail = "Please note the following:";
+		$this->page_detail = "请注意下面的提示:";
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table("Result");
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table("结果");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( $text );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<a href='{$this->ipsclass->base_url}&act=index'>Go to: Administration Home</a>", "center" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "<a href='{$this->ipsclass->base_url}&act=index'>到: 管理首页</a>", "center" );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 			
@@ -1775,11 +1775,11 @@ class admin_functions
 		         <select name='chooseacardanycard' class='realbutton' onchange=\"autojumpmenu(this)\">
 		         <option value=''>Set: {$r['set_name']} options</option>
 		         <option value=''>-------------------</option>
-		         <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=wrap&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>Edit Board Header & Footer Wrapper</option>
-				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=templ&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>Edit Template HTML</option>
-				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=style&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>Edit CSS (Advanced Mode)</option>
-				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=style&code=colouredit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>Edit CSS (Easy Mode)</option>
-				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=image&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>Edit Replacement Macros</option>
+		         <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=wrap&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑页眉 & 页脚</option>
+				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=templ&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑模板 HTML</option>
+				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=style&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑 CSS (高级模式)</option>
+				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=style&code=colouredit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑 CSS (简易模式)</option>
+				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=image&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑替换标签</option>
 				 </select>
 				 </form>";
 				 

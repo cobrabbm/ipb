@@ -157,7 +157,7 @@ class admin_skin
 	
 	function make_page_jump($tp="", $pp="", $ub="" )
 	{
-		return "<a href='#' title=\"Jump to a page...\" onclick=\"multi_page_jump('$ub',$tp,$pp);\">Pages:</a>";
+		return "<a href='#' title=\"跳转页面...\" onclick=\"multi_page_jump('$ub',$tp,$pp);\">页:</a>";
 	}
 	
 	/*-------------------------------------------------------------------------*/
@@ -384,19 +384,19 @@ class admin_skin
 			$n_js = $js['no'];
 		}
 	
-		$yes = "Yes &nbsp; <input type='radio' name='$name' value='1' $y_js id='green'>";
-		$no  = "<input type='radio' name='$name' value='0' $n_js id='red'> &nbsp; No";
+		$yes = "是 &nbsp; <input type='radio' name='$name' value='1' $y_js id='green'>";
+		$no  = "<input type='radio' name='$name' value='0' $n_js id='red'> &nbsp; 否";
 		
 		
 		
 		if ($default_val == 1)
 		{
 			
-			$yes = "Yes &nbsp; <input type='radio' name='$name' value='1'$y_js checked id='green'>";
+			$yes = "是 &nbsp; <input type='radio' name='$name' value='1'$y_js checked id='green'>";
 		}
 		else
 		{
-			$no  = "<input type='radio' name='$name' value='0' checked $n_js id='red'> &nbsp; No";
+			$no  = "<input type='radio' name='$name' value='0' checked $n_js id='red'> &nbsp; 否";
 		}
 		
 		
