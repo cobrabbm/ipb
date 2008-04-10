@@ -466,14 +466,14 @@ class admin_cache_functions
 		
 		if ( ! file_exists( $skin_dir ) )
 		{
-			$this->messages[] = "This template set is a safe mode only skin and no PHP skin files exist, there is no need to run this tool on this template set.";
+			$this->messages[] = "这个模板设置是安全模式的没有任何 PHP 文件, 因此没有必要执行这一工具.";
 			return 0;
 		}
 		
 		
 		if ( ! is_readable($skin_dir) )
 		{
-			$this->messages[] = "FAILD: Cannot write into '$skin_dir', please check the CHMOD value, and if needed, CHMOD to 0777 via FTP. IBF cannot do this for you.";
+			$this->messages[] = "失败: 无法写入到 '$skin_dir', 请检查文件夹设置, 如果有必要请通过 FTP 设置属性为 0777. 易维论坛无法完成这一操作.";
 			return 0;
 		}
 		
@@ -493,7 +493,7 @@ class admin_cache_functions
 							# Ignore bugtracker
 							if ( $name == 'skin_bugtracker' )
 							{
-								$this->messages[] = "Skipping skin_bugtracker.php...";
+								$this->messages[] = "跳过 skin_bugtracker.php...";
 								continue;
 							}
 							
@@ -504,7 +504,7 @@ class admin_cache_functions
 							}
 							else
 							{
-								$this->messages[] = "Could not open $filename for reading, skipping file...";
+								$this->messages[] = "无法打开文件 $filename, 跳过该文件...";
 								continue;
 							}
 							
@@ -513,7 +513,7 @@ class admin_cache_functions
 							
 							if ( ! preg_match( "/\n/", $fdata ) )
 							{
-								$this->messages[] = "Could not find any line endings in $filename, skipping file...";
+								$this->messages[] = "无法找到文件 $filename 中的行尾, 跳过该文件...";
 								continue;
 							}
 							
@@ -719,13 +719,13 @@ class admin_cache_functions
 			}
 			else
 			{
-				$this->messages[] = "Could not open directory $skin_dir for reading!.";
+				$this->messages[] = "无法打开文件夹 $skin_dir 进行读操作!";
 				return 0;
 			}
 		}
 		else
 		{
-			$this->messages[] = "$skin_dir is not a directory, please check the \$root_path variable in admin.php.";
+			$this->messages[] = "$skin_dir 是一个文件夹, 请检查 \$root_path 变量在 admin.php 文件中.";
 			return 0;
 		}
 		
@@ -735,7 +735,7 @@ class admin_cache_functions
 		
 		$this->_rebuild_skin_template_links( $id );
 		
-		$this->messages[] = "Completed database rebuild from PHP cache files.";
+		$this->messages[] = "完成数据库重建 PHP 缓存文件.";
 		return 1;
 	}
 	
@@ -943,17 +943,17 @@ class admin_cache_functions
 						@fclose($FH);
 						@chmod( CACHE_PATH."style_images/css_".$id['set_skin_set_id'].".css", 0777 );
 						
-						$this->messages[] = "Rebuilding css file for css_{$id['set_skin_set_id']}...";
+						$this->messages[] = "正在重建样式表文件 css_{$id['set_skin_set_id']}...";
 					}
 					else
 					{
-						$this->messages[] = "<br /><b>Cache file css_{$id['set_skin_set_id']} not updated. Check CHMOD permissions on ./style_images and ./style_images/css_{$id['set_skin_set_id']}.css</b>";
+						$this->messages[] = "<br /><b>缓存文件 css_{$id['set_skin_set_id']} 没有完成更新. 请检查 ./style_images 和 ./style_images/css_{$id['set_skin_set_id']}.css 的属性设置</b>";
 					}
 				}
 			}
 			else
 			{
-				$this->messages[] = "<b>Cache file(s) not updated. Check CHMOD permissions on ./style_images and ./style_images/css_{$id['set_skin_set_id']}.css</b>";
+				$this->messages[] = "<b>缓存文件没有完成更新. 请检查 ./style_images 和 ./style_images/css_{$id['set_skin_set_id']}.css 的属性设置</b>";
 			}
 		}
 		else
@@ -1088,7 +1088,7 @@ class admin_cache_functions
 			// Custom Macros
 			//-----------------------------------------
 			
-			$this->messages[] = "Rebuilding Macros for set {$skins[$aid]['set_name']}...";
+			$this->messages[] = "正在重建模板 {$skins[$aid]['set_name']} 设置标签...";
 		
 			$this->_recache_macros($aid, $skins[ $aid ]['set_skin_set_parent']);
 			
@@ -1096,7 +1096,7 @@ class admin_cache_functions
 			// Custom CSS
 			//-----------------------------------------
 			
-			$this->messages[] = "Rebuilding CSS for set {$skins[$aid]['set_name']}...";
+			$this->messages[] = "正在重建模板 {$skins[$aid]['set_name']} 的 CSS 文件...";
 		
 			$this->_write_css_to_cache( $aid, $skins[ $aid ]['set_skin_set_parent'] );
 			
@@ -1104,7 +1104,7 @@ class admin_cache_functions
 			// Custom HTML
 			//-----------------------------------------
 			
-			$this->messages[] = "Rebuilding HTML templates cache for set {$skins[$aid]['set_name']}...";
+			$this->messages[] = "正在重建模板 {$skins[$aid]['set_name']} 设置的 HTML 模板项 ...";
 			
 			$this->_recache_templates( $aid, $skins[ $aid ]['set_skin_set_parent'] );
 			
@@ -1112,7 +1112,7 @@ class admin_cache_functions
 			// Custom Wrappers
 			//-----------------------------------------
 			
-			$this->messages[] = "Rebuilding wrappers cache for set {$skins[$aid]['set_name']}...";
+			$this->messages[] = "正在重建模板 {$skins[$aid]['set_name']} 设置的页眉页脚...";
 			
 			$this->_recache_wrapper( $aid, $skins[ $aid ]['set_skin_set_parent'] );
 		}
@@ -1130,7 +1130,7 @@ class admin_cache_functions
 			}
 		}	
 		
-		$this->messages[] = "Rebuilding the skin set ID relationship cache...";
+		$this->messages[] = "正在重建模板 ID 相关缓存...";
 		
 		$this->_rebuild_skin_id_cache($skins);
 		

@@ -72,7 +72,7 @@ class admin_template_functions
 				    <table width='100%' cellpadding='0' cellspacing='0' border='0'>
 				    <tr>
 				     <td width='1%' align='left' valign='middle'>
-				         <input type='button' value='Float'  class='realdarkbutton' title='Open this template editor in a large window' onclick=\"pop_win('section={$data['section']}&act={$data['act']}&code=floateditor&id={$data['textareaname']}', 'Float', 800, 400)\">&nbsp;
+				         <input type='button' value='漂浮'  class='realdarkbutton' title='在大窗口打开模板编辑器' onclick=\"pop_win('section={$data['section']}&act={$data['act']}&code=floateditor&id={$data['textareaname']}', 'Float', 800, 400)\">&nbsp;
 				     </td>
 				     <td width='95%' align='left' valign='middle'>&nbsp;<b>{$data['title']}</b></td>
 				     <td width='5% align='right'  valign='middle' nowrap='nowrap' ><!--TOP.RIGHT--></td>
@@ -106,10 +106,10 @@ class admin_template_functions
 						 <table cellspacing='0' width='500' align='center' cellpadding='6' style='background:#EEE;border:2px outset #555;'>
 						 <tr>
 						  <td align='center' valign='top'>
-						   <b>Advanced: Template Bit Incoming Variables</b><br />Leave alone if unsure. Separate many with a comma.
+						   <b>高级模式: 模板项变量引入</b><br />如果您无法确定请留空. 多个请使用逗号分开.
 						   <br /><input class='textinput' name='funcdata_{$template['suid']}' value='{$template['func_data']}' type='text' size='50' />
 						   <br /><br />
-						   <input type='button' class='realdarkbutton' value='Save and Close' onclick=\"togglediv('dv_{$template['suid']}');\" />
+						   <input type='button' class='realdarkbutton' value='保存并关闭' onclick=\"togglediv('dv_{$template['suid']}');\" />
 						  </td>
 						 </tr>
 						 </table>
@@ -127,8 +127,8 @@ class admin_template_functions
 				     <td width='75%' align='left' valign='middle'>&nbsp;{$img}<b>{$template['easy_name']}</b></td>
 				     <td width='5% align='right' nowrap='nowrap' valign='middle'>
 				      <input type='hidden' id='edited-{$template['suid']}' name='edited-{$template['suid']}' value='0' />
-				      <input type='submit' name='submit-{$template['suid']}' value='Save Template Bit' id='sb-t{$template['suid']}' class='realdarkbutton' />
-				      <input type='button' value='Float'  class='realbutton' title='Open this template editor in a large window' onclick="pop_win('section=lookandfeel&act=templ&code=floateditor&id={$template['suid']}', 'Float{$template['suid']}', 800, 400)">
+				      <input type='submit' name='submit-{$template['suid']}' value='保存模板项' id='sb-t{$template['suid']}' class='realdarkbutton' />
+				      <input type='button' value='漂浮'  class='realbutton' title='在大窗口打开模板编辑器' onclick="pop_win('section=lookandfeel&act=templ&code=floateditor&id={$template['suid']}', 'Float{$template['suid']}', 800, 400)">
 					  <img id="tmpl-{$template['suid']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' />
 					  &nbsp;
 					</td>
@@ -147,12 +147,12 @@ EOF;
 					menu_build_menu(
 					"tmpl-{$template['suid']}",
 					new Array( 
-							   img_item   + " <a href='#' onclick=\"menu_action_close(); toggleview('dv_{$template['suid']}')\"; return false;'>Edit Data Variables...</a>",
-							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=cache_settings&suid={$template['suid']}\", \"CacheWindow\", 400, 600); return false;'>Edit Cache Settings...</a>",
-							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=macro_one&suid={$template['suid']}\", \"MacroWindow\", 400, 200); return false;'>Macro Look-up...</a>",
-							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=compare&suid={$template['suid']}\", \"CompareWindow\", 500,400); return false;'>Compare Versions...</a>",
-							   img_item   + " <a href='#' onclick='menu_action_close(); parent.template_bit_restore(\"{$template['suid']}\"); return false;'>Restore Unedited Version...</a>",
-							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=preview&suid={$template['suid']}&type=html\", \"OriginalPreview\", 400,400); return false;'>View Original Version...</a>"
+							   img_item   + " <a href='#' onclick=\"menu_action_close(); toggleview('dv_{$template['suid']}')\"; return false;'>编辑数据变量...</a>",
+							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=cache_settings&suid={$template['suid']}\", \"CacheWindow\", 400, 600); return false;'>编辑缓存设置...</a>",
+							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=macro_one&suid={$template['suid']}\", \"MacroWindow\", 400, 200); return false;'>宏变量预览...</a>",
+							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=compare&suid={$template['suid']}\", \"CompareWindow\", 500,400); return false;'>比较版本...</a>",
+							   img_item   + " <a href='#' onclick='menu_action_close(); parent.template_bit_restore(\"{$template['suid']}\"); return false;'>恢复未编辑版本...</a>",
+							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=preview&suid={$template['suid']}&type=html\", \"OriginalPreview\", 400,400); return false;'>查看原始版本...</a>"
 							 ) );
 				  </script>
 EOF;
