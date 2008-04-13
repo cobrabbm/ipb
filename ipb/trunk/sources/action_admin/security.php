@@ -706,7 +706,7 @@ EOF;
 		
 		$lang = $this->ipsclass->vars['cookie_stronghold'] == 0 ? 'disabled' : 'enabled';
 		
-		$this->ipsclass->main_msg = "Cookie stronghold {$lang}";
+		$this->ipsclass->main_msg = "Cookie 集中 {$lang}";
 		$this->security_overview();
 	}
 	
@@ -824,7 +824,7 @@ EOF;
 			if ( ! file_exists( ROOT_PATH . IPB_ACP_DIRECTORY . '/.htaccess' ) )
 			{
 				$content['ok'] .= $this->html->security_item_ok(    'IPB ACP .htaccess 保护',
-				 													'为使您的ACP更安全, 您可以为您的“admin”目录添加 HTTP 验证.<br />IPB cannot locate an ACP .htaccess file.'. $_extra,
+				 													'为使您的ACP更安全, 您可以为您的 "admin" 目录添加 HTTP 验证.<br />IPB 无法定位后台 .htaccess 文件.'. $_extra,
 																	'更多信息',
 																	$this->ipsclass->form_code_js.'&code=acphtaccess',
 																	'acphtaccess' );
@@ -842,7 +842,7 @@ EOF;
 			if ( ! file_exists( ROOT_PATH . 'style_emoticons/.htaccess' ) )
 			{
 				$content['ok'] .= $this->html->security_item_ok( 'IPB PHP/CGI .htaccess 保护',
-				 												 'IPB can write .htaccess files to non-PHP directories to prevent PHP and CGI files from executing.<br />IPB cannot locate any .htaccess files.',
+				 												 'IPB 将会写入 .htaccess 到没有 PHP 文件的文件夹中这样可以阻止非法的 PHP 和 CGI 文件运行.<br />IPB 无法定位 .htaccess 文件.',
 																 '运行工具',
 																 $this->ipsclass->form_code_js.'&code=htaccess',
 																 'htaccess' );
@@ -850,7 +850,7 @@ EOF;
 			else
 			{
 				$content['good'] .= $this->html->security_item_good( 'IPB .htaccess 保护',
-				 											 		 'IPB can write .htaccess files to non-PHP directories to prevent PHP and CGI files from executing.<br />IPB has located some .htaccess files.',
+				 											 		 'IPB 将会写入 .htaccess 到没有 PHP 文件的文件夹中这样可以阻止非法的 PHP 和 CGI 文件运行.<br />IPB 已经定位一些 .htaccess 文件.',
 																	 '运行工具',
 																	 $this->ipsclass->form_code_js.'&code=htaccess',
 																	 'htaccess' );
@@ -862,7 +862,7 @@ EOF;
 			
 			if ( is_writeable( ROOT_PATH . 'conf_global.php' ) )
 			{
-				$content['bad'] .= $this->html->security_item_bad( '使“conf_global”只读',
+				$content['bad'] .= $this->html->security_item_bad( '使 "conf_global" 只读',
 				 												   '论坛安装后, 您需要将“conf_global.php”文件的 CHMOD 为只读.<br />“conf_global.php”文件目前可写.',
 																   '运行工具',
 																   $this->ipsclass->form_code_js.'&code=confglobal',
@@ -895,7 +895,7 @@ EOF;
 		else
 		{
 			$content['bad'] .= $this->html->security_item_bad( '禁止动态图片',
-			 											       'IPB 本工具可以禁止在论坛张贴动态图, 动态图片可以运行隐藏的 JavaScript.<br />>动态图片<b>未禁止</b>.',
+			 											       'IPB 本工具可以禁止在论坛张贴动态图, 动态图片可以运行隐藏的 JavaScript.<br />动态图片<b>未禁止</b>.',
 														       '立即执行',
 														        $this->ipsclass->form_code_js.'&code=dynamic_images',
 														       'dynamic_images' );
@@ -907,18 +907,18 @@ EOF;
 		
 		if ( ! $this->ipsclass->vars['cookie_stronghold'] )
 		{
-			$content['bad'] .= $this->html->security_item_bad(  'Enable the Stronghold Cookie',
-			 													'IPB can store a stronghold cookie in the user\'s browser which is used when automatically logging in to prevent successful cookie theft.<br />Stronghold cookies are disabled.',
-																'Toggle Now',
+			$content['bad'] .= $this->html->security_item_bad(  '开启加密 Cookie 模式',
+			 													'IPB 将会在会员的浏览器中加密保存 Cookie 文件以防止可能的盗用.<br />加密 Cookies 模式关闭.',
+																'立即执行',
 																$this->ipsclass->form_code_js.'&code=stronghold',
 																'stronghold' );
 														
 		}
 		else
 		{
-			$content['good'] .= $this->html->security_item_good( 'Enable the Stronghold Cookie',
-			 													 'IPB can store a stronghold cookie in the user\'s browser which is used when automatically logging in to prevent successful cookie theft.<br />Stronghold cookies are ENABLED.',
-																 'Toggle Now',
+			$content['good'] .= $this->html->security_item_good( '开启加密 Cookie 模式',
+			 													 'IPB 将会在会员的浏览器中加密保存 Cookie 文件以防止可能的盗用.<br />加密 Cookies 模式开启.',
+																 '立即执行',
 																 $this->ipsclass->form_code_js.'&code=stronghold',
 																 'stronghold' );
 		}
@@ -929,9 +929,9 @@ EOF;
 		
 		if ( ! $this->ipsclass->vars['security_remove_acp_link'] )
 		{
-			$content['ok'] .= $this->html->security_item_ok( 'Remove ACP Link',
-			 												 'IPB can remove the "Admin CP" link from the board\'s header. This is useful when renaming the default \'admin\' directory.<br />The ACP link is visible when logged in as an admin.',
-															 'Toggle Now',
+			$content['ok'] .= $this->html->security_item_ok( '移除管理面板链接',
+			 												 'IPB 将会移除论坛头部 "管理面板" 的链接. 通常可以在您执行了更改 \'admin\' 名称后使用.<br />当前管理面板链接可见.',
+															 '立即执行',
 															 $this->ipsclass->form_code_js.'&code=acplink',
 															 'acplink' );
 														
@@ -939,8 +939,8 @@ EOF;
 		else
 		{
 			$content['good'] .= $this->html->security_item_good( 'Remove ACP Link',
-			 											 		'IPB can remove the "Admin CP" link from the board\'s header. This is useful when renaming the default \'admin\' directory.<br />The ACP link has been removed.',
-																 'Toggle Now',
+			 											 		'IPB 将会移除论坛头部 "管理面板" 的链接. 通常可以在您执行了更改 \'admin\' 名称后使用.<br />当前管理面板链接已移除.',
+																 '立即执行',
 																 $this->ipsclass->form_code_js.'&code=acplink',
 																 'acplink' );
 		}
@@ -951,18 +951,18 @@ EOF;
 		
 		if ( IPB_ACP_DIRECTORY == 'admin' )
 		{
-			$content['ok'] .= $this->html->security_item_ok( 'Rename the \'admin\' directory',
-			 												 'The default \'admin\' directory can be renamed to make it hard to find.<br />The admin directory has not been renamed.',
-															 'Learn More',
+			$content['ok'] .= $this->html->security_item_ok( '重命名 \'admin\' 文件夹',
+			 												 '默认 \'admin\' 可以在这里重命名以保护不被攻击.<br />当前后台文件夹没有重命名.',
+															 '了解更多',
 															 $this->ipsclass->form_code_js.'&code=acprename',
 															 'acprename' );
 														
 		}
 		else
 		{
-			$content['good'] .= $this->html->security_item_good( 'Rename the \'admin\' directory',
-			 													 'The default \'admin\' directory can be renamed to make it hard to find.<br />The admin directory HAS been renamed.',
-																 'Learn More',
+			$content['good'] .= $this->html->security_item_good( '重命名 \'admin\' 文件夹',
+			 													 '默认 \'admin\' 可以在这里重命名以保护不被攻击.<br />当前后台文件夹已经重命名.',
+																 '了解更多',
 																 $this->ipsclass->form_code_js.'&code=acprename',
 																 'acprename' );
 		}

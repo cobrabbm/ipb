@@ -578,7 +578,7 @@ class ad_skin_sets
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 		}
 		
 		if ( $this->ipsclass->input['id'] == 1 )
@@ -649,7 +649,7 @@ class ad_skin_sets
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 		}
 		
 		if ( $this->ipsclass->input['id'] == 1 )
@@ -728,7 +728,7 @@ class ad_skin_sets
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 		}
 		
 		if ( $this->ipsclass->input['id'] == 1 )
@@ -899,7 +899,7 @@ class ad_skin_sets
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 		}
 		
 		if ( $this->ipsclass->input['id'] == 1 )
@@ -941,7 +941,7 @@ class ad_skin_sets
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 		}
 		
 		if ( $this->ipsclass->input['id'] == 1 )
@@ -1009,7 +1009,7 @@ class ad_skin_sets
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 		}
 		
 		if ( $this->ipsclass->input['id'] == 1 )
@@ -1144,7 +1144,7 @@ class ad_skin_sets
 		{
 			if ($this->ipsclass->input['id'] == "")
 			{
-				$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+				$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 			}
 		}
 		
@@ -1274,12 +1274,12 @@ class ad_skin_sets
 		//-----------------------------------------
 		
 		$sets     = array();
-		$parents  = array( 0=> array( '-1', 'No parent' ) );
+		$parents  = array( 0=> array( '-1', '没有父模板' ) );
 		$row      = array();
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing skin set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个模板设置 ID, 请返回后重试");
 		}
 		
 		//-----------------------------------------
@@ -1365,7 +1365,7 @@ class ad_skin_sets
 		}
 		else
 		{
-			$cssextra = "<em>无法写入,  'style_images' 文件夹</em>";
+			$cssextra = "<em>无法写入, 'style_images' 文件夹</em>";
 		}
 		
 		
@@ -1590,7 +1590,7 @@ class ad_skin_sets
 			{
 				if ( count($forum_skins[ $r['set_skin_set_id'] ]) > 0 )
 				{
-					$extra  = "Used in forums:".implode( ",", $forum_skins[ $r['set_skin_set_id'] ] );
+					$extra  = "在如下论坛中使用:".implode( ",", $forum_skins[ $r['set_skin_set_id'] ] );
 					
 					$forums = "<img src='{$this->ipsclass->skin_acp_url}/images/skin_forums.gif' border='0' alt='' title='$extra' />";
 				}

@@ -72,7 +72,7 @@ class admin_template_functions
 				    <table width='100%' cellpadding='0' cellspacing='0' border='0'>
 				    <tr>
 				     <td width='1%' align='left' valign='middle'>
-				         <input type='button' value='漂浮'  class='realdarkbutton' title='在大窗口打开模板编辑器' onclick=\"pop_win('section={$data['section']}&act={$data['act']}&code=floateditor&id={$data['textareaname']}', 'Float', 800, 400)\">&nbsp;
+				         <input type='button' value='新窗口打开'  class='realdarkbutton' title='在大窗口打开模板编辑器' onclick=\"pop_win('section={$data['section']}&act={$data['act']}&code=floateditor&id={$data['textareaname']}', 'Float', 800, 400)\">&nbsp;
 				     </td>
 				     <td width='95%' align='left' valign='middle'>&nbsp;<b>{$data['title']}</b></td>
 				     <td width='5% align='right'  valign='middle' nowrap='nowrap' ><!--TOP.RIGHT--></td>
@@ -128,7 +128,7 @@ class admin_template_functions
 				     <td width='5% align='right' nowrap='nowrap' valign='middle'>
 				      <input type='hidden' id='edited-{$template['suid']}' name='edited-{$template['suid']}' value='0' />
 				      <input type='submit' name='submit-{$template['suid']}' value='保存模板项' id='sb-t{$template['suid']}' class='realdarkbutton' />
-				      <input type='button' value='漂浮'  class='realbutton' title='在大窗口打开模板编辑器' onclick="pop_win('section=lookandfeel&act=templ&code=floateditor&id={$template['suid']}', 'Float{$template['suid']}', 800, 400)">
+				      <input type='button' value='新窗口打开'  class='realbutton' title='在大窗口打开模板编辑器' onclick="pop_win('section=lookandfeel&act=templ&code=floateditor&id={$template['suid']}', 'Float{$template['suid']}', 800, 400)">
 					  <img id="tmpl-{$template['suid']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' />
 					  &nbsp;
 					</td>
@@ -181,11 +181,11 @@ EOF;
 		if ( $no_buttons == 0 )
 		{
 			$return .= "
-				      <input type='button' value='Search'  class='realbutton' title='Search the templates for a string' onClick='pop_win(\"act=rtempl&code=search&set_id={$this->ipsclass->input['id']}&type=html\", \"Search\", 900,600)'>
-					  <input type='button' value='Macro Look-up'  class='realbutton' title='View a macro definition' onClick='pop_win(\"act=rtempl&code=macro_one&suid={$this->ipsclass->input['id']}\", \"MacroWindow\", 400, 200)'>
-					  <input type='button' value='Compare'  class='realbutton' title='Compare the edited version to the original' onClick='pop_win(\"act=rtempl&code=compare&suid={$this->ipsclass->input['id']}&pop=1\", \"CompareWindow\", 500,400)'>
-					  <input type='button' value='Restore'  class='realbutton' title='Restore the original, unedited template bit' onClick='template_bit_restore(); return false;'>
-					  <input type='button' value='View Original' class='realbutton' title='View the HTML for the unedited template bit' onClick='pop_win(\"act=rtempl&code=preview&suid={$this->ipsclass->input['id']}&type=html\", \"OriginalPreview\", 400,400)'>
+				      <input type='button' value='搜索'  class='realbutton' title='Search the templates for a string' onClick='pop_win(\"act=rtempl&code=search&set_id={$this->ipsclass->input['id']}&type=html\", \"Search\", 900,600)'>
+					  <input type='button' value='宏变量预览'  class='realbutton' title='View a macro definition' onClick='pop_win(\"act=rtempl&code=macro_one&suid={$this->ipsclass->input['id']}\", \"MacroWindow\", 400, 200)'>
+					  <input type='button' value='比较'  class='realbutton' title='Compare the edited version to the original' onClick='pop_win(\"act=rtempl&code=compare&suid={$this->ipsclass->input['id']}&pop=1\", \"CompareWindow\", 500,400)'>
+					  <input type='button' value='恢复'  class='realbutton' title='Restore the original, unedited template bit' onClick='template_bit_restore(); return false;'>
+					  <input type='button' value='查看原始版本' class='realbutton' title='View the HTML for the unedited template bit' onClick='pop_win(\"act=rtempl&code=preview&suid={$this->ipsclass->input['id']}&type=html\", \"OriginalPreview\", 400,400)'>
 				   ";
 		}
 		
@@ -213,7 +213,7 @@ EOF;
 							
 							if ( template_bit )
 							{
-								if ( confirm(\"Are you sure you want to restore the template?\\nALL UNSAVED CHANGES WILL BE LOST!\") )
+								if ( confirm(\"您确信您要恢复该模板更改?\\n请注意您的所有更改都将丢失!\") )
 								{
 									edit_box_obj.value     = template_bit;
 								}
@@ -224,7 +224,7 @@ EOF;
 									 
 		$return .= $this->html_build_editor_bottom();
 		
-		$return .= "<br /><div class='tableborder'><div class='catrow2' align='center' style='padding:4px;'><input type='button' onclick='saveandclose()' value='Copy back to original textarea and close window' class='realdarkbutton' /></div></div></form>";
+		$return .= "<br /><div class='tableborder'><div class='catrow2' align='center' style='padding:4px;'><input type='button' onclick='saveandclose()' value='拷贝到原文本框并关闭窗口' class='realdarkbutton' /></div></div></form>";
 		
 		$this->ipsclass->html = $return;
 		
@@ -239,10 +239,10 @@ EOF;
 	function build_editor_pref_menus()
 	{
 		$this->menu_fontchange =  "<select name='fontchange' class='smalldropdown'>".
-								   "<option value='monaco'>Monaco</option>".
-								   "<option value='courier'>Courier</option>".
-								   "<option value='verdana'>Verdana</option>".
-								   "<option value='arial'>Arial</option>".
+								   "<option value='monaco'>宏变量</option>".
+								   "<option value='courier'>快递</option>".
+								   "<option value='verdana'>字体</option>".
+								   "<option value='arial'>字型</option>".
 								   "</select>";
 						   
 		$this->menu_sizechange =  "<select name='sizechange' class='smalldropdown'>".
@@ -254,20 +254,20 @@ EOF;
 								   "</select>";
 								   
 		$this->menu_backchange =  "<select name='backchange' class='smalldropdown'>".
-								   "<option value='black'>Black</option>".
-								   "<option value='white'>White</option>".
-								   "<option value='#EEEEEE'>Light Gray</option>".
-								   "<option value='gray'>Gray</option>".
+								   "<option value='black'>黑色</option>".
+								   "<option value='white'>白色</option>".
+								   "<option value='#EEEEEE'>浅灰</option>".
+								   "<option value='gray'>灰色</option>".
 								   "</select>";
 								   
 		$this->menu_fontcolor  =  "<select name='fontcolor' class='smalldropdown'>".
-								   "<option value='black'>Black</option>".
-								   "<option value='white'>White</option>".
-								   "<option value='blue'>Blue</option>".
-								   "<option value='lightgreen'>Light Green</option>".
-								   "<option value='green'>Green</option>".
-								   "<option value='darkgreen'>Dark Green</option>".
-								   "<option value='gray'>Gray</option>".
+								   "<option value='black'>黑色</option>".
+								   "<option value='white'>白色</option>".
+								   "<option value='blue'>蓝色</option>".
+								   "<option value='lightgreen'>浅绿</option>".
+								   "<option value='green'>绿色</option>".
+								   "<option value='darkgreen'>深绿</option>".
+								   "<option value='gray'>灰色</option>".
 								   "</select>";
 								   
 		$this->menu_widthchange = "<select name='widthchange' class='smalldropdown'>".
@@ -345,7 +345,7 @@ EOF;
 		$this->menu_highchange   = preg_replace( "/(option value='".preg_quote($height)."')/" , "\\1 selected='selected'", $this->menu_highchange  );
 		
 		
-		$this->editor_prefs_dropdown = "<div class='fauxbutton' style='padding:4px;color:black;white-space:nowrap;font-weight:bold;float:left' id='tmpl-editor-prefs'>Editor Preferences <img src='{$this->ipsclass->skin_acp_url}/images/icon_open.gif' border='0' style='vertical-align:top' /></div>";
+		$this->editor_prefs_dropdown = "<div class='fauxbutton' style='padding:4px;color:black;white-space:nowrap;font-weight:bold;float:left' id='tmpl-editor-prefs'>编辑器参数选项 <img src='{$this->ipsclass->skin_acp_url}/images/icon_open.gif' border='0' style='vertical-align:top' /></div>";
 		
 	}
 	
@@ -380,32 +380,32 @@ EOF;
 				  'tmpl-editor-prefs',
 				  new Array( "<table cellpadding='4' cellspacing='0' width='200' border='0'>"+
 							  "<tr>"+
-							   "<td nowrap='nowrap'>Font Family</td>"+
+							   "<td nowrap='nowrap'>字体字型</td>"+
 							   "<td width='100%'>{$this->menu_fontchange}</td>"+
 							  "</tr>"+
 							  "<tr>"+
-							   "<td nowrap='nowrap'>Font Size</td>"+
+							   "<td nowrap='nowrap'>文字大小</td>"+
 							   "<td width='100%'>{$this->menu_sizechange}</td>"+
 							  "</tr>"+
 							  "<tr>"+
-							   "<td nowrap='nowrap'>Font Color</td>"+
+							   "<td nowrap='nowrap'>文字颜色</td>"+
 							   "<td width='100%'>{$this->menu_fontcolor}</td>"+
 							  "</tr>"+
 							  "<tr>"+
-							   "<td nowrap='nowrap'>Background</td>"+
+							   "<td nowrap='nowrap'>背景颜色</td>"+
 							   "<td width='100%'>{$this->menu_backchange}</td>"+
 							  "</tr>"+
 							  "<tr>"+
-							   "<td nowrap='nowrap'>Area Width</td>"+
+							   "<td nowrap='nowrap'>文本框宽度</td>"+
 							   "<td width='100%'>{$this->menu_widthchange}</td>"+
 							  "</tr>"+
 							  "<tr>"+
-							   "<td nowrap='nowrap'>Area Height</td>"+
+							   "<td nowrap='nowrap'>文本框高度</td>"+
 							   "<td width='100%'>{$this->menu_highchange}</td>"+
 							  "</tr>"+
 							  "<tr>"+
 							   "<td colspan='2' align='center'>"+
-							   "<input type='button' value='Change' class='realbutton' onclick=\"menu_action_close(); changefont();\" />"+
+							   "<input type='button' value='更改' class='realbutton' onclick=\"menu_action_close(); changefont();\" />"+
 							   "</td>"+
 							  "</tr>"+
 							  "</table>"

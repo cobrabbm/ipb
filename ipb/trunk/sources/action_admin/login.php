@@ -231,7 +231,7 @@ class ad_login
 			// Redirect...
 			//-----------------------------------------
 			
-			$this->ipsclass->admin->redirect( $this->ipsclass->vars['board_url'].'/'.IPB_ACP_DIRECTORY."/index.".$this->ipsclass->vars['php_ext']."?adsess=".$this->ipsclass->input['adsess']."&".$extra_query, 'Log In Successful' );
+			$this->ipsclass->admin->redirect( $this->ipsclass->vars['board_url'].'/'.IPB_ACP_DIRECTORY."/index.".$this->ipsclass->vars['php_ext']."?adsess=".$this->ipsclass->input['adsess']."&".$extra_query, '登录成功' );
 	
 			exit();
 		}

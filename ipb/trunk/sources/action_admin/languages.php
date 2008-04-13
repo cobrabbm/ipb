@@ -54,11 +54,11 @@ class ad_languages {
 	{
 		if ( TRIAL_VERSION )
 		{
-			print "This feature is disabled in the trial version.";
+			print "该功能在试用版本中不提供.";
 			exit();
 		}
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Language Sets' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理语言设置' );
 		
 		//-----------------------------------------
 
@@ -249,13 +249,13 @@ class ad_languages {
 			
 			if ( ! $this->ipsclass->input['lang_location'] )
 			{
-				$this->ipsclass->main_msg = "No upload file was found and no filename was specified.";
+				$this->ipsclass->main_msg = "未指定文件名或未上传语言文件.";
 				$this->import();
 			}
 			
 			if ( ! file_exists( ROOT_PATH . $this->ipsclass->input['lang_location'] ) )
 			{
-				$this->ipsclass->main_msg = "Could not find the file to open at: " . ROOT_PATH . $this->ipsclass->input['lang_location'];
+				$this->ipsclass->main_msg = "无法找到文件: " . ROOT_PATH . $this->ipsclass->input['lang_location'];
 				$this->import();
 			}
 			
@@ -293,7 +293,7 @@ class ad_languages {
 			
 			if( !$content )
 			{
-				$this->ipsclass->main_msg = "There was an error processing the file.";
+				$this->ipsclass->main_msg = "执行文件过程中出现错误.";
 				$this->import();
 			}				
 		}
@@ -372,7 +372,7 @@ class ad_languages {
 		
 		if ( ! @mkdir( CACHE_PATH.'cache/lang_cache/'.$safename, 0777 ) )
 		{
-			$this->ipsclass->main_msg = "Cannot create the directory '$safename' in the './cache/lang_cache' directory - please check directory permissions on 'lang_cache' and try again.";
+			$this->ipsclass->main_msg = "无法创建文件夹 '$safename' 在 './cache/lang_cache' 路径中 - 请检查 'lang_cache' 文件夹的权限设置后重试.";
 			$this->import();
 		}
 		else
@@ -505,7 +505,7 @@ class ad_languages {
 										  				         $this->ipsclass->adskin->form_input( 'lang_location', 'ipb_language.xml.gz'  )
 								                        )      );
 								                        
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b输入新语言包名称</b><div style='color:gray'>例如: English, US, 繁体中文...</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b输入新语言包名称</b><div style='color:gray'>例如: 英文, US, 繁体中文...</div>" ,
 										  				         $this->ipsclass->adskin->form_input( 'lang_name', ''  )
 								                        )      );
 	
@@ -531,7 +531,7 @@ class ad_languages {
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing language set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个语言文件设置 ID, 请返回后重试");
 		}
 		
 		//-----------------------------------------
@@ -543,7 +543,7 @@ class ad_languages {
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could not query the information from the database");
+			$this->ipsclass->admin->error("无法从数据库中检索信息");
 		}
 		
 		//-----------------------------------------
@@ -644,7 +644,7 @@ class ad_languages {
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing language set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个语言文件设置 ID, 请返回后重试");
 		}
 		
 		//-----------------------------------------
@@ -654,7 +654,7 @@ class ad_languages {
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could not query the information from the database");
+			$this->ipsclass->admin->error("无法从数据库中检索信息");
 		}
 		
 		//-----------------------------------------
@@ -757,7 +757,7 @@ class ad_languages {
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing language set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个语言文件设置 ID, 请返回后重试");
 		}
 		
 		//-----------------------------------------
@@ -767,7 +767,7 @@ class ad_languages {
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could not query the information from the database");
+			$this->ipsclass->admin->error("无法从数据库中检索信息");
 		}
 		
 		$final['lname'] = stripslashes($_POST['lname']);
@@ -795,7 +795,7 @@ class ad_languages {
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing language set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个语言文件设置 ID, 请返回后重试");
 		}
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'languages', 'where' => "lid='".$this->ipsclass->input['id']."'" ) );
@@ -938,7 +938,7 @@ class ad_languages {
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing language set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个语言文件设置 ID, 请返回后重试");
 		}
 		
 		if ($this->ipsclass->input['lang_file'] == "")
@@ -1039,7 +1039,7 @@ class ad_languages {
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must specify an existing language set ID, go back and try again");
+			$this->ipsclass->admin->error("您必须指定一个语言文件设置 ID, 请返回后重试");
 		}
 		
 		//-----------------------------------------
@@ -1049,7 +1049,7 @@ class ad_languages {
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could not query the information from the database");
+			$this->ipsclass->admin->error("无法从数据库中检索信息");
 		}
 		
 		//-----------------------------------------
