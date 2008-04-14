@@ -138,7 +138,7 @@ class ad_profilefields {
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("Could not resolve the group ID, please try again");
+			$this->ipsclass->admin->error("无法处理用户组 ID, 请重试");
 		}
 		
 		$this->ipsclass->admin->page_title = "删除会员附加信息";
@@ -399,7 +399,7 @@ class ad_profilefields {
 												                 $this->ipsclass->adskin->form_input("pf_title", $fields['pf_title'] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Description</b><div class='graytext'>最大字符: 250<br />可以用来提示会员这是必填信息或者私有信息</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>信息描述</b><div class='graytext'>最大字符: 250<br />可以用来提示会员这是必填信息或者私有信息</div>" ,
 												                 $this->ipsclass->adskin->form_input("pf_desc", $fields['pf_desc'] )
 									                    )      );
 		
