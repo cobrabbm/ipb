@@ -435,11 +435,11 @@ $IPBHTML .= <<<EOF
    <form name='selectform' id='selectform' action='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=mod' method='post'>
    <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
    <select name='filter' class='dropdown'>
-    <option value='all'>Show All</option>
+    <option value='all'>显示所有</option>
     <option value='reg_user_validate'>显示已经注册 (会员确认)</option>
     <option value='reg_admin_validate'>显示正在注册 (管理员确认)</option>
     <option value='email_chg'>邮件更改</option>
-    <option value='coppa'>COPPA 请求</option>
+    <option value='coppa'>未成年注册请求</option>
    </select>
    <input type='submit' class='realbutton' value=' 提交 &gt;' />
    </form>
@@ -462,7 +462,7 @@ $IPBHTML .= <<<EOF
  <tr>
   <td class='tablesubheader' colspan='2' align='left'>{$links}</td>
   <td class='tablesubheader' colspan='4' align='right'>
-   <select name='type' class='dropdown'><option value='approve'>Approve these Accounts</option><option value='delete'>删除这些帐号</option><option value='resend'>重新发送确认邮件</option></select>
+   <select name='type' class='dropdown'><option value='approve'>批准这些帐号</option><option value='delete'>删除这些帐号</option><option value='resend'>重新发送确认邮件</option></select>
    <input type='submit' class='realbutton' value=' 执行 &gt;&gt;' />
   </td>
  </tr>

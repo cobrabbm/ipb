@@ -2757,9 +2757,9 @@ class ad_member
 												 							 					  )
 									   							    )      );
 									   							    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>COPPA 会员?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>未成年会员?</b>" ,
 												  							$this->ipsclass->adskin->form_yes_no( "coppa", isset($_POST['coppa']) ? $_POST['coppa'] : '' ) .
-												  							'&nbsp&nbsp;&nbsp;' . $this->ipsclass->adskin->form_checkbox( "sendemail", isset($_POST['sendemail']) ? $_POST['sendemail'] : 1 ) . "Send Confirmation Email?"
+												  							'&nbsp&nbsp;&nbsp;' . $this->ipsclass->adskin->form_checkbox( "sendemail", isset($_POST['sendemail']) ? $_POST['sendemail'] : 1 ) . "发送确认邮件?"
 									     							)      );
 									     
 		if ($custom_out != "")

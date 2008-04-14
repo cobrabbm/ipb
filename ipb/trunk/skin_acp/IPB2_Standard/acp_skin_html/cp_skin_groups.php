@@ -62,7 +62,7 @@ EOF;
 if ( $r['g_id'] != $this->ipsclass->vars['auth_group'] and $r['g_id'] != $this->ipsclass->vars['guest_group'] )
 {
 $IPBHTML .= <<<EOF
-	<a href='{$this->ipsclass->vars['board_url']}/index.{$this->ipsclass->vars['php_ext']}?act=Members&max_results=30&showall=1&filter={$r['g_id']}&sort_order=asc&sort_key=members_display_name&st=0' target='_blank' title='List Users'>{$r['_title']}</a>
+	<a href='{$this->ipsclass->vars['board_url']}/index.{$this->ipsclass->vars['php_ext']}?act=Members&max_results=30&showall=1&filter={$r['g_id']}&sort_order=asc&sort_key=members_display_name&st=0' target='_blank' title='列出会员'>{$r['_title']}</a>
 EOF;
 }
 else
@@ -86,13 +86,13 @@ EOF;
 if ( ! in_array( $r['g_id'], array( $this->ipsclass->vars['auth_group'], $this->ipsclass->vars['guest_group'], $this->ipsclass->vars['member_group'], $this->ipsclass->vars['admin_group'] ) )  )
 {
 $IPBHTML .= <<<EOF
-              img_delete   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=delete&amp;_admin_auth_key={$this->ipsclass->_admin_auth_key}&amp;id={$r['g_id']}'>Delete</a>"
+              img_delete   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=delete&amp;_admin_auth_key={$this->ipsclass->_admin_auth_key}&amp;id={$r['g_id']}'>删除用户组</a>"
 EOF;
 }
 else
 {
 $IPBHTML .= <<<EOF
-              img_delete   + " <em>Cannot Delete</em>"
+              img_delete   + " <em>无法删除</em>"
 EOF;
 }
 $IPBHTML .= <<<EOF

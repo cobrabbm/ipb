@@ -382,7 +382,7 @@ class ad_member_tools
 		
 			if ( ! $member = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->show_index("找不到叫“$id”的会员");
+				$this->show_index("找不到 \"$id\" 号会员");
 			}
 		}
 		else
@@ -605,7 +605,7 @@ class ad_member_tools
 		
 		if ( count($ids) < 1 )
 		{	
-			$this->ipsclass->admin->error("You did not select any members to approve, delete, or resend the validation email to");
+			$this->ipsclass->admin->error("您没有选择任何会员来批准、删除或者发送激活邮件");
 		}
 		
 		//-----------------------------------------
@@ -653,7 +653,7 @@ class ad_member_tools
 				$this->ipsclass->DB->do_update( 'members', array( 'mgroup' => $row['real_group'] ), "id=".$row['id'] );
 				
 				$email->build_message( "" );
-				$email->subject = "Account: {$row['name']}, validated at ".$this->ipsclass->vars['board_name'];
+				$email->subject = "帐号: {$row['name']}, 激活在 ".$this->ipsclass->vars['board_name'];
 				$email->to      = $row['email'];
 				
 				$email->send_mail();
@@ -667,7 +667,7 @@ class ad_member_tools
 			
 			$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'validating', 'where' => "member_id IN(".implode( ",",$ids ).")" ) );
 			
-			$this->ipsclass->admin->save_log( count($ids)." Member Registrations Approved: ".implode( ", ", $approved ) );
+			$this->ipsclass->admin->save_log( count($ids)." 会员注册批准: ".implode( ", ", $approved ) );
 			
 			//-----------------------------------------
 			// Stats to Update?
@@ -700,7 +700,7 @@ class ad_member_tools
 				$this->ipsclass->update_cache( array( 'name' => 'stats', 'array' => 1, 'deletefirst' => 1 ) );
 			}			
 			
-			$this->ipsclass->main_msg = count($ids)." Member Registrations Approved";
+			$this->ipsclass->main_msg = count($ids)." 会员注册批准";
 			$this->member_view_moderation_queue();
 		}
 		
@@ -753,7 +753,7 @@ class ad_member_tools
 													  )
 												);
 												
-					$email->subject = "Password recovery information from ".$this->ipsclass->vars['board_name'];
+					$email->subject = "密码重置信息来自 ".$this->ipsclass->vars['board_name'];
 					$email->to      = $row['email'];
 					
 					$email->send_mail();
@@ -778,7 +778,7 @@ class ad_member_tools
 													  )
 												);
 												
-					$email->subject = "Registration at ".$this->ipsclass->vars['board_name'];
+					$email->subject = "注册来自 ".$this->ipsclass->vars['board_name'];
 					$email->to      = $row['email'];
 					
 					$email->send_mail();
@@ -796,7 +796,7 @@ class ad_member_tools
 													  )
 												);
 												
-					$email->subject = "Email change request at ".$this->ipsclass->vars['board_name'];
+					$email->subject = "邮件更改申请来自 ".$this->ipsclass->vars['board_name'];
 					$email->to      = $row['email'];
 					
 					$email->send_mail();
@@ -808,12 +808,12 @@ class ad_member_tools
 			if( count($resent) )
 			{
 				$this->ipsclass->admin->save_log( count($resent)." Validation Emails Resent: ".implode( ", ", $resent) );
-				$main_msgs[] = count($resent)." Validation Emails Resent: ".implode( ", ", $resent);
+				$main_msgs[] = count($resent)." 激活右键重新发送: ".implode( ", ", $resent);
 			}
 			
 			if( count($cant) )
 			{
-				$main_msgs[] = "Cannot resend validation emails to the following members who are awaiting admin validation: ".implode( ", ", $cant);
+				$main_msgs[] = "无法给下面的会员发送激活邮件: ".implode( ", ", $cant);
 			}
 			
 			$this->ipsclass->main_msg = count($main_msgs) ? implode( "<br />", $main_msgs ) : '';
@@ -866,9 +866,9 @@ class ad_member_tools
 				$this->modules->on_delete($ids);
 			}
 			
-			$this->ipsclass->admin->save_log( count($ids)." Member Registrations Denied: ".implode( ", ", $denied) );
+			$this->ipsclass->admin->save_log( count($ids)." 会员注册禁止: ".implode( ", ", $denied) );
 			
-			$this->ipsclass->main_msg = count($ids)." Members Removed";
+			$this->ipsclass->main_msg = count($ids)." 个会员已删除";
 			$this->member_view_moderation_queue();
 		}
 	}
@@ -882,7 +882,7 @@ class ad_member_tools
 		
 		if( !isset($this->ipsclass->input['mid']) )
 		{
-			$this->ipsclass->admin->error("You did not select any members to unapprove");
+			$this->ipsclass->admin->error("您没有选择任何会员来禁止批准");
 		}
 		
 		$id = intval($this->ipsclass->input['mid']);
@@ -891,12 +891,12 @@ class ad_member_tools
 		
 		if( !isset($member['vid']) OR !$member['vid'] )
 		{
-			$this->ipsclass->admin->error("We did not find any validations pending for this member");
+			$this->ipsclass->admin->error("我们没有发现该会员的任何激活信息");
 		}
 		
 		if( !$member['email_chg'] )
 		{
-			$this->ipsclass->admin->error("You can only unapprove email change requests");
+			$this->ipsclass->admin->error("您只能拒绝邮件地址更改申请");
 		}
 		
 		$this->ipsclass->DB->do_update( "members", array( 'email' => $member['prev_email'], 'mgroup' => $member['real_group'] ), "id=".$id );
@@ -912,10 +912,10 @@ class ad_member_tools
 			$this->modules->on_group_change($member['member_id'], $member['real_group']);
 		}
 
-		$this->ipsclass->admin->save_log( "Member {$id} email change request un-approved");
+		$this->ipsclass->admin->save_log( "会员 {$id} 邮件更改申请被拒绝");
 			
 
-		$this->ipsclass->main_msg = "Member {$id} email change request un-approved";
+		$this->ipsclass->main_msg = "会员 {$id} 邮件更改申请被拒绝";
 		$this->member_view_moderation_queue();
 	}
 	
@@ -936,9 +936,9 @@ class ad_member_tools
 		// SET PAGE TITLE
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Manage Locked User Account Queue";
-		$this->ipsclass->admin->page_detail = "This section allows you to unlock locked user accounts.  A user account is locked when they submit the wrong password to login based on your configurations in the ACP Security Settings.";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Locked Accounts' );
+		$this->ipsclass->admin->page_title  = "管理锁定会员账号列表";
+		$this->ipsclass->admin->page_detail = "在这一部分您可以管理锁定会员账号列表. 一个锁定会员的造成是由于他们输入了错误的后台登入密码.";
+		$this->ipsclass->admin->nav[] 		= array( '', '锁定帐号' );
 		
 		//-----------------------------------------
 		// Get count
@@ -946,7 +946,7 @@ class ad_member_tools
 		
 		if( $this->ipsclass->vars['ipb_bruteforce_attempts'] == 0 )
 		{
-			$content = $this->html->member_locked_no_rows( "You have not enabled account locking brute force protection" );
+			$content = $this->html->member_locked_no_rows( "您当前禁止了强制帐号锁定功能" );
 		}
 		else
 		{
@@ -1029,7 +1029,7 @@ class ad_member_tools
 					
 					if ( !isset($r['name']) OR $r['name'] == "" )
 					{
-						$r['name'] = "<em>Deleted Member</em>";
+						$r['name'] = "<em>删除会员</em>";
 					}
 					
 					//-----------------------------------------
@@ -1041,7 +1041,7 @@ class ad_member_tools
 			}
 			else
 			{
-				$content = $this->html->member_locked_no_rows( "No locked accounts were found" );
+				$content = $this->html->member_locked_no_rows( "没有发现锁定帐号" );
 			}
 		}
 		
@@ -1085,7 +1085,7 @@ class ad_member_tools
 		
 		if ( count($ids) < 1 )
 		{	
-			$this->ipsclass->admin->error("You did not select any members to unlock or ban");
+			$this->ipsclass->admin->error("您没有选择任何会员来拒绝或者封禁");
 		}
 		
 		//-----------------------------------------
@@ -1096,9 +1096,9 @@ class ad_member_tools
 		{
 			$this->ipsclass->DB->do_update( "members", array( 'failed_logins' => '', 'failed_login_count' => 0 ), "id IN(".implode( ',', $ids ).')' );
 			
-			$this->ipsclass->admin->save_log( count($ids)." Members Unlocked");
+			$this->ipsclass->admin->save_log( count($ids)." 位会员已经拒绝");
 			
-			$this->ipsclass->main_msg = count($ids)." Members Unlocked";
+			$this->ipsclass->main_msg = count($ids)." 位会员已经拒绝";
 			$this->member_view_locked_queue();
 		}
 		
@@ -1119,7 +1119,7 @@ class ad_member_tools
 				{
 					if( $mem['mgroup'] == $this->ipsclass->vars['admin_group'] )
 					{
-						$this->ipsclass->admin->error( "You cannot ban a root administrator" );
+						$this->ipsclass->admin->error( "您无法奉进系统管理员" );
 					}
 				}
 			}
@@ -1151,14 +1151,14 @@ class ad_member_tools
 			
 			if ( ! $banned_gid )
 			{
-				$this->ipsclass->admin->error( "You do not have any groups configured who cannot view the board - we could not find a 'Banned' group to place the members in" );
+				$this->ipsclass->admin->error( "您没有任何设定用户组禁止查看论坛 - 我们无法找到一个 '封禁' 用户组来放置会员" );
 			}
 				
 			$this->ipsclass->DB->do_update( "members", array( 'failed_logins' => '', 'failed_login_count' => 0, 'mgroup' => $banned_gid  ), "id IN(".implode( ',', $ids ).')' );
 			
-			$this->ipsclass->admin->save_log( count($ids)." Member(s) Banned");
+			$this->ipsclass->admin->save_log( count($ids)." 位会员已经封禁");
 			
-			$this->ipsclass->main_msg = count($ids)." Member(s) Banned";
+			$this->ipsclass->main_msg = count($ids)." 位会员已经封禁";
 			$this->member_view_locked_queue();
 		}
 	}	
@@ -1185,9 +1185,9 @@ class ad_member_tools
 		// SET PAGE TITLE
 		//-----------------------------------------
 		
-		$this->ipsclass->admin->page_title  = "Manage User Registration/Email Change Queues";
-		$this->ipsclass->admin->page_detail = "This section allows you to approve or deny registrations where you have requested that an administrator previews new accounts before allowing full membership. It will also allow you to complete or deny new email address changes, and resend validation emails.<br><br>This form will also allow you to complete the registrations for those who did not receive an email.";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Validating Members' );
+		$this->ipsclass->admin->page_title  = "管理会员注册/邮件更改队列";
+		$this->ipsclass->admin->page_detail = "该部分允许您批准或拒绝注册, 这一部分取决于您在后台的设置要求必须批准才能活得权限. 这一部分要求您必须完成或拒绝邮件更改申请, 并且必须重新发送激活邮件.<br><br>这一表单允许您完成没有收到激活邮件的用户注册过程.";
+		$this->ipsclass->admin->nav[] 		= array( '', '确认用户' );
 		
 		//-----------------------------------------
 		// Add extra query
@@ -1306,18 +1306,18 @@ class ad_member_tools
 			{
 				if ($r['coppa_user'] == 1)
 				{
-					$r['_coppa'] = ' ( COPPA Request )';
+					$r['_coppa'] = ' ( 未成年人注册请求 )';
 				}
 				else
 				{
 					$r['_coppa'] = "";
 				}
 				
-				$r['_where'] = ( $r['lost_pass'] ? 'Lost Password' : ( $r['new_reg'] ? "Registering <strong>(User validation)</strong>" : ( $r['email_chg'] ? "Email Change" : 'N/A' ) ) );
+				$r['_where'] = ( $r['lost_pass'] ? '丢失密码' : ( $r['new_reg'] ? "注册 <strong>(会员确认)</strong>" : ( $r['email_chg'] ? "邮件更改" : 'N/A' ) ) );
 				
 				if( isset($r['email_chg']) AND $r['email_chg'] )
 				{
-					$r['_where'] .= " (<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=unappemail&mid={$r['member_id']}'>Unapprove?</a>)";
+					$r['_where'] .= " (<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=unappemail&mid={$r['member_id']}'>拒绝会员?</a>)";
 				}
 				
 				//-----------------------------------------
@@ -1326,7 +1326,7 @@ class ad_member_tools
 				
 				if ( $r['new_reg'] AND ( $r['user_verified'] == 1 OR $this->ipsclass->vars['reg_auth_type'] == 'admin' ) )
 				{
-					$r['_where'] = "Registering: <strong>(Admin Validation)</strong>";
+					$r['_where'] = "注册: <strong>(管理员激活)</strong>";
 				}
 				
 				$r['_hours']  = floor( ( time() - $r['entry_date'] ) / 3600 );
@@ -1337,7 +1337,7 @@ class ad_member_tools
 				
 				if ( !isset($r['name']) OR $r['name'] == "" )
 				{
-					$r['name'] = "<em>Deleted Member</em>";
+					$r['name'] = "<em>删除会员</em>";
 				}
 				
 				//-----------------------------------------
@@ -1349,7 +1349,7 @@ class ad_member_tools
 		}
 		else
 		{
-			$content = $this->html->member_locked_no_rows( "No members awaiting validation" );
+			$content = $this->html->member_locked_no_rows( "没有会员等待激活" );
 		}
 		
 		$this->ipsclass->html .= $this->html->member_validating_wrapper($content, $st, $new_ord, $links);
