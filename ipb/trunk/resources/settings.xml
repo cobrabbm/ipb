@@ -1443,7 +1443,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 			<conf_type>input</conf_type>
 			<conf_key>board_name</conf_key>
 			<conf_value></conf_value>
-			<conf_default>IPBChina</conf_default>
+			<conf_default>易维论坛</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>

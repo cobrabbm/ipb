@@ -56,7 +56,7 @@ class ad_help
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Manage Help Files' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理帮助文件' );
 		
 		//-----------------------------------------
 
@@ -186,7 +186,7 @@ class ad_help
 			}
 		}
 		
-		$this->ipsclass->main_msg = "{$new} new ACP help files and {$updated} updated ACP help files imported";
+		$this->ipsclass->main_msg = "{$new} 新的后台帮助文件 {$updated} 已经更新后台文件导入";
 		
 		$this->list_files();
 	}
@@ -268,7 +268,7 @@ class ad_help
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must pass a valid emoticon id, silly!");
+			$this->ipsclass->admin->error("您必须使用一个可用的表情图标 ID!");
 		}
 		
     	//-----------------------------------------
@@ -394,7 +394,7 @@ class ad_help
 		
 			if ($this->ipsclass->input['id'] == "")
 			{
-				$this->ipsclass->admin->error("You must pass a valid help file id, silly!");
+				$this->ipsclass->admin->error("您必须使用一个可用的帮助文件 ID!");
 			}
 		
 			//-----------------------------------------
@@ -424,13 +424,13 @@ class ad_help
 						
 			//-----------------------------------------
 			
-			$button = 'Edit this Help File';
+			$button = '编辑该帮助文件';
 			$code   = 'doedit';
 		}
 		else
 		{
 			$r = array();
-			$button = 'Add this Help File';
+			$button = '添加该帮助文件';
 			$code   = 'donew';
 		}
 		
@@ -479,7 +479,7 @@ class ad_help
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must pass a valid help file id, silly!");
+			$this->ipsclass->admin->error("您必须使用一个可用的帮助文件 ID");
 		}
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'faq', 'where' => "id=".intval($this->ipsclass->input['id']) ) );
@@ -570,7 +570,7 @@ class ad_help
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Current Help Files" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "当前帮助文件" );
 		
 		$this->ipsclass->DB->simple_construct( array( 'select' => '*', 'from' => 'faq', 'order' => "position" ) );
 		$this->ipsclass->DB->simple_exec();
@@ -591,23 +591,23 @@ class ad_help
 			while ( $r = $this->ipsclass->DB->fetch_row() )
 			{
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>".stripslashes($r['title'])."</b><br>".stripslashes($r['description']),
-														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=edit&id={$r['id']}'>Edit</a></center>",
-														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=remove&id={$r['id']}'>Remove</a></center>",
+														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=edit&id={$r['id']}'>编辑</a></center>",
+														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=remove&id={$r['id']}'>删除</a></center>",
 														  "<center>".$this->ipsclass->adskin->form_dropdown( 'order_'.$r['id'], $order_values, $r['order'] > 0 ? $r['order'] : $last )."</center>",
 												 )      );
 				$last++;				
 			}
 		}
 		
-		$form_button = "<input value='Reorder' class='realbutton' accesskey='s' type='submit'></form>";
+		$form_button = "<input value='重新排序' class='realbutton' accesskey='s' type='submit'></form>";
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<div style='float:right;width:auto;'>{$form_button}</div><div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=new'>Add New Help File</a></span></div>", "center", "tablesubheader" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<div style='float:right;width:auto;'>{$form_button}</div><div class='fauxbutton-wrapper'><span class='fauxbutton'><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=new'>添加新帮助文件</a></span></div>", "center", "tablesubheader" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= "<center><a href='{$this->ipsclass->base_url}&section=tools&act=help&code=acp_help'>Rebuild ACP Help Files</a></center>";
+		$this->ipsclass->html .= "<center><a href='{$this->ipsclass->base_url}&section=tools&act=help&code=acp_help'>重建后台帮助文件</a></center>";
 		
 		$this->ipsclass->admin->output();
 	

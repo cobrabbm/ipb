@@ -359,7 +359,7 @@ class ad_emailerror
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic("<center>没有结果</center>");
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic('<div style="float:left;width:auto"><input type="submit" value="删除选中" class="realbutton" />&nbsp;<input type="checkbox" id="checkbox" name="type" value="删除所有" />&nbsp;Remove all?</div><div align="right">'.$links.'</div></form>', 'left', 'tablesubheader');
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic('<div style="float:left;width:auto"><input type="submit" value="删除选中" class="realbutton" />&nbsp;<input type="checkbox" id="checkbox" name="type" value="删除所有" />&nbsp;删除所有?</div><div align="right">'.$links.'</div></form>', 'left', 'tablesubheader');
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -396,7 +396,7 @@ class ad_emailerror
 																			 . $this->ipsclass->adskin->form_input( "string", isset($_POST['string']) ? $_POST['string'] : '' ),
 																   )      );
 								 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
