@@ -251,7 +251,7 @@ echo <<<EOF
 EOF;
 echo date("Y");
 echo <<<EOF
- IPBChina.COM Team & Invision Power Services, Inc.  
+ IPBChina.COM 工作组 & Invision Power Services, Inc.  
 		 	            </div>
 		 	        </div>
 

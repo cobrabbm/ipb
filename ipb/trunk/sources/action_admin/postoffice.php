@@ -829,7 +829,7 @@ class ad_postoffice
 							</tr>
 							</table>
 							</div>
-							<div align='center' class='tablesubheader'><input class='realbutton' onclick='runpreview()' type='button' value='Preview' /> &nbsp; &nbsp; <input class='realdarkbutton' type='submit' value='$button' /></form></div>
+							<div align='center' class='tablesubheader'><input class='realbutton' onclick='runpreview()' type='button' value='预览' /> &nbsp; &nbsp; <input class='realdarkbutton' type='submit' value='$button' /></form></div>
 							</div>";
 		
 		$this->ipsclass->html .= "<br />

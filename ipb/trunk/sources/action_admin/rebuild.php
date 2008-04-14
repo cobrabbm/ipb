@@ -1342,7 +1342,7 @@ class ad_rebuild {
 									     
 		$this->ipsclass->adskin->td_header[] = array( "{none}"    , "100%" );
 	
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 模版 HTML 到 IPB 2.2.x 模版 HTML Logic" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 模版 HTML 到 IPB 2.2.x 模版 HTML 格式" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "的模版格式有一些变化, 本工具将更新您存储在数据库中的主主题. 运行本工具后您需要重建缓存.
 																			  <br />针对主题: $skin_list 运行本工具"
@@ -2858,19 +2858,19 @@ class ad_rebuild {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重新统计数据" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重新统计主题数和帖子数",
-																 $this->ipsclass->adskin->form_dropdown( 'posts', array( 0 => array( 1, 'Yes'  ), 1 => array( 0, 'No' ) ) )
+																 $this->ipsclass->adskin->form_dropdown( 'posts', array( 0 => array( 1, '是'  ), 1 => array( 0, '否' ) ) )
 														)      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重新统计会员数",
-												  $this->ipsclass->adskin->form_dropdown( 'members', array( 0 => array( 1, 'Yes'  ), 1 => array( 0, 'No' ) ) )
+												  $this->ipsclass->adskin->form_dropdown( 'members', array( 0 => array( 1, '是'  ), 1 => array( 0, '否' ) ) )
 										 )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重设最后注册的会员",
-												  $this->ipsclass->adskin->form_dropdown( 'lastreg', array( 0 => array( 1, 'Yes'  ), 1 => array( 0, 'No' ) ) )
+												  $this->ipsclass->adskin->form_dropdown( 'lastreg', array( 0 => array( 1, '是'  ), 1 => array( 0, '否' ) ) )
 										 )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "重设“在线峰值”统计?",
-												  $this->ipsclass->adskin->form_dropdown( 'online', array( 0 => array( 0, 'No'  ), 1 => array( 1, 'Yes' ) ) )
+												  $this->ipsclass->adskin->form_dropdown( 'online', array( 0 => array( 0, '否'  ), 1 => array( 1, '是' ) ) )
 										 )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重新统计上述数据');
@@ -2937,11 +2937,11 @@ class ad_rebuild {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建帖子内容</b><div style='color:gray'>本操作将重建所有帖子内容, 包括 BBCode 和表情. 如果您更改了大量的表情或者表情路径, 本操作很有效.</div>",
 												  		       $this->ipsclass->adskin->form_dropdown( 'type', array( 
-												  		       														array( 'posts'		, 'Post Content' ),
-												  		       														array( 'pms'		, 'Private Messages' ),
-												  		       														array( 'cal'		, 'Calendar Events' ),
-												  		       														array( 'announce'	, 'Announcements' ),
-												  		       														array( 'sigs'		, 'Signatures' ),
+												  		       														array( 'posts'		, '帖子内容' ),
+												  		       														array( 'pms'		, '个人短消息' ),
+												  		       														array( 'cal'		, '日历事件' ),
+												  		       														array( 'announce'	, '论坛通知' ),
+												  		       														array( 'sigs'		, '个人签名' ),
 												  		       										) 				) . 
 												  		       	"&nbsp;&nbsp;" . 
 												  		       	"每次循环重建&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;个帖子"
@@ -2966,7 +2966,7 @@ class ad_rebuild {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建会员名" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建会员名</b><div style='color:gray'>本操作将重置保存在帖子, 主题, 操作记录内的会员名. 如果您刚刚手工修改会员的会员名, 本操作很有效.</div>",
-												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
+												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;每次循环"
 										 		   	    )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建会员名');
@@ -2987,8 +2987,8 @@ class ad_rebuild {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计会员帖子数" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重计会员帖子数</b><div style='color:gray'>本操作将根据当前数据库内的数据重新统计会员的帖子数. 由于不会统计被删除和清理的帖子, 本操作将会减少他们的帖子数. 如果您希望保留会员目前的帖子数, 那么请不要使用本工具.</div>THERE IS NO UNDO!",
-												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;Per Cycle"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重计会员帖子数</b><div style='color:gray'>本操作将根据当前数据库内的数据重新统计会员的帖子数. 由于不会统计被删除和清理的帖子, 本操作将会减少他们的帖子数. 如果您希望保留会员目前的帖子数, 那么请不要使用本工具.</div>本操作无法恢复!",
+												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '500', 5 ). "&nbsp;每次循环"
 										 		   	    )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重计会员帖子数');
@@ -3010,8 +3010,8 @@ class ad_rebuild {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计会员帖子数" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建个人照片缩略图</b><div style='color:gray'>本操作将重建您会员照片的缩略图的到当前设置的大小. 如果您刚刚调整了缩略图大小, 需要更新的话, 请执行本操作</div>This is moderately resource intensive.",
-												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;Per Cycle"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建个人照片缩略图</b><div style='color:gray'>本操作将重建您会员照片的缩略图的到当前设置的大小. 如果您刚刚调整了缩略图大小, 需要更新的话, 请执行本操作</div>本操作较为占用资源.",
+												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;每次循环"
 										 		   	    )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建个人照片缩略图');
@@ -3034,7 +3034,7 @@ class ad_rebuild {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建附件缩略图" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建附件缩略图</b><div style='color:gray'>本操作将根据当前设置重建所有图像附件的缩略图. 如果您刚刚修改了缩略图大小, 需要更新的话, 请执行本操作</div>本操作较为占用资源.",
-												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;Per Cycle"
+												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;每次循环"
 										 		   	    )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('重建附件缩略图');
@@ -3078,7 +3078,7 @@ class ad_rebuild {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立的附件" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除孤立的附件</b><div style='color:gray'>本操作将将找出所有以“post-”开头, 并且没有帖子使用的头像文件, 然后删除它们. </div>本操作较为占用资源.",
-												  		      			    $this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;Per Cycle"
+												  		      			    $this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;每次循环"
 										 		   	    			 )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form('删除孤立的附件');

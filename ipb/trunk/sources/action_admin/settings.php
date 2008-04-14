@@ -1235,8 +1235,8 @@ class ad_settings {
 		if ( $type == 'add' )
 		{
 			$formcode = 'setting_add';
-			$title    = "Create New Board Setting";
-			$button   = "Create New Setting";
+			$title    = "创建新的论坛设置";
+			$button   = "创建新的论坛设置";
 			$conf     = array( 'conf_group' 	=> $this->ipsclass->input['conf_group'],
 							   'conf_add_cache' => 1,
 							   'conf_title'		=> '',
@@ -1529,7 +1529,7 @@ class ad_settings {
 
 			if ( ! $conf_group and ! $search_key )
 			{
-				$this->ipsclass->main_msg = "No group was passed, please try again.";
+				$this->ipsclass->main_msg = "没有选择用户组, 请返回重试.";
 				$this->setting_start();
 			}
 
@@ -1569,7 +1569,7 @@ class ad_settings {
 
 				if ( ! count( $conf_entry ) )
 				{
-					$this->ipsclass->main_msg = "Your search for '$keywords' produced no matches.";
+					$this->ipsclass->main_msg = "您搜索 '$keywords' 没有任何返回结果.";
 					$this->setting_start();
 				}
 
@@ -2115,7 +2115,7 @@ class ad_settings {
 			}
 
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<div align='center'><img src='{$this->ipsclass->adskin->img_url}/images/settings_folder.gif' border='0' alt='Folder' /></div>",
-																   "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_view&conf_group={$r['conf_title_id']}'><b>{$r['conf_title_title']}</b></a>$hidden <span style='color:gray'>(".intval($r['conf_title_count'])." settings)</span><div style='color:gray'>{$r['conf_title_desc']}</div>" ,
+																   "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_view&conf_group={$r['conf_title_id']}'><b>{$r['conf_title_title']}</b></a>$hidden <span style='color:gray'>(".intval($r['conf_title_count'])." 个设置)</span><div style='color:gray'>{$r['conf_title_desc']}</div>" ,
 												  				   array("<div align='center' style='white-space:nowrap'>
 												  				          <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=settinggroup_showedit&id={$r['conf_title_id']}' title='Edit this setting groups details'><img src='{$this->ipsclass->adskin->img_url}/images/icons_menu/edit.gif' border='0' alt='Edit'  /></a>
 																          <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=settinggroup_delete&id={$r['conf_title_id']}' title='Delete this setting group'><img src='{$this->ipsclass->adskin->img_url}/images/icons_menu/delete.gif' border='0' alt='Delete'  /></a>
@@ -2149,7 +2149,7 @@ class ad_settings {
 
 		//-----------------------------------------
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "XML settings file tools" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "XML 设置文件工具" );
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><u>或者</u> 输入 XML 设置文件名</b><div style='color:gray'>文件必须上传到论坛根目录.</div>" ,
 										  				        			 $this->ipsclass->adskin->form_upload(  )
@@ -2163,7 +2163,7 @@ class ad_settings {
 										  				         			  $this->ipsclass->adskin->form_dropdown( 'tool', array( 0 => array( 'import', '导入设置' ), 1 => array( 'check', '显示新增和删除的设置' ) )  )
 																	)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Run Tool");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("执行工具");
 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 
