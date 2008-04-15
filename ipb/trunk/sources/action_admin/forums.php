@@ -879,7 +879,7 @@ class ad_forums
 		$f_name      = isset($this->ipsclass->input['name']) ? $this->ipsclass->input['name'] : '';
 		$subcanpost  = ( $cat_id == 1 ) ? 0 : 1;
 		$perm_matrix = "";
-		$dd_state    = array( 0 => array( 1, 'Active' ), 1 => array( 0, 'Read Only Archive' ) );
+		$dd_state    = array( 0 => array( 1, '激活' ), 1 => array( 0, '只读' ) );
 		$dd_moderate = array(
 							 0 => array( 0, '不审核' ),
 							 1 => array( 1, '审核所有新主题和回复' ),
@@ -982,8 +982,8 @@ class ad_forums
 				$addnew_type = $addnew_type == 'category' ? 'forum' : 'category';
 			}
 			
-			$title  		= "正在编辑 {$addnew_type}: {$forum['name']}";
-			$button 		= "保存 {$addnew_type}";
+			$title  		= "正在编辑 {$this->fc_name($addnew_type)}: {$forum['name']}";
+			$button 		= "保存 {$this->fc_name($addnew_type)}";
 			$code   		= "doedit";
 			
 			if( $addnew_type == 'category' )
@@ -1030,7 +1030,7 @@ class ad_forums
 			
 			$forum = array(
 							'sub_can_post'				=> $subcanpost,
-							'name'						=> $f_name ? $f_name : '新 '.ucwords($addnew_type),
+							'name'						=> $f_name ? $f_name : '新建'.$this->fc_name($addnew_type),
 							'parent_id'					=> $parentid,
 							'use_ibc'					=> 1,
 							'quick_reply'				=> 1,
@@ -1063,8 +1063,8 @@ class ad_forums
 							
 						  );
 						  
-			$title       = "新建 ".ucwords($addnew_type);
-			$button      = "新建 ".ucwords($addnew_type);
+			$title       = "新建".$this->fc_name($addnew_type);
+			$button      = "新建".$this->fc_name($addnew_type);
 			$code        = "donew";
 			$basic_title = '基本设置';
 			
@@ -1145,7 +1145,7 @@ class ad_forums
 		# Trim the form for categories...
 		$form['addnew_type']			= $addnew_type;
 		$this->ipsclass->input['type'] 	= $addnew_type;
-		$form['addnew_type_upper']		= ucwords($addnew_type);
+		$form['addnew_type_upper']		= $this->fc_name($addnew_type);
 		
 		$form['convert_button'] 		=& $convert;
 		
@@ -1176,7 +1176,7 @@ class ad_forums
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '管理版块' );
-		$this->ipsclass->admin->nav[] = array( '', '添加/编辑 '.ucwords($addnew_type) );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑 '.$this->fc_name($addnew_type) );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -1843,7 +1843,7 @@ class ad_forums
 	// Build group permissions
 	/*-------------------------------------------------------------------------*/
 	
-	function build_group_perms( $show='*', $read='*', $write='*', $reply='*', $upload='*', $download='*', $title="Permission Access Levels" )
+	function build_group_perms( $show='*', $read='*', $write='*', $reply='*', $upload='*', $download='*', $title="权限设置" )
 	{
 		//-----------------------------------------
 		// Load skin if required
@@ -1993,6 +1993,22 @@ class ad_forums
 		return $this->html->render_cat_permissions( $perms, $select_all, $title );
 	}	
 		
+	/*-------------------------------------------------------------------------*/
+	// Show the name in Forum or Catecory -- by Skylook
+	/*-------------------------------------------------------------------------*/
+	
+	function fc_name( $addnew_type )
+	{
+ 		
+ 		//-----------------------------------------
+ 		// Changes Name
+ 		//-----------------------------------------
+		$fc_name = $addnew_type == 'forum' ? '论坛' : '分类';
+
+		return $fc_name;
+ 		
+	}
+
 }
 
 

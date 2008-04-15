@@ -249,20 +249,20 @@ class ad_dashboard
 			
 			if ( ($r['_log_in'] / 60) < 1 )
 			{
-				$r['_log_in'] = sprintf("%0d", $r['_log_in']) . " seconds ago";
+				$r['_log_in'] = sprintf("%0d", $r['_log_in']) . " 秒前";
 			}
 			else
 			{
-				$r['_log_in'] = sprintf("%0d", ($r['_log_in'] / 60) ) . " minutes ago";
+				$r['_log_in'] = sprintf("%0d", ($r['_log_in'] / 60) ) . " 分钟前";
 			}
 			
 			if ( ($r['_click'] / 60) < 1 )
 			{
-				$r['_click'] = sprintf("%0d", $r['_click']) . " seconds ago";
+				$r['_click'] = sprintf("%0d", $r['_click']) . " 秒前";
 			}
 			else
 			{
-				$r['_click'] = sprintf("%0d", ($r['_click'] / 60) ) . " minutes ago";
+				$r['_click'] = sprintf("%0d", ($r['_click'] / 60) ) . " 分钟前";
 			}
 			
 			$r['session_location'] = ( $r['session_location'] == ',' ) ? 'dashboard,' : $r['session_location'];

@@ -344,7 +344,7 @@ class ad_acppermissions
 		// Get lang: NEEDS SORTIN'
 		//-------------------------------
 		
-		require_once( ROOT_PATH."cache/lang_cache/en/acp_lang_acpperms.php" );
+		require_once( ROOT_PATH."cache/lang_cache/zh-cn/acp_lang_acpperms.php" );
 		$this->lang = $lang;
 		
 		//-------------------------------
@@ -1229,7 +1229,7 @@ class ad_acppermissions
 		// Load lang file...
 		//-------------------------------
 		
-		require_once( ROOT_PATH . 'cache/lang_cache/en/acp_lang_acpperms.php' );
+		require_once( ROOT_PATH . 'cache/lang_cache/zh-cn/acp_lang_acpperms.php' );
 		
 		$this->lang = $lang;
 		

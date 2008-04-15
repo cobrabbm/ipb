@@ -18,7 +18,7 @@ $IPBHTML .= <<<EOF
 						<div class="tableheaderalt">
 						<table cellpadding='0' cellspacing='0' border='0' width='100%'>
 				  <tr>
-				  <td align='left' width='100%' style='font-weight:bold;font-size:11px;color:#FFF'>您的附件类型</td>
+				  <td align='left' width='100%' style='font-weight:bold;font-size:12px;color:#FFF'>您的附件类型</td>
 				  <td align='right' nowrap='nowrap' style='padding-right:6px'><img id='menumainone' src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /></td>
 				  </tr>
 				  </table> </div>

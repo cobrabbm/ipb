@@ -726,7 +726,7 @@ class ad_groups
 						$extra = "";
 					}
 					
-					$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<div style='font-weight:bold;font-size:11px;padding-bottom:6px;margin-bottom:3px;border-bottom:1px solid #000'>{$r['name']}</div>
+					$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<div style='font-weight:bold;font-size:12px;padding-bottom:6px;margin-bottom:3px;border-bottom:1px solid #000'>{$r['name']}</div>
 																						  <li>帖子: {$r['posts']}
 																						  <li>邮件: {$r['email']}
 																						  $extra" ,

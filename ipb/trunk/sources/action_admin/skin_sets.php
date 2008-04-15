@@ -825,7 +825,7 @@ class ad_skin_sets
 							 </tr>
 							 </table>
 							</fieldset>
-							<div style='color:red;text-align:center;font-size:11px;padding:6px'>请注意, 如果选'是', 所有的自定义内容将被删除. <br /><b>本操作无法撤销, 并且不会再有确认提示</b></div>
+							<div style='color:red;text-align:center;font-size:12px;padding:6px'>请注意, 如果选'是', 所有的自定义内容将被删除. <br /><b>本操作无法撤销, 并且不会再有确认提示</b></div>
 							</div>
 							</div>";
 												 
@@ -868,7 +868,7 @@ class ad_skin_sets
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除主题 {$this_set['set_name']}" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-																"<div style='color:red;font-weight:bold;font-size:11px'>
+																"<div style='color:red;font-weight:bold;font-size:12px'>
 																请注意: 本操作无法撤销</div><br />
 																将永久删除该主题所有的自定义内容, 包括模板 HTML, CSS, 页面结构和自定义宏.
 																<br /><br />

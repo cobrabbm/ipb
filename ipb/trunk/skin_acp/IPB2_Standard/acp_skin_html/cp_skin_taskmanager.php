@@ -243,7 +243,7 @@ function formatnumber(num)
 <div class='tableborder'>
  <div class='tableheaderalt'>
   <div style='float:left'>$title</div>
-  <div align='right' style='padding-right:5px'><input type='text' name='showtask' class='realbutton' size='50' style='font-size:10px;width:auto;font-weight:normal;'/></div>
+  <div align='right' style='padding-right:5px'><input type='text' name='showtask' class='realbutton' size='50' style='font-size:12px;width:auto;font-weight:normal;'/></div>
  </div>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
@@ -363,7 +363,7 @@ $IPBHTML .= <<<EOF
  <td class='tablerow1'>
   <table cellpadding='0' cellspacing='0' width='100%'>
   <tr>
-   <td width='99%' style='font-size:10px'>
+   <td width='99%' style='font-size:12px'>
 	 <strong{$row['_class']}>
 EOF;
 //startif

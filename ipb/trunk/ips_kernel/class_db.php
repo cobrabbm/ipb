@@ -786,7 +786,7 @@ class db_main
 			}
 			
 			print "<html><head><title>IPS Driver Error</title>
-					<style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style></head><body>
+					<style>P,BODY{ font-family:arial,sans-serif; font-size:12px; }</style></head><body>
 		    		   <blockquote><h1>IPS Driver Error</h1><b>There appears to be an error with the database.</b><br>
 		    		   You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
 				  </body></html>";
@@ -798,7 +798,7 @@ class db_main
 	    	$the_error .= "Date: ".date("l dS \o\f F Y h:i:s A");
     	
 	    	$out = "<html><head><title>IPS Driver Error</title>
-	    		   <style>P,BODY{ font-family:arial,sans-serif; font-size:11px; }</style></head><body>
+	    		   <style>P,BODY{ font-family:arial,sans-serif; font-size:12px; }</style></head><body>
 	    		   <blockquote><h1>IPS Driver Error</h1><b>There appears to be an error with the database.</b><br>
 	    		   You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>.
 	    		   <br><br><b>Error Returned</b><br>

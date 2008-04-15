@@ -76,7 +76,7 @@ $IPBHTML .= <<<EOF
  </div>
  <div align='left'>
    <img src='{$this->ipsclass->skin_acp_url}/images/folder.gif' alt='模板用户组' style='vertical-align:middle' />
-   {$folder_blob}&nbsp;<a style='font-size:11px' id='gn-{$group['group_name']}' onclick='template_load_bits("{$group['group_name']}", event)' title='{$group['easy_desc']}' href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=template-bits-list&id={$group['_id']}&p={$group['_p']}&group_name={$group['group_name']}&'>{$group['easy_name']}</a>
+   {$folder_blob}&nbsp;<a style='font-size:12px' id='gn-{$group['group_name']}' onclick='template_load_bits("{$group['group_name']}", event)' title='{$group['easy_desc']}' href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=template-bits-list&id={$group['_id']}&p={$group['_p']}&group_name={$group['group_name']}&'>{$group['easy_name']}</a>
    <span id='match-{$group['group_name']}'></span>
  </div>
 </div>
@@ -772,7 +772,7 @@ $IPBHTML .= <<<EOF
    BODY
    {
    	font-family: verdana;
-   	font-size:11px;
+   	font-size:12px;
    	color: #000;
    	background-color: #CCC;
    }

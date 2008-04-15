@@ -843,9 +843,9 @@ class ad_remote_template {
 				{
 					$filename = preg_replace( "/^skin_/", "lang_", $r['group_name'] );
 					
-					if ( @file_exists( ROOT_PATH. "cache/lang_cache/en/$filename".".php" ) )
+					if ( @file_exists( ROOT_PATH. "cache/lang_cache/zh-cn/$filename".".php" ) )
 					{
-						require ROOT_PATH. "cache/lang_cache/en/$filename".".php";
+						require ROOT_PATH. "cache/lang_cache/zh-cn/$filename".".php";
 						
 						$answer = $lang[$macro];
 					}
@@ -945,12 +945,12 @@ class ad_remote_template {
 			}
 		}
 		
-		$table = "<table width='100%' bgcolor='black' cellpadding='4' style='font-family:verdana, arial;font-size:11px;color:white'>
+		$table = "<table width='100%' bgcolor='black' cellpadding='4' style='font-family:verdana, arial;font-size:12px;color:white'>
 				  <tr>
-				   <td align='center' style='font-family:verdana, arial;font-size:11px;color:white'>模板组: {$template['group_name']} : 模板元素: {$template['func_name']}</td>
+				   <td align='center' style='font-family:verdana, arial;font-size:12px;color:white'>模板组: {$template['group_name']} : 模板元素: {$template['func_name']}</td>
 				  </tr>
 				  <tr>
-				   <td align='center' style='font-family:verdana, arial;font-size:11px;color:white'>查看 [ <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=text' style='font-family:verdana, arial;font-size:11px;color:white'>文本</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=html' style='font-family:verdana, arial;font-size:11px;color:white'>HTML</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=css' style='font-family:verdana, arial;font-size:11px;color:white'>带有 CSS 格式的 HTML</a> ]</td>
+				   <td align='center' style='font-family:verdana, arial;font-size:12px;color:white'>查看 [ <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=text' style='font-family:verdana, arial;font-size:12px;color:white'>文本</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=html' style='font-family:verdana, arial;font-size:12px;color:white'>HTML</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=css' style='font-family:verdana, arial;font-size:12px;color:white'>带有 CSS 格式的 HTML</a> ]</td>
 				  </tr>
 				  </table>
 				  <br><br>

@@ -233,7 +233,7 @@ function gomodform()
 <tr>
  <td align='left' valign='middle'>{$choose}&nbsp;<input type='button' class='realbutton' value='子论坛排序' onclick='gochildrenofthecorn()'/></td>
  <td align='right'><input type='button' class='realbutton' value='添加新分类' onclick='locationjump("&{$this->ipsclass->form_code}&code=new&type=category")' />
- &nbsp;&nbsp;<input type='submit' value='Reorder Categories' class='realbutton' /></form>
+ &nbsp;&nbsp;<input type='submit' value='分类重排序' class='realbutton' /></form>
  </td>
 </tr>
 </table>
@@ -283,7 +283,7 @@ EOF;
 }
 
 $IPBHTML .= <<<EOF
-<strong style='font-size:11px'>{$r['name']}</strong>
+<strong style='font-size:12px'>{$r['name']}</strong>
 EOF;
 
 if ( ($r['skin_id'] != "") and ($r['skin_id'] > 0) )
@@ -338,7 +338,7 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <tr>
  <td class='tablerow1' width='100%' colspan='2'>
-	<strong style='font-size:11px;color:red;'>当前分类下没有创建任何论坛.<br /> 不论权限设置如何它将不会在论坛显示出来, 除非您给它添加了一个论坛.</strong>
+	<strong style='font-size:12px;color:red;'>当前分类下没有创建任何论坛.<br /> 不论权限设置如何它将不会在论坛显示出来, 除非您给它添加了一个论坛.</strong>
 	<div class='graytext'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=new&p={$parent_id}'>点击这里创建该分类下的一个论坛</a></div>
  </td>
 </tr>
