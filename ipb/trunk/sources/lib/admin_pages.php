@@ -19,7 +19,8 @@ $PAGES = array(
 							
 							 1 => array( '查看所有全局设置', 'act=op' ),
 							 2 => array( '添加新的全局设置'  , 'act=op&code=settingnew' ),
-							 7 => array( '打开 / 关闭论坛'      , 'act=op&code=findsetting&key='.urlencode('boardoffline/online'), '', 0, 1 ),
+							 //7 => array( '打开 / 关闭论坛'      , 'act=op&code=findsetting&key='.urlencode('boardoffline/online'), '', 0, 1 ),
+							 7 => array( '打开 / 关闭论坛'      , 'act=op&code=findsetting&key=boardoffline'), '', 0, 1 ),
 							 8 => array( '论坛规则设置'         , 'act=op&code=findsetting&key='.urlencode('boardguidelines'), '', 0, 1 ),
 							 9 => array( '论坛全局设置'    , 'act=op&code=findsetting&key='.urlencode('generalconfiguration'), '', 0, 1 ),
 							 10 => array( 'CPU 降压设置'              , 'act=op&code=findsetting&key='.urlencode('cpusaving&optimization'), '', 0, 1 ),
@@ -36,7 +37,8 @@ $PAGES = array(
 							 3 => array( '权限设置'      , 'act=group&code=permsplash'),
 							 6 => array( '论坛版主'            , 'act=mod'                  ),
 							 7 => array( '主题批量管理', 'act=multimod'          ),
-							 8 => array( '回收站设置'      , 'act=op&code=findsetting&key=trashcanset-up', '', 0, 1 ),
+							 //8 => array( '回收站设置'      , 'act=op&code=findsetting&key=trashcanset-up', '', 0, 1 ),
+							 8 => array( '回收站设置'      , 'act=op&code=findsetting&key=trashcansetup', '', 0, 1 ),
 						   ),
 						   
 						   
@@ -116,7 +118,8 @@ $PAGES = array(
 			    			2  => array( '创建新邮件'      , 'act=postoffice&code=mail_new'      ),
 			    			3  => array( '查看邮件日志'       , 'act=emaillog', '', 0, 1 ),
 			    			4  => array( '查看邮件错误日志' , 'act=emailerror', '', 0, 1 ),
-			    			5  => array( '邮件设置'        , 'act=op&code=findsetting&key=emailset-up', '', 0, 1 ),
+			    			//5  => array( '邮件设置'        , 'act=op&code=findsetting&key=emailset-up', '', 0, 1 ),
+			    			5  => array( '邮件设置'        , 'act=op&code=findsetting&key=email', '', 0, 1 ),
 			    		    ),
 			    
 			    1300 => array (

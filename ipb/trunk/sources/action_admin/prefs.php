@@ -139,7 +139,7 @@ $hit_muhl = <<<EOF
    <title>IPB-ACP Prefs</title>
    <style type='text/css'>
 	 BODY {
-			font-size: 10px;
+			font-size:12px;
 			font-family: Verdana, Arial, Sans-Serif;
 			color:#000;
 			padding:0px;
@@ -150,13 +150,13 @@ $hit_muhl = <<<EOF
 	TABLE, TD, TR {
 			font-family: Verdana,Arial, Sans-Serif;
 			color:#000;
-			font-size: 10px;
+			font-size:12px;
 		  }
 		  
 	a:link, a:visited, a:active  { color:#000055 }
 	a:hover                      { color:#333377;text-decoration:underline }
 	input {vertical-align:middle}
-	.textinput { background-color: #DFE6EF;; color:Ê#000; font-size:10px; font-family: Verdana,Arial, Sans-Serif; padding:2px; }
+	.textinput { background-color: #DFE6EF;; color:Ê#000; font-size:12px; font-family: Verdana,Arial, Sans-Serif; padding:2px; }
 					
   </style>
   <script type='text/javascript'>

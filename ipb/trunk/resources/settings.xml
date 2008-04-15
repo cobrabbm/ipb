@@ -6182,7 +6182,7 @@ if ( $show == 1 )
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>32</conf_position>
-			<conf_start_group>Personal Portal</conf_start_group>
+			<conf_start_group>个人门户</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
 			<conf_title_keyword>userprofiles</conf_title_keyword>

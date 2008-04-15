@@ -156,7 +156,7 @@ class display {
         else if ( TRIAL_VERSION )
         {
         	$copyright = "<!-- Copyright Information -->
-        				  <div align='center' style='background-color:#FFF;color:#000;font-size:11px;width:auto;'>
+        				  <div align='center' style='background-color:#FFF;color:#000;font-size:12px;width:auto;'>
         				  	Powered by: <a href='http://www.invisionboard.com' target='_blank' style='color:#000'>Invision Power Board</a> (Free Trial)
         				  	{$version} &copy; ".date("Y")." &nbsp;<a href='http://www.invisionpower.com'>Invision Power Services, Inc.</a>
         				  	<br /><strong>Get your free trial <a href='http://www.invisionboard.com' target='_blank' style='text-decoration:underline;color:#000'>here!</a></strong>
@@ -1120,7 +1120,7 @@ class display {
     	if ($this->ipsclass->DB->obj['debug'])
         {
         	flush();
-        	print "<html><head><title>SQL Debugger</title><body bgcolor='white'><style type='text/css'> TABLE, TD, TR, BODY { font-family: verdana,arial, sans-serif;color:black;font-size:11px }</style>";
+        	print "<html><head><title>SQL Debugger</title><body bgcolor='white'><style type='text/css'> TABLE, TD, TR, BODY { font-family: verdana,arial, sans-serif;color:black;font-size:12px }</style>";
         	print "<h1 align='center'>SQL Total Time: {$this->ipsclass->DB->sql_time} for {$this->ipsclass->DB->query_count} queries</h1><br />".$this->ipsclass->DB->debug_html;
         	print "<br /><div align='center'><strong>Total SQL Time: {$this->ipsclass->DB->sql_time}</div></body></html>";
         	exit();

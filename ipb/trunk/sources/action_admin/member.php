@@ -3682,7 +3682,7 @@ class ad_member
 						  	 <td width='1%' align='center'><img src="{$r['pp_thumb_photo']}" width='25' height='25' /></td>
 						  	 <td width='99%'>
 						  	  <a style='font-size:12px;font-weight:bold' title='View this members profile' href='{$this->ipsclass->vars['board_url']}/index.{$this->ipsclass->vars['php_ext']}?showuser={$r['id']}' target='blank'>{$r['members_display_name']}</a>
-						  	  &nbsp;<span style='font-size:10px' class='graytext'>({$r['ip_address']})</span>
+						  	  &nbsp;<span style='font-size:12px' class='graytext'>({$r['ip_address']})</span>
 						  	 </td>
 						  	 <td width='1%' align='center'><img id='mid-{$r['id']}' src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /></td>
 						  	</tr>
@@ -3697,7 +3697,7 @@ class ad_member
 						  	</tr>
 						  	<tr>
 						  	 <td width='1%' align='center'><img src='{$this->ipsclass->skin_acp_url}/images/memsearch_group.gif' border='0' /><td>
-						  	 <td width='99%'><strong>{$this->ipsclass->cache['group_cache'][$r['mgroup']]['g_title']}</strong> <span style='font-size:10px' class='graytext'>({$r['posts']} 个帖子)</span></td>
+						  	 <td width='99%'><strong>{$this->ipsclass->cache['group_cache'][$r['mgroup']]['g_title']}</strong> <span style='font-size:12px' class='graytext'>({$r['posts']} 个帖子)</span></td>
 						  	</tr>
 						  	<tr>
 						  	 <td width='1%' align='center'><img src='{$this->ipsclass->skin_acp_url}/images/memsearch_posts.gif' border='0' /><td>

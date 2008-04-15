@@ -1325,7 +1325,7 @@ class ad_emoticons {
 			}
 			else
 			{
-				$smilies .= "<br /><br /><span style='font-family:Verdana,Arial;font-size:10px;font-weight:bold;'>{$data['typed']}</span>";
+				$smilies .= "<br /><br /><span style='font-family:Verdana,Arial;font-size:12px;font-weight:bold;'>{$data['typed']}</span>";
 			}
 			
 			$smilies .= "<br /><br />可点击? <input type='checkbox'  name='emo_click_{$data['id']}' value='1' {$click} />

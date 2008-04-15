@@ -16,7 +16,7 @@ BODY
 
 .ipbnav
 {
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
 	border:1px solid gray;
 	padding:10px;
@@ -24,7 +24,7 @@ BODY
 
 .ipbpagespan
 {
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
 	border:1px solid gray;
 	padding:10px;
@@ -33,7 +33,7 @@ BODY
 
 .ipbnavsmall
 {
-	font-size: 10px;
+	font-size: 12px;
 	font-weight: bold;
 	border:1px dotted lightgray;
 	padding:8px 8px 8px 8px;
@@ -59,7 +59,7 @@ BODY
 #ipbcopyright
 {
 	margin-top: 10px;
-	font-size: 10px;
+	font-size: 12px;
 	text-align:center;
 }
 
@@ -99,13 +99,13 @@ BODY
 .desc
 {
 	color: gray;
-	font-size: 10px;
+	font-size: 12px;
 }
 
 .smalltext
 {
 	color: gray;
-	font-size: 10px;
+	font-size: 12px;
 	text-align:center;
 	padding:10px;
 }
@@ -159,7 +159,7 @@ BODY
 	color: #000;
 	margin: 8px auto 0px auto;
 	font-weight:bold;
-	font-size:10px;
+	font-size: 12px;
 	padding: 8px;
 	background-color:#E4EAF2;
 	border-left: 4px solid #8394B2;

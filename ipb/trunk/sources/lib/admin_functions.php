@@ -113,7 +113,7 @@ class admin_functions
 		
 		if ( ! is_array( $this->perm_lang ) OR ! count( $this->perm_lang ) )
 		{
-			require_once( ROOT_PATH."cache/lang_cache/en/acp_lang_acpperms.php" );
+			require_once( ROOT_PATH."cache/lang_cache/zh-cn/acp_lang_acpperms.php" );
 			$this->perm_lang = $lang;
 		}
 		
@@ -1148,7 +1148,7 @@ class admin_functions
 		if ($this->ipsclass->DB->obj['debug'])
         {
         	flush();
-        	print "<html><head><title>SQL Debugger</title><body bgcolor='white'><style type='text/css'> TABLE, TD, TR, BODY { font-family: verdana,arial, sans-serif;color:black;font-size:11px }</style>";
+        	print "<html><head><title>SQL Debugger</title><body bgcolor='white'><style type='text/css'> TABLE, TD, TR, BODY { font-family: verdana,arial, sans-serif;color:black;font-size:12px }</style>";
         	print "<h1 align='center'>SQL 执行时间: {$this->ipsclass->DB->sql_time} 总计 {$this->ipsclass->DB->query_cnt} 次查询</h1><br />".$this->ipsclass->DB->debug_html;
         	print "<br /><div align='center'><strong>SQL 总计执行时间: {$this->ipsclass->DB->sql_time}</div></body></html>";
         	exit();

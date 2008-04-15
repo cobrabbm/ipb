@@ -39,7 +39,7 @@ $PAGES[] = array(
 					 2 => array( '添加新的通用设置'  , 'section=tools&amp;act=op&amp;code=settingnew' ),
 					 3 => array( '管理门户插件', 'section=tools&amp;act=portal' ),
 					 //7 => array( '论坛打开/关闭'      , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('boardoffline/online'), '', 0, 1 ),
-					 7 => array( '论坛打开/关闭'      , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('boardoffline'), '', 0, 1 ),
+					 7 => array( '论坛打开/关闭'      , 'section=tools&amp;act=op&amp;code=findsetting&amp;key=boardoffline', '', 0, 1 ),
 					 8 => array( '论坛规则设置'         , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('boardguidelines'), '', 0, 1 ),
 					 9 => array( '论坛通用设置'    , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('generalconfiguration'), '', 0, 1 ),
 					 10 => array( '服务器 CPU 降耗'              , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('cpusaving'), '', 0, 1 ),
@@ -64,7 +64,9 @@ $PAGES[] = array(
 			    	2  => array( '创建新邮件'      , 'section=tools&amp;act=postoffice&amp;code=mail_new'      ),
 			    	3  => array( '查看邮件日志'       , 'section=admin&amp;act=emaillog', '', 0, 1 ),
 			    	4  => array( '查看邮件错误日志' , 'section=admin&amp;act=emailerror', '', 0, 1 ),
-			    	5  => array( '邮件设置'        , 'section=tools&amp;act=op&amp;code=findsetting&amp;key=emailset-up', '', 0, 1 ),
+			    	//5  => array( '邮件设置'        , 'section=tools&amp;act=op&amp;code=findsetting&amp;key=emailset-up', '', 0, 1 ),
+					5  => array( '邮件设置'        , 'section=tools&amp;act=op&amp;code=findsetting&amp;key=email', '', 0, 1 ),
+
 			       );
 
 $CATS[]  = array( '登录设置' );

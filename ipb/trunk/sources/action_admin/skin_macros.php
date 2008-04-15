@@ -311,7 +311,7 @@ class ad_skin_macros {
 							<div class='tableheaderalt'>
 							  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
 							  <tr>
-							  <td align='left' width='100%' style='font-weight:bold;font-size:11px;color:#FFF'>宏替换管理</td>
+							  <td align='left' width='100%' style='font-weight:bold;font-size:12px;color:#FFF'>宏替换管理</td>
 							  <td align='right' nowrap='nowrap' style='padding-right:2px'><input type='button' class='realdarkbutton' value='添加宏' onclick=\"addmacro('{$this->ipsclass->input['id']}');\" /></td>
 							  </tr>
 							  </table>
@@ -434,7 +434,7 @@ class ad_skin_macros {
 			$this->ipsclass->html .= "<tr>
 								 <!--<td style='$style' align='center' width='1%'><img src='{$this->ipsclass->skin_acp_url}/images/skin_macro.gif' alt='Macro' title='ID: {$row['macro_id']}' style='vertical-align:middle' /></td>-->
 								 <td style='$style' align='left' width='1%' nowrap='nowrap'>$altered_image
-								  &nbsp;&lt;{<span style='font-size:11px;font-weight:bold' title='ID: {$row['macro_id']}. SET: {$row['macro_set']}' href='#' >{$row['macro_value']}</span>}&gt;
+								  &nbsp;&lt;{<span style='font-size:12px;font-weight:bold' title='ID: {$row['macro_id']}. SET: {$row['macro_set']}' href='#' >{$row['macro_value']}</span>}&gt;
 								  </td>
 								 <td style='$style;padding-right:3px;text-align:center;' align='center' width='99%' align='center'>$preview</td>
 								 <td style='$style' align='right' width='40%' nowrap='nowrap'>$remove_button $edit_button</td>
