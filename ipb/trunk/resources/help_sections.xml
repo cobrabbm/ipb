@@ -194,7 +194,7 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>help_support_bugs</key>
 			<title>Bug 报告</title>
-			<helptext><![CDATA[你可以在我们的追踪栏目里提交并跟踪您所提交的所有 Bug,它将显示在下面.这里并<i>不</i> 包括发布的报告,仅仅只为了弥补我们的程序内部 Bug.
+			<helptext><![CDATA[您可以在我们的追踪栏目里提交并跟踪您所提交的所有 Bug,它将显示在下面.这里并<i>不</i> 包括发布的报告,仅仅只为了弥补我们的程序内部 Bug.
 <br />
 <br />
 <b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">缺陷追踪</a> 访问.]]></helptext>
@@ -213,7 +213,7 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>help_support_resources</key>
 			<title>resources.invisionpower.com - 官方资源站点</title>
-			<helptext><![CDATA[resources.invisionpower.com 是一个全面的客户服务站点,在这里你可以找到很多有用的文章, 修正,主题,以及客户之间的互助信息.需要提醒的是在 resources.invisionpower.com 上所有的内容都是客户与客户之间的交流与互助信息,并不是 IPS 官方的支持信息.如果您想要与其他 IPB 使用者交流,或者获得其他客户分享出来的一些资源,那么,这里将是您的首选.<br />
+			<helptext><![CDATA[resources.invisionpower.com 是一个全面的客户服务站点,在这里您可以找到很多有用的文章, 修正,主题,以及客户之间的互助信息.需要提醒的是在 resources.invisionpower.com 上所有的内容都是客户与客户之间的交流与互助信息,并不是 IPS 官方的支持信息.如果您想要与其他 IPB 使用者交流,或者获得其他客户分享出来的一些资源,那么,这里将是您的首选.<br />
 <br/>
 您可以使用您的客户端直接访问 resources.invisionpower.com.
 <br />
@@ -638,7 +638,7 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>lookandfeel_skinremap_</key>
 			<title>主题重测图</title>
-			<helptext><![CDATA[这个选项允许你使用与您提供的 URL 地址像类似的强制设置.这里有你想要使用相同的主题设置<i>例子</i>:<br /><br />
+			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置.这里有您想要使用相同的主题设置<i>例子</i>:<br /><br />
 <b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
 您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
@@ -646,7 +646,7 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>lookandfeel_skinremap_remap_edit</key>
 			<title>主题重测图</title>
-			<helptext><![CDATA[这个选项允许你使用与您提供的 URL 地址像类似的强制设置.这里有你想要使用相同的主题设置<i>例子</i>:<br /><br />
+			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置.这里有您想要使用相同的主题设置<i>例子</i>:<br /><br />
 <b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
 您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
@@ -654,7 +654,7 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>lookandfeel_skinremap_remap_add</key>
 			<title>主题重测图</title>
-			<helptext><![CDATA[这个选项允许你使用与您提供的 URL 地址像类似的强制设置.这里有你想要使用相同的主题设置<i>例子</i>:<br /><br />
+			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置.这里有您想要使用相同的主题设置<i>例子</i>:<br /><br />
 <b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
 您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
@@ -949,11 +949,11 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>content_attach_attach_edit</key>
-			<title>附件迷你图</title>
-			<helptext><![CDATA[迷你图存放在:<br />
+			<title>附件迷您图</title>
+			<helptext><![CDATA[迷您图存放在:<br />
 /style_images/<i>{imgdir}</i>/folder_mime_types/<br/><br/>
 例如,像这样输入: <i>folder_mime_types/music.gif</i><br />
-请确认迷你图片已经上传到您需要的位置.]]></helptext>
+请确认迷您图片已经上传到您需要的位置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
