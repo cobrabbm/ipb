@@ -657,8 +657,8 @@ class ad_login_auth
 		//-----------------------------------------
 		
 		$login_id  = intval($this->ipsclass->input['login_id']);
-		$login_dd  = array( 0 => array( 'passthrough', 'Pass-Through' ), 1 => array( 'onfail', 'On-Fail' ) );
-		$login_unt = array( 0 => array( 'username', 'User Name' ), 1 => array( 'email', 'Email Address' ) );
+		$login_dd  = array( 0 => array( 'passthrough', '强制远程验证' ), 1 => array( 'onfail', '优先本地验证' ) );
+		$login_unt = array( 0 => array( 'username', '会员名称' ), 1 => array( 'email', '邮件地址' ) );
 		
 		//-----------------------------------------
 		// Check (please?)

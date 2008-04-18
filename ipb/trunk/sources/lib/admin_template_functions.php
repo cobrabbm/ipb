@@ -152,7 +152,7 @@ EOF;
 							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=macro_one&suid={$template['suid']}\", \"MacroWindow\", 400, 200); return false;'>宏变量预览...</a>",
 							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=compare&suid={$template['suid']}\", \"CompareWindow\", 500,400); return false;'>比较版本...</a>",
 							   img_item   + " <a href='#' onclick='menu_action_close(); parent.template_bit_restore(\"{$template['suid']}\"); return false;'>恢复未编辑版本...</a>",
-							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=preview&suid={$template['suid']}&type=html\", \"OriginalPreview\", 400,400); return false;'>查看原始版本...</a>"
+							   img_item   + " <a href='#' onclick='menu_action_close(); pop_win(\"act=rtempl&code=preview&suid={$template['suid']}&type=html\", \"原始版本预览\", 400,400); return false;'>查看原始版本...</a>"
 							 ) );
 				  </script>
 EOF;
@@ -185,7 +185,7 @@ EOF;
 					  <input type='button' value='宏变量预览'  class='realbutton' title='View a macro definition' onClick='pop_win(\"act=rtempl&code=macro_one&suid={$this->ipsclass->input['id']}\", \"MacroWindow\", 400, 200)'>
 					  <input type='button' value='比较'  class='realbutton' title='Compare the edited version to the original' onClick='pop_win(\"act=rtempl&code=compare&suid={$this->ipsclass->input['id']}&pop=1\", \"CompareWindow\", 500,400)'>
 					  <input type='button' value='恢复'  class='realbutton' title='Restore the original, unedited template bit' onClick='template_bit_restore(); return false;'>
-					  <input type='button' value='查看原始版本' class='realbutton' title='View the HTML for the unedited template bit' onClick='pop_win(\"act=rtempl&code=preview&suid={$this->ipsclass->input['id']}&type=html\", \"OriginalPreview\", 400,400)'>
+					  <input type='button' value='查看原始版本' class='realbutton' title='View the HTML for the unedited template bit' onClick='pop_win(\"act=rtempl&code=preview&suid={$this->ipsclass->input['id']}&type=html\", \"原始版本预览\", 400,400)'>
 				   ";
 		}
 		

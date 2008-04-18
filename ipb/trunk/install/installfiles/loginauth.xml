@@ -3,8 +3,8 @@
 	<group>
 		<row>
 			<login_id>1</login_id>
-			<login_title>IPB Internal</login_title>
-			<login_description>The standard method of authentication</login_description>
+			<login_title>易维论坛内置登陆</login_title>
+			<login_description>易维论坛默认的内置登录验证方式</login_description>
 			<login_folder_name>internal</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>
@@ -24,8 +24,8 @@
 
 		<row>
 			<login_id>2</login_id>
-			<login_title>LDAP Authentication</login_title>
-			<login_description>LDAP / Active Directory Authentication</login_description>
+			<login_title>轻量目录访问协议</login_title>
+			<login_description>轻量目录访问协议 / 激活目录验证</login_description>
 			<login_folder_name>ldap</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>
@@ -45,8 +45,8 @@
 
 		<row>
 			<login_id>3</login_id>
-			<login_title>External Database</login_title>
-			<login_description>Authentication via an external database</login_description>
+			<login_title>外部数据库</login_title>
+			<login_description>通过外部数据库进行验证</login_description>
 			<login_folder_name>external</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>
@@ -66,8 +66,8 @@
 
 		<row>
 			<login_id>4</login_id>
-			<login_title>IP.Converge</login_title>
-			<login_description>Internal Use Only</login_description>
+			<login_title>IP.Converge 验证</login_title>
+			<login_description>仅限内部使用</login_description>
 			<login_folder_name>ipconverge</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>

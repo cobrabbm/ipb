@@ -345,11 +345,11 @@ class ad_multi_moderate
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( '管理选项', 'left', 'tablesubheader' );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加主题标题前缀<i>START</i> of topic title?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加主题标题 <u>前缀</u>?</b>" ,
 												  $this->ipsclass->adskin->form_input("topic_title_st", $topic_mm['topic_title_st'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加主题标题后缀<i>END</i> of topic title?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加主题标题 <u>后缀</u>?</b>" ,
 												  $this->ipsclass->adskin->form_input("topic_title_end", $topic_mm['topic_title_end'] )
 									     )      );
 		

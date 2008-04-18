@@ -110,13 +110,13 @@ class ad_skin_import {
 			
 			if ( ! $this->ipsclass->input['skin_location'] )
 			{
-				$this->ipsclass->main_msg = "No upload file was found and no filename was specified.";
+				$this->ipsclass->main_msg = "未发现上传或者指定的文件.";
 				$this->show_export_page();
 			}
 			
 			if ( ! file_exists( ROOT_PATH . $this->ipsclass->input['skin_location'] ) )
 			{
-				$this->ipsclass->main_msg = "Could not find the file to open at: " . ROOT_PATH . $this->ipsclass->input['skin_location'];
+				$this->ipsclass->main_msg = "无法打开文件: " . ROOT_PATH . $this->ipsclass->input['skin_location'];
 				$this->show_export_page();
 			}
 			
@@ -307,13 +307,13 @@ class ad_skin_import {
 			
 			if ( ! $this->ipsclass->input['skin_location'] )
 			{
-				$this->ipsclass->main_msg = "No upload file was found and no filename was specified.";
+				$this->ipsclass->main_msg = "未发现上传或者指定的文件.";
 				$this->show_export_page();
 			}
 			
 			if ( ! file_exists( ROOT_PATH . $this->ipsclass->input['skin_location'] ) )
 			{
-				$this->ipsclass->main_msg = "Could not find the file to open at: " . ROOT_PATH . $this->ipsclass->input['skin_location'];
+				$this->ipsclass->main_msg = "无法打开文件: " . ROOT_PATH . $this->ipsclass->input['skin_location'];
 				$this->show_export_page();
 			}
 			
@@ -355,7 +355,7 @@ class ad_skin_import {
 		
 		if( !$content )
 		{
-			$this->ipsclass->admin->error( "There was no content in the file to process" );
+			$this->ipsclass->admin->error( "该文件没有有效内容" );
 		}
 		
 		//-----------------------------------------
@@ -566,14 +566,14 @@ class ad_skin_import {
 			
 			if ( ! $this->ipsclass->input['skin_location'] )
 			{
-				$this->ipsclass->main_msg = "No upload file was found and no filename was specified.";
+				$this->ipsclass->main_msg = "未发现上传或者指定的文件.";
 				$this->show_export_page();
 				return;
 			}
 			
 			if ( ! file_exists( ROOT_PATH . $this->ipsclass->input['skin_location'] ) )
 			{
-				$this->ipsclass->main_msg = "Could not find the file to open at: " . ROOT_PATH . $this->ipsclass->input['skin_location'];
+				$this->ipsclass->main_msg = "无法打开文件: " . ROOT_PATH . $this->ipsclass->input['skin_location'];
 				$this->show_export_page();
 				return;
 			}
@@ -642,7 +642,7 @@ class ad_skin_import {
 		
 		if ( ! is_array( $xml->xml_array['macroexport']['macrogroup'] ) and ! count( $xml->xml_array['macroexport']['macrogroup'] ) )
 		{
-			$this->ipsclass->main_msg = "The XML import doesn't appear to be valid - please check the file and try again.";
+			$this->ipsclass->main_msg = "该导入 XML 无效 - 请检查文件后重试.";
 			$this->show_export_page();
 			return;
 		}
@@ -1427,47 +1427,47 @@ class ad_skin_import {
 							   <td class='tablerow2' width='60%'><select name='skin_id' class='dropdown'>{$skin_list}</select></td>
 							 </tr>
 							 <tr>
-							   <td class='tablerow1' width='40%'><b>Export Options</b><div class='graytext'>Please choose how deep this export should look for customizations.</div></td>
+							   <td class='tablerow1' width='40%'><b>导出选项</b><div class='graytext'>请选择自定义导出模式.</div></td>
 							   <td class='tablerow2' width='60%'>".$this->ipsclass->adskin->form_dropdown("skin_options",
-																								   array( 0 => array( 'noparent'  , 'Export customizations in this skin only' ),
-																										  1 => array( 'yesparent' , 'Export customizations in this skin and any parent skins' )
+																								   array( 0 => array( 'noparent'  , '仅导出该主题设置' ),
+																										  1 => array( 'yesparent' , '导出该主题和上级主题设置' )
 																										)
 																								 ) ."</td>
 							 </tr>
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='EXPORT SKIN XML' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导出主题 XML 设置' /></div>
 							 </div>
 							 </form>
 							 </fieldset>
 							 <br />
 							 
 							 <fieldset>
-							  <legend><strong>Export Skin Images</strong>
+							  <legend><strong>导出主题图片</strong>
 							  $start_form_b
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Export Which Image Set?</b><div class='graytext'>Image sets are exported into the XMLarchive format. This is not suitable for safemode users and in such a case we recommend you manually download via FTP and ZIP the images.</div></td>
+							   <td class='tablerow1' width='40%'><b>导出哪个主题图片?</b><div class='graytext'>图片文件将以 XML 文件格式导出. 对于安全模式设置的用户来说无法导出, 我们建议您通过 FTP 登录导出主题图片 ZIP 格式.</div></td>
 							   <td class='tablerow2' width='60%'>". $this->ipsclass->adskin->form_dropdown( 'skin_dirs', $dirs )."</td>
 							 </tr>
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='EXPORT SKIN IMAGES' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导出主题图片文件' /></div>
 							 </div>
 							 </form>
 							 </fieldset>
 							 <br />
 							 
 							 <fieldset>
-							  <legend><strong>Export Skin Macros</strong>
+							  <legend><strong>导出主题标签</strong>
 							  $start_form_e
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Export Macros From Which Skin Set?</b><div class='graytext'>Macro sets are exported into XML format.  This option may not work properly if your server has safemode enabled.</div></td>
+							   <td class='tablerow1' width='40%'><b>导出哪个主题标签?</b><div class='graytext'>主题标签将以 XML 格式导出. 如果您的服务器开启了安全模式该导出无法完成.</div></td>
 							   <td class='tablerow2' width='60%'><select name='skin_id' class='dropdown'>{$skin_list}</select></td>
 							 </tr>
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='EXPORT SKIN MACROS' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导出主题标签' /></div>
 							 </div>
 							 </form>
 							 </fieldset>							 
@@ -1477,84 +1477,84 @@ class ad_skin_import {
 							<br />
 							 
 							<div class='tableborder'>
-							 <div class='tableheaderalt'>Importing...</div>
+							 <div class='tableheaderalt'>正在导入...</div>
 							 <div class='tablepad' style='background-color:#EAEDF0'>
 							 <br />
 							 <fieldset>
-							  <legend><strong>Import Skin Templates</strong>
+							  <legend><strong>导入主题模板</strong>
 							  $start_form_c
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Upload XML Template set</b><div style='color:gray'>The file must begin with 'ipb_skin-' and end with either '.xml' or '.xml.gz'</div></td>
+							   <td class='tablerow1' width='40%'><b>上传 XML 模板设置</b><div style='color:gray'>文件必须以 'ipb_skin-' 开头并且扩展名必须是 '.xml' 或者 '.xml.gz'</div></td>
 							   <td class='tablerow2' width='60%'>". $this->ipsclass->adskin->form_upload(  ) ."</td>
 							 </tr>
 							 <tr>
-							   <td class='tablerow1' width='40%'><b><u>OR</u> enter the filename of the XML Template Set</b><div style='color:gray'>The file must be uploaded into the forum's root folder</div></td>
+							   <td class='tablerow1' width='40%'><b><u>或者</u> 输入 XML 模板设置文件名称</b><div style='color:gray'>该文件必须位于论坛根目录下</div></td>
 							   <td class='tablerow2' width='60%'>".$this->ipsclass->adskin->form_input( 'skin_location'  )."</td>
 							 </tr>
 							 <tr>
-							   <td class='tablerow1' width='40%'><b>New Skin Set Name?</b><div style='color:gray'>Leave blank to use the skin name from the XMLarchive</div></td>
+							   <td class='tablerow1' width='40%'><b>新主题设置名称?</b><div style='color:gray'>留空来默认使用模板文件中的名称</div></td>
 							   <td class='tablerow2' width='60%'>".$this->ipsclass->adskin->form_input( 'skin_name'  )."</td>
 							 </tr>
 							 <tr>
-							   <td class='tablerow1' width='40%'><b>Use with which image set?</b><div style='color:gray'>If you have not yet uploaded the image set, leave on -None-</div></td>
+							   <td class='tablerow1' width='40%'><b>使用哪一个图片设置?</b><div style='color:gray'>如果您还没有上传图片设置请选择 -没有-</div></td>
 							   <td class='tablerow2' width='60%'>". $this->ipsclass->adskin->form_dropdown( 'image_set', $import_dirs )."</td>
 							 </tr>							 
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='IMPORT SKIN XML' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导入主题 XML 设置' /></div>
 							 </div>
 							 </form>
 							 </fieldset>
 							 
 							 <br />
 							 <fieldset>
-							  <legend><strong>Import Skin Images</strong>
+							  <legend><strong>导入主题图片</strong>
 							  $start_form_d
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Upload XMLarchive Image set</b><div style='color:gray'>The file must begin with 'ipb_images-' and end with either '.xml' or '.xml.gz'</div></td>
+							   <td class='tablerow1' width='40%'><b>上传 XML 图片设置</b><div style='color:gray'>文件必须以 'ipb_images-' 开头并且扩展名必须是 '.xml' 或者 '.xml.gz'</div></td>
 							   <td class='tablerow2' width='60%'>". $this->ipsclass->adskin->form_upload(  ) ."</td>
 							 </tr>
 							 <tr>
-							   <td class='tablerow1' width='40%'><b><u>OR</u> enter the filename of the XMLarchive Image Set</b><div style='color:gray'>The file must be uploaded into the forum's root folder</div></td>
+							   <td class='tablerow1' width='40%'><b><u>或者</u> 输入 XML 图片设置文件名称</b><div style='color:gray'>该文件必须位于论坛根目录下</div></td>
 							   <td class='tablerow2' width='60%'>".$this->ipsclass->adskin->form_input( 'skin_location'  )."</td>
 							 </tr>
 							 <tr>
-							   <td class='tablerow1' width='40%'><b>New Image Set Directory Name?</b><div style='color:gray'>Leave blank to use the set name from the XMLarchive</div></td>
+							   <td class='tablerow1' width='40%'><b>新图片文件夹名称?</b><div style='color:gray'>留空来默认使用 XML 文件中的名称</div></td>
 							   <td class='tablerow2' width='60%'>".$this->ipsclass->adskin->form_input( 'skin_name'  )."</td>
 							 </tr>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Use with which skin set?</b><div class='graytext'>If you do not want to apply this image set to any skin, leave on -None-.</div></td>
+							   <td class='tablerow1' width='40%'><b>应用到哪一个模板设置?</b><div class='graytext'>如果您没有使用该图片文件夹到任何模板, 请选择 -没有-.</div></td>
 							   <td class='tablerow2' width='60%'><select name='skin_set' class='dropdown'>{$import_skins}</select></td>
 							 </tr>							 
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='IMPORT SKIN IMAGES' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导入主题图片' /></div>
 							 </div>
 							 </form>
 							 </fieldset>
 							 
 							 <br />
 							 <fieldset>
-							  <legend><strong>Import Skin Macros</strong>
+							  <legend><strong>导入主题标签</strong>
 							  $start_form_f
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Upload XML Macro set</b><div style='color:gray'>The file must begin with 'ipb_macros-' and end with '.xml'</div></td>
+							   <td class='tablerow1' width='40%'><b>上传 XML 标签设置</b><div style='color:gray'>文件必须以 'ipb_macros-' 开头并且扩展名必须是 '.xml'</div></td>
 							   <td class='tablerow2' width='60%'>". $this->ipsclass->adskin->form_upload(  ) ."</td>
 							 </tr>
 							 <tr>
-							   <td class='tablerow1' width='40%'><b><u>OR</u> enter the filename of the XML Macro Set</b><div style='color:gray'>The file must be uploaded into the forum's root folder</div></td>
+							   <td class='tablerow1' width='40%'><b><u>或者</u> 输入 XML 标签设置文件名称</b><div style='color:gray'>该文件必须位于论坛根目录下</div></td>
 							   <td class='tablerow2' width='60%'>".$this->ipsclass->adskin->form_input( 'skin_location'  )."</td>
 							 </tr>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>Use with which skin set?</b></td>
+							   <td class='tablerow1' width='40%'><b>应用到哪一个模板设置?</b></td>
 							   <td class='tablerow2' width='60%'><select name='skin_set' class='dropdown'>{$skin_list}</select></td>
 							 </tr>							 
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='IMPORT SKIN MACROS' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导入主题标签' /></div>
 							 </div>
 							 </form>
 							 </fieldset>							 

@@ -439,13 +439,13 @@ class ad_attachments {
 														)      );
 														
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索结果排序</b>",
-																 $this->ipsclass->adskin->form_dropdown( 'orderby', array( 0 => array( 'date'    , 'Attach Date'      ),
-																 										             1 => array( 'hits'    , 'Attach Views'     ),
-																 										             2 => array( 'filesize', 'Attach File Size' ),
-																 										             3 => array( 'file'    , 'Attach File Name' ),
+																 $this->ipsclass->adskin->form_dropdown( 'orderby', array( 0 => array( 'date'    , '上传日期'      ),
+																 										             1 => array( 'hits'    , '查看次数'     ),
+																 										             2 => array( 'filesize', '文件大小' ),
+																 										             3 => array( 'file'    , '文件名称' ),
 																 										           ), isset($_POST['orderby']) ? $_POST['orderby'] : '' ).' '.
 																 $this->ipsclass->adskin->form_dropdown( 'sort'   , array( 0 => array( 'desc'   , '倒序 [9-0]'  ),
-																 													 1 => array( 'asc'    , 'Ascending [0-9]'   ),
+																 													 1 => array( 'asc'    , '正序 [0-9]'   ),
 																 										           ), isset($_POST['sort']) ? $_POST['sort'] : '' )
 																 										        
 												 				 
@@ -598,7 +598,7 @@ class ad_attachments {
  																'from'   => 'attachments' ) );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>附件数量</b>" , $this->ipsclass->do_number_format($stats['count']),
-																 			 "<b>Attachments Disk Usage</b>", $this->ipsclass->size_format($stats['sum']),
+																 			 "<b>附件空间</b>", $this->ipsclass->size_format($stats['sum']),
 													  				 )      );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
@@ -615,10 +615,10 @@ class ad_attachments {
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		$this->ipsclass->adskin->td_header[] = array( "文件名称", "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "大小"      , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "上传者"    , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题"     , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "发布    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最新的 5 个附件" );
@@ -670,10 +670,10 @@ class ad_attachments {
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		$this->ipsclass->adskin->td_header[] = array( "文件名称", "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "大小"      , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "上传者"    , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题"     , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "发布    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "最大的 5 个附件" );
@@ -725,10 +725,10 @@ class ad_attachments {
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		$this->ipsclass->adskin->td_header[] = array( "文件名称", "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Viewed"    , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "查看"    , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "上传者"    , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题"     , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "发布    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "点击次数最多的 5 个附件" );
