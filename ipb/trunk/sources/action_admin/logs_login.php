@@ -53,7 +53,7 @@ class ad_logs_login
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '后台登陆日志' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '后台登录日志' );
 		
 		//-----------------------------------------
 		// LOAD HTML

@@ -3675,8 +3675,8 @@ ia_archiver=Archive.org</conf_default>
 			<conf_key>search_sql_method</conf_key>
 			<conf_value></conf_value>
 			<conf_default>man</conf_default>
-			<conf_extra>ftext=Full Text
-man=Manual</conf_extra>
+			<conf_extra>ftext=全文搜索
+man=普通搜索</conf_extra>
 			<conf_evalphp><![CDATA[if ( $show == 1 )
 {
 	
@@ -4149,7 +4149,7 @@ choose=允许用户输入新密码</conf_extra>
 
 		<setting>
 			<conf_id>176</conf_id>
-			<conf_title>允许在帖子中上传Flash或者用作头像?</conf_title>
+			<conf_title>允许在帖子中上传 Flash 以及用作头像?</conf_title>
 			<conf_description><![CDATA[Flash 采用内建的脚本机制, 这就存在一定的安全隐患, 除非您绝对信任您的用户, 否则请不要开启.]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -4393,8 +4393,8 @@ pm=短消息</conf_extra>
 
 		<setting>
 			<conf_id>190</conf_id>
-			<conf_title>禁止匿名 (隐身) 登陆</conf_title>
-			<conf_description><![CDATA[用户将不能匿名 (隐身) 登陆]]></conf_description>
+			<conf_title>禁止匿名 (隐身) 登录</conf_title>
+			<conf_description><![CDATA[用户将不能匿名 (隐身) 登录]]></conf_description>
 			<conf_group>26</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>disable_anonymous</conf_key>
