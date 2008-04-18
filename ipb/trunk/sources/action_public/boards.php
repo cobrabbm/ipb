@@ -187,7 +187,7 @@ class boards
 
         $this->ipsclass->print->add_output( $this->output );
         
-        $cp = " (Powered by Invision Power Board)";
+        $cp = " (Powered by IPBChina.COM)";
         
         if ($this->ipsclass->vars['ips_cp_purchase'])
         {
