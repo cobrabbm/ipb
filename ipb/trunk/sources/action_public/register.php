@@ -2228,7 +2228,7 @@ class register {
 		//-----------------------------------------
 		
 		$this->ipsclass->DB->do_insert( 'member_extra', array( 'id'        => $member_id,
-															   'vdirs'     => 'in:Inbox|sent:Sent Items',
+															   'vdirs'     => 'in:收件箱|sent:发件箱',
 															   'interests' => '',
 															   'signature' => '' ) );
 		

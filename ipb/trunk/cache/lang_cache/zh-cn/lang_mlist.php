@@ -83,7 +83,7 @@ $lang = array (
 
 'sorting_text'					=>	"显示 <#FILTER#> , 根据 <#SORT_KEY#> 并按照 <#SORT_ORDER#> 进行排列, 每页显示 <#MAX_RESULTS#> 条",
 'member_name'					=>	"会员名称",
-'member_posts'					=>	"发帖数",
+'member_posts'					=>	"发帖总数",
 'multi_pages'					=>	"页面:",
 'sort_by_posts'					=>	"发帖总数",
 'descending_order'					=>	"降序",

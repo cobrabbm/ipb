@@ -81,7 +81,7 @@ class ad_acppermissions
 		
 		if ( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
 		{
-			$this->ipsclass->admin->error("对不起, 只有系统管理员才能访问这里");
+			$this->ipsclass->admin->error("非常抱歉, 只有系统管理员才能访问这里");
 		}
 		
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_admin');

@@ -1916,7 +1916,7 @@ class ad_groups
 			{
 				if ( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
 				{
-					$this->ipsclass->admin->error("对不起, 您不能编辑系统管理员组");
+					$this->ipsclass->admin->error("非常抱歉, 您不能编辑系统管理员组");
 				}
 			}
 			
