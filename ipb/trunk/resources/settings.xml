@@ -1295,7 +1295,8 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 			<conf_key>mail_method</conf_key>
 			<conf_value></conf_value>
 			<conf_default>mail</conf_default>
-			<conf_extra>mail=PHP Mail() smtp=SMTP</conf_extra>
+			<conf_extra>mail=PHP Mail() 
+smtp=SMTP</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>3</conf_position>
@@ -1529,7 +1530,7 @@ $r['conf_description'] = str_replace( '<-T->', $d_date, $r['conf_description'] )
 
 		<setting>
 			<conf_id>63</conf_id>
-			<conf_title><![CDATA[Path to &#39;upload&#39; directory]]></conf_title>
+			<conf_title><![CDATA[文件夹 &#39;upload&#39; 磁盘路径]]></conf_title>
 			<conf_description><![CDATA[这是磁盘路径, 不是 URL.
 <!--SUGGEST-->]]></conf_description>
 			<conf_group>10</conf_group>

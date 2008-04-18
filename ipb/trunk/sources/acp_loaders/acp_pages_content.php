@@ -55,7 +55,8 @@ $PAGES[] = array(
 					 4 => array( '权限管理'      	, 'section=content&amp;act=group&amp;code=permsplash'),
 					 // 6 => array( 'Moderators'            , 'section=content&amp;act=mod'                  ),
 					 7 => array( '批量主题管理'	, 'section=content&amp;act=multimod'          ),
-					 8 => array( '回收站设置'      	, 'section=tools&amp;act=op&amp;code=findsetting&amp;key=trashcanset-up', '', 0, 1 ),
+					 //8 => array( '回收站设置'      	, 'section=tools&amp;act=op&amp;code=findsetting&amp;key=trashcanset-up', '', 0, 1 ),
+					 8 => array( '回收站设置'      	, 'section=tools&amp;act=op&amp;code=findsetting&amp;key=trashcansetup', '', 0, 1 ),
 			       );
 			       
 $CATS[]  = array( '订阅管理' );
@@ -67,7 +68,8 @@ $PAGES[] = array(
 					 4 => array( '货币管理'         , 'section=content&amp;act=msubs&amp;code=currency' ,  ),
 					 5 => array( '手动添加交易'  , 'section=content&amp;act=msubs&amp;code=addtransaction' ),
 					 6 => array( '安装支付网关'  , 'section=content&amp;act=msubs&amp;code=install-index' ),
-					 9 => array( '付费订阅设置'     , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('subscriptionsmanager'), '', 0, 1 ),
+					 //9 => array( '付费订阅设置'     , 'section=tools&amp;act=op&amp;code=findsetting&amp;key='.urlencode('subscriptionsmanager'), '', 0, 1 ),
+					 9 => array( '付费订阅设置'     , 'section=tools&amp;act=op&amp;code=findsetting&amp;key=submanager', '', 0, 1 ),
 				  
 			       );
 			       

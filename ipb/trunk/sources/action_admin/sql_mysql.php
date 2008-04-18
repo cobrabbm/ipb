@@ -1062,7 +1062,7 @@ class ad_sql_module {
 			$this->ipsclass->adskin->td_header[] = array( "导出"     , "10%" );
 			$this->ipsclass->adskin->td_header[] = array( '<input name="allbox" type="checkbox" value="全部选择" onClick="CheckAll();">'     , "10%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Invision Power Board 数据表" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "易维论坛数据表" );
 			
 			$this->ipsclass->DB->query("SHOW TABLE STATUS FROM `".$this->ipsclass->vars['sql_database']."`");
 			
@@ -1077,7 +1077,7 @@ class ad_sql_module {
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b><span style='font-size:12px'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=runsql&query=".urlencode("SELECT * FROM {$r['Name']}")."'>{$r['Name']}</a></span></b>",
 														  "<center>{$r['Rows']}</center>",
-														  "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=export_tbl&tbl={$r['Name']}'>Export</a></center></b>",
+														  "<center><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=export_tbl&tbl={$r['Name']}'>导出</a></center></b>",
 														  "<center><input name=\"tbl_{$r['Name']}\" value=1 type='checkbox' onClick=\"CheckCheckAll();\"></center>",
 												 )      );
 			}

@@ -774,7 +774,7 @@ class ad_postoffice
 		
 		$this->ipsclass->html .= "</div></div><br />";
 		
-		$this->ipsclass->html .= "<div class='tableborder'><div class='tableheaderalt'>Filters</div>";
+		$this->ipsclass->html .= "<div class='tableborder'><div class='tableheaderalt'>收件人定义</div>";
 		$this->ipsclass->html .= "<div class='tablerow2' style='padding:4px'>
 							<table width='100%' cellpadding='2' cellspacing='0' border='0'>
 							<tr>
@@ -1047,13 +1047,13 @@ EOF;
 	function _get_default_mail_contents()
 	{
 		$mail = "{member_name},\n\n\n\n-------------------------------------\n{board_name} 统计：\n"
-			  ."-------------------------------------\n注册会员数:{reg_total}\n帖子总数:{total_posts}\n"
-			  ."于 {busy_time}, 有 {busy_count} 位会员同时在线.\n\n"
-			  ."-------------------------------------\n快速连接\n"
-			  ."-------------------------------------\n论坛地址:{board_url}\n登录地址:{board_url}?act=Login&CODE=00\n"
-			  ."找回密码:{board_url}?act=Reg&CODE=10\n\n"
+			  ."-------------------------------------\n注册会员: {reg_total} 人\n帖子总数: {total_posts}\n"
+			  ."在线峰值: 在{busy_time}共有 {busy_count} 位会员同时在线.\n\n"
+			  ."-------------------------------------\n快速链接\n"
+			  ."-------------------------------------\n论坛地址: {board_url}\n登录地址: {board_url}?act=Login&CODE=00\n"
+			  ."找回密码: {board_url}?act=Reg&CODE=10\n\n"
 			  ."-------------------------------------\n如何取消订阅\n"
-			  ."-------------------------------------\n访问您的控制面板中的“邮件参数设置”（{board_url}?act=UserCP&CODE=02）将“接收由论坛管理员发出的任何消息”前的复选框取消, 然后提交表单.";
+			  ."-------------------------------------\n访问您的控制面板中的 \"邮件参数设置\"({board_url}?act=UserCP&CODE=02)将 \"接收由论坛管理员发出的任何消息\" 前的复选框取消, 然后提交表单.";
 			  
 		return $mail;
 	

@@ -22,7 +22,8 @@ $PAGES = array(
 							 //7 => array( '打开 / 关闭论坛'      , 'act=op&code=findsetting&key='.urlencode('boardoffline/online'), '', 0, 1 ),
 							 7 => array( '打开 / 关闭论坛'      , 'act=op&code=findsetting&key=boardoffline'), '', 0, 1 ),
 							 8 => array( '论坛规则设置'         , 'act=op&code=findsetting&key='.urlencode('boardguidelines'), '', 0, 1 ),
-							 9 => array( '论坛全局设置'    , 'act=op&code=findsetting&key='.urlencode('generalconfiguration'), '', 0, 1 ),
+							 //9 => array( '论坛全局设置'    , 'act=op&code=findsetting&key='.urlencode('generalconfiguration'), '', 0, 1 ),
+							 9 => array( '论坛全局设置'    , 'act=op&code=findsetting&key=general', '', 0, 1 ),
 							 10 => array( 'CPU 降压设置'              , 'act=op&code=findsetting&key='.urlencode('cpusaving&optimization'), '', 0, 1 ),
 							 11 => array( 'IP 聊天室插件'                 , 'act=pin&code=ipchat'  ),
 							 12 => array( 'IPB 许可证'             , 'act=pin&code=reg'     ),
@@ -61,7 +62,8 @@ $PAGES = array(
 							 4 => array( '管理交易货币'         , 'act=msubs&code=currency' ,  ),
 							 5 => array( '手动添加交易'  , 'act=msubs&code=addtransaction' ),
 							 6 => array( '安装支付网关'  , 'act=msubs&code=install-index' ),
-							 9 => array( '付费订阅设置'     , 'act=op&code=findsetting&key='.urlencode('subscriptionsmanager'), '', 0, 1 ),
+							 //9 => array( '付费订阅设置'     , 'act=op&code=findsetting&key='.urlencode('subscriptionsmanager'), '', 0, 1 ),
+							 9 => array( '付费订阅设置'     , 'act=op&code=findsetting&key=submanager', '', 0, 1 ),
 						   ),
 				
 				# POST MANAGEMENT

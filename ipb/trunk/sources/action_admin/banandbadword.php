@@ -247,8 +247,8 @@ class ad_banandbadword {
 		//-----------------------------------------
 		
 		$add_form = "<div align='center'><form method='post' action='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=ban_add'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><input type='text' size='30' class='textinput' value='' name='bantext' />
-					   <select class='dropdown' name='bantype'><option value='ip'>IP Address</option><option value='email'>Email Address</option><option value='name'>Name</option></select>
-					   <input type='submit' value='Add New Filter' class='realdarkbutton' /></form></div>
+					   <select class='dropdown' name='bantype'><option value='ip'>IP 地址</option><option value='email'>邮件地址</option><option value='name'>会员名称</option></select>
+					   <input type='submit' value='添加新过滤' class='realdarkbutton' /></form></div>
 					   <form method='post' action='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=ban_delete'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />";
 
 		$this->ipsclass->adskin->td_header[] = array( "{none}"	, "1%" );
