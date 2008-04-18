@@ -913,8 +913,8 @@ class ad_forums
 																							
 																							
 		$dd_by       = array( 
-							 0 => array( 'Z-A', '倒序 (Z - A, 0 - 10)' ),
-							 1 => array( 'A-Z', '正序 (A - Z, 10 - 0)'  )
+							 0 => array( 'Z-A', '降序 (Z - A, 0 - 10)' ),
+							 1 => array( 'A-Z', '升序 (A - Z, 10 - 0)'  )
 							);
 							
 		$dd_filter	 = array(

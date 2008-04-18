@@ -444,8 +444,8 @@ class ad_attachments {
 																 										             2 => array( 'filesize', '文件大小' ),
 																 										             3 => array( 'file'    , '文件名称' ),
 																 										           ), isset($_POST['orderby']) ? $_POST['orderby'] : '' ).' '.
-																 $this->ipsclass->adskin->form_dropdown( 'sort'   , array( 0 => array( 'desc'   , '倒序 [9-0]'  ),
-																 													 1 => array( 'asc'    , '正序 [0-9]'   ),
+																 $this->ipsclass->adskin->form_dropdown( 'sort'   , array( 0 => array( 'desc'   , '降序 [9-0]'  ),
+																 													 1 => array( 'asc'    , '升序 [0-9]'   ),
 																 										           ), isset($_POST['sort']) ? $_POST['sort'] : '' )
 																 										        
 												 				 

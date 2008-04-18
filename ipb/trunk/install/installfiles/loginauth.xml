@@ -3,7 +3,7 @@
 	<group>
 		<row>
 			<login_id>1</login_id>
-			<login_title>易维论坛内置登陆</login_title>
+			<login_title>易维论坛内置登录</login_title>
 			<login_description>易维论坛默认的内置登录验证方式</login_description>
 			<login_folder_name>internal</login_folder_name>
 			<login_maintain_url></login_maintain_url>
