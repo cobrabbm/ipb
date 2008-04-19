@@ -125,9 +125,9 @@ $IPBHTML .= <<<EOF
  <table cellpadding='0' cellspacing='0' width='100%'>
  <tr>
   <td class='tablesubheader' width='1%'>&nbsp;</td>
-  <td class='tablesubheader' width='55%'>API User</td>
+  <td class='tablesubheader' width='55%'>API 会员</td>
   <td class='tablesubheader' width='20%' align='center'>API 键值</td>
-  <td class='tablesubheader' width='20%' align='center'>IP</td>
+  <td class='tablesubheader' width='20%' align='center'>IP 地址</td>
   <td class='tablesubheader' width='5%'><img id="menumainone" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='Options' class='ipd' /></td>
  </tr>
 EOF;

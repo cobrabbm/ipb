@@ -44,7 +44,7 @@ class ad_rssexport
 	
 	function auto_run() 
 	{
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'RSS Export Manager' );
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'RSS 导出管理' );
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_rss');
 		
 		switch($this->ipsclass->input['code'])

@@ -1819,7 +1819,7 @@ var in_name   = '$name';
 
 		<template>
 			<group_name>skin_global</group_name>
-			<section_content><![CDATA[<br /><br />--------------------<br />
+			<section_content><![CDATA[<br /><br />--------------------IPBChina.COM<br />
 <div class="signature">$sig</div>]]></section_content>
 			<func_name>signature_separator</func_name>
 			<func_data><![CDATA[$sig=""]]></func_data>

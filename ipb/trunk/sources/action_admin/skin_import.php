@@ -51,7 +51,7 @@ class ad_skin_import {
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Skin Import/Export' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Skin 导入/导出' );
 		
 		//-----------------------------------------
 

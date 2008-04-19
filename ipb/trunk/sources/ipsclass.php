@@ -2425,7 +2425,7 @@ class ipsclass {
 		
 		$_NOW = $this->memory_debug_make_flag();
 		
-	    $this->vars['default_language'] = isset($this->vars['default_language']) ? $this->vars['default_language'] : 'en';
+	    $this->vars['default_language'] = isset($this->vars['default_language']) ? $this->vars['default_language'] : 'zh-cn';
 	    
     	if ( ! $this->lang_id )
     	{
