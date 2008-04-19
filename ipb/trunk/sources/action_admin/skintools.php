@@ -1179,7 +1179,7 @@ class ad_skintools {
 															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选主题和所有父模板中搜索."
 													    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Search");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("搜索");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1205,12 +1205,12 @@ class ad_skintools {
 															     $this->ipsclass->adskin->form_textarea( 'replacewith', $_POST['replacewith'] )
 													    )      );
 													    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b><br /><span style='color:gray'>NOTE: The search and replace will only work on the specified skin set. The parent and master skin sets will NOT be searched or any replacements made on them.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>搜索范围...</b><br /><span style='color:gray'>请注意: 搜索和替换仅对指定的模板有效. 对其父模板不起作用.</span>",
 															     $skin_list
 															     ."<br /><input type='checkbox' name='searchall' value='1'> 在所选主题和所有父模板中搜索."
 													    )      );
 													    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>测试搜索和替换?</b><br /><span style='color:gray'>>如果是, 您会看到替换的效果, 但是不会真的替换数据.</span>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>测试搜索和替换?</b><br /><span style='color:gray'>如果是, 您会看到替换的效果, 但是不会真的替换数据.</span>",
 															      $this->ipsclass->adskin->form_yes_no( 'testonly', 1 )
 													    )      );
 													    

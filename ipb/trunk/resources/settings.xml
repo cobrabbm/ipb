@@ -938,7 +938,7 @@
 			<conf_type>dropdown</conf_type>
 			<conf_key>time_offset</conf_key>
 			<conf_value></conf_value>
-			<conf_default>0</conf_default>
+			<conf_default>+8</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp><![CDATA[if ( $show == 1 )
 {
@@ -964,7 +964,7 @@
 		<setting>
 			<conf_id>41</conf_id>
 			<conf_title>服务器时间校正 [分钟]</conf_title>
-			<conf_description><![CDATA[在您设置好服务器时区后, 如果还需要服务器时间后退,那么使用减号符号 "-" (不加引号). 当前论坛时间为 (根据上面的时区和这里的调整得到):<br><-T->]]></conf_description>
+			<conf_description><![CDATA[在您设置好服务器时区后, 如果还需要服务器时间后退, 那么使用减号符号 "-" (不加引号). 当前论坛时间为 (根据上面的时区和这里的调整得到):<br><-T->]]></conf_description>
 			<conf_group>7</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>time_adjust</conf_key>

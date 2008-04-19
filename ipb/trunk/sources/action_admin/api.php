@@ -45,7 +45,7 @@ class ad_api
 		
 		if ($this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'])
 		{
-			$this->ipsclass->admin->error("Sorry, these functions are for the root admin group only");
+			$this->ipsclass->admin->error("非常抱歉, 这些功能仅对系统管理员开放.");
 		}
 		
 		//-----------------------------------------
@@ -54,7 +54,7 @@ class ad_api
 		
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_api');
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'XML-RPC API Management' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'XML-RPC API 管理' );
 		
 		//-----------------------------------------
 		// What are we to do, today?
@@ -212,7 +212,7 @@ class ad_api
 		// Print...
 		//-----------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "XML-RPC API Logs", "This page shows all the recorded XML-RPC requests.<br />The red cross indicates an error during the request and a green tick indicates a successful request." ) . "<br />";
+		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "XML-RPC API 日志", "该页面将会展示全部 XML-RPC 请求信息.<br />对于错误的请求将以红色叉标记, 对于正确的请求将以绿色勾标记." ) . "<br />";
 		
 		$this->ipsclass->html .= $this->html->api_login_view( $logs, $links );
 		
@@ -235,7 +235,7 @@ class ad_api
 		
 		if( !$api_user_id )
 		{
-			$this->ipsclass->main_msg = "Could not determine the user to remove";
+			$this->ipsclass->main_msg = "无法决定删除的会员";
 			$this->api_list();
 			return;
 		}
@@ -246,14 +246,14 @@ class ad_api
 		
 		if ( ! $api_user['api_user_id'] )
 		{
-			$this->ipsclass->main_msg = "The API user could not be found.";
+			$this->ipsclass->main_msg = "该 API 会员无法找到.";
 			$this->api_list();
 			return;
 		}
 		
 		$this->ipsclass->DB->do_delete( 'api_users', 'api_user_id='.$api_user_id );
 		
-		$this->ipsclass->main_msg = "API User successfully removed";
+		$this->ipsclass->main_msg = "API 会员已经成功删除";
 		$this->api_list();
 	}
 		
@@ -298,7 +298,7 @@ class ad_api
 		{
 			if ( ! $api_user_key )
 			{
-				$this->ipsclass->main_msg = "No API user key was passed!";
+				$this->ipsclass->main_msg = "没有任何 API 会员键值通过!";
 				$this->api_form( $type );
 				return;
 			}
@@ -311,7 +311,7 @@ class ad_api
 			
 			if ( ! $api_user['api_user_id'] )
 			{
-				$this->ipsclass->main_msg = "The API user could not be found.";
+				$this->ipsclass->main_msg = "该 API 会员无法找到.";
 				$this->api_list();
 				return;
 			}
@@ -364,13 +364,13 @@ class ad_api
 			// Save it...
 			//-----------------------------------------
 			
-			$this->ipsclass->main_msg = "API User Added";
+			$this->ipsclass->main_msg = "API 会员已经添加";
 			
 			$this->ipsclass->DB->do_insert( 'api_users', $save );
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "API User Edit";
+			$this->ipsclass->main_msg = "API 会员已经编辑";
 			
 			$this->ipsclass->DB->do_update( 'api_users', $save, 'api_user_id=' . $api_user_id );
 		}
@@ -405,8 +405,8 @@ class ad_api
 		if ( $type == 'add' )
 		{
 			$formcode  = 'api_add_save';
-			$title     = "Create New API User";
-			$button    = "Create New API User";
+			$title     = "创建新的 API 会员";
+			$button    = "创建新的 API 会员";
 			$api_user  = array();
 			$api_perms = array();
 		}
@@ -418,14 +418,14 @@ class ad_api
 			
 			if ( ! $api_user['api_user_id'] )
 			{
-				$this->ipsclass->main_msg = "The API user could not be found.";
+				$this->ipsclass->main_msg = "该 API 会员无法找到.";
 				$this->api_list();
 				return;
 			}
 			
 			$formcode = 'api_edit_save';
-			$title    = "Edit API User: ".$api_user['api_user_name'];
-			$button   = "Save Changes";
+			$title    = "编辑 API 会员: ".$api_user['api_user_name'];
+			$button   = "保存更改";
 			
 			$api_perms = unserialize( $api_user['api_user_perms'] );
 		}
@@ -509,10 +509,10 @@ class ad_api
 			$form['_api_user_key'] = md5( rand( 0, time() ) . $this->ipsclass->member['member_login_key'] . microtime() );
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "XML-RPC User Management", "You may create API users for use with the XML-RPC system which allows other applications to access IP.Board data" ) . "<br />";
+		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "XML-RPC 会员管理", "您可以在这里创建 API 回原来允许他们使用 XML-RPC 系统调用易维论坛数据" ) . "<br />";
 		$this->ipsclass->html .= $this->html->api_form( $form, $title, $formcode, $button, $api_user, $type, $permissions );
 		
-		$this->ipsclass->admin->nav[]       = array( "", "Add/Edit API User" );
+		$this->ipsclass->admin->nav[]       = array( "", "添加/编辑 API 会员" );
 		$this->ipsclass->admin->output();
 	}
 	
@@ -555,11 +555,11 @@ class ad_api
 		
 		if ( ! $this->ipsclass->vars['xmlrpc_enable'] )
 		{
-			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( "XML-RPC Sytem Disabled", "<strong>The XML-RPC system is not enabled!</strong><br />All API requests will fail. <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=op&amp;code=setting_view&amp;conf_title_keyword=xmlrpcapi'>Click here to enable it</a>" ) .  "<br >";
+			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->warning_box( "XML-RPC 系统关闭", "<strong>该 XML-RPC 系统当前没有开启!</strong><br />所有 API 请求都将无效. <a href='{$this->ipsclass->base_url}&amp;section=tools&amp;act=op&amp;code=setting_view&amp;conf_title_keyword=xmlrpcapi'>点击这里开启系统</a>" ) .  "<br >";
 		}
 		else
 		{
-			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "XML-RPC User Management", "You may create API users for use with the XML-RPC system which allows other applications to access IP.Board data" ) . "<br />";
+			$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "XML-RPC 会员管理", "您可以在这里创建 API 回原来允许他们使用 XML-RPC 系统调用易维论坛数据" ) . "<br />";
 		}
 		
 		//-----------------------------------------

@@ -431,7 +431,7 @@ class ad_postoffice
 							</fieldset>
 							<br />
 							<fieldset>
-							 <legend><strong>Sending the Email</strong></legend>
+							 <legend><strong>发送该邮件</strong></legend>
 							 点击下面的 '开始发送邮件' 按钮, 将会激活任务管理器的群发邮件功能, 邮件将会持续发送, 直到发出所有的邮件. 您可以在邮局主页面看到发送进程, 并且可以取消发送.
 							 <br />
 							 强烈建议您每次最多发送 50 封邮件. 更多的发送数量将会大大降低服务器性能.
@@ -1048,7 +1048,7 @@ EOF;
 	{
 		$mail = "{member_name},\n\n\n\n-------------------------------------\n{board_name} 统计：\n"
 			  ."-------------------------------------\n注册会员: {reg_total} 人\n帖子总数: {total_posts}\n"
-			  ."在线峰值: 在{busy_time}共有 {busy_count} 位会员同时在线.\n\n"
+			  ."在线峰值: 在 {busy_time} 共有 {busy_count} 位会员同时在线.\n\n"
 			  ."-------------------------------------\n快速链接\n"
 			  ."-------------------------------------\n论坛地址: {board_url}\n登录地址: {board_url}?act=Login&CODE=00\n"
 			  ."找回密码: {board_url}?act=Reg&CODE=10\n\n"

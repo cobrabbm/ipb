@@ -47,8 +47,8 @@ class ad_skin_remap
 
 	function auto_run()
 	{
-		$this->ipsclass->admin->page_detail = "This section allows you to force a skin set to be used in conjunction with a URL.";
-		$this->ipsclass->admin->page_title  = "Skin Remapping";
+		$this->ipsclass->admin->page_detail = "该部分允许您强制一个主题与以下 URL 绑定.";
+		$this->ipsclass->admin->page_title  = "模板重测图";
 		
 		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'Skin Remapping Home' );
 
@@ -164,7 +164,7 @@ class ad_skin_remap
 		{
 			if ( ! $map_id OR ! $map_title OR ! $map_url )
 			{
-				$this->ipsclass->main_msg = "You must complete the form fully";
+				$this->ipsclass->main_msg = "您必须完整填写";
 				$this->skin_remap_form( $type );
 				return;
 			}
@@ -173,7 +173,7 @@ class ad_skin_remap
 		{
 			if ( ! $map_title OR ! $map_url )
 			{
-				$this->ipsclass->main_msg = "You must complete the entire form.";
+				$this->ipsclass->main_msg = "您必须完整填写.";
 				$this->skin_remap_form( $type );
 				return;
 			}
@@ -195,14 +195,14 @@ class ad_skin_remap
 			
 			$this->ipsclass->DB->do_insert( 'skin_url_mapping', $array );
 			
-			$this->ipsclass->main_msg = 'Skin Remap Added';
+			$this->ipsclass->main_msg = '重测图已经添加';
 		}
 		else
 		{
 			
 			$this->ipsclass->DB->do_update( 'skin_url_mapping', $array, 'map_id='.$map_id );
 			
-			$this->ipsclass->main_msg = 'Skin Remap Edited';
+			$this->ipsclass->main_msg = '冲厕图已经编辑';
 		}
 		
 		//-----------------------------------------
@@ -229,8 +229,8 @@ class ad_skin_remap
 		//-----------------------------------------
 		
 		$map_id         = intval( $this->ipsclass->input['map_id'] );
-		$map_match_type = array( 0 => array( 'contains', 'Contains'   ),
-								 1 => array( 'exactly' , 'Is Exactly' ) );
+		$map_match_type = array( 0 => array( 'contains', '包含'   ),
+								 1 => array( 'exactly' , '精确' ) );
 		$form           = array();
 		$skins          = array();
 		$remap          = array();
@@ -242,8 +242,8 @@ class ad_skin_remap
 		if ( $type == 'add' )
 		{
 			$formcode = 'remap_add_do';
-			$title    = "Add New Skin Remap";
-			$button   = "Add New Skin Remap";
+			$title    = "添加新的重测图";
+			$button   = "添加新的重测图";
 		}
 		else
 		{
@@ -260,8 +260,8 @@ class ad_skin_remap
 			}
 			
 			$formcode = 'remap_edit_do';
-			$title    = "Edit Remapping ".$remap['map_title'];
-			$button   = "Save Changes";
+			$title    = "编辑重测图 ".$remap['map_title'];
+			$button   = "保存更改";
 		}
 		
 		//-----------------------------------------
