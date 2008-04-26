@@ -104,10 +104,10 @@
 		<helpsections>
 			<key>components_helptext_new</key>
 			<title>内部帮助关键词</title>
-			<helptext><![CDATA[settinggoup_----- = Setting Group<br>
-section_act_code = ACP page<br>
+			<helptext><![CDATA[settinggoup_----- = 设置组<br>
+section_act_code = 管理页面<br>
 section_act_ = splash page<br>
-conf_key = Setting
+conf_key = 设置
 <br /><br />
 a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></helptext>
 		</helpsections>

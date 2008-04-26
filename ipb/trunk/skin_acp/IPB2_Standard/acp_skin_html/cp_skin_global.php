@@ -285,7 +285,7 @@ $IPBHTML = "";
 $IPBHTML .= <<<EOF
 <div class='information-box'>
  <img src='{$this->ipsclass->skin_acp_url}/images/global-infoicon.gif' alt='information' />
- <h2>Invision Power Board Message</h2>
+ <h2>易维论坛提示</h2>
  <p>
  	<br />
  	{$this->ipsclass->main_msg}

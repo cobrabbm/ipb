@@ -96,7 +96,7 @@ a:visited,
 a:active{
 	background: transparent;
 	color: #222;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a:hover{

@@ -1993,7 +1993,7 @@ class ad_settings {
 			$r['conf_title']       = preg_replace( "/(".$this->ipsclass->input['search'].")/i", "<span style='background:#FCFDD7'>\\1</span>", $r['conf_title'] );
 
 			$r['conf_description'] = preg_replace( "/(".$this->ipsclass->input['search'].")/i", "<span style='background:#FCFDD7'>\\1</span>", $r['conf_description'] );
-			$r['conf_description'] .= "<br /><br /><i><b>Setting Group:</b> {$r['conf_title_title']}</i>";
+			$r['conf_description'] .= "<br /><br /><i><b>设置组:</b> {$r['conf_title_title']}</i>";
 		}
 
 		$html = "$start

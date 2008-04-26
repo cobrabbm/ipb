@@ -64,7 +64,7 @@ class emailer {
 	var $extra_opts   = "";
 	
 	var $html_email   = 0;
-	var $char_set     = 'iso-8859-1';
+	var $char_set     = 'utf-8';
 	
 	// RFC specifies \r\n as eol HOWEVER it fails on many mail servers/clients
 	// whereas \n seems to work in 99% of cases, so we'll stick with that
@@ -174,7 +174,9 @@ class emailer {
 		$this->mail_headers['MIME-Version'] = "1.0";
 		$this->mail_headers['Date'] 		= date( "r" );
 		
-		$this->mail_headers['From'] = '"'.$this->ipsclass->vars['board_name'].'" <'.$this->from.'>';
+		//Fix UTF-8 Sender Error -- Skylook
+		//$this->mail_headers['From'] = '"'.$this->ipsclass->vars['board_name'].'" <'.$this->from.'>';
+		$this->mail_headers['From'] = '"=?UTF-8?B?'.base64_encode($this->ipsclass->vars['board_name']).'?=" <'.$this->from.'>';
 		
 		if ( $this->mail_method != 'smtp' )
 		{
@@ -398,8 +400,8 @@ class emailer {
 		$this->to   = preg_replace( "/,,/"     , ","  , $this->to );
 		$this->from = preg_replace( "/,,/"     , ","  , $this->from );
 		
-		$this->to     = preg_replace( "#\#\[\]'\"\(\):;/\$!£%\^&\*\{\}#" , "", $this->to  );
-		$this->from   = preg_replace( "#\#\[\]'\"\(\):;/\$!£%\^&\*\{\}#" , "", $this->from);
+		$this->to     = preg_replace( "#\#\[\]'\"\(\):;/\$!?\^&\*\{\}#" , "", $this->to  );
+		$this->from   = preg_replace( "#\#\[\]'\"\(\):;/\$!?\^&\*\{\}#" , "", $this->from);
 		
 		$this->subject = ( trim($this->lang_subject) != "" ) ? $this->lang_subject : $this->subject;
 		

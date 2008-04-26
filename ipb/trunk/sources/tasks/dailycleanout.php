@@ -138,7 +138,7 @@ class task_item
 		// Log to log table - modify but dont delete
 		//-----------------------------------------
 		
-		$this->class->append_task_log( $this->task, "$xmlrpc_logs_deleted XML-RPC logs removed, $_attach_count orphaned attachments removed, $deleted subscriptions pruned and {$topics_deleted} db read topic entries deleted" );
+		$this->class->append_task_log( $this->task, "$xmlrpc_logs_deleted 条 XML-RPC 日志已经删除, $_attach_count 个孤立附件已经删除, $deleted subscriptions pruned and {$topics_deleted} db read topic entries deleted" );
 		
 		//-----------------------------------------
 		// Unlock Task: DO NOT MODIFY!
