@@ -328,7 +328,9 @@ class class_email
 		
 		if( $this->from_display )
 		{
-			$this->mail_headers['From']		= '"' . $this->from_display . '" <' . $this->from . '>';
+			//Fix UTF-8 Sender Error -- Skylook
+			//$this->mail_headers['From']		= '"' . $this->from_display . '" <' . $this->from . '>';
+			$this->mail_headers['From']        = '"=?UTF-8?B?' . base64_encode($this->from_display) . '?=" <' . $this->from . '>';
 		}
 		else
 		{
@@ -520,8 +522,8 @@ class class_email
 		$this->to   = preg_replace( "/,,/"     , ","  , $this->to );
 		$this->from = preg_replace( "/,,/"     , ","  , $this->from );
 		
-		$this->to     = preg_replace( "#\#\[\]'\"\(\):;/\$!£%\^&\*\{\}#" , "", $this->to  );
-		$this->from   = preg_replace( "#\#\[\]'\"\(\):;/\$!£%\^&\*\{\}#" , "", $this->from);
+		$this->to     = preg_replace( "#\#\[\]'\"\(\):;/\$!?\^&\*\{\}#" , "", $this->to  );
+		$this->from   = preg_replace( "#\#\[\]'\"\(\):;/\$!?\^&\*\{\}#" , "", $this->from);
 		
 		//-----------------------------------------
 		// Build headers

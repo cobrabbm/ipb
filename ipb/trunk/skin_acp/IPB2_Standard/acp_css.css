@@ -182,7 +182,7 @@
 .content-page-links a:visited,
 .content-page-links a:link
 {
-	text-decoration:none;
+	text-decoration: none;
 }
 
 .dny-edit-title
@@ -327,14 +327,14 @@ a:active
 {
 	background-color: transparent;
 	color: #000;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a:hover
 {
 	background-color: transparent;
 	color: #465584;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .global-copyright
@@ -351,7 +351,7 @@ a:hover
 .global-copyright a:active
 {
 	color: #3363A1;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 img.ipd
@@ -502,12 +502,12 @@ img.calendar
 .global-memberbar a:link
 {
 	color:#FFF;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 .global-memberbar a:hover
 {
-	text-decoration:underline;
+	text-decoration: none;
 }
 
 .navwrap
@@ -525,7 +525,7 @@ img.calendar
 {
 	color:#FFF;
 	font-weight:bold;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 /* ======================================== */
@@ -633,7 +633,7 @@ img.calendar
 .tabon a:visited, 
 .tabon a:active
 {
-	text-decoration:none;
+	text-decoration: none;
 	color: #FFFFFF;
 }
 
@@ -644,7 +644,7 @@ img.calendar
 .taboff a:visited, 
 .taboff a:active
 {
-	text-decoration:none;
+	text-decoration: none;
 	color: #3363A1;
 }
 
@@ -724,7 +724,7 @@ img.calendar
 .tableheaderalt a:visited, 
 .tableheaderalt a:active
 {
-	text-decoration:none;
+	text-decoration: none;
 	color: #FFF;
 }
 
@@ -964,7 +964,7 @@ img.calendar
 .menuseplast a:visited, 
 .menuseplast a:active
 {
-	text-decoration:none;
+	text-decoration: none;
 	font-weight:bold;
 	color: #000000;
 }
@@ -990,7 +990,7 @@ img.calendar
 .fauxredbutton a:visited, 
 .fauxredbutton a:active
 {
-	text-decoration:none;
+	text-decoration: none;
 	color:#333;
 }
 
@@ -1044,7 +1044,7 @@ input[type="text"]
 .mininav a:visited, 
 .mininav a:active
 {
-	text-decoration:none;
+	text-decoration: none;
 	font-weight:bold;
 	color:#3363A1;
 }
@@ -1123,14 +1123,14 @@ del,
 .diffred
 {
 	background-color: #D7BBC8;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 ins,
 .diffgreen
 {
 	background-color: #BBD0C8;
-	text-decoration:none;
+	text-decoration: none;
 }
 
 .diffwrap

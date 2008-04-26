@@ -3,8 +3,8 @@
 	<group>
 		<row>
 			<login_id>1</login_id>
-			<login_title>��ά��̳���õ�¼</login_title>
-			<login_description>��ά��̳Ĭ�ϵ����õ�¼��֤��ʽ</login_description>
+			<login_title>易维论坛内置登录</login_title>
+			<login_description>易维论坛默认的内置登录验证方式</login_description>
 			<login_folder_name>internal</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>
@@ -24,8 +24,8 @@
 
 		<row>
 			<login_id>2</login_id>
-			<login_title>����Ŀ¼����Э��</login_title>
-			<login_description>����Ŀ¼����Э�� / ����Ŀ¼��֤</login_description>
+			<login_title>轻量目录访问协议</login_title>
+			<login_description>轻量目录访问协议 / 激活目录验证</login_description>
 			<login_folder_name>ldap</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>
@@ -45,8 +45,8 @@
 
 		<row>
 			<login_id>3</login_id>
-			<login_title>�ⲿ���ݿ�</login_title>
-			<login_description>ͨ���ⲿ���ݿ������֤</login_description>
+			<login_title>外部数据库</login_title>
+			<login_description>通过外部数据库进行验证</login_description>
 			<login_folder_name>external</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>
@@ -66,8 +66,8 @@
 
 		<row>
 			<login_id>4</login_id>
-			<login_title>IP.Converge ��֤</login_title>
-			<login_description>�����ڲ�ʹ��</login_description>
+			<login_title>IP.Converge 验证</login_title>
+			<login_description>仅限内部使用</login_description>
 			<login_folder_name>ipconverge</login_folder_name>
 			<login_maintain_url></login_maintain_url>
 			<login_register_url></login_register_url>

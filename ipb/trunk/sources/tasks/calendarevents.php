@@ -64,7 +64,7 @@ class task_item
 		
 		if ( ! $this->restrict_log )
 		{
-			$this->class->append_task_log( $this->task, "Calendar recached" );
+			$this->class->append_task_log( $this->task, "论坛日历缓存已经重建" );
 		}
 		
 		//-----------------------------------------

@@ -61,7 +61,7 @@ class task_item
 		// Log to log table - modify but dont delete
 		//-----------------------------------------
 		
-		$this->class->append_task_log( $this->task, 'Announcements updated' );
+		$this->class->append_task_log( $this->task, '论坛通知已经更新' );
 		
 		//-----------------------------------------
 		// Unlock Task: DO NOT MODIFY!
