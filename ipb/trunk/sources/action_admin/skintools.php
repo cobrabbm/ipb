@@ -1581,7 +1581,7 @@ class ad_skintools {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建主主题宏" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的主宏.</b>
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>运行本工具将会重建您的主题宏定义.</b>
 																			  <br />运行后, 您需要重建主题缓存来更新主题.
 																			  $extra_html",
 																	)      );

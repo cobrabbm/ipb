@@ -136,7 +136,7 @@ class task_item
 		// Log to log table - modify but dont delete
 		//-----------------------------------------
 		
-		$this->class->append_task_log( $this->task, 'Log tables pruned' );
+		$this->class->append_task_log( $this->task, '日志表格未处理' );
 		
 		//-----------------------------------------
 		// Unlock Task: DO NOT MODIFY!

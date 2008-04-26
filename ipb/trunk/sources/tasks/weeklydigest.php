@@ -68,7 +68,7 @@ class task_item
 		// Log to log table - modify but dont delete
 		//-----------------------------------------
 		
-		$this->class->append_task_log( $this->task, 'Weekly Topic & Forum Digest Sent' );
+		$this->class->append_task_log( $this->task, '每周主题 & 论坛摘要已经发送' );
 		
 		//-----------------------------------------
 		// Unlock Task: DO NOT MODIFY!

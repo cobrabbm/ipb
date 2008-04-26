@@ -106,7 +106,7 @@ class task_item
 		// Log to log table - modify but dont delete
 		//-----------------------------------------
 		
-		$this->class->append_task_log( $this->task, 'Statistics rebuilt' );
+		$this->class->append_task_log( $this->task, '统计数据重建' );
 		
 		//-----------------------------------------
 		// Unlock Task: DO NOT MODIFY!

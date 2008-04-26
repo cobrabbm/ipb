@@ -150,7 +150,7 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>components_gallery_show</key>
-			<title>IPB图库</title>
+			<title>IPB 图库</title>
 			<helptext><![CDATA[这是一个单独的论坛插件.它为您的论坛提供了一个图库,会员可以上传自己的图片来创建属于自己的相册.需要购买,请联系我们的<a href="{base_url}&section=help&act=support&code=contact">销售团队</a>. 如果您已经购买了此插件,需要IPS为您安装,请提交一份<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 

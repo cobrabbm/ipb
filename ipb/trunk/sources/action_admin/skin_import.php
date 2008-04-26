@@ -1423,7 +1423,7 @@ class ad_skin_import {
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>导出主题?</b><div class='graytext'>请选择要导出的主题 ( 包括 HTML 模版、宏、CSS以及论坛页面结构 ) .</div></td>
+							   <td class='tablerow1' width='40%'><b>导出主题?</b><div class='graytext'>请选择要导出的主题 ( 包括 HTML 模版、宏定义、CSS以及论坛页面结构 ) .</div></td>
 							   <td class='tablerow2' width='60%'><select name='skin_id' class='dropdown'>{$skin_list}</select></td>
 							 </tr>
 							 <tr>
@@ -1458,16 +1458,16 @@ class ad_skin_import {
 							 <br />
 							 
 							 <fieldset>
-							  <legend><strong>导出主题标签</strong>
+							  <legend><strong>导出主题宏定义</strong>
 							  $start_form_e
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
 							  <tr>
-							   <td class='tablerow1' width='40%'><b>导出哪个主题标签?</b><div class='graytext'>主题标签将以 XML 格式导出. 如果您的服务器开启了安全模式该导出无法完成.</div></td>
+							   <td class='tablerow1' width='40%'><b>导出哪个主题宏定义?</b><div class='graytext'>主题宏定义将以 XML 格式导出. 如果您的服务器开启了安全模式该导出无法完成.</div></td>
 							   <td class='tablerow2' width='60%'><select name='skin_id' class='dropdown'>{$skin_list}</select></td>
 							 </tr>
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导出主题标签' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导出主题宏定义' /></div>
 							 </div>
 							 </form>
 							 </fieldset>							 
@@ -1537,7 +1537,7 @@ class ad_skin_import {
 							 
 							 <br />
 							 <fieldset>
-							  <legend><strong>导入主题标签</strong>
+							  <legend><strong>导入主题宏定义</strong>
 							  $start_form_f
 							  <div style='border:1px solid #D1DCEB'>
 							  <table cellpadding='4' cellspacing='0' width='100%'>
@@ -1554,7 +1554,7 @@ class ad_skin_import {
 							   <td class='tablerow2' width='60%'><select name='skin_set' class='dropdown'>{$skin_list}</select></td>
 							 </tr>							 
 							 </table>
-							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导入主题标签' /></div>
+							 <div align='center' class='tablesubheader'><input type='submit' class='realbutton' value='导入主题宏定义' /></div>
 							 </div>
 							 </form>
 							 </fieldset>							 

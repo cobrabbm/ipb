@@ -83,7 +83,7 @@ class task_item
 			// Log to log table - modify but dont delete
 			//-----------------------------------------
 			
-			$this->class->append_task_log( $this->task, 'Profile views counter updated' );
+			$this->class->append_task_log( $this->task, '个人资料浏览计数更新' );
 		}
 		
 		//-----------------------------------------

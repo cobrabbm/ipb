@@ -106,7 +106,7 @@ class task_item
 		// Log to log table - modify but dont delete
 		//-----------------------------------------
 
-		$this->class->append_task_log( $this->task, 'RSS Import completed ('. count($feeds_to_update) .')' );
+		$this->class->append_task_log( $this->task, 'RSS 导入成功 ('. count($feeds_to_update) .')' );
 		
 		//-----------------------------------------
 		// Unlock Task: DO NOT MODIFY!

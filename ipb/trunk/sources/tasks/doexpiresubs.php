@@ -109,7 +109,7 @@ class task_item
 		// Unlock Task: DO NOT MODIFY!
 		//-----------------------------------------
 		
-		$this->class->append_task_log( $this->task, intval(count($expire_ids))." members unsubscribed" );
+		$this->class->append_task_log( $this->task, intval(count($expire_ids))." 位会员已经取消订阅" );
 		
 		$this->class->unlock_task( $this->task );
 	}
