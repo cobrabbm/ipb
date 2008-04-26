@@ -90,7 +90,7 @@ class task_item
 			// Log to log table - modify but dont delete
 			//-----------------------------------------
 			
-			$this->class->append_task_log( $this->task, 'Topic views counter updated' );
+			$this->class->append_task_log( $this->task, '主题浏览计数已经更新' );
 		}
 		
 		//-----------------------------------------

@@ -146,7 +146,7 @@ class task_item
 		// Log to log table - modify but dont delete
 		//-----------------------------------------
 		
-		$this->class->append_task_log( $this->task, intval(count($ids)).' Members sent an expiration email' );
+		$this->class->append_task_log( $this->task, '已经向 '.intval(count($ids)).' 位会员发送了订阅过期通知' );
 		
 		//-----------------------------------------
 		// Unlock Task: DO NOT MODIFY!

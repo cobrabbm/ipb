@@ -102,7 +102,7 @@ $IPBHTML .= <<<EOF
   <a style='text-decoration:none' title='HTML 模式预览模板项' href='#' onclick='pop_win("act=rtempl&code=preview&suid={$sec['suid']}&type=css");  parent.template_cancel_bubble( event, true );'><img src='{$this->ipsclass->skin_acp_url}/images/te_html.gif' border='0' alt='HTML 模式预览'>&nbsp;</a>
  </div>
  <div align='left'>
-   <img src='{$this->ipsclass->skin_acp_url}/images/file.gif' title='Template Set:{$sec['set_id']}' alt='模板' style='vertical-align:middle' />
+   <img src='{$this->ipsclass->skin_acp_url}/images/file.gif' title='模板设置:{$sec['set_id']}' alt='模板' style='vertical-align:middle' />
    {$altered_image}
    <a id='bn-{$sec['func_name']}' onclick='parent.template_load_editor("{$sec['func_name']}", event)' href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=template-edit-bit&bitname={$sec['func_name']}&p={$sec['_p']}&id={$sec['_id']}&group_name={$sec['group_name']}&type=single' title='模板项名称: {$sec['func_name']}'>{$sec['easy_name']}</a>
    {$custom_bit}

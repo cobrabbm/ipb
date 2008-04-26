@@ -1773,7 +1773,7 @@ class admin_functions
 		
 		$html = "<form name='gobaakaachoo'>
 		         <select name='chooseacardanycard' class='realbutton' onchange=\"autojumpmenu(this)\">
-		         <option value=''>Set: {$r['set_name']} options</option>
+		         <option value=''>设置: {$r['set_name']} 选项</option>
 		         <option value=''>-------------------</option>
 		         <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=wrap&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑页眉 & 页脚</option>
 				 <option value='{$this->ipsclass->adskin->base_url}&section=lookandfeel&act=templ&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑模板 HTML</option>

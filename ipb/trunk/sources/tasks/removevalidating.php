@@ -112,7 +112,7 @@ class task_item
 			// Log to log table - modify but dont delete
 			//-----------------------------------------
 			
-			$this->class->append_task_log( $this->task, count($mids).' old validating members pruned' );
+			$this->class->append_task_log( $this->task, count($mids).' 个旧激活请求未处理' );
 		}
 		
 		//-----------------------------------------
