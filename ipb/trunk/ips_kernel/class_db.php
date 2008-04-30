@@ -321,7 +321,7 @@ class db_main
     {
     	if ( ! file_exists( $filepath ) )
     	{
-    		print "Cannot locate $filepath - exiting!";
+    		print "无法定位文件 $filepath - 该文件已存在!";
     		exit();
     	}
     	else
@@ -787,22 +787,22 @@ class db_main
 			
 			print "<html><head><title>IPS Driver Error</title>
 					<style>P,BODY{ font-family:arial,sans-serif; font-size:12px; }</style></head><body>
-		    		   <blockquote><h1>IPS Driver Error</h1><b>There appears to be an error with the database.</b><br>
-		    		   You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>
+		    		   <blockquote><h1>易维论坛数据错误</h1><b>看起来您的数据库出现了一些差错.</b><br>
+		    		   您可以通过点击 <a href=\"javascript:window.location=window.location;\">这里</a> 来刷新.
 				  </body></html>";
 		}
 		else
 		{
-    		$the_error .= "\n\nSQL error: ".$this->error."\n";
-	    	$the_error .= "SQL error code: ".$this->error_no."\n";
-	    	$the_error .= "Date: ".date("l dS \o\f F Y h:i:s A");
+    		$the_error .= "\n\nSQL 错误: ".$this->error."\n";
+	    	$the_error .= "SQL 错误代码: ".$this->error_no."\n";
+	    	$the_error .= "日期: ".date("l dS \o\f F Y h:i:s A");
     	
 	    	$out = "<html><head><title>IPS Driver Error</title>
 	    		   <style>P,BODY{ font-family:arial,sans-serif; font-size:12px; }</style></head><body>
-	    		   <blockquote><h1>IPS Driver Error</h1><b>There appears to be an error with the database.</b><br>
-	    		   You can try to refresh the page by clicking <a href=\"javascript:window.location=window.location;\">here</a>.
-	    		   <br><br><b>Error Returned</b><br>
-	    		   <form name='mysql'><textarea rows=\"15\" cols=\"60\">".htmlspecialchars($the_error)."</textarea></form><br>We apologise for any inconvenience</blockquote></body></html>";
+	    		   <blockquote><h1>易维论坛数据错误</h1><b>看起来您的数据库出现了一些差错.</b><br>
+	    		   您可以通过点击 <a href=\"javascript:window.location=window.location;\">这里</a> 来刷新.
+	    		   <br><br><b>错误返回</b><br>
+	    		   <form name='mysql'><textarea rows=\"15\" cols=\"60\">".htmlspecialchars($the_error)."</textarea></form><br>对于给您带来的不便我们深感歉意.</blockquote></body></html>";
     		   
     
 	       	print $out;
@@ -1047,9 +1047,9 @@ class db_main
 		if ( $this->obj['use_debug_log'] AND $this->obj['debug_log'] )
 		{
 			$_string  = "\n==============================================================================";
-			$_string .= "\n Date: ". date( 'r' );
-			$_string .= "\n IP Address: " . $_SERVER['REMOTE_ADDR'];
-			$_string .= "\n Time Taken: ".$endtime;
+			$_string .= "\n 当前时间: ". date( 'r' );
+			$_string .= "\n IP 地址: " . $_SERVER['REMOTE_ADDR'];
+			$_string .= "\n 所用时间: ".$endtime;
 			$_string .= "\n ".$query;
 			$_string .= "\n==============================================================================";
 			$_string .= "\n".$data;
