@@ -276,7 +276,7 @@ $IPBHTML .= <<<EOF
 <div align='center'>
   DEV: <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=exportmaster'>导出主体 HTML</a>
   &middot; <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=exportbitschoose'>导出模板项</a>
-  &middot; <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=exportmacro'>导出主体标签</a>
+  &middot; <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=exportmacro'>导出主题宏定义</a>
 </div>
 EOF;
 }
@@ -328,7 +328,7 @@ img_edit   + " <!--ALTERED.wrappper--><a href='{$this->ipsclass->base_url}&secti
 img_edit   + " <!--ALTERED.templates--><a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=templ&code=template-sections-list&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑模板 HTML 项</a>",
 img_edit   + " <!--ALTERED.css--><a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=style&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑模板风格 (CSS 高级模式)</a>",
 img_edit   + " <!--ALTERED.css--><a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=style&code=colouredit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑模板颜色 (CSS 简易模式)</a>",
-img_edit   + " <!--ALTERED.macro--><a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=image&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑主体标签替换</a>",
+img_edit   + " <!--ALTERED.macro--><a href='{$this->ipsclass->base_url}&section={$this->ipsclass->section_code}&act=image&code=edit&id={$r['set_skin_set_id']}&p={$r['set_skin_set_parent']}'>编辑主题宏定义替换</a>",
 img_edit   + " <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=edit&id={$r['set_skin_set_id']}'>编辑模板设置...</a>",
 EOF;
 if ( $r['set_skin_set_id'] != 1 )
