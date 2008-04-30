@@ -1586,7 +1586,7 @@ class ad_skintools {
 																			  $extra_html",
 																	)      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具l...");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		

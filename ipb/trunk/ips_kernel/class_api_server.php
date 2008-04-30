@@ -269,7 +269,7 @@ class class_api_server
 			// Return false
 			//-----------------------------------------
 			
-			$this->api_send_error( 100, 'No methodRequest function -' . htmlspecialchars( $this->method_name ) . ' defined / found' );
+			$this->api_send_error( 100, '无方法请求操作 -' . htmlspecialchars( $this->method_name ) . ' defined / found' );
 			exit();
 		}
 	}
