@@ -5012,7 +5012,7 @@ desc=降序 (9-0)</conf_extra>
 		<setting>
 			<conf_id>219</conf_id>
 			<conf_title>自动换行设置</conf_title>
-			<conf_description>防止一堆很长的连续不断的字符将表格撑大,建议 80-100,中文的帖子可能会出现乱码.</conf_description>
+			<conf_description>防止一堆很长的连续不断的字符将表格撑大, 建议 80-100, 中文的帖子可能会出现乱码.</conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>post_wordwrap</conf_key>
