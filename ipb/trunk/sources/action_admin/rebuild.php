@@ -3008,7 +3008,7 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重计会员帖子数" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "重建个人照片缩略图" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建个人照片缩略图</b><div style='color:gray'>本操作将重建您会员照片的缩略图的到当前设置的大小. 如果您刚刚调整了缩略图大小, 需要更新的话, 请执行本操作</div>本操作较为占用资源.",
 												  		         $this->ipsclass->adskin->form_simple_input( 'pergo', '20', 5 ). "&nbsp;每次循环"
@@ -3097,7 +3097,7 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立的上传头像" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立头像" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除孤立头像</b><div style='color:gray'>操作将将找出所有以 'av-' 开头, 并且没有会员使用的头像文件, 然后删除它们.</div>本操作较为占用资源.",
 												  		         "每次循环检查&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;个文件"
@@ -3119,7 +3119,7 @@ class ad_rebuild {
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "60%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "40%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立的上传照片" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "删除孤立照片" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除孤立照片</b><div style='color:gray'>本操作将将找出所有以 'photo-' 开头, 并且没有会员使用的照片文件, 然后删除它们.</div>本操作较为占用资源.",
 												  		         "每次循环检查&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;个文件"
