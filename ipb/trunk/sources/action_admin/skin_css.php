@@ -597,7 +597,7 @@ class ad_skin_css
 		
 		$formbuttons = "<div align='center' class='tablesubheader'>
 						<input type='submit' name='submit' value='$button' class='realdarkbutton'>
-						<input type='submit' name='savereload' value='Save and Reload Stylesheet' class='realdarkbutton'>
+						<input type='submit' name='savereload' value='保存并重新加载样式表' class='realdarkbutton'>
 						<input type='button' name='diffreport' value='保存后重新载入样式表' class='realdarkbutton' onclick='ipsclass.pop_up_window(\"{$this->ipsclass->base_url}&act=rtempl&code=css_diff&id={$this->ipsclass->input['id']}\", 800, 600 ); return false;' />
 						</div></form>\n";
 		
@@ -622,9 +622,9 @@ class ad_skin_css
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "查找 CSS 使" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-																			   "Show me where...",
+																			   "显示出...",
 																			   $this->ipsclass->adskin->form_dropdown('csschoice', $css_elements).' ... 在模板中的位置 &nbsp;'
-																			  .'<input type="button" value="Go!" onClick="cssSearch(\''.$this->ipsclass->input['id'].'\');" id="editbutton">'
+																			  .'<input type="button" value="执行!" onClick="cssSearch(\''.$this->ipsclass->input['id'].'\');" id="editbutton">'
 																			  .'&nbsp;<input type="button" value="预览 CSS 样式" onClick="cssPreview(\''.$this->ipsclass->input['id'].'\');" id="editbutton">'
 																	)      );
 									     
