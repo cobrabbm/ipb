@@ -183,7 +183,7 @@ class ad_administration
 	{
 		if ( ! $this->ipsclass->input['cache'] )
 		{
-			$this->ipsclass->main_msg = "No ID was passed, please try again";
+			$this->ipsclass->main_msg = "用户 ID 不存在,请重试";
 			$this->cache_start();
 		}
 		

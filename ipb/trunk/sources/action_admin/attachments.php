@@ -340,10 +340,10 @@ class ad_attachments {
 									                    		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		$this->ipsclass->adskin->td_header[] = array( "附件名称", "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Size"      , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Author"    , "15%" );
-		$this->ipsclass->adskin->td_header[] = array( "Topic"     , "25%" );
-		$this->ipsclass->adskin->td_header[] = array( "Posted    ", "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "尺寸"      , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "上传者"    , "15%" );
+		$this->ipsclass->adskin->td_header[] = array( "主题"     , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "发布    ", "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"    , "1%" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "附件: 搜索结果" );

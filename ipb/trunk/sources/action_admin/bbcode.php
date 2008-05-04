@@ -54,7 +54,7 @@ class ad_bbcode {
 	function auto_run()
 	{
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_bbcode_badword');
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'BBCode Manager' );
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'BB 代码管理' );
 
 		//-----------------------------------------
 		// Require and RUN !! THERES A BOMB
@@ -430,7 +430,7 @@ class ad_bbcode {
 		{
 			if ( ! $this->ipsclass->input['id'] )
 			{
-				$this->ipsclass->main_msg = "No ID was passed, please try again";
+				$this->ipsclass->main_msg = "ID 不存在,请重试";
 				$this->bbcode_form($type);
 			}
 		}
@@ -501,7 +501,7 @@ class ad_bbcode {
 		{
 			if ( ! $this->ipsclass->input['id'] )
 			{
-				$this->ipsclass->main_msg = "No ID was passed, please try again";
+				$this->ipsclass->main_msg = "ID 不存在,请重试";
 				$this->bbcode_start();
 			}
 			
