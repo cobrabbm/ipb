@@ -116,7 +116,7 @@ class ad_calendars
 		
 		if ( ! $cal_id )
 		{
-			$this->ipsclass->main_msg = "No ID was passed, please try again";
+			$this->ipsclass->main_msg = "ID 不存在,请重试.";
 			$this->components_list();
 			return;
 		}
