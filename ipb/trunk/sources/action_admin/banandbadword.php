@@ -597,7 +597,7 @@ class ad_banandbadword {
 		
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must pass a valid filter id, silly!");
+			$this->ipsclass->admin->error("您必须使用一个正确的过滤器 ID!");
 		}
 		
 		//-----------------------------------------
@@ -607,7 +607,7 @@ class ad_banandbadword {
 		
 		if ( ! $r = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("We could not find that filter in the database");
+			$this->ipsclass->admin->error("不存在的过滤器");
 		}
 		
 		//-----------------------------------------
@@ -649,7 +649,7 @@ class ad_banandbadword {
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("You must pass a valid filter id, silly!");
+			$this->ipsclass->admin->error("您必须使用一个正确的过滤器 ID!");
 		}
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'badwords', 'where' => "wid='".$this->ipsclass->input['id']."'" ) );

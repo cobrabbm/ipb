@@ -186,7 +186,7 @@ class ad_api
 														  		  'PER_PAGE'    => $perpage,
 														  		  'CUR_ST_VAL'  => $start,
 														  		  'L_SINGLE'    => "",
-														  		  'L_MULTI'     => "Pages: ",
+														  		  'L_MULTI'     => "页面: ",
 														  		  'BASE_URL'    => $this->ipsclass->base_url.'&'.$this->ipsclass->form_code ) );
 									  
 		//-----------------------------------------
@@ -285,7 +285,7 @@ class ad_api
 		
 		if ( ! $api_user_name )
 		{
-			$this->ipsclass->main_msg = "You must enter a title";
+			$this->ipsclass->main_msg = "您必须输入一个标题";
 			$this->api_form( $type );
 			return;
 		}

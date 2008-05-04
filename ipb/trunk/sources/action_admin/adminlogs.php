@@ -218,7 +218,7 @@ class ad_adminlogs
 	{
 		if ($this->ipsclass->input['mid'] == "")
 		{
-			$this->ipsclass->admin->error("You did not select a member ID to remove by!");
+			$this->ipsclass->admin->error("您没有选择要删除的用户 ID!");
 		}
 		
 		$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'admin_logs', 'where' => "member_id=".intval($this->ipsclass->input['mid']) ) );
