@@ -43,9 +43,9 @@
 /**
 *
 */
-if ( ! defined( 'IN_ACP' ) )
+if ( ! defined( 'IN_IPB' ) )
 {
-	print "<h1>Incorrect access</h1>You cannot access this file directly. If you have recently upgraded, make sure you upgraded 'admin.php'.";
+	print "<h1>Incorrect access</h1>You cannot access this file directly. If you have recently upgraded, make sure you upgraded all the relevant files.";
 	exit();
 }
 
@@ -973,7 +973,7 @@ class ad_acppermissions
 			}
 		}
 		
-		$this->ipsclass->main_msg = "$inserted permissions keys inserted";
+		$this->ipsclass->main_msg = "$inserted 许可授权已加入";
 		
 		if ( ! $noreturn )
 		{
