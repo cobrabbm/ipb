@@ -2,6 +2,9 @@
 
 $lang = array (
 
+'las_input_text_gif'			=> 'Please enter the 6 character code shown in the image.  Case sensitive',
+
+
 // 2.3.2
 'select_month'					=> 'Month',
 'select_day'					=> 'Day',

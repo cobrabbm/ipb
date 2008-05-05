@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-27 14:32:48 -0500 (Thu, 27 Dec 2007) $
-|   > $Revision: 1151 $
+|   > $Date: 2008-02-29 18:09:47 -0500 (Fri, 29 Feb 2008) $
+|   > $Revision: 1197 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -499,9 +499,24 @@ class post_functions extends class_post
 																	 'description' => $this->ipsclass->input['TopicDesc']
 																   ) , "tid=".$this->topic['tid'] );
 					
+					$did_forum_update = 0;
+					
 					if ($this->topic['tid'] == $this->forum['last_id'])
 					{
 						$this->ipsclass->DB->do_update( 'forums', array( 'last_title' => $this->ipsclass->input['TopicTitle'] ), 'id='.$this->forum['id'] );
+						
+						$did_forum_update = 1;
+					}
+					
+					if ($this->topic['tid'] == $this->forum['newest_id'])
+					{
+						$this->ipsclass->DB->do_update( 'forums', array( 'newest_title' => $this->ipsclass->input['TopicTitle'] ), 'id='.$this->forum['id'] );
+						
+						$did_forum_update = 1;
+					}
+					
+					if( $did_forum_update )
+					{
 						$this->ipsclass->update_forum_cache();
 					}
 					

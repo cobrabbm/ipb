@@ -147,7 +147,8 @@ class display {
         
 		$version = ( isset( $this->ipsclass->vars['ipb_display_version'] ) AND $this->ipsclass->vars['ipb_display_version'] != 0 ) ? $this->ipsclass->version : '';
 		
-		$ipbchina_version = ($this->ipsclass->vars['ipb_display_version'] != 0) ? $this->ipsclass->ipbchina_version : '';
+		//IPBChina Version
+		$ipbchina_version = ( isset( $this->ipsclass->vars['ipb_display_version'] ) AND $this->ipsclass->vars['ipb_display_version'] != 0 ) ? $this->ipsclass->ipbchina_version : '';
 		
         if ($this->ipsclass->vars['ipb_copy_number'] && $this->ipsclass->vars['ips_cp_purchase'])
         {

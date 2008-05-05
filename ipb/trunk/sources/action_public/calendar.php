@@ -11,9 +11,9 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-08-21 17:48:41 -0400 (Tue, 21 Aug 2007) $
-|   > $Revision: 1099 $
-|   > $Author: bfarber $
+|   > $Date: 2008-04-10 14:23:41 -0400 (Thu, 10 Apr 2008) $
+|   > $Revision: 1235 $
+|   > $Author: jason $
 +---------------------------------------------------------------------------
 |
 |   > Calendar functions library
@@ -188,7 +188,7 @@ class calendar
         // DST where getdate refuses.
 		
 		$a = explode( ',', gmdate( 'Y,n,j,G,i,s', time() + $this->ipsclass->get_time_offset() ) );
-		
+
 		$this->now_date = array(
 								 'year'    => $a[0],
 								 'mon'     => $a[1],
@@ -1214,7 +1214,7 @@ class calendar
  		$this->post           =  new class_post();
  		$this->post->ipsclass =& $this->ipsclass;
  		$this->post->load_classes();
- 			    
+
     	//-----------------------------------------
     	// INIT
     	//-----------------------------------------
@@ -1242,7 +1242,7 @@ class calendar
 		$end_year          = intval($this->ipsclass->input['end_year']);
 		$recur_unit        = intval($this->ipsclass->input['recur_unit']);
 		$event_tz          = intval($this->ipsclass->input['event_tz']);
-		$offset            = 0; 
+		$offset            = 0;
 		$event_all_day	   = 0;
 		$event_calendar_id = intval($this->ipsclass->input['event_calendar_id']);
 		$set_time		   = intval($this->ipsclass->input['set_times']);
@@ -1276,7 +1276,7 @@ class calendar
 		{
 			$event_all_day	= 1;
 		}
-		
+
 		$this->ipsclass->vars['max_post_length'] = $this->ipsclass->vars['max_post_length'] ? $this->ipsclass->vars['max_post_length'] : 2140000;
 		
     	//-----------------------------------------
@@ -1397,7 +1397,7 @@ class calendar
 		//-----------------------------------------
 		
 		if ( $form_type == 'range' )
-		{	
+		{
 			if ( $end_year < $year )
 			{
 				$this->ipsclass->Error( array( 'LEVEL' => 1, 'MSG' => 'cal_range_wrong') );
@@ -1416,8 +1416,8 @@ class calendar
 				}
 			}
 			
-			$_final_unix_from = gmmktime(0 , 0, 0  , $month    , $day    , $year    ) + $offset;// + $offset; # Midday
-			$_final_unix_to   = gmmktime(23, 59, 59, $end_month, $end_day, $end_year) + $offset;// + $offset; # End of the day
+			$_final_unix_from = gmmktime(0 , 0, 0  , $month    , $day    , $year    ) - $offset;// + $offset; # Midday
+			$_final_unix_to   = gmmktime(23, 59, 59, $end_month, $end_day, $end_year) - $offset;// + $offset; # End of the day
 			
 			$event_ranged = 1;
 			$set_time 	  = 0;
@@ -1464,15 +1464,15 @@ class calendar
 				}
 			}
 			
-			$_final_unix_from = gmmktime($hour , $min , 0 , $month    , $day    , $year    ) + $offset;// + $offset;
-			$_final_unix_to   = gmmktime($hour, $min, 0, $end_month, $end_day, $end_year) + $offset;// + $offset; # End of the day
+			$_final_unix_from = gmmktime($hour , $min , 0 , $month    , $day    , $year    ) - $offset;// + $offset;
+			$_final_unix_to   = gmmktime($hour, $min, 0, $end_month, $end_day, $end_year) - $offset;// + $offset; # End of the day
 			$event_recur      = 1;
 		}
 		
 		//-----------------------------------------
 		// Check dates: Single
 		//-----------------------------------------
-		
+
 		else
 		{
 			$hour = 0;
@@ -1486,10 +1486,10 @@ class calendar
 				}
 			}
 			
-			$_final_unix_from = gmmktime($hour, $min, 0, $month, $day, $year) + $offset;// + $offset;
+			$_final_unix_from = gmmktime($hour, $min, 0, $month, $day, $year) - $offset;// + $offset;
 			$_final_unix_to   = 0;
 		}
-		
+
 		//-----------------------------------------
 		// Do we have a sensible date?
 		//-----------------------------------------
@@ -1507,7 +1507,7 @@ class calendar
 		$this->post->parser->parse_html    = 0;
 		$this->post->parser->parse_smilies = intval($allow_emoticons);
 		$this->post->parser->parse_bbcode  = 1;
-					
+
  		$this->ipsclass->input['Post'] = $this->post->han_editor->process_raw_post( 'Post' );
 
  		$this->ipsclass->input['Post'] = $this->post->parser->pre_db_parse( $this->ipsclass->input['Post'] );
@@ -1524,7 +1524,7 @@ class calendar
  		{
 	 		$event_approved = 1;
  		}
- 		
+
  		if ( $type == 'add' )
  		{
 			//-----------------------------------------
@@ -2052,7 +2052,7 @@ class calendar
 																						  'timethen' => $timethen,
 																						  'month'    => $month )
 													 );
-																
+
 				/*$this->ipsclass->DB->simple_construct( array( 'select' => '*',
 															  'from'   => 'cal_events',
 															  'where'  => "$extra event_approved=1
@@ -2126,27 +2126,26 @@ class calendar
 							$check = 1;
 						}
 					}
-					
+
 					if( $check == 0 )
 					{
 						continue;
 					}					
 				}
-				
+
 				//-----------------------------------------
 				// Times
 				//-----------------------------------------
-				
+
 				$set_offset = 0;
 				if( $r['event_timeset'] AND !$r['event_all_day'] )
 				{
 					$set_offset = $this->ipsclass->member['time_offset'] * 3600;
 				}
 				
-				$r['_unix_from'] = $r['event_unix_from'] ? $r['event_unix_from'] - $set_offset  : 0;
-				$r['_unix_to']   = $r['event_unix_to'] > 0  ? $r['event_unix_to'] - $set_offset  : 0;
+				$r['_unix_from'] = $r['event_unix_from'] ? $r['event_unix_from'] + $set_offset  : 0;
+				$r['_unix_to']   = $r['event_unix_to'] > 0  ? $r['event_unix_to'] + $set_offset  : 0;
 
-				
 				//-----------------------------------------
 				// Recurring event?
 				//-----------------------------------------

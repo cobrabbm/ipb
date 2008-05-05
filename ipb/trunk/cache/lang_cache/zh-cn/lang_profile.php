@@ -14,6 +14,13 @@
 
 $lang = array (
 
+// 2.3.5
+'pp_tab_aboutme'      		=> "关于我",
+'err_no_aboutme_to_show' 	=> "该会员尚未设置 '关于我' 页面并且尚未添加个人签名.",
+'cp_edit_aboutme'  			=> "编辑您的 '关于我' 页面",
+'cp_edit_signature'			=> '编辑您的签名',
+
+
 'page_title_pp' 			=> "查看详细资料",
 
 
@@ -58,7 +65,6 @@ $lang = array (
 'js_loading_tab'      => '加载内容...',
 'js_deleting_comment' => '删除留言...',
 
-'m_personal_statement' => '自我介绍',
 'm_visit_website'	 => "访问我的主页",
 'm_go'				 => "Go",
 'm_dd_with_selected' => "选择",

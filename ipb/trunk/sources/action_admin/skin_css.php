@@ -724,7 +724,7 @@ class ad_skin_css
 		{
 			foreach( $imports[1] as $import )
 			{
-				$hiddens[$i] = array( 'import_' . $i, trim($import) );
+				$hiddens[$i] = array( 'import_' . $i, str_replace( '<#IMG_DIR#>', $this_set['set_image_dir'], trim($import) ) );
 				
 				$i++;
 			}

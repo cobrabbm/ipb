@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-27 14:32:48 -0500 (Thu, 27 Dec 2007) $
-|   > $Revision: 1151 $
+|   > $Date: 2008-03-28 18:08:02 -0400 (Fri, 28 Mar 2008) $
+|   > $Revision: 1232 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -389,7 +389,10 @@ class post_functions extends class_post
 		// board/forum/topic stats
 		//-----------------------------------------
 		
-		$this->pf_update_forum_and_stats($this->topic['tid'], $this->topic['title'], 'reply');
+		if ( $this->obj['moderate'] != 1 and $this->obj['moderate'] != 3 AND $this->topic['approved'] == 1 )
+		{
+			$this->pf_update_forum_and_stats($this->topic['tid'], $this->topic['title'], 'reply');
+		}
 		
 		//-----------------------------------------
 		// Get the correct number of replies

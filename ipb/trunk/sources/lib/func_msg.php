@@ -181,7 +181,7 @@ class func_msg
     		
 			if ( ! $this->ipsclass->member['vdirs'] )
 			{
-				$this->ipsclass->member['vdirs'] = "in:收件箱|sent:发件箱";
+				$this->ipsclass->member['vdirs'] = "in:{$this->ipsclass->lang['account_inbox']}|sent:{$this->ipsclass->lang['account_sent']}";
 			}
 			
 			foreach( explode( "|", $this->ipsclass->member['vdirs'] ) as $dir )

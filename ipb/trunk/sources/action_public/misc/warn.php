@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-09-26 16:50:00 -0400 (Wed, 26 Sep 2007) $
-|   > $Revision: 1113 $
+|   > $Date: 2008-01-25 10:38:16 -0500 (Fri, 25 Jan 2008) $
+|   > $Revision: 1176 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -608,28 +608,36 @@ class warn {
 		$save['wlog_notes'] .= "<post>{$this->ipsclass->input['post_value']},{$this->ipsclass->input['post_unit']},{$this->ipsclass->input['post_indef']} </post>";
 		$save['wlog_notes'] .= "<susp>{$this->ipsclass->input['susp_value']},{$this->ipsclass->input['susp_unit']}</susp>";
 		
-		if ( $this->ipsclass->input['mod_indef'] == 1 )
+		if ( $this->can_mod_q )
 		{
-			$mod_queue = 1;
-		}
-		elseif ( $this->ipsclass->input['mod_value'] > 0 )
-		{
-			$mod_queue = $this->ipsclass->hdl_ban_line( array( 'timespan' => intval($this->ipsclass->input['mod_value']), 'unit' => $this->ipsclass->input['mod_unit']  ) );
-		}
-		
-		
-		if ( $this->ipsclass->input['post_indef'] == 1 )
-		{
-			$restrict_post = 1;
-		}
-		elseif ( $this->ipsclass->input['post_value'] > 0 )
-		{
-			$restrict_post = $this->ipsclass->hdl_ban_line( array( 'timespan' => intval($this->ipsclass->input['post_value']), 'unit' => $this->ipsclass->input['post_unit']  ) );
+			if ( $this->ipsclass->input['mod_indef'] == 1 )
+			{
+				$mod_queue = 1;
+			}
+			elseif ( $this->ipsclass->input['mod_value'] > 0 )
+			{
+				$mod_queue = $this->ipsclass->hdl_ban_line( array( 'timespan' => intval($this->ipsclass->input['mod_value']), 'unit' => $this->ipsclass->input['mod_unit']  ) );
+			}
 		}
 		
-		if ( $this->ipsclass->input['susp_value'] > 0 )
+		if ( $this->can_rem_post )
 		{
-			$susp = $this->ipsclass->hdl_ban_line( array( 'timespan' => intval($this->ipsclass->input['susp_value']), 'unit' => $this->ipsclass->input['susp_unit']  ) );
+			if ( $this->ipsclass->input['post_indef'] == 1 )
+			{
+				$restrict_post = 1;
+			}
+			elseif ( $this->ipsclass->input['post_value'] > 0 )
+			{
+				$restrict_post = $this->ipsclass->hdl_ban_line( array( 'timespan' => intval($this->ipsclass->input['post_value']), 'unit' => $this->ipsclass->input['post_unit']  ) );
+			}
+		}
+		
+		if( $this->can_ban )
+		{
+			if ( $this->ipsclass->input['susp_value'] > 0 )
+			{
+				$susp = $this->ipsclass->hdl_ban_line( array( 'timespan' => intval($this->ipsclass->input['susp_value']), 'unit' => $this->ipsclass->input['susp_unit']  ) );
+			}
 		}
 		
 		$save['wlog_mid']     = $this->warn_member['id'];

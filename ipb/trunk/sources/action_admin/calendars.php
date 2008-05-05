@@ -11,9 +11,9 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-05-02 17:29:12 -0400 (Wed, 02 May 2007) $
-|   > $Revision: 959 $
-|   > $Author: bfarber $
+|   > $Date: 2008-04-10 14:23:41 -0400 (Thu, 10 Apr 2008) $
+|   > $Revision: 1235 $
+|   > $Author: jason $
 +---------------------------------------------------------------------------
 |
 |   > Components Functions
@@ -255,17 +255,17 @@ class ad_calendars
 				$channel_id = $class_rss->create_add_channel( array( 'title'       => $row['cal_title'],
 																	 'link'        => $this->ipsclass->vars['board_url'].'/index.php?act=calendar&amp;calendar_id='.$row['cal_id'],
 																	 'pubDate'     => $class_rss->rss_unix_to_rfc( time() ),
-																	 'ttl'         => $row['cal_rss_update'] * 60,
+																	 'ttl'         => $row['cal_rss_update'],
 																	 'description' => $row['cal_title']
 															)      );
 															
 				//--------------------------------------------
 				// Check permissions
 				//--------------------------------------------
-				
+
 				$_perms = unserialize( $row['cal_permissions'] );
 				$pass   = 0;
-				
+
 				if ( $_perms['perm_read'] == '*' OR preg_match( "/(^|,)".$this->ipsclass->vars['guest_group']."(,|$)/", $_perms['perm_read'] ) )
 				{
 					$pass = 1;
@@ -275,42 +275,40 @@ class ad_calendars
 				{
 					continue;
 				}
-				
+
 				//--------------------------------------------
 				// Sort out dates
 				//--------------------------------------------
-				
-				$row['cal_rss_export_days'] = intval($row['cal_rss_export_days']) + 1;
-				
+
 				list( $month, $day, $year ) = explode( ',', gmdate('n,j,Y', time()) );
-				
+
 				$timenow   = gmmktime( 0,0,0, $month, 1, $year );
 				$timethen  = time() + ($row['cal_rss_export_days'] * 86400) + 86400;
 				$nowtime   = time() - 86400;
 				$items     = 0;
-				
+
 				//--------------------------------------------
 				// Get events
 				//--------------------------------------------
-				
+
 				$calendar->get_events_sql( 0, 0, array('timenow' => $timenow, 'timethen' => $timethen, 'cal_id' => $row['cal_id'] ), 0 );
-				
+
 				//--------------------------------------------
 				// OK.. Go through days and check events
 				//--------------------------------------------
 				
-				for( $i = 0 ; $i <= $row['cal_rss_export_days'] ; $i++ )
+				for( $i = 1 ; $i <= $row['cal_rss_export_days'] ; $i++ )
 				{
 					//--------------------------------------------
 					// Get more then!
 					//--------------------------------------------
-					
+
 					list( $month, $day, $year ) = explode( ',', gmdate('n,j,Y', $nowtime) );
 						
 					$eventcache = $calendar->get_day_events( $month, $day, $year );
 					
 					foreach( $eventcache as $event )
-					{ 
+					{
 						if ( ! in_array( $event['event_id'], $seenids ) )
 						{
 							//--------------------------------------------
@@ -365,9 +363,9 @@ class ad_calendars
 								{
 									$event['event_content'] = $this->html->calendar_rss_range( $event );
 								}
-								
-								$event['event_unix_from'] = $event['event_tz'] ? $event['event_unix_from'] : $event['event_unix_from'] + ( $this->ipsclass->vars['time_offset'] * 3600 );
-						
+
+								$event['event_unix_from'] = $this->ipsclass->vars['time_offset'] > 0 ? $event['event_unix_from'] + ( $this->ipsclass->vars['time_offset'] * 3600 ) : $event['event_unix_from'];
+
 								$class_rss->create_add_item( $channel_id, array( 'title'           => $event['event_title'],
 																				 'link'            => $this->ipsclass->vars['board_url'].'/index.php?act=calendar&amp;code=showevent&amp;calendar_id='.$row['cal_id'].'&amp;event_id='.$event['event_id'],
 																				 'description'     => $event['event_content'],

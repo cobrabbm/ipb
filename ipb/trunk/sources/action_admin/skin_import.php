@@ -260,6 +260,9 @@ class ad_skin_import {
 					{
 						@fclose( $FH );
 					}
+					
+					@chmod( CACHE_PATH.'style_images/'.$safename.'/'.$data['filename'], 0777 );
+
 				}
 			}
 		}

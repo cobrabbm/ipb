@@ -3,8 +3,12 @@
 $lang = array (
 
 'partial_login'				=> 'The login was succesful!',
-'myass_close'					=> 'Close Window',
+'myass_close'				=> 'Close Window',
+'dd_my_blog'				=> 'View Member Blog',
+'dd_my_albums'				=> 'View Member Albums',
 
+'account_inbox'				=> 'Inbox',
+'account_sent'				=> 'Sent Items',
 
 //2.3 - Globally used
 'member_no'             	=> "Member No.:",

@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-09-19 15:37:06 -0400 (Wed, 19 Sep 2007) $
-|   > $Revision: 1107 $
+|   > $Date: 2008-04-29 17:14:34 -0400 (Tue, 29 Apr 2008) $
+|   > $Revision: 1269 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -164,7 +164,7 @@ class sql_queries extends db_driver_mysql
     	
     	return "SELECT p.*, pp.*,
 				m.id,m.name,m.mgroup,m.email,m.joined,m.posts, m.last_visit, m.last_activity,m.login_anonymous,m.title,m.hide_email, m.warn_level, m.warn_lastwarn,
-				me.msnname,me.aim_name,me.icq_number,me.signature, me.website,me.yahoo,me.location, me.avatar_location, me.avatar_type, me.avatar_size, m.members_display_name
+				me.msnname,me.aim_name,me.icq_number,me.signature, me.website,me.yahoo,me.location, me.avatar_location, me.avatar_type, me.avatar_size, m.members_display_name, m.members_cache, m.has_blog, m.has_gallery
 					FROM ".SQL_PREFIX."posts p
 				  		LEFT JOIN ".SQL_PREFIX."members m ON (m.id=p.author_id)
 						LEFT JOIN ".SQL_PREFIX."profile_portal pp ON (m.id=pp.pp_member_id)
@@ -179,7 +179,7 @@ class sql_queries extends db_driver_mysql
     	
     	return "SELECT p.*, pp.*,
 				m.id,m.name,m.mgroup,m.email,m.joined,m.posts, m.last_visit, m.last_activity,m.login_anonymous,m.title,m.hide_email, m.warn_level, m.warn_lastwarn,
-				me.msnname,me.aim_name,me.icq_number,me.signature, me.website,me.yahoo,me.location, me.avatar_location, me.avatar_type, me.avatar_size, m.members_display_name,
+				me.msnname,me.aim_name,me.icq_number,me.signature, me.website,me.yahoo,me.location, me.avatar_location, me.avatar_type, me.avatar_size, m.members_display_name, m.members_cache, m.has_blog, m.has_gallery,
 				pc.*
 					FROM ".SQL_PREFIX."posts p
 				  		LEFT JOIN ".SQL_PREFIX."members m ON (m.id=p.author_id)
@@ -260,7 +260,7 @@ class sql_queries extends db_driver_mysql
 	function msg_get_msg_to_show( $a )
 	{
 		return "SELECT m.id,m.name,m.members_disable_pm,m.mgroup,m.email,m.joined,m.posts, m.last_visit, m.last_activity,m.login_anonymous,m.title,m.hide_email, m.warn_level, m.warn_lastwarn,
-				g.g_id, g.g_title, g.g_icon, g.g_dohtml, m.members_display_name,
+				g.g_id, g.g_title, g.g_icon, g.g_dohtml, m.members_display_name, m.members_cache, m.has_blog, m.has_gallery,
 				me.msnname,me.aim_name,me.icq_number,me.signature, me.website,me.yahoo,me.location, me.avatar_location, me.avatar_type, me.avatar_size,
 				mt.*, msg.*, pp.*
 					FROM ".SQL_PREFIX."message_topics mt

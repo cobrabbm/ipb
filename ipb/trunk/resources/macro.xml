@@ -248,7 +248,7 @@
 
 		<macro>
 			<macro_value>NEW_POST</macro_value>
-			<macro_replace><![CDATA[<img src='style_images/<#IMG_DIR#>/newpost.gif' border='0'  alt='Goto first unread' title='Goto first unread' hspace=2 />]]></macro_replace>
+			<macro_replace><![CDATA[<img src='style_images/<#IMG_DIR#>/newpost.gif' border='0'  alt='Go to first unread' title='Go to first unread' hspace='2' />]]></macro_replace>
 		</macro>
 
 		<macro>

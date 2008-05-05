@@ -190,6 +190,27 @@ class attach {
 	function attach_upload_show( $msg="ready", $is_error=0 )
 	{
 		//-----------------------------------------
+		// Force a form action?
+		//-----------------------------------------
+		
+		$is_reset = 0;
+		
+		if( $this->ipsclass->vars['upload_domain'] )
+		{
+			$is_reset = 1;
+			$original = $this->ipsclass->base_url;
+			
+			if( $this->ipsclass->session_type == 'cookie' )
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?';
+			}
+			else
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?s='.$this->ipsclass->session_id.'&amp;';
+			}
+		}
+
+		//-----------------------------------------
 		// INIT
 		//-----------------------------------------
 		

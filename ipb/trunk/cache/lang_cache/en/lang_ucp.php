@@ -2,6 +2,14 @@
 
 $lang = array (
 
+'ras_text_gif'     			=> "<b>Confirm security code</b><br />Please enter the 6 character code shown in the image. Case sensitive.",
+
+// NEW 2.3.5
+'cp_edit_aboutme'  			=> "Edit your 'About Me' page",
+'cp_current_aboutme'  		=> "Your current 'About Me' page",
+'cp_submit_aboutme'   		=> "Update my 'About Me' page",
+'m_personal_aboutme' 		=> "Edit 'About Me' page",
+
 'panel_gender'				=> '<b>Gender</b>',
 'panel_gender_m'			=> 'Male',
 'panel_gender_f'			=> 'Female',

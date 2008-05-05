@@ -1251,7 +1251,7 @@ class ad_skintools {
 		
 		if ($new_id == 'n')
 		{
-			$this->ipsclass->DB->do_update( 'members', array( 'skin' => '' ), 'skin'.$query_bit );
+			$this->ipsclass->DB->do_update( 'members', array( 'skin' => 0 ), 'skin'.$query_bit );
 		}
 		else
 		{

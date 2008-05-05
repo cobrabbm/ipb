@@ -203,6 +203,9 @@ class plugin_post
 		
 		if ( is_array( $rel_ids ) and count( $rel_ids ) )
 		{
+			// We need to reset the array - this query bit will return everything we need, but
+			// if we "OR" join the above query bit with this one, it causes bigger mysql loads
+			$query_bits	  = array();
 			$query_bits[] = "attach_rel_id IN (" . implode( ",", $rel_ids ) . ")";
 			//$query = " OR attach_rel_id IN (-1," . implode( ",", $rel_ids ) . ")";
 			$match = 1;
@@ -582,7 +585,7 @@ class plugin_post
 				
 				$_space_used = $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'SUM(attach_filesize) as figure',
 																				 'from'   => 'attachments',
-																				 'where'  => 'attach_member_id='.$member_id ) );
+																				 'where'  => 'attach_member_id='.$member_id . " AND attach_rel_module IN( 'post', 'msg' )" ) );
 
 				$space_used    = intval( $_space_used['figure'] );
 			}	
@@ -593,7 +596,7 @@ class plugin_post
 				{
 					$_g_space_used	= $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'SUM(attach_filesize) as figure',
 																					 'from'   => 'attachments',
-																					 'where'  => 'attach_member_id='.$member_id ) );
+																					 'where'  => 'attach_member_id='.$member_id . " AND attach_rel_module IN( 'post', 'msg' )" ) );
 
 					$g_space_used    = intval( $_g_space_used['figure'] );
 					

@@ -456,6 +456,8 @@ class api_skins extends api_core
 					{
 						@fclose( $FH );
 					}
+					
+					@chmod( CACHE_PATH.'style_images/'.$safename.'/'.$data['filename'], 0777 );
 				}
 			}
 		}

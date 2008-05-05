@@ -18,8 +18,8 @@ define( 'INS_ROOT_PATH', str_replace( "//", "/", preg_replace( "#/core$#is", "",
 *
 * @since 2.0.0.2005-01-01
 */
-define ( 'IPBVERSION', '2.3.4' );
-define ( 'IPB_LONG_VERSION', '23007' );
+define ( 'IPBVERSION', '2.3.5' );
+define ( 'IPB_LONG_VERSION', '23008' );
 
 /**
 * DOC ROOT PATH

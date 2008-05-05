@@ -479,7 +479,7 @@ class plugin_msg
 				
 				$_space_used = $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'SUM(attach_filesize) as figure',
 																				 'from'   => 'attachments',
-																				 'where'  => 'attach_member_id='.$member_id ) );
+																				 'where'  => 'attach_member_id='.$member_id . " AND attach_rel_module IN( 'post', 'msg' )" ) );
 
 				$space_used    = intval( $_space_used['figure'] );
 			}	
@@ -493,7 +493,7 @@ class plugin_msg
 				{
 					$_g_space_used	= $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'SUM(attach_filesize) as figure',
 																					 'from'   => 'attachments',
-																					 'where'  => 'attach_member_id='.$member_id ) );
+																					 'where'  => 'attach_member_id='.$member_id . " AND attach_rel_module IN( 'post', 'msg' )" ) );
 
 					$g_space_used    = intval( $_g_space_used['figure'] );
 					

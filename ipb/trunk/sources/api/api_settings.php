@@ -235,7 +235,7 @@ class api_settings extends api_core
 					$save = array( 'conf_title_title'   => $data['conf_title_title'],
 								   'conf_title_desc'    => $data['conf_title_desc'],
 								   'conf_title_keyword' => $data['conf_title_keyword'],
-								   'conf_title_noshow'  => $data['conf_title_noshow'],
+								   'conf_title_noshow'  => intval($data['conf_title_noshow']),
 								   'conf_title_module'  => $data['conf_title_module']  );
 
 					//-----------------------------------------

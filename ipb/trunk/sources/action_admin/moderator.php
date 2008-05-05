@@ -661,6 +661,16 @@ class ad_moderator {
 		$this->ipsclass->input['fid'] = preg_replace( "#^,#", "", $this->ipsclass->input['modforumids'] );
 		
 		//-----------------------------------------
+		// Got forums?
+		//-----------------------------------------
+		
+		if ( ! $this->ipsclass->input['fid'] )
+		{
+			$this->ipsclass->main_msg = "您必须首先选择一些论坛!";
+			$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
+		}
+
+		//-----------------------------------------
 		// Are we adding a group as a mod?
 		//-----------------------------------------
 		
@@ -668,16 +678,6 @@ class ad_moderator {
 		{
 			$this->mod_form();
 			exit();
-		}
-		
-		//-----------------------------------------
-		// Got forums?
-		//-----------------------------------------
-		
-		if ( ! $this->ipsclass->input['fid'] )
-		{
-			$this->ipsclass->main_msg = "您必须先选择论坛版块!";
-			$this->ipsclass->admin->redirect_noscreen( $this->ipsclass->base_url.'&section=content&act=forum' );
 		}
 		
 		//-----------------------------------------

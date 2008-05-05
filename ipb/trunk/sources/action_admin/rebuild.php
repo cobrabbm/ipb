@@ -1344,7 +1344,7 @@ class ad_rebuild {
 	
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "转换 IPB 2.1.x 模版 HTML 到 IPB 2.2.x 模版 HTML 格式" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "的模版格式有一些变化, 本工具将更新您存储在数据库中的主主题. 运行本工具后您需要重建缓存.
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b style='color:red;'>该工具用来升级 IPB 2.1 皮肤到 IPB 2.2 格式. 如果您使用这一工具到 IPB 2.2 或 2.3 的皮肤则会造成损坏.</b><br />HTML 在 IPB 2.2.0 的更改并不大. 该工具能够升级您的数据库中的模板, 您需要在之后更新缓存.
 																			  <br />针对主题: $skin_list 运行本工具"
 																	)      );
 										 
@@ -2327,7 +2327,7 @@ class ad_rebuild {
 			break;
 			
 			case 'sigs':
-				$tmp = $this->ipsclass->DB->simple_exec_query( array( 'select' => 'id', 'from' => 'member_extra', 'where' => "signature != ''", 'limit' => array($dis,1)  ) );
+				$tmp = $this->ipsclass->DB->simple_exec_query( array( 'select' => 'id', 'from' => 'member_extra', 'where' => "signature IS NOT NULL", 'limit' => array($dis,1)  ) );
 				$max = intval( $tmp['id'] );
 			break;
 			

@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2008-01-03 11:01:06 -0500 (Thu, 03 Jan 2008) $
-|   > $Revision: 1155 $
+|   > $Date: 2008-03-28 18:08:02 -0400 (Fri, 28 Mar 2008) $
+|   > $Revision: 1232 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -1570,6 +1570,12 @@ class profile
 		$pp_setting_moderate_friends  = intval( $this->ipsclass->input['pp_setting_moderate_friends'] );
 		$pp_bio_content				  = $this->ipsclass->txt_mbsubstr( $this->ipsclass->my_nl2br( $this->ipsclass->input['pp_bio_content'] ), 0, 300 );
 		$website					  = trim( $this->ipsclass->input['website'] );
+
+		if( !$this->ipsclass->member['g_use_pm'] )
+		{
+			$pp_setting_notify_comments	= ( $pp_setting_notify_comments == 'pm' ) ? 'none' : $pp_setting_notify_comments;
+			$pp_setting_notify_friend	= ( $pp_setting_notify_friend == 'pm' ) ? 'none' : $pp_setting_notify_friend;
+		}
 		
 		//-----------------------------------------
 		// Settings...
@@ -1798,7 +1804,12 @@ class profile
 		$types     = array( 'none'  => $this->ipsclass->lang['op_dd_none'],
 					 		'email' => $this->ipsclass->lang['op_dd_email'],
 							'pm'    => $this->ipsclass->lang['op_dd_pm'] );
-							
+
+		if( !$this->ipsclass->member['g_use_pm'] )
+		{
+			unset($types['pm']);
+		}
+
 		$yes_no    = array( '0'     => $this->ipsclass->lang['op_dd_disabled'],
 							'1'     => $this->ipsclass->lang['op_dd_enabled'] );
 		
@@ -1886,10 +1897,40 @@ class profile
 		$member['__pp_bio_content'] = $member['pp_bio_content'];
 		
 		//-----------------------------------------
+		// Force a form action?
+		//-----------------------------------------
+		
+		$is_reset = 0;
+		
+		if( $this->ipsclass->vars['upload_domain'] )
+		{
+			$is_reset = 1;
+			$original = $this->ipsclass->base_url;
+			
+			if( $this->ipsclass->session_type == 'cookie' )
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?';
+			}
+			else
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?s='.$this->ipsclass->session_id.'&amp;';
+			}
+		}
+		
+		//-----------------------------------------
 		// Ok.. show the settings
 		//-----------------------------------------
 		
 		$content = $this->ipsclass->compiled_templates['skin_profile']->personal_portal_iframe_settings( $member, $friends['count_friends'], $error );
+		
+		//-----------------------------------------
+		// Reset forced form action?
+		//-----------------------------------------
+		
+		if( $is_reset )
+		{
+			$this->ipsclass->base_url = $original;
+		}
 		
 		$this->ipsclass->print->pop_up_window( '', $content );
 	}
@@ -1968,6 +2009,12 @@ class profile
 			//$row['comment_content'] = $this->ipsclass->txt_wordwrap( $row['comment_content'], '19', ' ' );
 			
 			$row = $this->personal_portal_set_information( $row, 0, 0 );
+			
+			if( !$row['members_display_name_short'] )
+			{
+				$guest = $this->personal_portal_set_information( $this->ipsclass->set_up_guest() );
+				$row = array_merge( $row, $guest );
+			}
 			
 			$comments[] = $row;
 		}
@@ -2581,7 +2628,7 @@ class profile
 		$member_id       = intval( $this->ipsclass->input['id'] ) ? intval( $this->ipsclass->input['id'] ) : intval( $this->ipsclass->input['MID'] );
 		$member_id       = $member_id ? $member_id : $this->ipsclass->member['id'];
 		$tab             = substr( $this->ipsclass->txt_alphanumerical_clean( str_replace( '..', '', trim( $this->ipsclass->input['tab'] ) ) ), 0, 20 );
-		$tab             = $tab ? $tab : 'topics';
+		$tab             = $tab ? $tab : 'aboutme';
 		$member          = array();
 		$comments        = array();
 		$comments_html   = "";
@@ -2640,7 +2687,7 @@ class profile
 			
 				if ( $CONFIG['plugin_enabled'] )
 				{
-					if ( $classname != 'posts' && $classname != 'topics' )
+					if ( $classname != 'posts' && $classname != 'topics' && $classname != 'aboutme' )
 					{
 						$CONFIG['plugin_order'] += 10;
 					}
@@ -2663,9 +2710,9 @@ class profile
 			$tabs[ $data['plugin_key'] ] = $data;
 		}
 		
-		if( $tab != 'comments' AND $tabl != 'settings' AND !file_exists( ROOT_PATH . 'sources/components_public/profile/'.$tab.'.php' ) )
+		if( $tab != 'comments' AND $tab != 'settings' AND !file_exists( ROOT_PATH . 'sources/components_public/profile/'.$tab.'.php' ) )
 		{
-			$tab = 'topics';
+			$tab = 'aboutme';
 		}
 
 		//-----------------------------------------
@@ -2777,6 +2824,7 @@ class profile
 		$member['_posts']			 = $this->ipsclass->do_number_format( $member['posts'] );
 		$member['_website'] 		 = ( preg_match( "/^http:\/\/\S+$/", $member['website'] ) ) ? $member['website'] : '';
 		$member['_title']   		 = $member['title'];
+		$member['location']			 = $this->ipsclass->txt_wordwrap( $member['location'], 25 );
 
 		$member['g_title']			 = $this->ipsclass->make_name_formatted( $member['g_title'], $member['g_id'], $member['g_prefix'], $member['g_suffix'] );
 		
@@ -2954,7 +3002,7 @@ class profile
 
 					$_visitor_info[ $row['id'] ] = $row;
 				}
-			
+
 				foreach( $_pp_last_visitors as $_time => $_id )
 				{
 					if ( $_count + 1 > $member['pp_setting_count_visitors'] )
@@ -2964,6 +3012,11 @@ class profile
 				
 					$_count++;
 				
+					if( !$_visitor_info[ $_id ]['members_display_name_short'] )
+					{
+						$_visitor_info[ $_id ] = $this->ipsclass->member_set_information( $this->ipsclass->set_up_guest() );
+					}
+					
 					$_visitor_info[ $_id ]['_visited_date'] 				= $this->ipsclass->get_date( $_time, 'TINY' );
 					$_visitor_info[ $_id ]['members_display_name_short']	= $_visitor_info[ $_id ]['members_display_name_short'] ? $_visitor_info[ $_id ]['members_display_name_short'] : $this->ipsclass->lang['global_guestname'];
 

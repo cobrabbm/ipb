@@ -30,6 +30,6 @@ $CONFIG['plugin_enabled']     = 1;
 /**
 * Order
 */
-$CONFIG['plugin_order'] = 1;
+$CONFIG['plugin_order'] = 2;
 
 ?>

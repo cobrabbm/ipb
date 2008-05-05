@@ -42,6 +42,15 @@ class profile_topics
 	*/
 	var $ipsclass;
 	
+	/**
+	* Maximum number of days to check:
+	* limits resource usage.  Set to 0
+	* for no days restriction.
+	*
+	* @var int
+	*/
+	var $max_days	= 40;
+	
 	/*-------------------------------------------------------------------------*/
 	// Return data
 	/*-------------------------------------------------------------------------*/
@@ -111,13 +120,15 @@ class profile_topics
 			return $this->ipsclass->compiled_templates['skin_profile']->personal_portal_no_content( 'err_no_posts_to_show' );
 		}
 		
+		$time_restrict = $this->max_days ? " AND t.start_date > " . ( time() - 60 * 60 * 24 * $this->max_days ) : '';
+		
 		//-----------------------------------------
 		// Get last X posts
 		//-----------------------------------------
 		
 		$this->ipsclass->DB->build_query( array( 'select'   => 't.*',
 		  										 'from'     => array( 'topics' => 't' ),
-		  										 'where'    => 't.starter_id='.$member['id'].' AND t.forum_id IN(' .  implode( ',', $forum_ids ). ') AND t.approved=1',
+		  										 'where'    => 't.starter_id='.$member['id'].' AND t.forum_id IN(' .  implode( ',', $forum_ids ). ') AND t.approved=1' . $time_restrict,
 												 'order'    => 't.start_date DESC',
 												 'limit'    => array( 0, $last_x ),
 												 'add_join' => array( 0 => array(

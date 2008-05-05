@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-27 14:32:48 -0500 (Thu, 27 Dec 2007) $
-|   > $Revision: 1151 $
+|   > $Date: 2008-04-21 17:32:17 -0400 (Mon, 21 Apr 2008) $
+|   > $Revision: 1249 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -314,13 +314,15 @@ class xmlout
 				
 				break;
 			case 'location':
-				if ( $value )
+				if( !$value )
 				{
-					$_v    = $this->ipsclass->vars['max_location_length'] ? $this->ipsclass->vars['max_location_length']: 200;
-					$value = $this->ipsclass->txt_mbsubstr( $value, 0, $_v );
-					$this->ipsclass->DB->do_update( 'member_extra', array( 'location' => $value ), 'id='.$member_id );
-					$return_string = $value;
+					$this->ipsclass->load_language( 'lang_profile' );
 				}
+				
+				$_v    = $this->ipsclass->vars['max_location_length'] ? $this->ipsclass->vars['max_location_length']: 200;
+				$value = $this->ipsclass->txt_mbsubstr( $value, 0, $_v );
+				$this->ipsclass->DB->do_update( 'member_extra', array( 'location' => $value ), 'id='.$member_id );
+				$return_string = $value ? $value : $this->ipsclass->lang['m_location_unknown'];
 				break;
 			case 'birthdate':
 				$this->ipsclass->load_language( 'lang_profile' );
@@ -360,7 +362,7 @@ class xmlout
 		}
 		
 		$this->class_ajax->print_nocache_headers();
-		$this->class_ajax->return_string( $return_string );
+		$this->class_ajax->return_string( $this->ipsclass->txt_wordwrap( $return_string, 25 ) );
 	}
 
 	/*-------------------------------------------------------------------------*/
@@ -373,13 +375,14 @@ class xmlout
     	// INIT
     	//-----------------------------------------
     	
-		$rating_id  = intval($this->ipsclass->input['rating']);
-		$rating_id  = $rating_id > 5 ? 5 : $rating_id;
-		$rating_id  = $rating_id < 0 ? 0 : $rating_id;
-		$member_id  = intval($this->ipsclass->input['member_id']);
-		$member     = array();
-		$type       = 'new';
-		$md5_check	= substr( $this->ipsclass->input['md5check'], 0, 32 );
+		$rating_id  	= intval($this->ipsclass->input['rating']);
+		$rating_id  	= $rating_id > 5 ? 5 : $rating_id;
+		$rating_id  	= $rating_id < 0 ? 0 : $rating_id;
+		$member_id  	= intval($this->ipsclass->input['member_id']);
+		$member     	= array();
+		$type       	= 'new';
+		$md5_check		= substr( $this->ipsclass->input['md5check'], 0, 32 );
+		$rating_added	= time();
 		
     	//-----------------------------------------
     	// Check
@@ -891,7 +894,7 @@ class xmlout
     	//-----------------------------------------
     	
     	$email = $this->ipsclass->input['email'];
-    	
+
         //-----------------------------------------
     	// Load handler...
     	//-----------------------------------------
@@ -1340,20 +1343,6 @@ class xmlout
 		//$raw_post = $this->post->show_post_preview( $this->post->post['post'] ) . "\n" . '<!--IBF.ATTACHMENT_'. $pid . '-->';
 		$raw_post = $this->post->post['post'] . "\n" . '<!--IBF.ATTACHMENT_'. $pid . '-->';
 		
-		//-----------------------------------------
-		// Showing reason for edit?
-		//-----------------------------------------
-		
-		if ( $this->ipsclass->member['g_is_supmod'] OR  $this->post->moderator['edit_post'] )
-		{
-			if ( $this->post->post['post_edit_reason'] )
-			{
-				$raw_post .= "\n<div class='post-edit-reason'>
-								{$this->ipsclass->lang['reason_for_edit']}: {$this->post->post['post_edit_reason']}
-								</div>";
-			}
-		}
-		
 		if ( ! is_object( $this->class_attach ) )
 		{
 			//-----------------------------------------
@@ -1375,6 +1364,20 @@ class xmlout
 		{
 			$e_time = $this->ipsclass->get_date( $this->post->post['edit_time'] , 'LONG' );
 			$raw_post .= "<br /><br /><span class='edit'>".sprintf($this->ipsclass->lang['edited_by'], $this->post->post['edit_name'], $e_time)."</span>";
+		}
+		
+		//-----------------------------------------
+		// Showing reason for edit?
+		//-----------------------------------------
+		
+		if ( $this->ipsclass->member['g_is_supmod'] OR  $this->post->moderator['edit_post'] )
+		{
+			if ( $this->post->post['post_edit_reason'] )
+			{
+				$raw_post .= "\n<div class='post-edit-reason'>
+								{$this->ipsclass->lang['reason_for_edit']}: {$this->post->post['post_edit_reason']}
+								</div>";
+			}
 		}
 		
 		foreach( $this->ipsclass->skin['_macros'] as $row )

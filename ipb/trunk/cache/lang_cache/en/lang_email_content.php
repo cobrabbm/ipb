@@ -279,7 +279,7 @@ This is the digest of this weeks posts in forum <#NAME#>.
 
 ----------------------------------------------------------------------
 
-The topic can be found here:
+The topic can be found here: 
 <#BOARD_ADDRESS#>?showtopic=<#TOPIC_ID#>&view=getnewpost
 
 Unsubscribing:
@@ -311,7 +311,7 @@ This your daily new topics digest!
 
 ----------------------------------------------------------------------
 
-The forum can be found here:
+The forum can be found here: 
 <#BOARD_ADDRESS#>?showforum=<#FORUM_ID#>
 
 Unsubscribing:
@@ -344,7 +344,7 @@ This your weekly new topics digest!
 
 ----------------------------------------------------------------------
 
-The forum can be found here:
+The forum can be found here: 
 <#BOARD_ADDRESS#>?showforum=<#FORUM_ID#>
 
 Unsubscribing:
@@ -376,7 +376,7 @@ This is the digest of posts in topic "<#TITLE#>" for today.
 
 ----------------------------------------------------------------------
 
-The topic can be found here:
+The topic can be found here: 
 <#BOARD_ADDRESS#>?showtopic=<#TOPIC_ID#>&view=getnewpost
 
 Unsubscribing:
@@ -694,7 +694,7 @@ $lang['subs_with_post'] = <<<EOF
 <#POST#>
 ----------------------------------------------------------------------
 
-The topic can be found here:
+The topic can be found here: 
 <#BOARD_ADDRESS#>?showtopic=<#TOPIC_ID#>&view=getnewpost
 
 
@@ -720,11 +720,11 @@ $lang['subs_new_topic'] = <<<EOF
 <#POST#>
 ----------------------------------------------------------------------
 
-The topic can be found here:
+The topic can be found here: 
 <#BOARD_ADDRESS#>?showtopic=<#TOPIC_ID#>
 
 Please note that if you wish to get email notification of any replies to this topic, you will have to click on the
-"Track this Topic" link shown on the topic page, or by visiting the link below:
+"Track this Topic" link shown on the topic page, or by visiting the link below: 
 <#BOARD_ADDRESS#>?act=Track&f=<#FORUM_ID#>&t=<#TOPIC_ID#>
 
 
@@ -743,7 +743,7 @@ $lang['subs_no_post'] = <<<EOF
 
 <#POSTER#> has just posted a reply to a topic that you have subscribed to titled "<#TITLE#>".
 
-The topic can be found here:
+The topic can be found here: 
 <#BOARD_ADDRESS#>?showtopic=<#TOPIC_ID#>&view=getnewpost
 
 There may be more replies to this topic, but only 1 email is sent per board visit for each subscribed topic. This is

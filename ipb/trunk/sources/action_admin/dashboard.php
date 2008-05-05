@@ -59,7 +59,7 @@ class ad_dashboard
 		//-----------------------------------------
 		
 		define( 'IPS_NEWS_URL'			, 'http://external.ipslink.com/globalfeeds/news/' );
-		define( 'IPS_BULLETINS_URL'		, 'http://external.ipslink.com/ipbfeeds/234/staffbulletin/' );
+		define( 'IPS_BULLETINS_URL'		, 'http://external.ipslink.com/ipbfeeds/235/staffbulletin/' );
 		define( 'IPS_VERSION_CHECK_URL'	, 'http://www.invisionpower.com/latestversioncheck/ipb23x.php' );
 		
 		#$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':' );
@@ -539,9 +539,9 @@ class ad_dashboard
 		//-----------------------------------------
 		// ROOT ADMIN?
 		//-----------------------------------------
-		
-		if ( $this->ipsclass->member['mgroup'] == $this->ipsclass->vars['admin_group'] )
-		{
+		// X - All admins can see normal logs, no point in limiting this to root admin only
+		//if ( $this->ipsclass->member['mgroup'] == $this->ipsclass->vars['admin_group'] )
+		//{
 			//-----------------------------------------
 			// Last 5 log in attempts
 			//-----------------------------------------
@@ -562,7 +562,7 @@ class ad_dashboard
 			}
 			
 			$this->ipsclass->html = str_replace( '<!--acplogins-->', $this->html->acp_last_logins_wrapper( $logins ), $this->ipsclass->html );
-		}
+		//}
 		
 		$this->ipsclass->admin->output();
 	}

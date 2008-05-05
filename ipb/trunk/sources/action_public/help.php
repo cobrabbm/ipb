@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-05-02 17:29:12 -0400 (Wed, 02 May 2007) $
-|   > $Revision: 959 $
+|   > $Date: 2008-04-21 17:32:17 -0400 (Mon, 21 Apr 2008) $
+|   > $Revision: 1249 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -80,7 +80,7 @@ class help
     	// If we have any HTML to print, do so...
     	//-----------------------------------------
     	
-    	$this->ipsclass->print->add_output("$this->output");
+    	$this->ipsclass->print->add_output( $this->output );
         $this->ipsclass->print->do_output( array( 'TITLE' => $this->page_title, 'JS' => 0, 'NAV' => $this->nav ) );
  	}
  	
@@ -160,7 +160,7 @@ class help
 
  		$this->output .= $this->ipsclass->compiled_templates['skin_help']->help_end();
  		
- 		$this->page_title = $this->ipsclass->lang['help_topic'];
+ 		$this->page_title = $this->ipsclass->lang['help_topic'] . ' -> ' . $topic['title'];
  		$this->nav        = array( "<a href='{$this->base_url}&amp;act=Help'>{$this->ipsclass->lang['help_topics']}</a>", $this->ipsclass->lang['help_topic'] );
  	}	    
     

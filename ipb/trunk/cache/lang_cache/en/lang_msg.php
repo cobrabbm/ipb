@@ -2,6 +2,7 @@
 
 $lang = array (
 
+'m_personal_aboutme' 		=> "Edit 'About Me' page",
 'pro_message'				=> 'Message',
 'pro_recips'				=> 'Recipients',
 'pro_details'				=> 'Message Details',

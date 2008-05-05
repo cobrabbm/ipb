@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-09-19 15:37:06 -0400 (Wed, 19 Sep 2007) $
-|   > $Revision: 1107 $
+|   > $Date: 2008-04-23 15:02:02 -0400 (Wed, 23 Apr 2008) $
+|   > $Revision: 1254 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -773,7 +773,8 @@ class messenger
  		// Fetch the rest of the dirs
  		//-----------------------------------------
  		
- 		$ids = array();
+ 		$ids 	= array();
+ 		$others	= array();
  		
  		foreach ($this->ipsclass->input as $key => $value)
  		{
@@ -783,9 +784,16 @@ class messenger
  				{
  					$count = isset($cur_dir[ $match[0] ]) ? intval( $cur_dir[ $match[0] ] ) : 0;
  					
- 					$v_dir .= '|'.$match[0].':'.trim(str_replace( '|', '', str_replace( ";", "", $this->ipsclass->txt_alphanumerical_clean( $_POST[$match[0]], ' ' ) ) ) ).';'.$count;
+ 					$others[ $this->ipsclass->input[$match[0]] ]  = $match[0].':'.trim(str_replace( '|', '', str_replace( ";", "", $this->ipsclass->input[$match[0]] ) ) ).';'.$count;
  				}
  			}
+ 		}
+ 		
+ 		if( count($others) )
+ 		{
+ 			ksort($others);
+
+ 			$v_dir .= '|' . implode( '|', $others );
  		}
  		
  		$this->ipsclass->DB->simple_construct( array('update' => 'member_extra', 'set' => "vdirs='$v_dir'", 'where' => 'id='.$this->ipsclass->member['id']) );
@@ -919,7 +927,7 @@ class messenger
 		 		}
 		 	}
 		 	
-		 	if( $do_override == 0 )
+		 	if( $do_override == 1 )
 		 	{
 			 	$this->ipsclass->Error( array( 'LEVEL' => 1, 'MSG' => 'cannot_block' ) );
 		 	}
@@ -1595,7 +1603,7 @@ class messenger
  			return;
  		}
  		
- 		if ( strlen( trim( $_POST['Post'] ) ) < 2 )
+ 		if ( strlen( trim( $this->ipsclass->my_br2nl( $_POST['Post'] ) ) ) < 2 )
  		{
  			$this->msglib->send_form( 0, $this->ipsclass->lang['err_no_msg'] );
  			$this->output .= $this->msglib->output;

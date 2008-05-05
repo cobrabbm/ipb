@@ -1053,7 +1053,7 @@ class ad_forums
 							'allow_pollbump'			=> 0,
 							'forum_allow_rating'		=> 0,
 							'preview_posts'				=> 0,
-							'notify_modq_emails'		=> 0,
+							'notify_modq_emails'		=> '',
 							'show_perms'				=> '',
 							'read_perms'				=> '',
 							'start_perms'				=> '',

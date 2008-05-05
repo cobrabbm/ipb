@@ -322,6 +322,7 @@ class ad_languages {
 		require_once( KERNEL_PATH.'class_xml.php' );
 
 		$xml = new class_xml();
+		$xml->doc_type = $this->ipsclass->vars['gb_char_set'];
 		
 		//-----------------------------------------
 		// Unpack the datafile

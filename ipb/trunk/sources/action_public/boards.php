@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-03-07 16:47:18 -0500 (Wed, 07 Mar 2007) $
-|   > $Revision: 872 $
+|   > $Date: 2008-02-29 18:09:47 -0500 (Fri, 29 Feb 2008) $
+|   > $Revision: 1197 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -393,7 +393,9 @@ class boards
 							
 							if ( $forum_data['redirect_on'] )
 							{
-								$forum_data['redirect_target'] = isset($forum_data['redirect_target']) ? $forum_data['redirect_target'] : '_parent';
+								$forum_data['redirect_hits']	= $this->ipsclass->do_number_format( $forum_data['redirect_hits'] );
+								
+								$forum_data['redirect_target'] 	= isset($forum_data['redirect_target']) ? $forum_data['redirect_target'] : '_parent';
 								
 								$temp_html .= $this->ipsclass->compiled_templates['skin_boards']->forum_redirect_row( $forum_data );
 							}
