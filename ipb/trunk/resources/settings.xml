@@ -321,7 +321,7 @@
 			<conf_type>input</conf_type>
 			<conf_key>start_year</conf_key>
 			<conf_value></conf_value>
-			<conf_default>2004</conf_default>
+			<conf_default>2008</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -336,7 +336,7 @@
 		<setting>
 			<conf_id>15</conf_id>
 			<conf_title><![CDATA[年份下拉菜单终止年份]]></conf_title>
-			<conf_description><![CDATA[该选项用于查看日历/添加事件. 设置示例: 开始年份 2007, 如果填 5, 那么结束年份为 2012]]></conf_description>
+			<conf_description><![CDATA[该选项用于查看日历/添加事件. 设置示例: 开始年份 2005, 如果填 5, 那么结束年份为 2010]]></conf_description>
 			<conf_group>3</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>year_limit</conf_key>
@@ -1448,7 +1448,7 @@ smtp=SMTP</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>1</conf_position>
+			<conf_position>10</conf_position>
 			<conf_start_group><![CDATA[名称和地址]]></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1468,7 +1468,7 @@ smtp=SMTP</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>3</conf_position>
+			<conf_position>20</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1488,7 +1488,7 @@ smtp=SMTP</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>4</conf_position>
+			<conf_position>30</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1520,7 +1520,7 @@ smtp=SMTP</conf_extra>
  }
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>5</conf_position>
+			<conf_position>40</conf_position>
 			<conf_start_group>其他 URL 和路径</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1551,7 +1551,28 @@ smtp=SMTP</conf_extra>
  }
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>7</conf_position>
+			<conf_position>50</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>general</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>305</conf_id>
+			<conf_title>从活动域名上传</conf_title>
+			<conf_description><![CDATA[覆盖上传操作. 对于使用外部主机来进行平衡负载操作的环境非常有用. (多数用户可以留空)<br />
+例如: http://master.mysite.com/forums]]></conf_description>
+			<conf_group>10</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>upload_domain</conf_key>
+			<conf_value></conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>55</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1561,9 +1582,9 @@ smtp=SMTP</conf_extra>
 
 		<setting>
 			<conf_id>64</conf_id>
-			<conf_title>缓存路径</conf_title>
-			<conf_description><![CDATA[<b>可以留空</b>
-<br />如果使用集群服务器, 可以在这里指定 IPB 写文件的路径 (skin_cache,style_avatars,style_emoticons,style_images), 如果输入路径, 请确保以斜线结束.]]></conf_description>
+			<conf_title>缓存目录</conf_title>
+			<conf_description><![CDATA[<b>该项可以留空</b>
+<br />该项可以用来指定一个易维论坛缓存目录 (skin_cache, style_avatars, style_emoticons, style_images) 当处理或平衡服务器负载时有用. 如果您输入了一个路径, 请确保它是以反斜杠结尾.]]></conf_description>
 			<conf_group>10</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>ipb_cache_path</conf_key>
@@ -1572,7 +1593,7 @@ smtp=SMTP</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>8</conf_position>
+			<conf_position>60</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1592,7 +1613,7 @@ smtp=SMTP</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>8</conf_position>
+			<conf_position>70</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1613,7 +1634,7 @@ smtp=SMTP</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>8</conf_position>
+			<conf_position>80</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1633,7 +1654,7 @@ smtp=SMTP</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>9</conf_position>
+			<conf_position>90</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1655,7 +1676,7 @@ refresh=刷新 (Windows 类型)
 html=HTML META 重定位 (如果其他都失败...)</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>11</conf_position>
+			<conf_position>110</conf_position>
 			<conf_start_group>页面跳转</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1675,7 +1696,7 @@ html=HTML META 重定位 (如果其他都失败...)</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>12</conf_position>
+			<conf_position>120</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1698,7 +1719,7 @@ html=HTML META 重定位 (如果其他都失败...)</conf_extra>
 3=3: 显示级别 1 + 2 和数据库查询]]></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>14</conf_position>
+			<conf_position>140</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1718,7 +1739,7 @@ html=HTML META 重定位 (如果其他都失败...)</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>14</conf_position>
+			<conf_position>150</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1738,7 +1759,7 @@ html=HTML META 重定位 (如果其他都失败...)</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>16</conf_position>
+			<conf_position>160</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1761,7 +1782,7 @@ space=空格
 .=.]]></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>17</conf_position>
+			<conf_position>170</conf_position>
 			<conf_start_group>数字格式</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1782,7 +1803,7 @@ space=空格
 ,=,</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>18</conf_position>
+			<conf_position>180</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1803,7 +1824,7 @@ space=空格
 2=GD2</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>18</conf_position>
+			<conf_position>190</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -1823,7 +1844,7 @@ space=空格
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>19</conf_position>
+			<conf_position>200</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -3064,7 +3085,7 @@ if ( $show == 1 )
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_spider</conf_key>
 			<conf_value></conf_value>
-			<conf_default>0</conf_default>
+			<conf_default>1</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -3335,6 +3356,17 @@ if ( $show == 1 )
 		$_POST['unblockable_pm_groups'] = "";
 	}
 	
+	if( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
+	{
+		$previous = explode( ',', $this->ipsclass->vars['unblockable_pm_groups'] );
+		
+		if( in_array( $this->ipsclass->vars['admin_group'], $previous ) )
+		{
+			$_POST['unblockable_pm_groups'] .= ',' . $this->ipsclass->vars['admin_group'];
+			$_POST['unblockable_pm_groups'] = $this->ipsclass->trim_leading_comma( $_POST['unblockable_pm_groups'] );
+		}
+	}
+	
 	$key = 'unblockable_pm_groups';
 }
 if ( $show == 1 )
@@ -3537,7 +3569,7 @@ $key = 'recent_topics_article_forum[]';
 			<conf_type>yes_no</conf_type>
 			<conf_key>spider_visit</conf_key>
 			<conf_value></conf_value>
-			<conf_default>1</conf_default>
+			<conf_default>0</conf_default>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
@@ -3559,7 +3591,13 @@ $key = 'recent_topics_article_forum[]';
 			<conf_value></conf_value>
 			<conf_default>2</conf_default>
 			<conf_extra>#show_groups#</conf_extra>
-			<conf_evalphp></conf_evalphp>
+			<conf_evalphp><![CDATA[if( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
+{
+	if( $this->ipsclass->vars['spider_group'] == $this->ipsclass->vars['admin_group'] )
+	{
+		$_POST['spider_group'] = $this->ipsclass->vars['admin_group'];
+	}
+}]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>3</conf_position>
 			<conf_start_group></conf_start_group>
@@ -4490,7 +4528,13 @@ pm=短消息</conf_extra>
 			<conf_value></conf_value>
 			<conf_default>0</conf_default>
 			<conf_extra></conf_extra>
-			<conf_evalphp></conf_evalphp>
+			<conf_evalphp><![CDATA[if( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
+{
+	if( $this->ipsclass->vars['subsm_nopkg_group'] == $this->ipsclass->vars['admin_group'] )
+	{
+		$_POST['subsm_nopkg_group'] = $this->ipsclass->vars['admin_group'];
+	}
+}]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
 			<conf_position>1</conf_position>
 			<conf_start_group>注册时的购买选项</conf_start_group>
@@ -4850,6 +4894,17 @@ linearplus=线型增强</conf_extra>
 	else
 	{
 		$_POST['cannot_ignore_groups'] = "";
+	}
+	
+	if( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
+	{
+		$previous = explode( ',', $this->ipsclass->vars['cannot_ignore_groups'] );
+		
+		if( in_array( $this->ipsclass->vars['admin_group'], $previous ) )
+		{
+			$_POST['cannot_ignore_groups'] .= ',' . $this->ipsclass->vars['admin_group'];
+			$_POST['cannot_ignore_groups'] = $this->ipsclass->trim_leading_comma( $_POST['cannot_ignore_groups'] );
+		}
 	}
 	
 	$key = 'cannot_ignore_groups';
@@ -5665,7 +5720,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>1</conf_position>
+			<conf_position>10</conf_position>
 			<conf_start_group>全局用户资料选项</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5685,7 +5740,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>2</conf_position>
+			<conf_position>20</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5705,7 +5760,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>2</conf_position>
+			<conf_position>30</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5725,7 +5780,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>3</conf_position>
+			<conf_position>40</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5745,7 +5800,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>4</conf_position>
+			<conf_position>50</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5765,7 +5820,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>5</conf_position>
+			<conf_position>60</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5785,7 +5840,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>6</conf_position>
+			<conf_position>70</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5805,7 +5860,67 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>7</conf_position>
+			<conf_position>80</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>userprofiles</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>302</conf_id>
+			<conf_title><![CDATA[允许使用 HTML 代码在 &quot;关于我&quot; 页面?]]></conf_title>
+			<conf_description>我们不建议您开启这一选项, 除非您信任您会员的任何输入信息.</conf_description>
+			<conf_group>30</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>aboutme_html</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>85</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>userprofiles</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>303</conf_id>
+			<conf_title><![CDATA[允许使用 BBCode 代码在 &quot;关于我&quot; 页面?]]></conf_title>
+			<conf_description></conf_description>
+			<conf_group>30</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>aboutme_bbcode</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>87</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>userprofiles</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>304</conf_id>
+			<conf_title><![CDATA[允许使用表情图标在 &quot;关于我&quot; 页面?]]></conf_title>
+			<conf_description></conf_description>
+			<conf_group>30</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>aboutme_emoticons</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>88</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5826,7 +5941,7 @@ http://competitor_domain.com*]]></conf_description>
 rte=所见即所得编辑器</conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>7</conf_position>
+			<conf_position>90</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5846,7 +5961,7 @@ rte=所见即所得编辑器</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>8</conf_position>
+			<conf_position>100</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5866,7 +5981,7 @@ rte=所见即所得编辑器</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>9</conf_position>
+			<conf_position>110</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5886,7 +6001,7 @@ rte=所见即所得编辑器</conf_extra>
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>10</conf_position>
+			<conf_position>120</conf_position>
 			<conf_start_group><![CDATA[主题 &amp; 论坛订阅]]></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5915,6 +6030,17 @@ rte=所见即所得编辑器</conf_extra>
 		$_POST['autoforum_sub_groups'] = "";
 	}
 	
+	if( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
+	{
+		$previous = explode( ',', $this->ipsclass->vars['autoforum_sub_groups'] );
+		
+		if( in_array( $this->ipsclass->vars['admin_group'], $previous ) )
+		{
+			$_POST['autoforum_sub_groups'] .= ',' . $this->ipsclass->vars['admin_group'];
+			$_POST['autoforum_sub_groups'] = $this->ipsclass->trim_leading_comma( $_POST['autoforum_sub_groups'] );
+		}
+	}
+	
 	$key = 'autoforum_sub_groups';
 }
 if ( $show == 1 )
@@ -5922,7 +6048,7 @@ if ( $show == 1 )
     $key='autoforum_sub_groups[]';
 }]]></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>11</conf_position>
+			<conf_position>130</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5942,7 +6068,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>12</conf_position>
+			<conf_position>140</conf_position>
 			<conf_start_group><![CDATA[头像 &amp; 照片]]></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5962,7 +6088,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>13</conf_position>
+			<conf_position>150</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -5982,7 +6108,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>14</conf_position>
+			<conf_position>160</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6002,7 +6128,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>15</conf_position>
+			<conf_position>170</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6022,7 +6148,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>16</conf_position>
+			<conf_position>180</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6042,7 +6168,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>17</conf_position>
+			<conf_position>190</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6062,7 +6188,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>18</conf_position>
+			<conf_position>200</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6082,7 +6208,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>19</conf_position>
+			<conf_position>210</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6102,7 +6228,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>20</conf_position>
+			<conf_position>220</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6122,7 +6248,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>21</conf_position>
+			<conf_position>230</conf_position>
 			<conf_start_group>游客默认选项</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6142,7 +6268,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>22</conf_position>
+			<conf_position>240</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6162,7 +6288,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>23</conf_position>
+			<conf_position>250</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6182,7 +6308,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>32</conf_position>
+			<conf_position>260</conf_position>
 			<conf_start_group>个人门户</conf_start_group>
 			<conf_end_group>0</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6202,7 +6328,7 @@ if ( $show == 1 )
 			<conf_extra></conf_extra>
 			<conf_evalphp></conf_evalphp>
 			<conf_protected>1</conf_protected>
-			<conf_position>33</conf_position>
+			<conf_position>270</conf_position>
 			<conf_start_group></conf_start_group>
 			<conf_end_group>1</conf_end_group>
 			<conf_add_cache>1</conf_add_cache>
@@ -6299,6 +6425,17 @@ if ( $show == 1 )
 	else
 	{
 		$_POST['warn_protected'] = "";
+	}
+	
+	if( $this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'] )
+	{
+		$previous = explode( ',', $this->ipsclass->vars['warn_protected'] );
+		
+		if( in_array( $this->ipsclass->vars['admin_group'], $previous ) )
+		{
+			$_POST['warn_protected'] .= ',' . $this->ipsclass->vars['admin_group'];
+			$_POST['warn_protected'] = $this->ipsclass->trim_leading_comma( $_POST['warn_protected'] );
+		}
 	}
 	
 	$key = 'warn_protected';

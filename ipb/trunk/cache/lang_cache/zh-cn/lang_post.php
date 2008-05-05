@@ -13,6 +13,10 @@
 */
 
 $lang = array (
+	
+// 2.3.5
+'topic_details_sub'			=> '描述',
+'captcha_explain_gif'		=> "请输入图片中给出的 6 个字符的验证码. 区分大小写.",
 
 'pro_poll'					=> '投票',
 'pro_post'					=> '帖子',

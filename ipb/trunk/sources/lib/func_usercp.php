@@ -141,7 +141,7 @@ class func_usercp
     		
 			if ( ! $this->ipsclass->member['vdirs'] )
 			{
-				$this->ipsclass->member['vdirs'] = "in:收件箱|sent:发件箱";
+				$this->ipsclass->member['vdirs'] = "in:{$this->ipsclass->lang['account_inbox']}|sent:{$this->ipsclass->lang['account_sent']}";
 			}
 			
 			foreach( explode( "|", $this->ipsclass->member['vdirs'] ) as $dir )
@@ -527,21 +527,21 @@ class func_usercp
 			if ( $this->ipsclass->DB->get_num_rows() )
 			{
 				$this->ipsclass->DB->do_update( 'profile_portal', array( 'pp_main_photo'   => '',
-													  				   	 'pp_main_width'   => '',
-																	   	 'pp_main_height'  => '',
+													  				   	 'pp_main_width'   => 0,
+																	   	 'pp_main_height'  => 0,
 																		 'pp_thumb_photo'  => '',
-																		 'pp_thumb_width'  => '',
-																		 'pp_thumb_height' => '',
+																		 'pp_thumb_width'  => 0,
+																		 'pp_thumb_height' => 0,
 																	 ), 'pp_member_id='.$member_id );
 			}
 			else
 			{
 				$this->ipsclass->DB->do_insert( 'profile_portal', array( 'pp_main_photo'   => '',
-													  				   	 'pp_main_width'   => '',
-																	   	 'pp_main_height'  => '',
+													  				   	 'pp_main_width'   => 0,
+																	   	 'pp_main_height'  => 0,
 																		 'pp_thumb_photo'  => '',
-																		 'pp_thumb_width'  => '',
-																		 'pp_thumb_height' => '',
+																		 'pp_thumb_width'  => 0,
+																		 'pp_thumb_height' => 0,
 																		 'pp_member_id'    => $member_id
 																	 ) );
 			}

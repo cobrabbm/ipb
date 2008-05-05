@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2008-03-06 17:05:33 -0500 (Thu, 06 Mar 2008) $
-|   > $Revision: 1198 $
+|   > $Date: 2008-03-28 18:08:02 -0400 (Fri, 28 Mar 2008) $
+|   > $Revision: 1232 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -751,7 +751,9 @@ class class_bbcode_core
 				
 				if ( $row['bbcode_useoption'] )
 				{
-					while (preg_match_all( "#(\[".$preg_tag."=(?:\"|\')?(.+?)(?:\"|\')?\])((?R)|.*?)(\[/".$preg_tag."\])#si", $t, $match ))
+					// If we don't check &quot; or &#39;, topic tag dies when it's in format of [topic="number"]
+					
+					while (preg_match_all( "#(\[".$preg_tag."=(?:\"|&quot;|'|&\#39;)?(.+?)(?:\"|'|&quot;|&\#39;)?\])((?R)|.*?)(\[/".$preg_tag."\])#si", $t, $match ))
 					{
 						for ( $i = 0; $i < count($match[0]); $i++)
 						{
@@ -767,13 +769,13 @@ class class_bbcode_core
 								$_option  = 3;
 								$_content = 2;
 							}
-							
+
 							# XSS Check: Bug ID: 980
 							if ( $row['bbcode_tag'] == 'post' OR $row['bbcode_tag'] == 'topic' OR $row['bbcode_tag'] == 'snapback' )
 							{
 								$match[ $_option ][$i] = intval( $match[ $_option ][$i] );
 							}
-							
+
 							# Recurse?
 							if ( preg_match( "#\[.+?\]#s", $match[ $_content ][$i] ) )
 							{
@@ -1467,6 +1469,7 @@ class class_bbcode_core
 				
 				// Using the :/ smiley
 				$url = str_replace( 'http%3a%2f', 'http:/', $url );
+				$url = str_replace( 'https%3a%2f', 'https:/', $url );
 			}
 		}
 		
@@ -2268,6 +2271,7 @@ class class_bbcode_core
 				
 				// Using the :/ smiley
 				$url['html'] = str_replace( 'http%3a%2f', 'http:/', $url['html'] );
+				$url['html'] = str_replace( 'https%3a%2f', 'https:/', $url['html'] );
 			}
 		}
 		

@@ -308,7 +308,7 @@ class ipsclass {
 		 
 		if ( ! $this->ip_address OR $this->ip_address == '...' )
 		{
-			print "无法获得您的 IP 地址";
+			print "无法确定您的 IP 地址";
 			exit();
 		}
 		

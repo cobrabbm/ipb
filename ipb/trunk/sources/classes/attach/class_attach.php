@@ -300,7 +300,7 @@ class class_attach
 				//-----------------------------------------
 				
 				header( "Content-Type: ".$this->ipsclass->cache['attachtypes'][ $attach['attach_ext'] ]['atype_mimetype'] );
-
+				header( "Content-Disposition: inline; filename=\"".$attach['attach_file']."\"" );
 				//Fix IE download attchment name error - Skylook
                 if ( preg_match("/MSIE/", $_SERVER["HTTP_USER_AGENT"]) )
                  {
@@ -444,7 +444,8 @@ class class_attach
 				if( $this->attach_rel_id != $row['attach_rel_id'] )
 				{
 					// Reset if we are onto a new post..
-					$_seen_rows = 0;
+					$_seen_rows	= 0;
+					$_seen 		= 0;
 				}
 
 				$this->attach_rel_id = $row['attach_rel_id'];
@@ -787,7 +788,6 @@ class class_attach
 	*/
 	function process_upload()
 	{
-		
 		//-----------------------------------------
 		// INIT
 		//-----------------------------------------

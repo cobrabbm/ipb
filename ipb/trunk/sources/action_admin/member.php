@@ -826,12 +826,23 @@ class ad_member
 		}
 		
 		//-----------------------------------------
+		// Using modules
+		//-----------------------------------------
+		
+		if ( USE_MODULES == 1 )
+		{
+			$this->modules->register_class($this);
+			
+			$this->modules->on_pass_change($this->ipsclass->input['mid'], $this->ipsclass->input['password']);
+		}
+		
+		//-----------------------------------------
 		// Redirect
 		//-----------------------------------------
 		
 		$page_query = "";
 		
-		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
@@ -859,7 +870,7 @@ class ad_member
 							 4 => array( 'section', $this->ipsclass->section_code ),
 						   );
 									     				
-		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_array[] = array( $bit, trim($this->ipsclass->input[ $bit ]) );
 		}
@@ -963,7 +974,7 @@ class ad_member
 							 4 => array( 'section', $this->ipsclass->section_code ),
 						   ) ;
 									     				
-		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_array[] = array( $bit, trim($this->ipsclass->input[ $bit ]) );
 		}
@@ -1093,7 +1104,7 @@ class ad_member
 		
 		$page_query = "";
 		
-		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
@@ -1770,7 +1781,7 @@ class ad_member
 		
 		$this->ipsclass->input['name'] = urlencode($new_name);
 		
-		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
@@ -1833,7 +1844,7 @@ class ad_member
 							 4 => array( 'section', $this->ipsclass->section_code ),
 						   );
 									     				
-		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_array[] = array( $bit, trim($this->ipsclass->input[ $bit ]) );
 		}
@@ -2610,7 +2621,7 @@ class ad_member
 		
 		$page_query = "";
 		
-		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name','email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_query .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}
@@ -3067,10 +3078,13 @@ class ad_member
 		// Insert: MEMBER EXTRA
 		//-----------------------------------------
 		
+		$this->ipsclass->load_language( 'lang_global' );
+		
 		$this->ipsclass->DB->do_insert( 'member_extra', array( 'id'        => $member_id,
-															   'vdirs'     => 'in:收件箱|sent:发件箱',
+															   'vdirs'     => "in:{$this->ipsclass->lang['account_inbox']}|sent:{$this->ipsclass->lang['account_sent']}",
 															   'interests' => '',
 															   'signature' => '' ) );
+		
 		
 		//-----------------------------------------
 		// Insert into the custom profile fields DB
@@ -3428,7 +3442,7 @@ class ad_member
 				{
 					list( $month, $day, $year ) = explode( '-', $this->ipsclass->input[ $bit ] );
 					
-					if ( ! checkdate( $month, $day, $year ) )
+					if ( ! @checkdate( $month, $day, $year ) )
 					{
 						$this->ipsclass->main_msg = "日期超出范围( 月: $month, 日: $day, 年: $year ). 日期格式应该是 MM-DD-YYYY";
 						$this->search_form();
@@ -4024,7 +4038,8 @@ EOF;
 
 		if ( $this->han_editor->method == 'rte' )
 		{
-			$mem['signature'] = $this->parser->convert_ipb_html_to_html( $mem['signature'] );
+			$mem['signature']	= $this->parser->convert_ipb_html_to_html( $mem['signature'] );
+			$mem['pp_about_me']	= $this->parser->convert_ipb_html_to_html( $mem['pp_about_me'] );
 		}
 		else
 		{
@@ -4034,6 +4049,13 @@ EOF;
 			$this->parser->parse_bbcode  = $this->ipsclass->vars['sig_allow_ibc'];
 			
 			$mem['signature'] = $this->parser->pre_edit_parse( $mem['signature'] );
+			
+			$this->parser->parse_html    = 0;
+			$this->parser->parse_nl2br   = 1;
+			$this->parser->parse_smilies = 0;
+			$this->parser->parse_bbcode  = 1;
+			
+			$mem['pp_about_me'] = $this->parser->pre_edit_parse( $mem['pp_about_me'] );
 		}
 		
 		//-----------------------------------------
@@ -4162,6 +4184,9 @@ EOF;
 		# Signature
 		$form['signature'] = $this->han_editor->show_editor( $mem['signature'], 'signature' );
 		
+		# About Me
+		$form['aboutme'] = $this->han_editor->show_editor( $mem['pp_about_me'], 'aboutme' );
+		
 		# Profile Information
 		$form['avatar']      = $this->ipsclass->adskin->form_input( "avatar", $mem['avatar_location'] );
 		$form['avatar_type'] = $this->ipsclass->adskin->form_dropdown("avatar_type", array( 0 => array( 'local'  , '头像库'  ),
@@ -4261,7 +4286,7 @@ EOF;
         // Load and config the std/rte editors
         //-----------------------------------------
         
-        $this->ipsclass->load_skin();
+        //$this->ipsclass->load_skin();
         
         require_once( ROOT_PATH."sources/handlers/han_editor.php" );
         $this->han_editor           = new han_editor();
@@ -4349,6 +4374,15 @@ EOF;
 		
 		$signature    					= $this->parser->pre_db_parse( $signature );
 		$signature    					= $this->parser->pre_display_parse( $signature );
+	
+		$aboutme = $this->han_editor->process_raw_post( 'aboutme' );
+		$this->parser->parse_smilies 	 = $this->ipsclass->vars['aboutme_emoticons'];
+		$this->parser->parse_bbcode  	 = $this->ipsclass->vars['aboutme_bbcode'];
+		$this->parser->parse_html  	 	 = $this->ipsclass->vars['aboutme_html'];
+		$this->parser->parse_nl2br       = 1;
+		
+		$aboutme    					= $this->parser->pre_db_parse( $aboutme );
+		$aboutme    					= $this->parser->pre_display_parse( $aboutme );
 
 		//-----------------------------------------
 		// Perms
@@ -4763,7 +4797,7 @@ EOF;
 		// Get 'em
 		//-----------------------------------------
 		
-		foreach( array('name', 'members_display_name', 'email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name', 'members_display_name', 'email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_array[] = array( $bit, trim($this->ipsclass->input[ $bit ]) );
 		}
@@ -4787,7 +4821,7 @@ EOF;
 		// Get 'em
 		//-----------------------------------------
 		
-		foreach( array('name', 'members_display_name', 'email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','gotcount', 'fromdel') as $bit )
+		foreach( array('name', 'members_display_name', 'email','ip_address','aim_name','icq_number','yahoo','signature','posts','suspended', 'registered_first', 'registered_last','last_post_first', 'last_post_last', 'last_activity_first', 'last_activity_last','mgroup','namewhere','dnamewhere','gotcount', 'fromdel') as $bit )
 		{
 			$page_array .= '&'.$bit.'='.trim($this->ipsclass->input[ $bit ]);
 		}

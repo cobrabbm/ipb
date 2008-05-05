@@ -10,8 +10,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-28 17:06:28 -0500 (Fri, 28 Dec 2007) $
-|   > $Revision: 1152 $
+|   > $Date: 2008-04-07 13:25:37 -0400 (Mon, 07 Apr 2008) $
+|   > $Revision: 1233 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -110,7 +110,7 @@ define( 'IPS_XML_RPC_DEBUG_FILE', ROOT_PATH . 'cache/xmlrpc_debug.cgi' );
 define( 'IPB_ACP_IP_MATCH', 1 );
 
 /**
-* Allow exec.url="" tags
+* Allow <!--exec.url=""--> and <!--exec.file=""--> tags
 * Turning this on is a potential security risk as a malicious user
 * could, with access to your ACP, add in an executable
 * shell script which would allow root access to your
@@ -119,7 +119,7 @@ define( 'IPB_ACP_IP_MATCH', 1 );
 define( 'IPB_ACP_ALLOW_EXEC_URL', 0 );
 
 /**
-* Allow PHP tags in template HTML?
+* Allow <php></php> tags (which execute raw php) in template HTML?
 * Turning this on is a potential security risk as a malicious user
 * could, with access to your ACP, add in an executable
 * shell script which would allow root access to your
@@ -199,13 +199,13 @@ define( 'TRIAL_VERSION', 0 );
 *
 * @since 2.0.0.2005-01-01
 */
-define ( 'IPBVERSION', '2.3.4' );
-define ( 'IPB_LONG_VERSION', '23007' );
+define ( 'IPBVERSION', '2.3.5' );
+define ( 'IPB_LONG_VERSION', '23008' );
 
 //-----------------------------------------------
 // IPBCHINA BOARD VERSION
 //-----------------------------------------------
-define ( 'IPBCHINA_VERSION', 'Final' );
+define ( 'IPBCHINA_VERSION', 'RC 2' );
 
 //-----------------------------------------------
 // NO USER EDITABLE SECTIONS BELOW

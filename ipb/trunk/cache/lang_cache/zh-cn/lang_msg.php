@@ -14,6 +14,7 @@
 
 $lang = array (
 	
+'m_personal_aboutme' 		=> "编辑 '关于我' 页面",
 'pro_message'				=> '短消息',
 'pro_recips'				=> '收件人',
 'pro_details'				=> '短消息内容',

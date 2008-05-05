@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-28 17:06:28 -0500 (Fri, 28 Dec 2007) $
-|   > $Revision: 1152 $
+|   > $Date: 2008-04-23 15:02:02 -0400 (Wed, 23 Apr 2008) $
+|   > $Revision: 1254 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -1058,6 +1058,8 @@ class register {
 		}
 		else if ($this->ipsclass->vars['bot_antispam'] == 'gif')
 		{
+			$this->ipsclass->lang['las_input_text'] = $this->ipsclass->lang['las_input_text_gif'];
+
 			$this->output = str_replace( "<!--{REG.ANTISPAM}-->", $this->ipsclass->compiled_templates['skin_register']->bot_antispam( $regid ), $this->output );
 		}
     }
@@ -1221,7 +1223,7 @@ class register {
 			$this->output = $this->ipsclass->compiled_templates['skin_register']->show_lostpasswait( $member );
 		}
     	
-    	$this->page_title = $this->ipsclass->lang['lost_pass_form'];
+    	$this->page_title = $this->ipsclass->lang['lpf_title'];
     }
  	
  	/*-------------------------------------------------------------------------*/
@@ -1471,6 +1473,8 @@ class register {
 		}
 		else if ($this->ipsclass->vars['bot_antispam'] == 'gif')
 		{
+			$this->ipsclass->lang['las_input_text'] = $this->ipsclass->lang['las_input_text_gif'];
+
 			$this->output = str_replace( "<!--{REG.ANTISPAM}-->", $this->ipsclass->compiled_templates['skin_register']->bot_antispam( $regid ), $this->output );
 		}
     	
@@ -1846,7 +1850,7 @@ class register {
 			$form_errors['username'][$this->ipsclass->lang['reg_error_username_none']] = $this->ipsclass->lang['reg_error_username_none'];
 		}
 		
-		if (! $in_password OR strlen($len_p) < 3  OR strlen($len_p) > $this->ipsclass->vars['max_user_name_length'] )
+		if (! $in_password OR strlen($len_p) < 3 )
 		{
 			$form_errors['password'][$this->ipsclass->lang['reg_error_no_pass']] = $this->ipsclass->lang['reg_error_no_pass'];
 		}
@@ -2228,7 +2232,7 @@ class register {
 		//-----------------------------------------
 		
 		$this->ipsclass->DB->do_insert( 'member_extra', array( 'id'        => $member_id,
-															   'vdirs'     => 'in:收件箱|sent:发件箱',
+															   'vdirs'     => "in:{$this->ipsclass->lang['account_inbox']}|sent:{$this->ipsclass->lang['account_sent']}",
 															   'interests' => '',
 															   'signature' => '' ) );
 		
@@ -2911,6 +2915,8 @@ class register {
 			}
 			else if ($this->ipsclass->vars['bot_antispam'] == 'gif')
 			{
+				$this->ipsclass->lang['las_input_text'] = $this->ipsclass->lang['las_input_text_gif'];
+
 				$this->output = str_replace( "<!--{REG.ANTISPAM}-->", $this->ipsclass->compiled_templates['skin_register']->bot_antispam( $regid ), $this->output );
 			}
 		}

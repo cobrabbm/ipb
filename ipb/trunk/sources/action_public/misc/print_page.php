@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-06-15 15:16:20 -0400 (Fri, 15 Jun 2007) $
-|   > $Revision: 1042 $
+|   > $Date: 2008-02-29 18:09:47 -0500 (Fri, 29 Feb 2008) $
+|   > $Revision: 1197 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -45,6 +45,7 @@ class printpage {
     var $mem_titles = array();
     var $mod_action = array();
     var $poll_html  = "";
+    var $sort		= 'pid';
     
     /*-------------------------------------------------------------------------*/
 	//
@@ -72,6 +73,8 @@ class printpage {
         {
             $this->ipsclass->Error( array( LEVEL => 1, MSG => 'missing_files') );
         }
+        
+        $this->sort = $this->ipsclass->vars['post_order_column'];
         
         //-----------------------------------------
         // Get the forum info based on the
@@ -207,7 +210,7 @@ class printpage {
 		$this->ipsclass->DB->simple_construct( array ( 'select' => '*',
 													   'from'   => 'posts',
 													   'where'  => "topic_id={$this->topic['tid']} and queued=0",
-													   'order'  => 'pid',
+													   'order'  => $this->sort,
 													   'limit'  => array(0, $max_posts)
 												   )   );
 		$this->ipsclass->DB->simple_exec();

@@ -670,9 +670,9 @@ $TABLE[] = "CREATE TABLE ibf_moderator_logs (
   ip_address varchar(16) NOT NULL default '0',
   http_referer varchar(255) default NULL,
   ctime int(10) default NULL,
-  topic_title varchar(128) default NULL,
+  topic_title VARCHAR( 255 ) DEFAULT NULL,
   action varchar(128) default NULL,
-  query_string varchar(128) default NULL,
+  query_string VARCHAR( 255 ) DEFAULT NULL,
   PRIMARY KEY  (id)
 );";
 
@@ -735,6 +735,7 @@ $TABLE[] = "CREATE TABLE ibf_profile_portal (
  pp_setting_count_comments       INT(2) NOT NULL default '0',
  pp_setting_count_visitors       INT(2) NOT NULL default '0',
  pp_profile_views				INT(10) NOT NULL default '0',
+ pp_about_me 					MEDIUMTEXT NULL,
  PRIMARY KEY ( pp_member_id )
 );";
 

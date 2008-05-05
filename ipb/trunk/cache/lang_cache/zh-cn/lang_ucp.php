@@ -14,6 +14,14 @@
 
 $lang = array (
 
+'ras_text_gif'     			=> "<b>验证码</b><br />请输入图片中给出的 6 个字符的验证码. 区分大小写.",
+
+// NEW 2.3.5
+'cp_edit_aboutme'  			=> "编辑您的 '关于我' 页面",
+'cp_current_aboutme'  		=> "您当前的 '关于我' 页面",
+'cp_submit_aboutme'   		=> "更新您的 '关于我' 页面",
+'m_personal_aboutme' 		=> "编辑 '关于我' 页面",
+
 'panel_gender'				=> '<b>性别</b>',
 'panel_gender_m'			=> '男士',
 'panel_gender_f'			=> '女士',

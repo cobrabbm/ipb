@@ -1323,9 +1323,9 @@ class func_mod
 												  'ip_address'  => $this->ipsclass->input['IP_ADDRESS'],
 												  'http_referer'=> htmlspecialchars($this->ipsclass->my_getenv('HTTP_REFERER')),
 												  'ctime'       => time(),
-												  'topic_title' => substr( $t_title, 0, 128 ),
+												  'topic_title' => substr( $t_title, 0, 255 ),
 												  'action'      => substr( $mod_title, 0, 128 ),
-												  'query_string'=> htmlspecialchars($this->ipsclass->my_getenv('QUERY_STRING')),
+												  'query_string'=> substr( htmlspecialchars($this->ipsclass->my_getenv('QUERY_STRING')), 0, 255 ),
 											  )  );
 		return TRUE;
 	}

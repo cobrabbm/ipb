@@ -2,6 +2,13 @@
 
 $lang = array (
 
+// 2.3.5
+'pp_tab_aboutme'      		=> "About Me",
+'err_no_aboutme_to_show' 	=> "This user has not configured their 'About Me' page and has not added a signature to their account yet.",
+'cp_edit_aboutme'  			=> "Edit your 'About Me' page",
+'cp_edit_signature'			=> 'Edit your signature',
+
+
 'page_title_pp' 			=> "Viewing Profile",
 
 
@@ -47,7 +54,6 @@ $lang = array (
 'js_loading_tab'      => 'Loading Content...',
 'js_deleting_comment' => 'Deleting Comment...',
 
-'m_personal_statement' => 'Personal Statement',
 'm_visit_website'	 => "Visit My Website",
 'm_go'				 => "Go",
 'm_dd_with_selected' => "With checked",

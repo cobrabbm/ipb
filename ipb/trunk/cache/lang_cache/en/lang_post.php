@@ -1,6 +1,10 @@
 <?php
 
 $lang = array (
+	
+// 2.3.5
+'topic_details_sub'			=> 'Topic Details',
+'captcha_explain_gif'		=> "Please enter the 6 character code shown in the image. Case sensitive.",
 
 'pro_poll'					=> 'Poll',
 'pro_post'					=> 'Post',

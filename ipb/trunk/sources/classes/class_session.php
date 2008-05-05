@@ -10,8 +10,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-10-17 16:29:37 -0400 (Wed, 17 Oct 2007) $
-|   > $Revision: 1133 $
+|   > $Date: 2008-04-21 17:32:17 -0400 (Mon, 21 Apr 2008) $
+|   > $Revision: 1249 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -1288,7 +1288,9 @@ class session
     	
     	if ( $module )
     	{
-    		$filename = ROOT_PATH.'sources/components_location/'.$this->ipsclass->txt_alphanumerical_clean( $module ).'.php';
+    		$module		= $this->ipsclass->txt_alphanumerical_clean( $module );
+    		$filename	= ROOT_PATH.'sources/components_location/' . $module .'.php';
+    		
 				
 			if ( file_exists( $filename ) )
 			{
@@ -1306,7 +1308,7 @@ class session
     	// FORUM
     	//-----------------------------------------
     	
-    	else if ( $this->ipsclass->input['act'] == 'sf' AND ( isset($this->ipsclass->input['f']) AND $this->ipsclass->input['f'] ) )
+    	else if ( $this->ipsclass->input['_low_act'] == 'sf' AND ( isset($this->ipsclass->input['f']) AND $this->ipsclass->input['f'] ) )
     	{
     		$return = array( 'location' => 'sf',
     						 '2_type'   => 'forum',

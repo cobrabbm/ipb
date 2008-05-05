@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-27 14:32:48 -0500 (Thu, 27 Dec 2007) $
-|   > $Revision: 1151 $
+|   > $Date: 2008-03-28 18:08:02 -0400 (Fri, 28 Mar 2008) $
+|   > $Revision: 1232 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -250,9 +250,11 @@ class topics
 				{
 					$pid = "&amp;#entry".$post['pid'];
 					
+					$query_extra = $this->ipsclass->member['is_mod'] ? '' : ' AND queued=0';
+					
 					$this->ipsclass->DB->simple_construct( array( 'select' => 'COUNT(*) as posts',
 																  'from'   => 'posts',
-																  'where'  => "topic_id=".$this->topic['tid']." AND pid <= ".$post['pid'],
+																  'where'  => "topic_id=".$this->topic['tid']." AND pid <= ".$post['pid'] . $query_extra,
 														)      );
 										
 					$this->ipsclass->DB->simple_exec();
@@ -306,9 +308,11 @@ class topics
 						$sort_value = $date['post_date'];
 					}
 
+					$query_extra = $this->ipsclass->member['is_mod'] ? '' : ' AND queued=0';
+
 					$this->ipsclass->DB->simple_construct( array( 'select' => 'COUNT(*) as posts',
 																  'from'   => 'posts',
-																  'where'  => "topic_id=".$this->topic['tid']." AND {$sort_field} <=" . $sort_value,
+																  'where'  => "topic_id=".$this->topic['tid']." AND {$sort_field} <=" . intval($sort_value) . $query_extra,
 														)      );
 										
 					$this->ipsclass->DB->simple_exec();
@@ -1992,9 +1996,11 @@ class topics
 			}
 		}
 		
+		$query_extra = $this->ipsclass->member['is_mod'] ? '' : ' AND queued=0';
+		
 		$this->ipsclass->DB->simple_construct( array( 'select' => 'pid',
 													  'from'   => 'posts',
-													  'where'  => "queued=0 AND topic_id=".$this->topic['tid'],
+													  'where'  => "topic_id=".$this->topic['tid'] . $query_extra,
 													  'order'  => $this->ipsclass->vars['post_order_column'].' DESC',
 													  'limit'  => array( 0,1 )
 											 )      );

@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-27 14:32:48 -0500 (Thu, 27 Dec 2007) $
-|   > $Revision: 1151 $
+|   > $Date: 2008-04-24 11:10:56 -0400 (Thu, 24 Apr 2008) $
+|   > $Revision: 1257 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -399,13 +399,52 @@ class class_post
 				
 				$perm_id = ( $r['org_perm_id'] ) ? $r['org_perm_id'] : $this->ipsclass->cache['group_cache'][ $r['mgroup'] ]['g_perm_id'].$mgroup_others;
 				
-				if ( $this->forum['read_perms'] != '*' )
+				// INIT
+				$permissions 	= array();
+				$tmp_perms 		= array();
+				$forum_perms 	= array();
+				
+				$tmp_perms = explode( ",", $perm_id );
+
+				if( is_array($tmp_perms) )
 				{
-					if ( ! preg_match("/(^|,)".str_replace( ",", '|', $perm_id )."(,|$)/", $this->forum['read_perms'] ) )
+					foreach( $tmp_perms as $v )
+					{
+						if( $v != "" )
+						{
+							$permissions[] = $v;
+						}
+					}
+					
+					unset($tmp_perms);
+				}
+				else
+				{
+					$permissions[] = $perm_id;
+				}
+
+				if ($this->forum['read_perms'] != '*')
+				{
+					$pass = 0;
+					
+					$forum_perms = explode( ",", $this->forum['read_perms'] ); 
+					
+					foreach( $permissions as $v )
+					{
+						if( in_array( $v, $forum_perms ) )
+						{
+							$pass = 1;
+						}
+					}
+					
+					if ( $pass == 0 )
         			{
         				continue;
        				}
 				}
+				
+				unset($permissions);
+				unset($forum_perms);
 				
 				//-----------------------------------------
 				// Test for approved/approve perms
@@ -1135,6 +1174,8 @@ class class_post
 			}
 			else if ( $this->ipsclass->vars['guest_captcha'] == 'gif' )
 			{
+				$this->ipsclass->lang['captcha_explain'] = $this->ipsclass->lang['captcha_explain_gif'];
+
 				$html = str_replace( "<!--CAPTCHA.IMAGE-->", $this->ipsclass->compiled_templates['skin_post']->bot_antispam_gif( $imgid ), $html );
 			}
 		}

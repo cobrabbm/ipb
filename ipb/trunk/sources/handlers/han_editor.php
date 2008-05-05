@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-09-11 12:37:52 -0400 (Tue, 11 Sep 2007) $
-|   > $Revision: 1102 $
+|   > $Date: 2008-01-21 17:34:24 -0500 (Mon, 21 Jan 2008) $
+|   > $Revision: 1169 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -249,7 +249,7 @@ class han_editor
 	  		// Set up for replacement
 	  		//-----------------------------------------
 
-	  		$this->ipsclass->vars['img_url'] = "<#IMG_DIR#>";
+	  		//$this->ipsclass->vars['img_url'] = "<#IMG_DIR#>";
 
 			$this->ipsclass->DB->simple_construct( array( 'select' => 'set_image_dir, set_emoticon_folder', 'from' => 'skin_sets', 'where' => 'set_default=1' ) );
 			$this->ipsclass->DB->simple_exec();
@@ -258,6 +258,8 @@ class han_editor
 			
 			$this->image_dir = $image_set['set_image_dir'];
 			$this->emo_dir   = $image_set['set_emoticon_folder'];
+			
+			$this->ipsclass->vars['img_url'] = $this->ipsclass->vars['board_url'] . "/style_images/{$this->image_dir}";
 			
 			//-----------------------------------------
 			// Remove side panel

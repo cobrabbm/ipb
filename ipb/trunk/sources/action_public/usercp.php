@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-20 18:05:22 -0500 (Thu, 20 Dec 2007) $
-|   > $Revision: 1150 $
+|   > $Date: 2008-04-23 15:02:02 -0400 (Wed, 23 Apr 2008) $
+|   > $Revision: 1254 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -321,6 +321,14 @@ class usercp
 			case 'personal_portal_save':
 				$this->personal_portal_save();
 				break;
+				
+    		case 'about_me_form':
+				$this->about_me_form();
+				break;
+			case 'about_me_save':
+				$this->about_me_save();
+				break;
+				
 			case 'manage_friends':
 				$this->manage_friends();
 				break;
@@ -342,6 +350,152 @@ class usercp
     	$this->ipsclass->print->add_output( $this->output );
         $this->ipsclass->print->do_output( array( 'TITLE' => $this->page_title, 'JS' => 1, 'NAV' => $this->nav ) );
  	}
+ 	
+ 	
+	/*-------------------------------------------------------------------------*/
+ 	// "About Me" form
+ 	/*-------------------------------------------------------------------------*/
+ 	
+ 	/**
+ 	* About me form
+ 	*
+ 	* @return	void
+ 	* @since	IPB 2.3.5.2007-01-16
+ 	*/
+ 	function about_me_form()
+ 	{
+		//-----------------------------------------
+		// Check to make sure that we can edit profiles..
+		//-----------------------------------------
+		
+		if ( empty($this->ipsclass->member['g_edit_profile']) )
+		{
+			$this->ipsclass->Error( array( 'LEVEL' => 1, 'MSG' => 'cant_use_feature' ) );
+		}
+			 	
+	 	$this->init_parser();
+	 	
+	 	$aboutme = $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'pp_about_me', 'from' => 'profile_portal', 'where' => 'pp_member_id=' . $this->ipsclass->member['id'] ) );
+	 	
+		//-----------------------------------------
+		// Unconvert for editing
+		//-----------------------------------------
+		
+		if ( $this->han_editor->method == 'rte' )
+		{
+			$am_text = $this->parser->convert_ipb_html_to_html( $aboutme['pp_about_me'] );
+		}
+		else
+		{
+			$this->parser->parse_html        = intval($this->ipsclass->vars['aboutme_html']);
+			$this->parser->parse_nl2br       = 1;
+			$this->parser->parse_smilies     = $this->ipsclass->vars['aboutme_emoticons'];
+			$this->parser->parse_bbcode      = $this->ipsclass->vars['aboutme_bbcode'];
+			
+			$am_text = $this->parser->pre_edit_parse( $aboutme['pp_about_me'] );
+		}
+		
+		//-----------------------------------------
+ 		// Remove side panel
+ 		//-----------------------------------------
+ 		
+ 		$this->han_editor->remove_side_panel = 1;
+ 		$this->han_editor->remove_emoticons  = 1;
+
+		//-----------------------------------------
+		// Show
+		//-----------------------------------------
+		
+		$this->output .= $this->ipsclass->compiled_templates['skin_ucp']->aboutme( $aboutme['pp_about_me'], $this->han_editor->show_editor( $am_text, 'Post' ), $this->ipsclass->return_md5_check());
+		 		
+ 		$this->page_title = $this->ipsclass->lang['t_welcome'];
+ 		$this->nav        = array( "<a href='".$this->ipsclass->base_url."act=UserCP&amp;CODE=00'>".$this->ipsclass->lang['t_title']."</a>" );
+ 	}
+	
+	
+	/*-------------------------------------------------------------------------*/
+ 	// Personal portal save
+ 	/*-------------------------------------------------------------------------*/
+ 	
+ 	/**
+ 	* Personal portal save
+ 	*
+ 	* @return	void
+ 	* @since	IPB 2.2.0.2006-08-17
+ 	*/
+ 	function about_me_save()
+ 	{
+		//-----------------------------------------
+		// Check to make sure that we can edit profiles..
+		//-----------------------------------------
+		
+		if ( empty($this->ipsclass->member['g_edit_profile']) )
+		{
+			$this->ipsclass->Error( array( 'LEVEL' => 1, 'MSG' => 'cant_use_feature' ) );
+		}
+			 	
+	 	$this->init_parser();
+	 	
+	 	$aboutme = $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'pp_member_id, pp_about_me', 'from' => 'profile_portal', 'where' => 'pp_member_id=' . $this->ipsclass->member['id'] ) );
+
+		//-----------------------------------------
+		// Check key
+		//-----------------------------------------
+		
+		if ( $this->ipsclass->input['key'] != $this->ipsclass->return_md5_check() )
+		{
+			$this->ipsclass->Error( array( 'LEVEL' => 1, 'MSG' => 'del_post' ) );
+		}
+		
+		//-----------------------------------------
+		// Remove board tags
+		//-----------------------------------------
+		
+		$this->ipsclass->input['Post'] = $this->ipsclass->remove_tags( $this->ipsclass->input['Post'] );
+		
+		//-----------------------------------------
+		// Post process the editor
+		// Now we have safe HTML and bbcode
+		//-----------------------------------------
+		
+		$this->ipsclass->input['Post'] = $this->han_editor->process_raw_post( 'Post' );
+		
+		//-----------------------------------------
+		// Parse post
+		//-----------------------------------------
+		
+		$this->parser->parse_smilies     = intval($this->ipsclass->vars['aboutme_emoticons']);
+		$this->parser->parse_html        = intval($this->ipsclass->vars['aboutme_html']);
+		$this->parser->parse_bbcode      = intval($this->ipsclass->vars['aboutme_bbcode']);
+		$this->parser->parsing_signature = 1;
+
+		$this->ipsclass->input['Post']          = $this->parser->bad_words( $this->parser->pre_display_parse( $this->parser->pre_db_parse( $this->ipsclass->input['Post'] ) ) );
+		
+		if ($this->parser->error != "")
+		{
+			$this->ipsclass->Error( array( 'LEVEL' => 1, 'MSG' => $this->parser->error) );
+		}
+		
+		//-----------------------------------------
+		// Write it to the DB.
+		//-----------------------------------------
+		
+		if ( $aboutme['pp_member_id'] )
+		{
+			$this->ipsclass->DB->do_update( 'profile_portal', array( 'pp_about_me' => $this->ipsclass->input['Post'] ), 'pp_member_id='.$this->ipsclass->member['id'] );
+		}
+		else
+		{
+			$this->ipsclass->DB->do_insert( 'profile_portal', array( 'pp_member_id' => $this->ipsclass->member['id'], 'pp_about_me' => $this->ipsclass->input['Post'] ) );
+		}
+		
+		//-----------------------------------------
+		// Buh BYE:
+		//-----------------------------------------
+		
+		$this->ipsclass->boink_it($this->ipsclass->base_url."act=UserCP&CODE=about_me_form&_saved=1&___msg=settings_updated");
+	}
+	
 
 	/*-------------------------------------------------------------------------*/
  	// Manage friends
@@ -401,7 +555,13 @@ class usercp
 		$pp_setting_notify_friend     = trim( substr( $this->ipsclass->input['pp_setting_notify_friend'], 0, 10 ) );
 		$pp_setting_moderate_comments = intval( $this->ipsclass->input['pp_setting_moderate_comments'] );
 		$pp_setting_moderate_friends  = intval( $this->ipsclass->input['pp_setting_moderate_friends'] );
-		
+
+		if( !$this->ipsclass->member['g_use_pm'] )
+		{
+			$pp_setting_notify_comments	= ( $pp_setting_notify_comments == 'pm' ) ? 'none' : $pp_setting_notify_comments;
+			$pp_setting_notify_friend	= ( $pp_setting_notify_friend == 'pm' ) ? 'none' : $pp_setting_notify_friend;
+		}
+
 		if( $this->ipsclass->member['g_edit_profile'] )
 		{
 			$pp_bio_content				  = $this->ipsclass->txt_mbsubstr( $this->ipsclass->my_nl2br( $this->ipsclass->input['pp_bio_content'] ), 0, 300 );
@@ -515,6 +675,11 @@ class usercp
 		$types     = array( 'none'  => $this->ipsclass->lang['op_dd_none'],
 					 		'email' => $this->ipsclass->lang['op_dd_email'],
 							'pm'    => $this->ipsclass->lang['op_dd_pm'] );
+
+		if( !$this->ipsclass->member['g_use_pm'] )
+		{
+			unset($types['pm']);
+		}
 							
 		$yes_no    = array( '0'     => $this->ipsclass->lang['op_dd_disabled'],
 							'1'     => $this->ipsclass->lang['op_dd_enabled'] );
@@ -2020,12 +2185,42 @@ class usercp
  			$cur_photo = "<img src='".$member['pp_main_photo'].'?__rand='. $rand . "' width='". $member['pp_main_width'] ."' height='". $member['pp_main_height'] ."' alt='{$this->ipsclass->lang['pph_title']}' />";
  		}
  		
+		//-----------------------------------------
+		// Force a form action?
+		//-----------------------------------------
+		
+		$is_reset = 0;
+		
+		if( $this->ipsclass->vars['upload_domain'] )
+		{
+			$is_reset = 1;
+			$original = $this->ipsclass->base_url;
+			
+			if( $this->ipsclass->session_type == 'cookie' )
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?';
+			}
+			else
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?s='.$this->ipsclass->session_id.'&amp;';
+			}
+		}
+		 		
  		//-----------------------------------------
  		// SHOW THE FORM
  		//-----------------------------------------
  		
  		$this->output .= $this->ipsclass->compiled_templates['skin_ucp']->photo_page( $error, $cur_photo, $show_size, $this->md5_check, $p_max, 500000, $rand );
 
+		//-----------------------------------------
+		// Reset forced form action?
+		//-----------------------------------------
+		
+		if( $is_reset )
+		{
+			$this->ipsclass->base_url = $original;
+		}
+		
 		//-----------------------------------------
 		// Print it...
 		//-----------------------------------------
@@ -2129,7 +2324,7 @@ class usercp
 				$forum['last_topic'] = $this->ipsclass->lang['f_none'];
  				
  				$forum['last_title'] = str_replace( "&#33;" , "!", $forum['last_title'] );
-				$forum['last_title'] = str_replace( "&quot;", "\"", $forum['last_title'] );
+				$forum['last_title'] = str_replace( "&quot;", '"', $forum['last_title'] );
 					
 				if ( strlen($forum['last_title']) > 30 )
 				{
@@ -2240,10 +2435,13 @@ class usercp
 			$this->ipsclass->Error( array( 'LEVEL' => 1, 'MSG' => 'wrong_pass' ) );
 		}
 		
+		/*
+			I see no reason to limit how long the password can be...
+
 		if ( $this->ipsclass->txt_mb_strlen( $_POST['PassWord'] ) > 32)
 		{
 			$this->ipsclass->Error( array( LEVEL => 1, MSG => 'pass_too_long' ) );
-		}
+		}*/
  		
  		//-----------------------------------------
  		// Create new password...
@@ -2476,7 +2674,7 @@ class usercp
 				
 				if ( preg_match( "/^{$email}$/i", $email_one ) )
 				{
-					$this->ipsclass->Error( array( LEVEL => 1, MSG => 'email_exists' ) );
+					$this->ipsclass->Error( array( LEVEL => 1, MSG => 'banned_email' ) );
 				}
 			}
 		}
@@ -3466,6 +3664,27 @@ class usercp
  			$formextra    = " enctype='multipart/form-data'";
 			$hidden_field = "<input type='hidden' name='MAX_FILE_SIZE' value='9000000' />";
 		}
+		
+		//-----------------------------------------
+		// Force a form action?
+		//-----------------------------------------
+		
+		$is_reset = 0;
+		
+		if( $this->ipsclass->vars['upload_domain'] )
+		{
+			$is_reset = 1;
+			$original = $this->ipsclass->base_url;
+			
+			if( $this->ipsclass->session_type == 'cookie' )
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?';
+			}
+			else
+			{
+				$this->ipsclass->base_url = $this->ipsclass->vars['upload_domain'] . '/index.' . $this->ipsclass->vars['php_ext'].'?s='.$this->ipsclass->session_id.'&amp;';
+			}
+		}
  		
  		$this->output .= $this->ipsclass->compiled_templates['skin_ucp']->avatar_main( array (
 															'MEMBER'               => $this->member,
@@ -3527,6 +3746,14 @@ class usercp
 		
 		$this->output = str_replace( "<!--IBF.LIMITS_AVATAR-->", $this->ipsclass->compiled_templates['skin_ucp']->avatar_limits(), $this->output );
 		
+		//-----------------------------------------
+		// Reset forced form action?
+		//-----------------------------------------
+		
+		if( $is_reset )
+		{
+			$this->ipsclass->base_url = $original;
+		}
  			
  		$this->page_title = $this->ipsclass->lang['t_welcome'];
  		$this->nav        = array( "<a href='".$this->ipsclass->base_url."act=UserCP&amp;CODE=00'>".$this->ipsclass->lang['t_title']."</a>" );

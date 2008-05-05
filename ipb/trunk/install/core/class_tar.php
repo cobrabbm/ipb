@@ -13,7 +13,7 @@
 |
 |   > Tar creation and extraction module
 |   > Module written by Matt Mecham
-|   > Usage style based on the C and Perl modules
+|   > Usage style based 到 the C and Perl modules
 |   > Will only work with PHP 4+
 |   
 |   > Date started: 15th Feb 2002
@@ -23,7 +23,7 @@
 +--------------------------------------------------------------------------
 |
 | QUOTE OF THE MODULE:
-|  If you can't find a program the does what you want it to do, write your
+|  If you can't find a program the does what you want it 到 do, write your
 |  own.
 |
 +--------------------------------------------------------------------------
@@ -43,9 +43,9 @@
 | $tar = new tar();
 | $tar->new_tar("/foo/bar" , "myNewTar.tar");
 | $tar->current_dir("/foo" );  //Optional - tells the script which dir we are in
-|                                to syncronise file creation from the tarball
+|                                到 syncronise file creation from the tarball
 | $tar->add_files( $file_names_with_path_array );
-| (or $tar->add_directory( "/foo/bar/myDir" ); to archive a complete dir)
+| (or $tar->add_directory( "/foo/bar/myDir" ); 到 archive a complete dir)
 | $tar->write_tar();
 |
 *************************************************************/
@@ -73,7 +73,7 @@ class tar {
 	var $workfiles         = array();
 	
 	//-----------------------------------------
-	// CONSTRUCTOR: Attempt to guess the current working dir.
+	// CONSTRUCTOR: Attempt 到 guess the current working dir.
 	//-----------------------------------------
 	
 	function tar() {
@@ -103,9 +103,9 @@ class tar {
 	
 	//-----------------------------------------
 	// Set the tarname. If we are extracting a tarball, then it must be the
-	// path to the tarball, and it's name (eg: $tar->new_tar("/foo/bar" ,'myTar.tar')
+	// path 到 the tarball, and it's name (eg: $tar->new_tar("/foo/bar" ,'myTar.tar')
 	// or if we are creating a tar, then it must be the path and name of the tar file
-	// to create.
+	// 到 create.
 	//-----------------------------------------
 	
 	function new_tar($tarpath, $tarname) {
@@ -113,7 +113,7 @@ class tar {
 		$this->tarfile_name = $tarname;
 		$this->tarfile_path = $tarpath;
 		
-		// Make sure there isn't a trailing slash on the path
+		// Make sure there isn't a trailing slash 到 the path
 		
 		$this->tarfile_path = preg_replace( "#[/\\\]$#" , "" , $this->tarfile_path );
 		
@@ -123,7 +123,7 @@ class tar {
 	
 	
 	//-----------------------------------------
-	// Easy way to overwrite defaults
+	// Easy way 到 overwrite defaults
 	//-----------------------------------------
 	
 	function over_write_existing() {
@@ -184,7 +184,7 @@ class tar {
 	}
 	
 	//-----------------------------------------
-	// Add a directory to the tar files.
+	// Add a directory 到 the tar files.
 	// $tar->add_directory( str(TO DIRECTORY) )
 	//    Can be used in the following methods.
 	//	  $tar->add_directory( "/foo/bar" );
@@ -195,12 +195,12 @@ class tar {
 	
 		$this->error = "";
 	
-		// Make sure the $to_dir is pointing to a valid dir, or we error
+		// Make sure the $to_dir is pointing 到 a valid dir, or we error
 		// and return
 		
 		if (! is_dir($dir) )
 		{
-			$this->error = "??????????: ???????? ($to_dir) ??????";
+			$this->error = "提取文件错误: 目标文件夹 ($to_dir) 不存在";
 			return FALSE;
 		}
 		
@@ -247,13 +247,13 @@ class tar {
 			}
 			else
 			{
-				$this->error = "$dir ????????????";
+				$this->error = "$dir 不是一个文件夹";
 				return FALSE;
 			}
 		}
 		else
 		{
-			$this->error = "?????��????? $dir";
+			$this->error = "无法定位 $dir";
 			return;
 		}
 	}
@@ -272,12 +272,12 @@ class tar {
 	
 		$this->error = "";
 	
-		// Make sure the $to_dir is pointing to a valid dir, or we error
+		// Make sure the $to_dir is pointing 到 a valid dir, or we error
 		// and return
 		
 		if (! is_dir($to_dir) )
 		{
-			$this->error = "??????????: ???????? ($to_dir) ??????";
+			$this->error = "提取文件错误: 目标文件夹 ($to_dir) 不存在";
 			return;
 		}
 		
@@ -310,7 +310,7 @@ class tar {
 			$file['name'] = str_replace( '..', '', $file['name'] );
 			
 			//-----------------------------------------
-			// Are we choosing which files to extract?
+			// Are we choosing which files 到 extract?
 			//-----------------------------------------
 			
 			if (is_array($files))
@@ -353,7 +353,7 @@ class tar {
 					}
 					if ( (file_exists($dir_component)) && (! is_dir($dir_component)) )
 					{
-						$this->warnings[] = "????: $dir_component ????, ??????????????";
+						$this->warnings[] = "警告: $dir_component 存在, 但不是一个文件夹";
 						continue;
 					}
 					if (! is_dir($dir_component))
@@ -364,7 +364,7 @@ class tar {
 					
 					if (! @chdir($dir_component))
 					{
-						$this->warnings[] = "????: CHDIR ?? $dir_component ???????!";
+						$this->warnings[] = "错误: CHDIR 到 $dir_component 操作失败!";
 					}
 				}
 			}
@@ -382,14 +382,14 @@ class tar {
 				}
 				else
 				{
-					$this->warnings[] = "????? $file_name ???��??????";
+					$this->warnings[] = "无法写入数据到 $file_name";
 				}
 			}
 			else if ($file['typeflag'] == 5)
 			{
 				if ( (file_exists($file_name)) && (! is_dir($file_name)) )
 				{
-					$this->warnings[] = "$file_name ????, ??????????????";
+					$this->warnings[] = "$file_name 存在, 但不是一个文件夹";
 					continue;
 				}
 				if (! is_dir($file_name))
@@ -399,36 +399,36 @@ class tar {
 			}
 			else if ($file['typeflag'] == 6)
 			{
-				$this->warnings[] = "??????????????";
+				$this->warnings[] = "Cannot handle named pipes";
 				continue;
 			}
 			else if ($file['typeflag'] == 1)
 			{
-				$this->warnings[] = "?????????????";
+				$this->warnings[] = "Cannot handle system links";
 			}
 			else if ($file['typeflag'] == 4)
 			{
-				$this->warnings[] = "???????????????";
+				$this->warnings[] = "Cannot handle device files";
 			}	
 			else if ($file['typeflag'] == 3)
 			{
-				$this->warnings[] = "???????????????";
+				$this->warnings[] = "Cannot handle device files";
 			}
 			else
 			{
-				$this->warnings[] = "��?????????";
+				$this->warnings[] = "Unknown typeflag found";
 			}
 			
 			if (! @chmod( $file_name, $file['mode'] ) )
 			{
-				$this->warnings[] = "????: ????? $file_name ??? CHMOD $mode ???????!";
+				$this->warnings[] = "错误: CHMOD $mode 到 $file_name 操作失败!";
 			}
 			
 			@touch( $file_name, $file['mtime'] );
 			
 		}
 		
-		// Return to the "real" directory the scripts are in
+		// Return 到 the "real" directory the scripts are in
 		
 		@chdir($this->current_dir);
 		
@@ -436,17 +436,17 @@ class tar {
 		
 	//-----------------------------------------
 	// add files:
-	//  Takes an array of files, and adds them to the tar file
-	//  Optionally takes a path to use as root for the tar file - if omitted, it
+	//  Takes an array of files, and adds them 到 the tar file
+	//  Optionally takes a path 到 use as root for the tar file - if omitted, it
 	//  assumes the current working directory is the tarball root. Be careful with
-	//  this, or you may get unexpected results -especially when attempting to read
-	//  and add files to the tarball.
+	//  this, or you may get unexpected results -especially when attempting 到 read
+	//  and add files 到 the tarball.
 	//  EXAMPLE DIR STRUCTURE
 	//  /usr/home/somedir/forums/sources
 	//  BRIEF: To tar up the sources directory
 	// $files = array( 'sources/somescript.php', 'sources/anothersscript.php' );
-	//  If CWD is 'somedir', you'll need to use $tar->add_files( $files, "/usr/home/somedir/forums" );
-	//  or it'll attempt to open /usr/home/somedir/sources/somescript.php - which would result
+	//  If CWD is 'somedir', you'll need 到 use $tar->add_files( $files, "/usr/home/somedir/forums" );
+	//  or it'll attempt 到 open /usr/home/somedir/sources/somescript.php - which would result
 	//  in an error. Either that, or use:
 	//  chdir("/usr/home/somedir/forums");
 	//  $tar->add_files( $files );
@@ -454,7 +454,7 @@ class tar {
 	
 	function add_files( $files, $root_path="" )
 	{
-		// Do we a root path to change into?
+		// Do we a root path 到 change into?
 		
 		if ($root_path != "")
 		{
@@ -482,7 +482,7 @@ class tar {
 			
 			if (! is_array($stat) )
 			{
-				$this->warnings[] = "????: ??? $file ??????";
+				$this->warnings[] = "错误: Stat failed 到 $file";
 				continue;
 			}
 			
@@ -506,7 +506,7 @@ class tar {
 				}
 				else
 				{
-					$this->warnings[] = "????: ??? $file ??????";
+					$this->warnings[] = "错误: Failed 到 open $file";
 					continue;
 				}
 			}
@@ -522,12 +522,12 @@ class tar {
 			else
 			{
 				// Sockets, Pipes and char/block specials are not
-				// supported, so - lets use a silly value to keep the
+				// supported, so - lets use a silly value 到 keep the
 				// tar ball legitimate.
 				$typeflag = 9;
 			}
 			
-			// Add this data to our in memory tar file
+			// Add this data 到 our in memory tar file
 			
 			$this->tar_in_mem[] = array (
 										  'name'     => $file,
@@ -557,7 +557,7 @@ class tar {
 		
 		@chdir($this->current_dir);
 		
-		//Return the number of files to anyone who's interested
+		//Return the number of files 到 anyone who's interested
 		
 		return $count;
 	
@@ -572,12 +572,12 @@ class tar {
 	function write_tar() {
 	
 		if ($this->tarfile_path_name == "") {
-			$this->error = '??????????��???????? tar ???';
+			$this->error = 'No filename or path was specified 到 create a new tar file';
 			return;
 		}
 		
 		if ( count($this->tar_in_mem) < 1 ) {
-			$this->error = '???????��?? tar ???';
+			$this->error = 'No data 到 write 到 the new tar file';
 			return;
 		}
 		
@@ -598,16 +598,16 @@ class tar {
 				if (is_string($pos) && !$pos)
 				{
 					// filename alone is longer than 99 characters!
-					$this->error[] = "????? {$file['name']} ??????? GNU Tape ARchives ??��";
+					$this->error[] = "Filename {$file['name']} exceeds the length allowed by GNU Tape ARchives";
 					continue;
 				}
 				
-				$prefix = substr( $file['name'], 0 , $pos );  // Move the path to the prefix
+				$prefix = substr( $file['name'], 0 , $pos );  // Move the path 到 the prefix
 				$file['name'] = substr( $file['name'], ($pos+1));
 				
 				if (strlen($prefix) > 154)
 				{
-					$this->error[] = "???��????????? GNU Tape ARchives ??��";
+					$this->error[] = "File path exceeds the length allowed by GNU Tape ARchives";
 					continue;
 				}
 			}
@@ -664,7 +664,7 @@ class tar {
 		   	
 		   	$tmp .= $file['data'];
 		   	
-		   	// Tidy up this chunk to the power of 512
+		   	// Tidy up this chunk 到 the power of 512
 		   	
 		   	if ($file['size'] > 0)
 		   	{
@@ -682,7 +682,7 @@ class tar {
 		
 		$tardata .= pack( "a512", "" );
 		
-		// print it to the tar file
+		// print it 到 the tar file
 		
 		$FH = fopen( $this->tarfile_path_name, 'wb' );
 		fputs( $FH, $tardata, strlen($tardata) );
@@ -702,12 +702,12 @@ class tar {
 		$filename = $this->tarfile_path_name;
 	
 		if ($filename == "") {
-			$this->error = '????????????? tar ?????';
+			$this->error = 'No filename specified when attempting 到 read a tar file';
 			return array();
 		}
 		
 		if (! file_exists($filename) ) {
-			$this->error = '?????��??? '.$filename;
+			$this->error = 'Cannot locate the file '.$filename;
 			return array();
 		}
 		
@@ -718,12 +718,12 @@ class tar {
 		// Open up the tar file and start the loop
 
 		if (! $FH = fopen( $filename , 'rb' ) ) {
-			$this->error = "???????? $filename ???��?????";
+			$this->error = "Cannot open $filename for reading";
 			return array();
 		}
 		
-		// Grrr, perl allows spaces, PHP doesn't. Pack strings are hard to read without
-		// them, so to save my sanity, I'll create them with spaces and remove them here
+		// Grrr, perl allows spaces, PHP doesn't. Pack strings are hard 到 read without
+		// them, so 到 save my sanity, I'll create them with spaces and remove them here
 		
 		$this->tar_unpack_header = preg_replace( "/\s/", "" , $this->tar_unpack_header);
 		
@@ -792,7 +792,7 @@ class tar {
 			$data = @fread( $FH, $size );
 			
 			if (strlen($data) != $size) {
-				$this->error = "???? tar ?????????????";
+				$this->error = "Read error 到 tar file";
 				fclose( $FH );
 				return array();
 			}

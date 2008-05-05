@@ -1199,7 +1199,7 @@ class ad_settings {
 		$array = array( 'conf_title_title'   => $this->ipsclass->input['conf_title_title'],
 						'conf_title_desc'    => $this->ipsclass->txt_stripslashes( $_POST['conf_title_desc'] ),
 						'conf_title_keyword' => $conf_title_keyword,
-						'conf_title_noshow'  => $this->ipsclass->input['conf_title_noshow'],
+						'conf_title_noshow'  => intval($this->ipsclass->input['conf_title_noshow']),
 						'conf_title_module'  => $this->ipsclass->input['conf_title_module']
 					 );
 
@@ -1925,7 +1925,7 @@ class ad_settings {
 
 		if( array_key_exists( $r['conf_key'], $this->help_settings ) )
 		{
-			$help_key = "&nbsp;&nbsp;<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_help&key={$r['conf_key']}' onclick=\"ipsclass.pop_up_window( '{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=setting_help&key={$r['conf_key']}', 400, 500, 'SettingHelp' );return false;\" title='{$this->help_settings[ $r['conf_key'] ]['help_mouseover']}'><img src='{$this->ipsclass->skin_acp_url}/images/about.png' border='0' alt='{$this->help_settings[ $r['conf_key'] ]['help_mouseover']}' /></a>";
+			$help_key = "&nbsp;&nbsp;<a href='{$this->ipsclass->base_url}&section=tools&act=op&code=setting_help&key={$r['conf_key']}' onclick=\"ipsclass.pop_up_window( '{$this->ipsclass->base_url}&section=tools&act=op&code=setting_help&key={$r['conf_key']}', 400, 500, 'SettingHelp' );return false;\" title='{$this->help_settings[ $r['conf_key'] ]['help_mouseover']}'><img src='{$this->ipsclass->skin_acp_url}/images/about.png' border='0' alt='{$this->help_settings[ $r['conf_key'] ]['help_mouseover']}' /></a>";
 		}
 
 		//-----------------------------------------

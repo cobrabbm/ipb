@@ -100,7 +100,7 @@ class ad_modlogs {
 			
 				$row_count = $row['count'];
 			
-				$query = "&act=modlog&code=view";
+				$query = "&{$this->ipsclass->form_code}&mid={$this->ipsclass->input['mid']}&code=view";
 			
 				$this->ipsclass->DB->cache_add_query( 'modlogs_view_three', array( 'start' => $start ) );
 				$this->ipsclass->DB->cache_exec_query();				

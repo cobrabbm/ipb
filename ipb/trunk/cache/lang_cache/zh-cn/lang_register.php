@@ -14,6 +14,9 @@
 
 $lang = array (
 
+'las_input_text_gif'			=> '请输入图片中给出的 6 个字符的验证码. 区分大小写.',
+
+
 // 2.3.2
 'select_month'					=> '月份',
 'select_day'					=> '日期',

@@ -267,7 +267,15 @@ class class_upload
 		or !$_FILES[ $this->upload_form_field ]['size']
 		or ($_FILES[ $this->upload_form_field ]['name'] == "none") )
 		{
-			$this->error_no = 1;
+			if( $_FILES[ $this->upload_form_field ]['error'] == 2 )
+			{
+				$this->error_no = 3;
+			}
+			else
+			{
+				$this->error_no = 1;
+			}
+
 			return;
 		}
 		
@@ -415,7 +423,7 @@ class class_upload
 		if( !$renamed )
 		{
 			$this->check_xss_infile();
-			
+
 			if( $this->error_no )
 			{
 				return;
@@ -469,7 +477,7 @@ class class_upload
 		if( filesize($this->saved_upload_name) != $_FILES[ $this->upload_form_field ]['size'] )
 		{
 			@unlink( $this->saved_upload_name );
-			
+
 			$this->error_no = 1;
 			return;
 		}

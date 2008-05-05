@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-08-21 17:48:41 -0400 (Tue, 21 Aug 2007) $
-|   > $Revision: 1099 $
+|   > $Date: 2008-04-23 15:02:02 -0400 (Wed, 23 Apr 2008) $
+|   > $Revision: 1254 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -61,7 +61,7 @@ class ppi_recent_topics
 	/**
 	* IPS Global object
 	*
-	* @var string
+	* @var object
 	*/
 	var $ipsclass;
 
@@ -72,6 +72,15 @@ class ppi_recent_topics
 	* @var array
 	*/
 	var $portal_object = array();
+	
+	/**
+	* Maximum number of days to check:
+	* limits resource usage.  Set to 0
+	* for no days restriction.
+	*
+	* @var int
+	*/
+	var $max_days	= 20;
 	
 	/*-------------------------------------------------------------------------*/
  	// INIT
@@ -106,10 +115,12 @@ class ppi_recent_topics
     	{
 	    	return;
     	}
+    	
+    	$time_restrict = $this->max_days ? " AND start_date > " . ( time() - 60 * 60 * 24 * $this->max_days ) : '';
  		
  		$this->ipsclass->DB->simple_construct( array( 'select' => 'tid, title, posts, starter_id as member_id, starter_name as member_name, start_date as post_date, views',
 													  'from'   => 'topics',
-													  'where'  => "$qe approved=1 and state != 'closed' and (moved_to is null or moved_to = '')",
+													  'where'  => "$qe approved=1 and state != 'closed' and (moved_to is null or moved_to = '')" . $time_restrict,
 													  'order'  => 'start_date DESC',
 													  'limit'  => array( 0, $limit ) ) );
 		$this->ipsclass->DB->simple_exec();
@@ -161,6 +172,13 @@ class ppi_recent_topics
         {
         	$this->ipsclass->vars['recent_topics_article_forum'] = ','.$this->ipsclass->vars['recent_topics_article_forum'];
         }
+        
+        $time_restrict = $this->max_days ? " AND t.start_date > " . ( time() - 60 * 60 * 24 * $this->max_days * 2 ) : '';
+        
+        if( $time_restrict )
+    	{
+    		$qe .= $time_restrict;
+		}
         
         $this->ipsclass->DB->cache_add_query( 'portal_get_monster_bitch', array( 'csite_article_forum' => $this->ipsclass->vars['recent_topics_article_forum'], 'qe' => $qe, 'limit' => $limit ) );
 		$outer = $this->ipsclass->DB->cache_exec_query();

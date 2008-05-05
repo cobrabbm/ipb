@@ -245,4 +245,5 @@ class auth_sha256
 	    return $lWordArray;
 	}
 }
- 
+
+?>

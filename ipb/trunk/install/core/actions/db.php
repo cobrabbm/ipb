@@ -15,6 +15,11 @@ class action_db
 	
 	function run()
 	{
+		if( isset($this->install->ipsclass->input['db_pre']) )
+		{
+			$this->install->ipsclass->input['db_pre'] = strtolower($this->install->ipsclass->input['db_pre']);
+		}
+
 		/* Check input? */
 		if ( $this->install->ipsclass->input['sub'] == 'check' )
 		{

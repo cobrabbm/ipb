@@ -96,6 +96,19 @@ class task_item
 				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'member_extra'    , 'where' => "id IN(".implode(",",$mids).")" ) );
 				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'pfields_content' , 'where' => "member_id IN(".implode(",",$mids).")" ) );
 				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'validating'      , 'where' => "vid IN(".implode(",",$vids).")" ) );
+				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'message_text'    , 'where' => "msg_author_id IN(".implode( ",",$mids ).")" ) );
+				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'message_topics'  , 'where' => "mt_owner_id IN(".implode( ",",$mids ).")" ) );
+				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'contacts'        , 'where' => "member_id IN(".implode( ",",$mids ).") or contact_id IN(".implode( ",",$mids ).")" ) );
+				$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'warn_logs'       , 'where' => "wlog_mid IN(".implode( ",",$mids ).")" ) );
+				$this->ipsclass->DB->do_update( 'profile_comments', array( 'comment_by_member_id' => 0 ), "comment_by_member_id IN(".implode( ",",$mids ).")" );
+				$this->ipsclass->DB->do_update( 'profile_ratings', array( 'rating_by_member_id' => 0 ), "rating_by_member_id IN(".implode( ",",$mids ).")" );
+				$this->ipsclass->DB->do_delete( 'profile_comments', "comment_for_member_id IN(".implode( ",",$mids ).")" );
+				$this->ipsclass->DB->do_delete( 'profile_ratings', "rating_for_member_id IN(".implode( ",",$mids ).")" );
+				
+				$this->ipsclass->DB->do_delete( 'profile_portal', "pp_member_id IN(".implode( ",",$mids ).")" );
+				$this->ipsclass->DB->do_delete( 'profile_friends', "friends_member_id IN(".implode( ",",$mids ).")" );
+				$this->ipsclass->DB->do_delete( 'profile_friends', "friends_friend_id IN(".implode( ",",$mids ).")" );
+
 				
 				if ( USE_MODULES == 1 )
 				{
@@ -112,7 +125,7 @@ class task_item
 			// Log to log table - modify but dont delete
 			//-----------------------------------------
 			
-			$this->class->append_task_log( $this->task, count($mids).' 个旧激活请求未处理' );
+			$this->class->append_task_log( $this->task, count($mids).' 个旧的激活请求未处理' );
 		}
 		
 		//-----------------------------------------

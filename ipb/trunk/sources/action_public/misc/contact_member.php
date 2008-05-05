@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-05-15 17:56:01 -0400 (Tue, 15 May 2007) $
-|   > $Revision: 997 $
+|   > $Date: 2008-01-18 14:09:19 -0500 (Fri, 18 Jan 2008) $
+|   > $Revision: 1167 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -409,7 +409,7 @@ class contactmember
 												'MOD_NAME'     => $data['name'],
 												'USERNAME'     => $this->ipsclass->member['members_display_name'],
 												'TOPIC'        => $topic['title'],
-												'LINK_TO_POST' => "{$this->ipsclass->vars['board_url']}/index.{$this->ipsclass->vars['php_ext']}"."?showtopic={$tid}&st={$st}#entry{$pid}",
+												'LINK_TO_POST' => "{$this->ipsclass->vars['board_url']}/index.{$this->ipsclass->vars['php_ext']}"."?showtopic={$tid}&view=findpost&p={$pid}",
 												'REPORT'       => $report,
 											  )
 			        					);

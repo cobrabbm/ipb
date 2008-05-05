@@ -148,7 +148,7 @@ class ad_adminlogs
 			
 			$row_count = $row['count'];
 			
-			$query = "&act=adminlog&code=view&search_type={$this->ipsclass->input['search_type']}&search_string=".urlencode($this->ipsclass->input['search_string']);
+			$query = "&{$this->ipsclass->form_code}&code=view&search_type={$this->ipsclass->input['search_type']}&search_string=".urlencode($this->ipsclass->input['search_string']);
 			
 			$this->ipsclass->DB->cache_add_query( 'adminlogs_view_two', array( 'dbq' => $dbq, 'limit_a' => $start ) );
 			$this->ipsclass->DB->cache_exec_query();

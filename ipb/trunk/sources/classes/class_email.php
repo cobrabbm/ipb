@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-09-24 16:32:11 -0400 (Mon, 24 Sep 2007) $
-|   > $Revision: 1110 $
+|   > $Date: 2008-02-29 18:09:47 -0500 (Fri, 29 Feb 2008) $
+|   > $Revision: 1197 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -209,7 +209,7 @@ class emailer {
 		
 		if ( count ($this->parts) > 0 )
 		{
-			if ( ! $this->html )
+			if ( ! $this->html_email )
 			{
 				$extra_headers[0]['Content-Type'] = "multipart/mixed;\n\tboundary=\"".$this->boundry."\"";
 				

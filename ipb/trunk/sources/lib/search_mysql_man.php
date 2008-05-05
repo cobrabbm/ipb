@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-10-17 16:29:37 -0400 (Wed, 17 Oct 2007) $
-|   > $Revision: 1133 $
+|   > $Date: 2008-04-23 15:02:02 -0400 (Wed, 23 Apr 2008) $
+|   > $Revision: 1254 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -43,6 +43,12 @@ class search_lib extends Search
     {
 		$this->is          = &$that; // hahaha!
     	$this->resultlimit = $this->is->resultlimit;
+ 	}
+ 	
+ 	
+ 	function do_simple_search()
+ 	{
+ 		return $this->do_main_search();
  	}
  	
  	//-----------------------------------------

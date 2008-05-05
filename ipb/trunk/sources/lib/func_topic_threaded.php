@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-08-21 17:48:41 -0400 (Tue, 21 Aug 2007) $
-|   > $Revision: 1099 $
+|   > $Date: 2008-04-23 15:02:02 -0400 (Wed, 23 Apr 2008) $
+|   > $Revision: 1254 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -298,6 +298,8 @@ class topic_display
 			$poster = $return['poster'];
 			$row    = $return['row'];
 			
+			$this->output .= $this->ipsclass->compiled_templates['skin_topic']->RenderRow( $row, $poster );
+			
 			//-----------------------------------------
 			// Are we giving this bloke a good ignoring?
 			//-----------------------------------------
@@ -313,8 +315,6 @@ class topic_display
 					}
 				}
 			}	
-			
-			$this->output .= $this->ipsclass->compiled_templates['skin_topic']->RenderRow( $row, $poster );
 			
 			if ( ! $this->printed and $num_rows > 1 )
 			{

@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-17 18:06:57 -0500 (Mon, 17 Dec 2007) $
-|   > $Revision: 1149 $
+|   > $Date: 2008-04-23 15:02:02 -0400 (Wed, 23 Apr 2008) $
+|   > $Revision: 1254 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -559,10 +559,13 @@ class login
 			$username = strtolower( trim( $this->ipsclass->input['UserName'] ) );
 		}
 		
+		/*
+			I see no reason to limit how long the password can be...
+
 		if ( $this->ipsclass->txt_mb_strlen( $_POST['PassWord'] ) > 32)
 		{
 			$this->ipsclass->Error( array( LEVEL => 1, MSG => 'pass_too_long' ) );
-		}
+		}*/
 		
 		$password = md5( $this->ipsclass->input['PassWord'] );
 		

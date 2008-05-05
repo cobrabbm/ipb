@@ -88,9 +88,7 @@ class ipsclass {
 	* @var string
 	*/
 	var $version      = IPBVERSION;
-
-	var $ipbchina_version      = IPBCHINA_VERSION;
-	
+	var $ipbchina_version      = IPBCHINA_VERSION;	
 	/**
 	* LONG version number (Eg: 21000.BUILD_DATE.REASON)
 	*
@@ -5408,6 +5406,8 @@ class ipsclass {
 				return $this->parsed_members[ $member['id'] ];
 			}
 		}
+		
+		$member['_cache'] = $member['members_cache'] ? $this->unpack_member_cache( $member['members_cache'] ) : array();
 	
 		//-----------------------------------------
 		// Check URL

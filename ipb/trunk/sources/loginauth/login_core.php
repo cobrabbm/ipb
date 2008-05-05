@@ -434,7 +434,7 @@ class login_core
 		// Insert: MEMBER EXTRA
 		//-----------------------------------------
 		
-		$this->ipsclass->DB->do_insert( 'member_extra', array( 'id' => $member_id, 'vdirs' => 'in:收件箱|sent:发件箱' ) );
+		$this->ipsclass->DB->do_insert( 'member_extra', array( 'id' => $member_id, 'vdirs' => "in:{$this->ipsclass->lang['account_inbox']}|sent:{$this->ipsclass->lang['account_sent']}" ) );
 		
 		//-----------------------------------------
 		// Insert into the custom profile fields DB

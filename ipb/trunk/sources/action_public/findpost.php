@@ -11,9 +11,9 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2006-09-26 07:17:30 -0400 (Tue, 26 Sep 2006) $
-|   > $Revision: 574 $
-|   > $Author: matt $
+|   > $Date: 2008-03-28 18:08:02 -0400 (Fri, 28 Mar 2008) $
+|   > $Revision: 1232 $
+|   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
 |   > Find-a-post module (a.k.a: The smallest IPB class ever)
@@ -71,9 +71,29 @@ class findpost
 			$this->ipsclass->Error( array( LEVEL => 1, MSG => 'missing_files') );
 		}
 		
+		$topic = $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'forum_id', 'from' => 'topics', 'where' => 'tid=' . $post['topic_id'] ) );
+		
+		if ( ! $topic['forum_id'] )
+		{
+			$this->ipsclass->Error( array( LEVEL => 1, MSG => 'missing_files') );
+		}
+		
+		$mod = 0;
+		
+	    if ( $this->ipsclass->member['g_is_supmod'] )
+	    {
+	    	$mod = 1;
+    	}
+    	else if( isset($this->ipsclass->member['_moderator'][ $topic['forum_id'] ]) AND is_array( $this->ipsclass->member['_moderator'][ $topic['forum_id'] ] ) )
+    	{
+    		$mod = 1;
+    	}
+    	
+    	$query_extra = $mod ? '' : ' AND queued=0';
+		
 		$this->ipsclass->DB->simple_construct( array( 'select' => 'COUNT(*) as posts',
 									 				  'from'   => 'posts',
-													  'where'  => "topic_id=".$post['topic_id']." AND pid <= ".$pid,
+													  'where'  => "topic_id=".$post['topic_id']." AND pid <= ".$pid . $query_extra,
 											)      );
 							
 		$this->ipsclass->DB->simple_exec();

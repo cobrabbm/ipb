@@ -351,7 +351,7 @@ class ad_skin_sets
 		$per_row  = 3;
 		$td_width = 100 / $per_row;
 		$count    = 0;
-		$output   = "<tr align='center'>\n";
+		$output   = "";//"<tr align='center'>\n";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'  , 'exportbitscomplete' ),
 															     2 => array( 'act'   , 'sets'      ),

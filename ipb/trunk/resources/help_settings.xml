@@ -159,6 +159,28 @@
 		</helpsettings>
 
 		<helpsettings>
+			<key>coppa_address</key>
+			<title>地址格式</title>
+			<helptext><![CDATA[为了获得正确的地址格式, 您将需要使用 HTML 换行标签. 这些标签类似于:<br />
+&lt;br /&gt;<br /><br />
+作为一个例子, 地址输入格式如下:<br /><br/>
+Company Name &lt;br /&gt;<br />
+123 Fake St. &lt;br /&gt;<br />
+Smalltown, BH 20015
+<br />
+<br />
+<br />
+上面的地址将会显示成:<br /><br />
+Company Name<br />
+123 Fake St.<br />
+Smalltown, BH 20015]]></helptext>
+			<mouseover>地址格式</mouseover>
+		</helpsettings>
+
+		<helpsettings>
+			<key>search_sql_method</key>
+			<title>Type of search to use?</title>
+			<helptext><![CDATA[如果您的服务器允许开启全文搜索, 我们 <b>强烈</b> 建议您使用这一设置. 搜索是论坛负载的最重要部分之一. 全文搜索索引将会使您的搜索更加迅速和高效. 如果您特殊需要可以设置为通用模式.]]></helptext>
 			<key>spider_visit</key>
 			<title>搜索蜘蛛访问</title>
 			<helptext><![CDATA[允许搜索蜘蛛访问会使用更多的服务器存储空间.如果开启了此项,请确认<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=tools&act=op&code=findsetting&key=log_prune", 1); return false;'>搜索蜘蛛记录</a>已经打开.]]></helptext>

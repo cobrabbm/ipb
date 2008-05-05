@@ -15,7 +15,12 @@
 $lang = array (
 
 'partial_login'				=> '成功登录!',
-'myass_close'					=> '关闭窗口',
+'myass_close'				=> '关闭窗口',
+'dd_my_blog'				=> '查看会员博客',
+'dd_my_albums'				=> '查看会员相册',
+
+'account_inbox'				=> '收件箱',
+'account_sent'				=> '发件箱',
 
 
 //2.3 - Globally used

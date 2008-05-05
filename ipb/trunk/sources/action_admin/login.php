@@ -55,6 +55,11 @@ class ad_login
 				// Do we have a session?
 				$sess_cookie = $this->ipsclass->my_getcookie( "ipb_admin_session_id" );
 				
+				if( !$sess_cookie )
+				{
+					$sess_cookie = $this->ipsclass->input['adsess'];
+				}
+				
 				if( $sess_cookie )
 				{
 					$this->ipsclass->DB->do_delete( "admin_sessions", "session_id='{$sess_cookie}'" );

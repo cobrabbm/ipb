@@ -10,17 +10,17 @@
 /**
 * Plug in name (Default tab name)
 */
-$CONFIG['plugin_name']        = 'Replies';
+$CONFIG['plugin_name']        = 'About Me';
 
 /**
 * Language string for the tab
 */
-$CONFIG['plugin_lang_bit']    = 'pp_tab_posts';
+$CONFIG['plugin_lang_bit']    = 'pp_tab_aboutme';
 
 /**
 * Plug in key (must be the same as the main {file}.php name
 */
-$CONFIG['plugin_key']         = 'posts';
+$CONFIG['plugin_key']         = 'aboutme';
 
 /**
 * Show tab?
@@ -30,6 +30,6 @@ $CONFIG['plugin_enabled']     = 1;
 /**
 * Order
 */
-$CONFIG['plugin_order'] = 3;
+$CONFIG['plugin_order'] = 1;
 
 ?>

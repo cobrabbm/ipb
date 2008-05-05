@@ -1538,15 +1538,15 @@ class version_upgrade
 	
 	function step_16()
 	{
-		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members add has_blog TINYINT(1) NOT NULL default '0'";
+		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members add has_blog TINYINT(1) NOT NULL default '0';";
 		$SQL[] = "alter table ".SQL_PREFIX."members add sub_end int(10) NOT NULL default '0';";
 		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members DROP msg_from_id, DROP msg_msg_id;";
 		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members DROP org_supmod, DROP integ_msg;";
 		$SQL[] = "alter table ".SQL_PREFIX."members DROP aim_name, DROP icq_number, DROP website, DROP yahoo, DROP interests,
 				  DROP msnname, DROP vdirs, DROP signature, DROP location, DROP avatar, DROP avatar_size;";
 		$SQL[] = "alter table ".SQL_PREFIX."members change auto_track auto_track varchar(50) default '0';";
-		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members change temp_ban temp_ban varchar(100) default '0'";
-		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members change msg_total msg_total smallint(5) default '0'";
+		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members change temp_ban temp_ban varchar(100) default '0';";
+		$SQL[] = "ALTER TABLE ".SQL_PREFIX."members change msg_total msg_total smallint(5) default '0';";
 
 		$this->install->error   = array();
 		$this->sqlcount 		= 0;
@@ -1648,6 +1648,7 @@ class version_upgrade
 	
 	function step_18()
 	{
+		$SQL[] = "delete from ".SQL_PREFIX."task_manager where task_key = ''";
 		$SQL[] = "INSERT INTO ".SQL_PREFIX."task_manager VALUES (1, 'Hourly Clean Out', 'cleanout.php', 1076074920, -1, -1, -1, 59, '2a7d083832daa123b73a68f9c51fdb29', 1, 'Kill old sessions, reg images, searches',1,'',0);";
 		$SQL[] = "INSERT INTO ".SQL_PREFIX."task_manager VALUES (2, 'Daily Stats Rebuild', 'rebuildstats.php', 1076112000, -1, -1, 0, 0, '640b9a6c373ff207bc1b1100a98121af', 1, 'Rebuilds board statistics',1,'',0);";
 		$SQL[] = "INSERT INTO ".SQL_PREFIX."task_manager VALUES (3, 'Daily Clean Out', 'dailycleanout.php', 1076122800, -1, -1, 3, 0, 'e71b52f3ff9419abecedd14b54e692c4', 1, 'Prunes topic subscriptions',1,'',0);";
@@ -1835,7 +1836,7 @@ class version_upgrade
 		$SQL[] = "ALTER TABLE ".SQL_PREFIX."topics CHANGE approved approved TINYINT( 1 ) DEFAULT '0' NOT NULL;";
 		$SQL[] = "ALTER TABLE ".SQL_PREFIX."topics ADD INDEX(topic_firstpost);";
 		
-		$SQL[] = "UPDATE ".SQL_PREFIX."members SET language=''";
+		$SQL[] = "UPDATE ".SQL_PREFIX."members SET language='';";
 		
 		$this->install->error   = array();
 		$this->sqlcount 		= 0;

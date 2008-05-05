@@ -142,7 +142,7 @@ $IPBHTML .= <<<EOF
 					<tr>
 						<td><div id='{$editor_id}_out_emoticons'>&nbsp;</div></td>
 						<td nowrap="nowrap">
-							<img class='ipd' src="{$images_path}rte-emoticon.gif" alt="Emoticons" title="{$this->ipsclass->lang['js_tt_back_col']}" >
+							<img class='ipd' src="{$images_path}rte-emoticon.gif" alt="Emoticons" title="{$this->ipsclass->lang['js_tt_emoticons']}" >
 							<img class="ipd" src="{$images_path}icon_open.gif"  border="0" alt="">
 						</td>
 					</tr>
@@ -179,10 +179,10 @@ $IPBHTML .= <<<EOF
     	<textarea name="{$form_field}" class="rte-iframe" id="{$editor_id}_textarea" rows="10" cols="60" style="width:98%; height:250px" tabindex="1">$initial_content</textarea>
 	</div>
 	<div style='float:right;padding:1px 8px 4px 8px'>
-		<div class='rte-menu-button' style='width:100px;font-size:12px;padding-right:8px;'><a href="javascript:bbc_pop()" style='text-decoration:none;text-align:left;'><img src="{$images_path}rte-bbcode-help-sm.png" style='vertical-align:middle' alt='Help' border='0' /> {$this->ipsclass->lang['bbc_help']}</a></div>
+		<div class='rte-menu-button' style='width:100px;font-size:10px;padding-right:8px;'><a href="javascript:bbc_pop()" style='text-decoration:none;text-align:left;'><img src="{$images_path}rte-bbcode-help-sm.png" style='vertical-align:middle' alt='Help' border='0' /> {$this->ipsclass->lang['bbc_help']}</a></div>
 	</div>
 	<div align='left' style='padding:1px 8px 4px 8px; height:28px'>
-		<div id='rte-toggle-side-panel-button' class='rte-menu-button' style='width:130px;font-size:12px;padding-right:8px'><a href='#' onclick="return show_options_panel('{$editor_id}')" style='text-decoration:none'><img src="{$images_path}rte-toggle-options.png" alt='Help' border='0' /> Toggle Side Panel</a></div>
+		<div id='rte-toggle-side-panel-button' class='rte-menu-button' style='width:130px;font-size:10px;padding-right:8px'><a href='#' onclick="return show_options_panel('{$editor_id}')" style='text-decoration:none'><img src="{$images_path}rte-toggle-options.png" alt='Help' border='0' /> Toggle Side Panel</a></div>
 	</div>
 	
 </div>
@@ -412,7 +412,7 @@ $IPBHTML .= <<<EOF
     	<textarea name="{$form_field}" class="rte-iframe" id="{$editor_id}_textarea" rows="10" cols="60" style="width:98%; height:250px" tabindex="1">$initial_content</textarea>
 	</div>
 	<div align='right' style='padding:1px 8px 4px 8px'>
-		<div class='rte-menu-button' style='width:100px;font-size:12px;padding-right:8px'><a href="javascript:bbc_pop()" style='text-decoration:none'><img src="{$images_path}rte-bbcode-help-sm.png" alt='Help' border='0' /> {$this->ipsclass->lang['bbc_help']}</a></div>
+		<div class='rte-menu-button' style='width:100px;font-size:10px;padding-right:8px'><a href="javascript:bbc_pop()" style='text-decoration:none'><img src="{$images_path}rte-bbcode-help-sm.png" alt='Help' border='0' /> {$this->ipsclass->lang['bbc_help']}</a></div>
 	</div>
 </div>
 <br />

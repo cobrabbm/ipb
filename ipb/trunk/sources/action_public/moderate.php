@@ -11,8 +11,8 @@
 |   Web: http://www.invisionboard.com
 |   Licence Info: http://www.invisionboard.com/?license
 +---------------------------------------------------------------------------
-|   > $Date: 2007-12-27 14:32:48 -0500 (Thu, 27 Dec 2007) $
-|   > $Revision: 1151 $
+|   > $Date: 2008-04-21 17:32:17 -0400 (Mon, 21 Apr 2008) $
+|   > $Revision: 1249 $
 |   > $Author: bfarber $
 +---------------------------------------------------------------------------
 |
@@ -509,20 +509,20 @@ class moderate
 				if ( $this->ipsclass->DB->get_num_rows() )
 				{
 					$this->ipsclass->DB->do_update( 'profile_portal', array( 'pp_main_photo'   => '',
-														   				     'pp_main_width'   => '',
-														   				     'pp_main_height'  => '',
+														   				     'pp_main_width'   => 0,
+														   				     'pp_main_height'  => 0,
 																		     'pp_thumb_photo'  => '',
-																		     'pp_thumb_width'  => '',
-																		     'pp_thumb_height' => '' ), 'pp_member_id='.$mid );
+																		     'pp_thumb_width'  => 0,
+																		     'pp_thumb_height' => 0 ), 'pp_member_id='.$mid );
 				}
 				else
 				{
 					$this->ipsclass->DB->do_insert( 'profile_portal', array( 'pp_main_photo'   => '',
-														   				     'pp_main_width'   => '',
-														   				     'pp_main_height'  => '',
+														   				     'pp_main_width'   => 0,
+														   				     'pp_main_height'  => 0,
 																		     'pp_thumb_photo'  => '',
-																		     'pp_thumb_width'  => '',
-																		     'pp_thumb_height' => '',
+																		     'pp_thumb_width'  => 0,
+																		     'pp_thumb_height' => 0,
 																		     'pp_member_id'    => $mid ) );
 				}
 				
@@ -1958,6 +1958,13 @@ class moderate
 		$this->ipsclass->input['determine'] = isset($this->ipsclass->input['determine']) ? $this->ipsclass->input['determine']		: '';
 		$this->ipsclass->input['dateline']	= isset($this->ipsclass->input['dateline'])	 ? $this->ipsclass->input['dateline']	 	: '';
 		
+		// If length of dateline is greater than 8, assume it's a timestamp
+
+		if( strlen( $this->ipsclass->input['dateline'] ) > 8 )
+		{
+			$this->ipsclass->input['dateline'] = round( ( time() - $this->ipsclass->input['dateline']) /60/60/24 );
+		}
+		
 		//-----------------------------------------
 		// Are we checking first?
 		//-----------------------------------------
@@ -1989,7 +1996,7 @@ class moderate
 			
 			if ( $this->ipsclass->input['member'] )
 			{
-				$this->ipsclass->DB->build_query( array( 'select' => 'id', 'from' => 'members', 'where' => "name='".$this->ipsclass->input['member']."'" ) );
+				$this->ipsclass->DB->build_query( array( 'select' => 'id', 'from' => 'members', 'where' => "members_display_name='".$this->ipsclass->input['member']."'" ) );
 				$this->ipsclass->DB->exec_query();
 				
 				if (! $mem = $this->ipsclass->DB->fetch_row() )

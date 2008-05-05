@@ -67,7 +67,8 @@ function show_me()
 	<div id='tabtab-2' class='taboff'>帖子 &amp; 存取限制</div>
 	<div id='tabtab-3' class='taboff'>论坛 &amp; 资料信息</div>
 	<div id='tabtab-4' class='taboff'>签名</div>
-	<div id='tabtab-5' class='taboff'>自定义字段</div>
+	<div id='tabtab-5' class='taboff'>关于我</div>
+	<div id='tabtab-6' class='taboff'>自定义字段</div>
 </div>
 <div class='tabclear'>编辑: {$mem['members_display_name']} <span style='font-weight:normal'>(ID: {$mem['id']})</span></div>
 <div class='tableborder'>
@@ -111,7 +112,7 @@ function show_me()
 							<td width='60%' class='tablerow2'>{$form['remove_avatar']}</td>
 						 </tr>
 						 <tr>
-							<td width='40%' class='tablerow1'><strong>警告等级</strong></td>
+							<td width='40%' class='tablerow1'><strong>警告等级调整</strong></td>
 							<td width='60%' class='tablerow2'>
 								{$form['warn_level']}
 								[ <a href='#' onclick="ipsclass.pop_up_window('{$this->ipsclass->vars['board_url']}/index.php?act=warn&amp;mid={$mem['id']}&amp;CODE=view','500','450'); return false;">查看会员记录</a> ]
@@ -314,6 +315,12 @@ $IPBHTML .= <<<EOF
 </div>
 <div id='tabpane-4' class='formmain-background'>
 	<fieldset class='formmain-fieldset'>
+	    <legend><strong>会员 关于我 信息</strong></legend>
+		{$form['aboutme']}
+	</fieldset>
+</div>
+<div id='tabpane-6' class='formmain-background'>
+	<fieldset class='formmain-fieldset'>
 	    <legend><strong>会员签名</strong></legend>
 		{$form['signature']}
 	</fieldset>
@@ -407,7 +414,7 @@ $IPBHTML .= <<<EOF
  	
  	var checkboxes = document.getElementsByTagName('input');
 
-	for ( var i = 0 ; i <= checkboxes.length ; i++ )
+	for ( var i = 0 ; i < checkboxes.length ; i++ )
 	{
 		var e = checkboxes[i];
 		
@@ -517,7 +524,7 @@ $IPBHTML .= <<<EOF
  	
  	var checkboxes = document.getElementsByTagName('input');
 
-	for (var i in checkboxes )
+	for ( var i = 0 ; i < checkboxes.length ; i++ )
 	{
 		var e = checkboxes[i];
 		
