@@ -101,27 +101,27 @@
 			<conf_value></conf_value>
 			<conf_default><![CDATA[<b>论坛条款 & 规则</b>
 
-当您申请用户时，表示您已经同意遵守本规章。
+当您申请用户时, 表示您已经同意遵守本规章.
 
-欢迎您加入本站点参加交流和讨论，本站点为公共论坛，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：
+欢迎您加入本站点参加交流和讨论, 本站点为公共论坛, 为维护网上公共秩序和社会稳定, 请您自觉遵守以下条款：
 
-一、不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播下列信息：
+一、不得利用本站危害国家安全、泄露国家秘密, 不得侵犯国家社会集体的和公民的合法权益, 不得利用本站制作、复制和传播下列信息：
 　 （一）煽动抗拒、破坏宪法和法律、行政法规实施的；
-　（二）煽动颠覆国家政权，推翻社会主义制度的；
+　（二）煽动颠覆国家政权, 推翻社会主义制度的；
 　（三）煽动分裂国家、破坏国家统一的；
-　（四）煽动民族仇恨、民族歧视，破坏民族团结的；
-　（五）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；
+　（四）煽动民族仇恨、民族歧视, 破坏民族团结的；
+　（五）捏造或者歪曲事实, 散布谣言, 扰乱社会秩序的；
 　（六）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；
-　（七）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；
+　（七）公然侮辱他人或者捏造事实诽谤他人的, 或者进行其他恶意攻击的；
 　（八）损害国家机关信誉的；
 　（九）其他违反宪法和法律行政法规的；
-　（十）进行商业广告行为的。
+　（十）进行商业广告行为的.
 
-二、互相尊重，对自己的言论和行为负责，不得随意辱骂攻击同好。
-三、禁止在申请用户时使用相关本站的词汇，或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户，否则我们会将其删除。
-四、禁止以任何方式对本站进行各种破坏行为。
-五、如果您有违反国家相关法律法规的行为，本站概不负责，您的登录论坛信息均被记录无疑，必要时，我们会向相关的国家管理部门提供此类信息。
-六、论坛公告版和各版均有相关管理制度公布，请新注册会员多注意了解。
+二、互相尊重, 对自己的言论和行为负责, 不得随意辱骂攻击同好.
+三、禁止在申请用户时使用相关本站的词汇, 或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户, 否则我们会将其删除.
+四、禁止以任何方式对本站进行各种破坏行为.
+五、如果您有违反国家相关法律法规的行为, 本站概不负责, 您的登录论坛信息均被日志无疑, 必要时, 我们会向相关的国家管理部门提供此类信息.
+六、论坛公告版和各版均有相关管理制度公布, 请新注册会员多注意了解.
 
 ]]></conf_default>
 			<conf_extra></conf_extra>
@@ -376,8 +376,8 @@
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>cookies</conf_title_keyword>
-			<conf_title_title>Cookies</conf_title_title>
-			<conf_title_desc>这个部分可以设置Cookies的默认选项.</conf_title_desc>
+			<conf_title_title>Cookies 设置</conf_title_title>
+			<conf_title_desc>这个部分可以设置 Cookies 的默认选项.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
@@ -445,7 +445,7 @@
 		<setting>
 			<conf_id>20</conf_id>
 			<conf_title>创建增强自动登录 Cookie?</conf_title>
-			<conf_description>如果打开, 当会员登录时, 将在 Cookie 中记录加密的位置信息, 黑客不可能窃取这样的 Cookie. 如果会员不能登录, 关闭此选项.</conf_description>
+			<conf_description>如果打开, 当会员登录时, 将在 Cookie 中日志加密的位置信息, 黑客不可能窃取这样的 Cookie. 如果会员不能登录, 关闭此选项.</conf_description>
 			<conf_group>4</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>cookie_stronghold</conf_key>
@@ -475,7 +475,7 @@
 			<conf_id>21</conf_id>
 			<conf_title>使用 COPPA 注册系统</conf_title>
 			<conf_description><![CDATA[
-			在论坛上使用<a href="http://www.ftc.gov/ogc/coppa1.htm" target="_blank">COPPA</a>注册系统, 它会让13岁以下的儿童, 通过传真或邮件的方式才能验证注册通过.]]></conf_description>
+			在论坛上使用 <a href="http://www.ftc.gov/ogc/coppa1.htm" target="_blank">COPPA</a> 注册系统, 它会让13岁以下的儿童, 通过传真或邮件的方式才能验证注册通过.]]></conf_description>
 			<conf_group>5</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>use_coppa</conf_key>
@@ -1350,7 +1350,7 @@ smtp=SMTP</conf_extra>
 		<setting>
 			<conf_id>55</conf_id>
 			<conf_title><![CDATA[为发送和接收邮件地址添加 "<" 和 ">"?]]></conf_title>
-			<conf_description><![CDATA[某些 SMTP 服务器要求邮件地址用尖括号 "<" 和 ">" 包括. 如果您在邮件错误记录中看到错误, 那么请打开此选项.]]></conf_description>
+			<conf_description><![CDATA[某些 SMTP 服务器要求邮件地址用尖括号 "<" 和 ">" 包括. 如果您在邮件错误日志中看到错误, 那么请打开此选项.]]></conf_description>
 			<conf_group>9</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>mail_wrap_brackets</conf_key>
@@ -3071,16 +3071,16 @@ if ( $show == 1 )
 		<setting>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>log_prune</conf_title_keyword>
-			<conf_title_title>记录删除</conf_title_title>
-			<conf_title_desc>这里控制您想定期删除的那些记录信息.</conf_title_desc>
+			<conf_title_title>日志删除</conf_title_title>
+			<conf_title_desc>这里控制您想定期删除的那些日志信息.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module></conf_title_module>
 		</setting>
 
 		<setting>
 			<conf_id>131</conf_id>
-			<conf_title>删除搜索蜘蛛记录?</conf_title>
-			<conf_description>您是否想定期删除搜索蜘蛛记录(默认30天为一个周期)?</conf_description>
+			<conf_title>删除搜索蜘蛛日志?</conf_title>
+			<conf_description>您是否想定期删除搜索蜘蛛日志(默认30天为一个周期)?</conf_description>
 			<conf_group>19</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_spider</conf_key>
@@ -3099,8 +3099,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>132</conf_id>
-			<conf_title>删除任务记录?</conf_title>
-			<conf_description>您是否想定期删除任务记录(默认30天为一个周期)?</conf_description>
+			<conf_title>删除任务日志?</conf_title>
+			<conf_description>您是否想定期删除任务日志(默认30天为一个周期)?</conf_description>
 			<conf_group>19</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_task</conf_key>
@@ -3119,8 +3119,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>133</conf_id>
-			<conf_title>删除管理员操作记录?</conf_title>
-			<conf_description>您是否想定期删除管理记录(默认30天为一个周期)?</conf_description>
+			<conf_title>删除管理员操作日志?</conf_title>
+			<conf_description>您是否想定期删除管理日志(默认30天为一个周期)?</conf_description>
 			<conf_group>19</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_admin</conf_key>
@@ -3139,8 +3139,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>134</conf_id>
-			<conf_title>删除版主操作记录?</conf_title>
-			<conf_description>您是否想定期删除版主记录 (默认 30 天为一个周期)?</conf_description>
+			<conf_title>删除版主操作日志?</conf_title>
+			<conf_description>您是否想定期删除版主日志 (默认 30 天为一个周期)?</conf_description>
 			<conf_group>19</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_mod</conf_key>
@@ -3159,8 +3159,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>135</conf_id>
-			<conf_title>删除电子邮件记录?</conf_title>
-			<conf_description>您是否想定期删除电子邮件记录 (默认 30 天为一个周期)?</conf_description>
+			<conf_title>删除电子邮件日志?</conf_title>
+			<conf_description>您是否想定期删除电子邮件日志 (默认 30 天为一个周期)?</conf_description>
 			<conf_group>19</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_email</conf_key>
@@ -3179,8 +3179,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>136</conf_id>
-			<conf_title>删除电子邮件错误记录</conf_title>
-			<conf_description>您是否想定期删除电子邮件错误记录 (默认 30 天为一个周期)?</conf_description>
+			<conf_title>删除电子邮件错误日志</conf_title>
+			<conf_description>您是否想定期删除电子邮件错误日志 (默认 30 天为一个周期)?</conf_description>
 			<conf_group>19</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_emailerror</conf_key>
@@ -3199,8 +3199,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>137</conf_id>
-			<conf_title>删除数据库错误记录?</conf_title>
-			<conf_description>您是否想删除 30 天之前的数据库错误记录?</conf_description>
+			<conf_title>删除数据库错误日志?</conf_title>
+			<conf_description>您是否想删除 30 天之前的数据库错误日志?</conf_description>
 			<conf_group>19</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>ipb_prune_sql</conf_key>
@@ -3563,7 +3563,7 @@ $key = 'recent_topics_article_forum[]';
 
 		<setting>
 			<conf_id>150</conf_id>
-			<conf_title>记录所有的蜘蛛访问?</conf_title>
+			<conf_title>日志所有的蜘蛛访问?</conf_title>
 			<conf_description><![CDATA[如果您受到攻击, 请将本功能关闭. 因为本功能将为数据库带来一点额外的开销.]]></conf_description>
 			<conf_group>24</conf_group>
 			<conf_type>yes_no</conf_type>
@@ -4566,7 +4566,7 @@ pm=短消息</conf_extra>
 
 		<setting>
 			<conf_id>196</conf_id>
-			<conf_title>会员注册之后，购买付费项目之前所处的用户组</conf_title>
+			<conf_title>会员注册之后, 购买付费项目之前所处的用户组</conf_title>
 			<conf_description><![CDATA[如果您要求每个会员都必须购买一种付费项目, 请选择一个用户组来转移那些在购买付费项目之前注册的会员. 属于此用户组的会员, 如果他们尚未购买一种付费项目, 那么在他们登录的时候将看到 "购买付费项目" 页面.]]></conf_description>
 			<conf_group>27</conf_group>
 			<conf_type>dropdown</conf_type>
@@ -5473,7 +5473,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>239</conf_id>
 			<conf_title>允许投票发起人自己投票</conf_title>
-			<conf_description><![CDATA[如果选择 "是"，投票发起人也可以投票.]]></conf_description>
+			<conf_description><![CDATA[如果选择 "是", 投票发起人也可以投票.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>allow_creator_vote</conf_key>
@@ -5553,7 +5553,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>243</conf_id>
 			<conf_title>默认打开侧边栏</conf_title>
-			<conf_description><![CDATA[如果选择 "是",所见即所得编辑器的侧边栏(包含图释和快速连接选项)将会打开,直到用户点击"切换侧边栏"按钮.]]></conf_description>
+			<conf_description><![CDATA[如果选择 "是", 所见即所得编辑器的侧边栏 (包含图释和快速连接选项) 将会打开, 直到用户点击 "切换侧边栏" 按钮.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>rte_side_panel_open</conf_key>
@@ -5574,7 +5574,7 @@ http://competitor_domain.com*]]></conf_description>
 			<conf_is_title>1</conf_is_title>
 			<conf_title_keyword>trashcansetup</conf_title_keyword>
 			<conf_title_title>回收站设置</conf_title_title>
-			<conf_title_desc>回收站是一个特殊的论坛版块,被删除的帖子将会移动到这里.</conf_title_desc>
+			<conf_title_desc>回收站是一个特殊的论坛版块, 被删除的帖子将会移动到这里.</conf_title_desc>
 			<conf_title_noshow>0</conf_title_noshow>
 			<conf_title_module>trashcan.php</conf_title_module>
 		</setting>
@@ -5582,7 +5582,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>244</conf_id>
 			<conf_title>打开回收站</conf_title>
-			<conf_description><![CDATA[如果"否",本功能将被关闭,下面的设置将被忽略.]]></conf_description>
+			<conf_description><![CDATA[如果选择 "否", 本功能将被关闭, 下面的设置将被忽略.]]></conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>forum_trash_can_enable</conf_key>
@@ -5602,7 +5602,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>245</conf_id>
 			<conf_title>指定一个论坛版块作为回收站</conf_title>
-			<conf_description>不需要特别的读/写/回复权限,请把它当作一个普通版块来设置.</conf_description>
+			<conf_description>不需要特别的读/写/回复权限, 请把它当作一个普通版块来设置.</conf_description>
 			<conf_group>29</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>forum_trash_can_id</conf_key>
@@ -6705,8 +6705,8 @@ if ( $show == 1 )
 
 		<setting>
 			<conf_id>298</conf_id>
-			<conf_title>XML-RPC应用程序接口记录</conf_title>
-			<conf_description><![CDATA[您想保存哪种类型的记录? 选择 "所有的" 将会保存所有的应用程序接口记录, 选择 "失败的" 将仅仅保存应用程序接口访问失败的记录.]]></conf_description>
+			<conf_title>XML-RPC应用程序接口日志</conf_title>
+			<conf_description><![CDATA[您想保存哪种类型的日志? 选择 "所有的" 将会保存所有的应用程序接口日志, 选择 "失败的" 将仅仅保存应用程序接口访问失败的日志.]]></conf_description>
 			<conf_group>39</conf_group>
 			<conf_type>dropdown</conf_type>
 			<conf_key>xmlrpc_log_type</conf_key>
@@ -6726,8 +6726,8 @@ failed=失败的</conf_extra>
 
 		<setting>
 			<conf_id>299</conf_id>
-			<conf_title>XML-RPC 记录过期时间</conf_title>
-			<conf_description><![CDATA[输入您想保存记录的最大天数. 例如: 如果您输入 30,那么 30 天之前的记录将被删除.]]></conf_description>
+			<conf_title>XML-RPC 日志过期时间</conf_title>
+			<conf_description><![CDATA[输入您想保存日志的最大天数. 例如: 如果您输入 30,那么 30 天之前的日志将被删除.]]></conf_description>
 			<conf_group>39</conf_group>
 			<conf_type>input</conf_type>
 			<conf_key>xmlrpc_log_expire</conf_key>

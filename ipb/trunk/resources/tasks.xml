@@ -183,7 +183,7 @@
 
 		<row>
 			<task_id>11</task_id>
-			<task_title>d订阅到期通知</task_title>
+			<task_title>订阅到期通知</task_title>
 			<task_file>expiresubs.php</task_file>
 			<task_next_run>1158973200</task_next_run>
 			<task_week_day>-1</task_week_day>

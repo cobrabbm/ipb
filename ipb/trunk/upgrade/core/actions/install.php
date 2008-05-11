@@ -89,12 +89,12 @@ class action_install
 			$file_name = ROOT_PATH . 'cache/sql_upgrade_log_'.date('m_d_y').'.cgi';
 
 			$_error_string  = "\n===================================================";
-			$_error_string .= "\n Date: ". date( 'r' );
-			$_error_string .= "\n IP Address: " . $_SERVER['REMOTE_ADDR'];
-			$_error_string .= "\n Member ID: " . $this->install->ipsclass->member['id'];
-			$_error_string .= "\n Version Folder: " .$this->install->current_upgrade;
-			$_error_string .= "\n Current Sub Step: " .$this->install->ipsclass->input['sub'];
-			$_error_string .= "\n Current workact: " .$this->install->saved_data['workact'];
+			$_error_string .= "\n 时间: ". date( 'r' );
+			$_error_string .= "\n IP 地址: " . $_SERVER['REMOTE_ADDR'];
+			$_error_string .= "\n 会员 ID: " . $this->install->ipsclass->member['id'];
+			$_error_string .= "\n 版本文件夹: " .$this->install->current_upgrade;
+			$_error_string .= "\n 当前步骤: " .$this->install->ipsclass->input['sub'];
+			$_error_string .= "\n 当前操作: " .$this->install->saved_data['workact'];
 			$_error_string .= "\n\n\n ".$this->install->ipsclass->my_br2nl(implode( "\n", $this->install->error ));
 
 			$fh = fopen( $file_name, "a" );
@@ -174,7 +174,7 @@ class action_install
 				}
 			}
 
-			$message[] = $this->sqlcount." queries run...";
+			$message[] = $this->sqlcount." 条数据库语句已经执行...";
 		}
 		else
 		{
@@ -994,7 +994,7 @@ class action_install
 		if ( ! is_array( $xml->xml_array['templateexport']['templategroup']['template'] ) )
 		{
 			$this->install->template->in_error   = 1;
-			$this->install->error[] = "Error with resources/ipb_templates.xml - could not process XML properly";
+			$this->install->error[] = "文件 resources/ipb_templates.xml 错误 - 无法正确执行 XML 文件";
 
 			$this->install->template->warning( $this->install->error );
 
@@ -1003,7 +1003,7 @@ class action_install
 		}
 		else
 		{
-			$output[] = "Master templates rebuilt, proceeding to recache templates...";
+			$output[] = "父模板已经重建, 即将重建模板缓存...";
 
 			foreach( $xml->xml_array['templateexport']['templategroup']['template'] as $id => $entry )
 			{
