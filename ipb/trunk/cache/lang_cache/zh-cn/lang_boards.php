@@ -19,8 +19,8 @@ $lang = array (
 'cs_posts' => "帖子",
 'cs_members' => "会员",
 'cs_active'  => "在线会员",
-'q_topics'   => "列表中的主题:",
-'q_posts'    => "帖子:",
+'q_topics'   => "隐藏主题:",
+'q_posts'    => "隐藏帖子:",
 
 // added in 2.0
 
@@ -51,7 +51,7 @@ by					=>	"作者",
 
 'newslink'				=> "最新消息:",
 
-'welcome_back_text'		=> "欢迎回来,您上一次访问论坛的时间是",
+'welcome_back_text'		=> "欢迎回来, 您上一次访问论坛的时间是",
 
 'sm_today_posters'		=> "今日发帖前20名",
 'sm_all_posters'		=> "发帖总数前20名",
@@ -64,7 +64,7 @@ total_forums			=>	"论坛总数:",
 public_forums			=>	"开放论坛总数",
 public_members			=>  "位注册会员",
 
-'total_word_string'		=>  "帖子总数:<b><#posts#></b> 篇<br />注册会员:<b><#reg#></b> 人<br />最后注册:<b><a href='<#link#>'><#mem#></a></b>",
+'total_word_string'		=>  "帖子总数: <b><#posts#></b> 篇<br />注册会员: <b><#reg#></b> 人<br />最后注册: <b><a href='<#link#>'><#mem#></a></b>",
 
 
 'birthday_header'		=> "今天过生日的会员",
@@ -105,7 +105,7 @@ info					=>	"信息",
 active_users			=>	"位会员在最近 %s 分钟内在线",
 
 f_none					=>	"----",
-most_online				=>	"在线峰值:<b><#NUM#></b> 人,发生时间 <b><#DATE#></b>.",
+most_online				=>	"在线峰值: <b><#NUM#></b> 人, 发生时间 <b><#DATE#></b>.",
 no_new					=>	"没有新帖",
 
 );
