@@ -205,7 +205,7 @@ define ( 'IPB_LONG_VERSION', '23008' );
 //-----------------------------------------------
 // IPBCHINA BOARD VERSION
 //-----------------------------------------------
-define ( 'IPBCHINA_VERSION', 'RC 2' );
+define ( 'IPBCHINA_VERSION', 'RC 1' );
 
 //-----------------------------------------------
 // NO USER EDITABLE SECTIONS BELOW
