@@ -76,7 +76,7 @@ class setting_securityandprivacy
 		{
 			if ( $data['conf_key'] == 'captcha_allow_fonts' )
 			{
-				$settings[ $id ]['conf_description'] .= "<br /><strong>Preview</strong><br /><img src='{$this->ipsclass->base_url}&amp;act=xmlout&amp;do=captcha_test' border='0' />";
+				$settings[ $id ]['conf_description'] .= "<br /><strong>效果预览</strong><br /><img src='{$this->ipsclass->base_url}&amp;act=xmlout&amp;do=captcha_test' border='0' />";
 			}
 		}
 		

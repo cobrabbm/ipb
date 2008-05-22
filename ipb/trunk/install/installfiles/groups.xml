@@ -29,7 +29,7 @@
 			<g_avoid_q>0</g_avoid_q>
 			<g_avoid_flood>0</g_avoid_flood>
 			<g_icon></g_icon>
-			<g_attach_max>0</g_attach_max>
+			<g_attach_max>-1</g_attach_max>
 			<g_avatar_upload>0</g_avatar_upload>
 			<prefix></prefix>
 			<suffix></suffix>
@@ -133,7 +133,7 @@
 			<g_avoid_q>0</g_avoid_q>
 			<g_avoid_flood>0</g_avoid_flood>
 			<g_icon></g_icon>
-			<g_attach_max>500</g_attach_max>
+			<g_attach_max>0</g_attach_max>
 			<g_avatar_upload>1</g_avatar_upload>
 			<prefix></prefix>
 			<suffix></suffix>
@@ -185,7 +185,7 @@
 			<g_avoid_q>1</g_avoid_q>
 			<g_avoid_flood>1</g_avoid_flood>
 			<g_icon></g_icon>
-			<g_attach_max>10000000</g_attach_max>
+			<g_attach_max>0</g_attach_max>
 			<g_avatar_upload>1</g_avatar_upload>
 			<prefix><![CDATA[<span style='color:blue;'>]]></prefix>
 			<suffix><![CDATA[</span>]]></suffix>
@@ -289,7 +289,7 @@
 			<g_avoid_q>1</g_avoid_q>
 			<g_avoid_flood>1</g_avoid_flood>
 			<g_icon></g_icon>
-			<g_attach_max>50000</g_attach_max>
+			<g_attach_max>0</g_attach_max>
 			<g_avatar_upload>1</g_avatar_upload>
 			<prefix><![CDATA[<span style='font-weight:bold;color:red'>]]></prefix>
 			<suffix><![CDATA[</span>]]></suffix>

@@ -677,7 +677,7 @@ class ad_skin_sets
 		if ( isset($this->ipsclass->input['macro']) AND $this->ipsclass->input['macro'] )
 		{
 			$this->ipsclass->DB->simple_exec_query( array( 'delete' => 'skin_macro', 'where' => 'macro_set='.$id ) );
-			$message[] = '删除所有自定义宏替换...';
+			$message[] = '删除所有自定义宏定义...';
 		}
 		
 		//-----------------------------------------
@@ -797,7 +797,7 @@ class ad_skin_sets
 							</fieldset>
 							<br />
 							<fieldset class='tdfset'>
-							 <legend><strong>自定义宏替换</strong></legend>
+							 <legend><strong>自定义宏定义</strong></legend>
 							 <table width='100%' cellpadding='5' cellspacing='0' border='0'>
 							 <tr>
 							   <td width='40%' class='tablerow1'>恢复所有自定义宏?<br /><span style='color:gray'>您有 {$macros} 自定义宏</span></td>
@@ -1423,7 +1423,7 @@ class ad_skin_sets
 							   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_dropdown('set_skin_set_parent', $parents, $row['set_skin_set_parent'])."</td>
 							 </tr>
 							  <tr>
-							   <td width='40%' class='tablerow1'>主题关键字? (Optional)</td>
+							   <td width='40%' class='tablerow1'>主题关键字? (可选)</td>
 							   <td width='60%' class='tablerow1'>".$this->ipsclass->adskin->form_input('set_key', $row['set_key'])."</td>
 							 </tr>
 							 </table>
@@ -1444,7 +1444,7 @@ class ad_skin_sets
 							 <legend><strong>图像设置</strong></legend>
 							 <table width='100%' cellpadding='5' cellspacing='0' border='0'>
 							 <tr>
-							   <td width='40%' class='tablerow1'>图像目录?<br /><span style='color:gray'>此图像目录将会代替 CSS 和 宏替换中的 <#IMG_DIR#>标记.</span></td>
+							   <td width='40%' class='tablerow1'>图像目录?<br /><span style='color:gray'>此图像目录将会代替 CSS 和 宏定义中的 <#IMG_DIR#>标记.</span></td>
 							   <td width='60%' class='tablerow1'>style_images/ ".$this->ipsclass->adskin->form_dropdown('set_image_dir', $dirs, $row['set_image_dir'])."</td>
 							 </tr>
 							  <tr>
