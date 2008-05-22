@@ -133,7 +133,7 @@ class admin_skin
 	// JS Help Link
 	/*-------------------------------------------------------------------------*/
 	
-	function js_help_link($help="", $text="Quick Help")
+	function js_help_link($help="", $text="快速帮助")
 	{
 		return "( <a href='#' onClick=\"window.open('{$this->ipsclass->base_url}&act=quickhelp&id=$help','Help','width=250,height=400,resizable=yes,scrollbars=yes'); return false;\">$text</a> )";
 	}

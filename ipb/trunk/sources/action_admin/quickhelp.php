@@ -143,7 +143,7 @@ class ad_quickhelp {
 		
 		print "<html>
 				<head>
-				 <title>Quick Help</title>
+				 <title>快速帮助</title>
 				</head>
 				<body leftmargin='0' topmargin='0' bgcolor='#F5F9FD'>
 				 <table width='95%' align='center' border='0' cellpadding='6'>

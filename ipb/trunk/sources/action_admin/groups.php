@@ -2073,7 +2073,7 @@ class ad_groups
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "全局设置", "基础设置" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Group Title</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>用户组名称</b>" ,
 												  $this->ipsclass->adskin->form_input("g_title", $group['g_title'] )
 									     )      );
 									     
@@ -2172,7 +2172,7 @@ class ad_groups
 		$ini_max = @ini_get( 'upload_max_filesize' ) ? @ini_get( 'upload_max_filesize' ) : '<i>cannot obtain</i>';
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>全局上传空间( 包括短消息和帖子, 单位:KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 -1 禁止上传, 输入 0 取消限制, 只受到 PHP 的最大上传限制.</div>" ,
-																 $this->ipsclass->adskin->form_input("g_attach_max", $group['g_attach_max'] ). ' (currently: '.$group['g_attach_maxdis'].')' . "<br /><b> {$ini_max}</b>"
+																 $this->ipsclass->adskin->form_input("g_attach_max", $group['g_attach_max'] ). ' (当前设置: '.$group['g_attach_maxdis'].')' . "<br /><b> {$ini_max}</b>"
 														)      );
 										
 		if( $type == 'edit' AND $group['g_attach_per_post'] == 0 )
@@ -2189,7 +2189,7 @@ class ad_groups
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>每个帖子或短消息的最大上传空间 ( 单位 KB )</b>".$this->ipsclass->adskin->js_help_link('mg_upload')."<div class='graytext'>输入 0 取消限制. 这个数字必须比全局限制小.</div>" ,
-																 $this->ipsclass->adskin->form_input("g_attach_per_post", $group['g_attach_per_post'] ). ' (currently: '.$group['g_attach_per_postdis'].')' . "<br /><b>Note that single file uploads are also limited by your PHP configuration to {$ini_max}</b>"
+																 $this->ipsclass->adskin->form_input("g_attach_per_post", $group['g_attach_per_post'] ). ' (当前设置: '.$group['g_attach_per_postdis'].')' . "<br /><b>请注意您的 PHP 单个文件上传限制为 {$ini_max}</b>"
 														)      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>个人照片限制 ( 单位: KB )</b><br>( 留空禁止上传 )" ,
@@ -2388,7 +2388,7 @@ class ad_groups
 												  $this->ipsclass->adskin->form_yes_no("g_access_cp", $group['g_access_cp'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许回复锁定的主题 'closed' topics?" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许回复锁定的主题 '关闭'?" ,
 												  $this->ipsclass->adskin->form_yes_no("g_post_closed", $group['g_post_closed'] )
 									     )      );
 									     
