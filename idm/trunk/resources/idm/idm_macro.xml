@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<macroexport exported="1135883784">
+	<macrogroup>
+		<macro>
+			<macro_value>A_FILE</macro_value>
+			<macro_replace><![CDATA[<img src='style_images/<#IMG_DIR#>/add_file.gif' border='0'  alt='Add File' />]]></macro_replace>
+		</macro>
+		<macro>
+			<macro_value>DL_SEARCH</macro_value>
+			<macro_replace><![CDATA[<img src='style_images/<#IMG_DIR#>/search.gif' border='0'  alt='Search Files' />]]></macro_replace>
+		</macro>
+		<macro>
+			<macro_value>DL_OPTS</macro_value>
+			<macro_replace><![CDATA[<img src='style_images/<#IMG_DIR#>/mod_options.gif' border='0'  alt='Moderator Options' />]]></macro_replace>
+		</macro>		
+		<macro>
+			<macro_value>P_APPROVE</macro_value>
+			<macro_replace><![CDATA[<img src='style_images/<#IMG_DIR#>/p_approve.gif' border='0' alt='Approve' />]]></macro_replace>
+		</macro>	
+	</macrogroup>
+
+</macroexport>

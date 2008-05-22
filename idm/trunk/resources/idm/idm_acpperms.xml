@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<permsexport exported="1183147841" versionid="2.1.0" type="master">
+	<permsgroup>
+		<perm>
+			<acpperm_bit>settings</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+
+		<perm>
+			<acpperm_bit>categories</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+
+		<perm>
+			<acpperm_bit>customfields</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+
+		<perm>
+			<acpperm_bit>groups</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+
+		<perm>
+			<acpperm_bit>idx</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+
+		<perm>
+			<acpperm_bit>mime</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+
+		<perm>
+			<acpperm_bit>stats</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+
+		<perm>
+			<acpperm_bit>tools</acpperm_bit>
+			<acpperm_main>components</acpperm_main>
+			<acpperm_child>downloads</acpperm_child>
+		</perm>
+	</permsgroup>
+
+</permsexport>
