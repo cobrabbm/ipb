@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<export exported="1193776990">
+	<group>
+
+		<row>
+			<task_id>17</task_id>
+			<task_title>IP.Downloads update file views</task_title>
+			<task_file>idm_views.php</task_file>
+			<task_next_run>1193778060</task_next_run>
+			<task_week_day>-1</task_week_day>
+			<task_month_day>-1</task_month_day>
+			<task_hour>-1</task_hour>
+			<task_minute>59</task_minute>
+			<task_cronkey>05d72cfb0f17c5f481e3f5299c9fa22f</task_cronkey>
+			<task_log>1</task_log>
+			<task_description>This task updates the file views that are stored for updating</task_description>
+			<task_enabled>1</task_enabled>
+			<task_key>idm_views</task_key>
+			<task_safemode>1</task_safemode>
+			<task_locked>0</task_locked>
+		</row>
+
+
+		<row>
+			<task_id>26</task_id>
+			<task_title>IP.Downloads Clear Old Sessions</task_title>
+			<task_file>idm_sessions.php</task_file>
+			<task_next_run>1193797920</task_next_run>
+			<task_week_day>-1</task_week_day>
+			<task_month_day>-1</task_month_day>
+			<task_hour>6</task_hour>
+			<task_minute>-1</task_minute>
+			<task_cronkey>eb83331e18bc97ebe6001ef214e340c0</task_cronkey>
+			<task_log>1</task_log>
+			<task_description>Cleares started download sessions</task_description>
+			<task_enabled>1</task_enabled>
+			<task_key>idm_sessions</task_key>
+			<task_safemode>1</task_safemode>
+			<task_locked>0</task_locked>
+		</row>
+
+		<row>
+			<task_id>27</task_id>
+			<task_title>IP.Downloads Log Pruning</task_title>
+			<task_file>idm_prune.php</task_file>
+			<task_next_run>1193792400</task_next_run>
+			<task_week_day>-1</task_week_day>
+			<task_month_day>-1</task_month_day>
+			<task_hour>1</task_hour>
+			<task_minute>0</task_minute>
+			<task_cronkey>c68b27ab474502374e2d6fb2f6ba4934</task_cronkey>
+			<task_log>1</task_log>
+			<task_description>Prunes download logs older than the configured cut off</task_description>
+			<task_enabled>1</task_enabled>
+			<task_key>idm_prune</task_key>
+			<task_safemode>0</task_safemode>
+			<task_locked>0</task_locked>
+		</row>
+	</group>
+
+</export>

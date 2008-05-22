@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<componentexport exported="1205442509">
+	<componentgroup>
+		<component>
+			<com_id>6</com_id>
+			<com_title>IP.Downloads Manager</com_title>
+			<com_author>Invision Power Services Inc</com_author>
+			<com_url></com_url>
+			<com_version>1.2.1</com_version>
+			<com_date_added>1155916141</com_date_added>
+			<com_menu_data><![CDATA[a:8:{i:1;a:5:{s:9:"menu_text";s:8:"Overview";s:8:"menu_url";s:7:"req=idx";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:3:"idx";s:13:"menu_permlang";s:8:"Overview";}i:11;a:5:{s:9:"menu_text";s:8:"Settings";s:8:"menu_url";s:12:"req=settings";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:8:"settings";s:13:"menu_permlang";s:13:"Edit Settings";}i:111;a:5:{s:9:"menu_text";s:10:"Categories";s:8:"menu_url";s:14:"req=categories";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:10:"categories";s:13:"menu_permlang";s:17:"Manage Categories";}i:1111;a:5:{s:9:"menu_text";s:6:"Groups";s:8:"menu_url";s:10:"req=groups";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:6:"groups";s:13:"menu_permlang";s:25:"Manage Group Restrictions";}i:11111;a:5:{s:9:"menu_text";s:13:"Custom Fields";s:8:"menu_url";s:16:"req=customfields";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:12:"customfields";s:13:"menu_permlang";s:20:"Manage Custom Fields";}i:111111;a:5:{s:9:"menu_text";s:18:"Mime-Type Settings";s:8:"menu_url";s:8:"req=mime";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:4:"mime";s:13:"menu_permlang";s:17:"Manage Mime-types";}i:1111111;a:5:{s:9:"menu_text";s:5:"Tools";s:8:"menu_url";s:9:"req=tools";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:5:"tools";s:13:"menu_permlang";s:17:"Allow Tool Access";}i:1111112;a:5:{s:9:"menu_text";s:10:"Statistics";s:8:"menu_url";s:9:"req=stats";s:13:"menu_redirect";i:0;s:12:"menu_permbit";s:5:"stats";s:13:"menu_permlang";s:17:"Review Statistics";}}]]></com_menu_data>
+			<com_enabled>1</com_enabled>
+			<com_safemode>0</com_safemode>
+			<com_section>downloads</com_section>
+			<com_filename>downloads</com_filename>
+			<com_description>Settings for the IP.Downloads Manager Component</com_description>
+			<com_url_title><![CDATA[{ipb.lang['idm_header']}]]></com_url_title>
+			<com_url_uri>{ipb.base_url}autocom=downloads</com_url_uri>
+			<com_position>1</com_position>
+		</component>
+	</componentgroup>
+
+</componentexport>
