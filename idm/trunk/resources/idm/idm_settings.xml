@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settingexport exported="1205442343">
+	<settinggroup>
+		<setting>
+			<conf_title_title>IP.Download Manager</conf_title_title>
+			<conf_title_desc>These settings allow you to configure your Invision Download Manager.</conf_title_desc>
+			<conf_title_noshow>1</conf_title_noshow>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_title_module>downloads.php</conf_title_module>
+			<conf_is_title>1</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>251</conf_id>
+			<conf_title>Download Manager Online?</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_online</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>1</conf_position>
+			<conf_start_group>General Settings</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>252</conf_id>
+			<conf_title>Offline Message</conf_title>
+			<conf_description><![CDATA[Enter the offline message you wish to display to users when the Download Manager is offline.<br /><span style='color:gray;'>HTML enabled</span>]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>textarea</conf_type>
+			<conf_key>idm_offline_msg</conf_key>
+			<conf_value></conf_value>
+			<conf_default>Hello and thank you for visiting our Download Manager.  Unfortunately it is temporarily offline for maintenance.  Please check back soon!</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp>if( $show == 1 )
+{
+ $value = htmlspecialchars($value);
+}</conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>2</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>253</conf_id>
+			<conf_title>Offline Access</conf_title>
+			<conf_description>Please select the groups who can access the Download Manager when it is offline.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>multi</conf_type>
+			<conf_key>idm_offline_groups</conf_key>
+			<conf_value></conf_value>
+			<conf_default></conf_default>
+			<conf_extra>#show_groups#</conf_extra>
+			<conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['idm_offline_groups']) )
+	{
+		$_POST['idm_offline_groups'] = implode(",",$_POST['idm_offline_groups']);
+	}
+	else
+	{
+		$_POST['idm_offline_groups'] = "";
+	}
+	
+	$key = 'idm_offline_groups';
+}
+if ( $show == 1 )
+{
+    $key='idm_offline_groups[]';
+}]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>3</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>254</conf_id>
+			<conf_title>Display Approver Information?</conf_title>
+			<conf_description><![CDATA[Display who approved files to the public?<br /><br />*Note: the information will display to moderators regardless of this setting]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_show_approver</conf_key>
+			<conf_value>0</conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>4</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>255</conf_id>
+			<conf_title>Enable RSS Feed?</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_rss</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>5</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>256</conf_id>
+			<conf_title>Default files per page</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_filesperpage</conf_key>
+			<conf_value></conf_value>
+			<conf_default>10</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if( ! intval($value) )
+{
+ $value = 10;
+}
+if( intval($value) < 0 )
+{
+ $value = 10;
+}]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>10</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>257</conf_id>
+			<conf_title>Files per page options</conf_title>
+			<conf_description>Separate values with a ,</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_ddfilesperpage</conf_key>
+			<conf_value></conf_value>
+			<conf_default>5,10,15,20,25</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if ( $save == 1 )
+{
+    if ( $_POST['idm_ddfilesperpage'] )
+    {
+        $arr = explode( ",", $_POST['idm_ddfilesperpage'] );
+        
+        if ( is_array( $arr ) )
+        {
+            foreach( $arr as $k => $v )
+            {
+                if( intval( $v ) > 0 )
+                {
+                    $final_arr[] = $v;
+                }
+            }
+            
+            if ( is_array( $final_arr ) )
+            {
+                $_POST['idm_ddfilesperpage'] = implode( ",", $final_arr );
+            }
+            else
+            {
+                $_POST['idm_ddfilesperpage'] = "5,10,15,20,25";
+            }
+        }
+        else
+        {
+            $_POST['idm_ddfilesperpage'] = "5,10,15,20,25";
+        }
+    }
+    else
+    {
+        $_POST['idm_ddfilesperpage'] = "5,10,15,20,25";
+    }
+    
+    $key = 'idm_ddfilesperpage';
+}]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>20</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>258</conf_id>
+			<conf_title>Notify submitters upon file approval?</conf_title>
+			<conf_description>Notification type to send when files are approved/declined</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>idm_file_notification</conf_key>
+			<conf_value></conf_value>
+			<conf_default>p</conf_default>
+			<conf_extra>n=No Notification
+p=Send Private Message
+e=Send Email Message
+b=Send PM and Email</conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>21</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>259</conf_id>
+			<conf_title>Comment Display</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>idm_comment_display</conf_key>
+			<conf_value>in</conf_value>
+			<conf_default>pop</conf_default>
+			<conf_extra>in=Inline
+pop=Pop-Up</conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>22</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>260</conf_id>
+			<conf_title>Comments Per Page</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_comments_num</conf_key>
+			<conf_value></conf_value>
+			<conf_default>10</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>23</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>261</conf_id>
+			<conf_title>Require approval of comments</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_comment_approval</conf_key>
+			<conf_value>1</conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>24</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>262</conf_id>
+			<conf_title>Allow members to edit their comments</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_comment_edit</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>27</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>263</conf_id>
+			<conf_title>Allow members to delete their comments</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_comment_delete</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>28</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>264</conf_id>
+			<conf_title>File Storage</conf_title>
+			<conf_description><![CDATA[Select your file storage method here.  Depending upon the file storage method specified, fill in the appropriate information below.
+<br /><br />
+Note: While available, database storage is only recommended as a last resort.
+<br /><br />
+You are responsible for manually creating the directories to store files and screenshots in.  Note that these directories must have full write privileges (on Linux, you should CHMOD the directories 777).]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>idm_filestorage</conf_key>
+			<conf_value></conf_value>
+			<conf_default>web</conf_default>
+			<conf_extra>web=Store locally in a web-accessible folder
+nonweb=Store locally in a non web-accessible folder
+ftp=Store files remotely through FTP transfer
+db=Store files in my database</conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>30</conf_position>
+			<conf_start_group>File Storage Settings</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>265</conf_id>
+			<conf_title>Local Storage: Download path</conf_title>
+			<conf_description>Tip: Use {root_path} to indicate your root forum directory.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_localfilepath</conf_key>
+			<conf_value>C:/wamp/www/idm/trunk/downloads</conf_value>
+			<conf_default>{root_path}/downloads</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>40</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>266</conf_id>
+			<conf_title>Local Storage: Screenshot Path</conf_title>
+			<conf_description>Tip: Use {root_path} to indicate your root forum directory.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_localsspath</conf_key>
+			<conf_value>C:/wamp/www/idm/trunk/screenshots</conf_value>
+			<conf_default>{root_path}/screenshots</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>50</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>267</conf_id>
+			<conf_title>Remote Storage: FTP URL</conf_title>
+			<conf_description><![CDATA[No ftp:// prefix
+<br /><br />
+Example: ftp.domain.com]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remoteurl</conf_key>
+			<conf_value>bfarber.invisionzone.com</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>60</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>268</conf_id>
+			<conf_title>Remote Storage: FTP Port</conf_title>
+			<conf_description>Port your FTP server will be listening on for incoming connections</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remoteport</conf_key>
+			<conf_value></conf_value>
+			<conf_default>21</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>70</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>269</conf_id>
+			<conf_title>Remote Storage: FTP Username</conf_title>
+			<conf_description>Example: john_doe</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remoteuser</conf_key>
+			<conf_value>bfarber</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>80</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>270</conf_id>
+			<conf_title>Remote Storage: FTP Password</conf_title>
+			<conf_description>Example: some!@12_password</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remotepass</conf_key>
+			<conf_value>GDSLin346</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>90</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>271</conf_id>
+			<conf_title>Remote Storage: Path to downloads</conf_title>
+			<conf_description><![CDATA[Relative to the home directory for the FTP user
+<br /><br />
+Example: &#46;&#46;/private_files/downloads]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remotefilepath</conf_key>
+			<conf_value>public_html/cache</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>100</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>272</conf_id>
+			<conf_title>Remote Storage: Path to screenshots</conf_title>
+			<conf_description><![CDATA[Relative to the home directory for the FTP user
+<br /><br />
+Example: &#46;&#46;/private_files/screenshots]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remotesspath</conf_key>
+			<conf_value>public_html/cache</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>110</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>273</conf_id>
+			<conf_title>Remote Storage: URL to downloads</conf_title>
+			<conf_description><![CDATA[URL to download the files from after transferring them via FTP to the remote server<br /><br />
+Example: ftp://myserver.com/private_files/downloads]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remotefileurl</conf_key>
+			<conf_value>ftp://bfarber:GDSLin346@bfarber.invisionzone.com/public_html/cache</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>120</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>274</conf_id>
+			<conf_title>Remote Storage: URL to screenshots</conf_title>
+			<conf_description>URL to download the screenshots from after transferring them via FTP to the remote server</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_remotessurl</conf_key>
+			<conf_value>ftp://bfarber:GDSLin346@bfarber.invisionzone.com/public_html/cache</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp><![CDATA[if( substr($value,-1) == "/")
+{
+  $value = substr($value,0,-1);
+}
+]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>130</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>334</conf_id>
+			<conf_title>Allow URL file link submissions</conf_title>
+			<conf_description><![CDATA[Do you wish to allow users to submit links instead of uploading a file?<br /><br />
+Note that certain information, such as file size or mimetype for example, may be missing or inaccurate.]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_allow_urls</conf_key>
+			<conf_value>1</conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>32</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>275</conf_id>
+			<conf_title>Enable Anti-leech?</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_antileech</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>140</conf_position>
+			<conf_start_group>Security</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>276</conf_id>
+			<conf_title>Copyright-stamp screenshots?</conf_title>
+			<conf_description>Write a copyright onto the screenshot</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_addcopyright</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>150</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>277</conf_id>
+			<conf_title>Copyright-stamp text</conf_title>
+			<conf_description><![CDATA[<b>Note</b>: You can add one instance of %s which will be replaced with the current year.]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_copyrighttext</conf_key>
+			<conf_value></conf_value>
+			<conf_default>Copyright %s</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>160</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>278</conf_id>
+			<conf_title>Watermark-stamp Screenshots</conf_title>
+			<conf_description>If this is enabled, it overrides the copyright-stamp setting above.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_addwatermark</conf_key>
+			<conf_value>1</conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>170</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>279</conf_id>
+			<conf_title>Watermark-stamp Image</conf_title>
+			<conf_description>Enter the path to your image here</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_watermarkpath</conf_key>
+			<conf_value>{root_path}/style_images/1/idm_unhide.png</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>180</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>280</conf_id>
+			<conf_title>Allow members to edit their own files?</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_allow_edit</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>190</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>281</conf_id>
+			<conf_title>Allow members to delete their own files?</conf_title>
+			<conf_description>
+</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_allow_delete</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>200</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>282</conf_id>
+			<conf_title>Allow file edits to auto-post</conf_title>
+			<conf_description>Select no if you wish to preview file edits before they become public</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_allow_autoedit</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>210</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>283</conf_id>
+			<conf_title>Update Views immediately?</conf_title>
+			<conf_description>File view counts will be updated hourly if this setting is set to no.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_updateviews</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>220</conf_position>
+			<conf_start_group>Optimization</conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>357</conf_id>
+			<conf_title>Prune download logs?</conf_title>
+			<conf_description>Number of days to retain download logs</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_log_prune</conf_key>
+			<conf_value>15</conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>235</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>284</conf_id>
+			<conf_title>Log All Downloads?</conf_title>
+			<conf_description>This is useful for statistical purposes, but can cause a very large table of logged download requests on a heavily used system.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_logalldownloads</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>230</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>356</conf_id>
+			<conf_title>Screenshot popup style</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>idm_ss_popup</conf_key>
+			<conf_value></conf_value>
+			<conf_default>l</conf_default>
+			<conf_extra>l=Lightbox
+p=Standard popup</conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>8</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>285</conf_id>
+			<conf_title>Show Active Users</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_displayactive</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>240</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>355</conf_id>
+			<conf_title>Reported comments method</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>idm_reports</conf_key>
+			<conf_value></conf_value>
+			<conf_default>p</conf_default>
+			<conf_extra>p=Private Message
+e=Email</conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>26</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>286</conf_id>
+			<conf_title>Show Random Files</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_enablerandom</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>250</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>287</conf_id>
+			<conf_title>Number of random files to display</conf_title>
+			<conf_description>If you set the previous setting to yes, how many random files would you like to display?</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_randomfiles</conf_key>
+			<conf_value></conf_value>
+			<conf_default>5</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp>if( $save == 1 )
+{
+ if( $value == 0 )
+ {
+  $value == 5;
+ }
+}</conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>260</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>288</conf_id>
+			<conf_title>Type of search to use?</conf_title>
+			<conf_description><![CDATA[Set to the type of search-method you would like to use.<br /><br />
+Soundex searching enables the capability of matching 'sounds like' strings.  For example, "blog" and "blogs" would match with soundex searching enabled.
+<br /><br />
+<!--FULLTEXT-->
+<br /><br />
+Use fulltext if available, else use Manual.]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>dropdown</conf_type>
+			<conf_key>idm_searchmethod</conf_key>
+			<conf_value>fulltext</conf_value>
+			<conf_default>soundex</conf_default>
+			<conf_extra>soundex=Soundex
+fulltext=Fulltext
+manual=Manual</conf_extra>
+			<conf_evalphp><![CDATA[if ( $show == 1 )
+{
+	$this->ipsclass->admin->get_mysql_version();
+	if ( $this->ipsclass->mysql_version < 32323 )
+	{
+		$full_text = "<span style='color:red'><b>FULL TEXT SEARCHING IS NOT AVAILABLE ON YOUR SERVER.</b></span>";
+	}
+	else
+	{
+		$full_text = "<b>Full text available</b>";
+	}
+	
+	
+	$r['conf_description'] = str_replace( "<!--FULLTEXT-->", $full_text, $r['conf_description'] );
+
+}]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>270</conf_position>
+			<conf_start_group>Searching</conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>354</conf_id>
+			<conf_title>Allow guests to report comments?</conf_title>
+			<conf_description>Do you wish to allow guests to report comments</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_guest_report</conf_key>
+			<conf_value></conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>25</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>348</conf_id>
+			<conf_title>Allow members to email links to files</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_allow_emaillinks</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>29</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>335</conf_id>
+			<conf_title>Allow file system link submissions</conf_title>
+			<conf_description><![CDATA[Do you wish to allow selected groups the ability to input a path to a file and have IDM import the file?<br /><br />
+File paths on the submission form are relative to the configured downloads storage folder]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_allow_path</conf_key>
+			<conf_value>1</conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>36</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>336</conf_id>
+			<conf_title>Which groups can import files?</conf_title>
+			<conf_description>Specify which groups can input a file system path from the submit form - typically only users who would have FTP access would be able to do so.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>multi</conf_type>
+			<conf_key>idm_path_users</conf_key>
+			<conf_value>4</conf_value>
+			<conf_default></conf_default>
+			<conf_extra>#show_groups#</conf_extra>
+			<conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['idm_path_users']) )
+	{
+		$_POST['idm_path_users'] = implode(",",$_POST['idm_path_users']);
+	}
+	else
+	{
+		$_POST['idm_path_users'] = "";
+	}
+	
+	$key = 'idm_path_users';
+}
+if ( $show == 1 )
+{
+    $key='idm_path_users[]';
+}]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>37</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>337</conf_id>
+			<conf_title>Enable Versioning Control</conf_title>
+			<conf_description>Only available for web- and nonweb- accessible storage types.</conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_versioning</conf_key>
+			<conf_value></conf_value>
+			<conf_default>1</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>6</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>338</conf_id>
+			<conf_title>Number of revisions to keep</conf_title>
+			<conf_description><![CDATA[Maximum revisions to keep<br /><strong>Note</strong>: Set to 0 for no limit]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>input</conf_type>
+			<conf_key>idm_versioning_limit</conf_key>
+			<conf_value>4</conf_value>
+			<conf_default>0</conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>7</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>347</conf_id>
+			<conf_title>Show Upload Progress Meter</conf_title>
+			<conf_description><![CDATA[If your system is capable, IP.Downloads can show an upload progress meter while files are uploading.<br /><br />
+<!--CAPABLE-->]]></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>yes_no</conf_type>
+			<conf_key>idm_progress_bar</conf_key>
+			<conf_value>0</conf_value>
+			<conf_default></conf_default>
+			<conf_extra></conf_extra>
+			<conf_evalphp></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>280</conf_position>
+			<conf_start_group>Progress Meter</conf_start_group>
+			<conf_end_group>1</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+
+		<setting>
+			<conf_id>353</conf_id>
+			<conf_title>Which groups can link to files?</conf_title>
+			<conf_description></conf_description>
+			<conf_group>29</conf_group>
+			<conf_type>multi</conf_type>
+			<conf_key>idm_groups_link</conf_key>
+			<conf_value>4</conf_value>
+			<conf_default></conf_default>
+			<conf_extra>#show_groups#</conf_extra>
+			<conf_evalphp><![CDATA[if ( $save == 1)
+{
+	if ( is_array($_POST['idm_groups_link']) )
+	{
+		$_POST['idm_groups_link'] = implode(",",$_POST['idm_groups_link']);
+	}
+	else
+	{
+		$_POST['idm_groups_link'] = "";
+	}
+	
+	$key = 'idm_groups_link';
+}
+if ( $show == 1 )
+{
+    $key='idm_groups_link[]';
+}]]></conf_evalphp>
+			<conf_protected>1</conf_protected>
+			<conf_position>33</conf_position>
+			<conf_start_group></conf_start_group>
+			<conf_end_group>0</conf_end_group>
+			<conf_add_cache>1</conf_add_cache>
+			<conf_title_keyword>idm</conf_title_keyword>
+			<conf_is_title>0</conf_is_title>
+		</setting>
+	</settinggroup>
+
+</settingexport>

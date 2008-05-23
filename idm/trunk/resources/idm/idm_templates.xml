@@ -1,0 +1,1946 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<templateexport exported="1205442447" versionid="220" type="master">
+	<templategroup>
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<tr>
+  <th width='31%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=ucp_files&amp;order=file_name&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_filename']}</a></th>
+  <th width='18%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=ucp_files&amp;order=file_submitted&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_submitted']}</a></th>
+  <th width='18%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=ucp_files&amp;order=file_updated&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_updated']}</a></th>
+  <th width='8%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=ucp_files&amp;order=file_downloads&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_downloads']}</a></th>
+  <th width='8%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=ucp_files&amp;order=file_views&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_views']}</a></th>
+  <th width='17%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=ucp_files&amp;order=file_rating&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_rating']}</a></th>
+ </tr>]]></section_content>
+			<func_name>ucp_files_thbar</func_name>
+			<func_data></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<tr>
+  <td class='row2{$file['shaded']}'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$file['file_id']}'>{$file['file_name']}</a></td>
+  <td class='row2{$file['shaded']}'>{$file['updated']}</td>
+  <td class='row2{$file['shaded']}' align='center'><input type='checkbox' name='rm_{$file['file_id']}' value='1' /></td>
+ </tr>]]></section_content>
+			<func_name>ucp_subs_favs_row</func_name>
+			<func_data>$file=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<tr>
+  <th width='50%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req={$this->ipsclass->input['req']}&amp;order=file_name&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_filename']}</a></th>
+  <th width='35%'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req={$this->ipsclass->input['req']}&amp;order=file_updated&amp;ascdesc={$this->ipsclass->input['ascdesc']}'>{$this->ipsclass->lang['ucp_updated']}</a></th>
+  <th width='15%'>&nbsp;</th>
+ </tr>]]></section_content>
+			<func_name>ucp_subs_favs_thbar</func_name>
+			<func_data></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[</table>
+</div>
+<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td width="60%">{$page_links}</td>
+		<td class='nopad'>&nbsp;</td>
+	</tr>
+</table>]]></section_content>
+			<func_name>ucp_main_end</func_name>
+			<func_data><![CDATA[$page_links=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<!--MESSAGE-->
+<div class="formsubtitle">{$lang}</div>
+<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td width="60%">{$page_links}</td>
+		<td class='nopad'>&nbsp;</td>
+	</tr>
+</table>
+<div class="borderwrapm">
+<table class='ipbtable' cellspacing="1">]]></section_content>
+			<func_name>ucp_main_header</func_name>
+			<func_data><![CDATA[$lang="",$page_links=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<form action='{$this->ipsclass->base_url}' method='post'>
+<input type='hidden' name='autocom' value='downloads' />
+<input type='hidden' name='req' value='{$this->ipsclass->input['req']}' />
+<input type='hidden' name='code' value='do_remove' />]]></section_content>
+			<func_name>ucp_start_form</func_name>
+			<func_data></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<div class="errorwrap">
+  <h4>{$this->ipsclass->lang['sform_errors_found']}</h4>
+  <p>{$message}</p>
+</div>
+<br />]]></section_content>
+			<func_name>submit_error_box</func_name>
+			<func_data><![CDATA[$message=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang[$lang]}</strong><br />
+<div align='left'>
+<if="$field=='file_ssurl' OR $field=='file_sspath'">
+<if="$file['require_ss'] == 1">
+{$this->ipsclass->lang['sform_requiress']}<br />
+</if>
+{$this->ipsclass->lang['sform_allowed']} {$file['allowed_ss']}
+<if="$field=='file_sspath'"><br />{$this->ipsclass->lang['ss_import_note']}</if></div>
+</if>
+<if="$field=='file_path'">
+{$this->ipsclass->lang['sform_allowed']} {$file['allowed_file']}<br />{$this->ipsclass->lang['import_note']}</div>
+</if></td>
+      <td align='left'><input type='text' name='{$field}' size='50' value='{$file[$field]}' />
+<if="$field=='file_ssurl'">
+<if="$file['file_ssurl']">
+&nbsp;<input type='checkbox' name='file_remove_screenshot' value='1' /> {$this->ipsclass->lang['sform_removess']}
+</if>
+</if>
+</td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>]]></section_content>
+			<func_name>text_input</func_name>
+			<func_data><![CDATA[$field="",$lang="",$file=array()]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<tr>
+  <td colspan='{$colspan}' class='row2' align='center'>{$this->ipsclass->lang['ucp_blank_row']}</td>
+ </tr>]]></section_content>
+			<func_name>ucp_blank_row</func_name>
+			<func_data>$colspan=0</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<tr>
+ <td colspan='{$colspan}' class='formbuttonrow' align='center'><input type='submit' value='{$this->ipsclass->lang['ucp_rm_sel']}' /></form></td>
+</tr>]]></section_content>
+			<func_name>ucp_end_form</func_name>
+			<func_data>$colspan=0</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_ucp</group_name>
+			<section_content><![CDATA[<tr>
+  <td class='row2{$file['shaded']}'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$file['file_id']}'>{$file['file_name']}</a></td>
+  <td class='row2{$file['shaded']}'>{$file['submitted']}</td>
+  <td class='row2{$file['shaded']}'>{$file['updated']}</td>
+  <td class='row2{$file['shaded']}' align='center'>{$file['file_downloads']}</td>
+  <td class='row2{$file['shaded']}' align='center'>{$file['file_views']}</td>
+  <td class='row2{$file['shaded']}'>{$file['file_rating']}</td>
+ </tr>]]></section_content>
+			<func_name>ucp_files_row</func_name>
+			<func_data>$file=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<div style='padding-left:4px;'>
+<select name="{$name}">
+	{$options}
+</select>
+</div>]]></section_content>
+			<func_name>cfield_dropdown</func_name>
+			<func_data><![CDATA[$name="",$options=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<textarea cols="60" rows="5" wrap="soft" name="{$name}">{$value}</textarea>]]></section_content>
+			<func_name>cfield_textarea</func_name>
+			<func_data><![CDATA[$name="",$value=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<input type="text" size="50" name="{$name}" value='{$value}' />]]></section_content>
+			<func_name>cfield_textinput</func_name>
+			<func_data><![CDATA[$name="",$value=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<if="count($cfields)">
+<tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+		<foreach="$cfields as $field">
+			<tr>
+				<td align='right' valign="top" width='20%'>
+					<strong>{$field['name']}</strong><br /><div align='left'>{$field['desc']}
+					<if="$field['req']"><br /><span class='formdesc'>{$this->ipsclass->lang['cfield_required']}</span></if>
+					</div>
+				</td>
+				<td align='left'>{$field['form_element']}</td>
+			</tr>
+		</foreach>
+    </table>
+   </div>
+  </td>
+</tr>
+</if>]]></section_content>
+			<func_name>cfield_wrapper</func_name>
+			<func_data>$cfields=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<tr>
+        	<td colspan="2" align="center" class="bgl">
+         		<div style="width:100%;" align="center" class="borderwrap">
+         			<table cellpadding="0" cellspacing="0" width="100%" class="darkrow3">	
+						<tr>
+							<td align="right" width='20%'><strong>{$this->ipsclass->lang['guest_captcha']}</strong></td>
+							<td align="left" width='80%'>
+			 					<input type="text" size="50" maxlength="10" name="captcha" value="" /> <!--CAPTCHA.IMAGE-->
+							</td>
+		   				</tr>
+     				</table>
+     			</div>
+     		</td>
+		</tr>]]></section_content>
+			<func_name>guest_captcha</func_name>
+			<func_data></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<!--ERROR_MSG-->
+<form action='{$this->ipsclass->base_url}' method='post' id='postingform' onsubmit='<if="$this->ipsclass->vars['idm_progress_bar']">triggerProgressBar(); </if>return ValidateForm()' enctype='multipart/form-data' name='REPLIER'>
+<input type='hidden' name='autocom' value='downloads' />
+<input type='hidden' name='req' value='submit' />
+<input type='hidden' name='code' value='{$default['code']}' />
+<input type='hidden' name='id' value='{$default['file_id']}' />
+<input type='hidden' name='file_cat' value='{$default['file_cat']}' />
+<if="$this->ipsclass->vars['idm_progress_bar']">
+<input type="hidden" name="APC_UPLOAD_PROGRESS" id="progress_key" value="{$default['unique_id']}"/>
+<input type="hidden" name="UPLOAD_IDENTIFIER" id="progress_key" value="{$default['unique_id']}"/>
+<script type='text/javascript' src='jscripts/idm_fileview.js'></script>
+<div class='borderwrap' id='uploadProgress' style='display:none; width:420px;'>
+ <div class='maintitle' id='uploadProgressHandle'>{$this->ipsclass->lang['idm_upload_progress']}</div>
+ <div class='tablepad' id='uploadProgressContainer'>
+  <div style='padding-top: 4px; padding-bottom: 4px;white-space: nowrap; width: 400px;'><img src='{$this->ipsclass->vars['img_url']}/bar_left.gif' alt='Bar1' height='11px' /><img src='{$this->ipsclass->vars['img_url']}/bar.gif' id='progressBar' alt='Bar2' height='11px' /><img src='{$this->ipsclass->vars['img_url']}/bar_right.gif' alt='Bar3' height='11px' /></div>
+  <div align='center' id='progressText'>{$this->ipsclass->lang['idm_uploaded_st']} <span id='uploadPCT'>0%</span> (<span id='uploadSOFAR'>0</span> {$this->ipsclass->lang['idm_uploaded_of']} <span id='uploadTOTAL'>0</span> , <span id='uploadSPEED'>0</span> {$this->ipsclass->lang['idm_uploaded_bps']})</div>
+  <div align='center' style='display:none;' id='uploadTTLdiv'>{$this->ipsclass->lang['idm_uploaded_est']} <span id='uploadTTL'>0</span></div>
+  <br clear='all' />
+ </div>
+</div>
+</if>
+<div class="borderwrap">
+<table class='ipbtable' cellspacing="1">
+ <tr>
+	<td class="maintitle" colspan='2'><{CAT_IMG}>&nbsp;{$default['header_lang']}{$this->ipsclass->lang['sform_filelang']} : {$default['cat_cname']}</td>
+ </tr>
+<if="$default['edit_cat_link']">
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td align='left'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=submit&amp;code=edit_cat&amp;id={$default['file_id']}'><strong>{$default['edit_cat_link']}</strong></a></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+</if>
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang['sform_filename']}</strong></td>
+      <td align='left'><input name='file_name' type='text' size='50' value='{$default['file_name']}' /> </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ </table>
+ <div style='padding:0px 1px 0px 1px' class='bg1'>
+ 	<table cellspacing="0"  width='100%' style='padding:3px'>
+		<tr> 
+ 			<td colspan="2" align="center" class="bgl">
+ 				<div align='center' class='borderwrap'>
+ 					<table cellpadding='0' cellspacing='0' width='100%' class='darkrow3' style='padding:5px;'>
+  						<tr>
+   							<td align='center' valign="top">
+   							<!--FILE_DESCRIPTION-->
+   							</td>
+  						</tr>
+ 					</table>
+ 				</div>
+ 			</td>
+		</tr>
+	</table>
+ </div>
+ <table cellspacing="0" class='ipbtable'>
+{$cfields}
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang['sform_filefile']}</strong><br />
+<div align='left'>{$this->ipsclass->lang['sform_maxsize']}{$default['file_maxsize']}<br />
+{$this->ipsclass->lang['sform_allowed']} {$default['allowed_file']}</div></td>
+      
+		<td align='left'>
+			<if="$default['file_filename']">
+				<div id='uploadText'>
+					<b>{$this->ipsclass->lang['idm_alreadyuploaded']}</b>  <a href='#' onclick="ShowHide('uploadField','uploadText');return false;">{$this->ipsclass->lang['idm_reuploadfile']}</a>
+				</div>
+				<div style='display:none;' id='uploadField'>
+					<input type='file' name='file' size='50' />
+				</div>
+			<else />
+				<input type='file' name='file' size='50' />
+			</if>
+		</td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+<if="$this->ipsclass->vars['idm_allow_urls'] == 1 AND $default['allow_link']==1">
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang['sform_fileurl']}</strong><br />
+<div align='left'>{$this->ipsclass->lang['sform_allowed']} {$default['allowed_file']}</div></td>
+      <td align='left'><input type='text' name='file_url' size='50' value='{$default['file_url']}' /></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+</if>
+{$default['path_bar']}
+{$default['ss_bar']}
+<if="$this->ipsclass->vars['idm_allow_urls'] == 1 AND $default['allow_link']==1">
+{$default['ss_url_bar']}
+</if>
+{$default['ss_path_bar']}
+ <tr>
+  <td colspan='2' class='formbuttonrow' align='center'><input type='submit' value='{$default['button']}' /></td>
+ </tr>
+</table>
+</div>
+</form>]]></section_content>
+			<func_name>main_submit_form</func_name>
+			<func_data><![CDATA[$default=array(),$cfields=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<img name="pid{$pid}" src="{$this->ipsclass->vars['img_url']}/topic_unselected.gif" />]]></section_content>
+			<func_name>pid_image_unselected</func_name>
+			<func_data><![CDATA[$pid='']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<a href="{$this->ipsclass->base_url}autocom=downloads&amp;{$url}"><{BC_QUEUED_POSTS}></a>&nbsp;<span class="desc"><b>{$lang} {$cnt}</b></span>]]></section_content>
+			<func_name>que_indicator</func_name>
+			<func_data><![CDATA[$url="",$lang='',$cnt=0]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div id="qr_open" style="display: $show; position: relative;">
+	<form name="REPLIER" action="{$this->ipsclass->base_url}" method="post">
+	<input type="hidden" name="autocom" value="downloads" />
+	<input type="hidden" name="req" value="comments" />
+	<input type="hidden" name="code"  value="add_comment" />
+	<input type="hidden" name="id" value="{$this->ipsclass->input['showfile']}" />
+	<input type="hidden" name="fast_reply_used" value="1" />
+	<div class="borderwrap">
+	
+		<div class="maintitle"><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['qr_title']}</div>
+		<div style='padding:6px;' align="center" class='row2'>
+			<div id='fast-reply-controls' align='center' style='width:75%;padding:6px; margin:0 auto 0 auto' class="rte-buttonbar">
+				<table cellpadding="2" cellspacing="0" width='100%'>
+					<tr>
+		 				<td width='1%' align='left' nowrap='nowrap'>
+		  					<table class='ipbtable' cellspacing='1'>
+		   						<tr>
+		     						<td><div class="rte-normal" id="fast-reply_cmd_bold"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-bold.png"  alt="{$this->ipsclass->lang['js_tt_bold']}" title="{$this->ipsclass->lang['js_tt_bold']}" /></div></td>
+							     	<td><div class="rte-normal" id="fast-reply_cmd_italic"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-italic.png"  alt="{$this->ipsclass->lang['js_tt_italic']}" title="{$this->ipsclass->lang['js_tt_italic']}" /></div></td>
+							     	<td><div class="rte-normal" id="fast-reply_cmd_underline"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-underlined.png" alt="{$this->ipsclass->lang['js_tt_underline']}" title="{$this->ipsclass->lang['js_tt_underline']}" /></div></td>
+							   	 	<td><div class="rte-normal" id="fast-reply_cmd_createlink"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-link-button.png"  alt="{$this->ipsclass->lang['js_rte_lite_link']}" title="{$this->ipsclass->lang['js_rte_lite_link']}" /></div></td>
+								 	<td><div class="rte-normal" id="fast-reply_cmd_insertimage"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-image-button.png"  alt="{$this->ipsclass->lang['js_rte_lite_img']}" title="{$this->ipsclass->lang['js_rte_lite_img']}" /></div></td>
+								 	<td><div class="rte-normal" id="fast-reply_cmd_emoticon"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-emo-button.png"  alt="{$this->ipsclass->lang['js_tt_emoticons']}" title="{$this->ipsclass->lang['js_tt_emoticons']}" /></div></td>
+								 	<td><div class="rte-normal" id="fast-reply_cmd_ipb_quote"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-quote-button.png"  alt="{$this->ipsclass->lang['js_rte_lite_quote']}" title="{$this->ipsclass->lang['js_rte_lite_quote']}" /></div></td>
+								 	<td><div class="rte-normal" id="fast-reply_cmd_ipb_code"><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-code-button.png"  alt="{$this->ipsclass->lang['js_rte_lite_code']}" title="{$this->ipsclass->lang['js_rte_lite_code']}" /></div></td>
+								</tr>
+		 					</table>
+		 				</td>
+		 				<td width='98%'>&nbsp;</td>
+		 				<td width='1%' align='right' nowrap='nowrap'>
+							<table class='ipbtable' cellspacing='1'>
+	           					<tr>
+	               					<td>
+								   		<div class="rte-normal" id="fast-reply_resize_up" style='padding:0px;margin:0px;'><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-resize-up.gif"  alt="" /></div>
+								   		<div class="rte-normal" id="fast-reply_resize_down" style='padding:0px;margin:0px;padding-top:1px'><img src="style_images/<#IMG_DIR#>/folder_editor_images/rte-resize-down.gif"  alt="" title="" /></div>
+				   					</td>
+	           					</tr>
+	          				</table>
+		 				</td>
+					</tr>
+				</table>
+	   
+				<div style='padding-bottom:8px'>
+	    			<textarea style='margin:0px;padding:4px;width:98%' tabindex="1" name='Post' id='fast-reply_textarea' class='rte-iframe' cols='80' rows='15'>{$post}</textarea>
+	   			</div>
+	   
+	   			<div>
+					<div>
+						<input type="checkbox" name="enableemo" value="yes" class="checkbox" checked="checked" />&nbsp;{$this->ipsclass->lang['qr_add_smilie']} &#124;
+						<input type="checkbox" name="enablesig" value="yes" class="checkbox" checked="checked" />&nbsp;{$this->ipsclass->lang['qr_add_sig']}
+					</div>
+		    		<div style='margin-top:3px'>
+						<input type="submit" name="submit" value="{$this->ipsclass->lang['qr_submit']}" class="button" tabindex="2" accesskey="s" /> &nbsp;
+						<input type="submit" name="preview" value="{$this->ipsclass->lang['qr_more_opts']}" class="button" /> &nbsp;
+						<input type="button" name="qrc" onclick="ShowHide('qr_open','qr_closed');" value="{$this->ipsclass->lang['qr_closeit']}" class="button" />
+					</div>
+	   			</div>
+			</div>
+		</div>
+	</div>
+	</form>
+</div>
+<script type='text/javascript' src='jscripts/ips_text_editor_lite.js'></script>
+<script type='text/javascript'>
+<!--
+IPS_Lite_Editor[ 'fast-reply' ] = new ips_text_editor_lite( 'fast-reply' );
+IPS_Lite_Editor[ 'fast-reply' ].init();
+IPS_Lite_Editor[ 'fast-reply' ].text_obj.style.height = '150px';
+-->
+</script>]]></section_content>
+			<func_name>quick_reply_box_open</func_name>
+			<func_data><![CDATA[$show="hide",$key=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr>
+			<td class="formsubtitle" colspan="2">{$active['TOTAL']} {$this->ipsclass->lang['active_users_header']}</td>
+		</tr>
+		<tr>
+			<td class="row1" width="1%"><{F_ACTIVE}></td>
+			<td class="row2">
+				<b>{$active['GUESTS']}</b> {$this->ipsclass->lang['active_users_guests']}, <b>{$active['MEMBERS']}</b> {$this->ipsclass->lang['dactive_users_members']} <b>{$active['ANON']}</b> {$this->ipsclass->lang['active_users_anon']}
+				<div class="thin">{$active['NAMES']}</div>
+			</td>
+		</tr>]]></section_content>
+			<func_name>active_users</func_name>
+			<func_data>$active=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<if="$rating_id > 0">
+	<img src='{$this->ipsclass->vars['img_url']}/folder_topic_view/rating_{$rating_id}.gif' id='file-rating-img-main' border='0' alt='{$rating_id}' />
+<else />
+	<img src='{$this->ipsclass->vars['img_url']}/blank.gif' id='file-rating-img-main' border='0' alt='' />
+</if>]]></section_content>
+			<func_name>file_rating_image</func_name>
+			<func_data><![CDATA[$rating_id=0,$title='']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<script type='text/javascript' src='jscripts/idm_fileview.js'></script>
+<script type="text/javascript" src="jscripts/ips_text_editor_lite.js"></script>
+<script type='text/javascript'>
+<!--
+var js_error_no_permission 	= "{$this->ipsclass->lang['no_comments_perms']}";
+var idm_lang_prompt 		= "{$this->ipsclass->lang['idm_lang_prompt']}";
+var lang_gobutton			= "{$this->ipsclass->lang['mod_button']}";
+-->
+</script>
+<!--IBF.POPUP_CSS-->
+<br />
+<div class='borderwrap'>
+ <div class='tablepad' align='center'>{$this->ipsclass->lang['no_comments']}</div>
+</div>
+<br />]]></section_content>
+			<func_name>no_comments</func_name>
+			<func_data></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div class="borderwrap">
+	<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['older_versions']}</p>
+	</div>
+	<table class='ipbtable' cellspacing="1">
+	 <tr>
+	  <th width='30%'>{$this->ipsclass->lang['bversion_name']}</th>
+	  <th width='30%'>{$this->ipsclass->lang['bversion_filename']}</th>
+	  <th width='20%'>{$this->ipsclass->lang['bversion_updated']}</th>
+	  <th width='20%'>{$this->ipsclass->lang['bversion_ops']}</th>
+	 </tr>
+	 <if="is_array($rows) AND count($rows)">
+	  <foreach="$rows as $data">
+		<if="$canapp==1 OR $data['b_hidden']==0">
+		 	<tr>
+		  		<td class='{$data['css_1']}'>{$data['b_filetitle']}</td>
+		  		<td class='{$data['css_2']}'>{$data['b_filename']}</td>
+		  		<td class='{$data['css_1']}'>{$data['b_updated_formatted']}</td>
+		  		<td class='{$data['css_2']}'>
+		 		<if="$this->ipsclass->member['id'] > 0">
+		  			<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=download&amp;code=version_download&amp;id={$data['b_id']}' title='{$this->ipsclass->lang['bversion_alt_download']}'><img src='style_images/<#IMG_DIR#>/idm_down.png' alt='{$this->ipsclass->lang['bversion_alt_download']}' /></a>
+		  			<if="$canop==1">
+		  				<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=mod&amp;code=versions&amp;id={$data['b_fileid']}&amp;do=restore&amp;rid={$data['b_id']}' title='{$this->ipsclass->lang['bversion_alt_restore']}'><img src='style_images/<#IMG_DIR#>/idm_refresh.png' alt='{$this->ipsclass->lang['bversion_alt_restore']}' /></a>
+		   				<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=mod&amp;code=versions&amp;id={$data['b_fileid']}&amp;do=delete&amp;rid={$data['b_id']}' title='{$this->ipsclass->lang['bversion_alt_delete']}'><img src='style_images/<#IMG_DIR#>/idm_delete.png' alt='{$this->ipsclass->lang['bversion_alt_delete']}' /></a>
+		  			</if>
+		  			<if="$canapp==1">
+		   				<if="$data['b_hidden']==1">
+		  					<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=mod&amp;code=versions&amp;id={$data['b_fileid']}&amp;do=unhide&amp;rid={$data['b_id']}' title='{$this->ipsclass->lang['bversion_alt_unhide']}'><img src='style_images/<#IMG_DIR#>/idm_unhide.png' alt='{$this->ipsclass->lang['bversion_alt_unhide']}' /></a>
+		   				<else />
+		  					<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=mod&amp;code=versions&amp;id={$data['b_fileid']}&amp;do=hide&amp;rid={$data['b_id']}' title='{$this->ipsclass->lang['bversion_alt_hide']}'><img src='style_images/<#IMG_DIR#>/idm_hide.png' alt='{$this->ipsclass->lang['bversion_alt_hide']}' /></a>
+		   				</if>
+		  			</if>
+		 		<else />
+		  			{$this->ipsclass->lang['bversion_mustlogin']}
+		 		</if>
+				</td>
+		 	</tr>
+		</if>
+	 </foreach>
+	</if>
+	</table>
+</div>
+<br />]]></section_content>
+			<func_name>versions_row</func_name>
+			<func_data>$rows=array(),$canop=0,$canapp=0</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<script type='text/javascript'>
+file_rate = new file_rate();
+</script>
+
+<div class='popmenubutton' id='file-rating'>
+	<a href='#topicrating'>{$this->ipsclass->lang['topic_rating']}</a>
+	{$file['_rate_img']} <img src='{$this->ipsclass->vars['img_url']}/menu_action_down.gif' alt='V' title='{$this->ipsclass->lang['global_open_menu']}' border='0' />
+</div>
+<div id='file-rating_menu' class='popupmenu-new' style='display:none;width:140px'>
+	<div class='popupmenu-item'>
+		<div id='file-rating-wrapper'></div>
+	</div>
+	<div class='popupmenu-item'>
+		{$this->ipsclass->lang['you_have_rated_x']} <span id='file-rating-my-rating'>{$file['_rating_value']}</span>
+	</div>
+	<div class='popupmenu-item-last'>
+		{$this->ipsclass->lang['total_ratings']} <span id='file-rating-hits'>{$file['_rate_cnt']}</span>
+	</div>
+</div>
+<script type='text/javascript'>
+	ipsmenu.register( "file-rating" );
+	file_rate.settings['allow_rating']       = parseInt("{$file['_allow_rate']}");
+	file_rate.settings['default_rating']     = parseInt("{$file['_rate_int']}");
+	file_rate.settings['img_base_url']       = ipb_var_image_url + '/folder_topic_view';
+	file_rate.settings['div_rating_wrapper'] = 'file-rating-wrapper';
+	file_rate.settings['text_rating_image']  = 'file-rating-img-';
+	file_rate.settings['file_id']			 = parseInt("{$file['file_id']}");
+	
+	file_rate.languages['img_alt_rate']      = "{$this->ipsclass->lang['js_img_alt_rate']}";
+	file_rate.languages['rate_me']           = "{$this->ipsclass->lang['js_rate_me']}";
+	
+	file_rate.init_rating_images();	
+</script>]]></section_content>
+			<func_name>vote_pips</func_name>
+			<func_data>$file</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang['sform_screenshot']}</strong><br />
+<div align='left'>
+<if="$file['require_ss']">
+{$this->ipsclass->lang['sform_requiress']}<br />
+</if>
+{$this->ipsclass->lang['sform_maxsize']}{$file['ss_maxsize']}<br />
+{$this->ipsclass->lang['sform_allowed']} {$file['allowed_ss']}</div></td>
+      <td align='left'><input type='file' name='file_screenshot' size='50' />
+<if="$file['file_ssname']">
+&nbsp;<input type='checkbox' name='file_remove_screenshot' value='1' /> {$this->ipsclass->lang['sform_removess']}
+</if>
+</td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>]]></section_content>
+			<func_name>screenshot_submit</func_name>
+			<func_data>$file=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<div class="borderwrap">
+	<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['file_submit_start_form']}</p>
+	</div>
+        <form action='{$this->ipsclass->base_url}' method='post'>
+        <input type='hidden' name='autocom' value='downloads' />
+        <input type='hidden' name='req' value='submit' />
+        <input type='hidden' name='code' value='{$default['code']}' />
+        <input type='hidden' name='id' value='{$default['file_id']}' />
+	<table class='formtable' width='100%'>
+         <tr>
+          <td class='pformleft' width='30%'>{$this->ipsclass->lang['file_submit_nav_header']}:</td>
+          <td class='formright'> <select name='file_cat'>
+            {$dropdown}
+            </select>
+          </td>
+        </tr>
+        <tr>
+        <td class='formbuttonrow' align='center' colspan='2'><input type='submit' value='{$this->ipsclass->lang['continue_button']}' /></td>
+        </tr>
+        </table>
+        </form>
+</div>
+<br />]]></section_content>
+			<func_name>submission_start</func_name>
+			<func_data><![CDATA[$dropdown="",$default=array()]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_external</group_name>
+			<section_content><![CDATA[<a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$id}' title='{$name}'>{$name}</a>]]></section_content>
+			<func_name>file_link</func_name>
+			<func_data><![CDATA[$name="",$id=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<form action='{$this->ipsclass->base_url}' method='post' onsubmit='return ValidateForm();'>
+<input type='hidden' name='autocom' value='downloads' />
+<input type='hidden' name='id' value='{$file['file_id']}' />
+<input type='hidden' name='req' value='mod' />
+<input type='hidden' name='code' value='broken' />
+<input type='hidden' name='do_broken' value='1' />
+<div class="borderwrap">
+	<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['broken_reason']}</p>
+	</div>
+<table class='ipbtable' cellspacing="1">
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang['file_report_name']}</strong></td>
+      <td align='left'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$file['file_id']}'>{$file['file_name']}</a> </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+<tr>
+<td class='row1' colspan='2'>
+<!--BROKEN_EDITOR-->
+</td>
+</tr>
+<tr>
+<td class='formbuttonrow' colspan='2' align='center'><input type='submit' value='{$this->ipsclass->lang['broken_confirm']}' /></td>
+</tr>
+</table>
+</div>
+</form>]]></section_content>
+			<func_name>broken_file_reason</func_name>
+			<func_data><![CDATA[$file=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_submit</group_name>
+			<section_content><![CDATA[<form action="{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=doreportcomment" method="post" name="REPLIER">
+<input type="hidden" name="comment" value="{$data['comment_id']}" />
+<input type="hidden" name="st" value="{$data['st']}" />
+	<div class="borderwrap">
+		<div class="maintitle"><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['report_comment_page']}</div>
+		<table class="ipbtable" cellspacing='1'>
+			<tr>
+				<td class="row1"  width="30%" valign="top">{$this->ipsclass->lang['report_comment_msg']}</td>
+				<td class="row1" width="80%"><textarea cols="60" rows="12" wrap="soft" name="message" class="textarea"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td class="formbuttonrow" colspan="2"><input type="submit" value="{$this->ipsclass->lang['report_submit']}" class='button' /></td>
+			</tr>
+		</table>
+	</div>
+</form>]]></section_content>
+			<func_name>report_comment_form</func_name>
+			<func_data>$data=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_external</group_name>
+			<section_content><![CDATA[<br />
+<div class="borderwrap">
+	<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$lang}</p>
+	</div>
+	<table class='ipbtable' cellspacing="1">
+	<if="is_array($data) AND count($data)">
+	 <foreach="$data as $row">
+		<tr>
+		 <td class='row2' align='left' width='100%'>
+		 <b>{$row['filename']}</b>
+		 <if="$show_downloads==1">
+		 <span class='forumdesc'>({$row['file_downloads']} {$this->ipsclass->lang['mini_stats_downloads']})</span>
+		 </if><br />
+		{$this->ipsclass->lang['fileinfo_sby']} {$row['submitter']} {$this->ipsclass->lang['fileinfo_son']} {$row['file_submitteddis']}
+		 </td>
+		</tr>
+	</foreach>
+	<else />
+		<tr>
+		 <td class='row2' align='left' width='100%'>
+		  {$this->ipsclass->lang['cat_no_info']}
+		 </td>
+		</tr>
+	</if>
+	</table>
+</div>]]></section_content>
+			<func_name>portal_block</func_name>
+			<func_data><![CDATA[$lang='',$data=array(),$show_downloads=0]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$id}' title='{$name}'>{$name}</a>]]></section_content>
+			<func_name>file_link</func_name>
+			<func_data><![CDATA[$name="",$id=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<form action='{$this->ipsclass->base_url}' method='post' name='modform'>
+<input type='hidden' name='autocom' value='downloads' />
+<input type='hidden' name='req' value='mod' />
+<input type='hidden' name='code' value='multimod' />
+<input type='hidden' name='type' value='{$this->ipsclass->input['type']}' />
+<input type='hidden' name='catid' value='{$this->ipsclass->input['catid']}' />
+<input type="hidden" value="{$this->ipsclass->input['selectedfileids']}" name="selectedfileids" />
+<input type='hidden' name='doaction' value='move' />
+<div class="borderwrap">
+	<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['multimod_moveto']}</p>
+	</div>
+	<table class='ipbtable' cellspacing='1'>
+	 <tr>
+	  <td class='row1' width='25%'><strong>{$this->ipsclass->lang['multimod_cat']}</strong></td>
+	  <td class='row2'><select name='moveto'>{$categories}</select></td>
+	 </tr>
+	 <tr>
+	  <td class='formbuttonrow' colspan='2' align='center'><input type='submit' value='{$this->ipsclass->lang['multimod_submit']}' /></td>
+	 </tr>
+	</table>
+</div>
+</form>]]></section_content>
+			<func_name>get_moveto_cat</func_name>
+			<func_data>$categories</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<if="$mod==1 AND $option!=''">
+	<tr>
+		<td class="catend" align='right' colspan='7'>
+			<select name='doaction' style='vertical-align:middle;'>
+				<option value=''>{$this->ipsclass->lang['modact_select']}</option>
+				{$option}
+				<option value='del'>{$this->ipsclass->lang['modact_delete']}</option>
+			</select> &nbsp;<input type='submit' name='gobutton' value="{$this->ipsclass->lang['mod_button']}" class="button" /></form>
+		</td>
+	</tr>
+</if>
+<if="count($sort)">
+	<tr>
+		<td class="formbuttonrow" colspan="7" align='right'>
+			<form action='{$this->ipsclass->base_url}' method='post'>
+			<input type='hidden' name='autocom' value='downloads' />
+			<input type='hidden' name='showcat' value='{$sort['cid']}' />
+			<input type='hidden' name='dosort' value='1' />
+			<strong>{$this->ipsclass->lang['search_sortby2']}</strong>&nbsp;<select name='sort_key'>{$sort['key']}</select>&nbsp;<strong>{$this->ipsclass->lang['search_sortorder']}</strong>&nbsp;<select name='sort_by'>{$sort['by']}</select>&nbsp;<strong>{$this->ipsclass->lang['search_sortorder2']}&nbsp;{$this->ipsclass->lang['search_limitresults']}</strong>&nbsp;<select name='num'>{$sort['num']}</select>&nbsp;<strong>{$this->ipsclass->lang['search_limitresults2']}</strong> <input type='submit' value='{$this->ipsclass->lang['resort_button']}' /></form>
+		</td>
+	</tr>
+</if>
+	</table>
+</div>
+<if="$mod==1"><br /></if>]]></section_content>
+			<func_name>file_listing_bottom</func_name>
+			<func_data><![CDATA[$page_links="",$mod=0,$option='',$sort=array()]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div class="borderwrap" style="display:{$show['div_fc']}" id="fc_idm_rand">
+	<div class="maintitle">
+		<p class="expand"><a href="javascript:togglecategory('idm_rand', 0);"><{E_PLUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['randomfile_header']}</p>
+</div>
+	<div class="formsubtitle">
+<p>{$this->ipsclass->lang['randomfile_header']}</p>
+	</div>
+</div>
+<div class="borderwrap" style="display:{$show['div_fo']}" id="fo_idm_rand">
+	<div class="maintitle">
+		<p class="expand"><a href="javascript:togglecategory('idm_rand', 1);"><{E_MINUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['randomfile_header']}</p>
+	</div>
+<table cellpadding='2' cellspacing='1' class='ipbtable'>
+<tr>
+{$html}
+</tr>
+</table>
+</div>
+<br />]]></section_content>
+			<func_name>random_file_row</func_name>
+			<func_data><![CDATA[$html="",$show=array()]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr>
+<td colspan='2' class='row1' align='center' valign='middle'>
+<if="$id['file_ssname']!=''">
+<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=display&amp;code=ss&amp;full=1&amp;id={$id['file_id']}' onclick="PopUp('{$this->ipsclass->base_url}autocom=downloads&amp;req=display&amp;code=ss&amp;full=1&amp;id={$id['file_id']}','SS','640','480',1,1,1); return false;" <if="$this->ipsclass->vars['idm_ss_popup'] == 'l'">rel='lightbox'</if>><img src='{$this->ipsclass->base_url}autocom=downloads&amp;req=display&amp;code=ss&amp;id={$id['file_id']}' border='0' alt='{$this->ipsclass->lang['filescreenshot']}' /></a>
+<else />
+ <if="$id['file_ssurl']">
+ 	<if="$ssurl=@getimagesize($id['file_ssurl']) AND $ssurl[0]>$id['thumb_x']">
+ 		<a href='{$id['file_ssurl']}' onclick="PopUp('{$id['file_ssurl']}','SS','640','480',1,1,1); return false;" <if="$this->ipsclass->vars['idm_ss_popup'] == 'l'">rel='lightbox'</if>><img src='{$id['file_ssurl']}' width='{$id['thumb_x']}' border='0' alt='{$this->ipsclass->lang['filescreenshot']}' /></a>
+ 	<else />
+ 		<if="$ssurl=@getimagesize($id['file_ssurl']) AND $ssurl[1]>$id['thumb_y']">
+ 			<a href='{$id['file_ssurl']}' onclick="PopUp('{$id['file_ssurl']}','SS','640','480',1,1,1); return false;" <if="$this->ipsclass->vars['idm_ss_popup'] == 'l'">rel='lightbox'</if>><img src='{$id['file_ssurl']}' height='{$id['thumb_y']}' border='0' alt='{$this->ipsclass->lang['filescreenshot']}' /></a>
+ 		<else />
+ 			<a href='{$id['file_ssurl']}' onclick="PopUp('{$id['file_ssurl']}','SS','640','480',1,1,1); return false;" <if="$this->ipsclass->vars['idm_ss_popup'] == 'l'">rel='lightbox'</if>><img src='{$id['file_ssurl']}' border='0' alt='{$this->ipsclass->lang['filescreenshot']}' /></a>
+ 		</if>
+ 	</if>
+ <else />
+ {$this->ipsclass->lang['ss_notavail2']}
+ </if>
+</if>
+</td>
+</tr>]]></section_content>
+			<func_name>screenshot_inline</func_name>
+			<func_data>$id=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr>
+			<td class="catend" colspan="6" align='right'><!--no content--></td>
+		</tr>
+	</table>
+</div>
+<table cellspacing="0">
+	<tr>
+		<td style='padding:5px 0px 5px 0px' width="60%">{$page_links}</td>
+		<td class='nopad'>&nbsp;</td>
+	</tr>
+</table>
+<br />]]></section_content>
+			<func_name>search_bottom</func_name>
+			<func_data><![CDATA[$page_links=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div class="borderwrap">
+<script type="text/javascript" src='jscripts/ipb_xhr_findnames.js'></script>
+<form action='{$this->ipsclass->base_url}' method='post' id='searchform'>
+<input type='hidden' name='autocom' value='downloads' />
+<input type='hidden' name='req' value='search' />
+<input type='hidden' name='code' value='do_search' />
+<div class='maintitle'><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['search_formheader']}</div>
+<table class='ipbtable' cellspacing="1">
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang['search_keywords']}</strong></td>
+      <td align='left'>
+      	<input name='search_keywords' type='text' size='50' value='{$this->ipsclass->input['search_keywords']}' />
+      	 <b>{$this->ipsclass->lang['search_sortorder']}</b> <select name='search_in'>
+      		<option value='both'<if="$this->ipsclass->input['search_in'] == 'both'"> selected='selected'</if>>{$this->ipsclass->lang['searchin_idmboth']}</option>
+      		<option value='titles'<if="$this->ipsclass->input['search_in'] == 'titles'"> selected='selected'</if>>{$this->ipsclass->lang['searchin_idmtitles']}</option>
+      		<option value='desc'<if="$this->ipsclass->input['search_in'] == 'desc'"> selected='selected'</if>>{$this->ipsclass->lang['searchin_idmdesc']}</option>
+      	</select>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right' valign='top'><strong>{$this->ipsclass->lang['search_category']}</strong><div class='forumdesc'>{$this->ipsclass->lang['search_cat_extra']}</div></td>
+      <td align='left'><select name='search_cat[]' multiple='multiple' size='4'>{$cat_options}</select></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='20%' align='right'><strong>{$this->ipsclass->lang['search_author']}</strong></td>
+      <td align='left'><input type='text' name='search_author' id='search_author' size='50' value='{$this->ipsclass->input['search_author']}' autocomplete='off' />
+<div id='ipb-get-members' style='border:1px solid #000; background:#FFF; padding:2px;position:absolute;width:310px;display:none;z-index:1'></div></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td colspan='2' align='left'><strong>{$this->ipsclass->lang['search_date_a']}</strong>&nbsp;&nbsp;<input type='text' name='search_date_1' size='10' value='{$this->ipsclass->input['search_date_1']}' />&nbsp;&nbsp;<strong>{$this->ipsclass->lang['search_date_b']}</strong>&nbsp;&nbsp;<input type='text' name='search_date_2' size='10' value='{$this->ipsclass->input['search_date_2']}' /></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <!--CUSTOM_FIELDS-->
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td colspan='2' align='center'><select name='search_andor'><option value='AND'{$andor['and']}>{$this->ipsclass->lang['search_matchall']}</option><option value='OR'{$andor['or']}>{$this->ipsclass->lang['search_matchany']}</option></select>&nbsp;&nbsp;<strong>{$this->ipsclass->lang['search_sortby']}</strong>&nbsp;<select name='sort_key'>{$sortkey}</select>&nbsp;<strong>{$this->ipsclass->lang['search_sortorder']}</strong>&nbsp;<select name='sort_by'>{$sortby}</select>&nbsp;<strong>{$this->ipsclass->lang['search_sortorder2']}&nbsp;{$this->ipsclass->lang['search_limitresults']}</strong>&nbsp;<select name='num'>{$limit}</select>&nbsp;<strong>{$this->ipsclass->lang['search_limitresults2']}</strong></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr>
+  <td colspan='2' class='formbuttonrow' align='center'><input type='submit' value='{$this->ipsclass->lang['search_dosearch']}' /></td>
+ </tr>
+</table>
+</form>
+<script type="text/javascript">
+// INIT find names
+init_js( 'searchform', 'search_author', 'get-member-names');
+// Run main loop
+setTimeout( 'main_loop()', 10 );
+</script>
+</div>]]></section_content>
+			<func_name>search_form</func_name>
+			<func_data><![CDATA[$cat_options="",$limit="",$sortkey="",$sortby="",$andor=array()]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<td class='row2' valign='top' align='middle' width='{$data['width']}%'><if="$data['file_id']==0">
+&nbsp;
+<else />
+{$data['screenshot_spot']}<br /><br />
+{$this->ipsclass->lang['filename']}: <a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$data['file_id']}' title='{$data['file_name']}'>{$data['file_name']}</a><br />
+{$this->ipsclass->lang['filecategory']}: <a href='{$this->ipsclass->base_url}autocom=downloads&amp;showcat={$data['file_cat']}' title='{$data['file_category']}'>{$data['file_category']}</a>
+</if>
+</td>]]></section_content>
+			<func_name>random_file_block</func_name>
+			<func_data>$data=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<img name="pid{$pid}" src="{$this->ipsclass->vars['img_url']}/topic_selected.gif" />]]></section_content>
+			<func_name>pid_image_selected</func_name>
+			<func_data><![CDATA[$pid='']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr>
+   <td colspan='<if="$mod==1">7<else />6</if>' class='row2' align='center'><i>{$this->ipsclass->lang['no_files_in_category']}</i></td>
+  </tr>]]></section_content>
+			<func_name>file_listing_empty</func_name>
+			<func_data>$mod=0</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr> 
+			<th colspan="2" width="35%">{$this->ipsclass->lang['fileinfo_name']}</th>
+			<th style='text-align:center;' width="7%">{$this->ipsclass->lang['fileinfo_views']}</th>
+			<th style='text-align:center;' width="7%">{$this->ipsclass->lang['fileinfo_downloads']}</th>
+			<th style='text-align:center;' width="7%">{$this->ipsclass->lang['fileinfo_rating']}</th>
+			<th style='text-align:center;' width="66%">{$this->ipsclass->lang['fileinfo_submitted']}</th>
+<if="$mod==1">
+			<th style='text-align:center;' width="5%"><a href="#" title="{$this->ipsclass->lang['click_for_mod']}" onclick="toggle_select_all( '{$formname}' ); return false;"><img name='files-all-{$formname}' id='files-all-{$formname}' src='{$this->ipsclass->vars['board_url']}/style_images/{$this->ipsclass->skin['_imagedir']}/topic_unselected.gif' /></a></th>
+</if>
+		</tr>]]></section_content>
+			<func_name>file_listing_thbar</func_name>
+			<func_data><![CDATA[$mod=0, $formname='modform']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div id='comment-ignore-{$data['comment_id']}' style='display:none'>
+ <div class="postcolor" id='comment-{$data['comment_id']}'>
+   <strong>{$this->ipsclass->lang['ignore_first_line']} {$data['members_display_name']}.</strong>
+   <br />
+   <br />
+   &middot; <a href="#" onclick="return show_ignored_post('{$data['comment_id']}')">{$this->ipsclass->lang['ignore_view_post']}</a>
+   <br />
+   &middot; <a href="{$this->ipsclass->base_url}act=UserCP&amp;CODE=ignoreremove&amp;id={$data['comment_mid']}">{$this->ipsclass->lang['ignore_unignore']} {$data['members_display_name']}</a>
+ </div>
+</div>
+<script type='text/javascript'>
+	init_ignored_post( {$data['comment_id'] } );
+</script>]]></section_content>
+			<func_name>comment_ignored</func_name>
+			<func_data>$data=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div class="borderwrap">
+<table class='ipbtable' cellspacing="1">
+ <tr>
+	<td class="maintitle" colspan='2'><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['dpage_header']} : {$info['file_name']}</td>
+ </tr>
+ <tr>
+  <td colspan='2' class='bg1' align='center'>
+   <div style='width:100%;' align='center' class='borderwrap'>
+    <table cellpadding='0' cellspacing='0' width='100%' class='darkrow3'>
+     <tr>
+      <td width='100%' align='left'><strong>{$this->ipsclass->lang['dpage_starting']}</strong>
+      <div>{$info['disclaimer']}</div></td>
+     </tr>
+    </table>
+   </div>
+  </td>
+ </tr>
+ <tr>
+   <td colspan='2' class='formbuttonrow' align='center'>
+   <if="$info['file_url']">
+   	<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=download&amp;code=do_download&amp;id={$info['file_id']}' target='_blank'>
+   <else />
+    <a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=download&amp;code=do_download&amp;id={$info['file_id']}' target='_self'>
+   </if><span class='fauxbutton'>{$this->ipsclass->lang['dpage_button']}</span></a></td>
+ </tr>
+</table>
+</div>]]></section_content>
+			<func_name>confirm_download</func_name>
+			<func_data>$info=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<!--RANDOM_FILES-->
+<!-- IDM Stats Area -->
+<div class="borderwrap" style="display:{$show['div_fc']}" id="fc_idm_stats">
+	<div class="maintitle">
+		<p class="expand"><a href="javascript:togglecategory('idm_stats', 0);"><{E_PLUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['stats_main_header']}</p>
+</div>
+	<div class="formsubtitle">
+<p class="members">{$show['mini_files']} {$this->ipsclass->lang['mini_stats_files']} &#0124; {$show['mini_downloads']} {$this->ipsclass->lang['mini_stats_downloads']}</p>
+<p>{$show['mini_active']} {$this->ipsclass->lang['mini_stats_members']}</p>
+	</div>
+</div>
+<div class="borderwrap" style="display:{$show['div_fo']}" id="fo_idm_stats">
+	<div class="maintitle">
+		<p class="expand"><a href="javascript:togglecategory('idm_stats', 1);"><{E_MINUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['stats_main_header']}</p>
+	</div>
+	<table class='ipbtable' cellspacing="1">
+                                <tr>
+			<td class="formsubtitle" colspan="2" align='right'><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=search&amp;code=last_ten'>{$this->ipsclass->lang['search_last_ten']}</a>&nbsp;
+<if="$this->ipsclass->member['id']">
+&middot;&nbsp;<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=search&amp;code=last_visit'>{$this->ipsclass->lang['search_last_visit']}</a>
+</if>
+</td>
+		</tr>
+         <!--IDM.ACTIVEUSERS-->
+                                <tr>
+			<td class="formsubtitle" colspan="2">{$this->ipsclass->lang['stats_main_header']}</td>
+		</tr>
+		<tr>
+			<td class="row1" width="1%"><{F_STATS}></td>
+			<td class="row2">{$show['stats']}</td>
+		</tr>
+		<tr>
+			<td class="catend" colspan="2"><!-- no content --></td>
+		</tr>		
+        </table>
+</div>]]></section_content>
+			<func_name>page_end</func_name>
+			<func_data>$show=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[{$file_info['file']}<br />
+{$file_info['datelang']}: {$file_info['fdate']}<br />
+{$this->ipsclass->lang['catfile_author']}: {$file_info['author']}]]></section_content>
+			<func_name>latest_file_info</func_name>
+			<func_data>$file_info=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div class="tablepad"><span class="postcolor">{$lang}</span></div>]]></section_content>
+			<func_name>message_box</func_name>
+			<func_data><![CDATA[$lang=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<img src="{$this->ipsclass->vars['img_url']}/p_mq_add.gif" name="mad_$pid" alt="+" />]]></section_content>
+			<func_name>mq_image_add</func_name>
+			<func_data><![CDATA[$pid='']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<img src="{$this->ipsclass->vars['img_url']}/p_mq_remove.gif" name="mad_$pid" alt="-" />]]></section_content>
+			<func_name>mq_image_remove</func_name>
+			<func_data><![CDATA[$pid='']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<br />
+	<div class="errorwrap">
+		<h4>{$this->ipsclass->lang['idm_offline_msg']}</h4>
+		<p>{$this->ipsclass->vars['idm_offline_msg']}</p>
+        </div>
+<br />]]></section_content>
+			<func_name>offline_box</func_name>
+			<func_data></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<table cellpadding='4' cellspacing='1' width='100%' class='borderwrap'>
+<tr>
+<td class='subtitle'>{$this->ipsclass->lang['file_opsheader']}</td>
+</tr>
+<tr>
+<td width='100%' class='post1'>
+{$html}
+</td>
+</tr>
+</table>]]></section_content>
+			<func_name>operations_block</func_name>
+			<func_data><![CDATA[$html=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<table cellspacing='0' width='100%'>
+ <tr>
+  <td style='padding-left:0px' width="50%" nowrap="nowrap">{$page_links}</td>
+  <td align='right' class='nopad' style='padding:5px 0px 5px 0px' nowrap="nowrap">
+  		<if="$show_qr==1">
+  		<a href="javascript:ShowHide('qr_open','qr_closed');" title="{$this->ipsclass->lang['qr_open']}" accesskey="f"><{T_QREPLY}></a>&nbsp;
+  		<a href="{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=add_form&amp;id={$this->ipsclass->input['showfile']}"><img src='{$this->ipsclass->vars['img_url']}/t_comments.gif' alt='{$this->ipsclass->lang['idm_leave_comment']}' /></a>&nbsp;
+  		</if>
+		<if="$show_search"><a href="{$this->ipsclass->base_url}autocom=downloads&amp;req=search"><{DL_SEARCH}></a>&nbsp;</if>
+		<if="$canadd==1">
+		<a href="{$this->ipsclass->base_url}autocom=downloads&amp;req=submit&amp;c={$this->ipsclass->input['catid']}"><{A_FILE}></a>
+		</if>
+		<if="$canmod==1">
+		<a href="{$this->ipsclass->base_url}autocom=downloads&amp;req=mod"><{DL_OPTS}></a>
+		</if>
+  </td>
+ </tr>
+ <if="$show_qr==1">
+ <tr>
+ 	<td colspan='2'>
+ 		<!--IBF.QUICK_REPLY_OPEN-->
+ 		<br />
+ 	</td>
+ </tr>
+ </if>
+</table>]]></section_content>
+			<func_name>global_bar</func_name>
+			<func_data><![CDATA[$canadd=0,$canmod=0,$page_links="&nbsp;",$show_qr=0, $show_search=1]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr> 
+			<td width='50%' class='{$data['css']}' align='center' valign='middle'>
+<if="$data['thumbnail']">
+<a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$data['file_id']}' title='{$data['file_name']}'><img src='{$data['thumbnail']}' {$data['thumb_sizes']} hspace='1' vspace='1' border='0' alt='{$this->ipsclass->lang['catdis_ssalt']}' /></a>
+<else />
+ <if="$data['file_ssurl']">
+<a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$data['file_id']}' title='{$data['file_name']}'><img src='{$data['file_ssurl']}' {$data['thumb_sizes']} hspace='1' vspace='1' border='0' alt='{$this->ipsclass->lang['catdis_ssalt']}' /></a>
+ <else />
+  <a href='{$this->ipsclass->base_url}autocom=downloads&amp;showfile={$data['file_id']}' title='{$data['file_name']}'>{$this->ipsclass->lang['catdis_ssnone']}</a>
+ </if>
+</if>
+                        </td>
+			<td align='left' valign='top' class='{$data['css']}'><strong>{$this->ipsclass->lang['catdis_filename']}</strong>{$data['filename']}<br />
+			<strong>{$this->ipsclass->lang['catdis_fileauthor']}</strong>{$data['submitter']}<br />
+			<strong>{$this->ipsclass->lang['catdis_filesubmitted']}</strong>{$data['file_submitteddis']}<br />
+			{$data['file_updateddis']}
+                         </td><td align='left' valign='top' class='{$data['css']}'>
+            <if="$mod==1"><div style='float:right;'><input type='hidden' name='modform-file_{$data['file_id']}' id='modform-file_{$data['file_id']}' value='1' /><a href='#' title='' onclick='toggle_file("{$data['file_id']}", "modform"); return false;'><img name='modform-file{$data['file_id']}' id='modform-file{$data['file_id']}' src='{$this->ipsclass->vars['board_url']}/style_images/{$this->ipsclass->skin['_imagedir']}/topic_{$data['un']}selected.gif' /></a></div></if>
+			<strong>{$this->ipsclass->lang['catdis_filedls']}</strong>{$data['file_downloads']}<br />
+			<strong>{$this->ipsclass->lang['catdis_fileviews']}</strong>{$data['file_views']}<br />
+			<strong>{$this->ipsclass->lang['catdis_filerating']}</strong>{$data['file_rating']}
+                        {$data['comm_pending']}
+			</td>
+		</tr>]]></section_content>
+			<func_name>file_row_withss</func_name>
+			<func_data><![CDATA[$data=array(),$mod=0,$formname='modform']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr> 
+			<td class='{$data['css']}' width='1%'><if="$this->ipsclass->member['last_visit'] < $data['file_submitted'] || $data['file_updated'] > $data['file_submitted'] AND $this->ipsclass->member['last_visit'] < $data['file_updated']"><{B_NEW}><else /><{B_NORM}></if></td>
+			<td class='{$data['css']}'>{$data['filename']}{$data['comm_pending']}<if="is_array($data['categoryinfo'])"><div style='float:right;clear:both;'>(<i>{$this->ipsclass->lang['filecategory']}</i> <a href='{$this->ipsclass->base_url}autocom=downloads&amp;showcat={$data['categoryinfo']['cid']}'>{$data['categoryinfo']['cname']}</a>)</div></if></td>
+			<td align="center" class='{$data['css']}'>{$data['file_views']}</td>
+			<td align="center" class='{$data['css']}'>{$data['file_downloads']}</td>
+			<td align="center" class='{$data['css']}'>{$data['file_rating']}</td>
+			<td align="left" width="66%" class='{$data['css']}'>{$this->ipsclass->lang['fileinfo_sby']} {$data['submitter']} {$this->ipsclass->lang['fileinfo_son']} {$data['file_submitteddis']}<div>{$data['file_updateddis']}</div></td>
+			<if="$mod==1"><td align='center' class='{$data['css']}'><input type='hidden' name='{$formname}-file_{$data['file_id']}' id='{$formname}-file_{$data['file_id']}' value='1' /><a href='#' title='' onclick='toggle_file("{$data['file_id']}", "{$formname}"); return false;'><img name='{$formname}-file{$data['file_id']}' id='{$formname}-file{$data['file_id']}' src='{$this->ipsclass->vars['board_url']}/style_images/{$this->ipsclass->skin['_imagedir']}/topic_{$data['un']}selected.gif' /></a></td></if>
+		</tr>]]></section_content>
+			<func_name>file_row_withoutss</func_name>
+			<func_data><![CDATA[$data=array(),$mod=0,$formname='modform']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div class="borderwrap">
+<if="$mod==1">
+<script type='text/javascript' src='jscripts/idm_fileview.js'></script>
+<script type='text/javascript'>
+ var lang_suredelete = '{$this->ipsclass->lang['idm_suredelete']}';
+</script>
+<form action='{$this->ipsclass->base_url}' method='post' name='{$formname}' id='{$formname}' onsubmit="return multi_delete( '{$formname}' )">
+<input type='hidden' name='autocom' value='downloads' />
+<input type='hidden' name='req' value='mod' />
+<input type='hidden' name='code' value='{$code}' />
+<input type='hidden' name='type' value='{$modtype}' />
+<input type='hidden' name='catid' value='{$this->ipsclass->input['showcat']}' />
+<input type="hidden" value="{$preselected}" name="selectedfileids" />
+</if>
+	<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$name}</p>
+	</div>
+	<table class='ipbtable' cellspacing="1">]]></section_content>
+			<func_name>file_listing_top</func_name>
+			<func_data><![CDATA[$name="",$page_links="", $mod=0, $formname='', $modtype='', $preselected='', $code='modaction']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads_external</group_name>
+			<section_content><![CDATA[<div class="borderwrap">
+	<table class='ipbtable' cellspacing="1">
+		<tr> 
+			<th colspan="2" align="center" width="35%">{$this->ipsclass->lang['fileinfo_name']}</th>
+			<th align="center" width="7%">{$this->ipsclass->lang['fileinfo_views']}</th>
+			<th align="center" width="7%">{$this->ipsclass->lang['fileinfo_downloads']}</th>
+			<th align="center" width="7%">{$this->ipsclass->lang['fileinfo_rating']}</th>
+			<th align="center" width="66%">{$this->ipsclass->lang['fileinfo_submitted']}</th>
+		</tr>
+		<if="is_array($rows) AND count($rows)">
+		 <foreach="$rows as $data">
+			<tr> 
+				<td class='{$data['css']}' width='1%'><if="$this->ipsclass->member['last_visit'] < $data['file_submitted'] || $data['file_updated'] > $data['file_submitted'] AND $this->ipsclass->member['last_visit'] < $data['file_updated']"><{B_NEW}><else /><{B_NORM}></if></td>
+				<td class='{$data['css']}'>{$data['filename']}{$data['comm_pending']}</td>
+				<td align="center" class='{$data['css']}'>{$data['file_views']}</td>
+				<td align="center" class='{$data['css']}'>{$data['file_downloads']}</td>
+				<td align="center" class='{$data['css']}'>{$data['file_rating']}</td>
+				<td align="left" width="66%" class='{$data['css']}'>{$this->ipsclass->lang['fileinfo_sby']} {$data['submitter']} {$this->ipsclass->lang['fileinfo_son']} {$data['file_submitteddis']}<div>{$data['file_updateddis']}</div></td>
+			</tr>
+		 </foreach>
+		</if>
+	</table>
+</div>]]></section_content>
+			<func_name>profile_display</func_name>
+			<func_data>$rows=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<br />
+	<div class="errorwrap">
+		<h4>{$this->ipsclass->lang['main_error_subtitle']}</h4>
+		<p>{$msg}</p>
+<if="$noback==0">
+	<p class="formbuttonrow" align='center'><b><a href="javascript:history.go(-1)">&laquo; {$this->ipsclass->lang['main_error_goback']}</a></b></p>
+</if>
+        </div>
+<br />]]></section_content>
+			<func_name>error_box</func_name>
+			<func_data><![CDATA[$msg="",$noback="0"]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<script type='text/javascript'>
+ var lang_suredelete = '{$this->ipsclass->lang['idm_suredelete']}';
+ var lang_notdeleted = '{$this->ipsclass->lang['idm_notdeleted']}';
+</script>
+<script type='text/javascript' src='jscripts/ipb_topic.js'></script>
+<script type='text/javascript' src='jscripts/idm_fileview.js'></script>
+<if="$this->ipsclass->vars['idm_ss_popup'] == 'l'">
+<style type="text/css">
+#lightbox{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+	line-height: 0;
+	}
+#lightbox a img{ border: none; }
+#outerImageContainer{
+	position: relative;
+	background-color: #fff;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	}
+#imageContainer{
+	padding: 10px;
+	}
+#loading{
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	height: 25%;
+	width: 100%;
+	text-align: center;
+	line-height: 0;
+	}
+#hoverNav{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	}
+#imageContainer>#hoverNav{ left: 0;}
+#hoverNav a{ outline: none;}
+#prevLink, #nextLink{
+	width: 49%;
+	height: 100%;
+	background: transparent url(style_images/ip.boardpr/lightbox/blank.gif) no-repeat; /* Trick IE into showing hover */
+	display: block;
+	}
+#prevLink { left: 0; float: left;}
+#nextLink { right: 0; float: right;}
+#prevLink:hover, #prevLink:visited:hover { background: url(style_images/ip.boardpr/lightbox/prevlabel.gif) left 15% no-repeat; }
+#nextLink:hover, #nextLink:visited:hover { background: url(style_images/ip.boardpr/lightbox/nextlabel.gif) right 15% no-repeat; }
+#imageDataContainer{
+	font: 10px Verdana, Helvetica, sans-serif;
+	background-color: #fff;
+	margin: 0 auto;
+	line-height: 1.4em;
+	overflow: auto;
+	width: 100%	
+	}
+#imageData{	padding:0 10px; color: #666; }
+#imageData #imageDetails{ width: 70%; float: left; text-align: left; }	
+#imageData #caption{ font-weight: bold;	}
+#imageData #numberDisplay{ display: block; clear: left; padding-bottom: 1.0em;	}			
+#imageData #bottomNavClose{ width: 66px; float: right;  padding-bottom: 0.7em;	}	
+		
+#overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	width: 100%;
+	height: 500px;
+	background-color: #000;
+	}
+</style>
+	<script type='text/javascript'>
+		var fileLoadingImage 		= "style_images/<#IMG_DIR#>/lightbox/loading.gif";		
+		var fileBottomNavCloseImage = "style_images/<#IMG_DIR#>/lightbox/closelabel.gif";
+	</script>
+	<script type="text/javascript" src="jscripts/lightbox/prototype.js"></script>
+	<script type="text/javascript" src="jscripts/lightbox/scriptaculous.js?load=effects"></script>
+	<script type="text/javascript" src="jscripts/lightbox/lightbox.js"></script>
+</if>
+<if="$file['file_broken']==1">
+<div class="ruleswrap">
+	&nbsp;<{F_RULES}>&nbsp;<b>{$this->ipsclass->lang['file_broken_text']}: {$file['file_broken_reason']}</b>
+	<if="$file['mod_canbrok']"><br /><i>{$this->ipsclass->lang['file_broken_info']}</i></if>
+</div><br clear='all' />
+</if>
+<div class="borderwrap">
+	<div class="maintitle">
+		<p><{CAT_IMG}>&nbsp;{$file['file_name']}</p>
+	</div>
+<table class='ipbtable' cellspacing="1">
+<!--SCREENSHOT_DISPLAY-->
+<tr>
+<td width='50%' valign='top' class='row1'>
+<table cellpadding='4' cellspacing='1' width='100%' class='borderwrap'>
+<tr>
+<td colspan='2' class='subtitle'>{$this->ipsclass->lang['file_infoheader']}</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['filename']}</strong></td>
+<td class='pformright'><if="$this->ipsclass->vars['idm_allow_emaillinks'] AND $this->ipsclass->member['id']">
+<div style='float:right;'><a href='#' onclick='return show_email_form();' title='{$this->ipsclass->lang['idm_email_file']}'><img src='style_images/<#IMG_DIR#>/cs_email.gif' alt='{$this->ipsclass->lang['idm_email_file']}' /></a></div>
+</if>
+{$file['file_name']} {$this->ipsclass->lang['fileby']} {$file['members_display_name']}</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['submittedon']}</strong></td>
+<td class='pformright'>{$file['submit_date']}</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['lastupdated']}</strong></td>
+<td class='pformright'>{$file['update_date']}</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['filetype']}</strong></td>
+<td class='pformright'><img src='style_images/<#IMG_DIR#>/{$file['mime_img']}' border='0' alt='{$this->ipsclass->lang['filetype']}' />&nbsp;({$file['mime_extension']} - {$file['mime_mimetype']})</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['filescreenshot']}</strong></td>
+<td class='pformright'>{$file['screenshot_display']}</td>
+</tr>
+</table>
+</td>
+<td width='50%' valign='top' class='row1'>
+<table cellpadding='4' cellspacing='1' width='100%' class='borderwrap'>
+<tr>
+<td colspan='2' class='subtitle'>{$this->ipsclass->lang['file_statsheader']}</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['filesize']}</strong></td>
+<td class='pformright'>{$file['formatted_size']} (<i><a href='#' onclick='return show_estimated_times();'>{$this->ipsclass->lang['dl_estimate_time']}</a></i>)</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['fileviews']}</strong></td>
+<td class='pformright'>{$file['file_views']}</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['filedownloads']}</strong></td>
+<td class='pformright'>{$file['file_downloads']}</td>
+</tr>
+<tr>
+<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['fileaddrating']}</strong></td>
+<td class='pformright'>{$file['vote_panel']}</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan='2' class='row1' width='100%'><div class='divpad'>{$file['file_desc']}</div></td>
+</tr>
+<tr>
+<td width='50%' valign='top' class='row1'>
+{$file['custom_block']}
+</td>
+<td width='50%' valign='top' class='row1'>
+{$file['ops_block']}
+</td>
+</tr>
+<if="$file['show_approver']">
+	<tr>
+	<td colspan='2' align='left' class='row1'><strong>{$this->ipsclass->lang['file_approvedby']} <a href='{$this->ipsclass->base_url}showuser={$file['file_approver']}' title='{$file['approver_name']}'>{$file['approver_name']}</a> {$this->ipsclass->lang['fileinfo_son']} {$file['approve_date']}</strong></td>
+	</tr>
+</if>
+ <tr>
+   <td colspan='2' class='formbuttonrow' align='center'>
+   <if="$file['cdisclaimer']">
+   	<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=download&amp;code=confirm_download&amp;id={$file['file_id']}' target='_self'>
+   <else />
+    <if="$file['file_url']">
+    	<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=download&amp;code=confirm_download&amp;id={$file['file_id']}' target='_blank'>
+    <else />
+    	<a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=download&amp;code=confirm_download&amp;id={$file['file_id']}' target='_self'>
+    </if>
+   </if><span class='fauxbutton'>{$this->ipsclass->lang['dpage_button']}</span></a></td>
+ </tr>
+</table>
+</div>
+<br />
+<!--VERSION_DISPLAY-->
+<!--COMMENTS-->
+<div class='borderwrap' id='dlestimates' style='display:none;width:400px;'>
+ <div class='maintitle' id='size-drag' title='{$this->ipsclass->lang['click_n_hold']}'>
+ 	<div style='float:right'><a href='#' onclick='toggleview("dlestimates"); return false;'>[X]</a></div>
+ 	<div>{$this->ipsclass->lang['dl_estimate_time']}</div>
+ </div>
+ <div id='size-content' style='overflow-x:auto;'>
+ <table cellpadding='4' cellspacing='1' width='100%'>
+  <tr>
+    <td class='row2' width='40%'><b>{$this->ipsclass->lang['dl_estimate_56k']}</b></td>
+    <td class='row1'>{$file['56k_speed']}</td>
+  </tr>
+  <tr>
+    <td class='row2' width='40%'><b>{$this->ipsclass->lang['dl_estimate_dsl']}</b></td>
+    <td class='row1'>{$file['dsl_speed']}</td>
+  </tr>
+  <tr>
+    <td class='row2' width='40%'><b>{$this->ipsclass->lang['dl_estimate_t1']}</b></td>
+    <td class='row1'>{$file['t1_speed']}</td>
+  </tr>
+  <tr>
+    <td class='row2' width='40%'><b>{$this->ipsclass->lang['dl_estimate_cable']}</b></td>
+    <td class='row1'>{$file['cable_speed']}</td>
+  </tr>
+  <tr>
+    <td class='row2' width='40%'><b>{$this->ipsclass->lang['dl_estimate_fios']}</b></td>
+    <td class='row1'>{$file['fios_speed']}</td>
+  </tr>
+ </table>
+ </div>
+</div>
+<div class='borderwrap' id='email_form' style='display:none;width:450px;'>
+ <div class='maintitle' id='email-drag' title='{$this->ipsclass->lang['click_n_hold']}'>
+ 	<div style='float:right'><a href='#' onclick='toggleview("email_form"); return false;'>[X]</a></div>
+ 	<div>{$this->ipsclass->lang['idm_email_file']}</div>
+ </div>
+ <form action='{$this->ipsclass->base_url}autocom=downloads&amp;req=submit&amp;code=email' method='post'>
+ <input type='hidden' name='id' value='{$file['file_id']}' />
+ <div id='email-content' style='overflow-x:auto;'>
+ <table cellpadding='4' cellspacing='1' width='100%'>
+  <tr>
+    <td class='row2' width='40%'><b>{$this->ipsclass->lang['email_email']}</b></td>
+    <td class='row1'><input type='text' size='32' name='email' /></td>
+  </tr>
+  <tr>
+    <td class='row2' width='40%'><b>{$this->ipsclass->lang['email_content']}</b></td>
+    <td class='row1'><textarea name='content' rows='10' cols='29'>{$this->ipsclass->lang['email_default']}</textarea></td>
+  </tr>
+  <tr>
+    <td class='formbuttonrow' colspan='2' align='center'><input type='submit' value='{$this->ipsclass->lang['email_send']}' /></td>
+  </tr>
+ </table>
+ </div>
+ </form>
+</div>]]></section_content>
+			<func_name>file_information</func_name>
+			<func_data>$file=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<!--Begin Comment Number {$comment['comment_id']}-->
+<a name="comment{$data['comment_id']}"></a>
+<table class="ipbtable" cellspacing="1" width="100%">
+	<tr>
+		<td valign="middle" class="row2" width="1%">
+			<a name="entry{$data['comment_id']}"></a>
+			<if="$data['id']">
+				<div id="post-member-{$data['id']}" class='popmenubutton-new-out'>
+					<span class="{$data['name_css']}">{$data['_pp_online_image']}<a href="{$this->ipsclass->base_url}showuser={$data['id']}">{$data['members_display_name']}</a></span>
+				</div>
+				<!-- member menu -->
+				<div class='popupmenu-new' id='post-member-{$data['id']}_menu' style='display:none;width:210px'>
+					<div class='popupmenu-item-last'>
+						<div style='float:right'>
+							<div class='pp-image-thumb-wrap'>
+								<img src='{$data['pp_thumb_photo']}' width='{$data['pp_thumb_width']}' height='{$data['pp_thumb_height']}' />
+							</div>
+							<if="$this->ipsclass->vars['pp_allow_member_rate']">
+								<div style='margin-top:5px;margin-left:6px;'>
+									<img src="{$this->ipsclass->vars['img_url']}/rating_{$data['_pp_rating_real']}_mini.gif" alt='Rating: {$data['_pp_rating_real']}' style='vertical-align:middle' border='0' />
+								</div>
+							</if>
+						</div>
+						<div class='popupmenu-item'>
+							{$data['_pp_gender_image']} <a href="{$this->ipsclass->base_url}showuser={$data['id']}">{$this->ipsclass->lang['dd_view_profile']}</a>
+						</div>
+						<if="$this->ipsclass->member['id']">
+							<div class='popupmenu-item'>
+								<if="in_array( $data['id'], array_keys( $this->ipsclass->member['_cache']['friends'] ) )">
+									<img src='{$this->ipsclass->vars['img_url']}/folder_profile_portal/friend_remove_small.png' alt='' border='0' /> <a href="#" onclick='friends_pop("&amp;do=remove&amp;member_id={$data['id']}&amp;md5check={$this->ipsclass->md5_check}"); return false'>{$this->ipsclass->lang['dd_remove_friend']}</a>
+								<else />
+									<img src='{$this->ipsclass->vars['img_url']}/folder_profile_portal/friend_add_small.png' alt='' border='0' /> <a href="#" onclick='friends_pop("&amp;do=add&amp;member_id={$data['id']}&amp;md5check={$this->ipsclass->md5_check}"); return false'>{$this->ipsclass->lang['dd_add_friend']}</a>
+								</if>
+							</div>
+							<div class='popupmenu-item'>
+								<img src='{$this->ipsclass->vars['img_url']}/folder_profile_portal/send_pm_small.png' alt='' border='0' /> <a href="{$this->ipsclass->base_url}act=Msg&amp;CODE=4&amp;MID={$data['id']}">{$this->ipsclass->lang['dd_send_pm']}</a>
+							</div>
+						</if>
+						<div class='popupmenu-item-last'>
+							<img src='{$this->ipsclass->vars['img_url']}/folder_profile_portal/find_posts.png' alt='' border='0' /> <a href='{$this->ipsclass->base_url}act=Search&amp;CODE=getalluser&amp;mid={$data['id']}'>{$this->ipsclass->lang['dd_find_posts']}</a>
+						</div>
+					</div>
+				</div>
+				<!-- member menu -->
+				<script type="text/javascript">
+					ipsmenu.register( "post-member-{$data['id']}", '', 'popmenubutton-new', 'popmenubutton-new-out' );
+				</script>
+			<else />
+				<span class="{$data['name_css']}">{$this->ipsclass->vars['guest_name_pre']}{$data['_members_display_name']}{$this->ipsclass->vars['guest_name_suf']}</span>
+			</if>			
+			</td>
+		<td class="row2" valign="top" width="99%">
+			<!-- POSTED DATE DIV -->
+			<div style="float: left;">
+				<span class="postdetails">{$data['post_icon']} <img src='{$this->ipsclass->vars['img_url']}/to_post_off.gif' alt='post' border='0' style='padding-bottom:2px' /> {$data['comment_date']}</span>
+			</div>
+			<!-- REPORT / DELETE / EDIT / QUOTE DIV -->
+			<div align="right">
+				{$data['ip_address']} {$this->ipsclass->lang['posted_on']}
+					<a title="{$this->ipsclass->lang['tt_link']}" href="#" onclick="idm_link_to_post({$data['comment_id']}, {$data['comment_fid']} ); return false;">#{$data['post_count']}</a>
+<if="$this->ipsclass->member['g_is_supmod']==1">
+&nbsp;&#0124;&nbsp;<a href="#" title="{$this->ipsclass->lang['bulk_mod_title']}" onclick="idm_toggle_pid('{$data['comment_id']}'); return false;">{$data['pid_start_image']}</a>
+</if>
+				</if>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="{$data['post_css']}">
+        	<span class="postdetails">
+					<if="$data['id'] AND $data['avatar']">
+						<a href="{$this->ipsclass->base_url}showuser={$data['id']}" title="{$this->ipsclass->lang['dd_view_profile']}">{$data['avatar']}</a><br /><br />
+					<else />
+	        			{$data['avatar']}<br /><br />
+					</if>
+        		{$data['title']}<br />
+        		{$data['member_rank_img']}<br /><br />
+        		{$data['member_group']}<br />
+        		{$data['member_posts']}<br />
+        		{$data['member_joined']}<br />
+        		{$data['member_location']}
+        		{$data['member_number']}<br />
+<if="$data['custom_fields'] != ''">
+{$data['custom_fields']}
+</if>
+<br />
+        		{$data['warn_text']} {$data['warn_minus']}{$data['warn_img']}{$data['warn_add']}
+        	</span><br />
+        	<img src="{$this->ipsclass->vars['img_url']}/spacer.gif" alt="" width="160" height="1" /><br /> 
+       </td>
+       <td width="100%" valign="top" class="{$data['post_css']}" id='comment-main-{$data['comment_id']}'>
+			<!-- THE COMMENT {$data['comment_id']} -->
+			<div class="postcolor" id='comment-{$data['comment_id']}'>{$data['comment_text']}</div>
+				{$data['signature']}
+			<!-- THE COMMENT -->
+		</td>
+	</tr>
+	<tr>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<div style='text-align:left'><a href="javascript:scroll(0,0);"><{P_UP}></a>
+			<if="$data['report_button']">
+				<a href="{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=reportcomment&amp;comment={$data['comment_id']}&amp;st={$this->ipsclass->input['st']}"><{P_REPORT}></a>
+			</if>
+			</div>
+		</td>
+		<td class="formbuttonrow" nowrap="nowrap">
+			<!-- PM / EMAIL / WWW / MSGR -->
+			<div style="float: left;">
+				&nbsp;
+			</div>
+			<!-- REPORT / UP -->
+         	<div align="right">
+<if="$data['approve_button']"><a href='{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=appcomment&amp;cid={$data['comment_id']}&amp;key={$this->ipsclass->md5_check}'><{P_APPROVE}></a></if><if="$data['delete_button']"><a href='javascript:single_delete("{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=delcomment&amp;cid={$data['comment_id']}&amp;key={$this->ipsclass->md5_check}")'><{P_DELETE}></a></if><if="$data['edit_button']"><a id='edit-but-{$data['comment_id']}' href='{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=fulledit&amp;cid={$data['comment_id']}'><{P_EDIT}></a></if><a href="#" onclick="multiquote_add({$data['comment_id']}); return false;" title="{$this->ipsclass->lang['mq_title']}">{$data['mq_start_image']}</a><a href="{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=add_form&amp;id={$data['comment_fid']}&amp;qpid={$data['comment_id']}" title="{$this->ipsclass->lang['tt_reply_to_post']}"><{P_QUOTE}></a>
+         	</div>
+         </td>		
+	</tr><tr>
+	<td class="catend" colspan="2"><!-- no content --></td>
+</tr>
+</table>
+<if="$data['edit_button']">
+<script type='text/javascript'>
+//<!#^#|CDATA|
+if ( ajax_loaded && use_enhanced_js )
+{
+menu_build_menu( 'edit-but-{$data['comment_id']}',
+	new Array(  img_item + " <a title='{$this->ipsclass->lang['edit_full_link']}' href='{$this->ipsclass->base_url}autocom=downloads&amp;req=comments&amp;code=fulledit&amp;cid={$data['comment_id']}'>{$this->ipsclass->lang['edit_full_link']}</a>",
+				img_item + " <a href='#' title='{$this->ipsclass->lang['edit_il_link']}' onclick='return ajax_prep_for_edit({$data['comment_id']}, event);'>{$this->ipsclass->lang['edit_il_link']}</a>" ) );
+}
+//|#^#]>
+</script>
+</if>]]></section_content>
+			<func_name>comments_display</func_name>
+			<func_data>$data=array()</func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<a name="comments"></a>
+<table class='ipbtable' cellspacing="0">
+	<tr>
+		<td style='padding-left:0px' width="60%">{$links}</td>
+		<td class='nopad' align="right">&nbsp;</td>
+	</tr>
+</table>
+<script type='text/javascript' src='jscripts/idm_fileview.js'></script>
+<script type="text/javascript" src="jscripts/ips_text_editor_lite.js"></script>
+<script type='text/javascript'>
+<!--
+var js_error_no_permission 	= "{$this->ipsclass->lang['no_comments_perms']}";
+var idm_lang_prompt 		= "{$this->ipsclass->lang['idm_lang_prompt']}";
+var lang_gobutton			= "{$this->ipsclass->lang['mod_button']}";
+var lang_suredelete 		= '{$this->ipsclass->lang['idm_suredelete']}';
+var lang_notdeleted 		= '{$this->ipsclass->lang['idm_notdeleted']}';
+-->
+</script>
+<!--IBF.POPUP_CSS-->
+<div class="borderwrap" style="display:{$data['div_fc']}" id="fc_idm_comm">
+	<div class="maintitle">
+		<p class="expand"><a href="javascript:togglecategory('idm_comm', 0);"><{E_PLUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['comments_header']}</p>
+	</div>
+	<div class="formsubtitle">
+		<p>{$this->ipsclass->lang['comments_header']}</p>
+	</div>
+</div>
+<div class="borderwrap" style="display:{$data['div_fo']}" id="fo_idm_comm">
+	<div class="maintitle">
+		<p class="expand"><a href="javascript:togglecategory('idm_comm', 1);"><{E_MINUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$this->ipsclass->lang['comments_header']}</p>
+	</div>
+	<!--COMMENTS-->
+</div>
+<if="$is_mod==1">
+<br />
+<div class="borderwrap" align='right'>
+	<div class="tablepad">
+		<form name="modform" method="post" action="{$this->ipsclass->base_url}">
+		<input type="hidden" name="autocom" value="downloads" />
+		<input type="hidden" name="req" value="mod" />
+		<input type="hidden" name="code" value="commentMMOD" />
+		<input type="hidden" value="{$this->ipsclass->input['selectedpids']}" name="selectedpids" />
+		<input type="hidden" name="id" value="{$fileid}" />
+		<select name="idmact" class='select'>
+			<option value="delcomments">{$this->ipsclass->lang['opt_dd_delete_comm']}</option>
+			<option value="approvecomments">{$this->ipsclass->lang['opt_dd_app_comm']}</option>
+			<option value="unapprovecomments">{$this->ipsclass->lang['opt_dd_unapp_comm']}</option>
+		</select>&nbsp;
+		<input type="submit" name="gobutton" value="{$this->ipsclass->lang['mod_button']}" class="button" />
+		</form>
+	</div>
+</div>
+</if>]]></section_content>
+			<func_name>comments_block</func_name>
+			<func_data><![CDATA[$data=array(),$fileid=0,$links="",$is_mod=0]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<div class="borderwrap" style="display:{$data['div_fc']}" id="fc_idm_cats">
+	<div class="maintitlecollapse">
+		<p class="expand"><a href="javascript:togglecategory('idm_cats', 0);"><{E_PLUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$lang_bit}</p>
+	</div>
+</div>
+<div class="borderwrap" style="display:{$data['div_fo']}" id="fo_idm_cats">
+	<div class="maintitle">
+		<p class="expand"><a href="javascript:togglecategory('idm_cats', 1);"><{E_MINUS}></a></p>
+		<p><{CAT_IMG}>&nbsp;{$lang_bit}</p>
+	</div>
+	<table class='ipbtable' cellspacing="1">
+		<tr> 
+			<th colspan="2" width="66%">{$this->ipsclass->lang['catinfo_description']}</th>
+			<th style='text-align:center;' width="7%">{$this->ipsclass->lang['catinfo_totalfiles']}</th>
+			<th style='text-align:center;' width="7%">{$this->ipsclass->lang['catinfo_totalviews']}</th>
+			<th style='text-align:center;' width="7%">{$this->ipsclass->lang['catinfo_totaldownloads']}</th>
+			<th width="35%">{$this->ipsclass->lang['catinfo_latestinfo']}</th>
+		</tr>
+		<foreach="$category_rows as $data">
+			<tr> 
+				<td align="center" class="row2" width="1%"><if="$this->ipsclass->member['last_visit'] < $data['cfileinfo']['date']"><{C_ON}><else /><{C_OFF}></if></td>
+				<td class="row2" width='50%'><b>{$data['cname']}</b><div class="forumdesc">{$data['cdesc']}{$data['show_subforums']}{$data['subcategories']}</div>{$data['pending']}</td>
+				<td align="center" class="row1" width='5%'>{$data['cfileinfo']['total_files']}</td>
+				<td align="center" class="row1" width='5%'>{$data['cfileinfo']['total_views']}</td>
+				<td align="center" class="row1" width='5%'>{$data['cfileinfo']['total_downloads']}</td>
+				<td class="row1" width='35%'>{$data['latest_file']}</td>
+			</tr>
+		</foreach>
+		<tr> 
+			<td class="catend" colspan="6"><!--no content--></td>
+		</tr>
+	</table>
+</div>]]></section_content>
+			<func_name>categories</func_name>
+			<func_data><![CDATA[$data=array(),$lang_bit="",$category_rows]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<table cellpadding='4' cellspacing='1' width='100%' class='borderwrap'>
+	<tr>
+		<td colspan='2' class='subtitle'>{$this->ipsclass->lang['file_custom']}</td>
+	</tr>
+	<if="$topiclink != ''">
+	<tr>
+		<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['file_topiclang']}</strong></td>
+		<td class='pformright'>{$topiclink}</td>
+	</tr>
+	</if>
+	<if="$compop != ''">
+	<tr>
+		<td width='30%' class='pformleft'><strong>{$this->ipsclass->lang['file_popuplang']}</strong></td>
+		<td class='pformright'>{$compop}</td>
+	</tr>
+	</if>
+	<if="count($content)">
+		<foreach="$content as $data">
+		<tr>
+			<td width='30%' class='pformleft'><strong>{$data['title']}</strong></td>
+			<td class='pformright'>{$data['data']}</td>
+		</tr>	
+		</foreach>
+	</if>
+</table>]]></section_content>
+			<func_name>cfield_file_wrapper</func_name>
+			<func_data><![CDATA[$topiclink="",$content=array(),$compop=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<script type="text/javascript" src="jscripts/ipb_text_editor.js"></script>
+<script type="text/javascript" src="jscripts/ips_text_editor_lite.js"></script>
+<form method="post" action="{$this->ipsclass->base_url}" name="REPLIER" onsubmit='return ValidateForm()'>
+	<input type="hidden" name="autocom" value="downloads" />
+	<input type="hidden" name="req" value="comments" />
+	<input type="hidden" name="code"  value="add_comment" />
+	<input type="hidden" name="id" value="{$fileid}" />
+	<input type="hidden" name="is_edit" value="{$data['comment_id']}" />
+	<div class="borderwrap">
+		<div class='maintitle'><{CAT_IMG}>&nbsp;<if="$data['comment_id']>0">{$this->ipsclass->lang['qr_title_edit']}<else />{$this->ipsclass->lang['qr_title']}</if></div>
+			<table cellspacing="1" class="ipbtable">
+			<!--GUEST.CAPTCHA-->
+			</table>
+			 <div style='padding:0px 1px 0px 1px' class='bg1'>
+			 	<table cellspacing="0"  width='100%' style='padding:3px'>
+					<tr>
+			 			<td colspan="2" align="center" class="bgl">
+			 				<div align='center' class='borderwrap'>
+			 					<table cellpadding='0' cellspacing='0' width='100%' class='darkrow3' style='padding:5px;'>
+			  						<tr>
+			   							<td align='center' valign="top">
+											{$editor_html}
+			   							</td>
+			  						</tr>
+			 					</table>
+			 				</div>
+			 			</td>
+					</tr>
+				</table>
+			 </div>
+			 <table cellspacing="0" class='ipbtable'>
+			<tr>
+		        <td colspan="2" align="center" class="bgl">
+		         	<div style="width:100%;" align="center" class="borderwrap">
+		         		<table cellpadding="0" cellspacing="0" width="100%" class="darkrow3">
+		    				<tr>
+								<td align="right" width="20%" valign='top'><strong>{$this->ipsclass->lang['po_options']}</strong></td>
+								<td align="left" width="80%">
+						 			<input type="checkbox" name="enableemo" class="checkbox" value="yes" <if="$data['use_emo']==1">checked='checked'</if> />&nbsp;{$this->ipsclass->lang['enable_emo']}<br />
+						 			<input type="checkbox" name="enablesig" class="checkbox" value="yes" <if="$data['use_sig']==1">checked='checked'</if> />&nbsp;{$this->ipsclass->lang['enable_sig']}
+						 			<if="$this->ipsclass->member['g_append_edit']">
+						 				<br /><input type="checkbox" name="add_edit" class="checkbox" value="1" <if="$data['comment_append_edit']==1">checked='checked'</if> />&nbsp;{$this->ipsclass->lang['append_edit']}<br />
+						 			</if>
+								</td>
+							</tr>
+		     			</table>
+		     		</div>
+		     	</td>
+			</tr>
+			<tr>
+				<td class="formbuttonrow" colspan="2">
+					<input type="submit" name="submit" value="<if="$data['comment_id']>0">{$this->ipsclass->lang['qr_title_edit']}<else />{$this->ipsclass->lang['qr_title']}</if>" tabindex="4" class="button" accesskey="s" />
+				</td>
+			</tr>
+		</table>
+	</div>
+</form>
+<br />]]></section_content>
+			<func_name>comment_form</func_name>
+			<func_data><![CDATA[$fileid="",$data=array(),$editor_html='']]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<a href='{$this->ipsclass->base_url}autocom=downloads&amp;showcat={$id}' title='{$name}'>{$name}</a>]]></section_content>
+			<func_name>cat_link</func_name>
+			<func_data><![CDATA[$id="",$name=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<tr>
+		<td align='right' valign="top" width='20%'><strong>{$lang}</strong></td>
+		<td align='left'>{$value}</td>
+	</tr>]]></section_content>
+			<func_name>add_row</func_name>
+			<func_data><![CDATA[$lang="",$value=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<input type="hidden" name="imgid" id='regid' value="{$imgid}" />
+<img id='gd-antispam' src="{$this->ipsclass->base_url}act=Post&amp;CODE=image&amp;rc={$imgid}" alt="{$this->ipsclass->lang['alt_loadingimg']}" />
+<script type='text/javascript'>
+	init_gd_image();
+</script>]]></section_content>
+			<func_name>bot_antispam_gd</func_name>
+			<func_data><![CDATA[$imgid=""]]></func_data>
+		</template>
+
+		<template>
+			<group_name>skin_downloads</group_name>
+			<section_content><![CDATA[<input type="hidden" name="imgid" value="{$imgid}" />
+					<img src="{$this->ipsclass->base_url}act=Post&amp;CODE=image&amp;rc={$imgid}&amp;p=1" alt="{$this->ipsclass->lang['alt_codebit']}" />
+					&nbsp;<img src="{$this->ipsclass->base_url}act=Post&amp;CODE=image&amp;rc={$imgid}&amp;p=2" alt="{$this->ipsclass->lang['alt_codebit']}" />
+					&nbsp;<img src="{$this->ipsclass->base_url}act=Post&amp;CODE=image&amp;rc={$imgid}&amp;p=3" alt="{$this->ipsclass->lang['alt_codebit']}" />
+					&nbsp;<img src="{$this->ipsclass->base_url}act=Post&amp;CODE=image&amp;rc={$imgid}&amp;p=4" alt="{$this->ipsclass->lang['alt_codebit']}" />
+					&nbsp;<img src="{$this->ipsclass->base_url}act=Post&amp;CODE=image&amp;rc={$imgid}&amp;p=5" alt="{$this->ipsclass->lang['alt_codebit']}" />
+					&nbsp;<img src="{$this->ipsclass->base_url}act=Post&amp;CODE=image&amp;rc={$imgid}&amp;p=6" alt="{$this->ipsclass->lang['alt_codebit']}" />]]></section_content>
+			<func_name>bot_antispam_gif</func_name>
+			<func_data><![CDATA[$imgid=""]]></func_data>
+		</template>
+	</templategroup>
+
+</templateexport>
