@@ -6,7 +6,10 @@
 |   ========================================
 |   by Brandon Farber
 |   (c) 2005 - 2006 Invision Power Services
+|   http://www.invisionpower.com
 |   ========================================
+|   Web: http://www.invisionpower.com
+|   Email: brandon@invisionpower.com
 +---------------------------------------------------------------------------
 |
 |   > Wrapper Admin Module
@@ -27,9 +30,9 @@ if ( ! defined( 'IN_ACP' ) )
 
 define( 'DL_ADMIN_PATH'	, ROOT_PATH.'sources/components_acp/downloads/' );
 define( 'DL_PATH'		, ROOT_PATH.'sources/components_public/downloads/' );
-define( 'DL_VERSION'	, '1.2.1' );
-define( 'DL_RVERSION'	, '12006'	);
-define( 'DL_LINK'		, '' );
+define( 'DL_VERSION'	, '<#VERSION#>' );
+define( 'DL_RVERSION'	, '<#VERSION_LONG#>'	);
+define( 'DL_LINK'		, 'http://www.invisionpower.com/latestversioncheck/ipdownloads.php?v=' );
 
 class ad_downloads {
 
@@ -59,15 +62,15 @@ class ad_downloads {
 		
 		if ( ! @is_dir( ROOT_PATH.'/sources/components_acp/downloads' ) )
 		{
-			$this->ipsclass->admin->show_inframe("");
+			$this->ipsclass->admin->show_inframe("http://www.invisionpower.com/community/downloads/index.html");
 		}
 		else
 		{
 			$this->base_url = $this->ipsclass->base_url."&".$this->ipsclass->form_code."&";
 			
-			$this->ipsclass->admin->page_title = "IP.Downloads";
-			$this->ipsclass->admin->page_detail = "You can configure your Download Manager from this section.";
-			$this->ipsclass->admin->nav[] = array( 'section=components&act=downloads', 'IP.Downloads' );
+			$this->ipsclass->admin->page_title = "易维下载";
+			$this->ipsclass->admin->page_detail = "您可以在这里设置您的下载管理系统.";
+			$this->ipsclass->admin->nav[] = array( 'section=components&act=downloads', '易维下载' );
 			
 			$valid_reqs = array (
 									'idx'					=> array( 'ad_downloads_index'	, ''			),
