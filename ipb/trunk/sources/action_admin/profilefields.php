@@ -152,7 +152,7 @@ class ad_profilefields {
 		
 		if ( ! $field = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could not fetch the row from the database");
+			$this->ipsclass->admin->error("无法匹配数据库的数据行");
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'  , 'dodelete'  ),

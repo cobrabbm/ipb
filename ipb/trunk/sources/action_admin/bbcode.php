@@ -303,7 +303,7 @@ class ad_bbcode {
 	{
 		if ( ! $this->ipsclass->input['id'] )
 		{
-			$this->ipsclass->main_msg = "No ID was passed, please try again.";
+			$this->ipsclass->main_msg = "没有 ID 号, 请重试.";
 			$this->bbcode_start();
 		}
 		
@@ -501,15 +501,15 @@ class ad_bbcode {
 		{
 			if ( ! $this->ipsclass->input['id'] )
 			{
-				$this->ipsclass->main_msg = "ID 不存在,请重试";
+				$this->ipsclass->main_msg = "ID 不存在, 请重试";
 				$this->bbcode_start();
 			}
 			
 			$bbcode = $this->ipsclass->DB->simple_exec_query( array( 'select' => '*', 'from' => 'custom_bbcode', 'where' => 'bbcode_id='.intval($this->ipsclass->input['id']) ) );
 			
-			$button = "Edit BBCode";
+			$button = "编辑 BBCode";
 			$code   = 'bbcode_doedit';
-			$title  = "Editing BBCode: ".$bbcode['bbcode_title'];
+			$title  = "正在编辑 BBCode: ".$bbcode['bbcode_title'];
 		}
 		else
 		{
@@ -559,7 +559,7 @@ class ad_bbcode {
 															   $this->ipsclass->adskin->form_yes_no( 'bbcode_useoption', ( isset($this->ipsclass->input['bbcode_useoption']) AND $this->ipsclass->input['bbcode_useoption'] ) ? $this->ipsclass->input['bbcode_useoption'] : $bbcode['bbcode_useoption'] )
 													 )      );
 													
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>转换参数</b><div style='color:gray'>如果您想将 {content} 和 {option} 交换, 就打开本开关（例如创建[tag={content}]{option}[/tag]这样的标记）</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>转换参数</b><div style='color:gray'>如果您想将 {content} 和 {option} 交换, 就打开本开关（例如创建 [tag={content}]{option}[/tag] 这样的标记）</div>",
 															   				 $this->ipsclass->adskin->form_yes_no( 'bbcode_switch_option', ( isset($this->ipsclass->input['bbcode_switch_option']) AND $this->ipsclass->input['bbcode_switch_option'] ) ? $this->ipsclass->input['bbcode_switch_option'] : $bbcode['bbcode_switch_option'] )
 													 				)      );
 													 

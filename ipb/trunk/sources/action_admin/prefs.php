@@ -43,11 +43,11 @@ class ad_prefs {
 		
 		if ( $this->ipsclass->input['set'] == 1 )
 		{
-			$this->msg = 'Savings set';
+			$this->msg = '设置保存';
 			
 			if ( $this->ipsclass->input['tx'] == "" or $this->ipsclass->input['ty'] == "" )
 			{
-				$this->msg = 'Please complete the form';
+				$this->msg = '请完成表单';
 				
 				print $this->get_html();
 			}
@@ -55,7 +55,7 @@ class ad_prefs {
 			{
 				$this->ipsclass->my_setcookie( 'acpprefs', $this->ipsclass->input['menu'] .','. $this->ipsclass->input['tx'] .','. $this->ipsclass->input['ty'] .','. $this->ipsclass->input['preview']);
 				
-				$this->msg = 'Settings saved';
+				$this->msg = '设置已经保存';
 				
 				$this->tx = $this->ipsclass->input['tx'];
 				$this->ty = $this->ipsclass->input['ty'];
@@ -156,7 +156,7 @@ $hit_muhl = <<<EOF
 	a:link, a:visited, a:active  { color:#000055 }
 	a:hover                      { color:#333377;text-decoration:underline }
 	input {vertical-align:middle}
-	.textinput { background-color: #DFE6EF;; color:�#000; font-size:12px; font-family: Verdana,Arial, Sans-Serif; padding:2px; }
+	.textinput { background-color: #DFE6EF;; color:?000; font-size:12px; font-family: Verdana,Arial, Sans-Serif; padding:2px; }
 					
   </style>
   <script type='text/javascript'>
@@ -172,14 +172,14 @@ $hit_muhl = <<<EOF
   <form action="{$this->ipsclass->base_url}&act=prefs&set=1" method="post">
   <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
   <fieldset style='padding:10px'>
-   <legend>Your ACP Prefs</legend>
-   <strong>Save ACP Menu State</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select class='textinput' name='menu'><option value='1' {$this->s_yes}>Yes</option><option value='0' {$this->s_no}>No</option></select>
+   <legend>您的后台个性设置</legend>
+   <strong>保存后台菜单状态</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select class='textinput' name='menu'><option value='1' {$this->s_yes}>是</option><option value='0' {$this->s_no}>否</option></select>
    <br /><br />
-   <strong>Template's Textbox Size</strong>&nbsp;<input  class='textinput' type='text' size='3' name='tx' value='{$this->tx}' /> <strong>X</strong> <input  class='textinput' type='text' size='3' name='ty' value='{$this->ty}' />
+   <strong>模板输入框大小</strong>&nbsp;<input  class='textinput' type='text' size='3' name='tx' value='{$this->tx}' /> <strong>X</strong> <input  class='textinput' type='text' size='3' name='ty' value='{$this->ty}' />
    <br /><br />
-   <strong>Show Macro Preview?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select class='textinput' name='preview'><option value='1' {$this->p_yes}>Yes</option><option value='0' {$this->p_no}>No</option></select>
+   <strong>显示宏定义预览?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select class='textinput' name='preview'><option value='1' {$this->p_yes}>是</option><option value='0' {$this->p_no}>否</option></select>
    <br /><br />
-   <center><input type='submit'  class='textinput' value='Save' /></center>
+   <center><input type='submit'  class='textinput' value='保存' /></center>
   </fieldset>
   </form>
   </body>

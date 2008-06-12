@@ -61,6 +61,7 @@ class ad_dashboard
 		define( 'IPS_NEWS_URL'			, 'http://external.ipslink.com/globalfeeds/news/' );
 		define( 'IPS_BULLETINS_URL'		, 'http://external.ipslink.com/ipbfeeds/235/staffbulletin/' );
 		define( 'IPS_VERSION_CHECK_URL'	, 'http://www.invisionpower.com/latestversioncheck/ipb23x.php' );
+		define( 'IPS_BLOG_NEWS_URL'	, 'http://external.ipslink.com/globalfeeds/blog/' );
 		
 		#$this->ipsclass->admin->cp_permission_check( $this->perm_main.'|'.$this->perm_child.':' );
 		
@@ -77,7 +78,7 @@ class ad_dashboard
 		$urls               = array( 'news'          => IPS_NEWS_URL,
 									 'keiths_bits'   => IPS_BULLETINS_URL,
 									 'version_check' => IPS_VERSION_CHECK_URL,
-									 'blogs'         => 'http://external.ipslink.com/globalfeeds/blog/' );
+									 'blogs'         => IPS_BLOG_NEWS_URL );
 		
 		if ( @file_exists( ROOT_PATH . 'install/index.php' ) )
 		{

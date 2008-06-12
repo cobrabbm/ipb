@@ -57,7 +57,7 @@ class ad_postoffice
 	{
 		if ( TRIAL_VERSION )
 		{
-			print "This feature is disabled in the trial version.";
+			print "该功能对于试用版不开放.";
 			exit();
 		}
 		
@@ -300,7 +300,7 @@ class ad_postoffice
 		
 		if ( ! $id )
 		{
-			$this->ipsclass->main_msg = "There was no ID passed to this function";
+			$this->ipsclass->main_msg = "该操作没有传入 ID 值";
 			$this->mail_start();
 		}
 		
@@ -365,7 +365,7 @@ class ad_postoffice
 		
 		if ( ! $id )
 		{
-			$this->ipsclass->main_msg = "There was no ID passed to this function";
+			$this->ipsclass->main_msg = "该操作没有传入 ID 值";
 			$this->mail_start();
 		}
 		
@@ -644,20 +644,20 @@ class ad_postoffice
 			
 			$this->ipsclass->input['id'] = $this->ipsclass->DB->get_insert_id();
 			
-			$this->ipsclass->admin->save_log("Bulk mail ({$this->ipsclass->input['mail_subject']}) added");
+			$this->ipsclass->admin->save_log("群发邮件 ({$this->ipsclass->input['mail_subject']}) 已经添加");
 			$this->mail_send_start();
 		}
 		else
 		{
 			if ( ! $this->ipsclass->input['id'] )
 			{
-				$this->ipsclass->main_msg = "Cannot save, no ID returned";
+				$this->ipsclass->main_msg = "无法保存, 未返回 ID 值";
 				$this->mail_form($type);
 			}
 			
 			$this->ipsclass->DB->do_update( 'bulk_mail', $save_array, 'mail_id='.$this->ipsclass->input['id'] );
 			
-			$this->ipsclass->admin->save_log("Bulk mail ({$this->ipsclass->input['mail_subject']}) edited");
+			$this->ipsclass->admin->save_log("群发邮件 ({$this->ipsclass->input['mail_subject']}) 已经编辑");
 			
 			$this->ipsclass->main_msg = "群发邮件已编辑";
 			$this->mail_start();
@@ -902,7 +902,7 @@ class ad_postoffice
 			
 			if ( $r['mail_updated'] == $r['mail_start'] )
 			{
-				$time_taken = 'Not yet sent';
+				$time_taken = '尚未发送';
 			}
 			else
 			{

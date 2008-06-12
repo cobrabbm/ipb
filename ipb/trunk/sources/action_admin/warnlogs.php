@@ -97,7 +97,7 @@ class ad_warnlogs {
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("Could not resolve the email ID, please try again");
+			$this->ipsclass->admin->error("无法处理邮件 ID, 请重试");
 		}
 		
 		//-----------------------------------------
@@ -118,18 +118,18 @@ class ad_warnlogs {
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could not resolve the email ID, please try again ($id)");
+			$this->ipsclass->admin->error("无法处理邮件 ID, 请重试 ($id)");
 		}
 		
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;" , "100%" );
 		
 		$content = preg_match( "#<content>(.+?)</content>#is", $row['wlog_notes'], $cont );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Warn Notes" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "警告记录" );
 	
 		$row['date']  = $this->ipsclass->admin->get_date( $row['wlog_date'], 'LONG' );
 		
-		$row['a_name'] = $row['a_name'] ? $row['a_name'] : 'Deleted Member (ID:' . $row['wlog_mid'] . ')';
+		$row['a_name'] = $row['a_name'] ? $row['a_name'] : '删除会员 (ID:' . $row['wlog_mid'] . ')';
 		
 		$this->parser->parse_html    = 0;
 		$this->parser->parse_nl2br   = 1;
@@ -139,9 +139,9 @@ class ad_warnlogs {
 		$text = $this->parser->pre_display_parse( $this->parser->pre_db_parse($cont[1]) );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													"<strong>From:</strong> {$row['p_name']}
-													<br /><strong>To:</strong> {$row['a_name']}
-													<br /><strong>Sent:</strong> {$row['date']}
+													"<strong>来自:</strong> {$row['p_name']}
+													<br /><strong>发送给:</strong> {$row['a_name']}
+													<br /><strong>时间:</strong> {$row['date']}
 													<hr>
 													<br />$text
 												    "
@@ -163,7 +163,7 @@ class ad_warnlogs {
 	{
 		if ($this->ipsclass->input['id'] == "")
 		{
-			$this->ipsclass->admin->error("Could not resolve the email ID, please try again");
+			$this->ipsclass->admin->error("无法处理邮件 ID, 请重试");
 		}
 		
 		$id = intval($this->ipsclass->input['id']);
@@ -173,7 +173,7 @@ class ad_warnlogs {
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could not resolve the email ID, please try again ($id)");
+			$this->ipsclass->admin->error("无法处理邮件 ID, 请重试 ($id)");
 		}
 		
 		$type = $row['wlog_contact'] == 'pm' ? "PM" : "EMAIL";
@@ -189,13 +189,13 @@ class ad_warnlogs {
 		
 		$row['date'] = $this->ipsclass->admin->get_date( $row['wlog_date'], 'LONG' );
 		
-		$row['a_name'] = $row['a_name'] ? $row['a_name'] : 'Deleted Member (ID:' . $row['wlog_mid'] . ')';
+		$row['a_name'] = $row['a_name'] ? $row['a_name'] : '删除会员 (ID:' . $row['wlog_mid'] . ')';
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													"<strong>From:</strong> {$row['p_name']}
-													<br /><strong>To:</strong> {$row['a_name']}
-													<br /><strong>Sent:</strong> {$row['date']}
-													<br /><strong>Subject:</strong> $subj[1]
+													"<strong>来自:</strong> {$row['p_name']}
+													<br /><strong>发送给:</strong> {$row['a_name']}
+													<br /><strong>时间:</strong> {$row['date']}
+													<br /><strong>主题:</strong> $subj[1]
 													<hr>
 													<br />$cont[1]
 												    "
@@ -369,7 +369,7 @@ class ad_warnlogs {
 														  $post,
 														  "{$row['wlog_date']}",
 														  "<b>{$row['p_name']}</b>",
-														  "<center><a href='javascript:pop_win(\"&{$this->ipsclass->form_code}&code=viewnote&id={$row['wlog_id']}\",\"Log\",400,400)'>View</a></center>"
+														  "<center><a href='javascript:pop_win(\"&{$this->ipsclass->form_code}&code=viewnote&id={$row['wlog_id']}\",\"Log\",400,400)'>查看</a></center>"
 												 )      );
 			}
 		}

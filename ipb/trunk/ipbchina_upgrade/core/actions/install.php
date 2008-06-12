@@ -174,7 +174,7 @@ class action_install
 				}
 			}
 
-			$message[] = $this->sqlcount." queries run...";
+			$message[] = $this->sqlcount." 条语句已经执行...";
 		}
 		else
 		{
@@ -931,7 +931,7 @@ class action_install
 					$this->install->saved_data['skinid'] = $next['set_skin_set_id'];
 					$this->install->saved_data['do']	 = 'all';
 					$this->install->template->next_action = '?p=install&sub=skinrevert';
-					$this->install->template->append( $this->install->template->install_page_refresh( array( "$cnt skin template bits from skin set '{$default['set_name']}' reverted, proceeding to next skin set...." ) ) );
+					$this->install->template->append( $this->install->template->install_page_refresh( array( "$cnt 个来自 '{$default['set_name']}' 模板项已经还原, 正在导入下一个模板..." ) ) );
 					$this->install->template->hide_next   = 1;
 					return;
 				}
@@ -940,7 +940,7 @@ class action_install
 					$this->install->saved_data['skinid'] = $default['set_skin_set_id'];
 					$this->install->template->next_action = '?p=install&sub=skinrevert';
 					unset($this->install->saved_data['do']);
-					$this->install->template->append( $this->install->template->install_page_refresh( array( "$cnt skin template bits from skin set '{$default['set_name']}' reverted, proceeding to next skin set...." ) ) );
+					$this->install->template->append( $this->install->template->install_page_refresh( array( "$cnt 个来自 '{$default['set_name']}' 模板项已经还原, 正在导入下一个模板..." ) ) );
 					$this->install->template->hide_next   = 1;
 					return;
 				}
@@ -948,7 +948,7 @@ class action_install
 			else
 			{
 				$this->install->template->next_action = '?p=install&sub=templates';
-				$this->install->template->append( $this->install->template->install_page_refresh( array( "$cnt skin template bits from skin set '{$default['set_name']}' reverted, proceeding to rebuild templates...." ) ) );
+				$this->install->template->append( $this->install->template->install_page_refresh( array( "$cnt 个来自 '{$default['set_name']}' 模板项已经还原, 正在导入下一个模板..." ) ) );
 				$this->install->template->hide_next   = 1;
 				return;
 			}
@@ -994,7 +994,7 @@ class action_install
 		if ( ! is_array( $xml->xml_array['templateexport']['templategroup']['template'] ) )
 		{
 			$this->install->template->in_error   = 1;
-			$this->install->error[] = "Error with resources/ipb_templates.xml - could not process XML properly";
+			$this->install->error[] = "文件 resources/ipb_templates.xml 错误 - 无法正确导入 XML 文件";
 
 			$this->install->template->warning( $this->install->error );
 
@@ -1003,7 +1003,7 @@ class action_install
 		}
 		else
 		{
-			$output[] = "Master templates rebuilt, proceeding to recache templates...";
+			$output[] = "父模板已经重建, 正在重建模板缓存...";
 
 			foreach( $xml->xml_array['templateexport']['templategroup']['template'] as $id => $entry )
 			{
