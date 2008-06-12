@@ -165,13 +165,13 @@ class ad_multi_moderate
 		{
 			if ( $this->ipsclass->input['id'] < 1 )
 			{
-				$this->ipsclass->admin->error("You must use a valid id");
+				$this->ipsclass->admin->error("您必须输入一个有效的 ID");
 			}
 		}
 		
 		if ( $this->ipsclass->input['mm_title'] == "" )
 		{
-			$this->ipsclass->admin->error("You must enter a valid title");
+			$this->ipsclass->admin->error("您必须输入一个有效的 标题");
 		}
 		
 		//-----------------------------------------

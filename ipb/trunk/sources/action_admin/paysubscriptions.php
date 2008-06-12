@@ -95,10 +95,10 @@ class ad_paysubscriptions
 		
 		$this->ipsclass->DB->load_cache_file( ROOT_PATH.'sources/sql/'.SQL_DRIVER.'_subsm_queries.php', 'sql_subsm_queries' );
 		
-		$this->ipsclass->admin->page_title  = "IPB Subscriptions Manager";
-		$this->ipsclass->admin->page_detail = "You can set up and manage your member's paid subscriptions in this section.";
+		$this->ipsclass->admin->page_title  = "IPB 订阅管理";
+		$this->ipsclass->admin->page_detail = "您可以在这里设置您的会员订阅系统.";
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'IPB Subscription Manager Home' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'IPB 订阅管理中心' );
 		
 		//-----------------------------------------
 		// Do what?
@@ -274,7 +274,7 @@ class ad_paysubscriptions
 		
 		if ( ! $gateway )
 		{
-			$this->ipsclass->main_msg = "No gateway specified";
+			$this->ipsclass->main_msg = "未指定支付网关";
 			$this->install_index();
 		}
 		
@@ -282,7 +282,7 @@ class ad_paysubscriptions
 		
 		if ( $test['submethod_name'] )
 		{
-			$this->ipsclass->main_msg = "Gateway already installed";
+			$this->ipsclass->main_msg = "支付网关已经添加";
 			$this->install_index();
 		}
 		
@@ -334,7 +334,7 @@ class ad_paysubscriptions
 		// Done...
 		//-------------------------------------------
 		
-		$this->ipsclass->main_msg = "Gateway installed";
+		$this->ipsclass->main_msg = "支付网关已经添加";
 		$this->install_index();
 	}
 	
@@ -441,9 +441,8 @@ class ad_paysubscriptions
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		}
 		
-		$this->ipsclass->admin->page_detail .= "<br /><br /><strong>Currency Information</strong><br />The currency you set as default becomes the currency the subscriptions are based in. For example, if you chose USD as default, entering a value of 1.00 for a subscription package means that the subscription
-							    package costs 1.00 USD. If you choose another default you may want to edit all the subscription values as they will become incorrect. If you choose another default, you will also want to edit the exchange values.<br /><br />For up-to-date currency conversion, visit <a href='http://www.xe.com' target='_blank'>XE.com</a>.";
-		$this->ipsclass->admin->nav[] = array( '', 'Manage Currencies' );
+		$this->ipsclass->admin->page_detail .= "<br /><br /><strong>货币流通信息</strong><br />您在这里所设置的默认流通货币将会成为您的指定交易货币. 例如, 如果您默认设置为美元, 输入面值为 1.00 意味着订阅包裹花费为 1.00 美元. 如果您选择其他的作为默认您可能需要编辑所有订阅的价格. 如果您选择其他的作为默认, 您可能也需要更改兑换比率.<br /><br />您可以到 <a href='http://www.xe.com' target='_blank'>XE.com</a> 访问最新的货币兑换比率.";
+		$this->ipsclass->admin->nav[] = array( '', '管理货币流通' );
 		
 		//-------------------------------------------
 		// Quick Jump Table
@@ -454,13 +453,13 @@ class ad_paysubscriptions
 																			 4 => array( 'section', $this->ipsclass->section_code ),
 																	)  );
 									     		   
-		$this->ipsclass->adskin->td_header[] = array( "Code"         , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Description"  , "40%" );
-		$this->ipsclass->adskin->td_header[] = array( "Conv. Rate"   , "30%" );
-		$this->ipsclass->adskin->td_header[] = array( "Default?"     , "10%" );
-		$this->ipsclass->adskin->td_header[] = array( "Delete"       , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "代号"         , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "描述"  , "40%" );
+		$this->ipsclass->adskin->td_header[] = array( "比率"   , "30%" );
+		$this->ipsclass->adskin->td_header[] = array( "默认?"     , "10%" );
+		$this->ipsclass->adskin->td_header[] = array( "删除"       , "10%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Available Currencies");
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "可用流通货币");
 		
 		$not_in = ' USD GBP EUR CAD ';
 		
@@ -471,13 +470,13 @@ class ad_paysubscriptions
 		{
 			$checked = $c['subcurrency_default'] == 1 ? " checked='checked'" : "";
 			
-			$delete_link = "<i>Can't Delete</i>";
+			$delete_link = "<i>无法删除</i>";
 			
 			if ( ! strstr( $not_in, $c['subcurrency_code'] ) )
 			{
 				if ( $default['subcurrency_code'] != $c['subcurrency_code'] )
 				{
-					$delete_link = "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=deletecurrency&currency=".$c['subcurrency_code']."'>Delete</a>";
+					$delete_link = "<a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=deletecurrency&currency=".$c['subcurrency_code']."'>删除</a>";
 				}
 			}
 			
@@ -490,16 +489,16 @@ class ad_paysubscriptions
 										 
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( 'Add a new currency', 'left', 'tablesubheader' );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( '添加一个新流通货币', 'left', 'tablesubheader' );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( $this->ipsclass->adskin->form_simple_input( 'add_code', "", 3 ) ,
 																			 $this->ipsclass->adskin->form_input( 'add_desc' ),
-																			 "1 X ".$default['subcurrency_code']." = ".$this->ipsclass->adskin->form_simple_input( 'add_exchange', "", 12 )." <i>new currency</i>",
+																			 "1 X ".$default['subcurrency_code']." = ".$this->ipsclass->adskin->form_simple_input( 'add_exchange', "", 12 )." <i>新建流通货币</i>",
 																			 "&nbsp;",
 																			 "&nbsp;"
 																	)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "Save Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "保存设置" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -545,7 +544,7 @@ class ad_paysubscriptions
 			
 			if ( $t = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->currency_index("You cannot use currency code '{$this->ipsclass->input['add_code']}' as it already exists.");
+				$this->currency_index("您无法使用流通代码 '{$this->ipsclass->input['add_code']}' 因为它已经存在了.");
 			}
 			
 			$this->ipsclass->DB->do_insert( 'subscription_currency', array( 'subcurrency_code'     => $this->ipsclass->input['add_code'],
@@ -553,9 +552,9 @@ class ad_paysubscriptions
 																			'subcurrency_exchange' => $this->ipsclass->input['add_exchange'] ) );
 		}
 		
-		$this->ipsclass->admin->save_log("Currency: Edited");
+		$this->ipsclass->admin->save_log("流通: 编辑成功");
 		
-		$this->currency_index("Currency settings updated");
+		$this->currency_index("流通设置已经更新");
 	}
 	
 	/*-------------------------------------------------------------------------*/
@@ -566,14 +565,14 @@ class ad_paysubscriptions
 	{
 		if ( $this->ipsclass->input['currency'] == "" )
 		{
-			$this->ipsclass->admin->error("Couldn't find a currency to delete.");
+			$this->ipsclass->admin->error("无法找到一个流通货币来删除.");
 		}
 		
 		$this->ipsclass->DB->do_delete( 'subscription_currency', "subcurrency_code='{$this->ipsclass->input['currency']}'" );
 		
-		$this->ipsclass->admin->save_log("Currency '{$this->ipsclass->input['currency']}' Deleted");
+		$this->ipsclass->admin->save_log("货币 '{$this->ipsclass->input['currency']}' 已经删除");
 		
-		$this->currency_index("Currency '{$this->ipsclass->input['currency']}' Deleted");
+		$this->currency_index("货币 '{$this->ipsclass->input['currency']}' 已经删除");
 	}
 	
 	/*-------------------------------------------------------------------------*/
@@ -598,12 +597,12 @@ class ad_paysubscriptions
 		
 		if ( $method_id < 1 )
 		{
-			$this->ipsclass->admin->error("No method_id passed");
+			$this->ipsclass->admin->error("未指定 method_id");
 		}
 		
 		if ( $subpkg_id < 1 )
 		{
-			$this->ipsclass->admin->error("No subpkg_id passed");
+			$this->ipsclass->admin->error("未指定 subpkg_id");
 		}
 		
 		//-------------------------------------------
@@ -659,9 +658,9 @@ class ad_paysubscriptions
 			
 		}
 		
-		$this->ipsclass->admin->save_log("Payment specific information for gateway edited");
+		$this->ipsclass->admin->save_log("支付网关指定信息已经添加");
 		
-		$this->ipsclass->main_msg = "Settings Saved";
+		$this->ipsclass->main_msg = "设置已经保存";
 		$this->edit_package_gateway_info();
 	}
 	
@@ -687,12 +686,12 @@ class ad_paysubscriptions
 		
 		if ( $method_id < 1 )
 		{
-			$this->ipsclass->admin->error("No method_id passed");
+			$this->ipsclass->admin->error("未指定 method_id");
 		}
 		
 		if ( $subpkg_id < 1 )
 		{
-			$this->ipsclass->admin->error("No subpkg_id passed");
+			$this->ipsclass->admin->error("未指定 subpkg_id");
 		}
 		
 		//-------------------------------------------
@@ -731,7 +730,7 @@ class ad_paysubscriptions
 		
 		$row = $this->ipsclass->DB->build_and_exec_query( array( 'select' => '*', 'from' => 'subscription_extra', 'where' => "subextra_sub_id={$subpkg_id} AND subextra_method_id={$method_id}" ) );
 		
-		$this->ipsclass->admin->page_detail .= "<br /><br /><strong>Editing Gateway '{$this_mtd['submethod_title']}' specific information for package '{$this_pkg['sub_title']}'.</strong>";
+		$this->ipsclass->admin->page_detail .= "<br /><br /><strong>正在编辑支付网关 '{$this_mtd['submethod_title']}' 指定信息 '{$this_pkg['sub_title']}'.</strong>";
 		$this->ipsclass->admin->nav[] = array( '', 'Editing Gateway '.$this_mtd['submethod_title'].' Info for Package '.$this_pkg['sub_title'] );
 		
 		//-------------------------------------------
@@ -746,13 +745,13 @@ class ad_paysubscriptions
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Quick Jump");
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "快速跳转");
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Payment Gateway</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付网关</b>" ,
 												 				 $this->ipsclass->adskin->form_dropdown( 'method', $methods, $this_mtd['submethod_id'] )
 										 				)      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Subscription Package</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>订阅包裹</b>" ,
 												 				 $this->ipsclass->adskin->form_dropdown( 'sub', $packages, $this_pkg['sub_id'] )
 										 				)      );
 												 
@@ -809,29 +808,29 @@ class ad_paysubscriptions
 		}
 		else
 		{
-			$this->ipsclass->admin->error("Could not locate the API in: ".ROOT_PATH . 'modules/subsmanager/api_'.$row['submethod_name'].'.php');
+			$this->ipsclass->admin->error("无法定位 API 在: ".ROOT_PATH . 'modules/subsmanager/api_'.$row['submethod_name'].'.php');
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Subscription / Gateway Combo: Product ID</b><br />This is not required by all combinations" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>订阅 / 网管套餐: 产品 ID</b><br />并非所有套餐都需要填写" ,
 												  							 $this->ipsclass->adskin->form_input("subextra_product_id", $row['subextra_product_id'] )
 									     							 )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can be recurringly billed for this package using this gateway?</b><br />This is not required by all combinations and will not count if the package never expires" ,
-												  							 $this->gateway->can_do_recurring_billing == 0 ? "This gateway does not support recurring billing" : $this->ipsclass->adskin->form_yes_no("subextra_recurring", $row['subextra_recurring'] )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以使用该支付网关重新支付订单?</b><br />并非所有套餐都需要填写, 对于过期包裹将会无效." ,
+												  							 $this->gateway->can_do_recurring_billing == 0 ? "该支付网关不支持重新支付订单" : $this->ipsclass->adskin->form_yes_no("subextra_recurring", $row['subextra_recurring'] )
 									     							 )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Can upgrade from this package using this gateway?</b><br />This is not required by all combinations" ,
-												  							 $this->gateway->can_do_upgrades == 0 ? "This gateway does not support upgrading packages" : $this->ipsclass->adskin->form_yes_no("subextra_can_upgrade", $row['subextra_can_upgrade'] )
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以使用该支付网关进行包裹更新?</b><br />并非所有套餐都需要填写" ,
+												  							 $this->gateway->can_do_upgrades == 0 ? "该支付网关不支持更新包裹" : $this->ipsclass->adskin->form_yes_no("subextra_can_upgrade", $row['subextra_can_upgrade'] )
 									     							 )      );
 		
 		if ( count( $custom ) > 0 )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( 'Gateway Specific Settings', 'left', 'catrow2' );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( '支付网关指定设置', 'left', 'catrow2' );
 			
 			$this->ipsclass->html .= implode( "\n", $custom );
 		}
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "Save Settings" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "保存设置" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -839,7 +838,7 @@ class ad_paysubscriptions
 	}
 	
 	/*-------------------------------------------------------------------------*/
-	// Remove Package: You can do iiiiit! I know.
+	// 删除包裹: You can do iiiiit! I know.
 	/*-------------------------------------------------------------------------*/
 	
 	function remove_package_complete()
@@ -848,7 +847,7 @@ class ad_paysubscriptions
 		
 		if ( ! $this->ipsclass->input['id'] )
 		{
-			$this->ipsclass->admin->error("Could locate a subscription package with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位下面 ID 的付费订阅包裹 {$this->ipsclass->input['id']}");
 		}
 		
 		$this->ipsclass->DB->build_query( array( 'select' => '*', 'from' => 'subscriptions', 'where' => "sub_id={$this->ipsclass->input['id']}" ) );
@@ -856,20 +855,20 @@ class ad_paysubscriptions
 				
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could locate a subscription package with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位下面 ID 的付费订阅包裹 {$this->ipsclass->input['id']}");
 		}
 		
 		$this->_unsub_members($this->ipsclass->input['id'], 'all', 'dead');
 		
 		$this->ipsclass->DB->do_delete( 'subscriptions', "sub_id={$this->ipsclass->input['id']}" );
 		
-		$this->ipsclass->admin->save_log("Subscription Package {$row['sub_title']} removed");
+		$this->ipsclass->admin->save_log("已经删除 {$row['sub_title']} 订阅包裹");
 		
 		$this->ipsclass->boink_it( $this->ipsclass->base_url."&{$this->ipsclass->form_code}" );
 	}
 	
 	/*-------------------------------------------------------------------------*/
-	// Remove Package: Step One
+	// 删除包裹: Step One
 	/*-------------------------------------------------------------------------*/
 	
 	function remove_package()
@@ -879,7 +878,7 @@ class ad_paysubscriptions
 		
 		if ( ! $this->ipsclass->input['id'] )
 		{
-			$this->ipsclass->admin->error("Could locate a subscription package with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位下面 ID 的付费订阅包裹 {$this->ipsclass->input['id']}");
 		}
 		
 		$row = $this->ipsclass->DB->build_and_exec_query( array( 'select' => 'COUNT(*) as total', 'from' => 'subscription_trans', 'where' => "subtrans_sub_id={$this->ipsclass->input['id']}" ) );
@@ -896,13 +895,13 @@ class ad_paysubscriptions
 									     
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Remove Package '{$sub['sub_title']}' Confirmation" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "已经删除 '{$sub['sub_title']}' 确认信息" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Members subscribed to {$sub['sub_title']}: $total</b><br /><br />Deleting this package will remove all subscribed members and return them back to their previous group. It will also mark all transactions currently subscribed to this package as 'dead'
-												   							 Please note that if the group that they were in no longer exists, they will be moved into the default member group."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>订阅 {$sub['sub_title']} 的会员共有: $total</b><br /><br />删除该包裹将移除所有会员订阅并且将它们恢复到原始用户组. 它也将标记所有当前的订阅为 '过期'
+												   							 请注意如果原始用户组不存在, 他们将会恢复到默认注册用户组."
 									     							 )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Remove Package");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("删除包裹");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -927,7 +926,7 @@ class ad_paysubscriptions
 		
 		if ( ! $this->ipsclass->input['id'] )
 		{
-			$this->ipsclass->admin->error("Could locate a subscription package with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位下面 ID 的付费订阅包裹 {$this->ipsclass->input['id']}");
 		}
 		
 		$this->ipsclass->DB->build_query( array( 'select' => '*', 'from' => 'subscriptions', 'where' => "sub_id={$this->ipsclass->input['id']}" ) );
@@ -935,14 +934,14 @@ class ad_paysubscriptions
 				
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could locate a subscription package with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位下面 ID 的付费订阅包裹 {$this->ipsclass->input['id']}");
 		}
 		
 		$this->_unsub_members($this->ipsclass->input['id'], $this->ipsclass->input['type']);
 		
-		$this->ipsclass->admin->save_log("Members unsubscribed from package {$row['sub_title']} using type {$this->ipsclass->input['type']}");
+		$this->ipsclass->admin->save_log("订阅 {$row['sub_title']} 的会员通过 {$this->ipsclass->input['type']} 类型取消订阅");
 		
-		$this->ipsclass->main_msg = "Members unsubscribed from package {$row['sub_title']} using type {$this->ipsclass->input['type']}";
+		$this->ipsclass->main_msg = "订阅 {$row['sub_title']} 的会员通过 {$this->ipsclass->input['type']} 类型取消订阅";
 		$this->paysubs_index_packages();
 	}
 	
@@ -966,7 +965,7 @@ class ad_paysubscriptions
 		
 		if ( ! $this->ipsclass->input['id'] )
 		{
-			$this->ipsclass->admin->error("Could locate a subscription package with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位下面 ID 的付费订阅包裹 {$this->ipsclass->input['id']}");
 		}
 		
 		if ( $this->ipsclass->input['type'] != 'all' )
@@ -984,7 +983,7 @@ class ad_paysubscriptions
 		
 		if ( $total < 1 )
 		{
-			$this->ipsclass->admin->error("There are no members to remove.");
+			$this->ipsclass->admin->error("已经没有需要删除的会员了.");
 		}
 	
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'  , 'remove_members_complete'  ),
@@ -996,13 +995,13 @@ class ad_paysubscriptions
 									     
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Unsubscription Confirmation" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "取消订阅确认" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Members to unsubscribe: $total</b><br /><br />Unsubscribing members will mark their transaction as 'expired' and return them to the group they were in before they subscribed.
-												   							 Please note that if the group that they were in no longer exists, they will be moved into the default member group."
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>取消订阅的会员数量: $total</b><br /><br />取消订阅的会员将会把他们的交易标记为 '过期' 并且恢复他们之前的用户组.
+												   							请注意如果原始用户组不存在, 他们将会恢复到默认注册用户组."
 									     							 )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Unsubscribe");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("取消订阅");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1010,7 +1009,7 @@ class ad_paysubscriptions
 	}
 	
 	/*-------------------------------------------------------------------------*/
-	// Subscription Package: Add Package
+	// 订阅包裹: Add Package
 	/*-------------------------------------------------------------------------*/
 	
 	function do_add_package()
@@ -1019,12 +1018,12 @@ class ad_paysubscriptions
 				
 		if ( $this->ipsclass->input['sub_title'] == "" )
 		{
-			$this->ipsclass->admin->error("You must enter a valid title for this subscription package");
+			$this->ipsclass->admin->error("您必须输入一个有效的 标题 给这个订阅包裹");
 		}
 		
 		if ( $this->ipsclass->input['sub_cost'] == "" )
 		{
-			$this->ipsclass->admin->error("You must enter a valid cost for this subscription package");
+			$this->ipsclass->admin->error("您必须输入一个有效的 价格 给这个订阅包裹");
 		}
 		
 		if ( $this->ipsclass->input['sub_noexpire'] )
@@ -1051,14 +1050,14 @@ class ad_paysubscriptions
 														 'sub_run_module'	  => $this->ipsclass->input['sub_run_module'],
 											  ) 				);
 		
-		$this->ipsclass->admin->save_log("Subscription Package '{$this->ipsclass->input['sub_title']}' created");
+		$this->ipsclass->admin->save_log("订阅包裹 '{$this->ipsclass->input['sub_title']}' 已经创建");
 		
-		$this->ipsclass->main_msg = 'Subscription Package Added';
+		$this->ipsclass->main_msg = '订阅包裹已经添加';
 		$this->paysubs_index_packages();
 	}
 	
 	/*-------------------------------------------------------------------------*/
-	// Subscription Package: Complete Edit
+	// 订阅包裹: Complete Edit
 	/*-------------------------------------------------------------------------*/
 	
 	function do_edit_package()
@@ -1072,7 +1071,7 @@ class ad_paysubscriptions
 		
 		if ( ! $this->ipsclass->input['id'] )
 		{
-			$this->ipsclass->admin->error("Could locate a payment gateway with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位 ID 为 {$this->ipsclass->input['id']} 的支付网关");
 		}
 		
 		$this->ipsclass->DB->build_query( array( 'select' => '*', 'from' => 'subscriptions', 'where' => "sub_id={$this->ipsclass->input['id']}" ) );
@@ -1080,17 +1079,17 @@ class ad_paysubscriptions
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could locate a payment gateway with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位 ID 为 {$this->ipsclass->input['id']} 的支付网关");
 		}
 		
 		if ( $this->ipsclass->input['sub_title'] == "" )
 		{
-			$this->ipsclass->admin->error("You must enter a valid title for this subscription package");
+			$this->ipsclass->admin->error("您必须输入一个有效的 标题 给这个订阅包裹");
 		}
 		
 		if ( $this->ipsclass->input['sub_cost'] == "" )
 		{
-			$this->ipsclass->admin->error("You must enter a valid cost for this subscription package");
+			$this->ipsclass->admin->error("您必须输入一个有效的 付款数额 给这个订阅包裹");
 		}
 		
 		if ( $this->ipsclass->input['sub_noexpire'] )
@@ -1117,15 +1116,15 @@ class ad_paysubscriptions
 																		 'sub_run_module'	  => $this->ipsclass->input['sub_run_module'],
 															  ), "sub_id={$row['sub_id']}" );
 		
-		$this->ipsclass->admin->save_log("Subscription Package '{$row['sub_title']}' edited");
+		$this->ipsclass->admin->save_log("订阅包裹 '{$row['sub_title']}' 已经编辑");
 		
-		$this->ipsclass->main_msg = 'Subscription Package edited';
+		$this->ipsclass->main_msg = '订阅包裹已经编辑';
 		$this->paysubs_index_packages();
 	}
 	
 	
 	/*-------------------------------------------------------------------------*/
-	// Subscription Package: Alter Form (edit/new)
+	// 订阅包裹: Alter Form (edit/new)
 	/*-------------------------------------------------------------------------*/
 	
 	function alter_package_form($type='edit')
@@ -1169,7 +1168,7 @@ class ad_paysubscriptions
 		{
 			if ( ! $this->ipsclass->input['id'] )
 			{
-				$this->ipsclass->admin->error("Could not locate a payment gateway with the id of {$this->ipsclass->input['id']}");
+				$this->ipsclass->admin->error("无法定位 ID 为 {$this->ipsclass->input['id']} 的支付网关");
 			}
 			
 			$this->ipsclass->DB->build_query( array( 'select' => '*', 'from' => 'subscriptions', 'where' => "sub_id={$this->ipsclass->input['id']}" ) );
@@ -1177,19 +1176,19 @@ class ad_paysubscriptions
 			
 			if ( ! $row = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->ipsclass->admin->error("Could not locate a payment gateway with the id of {$this->ipsclass->input['id']}");
+				$this->ipsclass->admin->error("无法定位 ID 为 {$this->ipsclass->input['id']} 的支付网关");
 			}
 			
-			$submit = 'Edit Package';
+			$submit = '编辑包裹';
 			$code   = 'doeditpackage';
-			$table  = "Edit Package '{$row['sub_title']}'";
+			$table  = "编辑包裹 '{$row['sub_title']}'";
 		}
 		else
 		{
 			$row = array();
-			$submit = "Add Package";
+			$submit = "添加包裹";
 			$code   = "doaddpackage";
-			$table  = "Add new subscription package";
+			$table  = "添加新的付费订阅包裹";
 		}
 		
 		foreach( explode( ",", $row['sub_payment_allow'] ) as $p )
@@ -1201,7 +1200,7 @@ class ad_paysubscriptions
 		// Grab member groups
 		//-------------------------------------------
 		
-		$groups = array( 0 => array( 0, "--Don't Change Group--" ) );
+		$groups = array( 0 => array( 0, "--不要改变用户组--" ) );
 		
 		$this->ipsclass->DB->build_query( array( 'select' => 'g_id,g_title', 'from' => 'groups', 'order' => 'g_title' ) );
 		$this->ipsclass->DB->exec_query();
@@ -1238,33 +1237,33 @@ class ad_paysubscriptions
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( $table );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Package Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>包裹名称</b>" ,
 												 							  $this->ipsclass->adskin->form_input("sub_title", $row['sub_title'] )
 									   							   )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Package Description</b><br />HTML is allowed" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>包裹描述</b><br />HTML 开启" ,
 																	 		  $this->ipsclass->adskin->form_textarea("sub_desc", $row['sub_desc'] )
 									    							)      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Subscription Duration</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>有效时间</b>" ,
 												  							 $this->ipsclass->adskin->form_simple_input("sub_length", $row['sub_length'] ) .
 												  							 " ". $this->ipsclass->adskin->form_dropdown( 'sub_unit',
-												  							 	      array( 0 => array( 'w', 'Weeks' ), 1 => array( 'm', 'Months' ), 2 => array( 'y', 'Years' ) ),
+												  							 	      array( 0 => array( 'w', '周' ), 1 => array( 'm', '月' ), 2 => array( 'y', '年' ) ),
 																			           $row['sub_unit'] )
-																			  ." <label for='neverexpire'><b>OR</b> <input type='checkbox' id='neverexpire' value='1' name='sub_noexpire' $subchecked /> never expire.</label>",
+																			  ." <label for='neverexpire'><b>或者</b> <input type='checkbox' id='neverexpire' value='1' name='sub_noexpire' $subchecked /> 永不过期.</label>",
 									     							 )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Subscription Costs</b><br />Numerics and decimal points only please. Prices in your chosen default currency" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>包裹花费</b><br />仅限十进制数字和小数点. 单位为您当前设置的货币" ,
 																			   $this->ipsclass->adskin->form_simple_input("sub_cost", $row['sub_cost'] , 7)
 									    							  )      );
 									     
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>New Member Group</b><br />Select the member group that the member will be moved into when payment has been cleared." ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>新用户组</b><br />请选择支付完成后会员的用户组." ,
 												 							  $this->ipsclass->adskin->form_dropdown( 'sub_new_group' , $groups , $row['sub_new_group'] ),
 									     							 )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Run custom module on subscription start/end?</b><br />Optional - Advanced users only" ,
-												  							 "<b>./sources/classes/paymentgateways/custom/cus_</b>".$this->ipsclass->adskin->form_simple_input("sub_run_module", $row['sub_run_module'] , 7) ."<b>.php</b><br />(File must be in this format and location)"
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>执行自定义订阅 开启/关闭 插件?</b><br />可选 - 仅限高级用户" ,
+												  							 "<b>./sources/classes/paymentgateways/custom/cus_</b>".$this->ipsclass->adskin->form_simple_input("sub_run_module", $row['sub_run_module'] , 7) ."<b>.php</b><br />(文件必须位于这一路径)"
 									     							 )      );
 									     
 		
@@ -1284,13 +1283,13 @@ class ad_paysubscriptions
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Edit Subscription / Gateway Specific Information");
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "编辑订阅/支付网关信息");
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Payment Gateway</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付网关</b>" ,
 												 							  $this->ipsclass->adskin->form_dropdown( 'method', $methods, $row['submethod_id'] )
 																	  )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Subscription Package</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>订阅包裹</b>" ,
 																		 	  $this->ipsclass->adskin->form_dropdown( 'sub', $packages, $row['sub_id'] )
 																	  )      );
 												 
@@ -1298,20 +1297,20 @@ class ad_paysubscriptions
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', 'Manage Packages' );
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit Packages' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', '编辑订阅包裹' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑包裹' );
 		
 		$this->ipsclass->admin->output();
 	}
 	
 	
 	/*-------------------------------------------------------------------------*/
-	// Payment gateway: Complete Edit
+	// 支付网关: Complete Edit
 	/*-------------------------------------------------------------------------*/
 	
 	function edit_method_complete()
 	{
-		$this->ipsclass->admin->page_detail .= "<br /><b>Please make sure that you have correctly set up any third party payment gateway before allowing them here in IPB</b>";
+		$this->ipsclass->admin->page_detail .= "<br /><b>在开启易维论坛的这一功能之前, 请确认您是否已经正确安装了第三方支付网关</b>";
 		
 		$this->ipsclass->input['id'] = isset($this->ipsclass->input['id']) ? intval($this->ipsclass->input['id']) : 0;
 		
@@ -1325,12 +1324,12 @@ class ad_paysubscriptions
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could locate a payment gateway with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位以下 ID 的支付网关 {$this->ipsclass->input['id']}");
 		}
 		
 		if ( $this->ipsclass->input['submethod_title'] == "" )
 		{
-			$this->ipsclass->admin->error("You must enter a valid title for this payment gateway");
+			$this->ipsclass->admin->error("您必须输入一个有效的 标题 给这一支付网关");
 		}
 		
 		$newbie =  array (
@@ -1354,14 +1353,14 @@ class ad_paysubscriptions
 		
 		$this->ipsclass->DB->do_update( 'subscription_methods', $newbie, "submethod_id={$row['submethod_id']}" );
 		
-		$this->ipsclass->admin->save_log("Payment gateway '{$row['submethod_title']}' edited");
+		$this->ipsclass->admin->save_log("支付网关 '{$row['submethod_title']}' 已经编辑");
 		
-		$this->ipsclass->main_msg = "Payment gateway '{$row['submethod_title']}' edited";
+		$this->ipsclass->main_msg = "支付网关 '{$row['submethod_title']}' 已经编辑";
 		$this->paysubs_index_gateways();
 	}
 	
 	/*-------------------------------------------------------------------------*/
-	// Payment gateway: Edit Form
+	// 支付网关: Edit Form
 	/*-------------------------------------------------------------------------*/
 	
 	function edit_method()
@@ -1380,7 +1379,7 @@ class ad_paysubscriptions
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Could locate a payment gateway with the id of {$this->ipsclass->input['id']}");
+			$this->ipsclass->admin->error("无法定位以下 ID 的支付网关 {$this->ipsclass->input['id']}");
 		}
 		
 		$currency = array();
@@ -1440,7 +1439,7 @@ class ad_paysubscriptions
 		}
 		else
 		{
-			$this->ipsclass->admin->error("Could not locate the API in: ".ROOT_PATH . 'sources/classes/paymentgateways/class_gw_'.$row['submethod_name'].'.php');
+			$this->ipsclass->admin->error("无法定位下面的 API: ".ROOT_PATH . 'sources/classes/paymentgateways/class_gw_'.$row['submethod_name'].'.php');
 		}
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'  , 'edit_method_complete'  ),
@@ -1454,46 +1453,46 @@ class ad_paysubscriptions
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "{$row['submethod_title']}'s Gateway Settings" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Gateway Public Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付网关名称</b>" ,
 												  $this->ipsclass->adskin->form_input("submethod_title", $row['submethod_title'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Gateway Public Description</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付网关描述</b>" ,
 												  $this->ipsclass->adskin->form_textarea("submethod_desc", $row['submethod_desc'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Gateway Associated Email Address OR associated transaction key</b><br />This is not needed for all gateways." ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付网关关联邮件地址 或者 交易键值</b><br />并非所有支付网关都需要填写." ,
 												  $this->ipsclass->adskin->form_input("submethod_email", $row['submethod_email'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Gateway Store / Seller ID</b><br />This is not needed for all gateways." ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付网关存储/销售 ID</b><br />并非所有支付网关都需要填写." ,
 												  $this->ipsclass->adskin->form_input("submethod_sid", $row['submethod_sid'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Gateway auto-completes order via return validation?</b><br />If the gateway does not support a return validation method, then make sure this is off." ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>当激活后支付网关自动完成订单?</b><br />如果支付网关不支持激活方法返回, 请关闭这一选项." ,
 												  $this->ipsclass->adskin->form_yes_no("submethod_is_auto", $row['submethod_is_auto'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Gateway default currency?</b><br />Select the currency this gateway uses." ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付网关默认流通货币?</b><br />请选择支付网关默认的货币." ,
 												  $this->ipsclass->adskin->form_dropdown("submethod_use_currency", $currency, $row['submethod_use_currency'] )
 									     )      );
 									     
 		if ( count( $custom ) > 0 )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( 'Gateway Specific Settings', 'left', 'catrow2' );
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( '支付网关指定设置', 'left', 'catrow2' );
 			
 			$this->ipsclass->html .= implode( "\n", $custom );
 		}
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Activate this Gateway?</b><br>This will allow your members to use this option." ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>激活支付网关?</b><br />激活后您的会员才可以使用这一支付网关." ,
 												  $this->ipsclass->adskin->form_yes_no("submethod_active", $row['submethod_active'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("Edit Settings");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form("编辑设置");
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
-		$this->ipsclass->admin->nav[] = array( '', 'Editing '.$row['submethod_title'].' Gateway' );
+		$this->ipsclass->admin->nav[] = array( '', '正在编辑 '.$row['submethod_title'].' 支付网关' );
 		
 		$this->ipsclass->admin->output();
 	}
@@ -1519,7 +1518,7 @@ class ad_paysubscriptions
 		// Title
 		//---------------------------------------
 		
-		$this->ipsclass->admin->page_detail .= "<br /><br />You may activate any or all of the default gateways and one of the additionally installed gateways.";
+		$this->ipsclass->admin->page_detail .= "<br /><br />您可以开启或者关闭全部添加的默认支付网关.";
 		
 		//---------------------------------------
 		// Make packages dropdown
@@ -1632,7 +1631,7 @@ class ad_paysubscriptions
 		
 	function paysubs_index_packages()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', 'Manage Packages' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', '管理订阅包裹' );
 		//---------------------------------------
 		// INIT
 		//---------------------------------------
@@ -1640,7 +1639,7 @@ class ad_paysubscriptions
 		$expired        = array();
 		$active         = array();
 		$time           = time();
-		$duration       = array( 'w' => "Week", 'm' => "Month", 'y' => "Year", 'd' => "Day" );
+		$duration       = array( 'w' => "周", 'm' => "月", 'y' => "年", 'd' => "天" );
 		$content        = "";
 		
 		//---------------------------------------
@@ -1701,7 +1700,7 @@ class ad_paysubscriptions
 		// INIT
 		//---------------------------------------
 		
-		$packages       = array( 0 => array( 'all', 'All packages' ) );
+		$packages       = array( 0 => array( 'all', '所有订阅包裹' ) );
 		$search_content = "";
 		$trans_content  = "";
 		$form           = array();
@@ -1723,12 +1722,12 @@ class ad_paysubscriptions
 		//---------------------------------------
 		
 		$state = array(
-						0 => array( 'any'    , 'Any'  ),
-						1 => array( 'paid'   , 'Paid' ),
-						2 => array( 'failed' , 'Failed' ),
-						3 => array( 'expired', 'Expired' ),
-						4 => array( 'dead'   , 'Dead' ),
-						5 => array( 'pending', 'Pending'),
+						0 => array( 'any'    , '任何'  ),
+						1 => array( 'paid'   , '已支付' ),
+						2 => array( 'failed' , '失败' ),
+						3 => array( 'expired', '过期' ),
+						4 => array( 'dead'   , '关闭' ),
+						5 => array( 'pending', '等待'),
 					  );
 		
 		//---------------------------------------
@@ -1736,16 +1735,16 @@ class ad_paysubscriptions
 		//---------------------------------------
 		
 		$fields = array(
-						0 => array( 'name'     , 'Member Name'     ),
-						1 => array( 'trxid'    , 'Transaction ID'  ),
-						2 => array( 'paid'     , 'Amount Paid'     ),
-						3 => array( 'subscrid' , 'Subscription ID' ),
+						0 => array( 'name'     , '会员名称'     ),
+						1 => array( 'trxid'    , '交易 ID'  ),
+						2 => array( 'paid'     , '付款数量'     ),
+						3 => array( 'subscrid' , '订阅 ID' ),
 					   );
 		
 		$fields2 = array(
-					    0 => array( 'none', 'Any field' ),
-						1 => array( 'post', 'POST data' ),
-						2 => array( 'msg' , 'Message'   ),
+					    0 => array( 'none', '任何区域' ),
+						1 => array( 'post', 'POST 数据' ),
+						2 => array( 'msg' , '论坛消息'   ),
 					   );
 					   
 		//---------------------------------------
@@ -1777,15 +1776,13 @@ class ad_paysubscriptions
 	
 	function find_transactions()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', 'Manage Transactions' );
-		$this->ipsclass->admin->nav[] = array( '', 'Results' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', '管理交易' );
+		$this->ipsclass->admin->nav[] = array( '', '结果' );
 		
-		$this->ipsclass->admin->page_detail .= "<br /><br /><b>Important Note!</b> Updating the transaction status will complete the transaction and change the member's user group.<br />
-												For example, if you change the status to 'paid' - this will move the member into the new group specified in the subscription package. If you
-												change the status to 'failed', 'pending' or 'expired', this will move the member back into their previous group or the default member group if
-												their previous group no longer exists. If this is not desired, edit each transaction separately.
+		$this->ipsclass->admin->page_detail .= "<br /><br /><b>重要提示!</b> 更新交易状态将会完成交易并且更该会员用户组.<br />
+												例如, 如果您更改交易状态为 '已支付' - 这将使得会员被转移到订阅包裹所指定的用户组. 如果您更改交易状态为 '失败', '等待' 或者 '过期', 这将使得会员被转移到先前的用户组或者在其不存在的情况下转移到论坛默认用户组. 如果该项没有过期, 请对每一笔交易进行单独编辑.
 												<br />
-												If the package has since been deleted, the member group will not be changed.";
+												如果订阅包裹已经被删除, 会员用户组将不会发生更改.";
 		
 		$st  = intval($this->ipsclass->input['st']) >=0 ? intval($this->ipsclass->input['st']) : 0;
 		$end = 50;
@@ -1871,8 +1868,8 @@ class ad_paysubscriptions
 		$links = $this->ipsclass->adskin->build_pagelinks( array( 'TOTAL_POSS'  => $cnt,
 											   'PER_PAGE'    => 50,
 											   'CUR_ST_VAL'  => $st,
-											   'L_SINGLE'    => "Single Page",
-											   'L_MULTI'     => "Multiple Pages",
+											   'L_SINGLE'    => "单页",
+											   'L_MULTI'     => "多页",
 											   'BASE_URL'    => $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=find_transactions&".$qstring,
 									  )      );
 		
@@ -1900,7 +1897,7 @@ class ad_paysubscriptions
 		
 		if ( ! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No matches found", "center");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "未找到匹配项", "center");
 		}
 		else
 		{
@@ -1913,8 +1910,8 @@ class ad_paysubscriptions
 				
 				if ( $row['id'] == "" )
 				{
-					$row['name']  = "<i>Member Deleted (ID: {$row['subtrans_member_id']})</i>";
-					$row['email'] = "<i>Member Since Deleted</i>";
+					$row['name']  = "<i>已删除会员 (ID: {$row['subtrans_member_id']})</i>";
+					$row['email'] = "<i>会员已经删除</i>";
 				}
 				
 				$color = "";
@@ -1945,7 +1942,7 @@ class ad_paysubscriptions
 				
 				if( !$row['sub_unit'] )
 				{
-					$end_date = '<i>N/A</i>';
+					$end_date = '<i>没有信息</i>';
 				}
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<center><input type='checkbox' name='subtrans_id_{$row['subtrans_id']}' value='1' /></center>" ,
@@ -1959,11 +1956,11 @@ class ad_paysubscriptions
 												 )      );
 			}
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<div align='right'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=addtransaction' class='fauxbutton'>Manually Add New Transaction</a> &nbsp; &nbsp; &nbsp; &nbsp; <input type='submit' id='button' name='delete' value='DELETE' /> or <b>update selected entries to</b></div>", 7 ) ,
-																					    $this->ipsclass->adskin->form_dropdown( 'updateto', array( 0 => array( 'paid'   , 'Paid'    ),
-																																				   1 => array( 'pending', 'Pending' ),
-																																				   2 => array( 'failed' , 'Failed'  ),
-																																				   3 => array( 'expired', 'Expired' ) )
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( array( "<div align='right'><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=addtransaction' class='fauxbutton'>手动添加新交易</a> &nbsp; &nbsp; &nbsp; &nbsp; <input type='submit' id='button' name='delete' value='删除' /> 或者 <b>更新所选交易到</b></div>", 7 ) ,
+																					    $this->ipsclass->adskin->form_dropdown( 'updateto', array( 0 => array( 'paid'   , '已支付'    ),
+																																				   1 => array( 'pending', '等待' ),
+																																				   2 => array( 'failed' , '失败'  ),
+																																				   3 => array( 'expired', '过期' ) )
 																															  )
 																			  )      );
 											 
@@ -1971,7 +1968,7 @@ class ad_paysubscriptions
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form_standalone("Update");
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form_standalone("更新");
 		
 		$this->ipsclass->admin->output();
 	}
@@ -1982,7 +1979,7 @@ class ad_paysubscriptions
 	
 	function find_logs()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', 'Manage Packages' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-packages', '编辑订阅包裹' );
 		$this->ipsclass->admin->nav[] = array( '', 'Results' );
 		//-------------------------------------------
 		// INIT
@@ -2049,7 +2046,7 @@ class ad_paysubscriptions
 		$this->ipsclass->adskin->td_header[] = array( "POST"         , "10%" );
 		$this->ipsclass->adskin->td_header[] = array( "Date"         , "20%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Transaction Entries Found" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "发现交易项" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "$links", "right");
 		
@@ -2058,7 +2055,7 @@ class ad_paysubscriptions
 				
 		if ( ! $this->ipsclass->DB->get_num_rows() )
 		{
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "No matches found", "center");
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( "未发现匹配项", "center");
 		}
 		else
 		{
@@ -2068,7 +2065,7 @@ class ad_paysubscriptions
 				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<center>{$row['sublog_id']}</center>" ,
 																					 "{$row['sublog_data']}",
 																					 "{$row['sublog_ipaddress']}",
-																					 "<center><a href='javascript:pop_win(\"&{$this->ipsclass->form_code_js}&code=find_logs_view_entry&id={$row['sublog_id']}\", \"PostData\", 300,500)'>View</a></center>",
+																					 "<center><a href='javascript:pop_win(\"&{$this->ipsclass->form_code_js}&code=find_logs_view_entry&id={$row['sublog_id']}\", \"PostData\", 300,500)'>查看</a></center>",
 																					 "<center>" . $this->ipsclass->get_date( $row['sublog_date'], 'SHORT' ) . "</center>",
 																			)      );
 			}
@@ -2097,7 +2094,7 @@ class ad_paysubscriptions
 		
 		if ( ! $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$this->ipsclass->admin->error("Cannot get sub log entry, no record for id $id");
+			$this->ipsclass->admin->error("无法得到日志条目, 没有 ID 为 $id 的记录");
 		}
 		
 		$post_data = explode( "\n", $row['sublog_postdata'] );
@@ -2106,14 +2103,14 @@ class ad_paysubscriptions
 		// Set up the table header
 		//-------------------------------------------
 		
-		$this->ipsclass->adskin->td_header[] = array( "Key"    , "20%" );
-		$this->ipsclass->adskin->td_header[] = array( "Value"  , "80%" );
+		$this->ipsclass->adskin->td_header[] = array( "键"    , "20%" );
+		$this->ipsclass->adskin->td_header[] = array( "值"  , "80%" );
 		
 		//-------------------------------------------
 		// Start the table
 		//-------------------------------------------
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "POST DATA FOR TR_ID: $id" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "给一下 TR_ID 的数据: $id" );
 		
 		foreach( $post_data as $data )
 		{
@@ -2160,7 +2157,7 @@ class ad_paysubscriptions
 		{
 			if ( $this->ipsclass->input['membername'] == "" )
 			{
-				$this->edit_transaction( $type, "You must enter a valid name" );
+				$this->edit_transaction( $type, "您必须输入一个有效的 名称" );
 			}
 			
 			$name = strtolower( str_replace( '|', "&#124;", $this->ipsclass->input['membername'] ) );
@@ -2775,7 +2772,7 @@ class ad_paysubscriptions
 	}
 	
 	/*-------------------------------------------------------------------------*/
-	// Unsubscribe members
+	// 取消订阅 members
 	/*-------------------------------------------------------------------------*/
 	
 	function _unsub_members($sub_id, $type='all', $mark='expired')
