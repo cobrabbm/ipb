@@ -102,7 +102,7 @@ $IPBHTML .= <<<EOF
   <td class='tablerow1'>{$form['package']}</td>
  </tr>
  <tr>
-  <td class='tablerow2'><strong>Optional Query</strong></td>
+  <td class='tablerow2'><strong>可选查询</strong></td>
   <td class='tablerow1'>{$form['searchtype']} 包含... {$form['search']}</td>
  </tr>
  <tr>

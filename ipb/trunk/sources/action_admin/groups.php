@@ -2128,16 +2128,16 @@ class ad_groups
 												  $this->ipsclass->adskin->form_multiselect("permid[]", $perm_masks, $arr, 5, 'onfocus="saveit(this)"; onchange="saveit(this)";' )."<br><input style='margin-top:5px' id='editbutton' type='button' onclick='show_me();' value='显示选中的许可集'>"
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>组图标</b><div style='color:gray'>可以使用相对连接, 例如 <b>style_images/1/folder_team_icons/admin.gif</b><br />也可以是一个以 <b>'http://'</b> 开头的完整连接<br/ >使用 <b>style_images/&lt;#IMG_DIR#&gt;/folder_team_icons/{image}</b>（用图片文件名代替 {image}）可以根据会员选择的主题来动态调用图片. </div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>组图标</b><div style='color:gray'>可以使用相对连接, 例如 <b>style_images/1/folder_team_icons/admin.gif</b><br />也可以是一个以 <b>'http://'</b> 开头的完整连接<br/ >使用 <b>style_images/&lt;#IMG_DIR#&gt;/folder_team_icons/{image}</b>(用图片文件名代替 {image})可以根据会员选择的主题来动态调用图片. </div>" ,
 												  $this->ipsclass->adskin->form_textarea("g_icon", htmlspecialchars($group['g_icon']) )
 									     )      );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>在线列表格式 [前缀]</b><br>（可以留空）<br>（例如:&lt;span style='color:red'&gt;）" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>在线列表格式 [前缀]</b><br>(可以留空)<br>(例如:&lt;span style='color:red'&gt;)" ,
 												  $this->ipsclass->adskin->form_input("prefix", $prefix )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>在线列表格式 [后缀]</b><br>（可以留空）<br>(例如:&lt;/span&gt;)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>在线列表格式 [后缀]</b><br>(可以留空)<br>(例如:&lt;/span&gt;)" ,
 												  $this->ipsclass->adskin->form_input("suffix", $suffix )
 									     )      );
 									     
@@ -2243,7 +2243,7 @@ class ad_groups
 									     
 		list( $limit, $flood ) = explode( ":", $group['g_email_limit'] );					     
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许从论坛给会员发送邮件?</b><br />>留空表示不限制 $guest_legend</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许从论坛给会员发送邮件?</b><br />留空表示不限制 $guest_legend</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_email_friend", $group['g_email_friend'] )
 												 ."<br />24 小时内只允许发送 ". $this->ipsclass->adskin->form_simple_input("join_limit", $limit, 2 )." 封邮件"
 												 ."<br />...并且, 每 ".$this->ipsclass->adskin->form_simple_input("join_flood", $flood, 2 )." 分钟只允许发送 1 封邮件"
@@ -2274,15 +2274,15 @@ class ad_groups
 		
 		//-----------------------------------------
 		
-		$dd_topic_rate = array( 0 => array( 0, 'No' ), 1 => array( 1, '是 ( 不允许修改评分 )' ), 2 => array( 2, '是 ( 允许修改评分 )' ) );
+		$dd_topic_rate = array( 0 => array( 0, '否' ), 1 => array( 1, '是 ( 不允许修改评分 )' ), 2 => array( 2, '是 ( 允许修改评分 )' ) );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "发贴权限", "该组成员发表帖子的权限" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以发表主题（在许可的论坛版块）?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以发表主题 (在许可的论坛版块)?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_post_new_topics", $group['g_post_new_topics'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以为主题评分（在打开此功能的论坛版块）?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可以为主题评分((在打开此功能的论坛版块))?</b>" ,
 												  $this->ipsclass->adskin->form_dropdown("g_topic_rate_setting", $dd_topic_rate, $group['g_topic_rate_setting'] )
 									     )      );
 									     
@@ -2290,7 +2290,7 @@ class ad_groups
 												  $this->ipsclass->adskin->form_yes_no("g_reply_own_topics", $group['g_reply_own_topics'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许回复其他会员的主题（在许可的论坛版块）?</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许回复其他会员的主题(在许可的论坛版块)?</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_reply_other_topics", $group['g_reply_other_topics'] )
 									     )      );
 		
@@ -2298,7 +2298,7 @@ class ad_groups
 												  $this->ipsclass->adskin->form_yes_no("g_edit_posts", $group['g_edit_posts'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>编辑时间限制（单位: 分钟）$guest_legend<br>超过时间后拒绝会员编辑帖子. 输入 0 或者留空表示没有限制" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>编辑时间限制(单位: 分钟)$guest_legend<br>超过时间后拒绝会员编辑帖子. 输入 0 或者留空表示没有限制" ,
 												  $this->ipsclass->adskin->form_input("g_edit_cutoff", $group['g_edit_cutoff'] )
 									     )      );
 									     
@@ -2322,11 +2322,11 @@ class ad_groups
 												  $this->ipsclass->adskin->form_yes_no("g_delete_own_topics", $group['g_delete_own_topics'] )
 									     )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许发布投票 （在打开此功能的论坛版块）?$guest_legend</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许发布投票 (在打开此功能的论坛版块)?$guest_legend</b>" ,
 												  $this->ipsclass->adskin->form_yes_no("g_post_polls", $group['g_post_polls'] )
 									     )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许投票（在打开此功能的论坛版块）?$guest_legend" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许投票(在打开此功能的论坛版块)?$guest_legend" ,
 												  $this->ipsclass->adskin->form_yes_no("g_vote_polls", $group['g_vote_polls'] )
 									     )      );							     
 									     
@@ -2446,7 +2446,7 @@ class ad_groups
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->page_title = "用户组";
-		$this->ipsclass->admin->page_detail = "用户组是一个快速且强大的管理会员的方法. 有4个您不能删除的预设组（它们分别是 等待验证会员, 游客, 会员 以及系统管理员）, 不过您可以根据需要编辑它们. 现在举例说明: 设置一个组, 叫做 '版主', 然后允许它访问某个其他组不能访问的论坛版块. <br>版块访问许可, 此功能可以快速修改用户组在版块内阅读和发表的许可设置, 您可以在论坛版块管理中, 针对每个论坛版块逐一设置.";
+		$this->ipsclass->admin->page_detail = "用户组是一个快速且强大的管理会员的方法. 有4个您不能删除的预设组(它们分别是 等待验证会员, 游客, 会员 以及系统管理员), 不过您可以根据需要编辑它们. 现在举例说明: 设置一个组, 叫做 '版主', 然后允许它访问某个其他组不能访问的论坛版块. <br>版块访问许可, 此功能可以快速修改用户组在版块内阅读和发表的许可设置, 您可以在论坛版块管理中, 针对每个论坛版块逐一设置.";
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '用户组管理' );
 		
 		//-----------------------------------------

@@ -63,7 +63,7 @@ $PAGES = array(
 							 5 => array( '手动添加交易'  , 'act=msubs&code=addtransaction' ),
 							 6 => array( '安装支付网关'  , 'act=msubs&code=install-index' ),
 							 //9 => array( '付费订阅设置'     , 'act=op&code=findsetting&key='.urlencode('subscriptionsmanager'), '', 0, 1 ),
-							 9 => array( '付费订阅设置'     , 'act=op&code=findsetting&key=submanager', '', 0, 1 ),
+							 9 => array( '付费订阅设置'     , 'act=op&code=findsetting&key=subsmanager', '', 0, 1 ),
 						   ),
 				
 				# POST MANAGEMENT

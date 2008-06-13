@@ -484,7 +484,7 @@ class ad_banandbadword {
 			
 		$this->ipsclass->admin->page_detail = "您可以在这里设置忌语过滤列表. <br>忌语过滤将会在帖子、签名以及主题标题中自动转换指定的内容. <br><br><b>模糊匹配</b>：如果您输入“hell”作为需要过滤的内容, 那么系统会自动替换“hell”和“hello”到您指定的内容或者 6 个星号（大小写无关）, <br><br><b>精确匹配</b>：如果您输入“hell”作为需要过滤的内容, 那么系统将只替换“hell”到您指定的内容或者 6 个星号（大小写无关）. ";
 		$this->ipsclass->admin->page_title  = "忌语过滤";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code.'&code=badword', 'Bad Word Filters' );
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code.'&code=badword', '忌语过滤' );
 		
 		//-----------------------------------------
 		// Start form
