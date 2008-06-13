@@ -755,7 +755,7 @@ class ad_paysubscriptions
 												 				 $this->ipsclass->adskin->form_dropdown( 'sub', $packages, $this_pkg['sub_id'] )
 										 				)      );
 												 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "Go!" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "执行!" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1293,7 +1293,7 @@ class ad_paysubscriptions
 																		 	  $this->ipsclass->adskin->form_dropdown( 'sub', $packages, $row['sub_id'] )
 																	  )      );
 												 
-		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "Go!" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "执行!" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -1671,7 +1671,7 @@ class ad_paysubscriptions
 		
 		while( $row = $this->ipsclass->DB->fetch_row() )
 		{
-			$row['_duration'] = $row['sub_unit'] != 'x' ? "{$row['sub_length']} {$duration[ $row['sub_unit'] ]}(s)" : "Never Expire";
+			$row['_duration'] = $row['sub_unit'] != 'x' ? "{$row['sub_length']} {$duration[ $row['sub_unit'] ]}(s)" : "永不过期";
 			$row['_cost']     = number_format( $row['sub_cost'], 2, ".", "," );
 			$row['_active']   = intval($active[ $row['sub_id'] ]);
 			$row['_expired']  = intval($expired[ $row['sub_id'] ]);
@@ -1694,7 +1694,7 @@ class ad_paysubscriptions
 		
 	function paysubs_index_tools()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-tools', 'Manage Transactions' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-tools', '交易管理' );
 		
 		//---------------------------------------
 		// INIT
@@ -2144,7 +2144,7 @@ class ad_paysubscriptions
 		{
 			if ( $this->ipsclass->input['id'] == "" )
 			{
-				$this->ipsclass->admin->error("No ID was passed - please go back and try again");
+				$this->ipsclass->admin->error("没有指定 ID 值 - 请返回后重试");
 			}
 			
 			$subtrans = $this->ipsclass->DB->build_and_exec_query( array( 'select' => '*', 'from' => 'subscription_trans', 'where' => "subtrans_id=".$this->ipsclass->input['id'] ) );
@@ -2167,7 +2167,7 @@ class ad_paysubscriptions
 			
 			if ( ! $mem = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->edit_transaction( $type, "Could not locate a member called '{$this->ipsclass->input['membername']}'" );
+				$this->edit_transaction( $type, "无法定位一个名称为 '{$this->ipsclass->input['membername']}' 的会员" );
 			}
 			
 			$save['subtrans_member_id']  = $mem['id'];
@@ -2190,26 +2190,26 @@ class ad_paysubscriptions
 		
 		if ( $date_count > 0 and $date_count < 3 )
 		{
-			$this->edit_transaction( $type, "You must complete the expiry date fully" );
+			$this->edit_transaction( $type, "您必须完整地填写过期时间" );
 		}
 		
 		if ( $this->ipsclass->input['subtrans_paid'] == "" )
 		{
-			$this->edit_transaction( $type, "Please enter a valid total for the amount paid" );
+			$this->edit_transaction( $type, "请输入一个有效的付款总额" );
 		}
 		
 		if ( $date_count )
 		{
 			if ( ! checkdate( $this->ipsclass->input['month'], $this->ipsclass->input['day'] , $this->ipsclass->input['year'] ) )
 			{
-				$this->edit_transaction( $type, "You have entered an impossible expiry date - please check your input" );
+				$this->edit_transaction( $type, "您刚才输入的过期时间不符合 - 请检查您的输入" );
 			}
 		
 			$new_expiry = mktime( 11, 59, 59, $this->ipsclass->input['month'], $this->ipsclass->input['day'], $this->ipsclass->input['year'] );
 			
 			if ( $new_expiry < time() )
 			{
-				$this->edit_transaction( $type, "You cannot set an expiry date before the start of the subscription." );
+				$this->edit_transaction( $type, "请在开启订阅前设置一个过期时间." );
 			}
 		}
 		else
@@ -2312,17 +2312,17 @@ class ad_paysubscriptions
 	function edit_transaction($type='edit', $error="")
 	{
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-tools', 'Manage Transactions' );
-		$this->ipsclass->admin->nav[] = array( '', 'Add/Edit Transactions' );
+		$this->ipsclass->admin->nav[] = array( '', '添加/编辑交易' );
 		//-------------------------------------------
 		// Set up
 		//-------------------------------------------
 		
 		$state = array(
-						1 => array( 'paid'   , 'Paid' ),
-						2 => array( 'failed' , 'Failed' ),
-						3 => array( 'expired', 'Expired' ),
-						4 => array( 'dead'   , 'Dead' ),
-						5 => array( 'pending', 'Pending'),
+						1 => array( 'paid'   , '已支付' ),
+						2 => array( 'failed' , '失败' ),
+						3 => array( 'expired', '过期' ),
+						4 => array( 'dead'   , '结束' ),
+						5 => array( 'pending', '等待'),
 					  );
 		
 		$this->ipsclass->DB->build_query( array( 'select' => 'sub_id, sub_title, sub_cost', 'from' => 'subscriptions', 'order' => 'sub_cost' ) );
@@ -2345,7 +2345,7 @@ class ad_paysubscriptions
 			$methods[] = array( $m['submethod_name'], $m['submethod_title'] );
 		}
 		
-		$groups = array( 0 => array( 0, "--Don't Change Group--" ) );
+		$groups = array( 0 => array( 0, "--不改变用户组--" ) );
 		
 		foreach( $this->ipsclass->cache['group_cache'] as $id => $r )
 		{
@@ -2368,7 +2368,7 @@ class ad_paysubscriptions
 			
 			if ( $this->ipsclass->input['id'] == "" )
 			{
-				$this->ipsclass->admin->error("No ID was passed - please go back and try again");
+				$this->ipsclass->admin->error("没有指定 ID 值 - 请返回后重试");
 			}
 			
 			$this->ipsclass->DB->cache_add_query( 'edit_trans', array( 'id' => $this->ipsclass->input['id'] ), 'sql_subsm_queries' );
@@ -2376,17 +2376,17 @@ class ad_paysubscriptions
 			
 			if ( ! $row = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->ipsclass->admin->error("Could not find a subscription transaction with the id {$this->ipsclass->input['id']}");
+				$this->ipsclass->admin->error("无法找到 ID 为 {$this->ipsclass->input['id']} 的订阅交易");
 			}
 			
 			if ( $row['name'] == "" )
 			{
-				$row['name'] = "<i>Member Since Deleted (ID: {$row['subtrans_member_id']})</i>";
+				$row['name'] = "<i>会员已经删除 (ID: {$row['subtrans_member_id']})</i>";
 			}
 			
 			$code   = "doedittransaction";
-			$button = "Complete Edit";
-			$table  = "Edit Transaction";
+			$button = "完成编辑";
+			$table  = "编辑交易";
 			$name   = $row['name'];
 			
 			if ( $row['sub_unit'] == 'x' )
@@ -2404,9 +2404,9 @@ class ad_paysubscriptions
 		else
 		{
 			$code   = "doaddtransaction";
-			$button = "Complete Entry";
-			$table  = "Add Transaction";
-			$name   = $this->ipsclass->adskin->form_input( 'membername' , $this->ipsclass->input['membername']). " <a href='{$this->ipsclass->vars['board_url']}/index.php?act=Members' target='_blank'>Find Members</a>";
+			$button = "完成交易";
+			$table  = "添加交易";
+			$name   = $this->ipsclass->adskin->form_input( 'membername' , $this->ipsclass->input['membername']). " <a href='{$this->ipsclass->vars['board_url']}/index.php?act=Members' target='_blank'>查找会员</a>";
 			$row    = array();
 			
 			list( $month, $day, $year ) = explode( ",", gmdate( 'n,j,Y' ) );
@@ -2420,7 +2420,7 @@ class ad_paysubscriptions
 		{
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 		
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Error" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "错误" );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( $error )  );
 			
@@ -2442,34 +2442,34 @@ class ad_paysubscriptions
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( $table );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Member Name</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>会员名称</b>" ,
 											               	     $name,
 									                    )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Package Subscribed</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>已订阅包裹</b>" ,
 												                             $this->ipsclass->adskin->form_dropdown("subtrans_sub_id", $packages, $this->ipsclass->input['subtrans_sub_id'] == "" ? $row['subtrans_sub_id'] : $this->ipsclass->input['subtrans_sub_id'])
 									                                )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Previous Group</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>原始用户组</b>" ,
 												                             $this->ipsclass->adskin->form_dropdown("subtrans_old_group", $groups, $this->ipsclass->input['subtrans_old_group'] == "" ? $row['subtrans_old_group'] : $this->ipsclass->input['subtrans_old_group'] )
 									                                )      );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Amount Paid</b><br />Numerics and decimal points only please. Prices in your currency default" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>付款总额</b><br />仅限十进制数和小数点. 价格单位为您当前的默认货币单位" ,
 												                             $this->ipsclass->adskin->form_simple_input("subtrans_paid", $this->ipsclass->input['subtrans_paid'] == "" ? $row['subtrans_paid'] : $this->ipsclass->input['subtrans_paid'] , 7)
 									                                )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Payment Method</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付方式</b>" ,
 												                             $this->ipsclass->adskin->form_dropdown("subtrans_method", $methods, $this->ipsclass->input['subtrans_method'] == "" ? strtolower($row['subtrans_method']) : $this->ipsclass->input['subtrans_method'] )
 									                                )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Payment Status</b>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>支付状态</b>" ,
 																             $this->ipsclass->adskin->form_dropdown("subtrans_state", $state, $this->ipsclass->input['subtrans_state'] == "" ? $row['subtrans_state'] : $this->ipsclass->input['subtrans_state'] )
 														            )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Expires</b><br />MM DD YYYY<div class='graytext'>Leave all fields blank to never expire this transaction</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>过期时间</b><br />MM DD YYYY<div class='graytext'>留空表示永不过期</div>" ,
 															            	 $this->ipsclass->adskin->form_simple_input("month", $this->ipsclass->input['month'] == "" ? $month : $this->ipsclass->input['month'], 2 )." ".
 															            	 $this->ipsclass->adskin->form_simple_input("day"  , $this->ipsclass->input['day']   == "" ? $day   : $this->ipsclass->input['day']  , 2 )." ".
-															            	 $this->ipsclass->adskin->form_simple_input("year" , $this->ipsclass->input['year']  == "" ? $year  : $this->ipsclass->input['year'] , 4 )." (Max: 2037)"
+															            	 $this->ipsclass->adskin->form_simple_input("year" , $this->ipsclass->input['year']  == "" ? $year  : $this->ipsclass->input['year'] , 4 )." (最大值: 2037)"
 														            )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_form( $button );
@@ -2505,7 +2505,7 @@ class ad_paysubscriptions
 		
 		if ( $id_count < 1 )
 		{
-			$this->ipsclass->admin->error("You did not select any transactions to modify");
+			$this->ipsclass->admin->error("您尚未选择任何交易来修改");
 		}
 		
 		$ids = $this->ipsclass->clean_int_array($ids);
@@ -2617,7 +2617,7 @@ class ad_paysubscriptions
 		
 		if ( count($ids) < 1 )
 		{
-			$this->ipsclass->admin->error("You did not select any transactions to modify");
+			$this->ipsclass->admin->error("您尚未选择任何交易来修改");
 		}
 		
 		$id_string = implode( ",", $ids );
@@ -2640,13 +2640,13 @@ class ad_paysubscriptions
 									     		   
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "100%" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Removal Confirmation" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "确认删除" );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Transactions to remove: $id_count</b><br /><br />Deleting these transactions will remove all subscribed members and return them back to their previous group.
-												                                 Please note that if the group that they were in no longer exists, they will be moved into the default member group. The cumulative revenue will be recalculated."
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除交易数量: $id_count</b><br /><br />删除这些交易将会使得相应的会员恢复到他们先前的用户组.
+												                                 请注意如果该用户组不存在, 他们将会被转移到论坛默认注册会员组. 税收将会被累积."
 									                                    )      );
 			
-			$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "Delete" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "删除" );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 			
@@ -2765,7 +2765,7 @@ class ad_paysubscriptions
 				}
 			}
 			
-			$this->ipsclass->admin->save_log("{$id_count} subscription transactions updated to {$this->ipsclass->input['updateto']}");
+			$this->ipsclass->admin->save_log("{$id_count} 个付费订阅来更新 {$this->ipsclass->input['updateto']}");
 		
 			$this->ipsclass->boink_it( $this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=find_transactions&".trim($_POST['qstring']) );
 		}

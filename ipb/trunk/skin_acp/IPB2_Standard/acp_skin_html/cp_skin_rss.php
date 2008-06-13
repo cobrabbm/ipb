@@ -114,16 +114,16 @@ $IPBHTML .= <<<EOF
  <div class='tableheaderalt'>$title</div>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
-   <td width='40%' class='tablerow1'><strong>RSS 导出源 (Channel) 标题</strong></td>
+   <td width='40%' class='tablerow1'><strong>RSS 导出源 (频道) 标题</strong></td>
    <td width='60%' class='tablerow2'>{$form['rss_export_title']}</td>
  </tr>
 <tr>
-   <td width='40%' class='tablerow1'><strong>RSS 导出源 (Channel) 描述</strong></td>
+   <td width='40%' class='tablerow1'><strong>RSS 导出源 (频道) 描述</strong></td>
    <td width='60%' class='tablerow2'>{$form['rss_export_desc']}</td>
  </tr>
  <tr>
    <td width='40%' class='tablerow1'><strong>RSS 导出源图片</strong><div class='desctext'>在 RSS 阅览器中显示的图标</div></td>
-   <td width='60%' class='tablerow2'>{$form['rss_export_image']} <span class='desctext'>* Optional</span></td>
+   <td width='60%' class='tablerow2'>{$form['rss_export_image']} <span class='desctext'>* 可选</span></td>
  </tr>
  <tr>
    <td width='40%' class='tablerow1'><strong>RSS 导出开启</strong></td>
