@@ -1561,7 +1561,7 @@ smtp=SMTP</conf_extra>
 
 		<setting>
 			<conf_id>305</conf_id>
-			<conf_title>从活动域名上传</conf_title>
+			<conf_title>从动态域名上传</conf_title>
 			<conf_description><![CDATA[覆盖上传操作. 对于使用外部主机来进行平衡负载操作的环境非常有用. (多数用户可以留空)<br />
 例如: http://master.mysite.com/forums]]></conf_description>
 			<conf_group>10</conf_group>
@@ -5553,7 +5553,7 @@ http://competitor_domain.com*]]></conf_description>
 		<setting>
 			<conf_id>243</conf_id>
 			<conf_title>默认打开侧边栏</conf_title>
-			<conf_description><![CDATA[如果选择 "是", 所见即所得编辑器的侧边栏 (包含图释和快速连接选项) 将会打开, 直到用户点击 "切换侧边栏" 按钮.]]></conf_description>
+			<conf_description><![CDATA[如果选择 "是", 所见即所得编辑器的侧边栏 (包含表情图标和快速连接选项) 将会打开, 直到用户点击 "切换侧边栏" 按钮.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>rte_side_panel_open</conf_key>

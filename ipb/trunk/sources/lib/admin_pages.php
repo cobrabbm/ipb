@@ -81,12 +81,12 @@ $PAGES = array(
 						   ),
 						   
 				700 => array(
-							1 => array( '论坛表情管理'      , 'act=admin&code=emo'               ),
+							1 => array( '论坛表情图标管理'      , 'act=admin&code=emo'               ),
 							2 => array( '导出/导入表情包'   , 'act=admin&code=emo_packsplash'    ),
 						   ),		   
 						   
 				800 => array (
-							1 => array( '管理脏话过滤', 'act=admin&code=badword'     ),
+							1 => array( '管理词语过滤', 'act=admin&code=badword'     ),
 							6 => array( '管理禁止过滤'    , 'act=admin&code=ban'  ),
 							),		
 				
@@ -185,7 +185,7 @@ $CATS = array (
 				  
 				  500 => array( "论坛附件设置"       , '#f5cdcd' ),
 				  600 => array( "自定义 BBCode"     , '#f5cdcd' ),
-				  700 => array( "论坛表情管理"         , '#f5cdcd' ),
+				  700 => array( "论坛表情图标管理"         , '#f5cdcd' ),
 				  800 => array( "脏话 & 禁言过滤", '#f5cdcd;margin-bottom:12px;' ),
 				  
 				  900 => array( '主题 & 模板设置' , '#DFE6EF' ),

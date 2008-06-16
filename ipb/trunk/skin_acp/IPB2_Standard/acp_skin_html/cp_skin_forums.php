@@ -38,7 +38,7 @@ $IPBHTML .= <<<EOF
 <tr>
  <td align='left' width='40%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;' title='ID: {$r['id']}'>{$r['name']}</td>
  <td align='right' width='60%'>
- <input type='button' value='Re-order Children' class='realdarkbutton' onclick='locationjump( "&{$this->ipsclass->form_code}&code=reorder&f={$r['id']}&sub=1" )' />
+ <input type='button' value='重新排序子论坛' class='realdarkbutton' onclick='locationjump( "&{$this->ipsclass->form_code}&code=reorder&f={$r['id']}&sub=1" )' />
  <img id="menum-{$r['id']}" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /> &nbsp;
 </td>
 </tr>

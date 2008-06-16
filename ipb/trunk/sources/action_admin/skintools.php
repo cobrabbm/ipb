@@ -510,7 +510,7 @@ class ad_skintools {
 													 
 									     
 		$this->ipsclass->html .= "<div class='tableborder'>
-							<div class='tableheaderalt'>快速更换 Changer</div>
+							<div class='tableheaderalt'>快速更换 Logo</div>
 							<div class='tablepad' style='background-color:#EAEDF0'>
 							$warning
 							<fieldset class='tdfset'>
@@ -1214,7 +1214,7 @@ class ad_skintools {
 															      $this->ipsclass->adskin->form_yes_no( 'testonly', 1 )
 													    )      );
 													    
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Enable 'regex' mode?</b><br /><span style='color:gray'>如果是, 您可以使用正则表达式.
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>开启正则表达式?</b><br /><span style='color:gray'>如果是, 您可以使用正则表达式.
 																 <br />例如: - 替换所有的 &lt;br&gt; or &lt;br /&gt; 替换为 &lt;br clear='all' /&gt;
 																 <br />搜索条件为: <b>&lt;(br)&#92;s?/?&gt;</b>
 																 <br />替换为: <b>&lt;&#92;&#92;1 clear='all' /&gt;</b></span>",
@@ -1318,7 +1318,7 @@ class ad_skintools {
 			
 			$this->ipsclass->cache_func->_rebuild_templates_from_php($pid);
 			
-			$this->ipsclass->main_msg = '试图从 PHP 缓存文件重建主主题...';
+			$this->ipsclass->main_msg = '正在试图从 PHP 缓存文件重建主主题...';
 				
 			$this->ipsclass->main_msg .= "<br />".implode("<br />", $this->ipsclass->cache_func->messages);
 		}
@@ -1343,7 +1343,7 @@ class ad_skintools {
 			// Attempt to rearrange style_images dir stuff
 			//-----------------------------------------
 			
-			$this->ipsclass->main_msg = '试图从 CSS 缓存文件重建主 CSS...';
+			$this->ipsclass->main_msg = '正在试图从 CSS 缓存文件重建主 CSS...';
 			
 			$css = preg_replace( "#url\(([\"'])?(.+?)/(.+?)([\"'])?\)#is", "url(\\1style_images/1/\\3\\4)", $css );
 			
@@ -1700,9 +1700,9 @@ class ad_skintools {
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "60%" );
 			$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "40%" );
 
-			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Rewrite cacheid_1 master skins from the DB" );
+			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "从数据库重建 cacheid_1 父模板缓存" );
 
-			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>Rebuild cacheid_1 master skins...</b><br /><span style='color:gray'>This option will rewrite all your master cache skin files from the DB.</span>",
+			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>重建 cacheid_1 父模板缓存...</b><br /><span style='color:gray'>该选项将会刷新所有 cacheid_1 父模板缓存.</span>",
 														    			)      );
 
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_form("运行工具...");

@@ -115,7 +115,7 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>content_group_permsplash</key>
 			<title>论坛权限管理</title>
-			<helptext><![CDATA[您可以在这里设置您论坛的一些访问权限.您可以直接点击会员组右边的下拉菜单来设置哪些论坛会员可以查看,可以发表等等.<br />
+			<helptext><![CDATA[您可以在这里设置您论坛的一些访问权限.您可以直接点击用户组右边的下拉菜单来设置哪些论坛会员可以查看,可以发表等等.<br />
 <br />
 <b>用户组使用</b>显示与此权限有关的用户组.
 <b>会员使用</b> 显示单独使用此权限的特殊会员.
@@ -243,8 +243,8 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 
 		<helpsections>
 			<key>content_group_</key>
-			<title>会员组</title>
-			<helptext><![CDATA[会员组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的会员组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
+			<title>用户组</title>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -467,8 +467,8 @@ PHP 标签结束于:<br />
 			<key>content_msubs_index-packages</key>
 			<title>订阅管理 - 管理订阅包</title>
 			<helptext><![CDATA[订阅包裹一般包括:<br />
-设置会员每个月提升到另外一个会员组.如果您允许会员通过付费的方式成灰管理者,这也非常有用.<br />
-设置从不过期的<i>捐赠者</i>会员组.它则允许会员通过支付一些费用加入到您的论坛特殊组里.]]></helptext>
+设置会员每个月提升到另外一个用户组.如果您允许会员通过付费的方式成灰管理者,这也非常有用.<br />
+设置从不过期的<i>捐赠者</i>用户组.它则允许会员通过支付一些费用加入到您的论坛特殊组里.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -502,8 +502,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>content_babw_badword</key>
-			<title>使用词汇过滤器</title>
-			<helptext><![CDATA[词汇过滤器可以过滤会员发帖,签名和发表主题时候的一些词汇.您可以在这里编辑/添加/删除这些需要过滤的词汇.需要注意的是,默认情况下管理员组是不受这项功能限制的.您可以通过修改<a href="{base_url}&section=content&act=group">管理用户组</a>页面来限制管理员的权限.<br />
+			<title>使用词语过滤器</title>
+			<helptext><![CDATA[词语过滤器可以过滤会员发帖,签名和发表主题时候的一些词汇.您可以在这里编辑/添加/删除这些需要过滤的词汇.需要注意的是,默认情况下管理员组是不受这项功能限制的.您可以通过修改<a href="{base_url}&section=content&act=group">管理用户组</a>页面来限制管理员的权限.<br />
 <br />
 <b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
 <b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
@@ -513,7 +513,7 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>content_babw_ban</key>
 			<title>封禁会员</title>
-			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的会员组切换到 <i>已封禁</i>会员组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
+			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的用户组切换到 <i>已封禁</i>用户组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
 <br />
 <b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
@@ -565,14 +565,14 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>content_group_add</key>
-			<title>创建一个新会员组</title>
-			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的会员组来使用这个权限.如果您第一次来到这里,请点击<a href="{base_url}&section=content&act=group&code=permsplash">权限管理</a>来访问权限设置页面.在您为某些特殊用户组创建了新的权限以后,可以点击<i>'应用权限到...'</i>,选择使用这个权限的会员组.现在,当您编辑论坛权限的时候,您的新权限也会出现.]]></helptext>
+			<title>创建一个新用户组</title>
+			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的用户组来使用这个权限.如果您第一次来到这里,请点击<a href="{base_url}&section=content&act=group&code=permsplash">权限管理</a>来访问权限设置页面.在您为某些特殊用户组创建了新的权限以后,可以点击<i>'应用权限到...'</i>,选择使用这个权限的用户组.现在,当您编辑论坛权限的时候,您的新权限也会出现.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_dopermadd</key>
-			<title>创建一个新会员组</title>
-			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的会员组来使用这个权限,点击<a href="{base_url}&section=content&act=group&code=add">管理会员组</a>就可以进行操作.]]></helptext>
+			<title>创建一个新用户组</title>
+			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的用户组来使用这个权限,点击<a href="{base_url}&section=content&act=group&code=add">管理用户组</a>就可以进行操作.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -662,7 +662,7 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>content_babw_ban_add</key>
 			<title>封禁会员</title>
-			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的会员组切换到 <i>已封禁</i>会员组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
+			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的用户组切换到 <i>已封禁</i>用户组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
 <br />
 <b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
@@ -670,7 +670,7 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>content_babw_ban_delete</key>
 			<title>封禁会员</title>
-			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的会员组切换到 <i>已封禁</i>会员组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
+			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的用户组切换到 <i>已封禁</i>用户组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
 <br />
 <b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
@@ -683,8 +683,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>content_babw_badword_add</key>
-			<title>使用论坛词汇过滤器</title>
-			<helptext><![CDATA[词汇过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理会员组</a>页面更改管理员组的权限.<br />
+			<title>使用论坛词语过滤器</title>
+			<helptext><![CDATA[词语过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理用户组</a>页面更改管理员组的权限.<br />
 <br />
 <b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
 <b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
@@ -693,8 +693,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>content_babw_badword_remove</key>
-			<title>使用论坛词汇过滤器</title>
-			<helptext><![CDATA[词汇过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理会员组</a>页面更改管理员组的权限.<br />
+			<title>使用论坛词语过滤器</title>
+			<helptext><![CDATA[词语过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理用户组</a>页面更改管理员组的权限.<br />
 <br />
 <b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
 <b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
@@ -727,8 +727,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo</key>
-			<title>表情管理</title>
-			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+			<title>表情图标管理</title>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
 如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
 如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
 如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
@@ -736,8 +736,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_upload</key>
-			<title>表情管理</title>
-			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+			<title>表情图标管理</title>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
 如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
 如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
 如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
@@ -745,8 +745,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setadd</key>
-			<title>表情管理</title>
-			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+			<title>表情图标管理</title>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
 如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
 如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
 如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
@@ -764,8 +764,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setremove</key>
-			<title>表情管理</title>
-			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+			<title>表情图标管理</title>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
 如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
 如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
 如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
@@ -773,8 +773,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setedit</key>
-			<title>表情管理</title>
-			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+			<title>表情图标管理</title>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
 如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
 如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
 如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
@@ -802,8 +802,8 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_packimport</key>
-			<title>表情管理</title>
-			<helptext><![CDATA[表情管理可以管理您的表情文件夹,也可以上传新表情.<br />
+			<title>表情图标管理</title>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
 如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
 如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
 如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
@@ -872,20 +872,20 @@ PHP 标签结束于:<br />
 
 		<helpsections>
 			<key>content_group_doadd</key>
-			<title>会员组管理</title>
-			<helptext><![CDATA[会员组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的会员组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
+			<title>用户组管理</title>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_dodelete</key>
-			<title>会员组管理</title>
-			<helptext><![CDATA[会员组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的会员组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
+			<title>用户组管理</title>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_delete</key>
-			<title>删除会员组</title>
-			<helptext><![CDATA[<b>提醒</b>:这项操作不可撤销.如果您删除了这个会员组,唯一可用的还原方法就是您手工一个一个的再把会员添加到这个组内.]]></helptext>
+			<title>删除用户组</title>
+			<helptext><![CDATA[<b>提醒</b>:这项操作不可撤销.如果您删除了这个用户组,唯一可用的还原方法就是您手工一个一个的再把会员添加到这个组内.]]></helptext>
 		</helpsections>
 
 		<helpsections>

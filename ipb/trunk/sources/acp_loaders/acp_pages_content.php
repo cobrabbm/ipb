@@ -37,7 +37,7 @@ $CATS[]  = array( '会员和用户组' );
 $PAGES[] = array(
 					 1  => array ( '会员管理'        , 'section=content&amp;act=mem&amp;code=search' ),
 					 2  => array ( '添加新会员'        , 'section=content&amp;act=mem&amp;code=add'  ),
-					 3  => array ( '头衔管理'          , 'section=content&amp;act=mem&amp;code=title'),
+					 3  => array ( '会员等级设置'          , 'section=content&amp;act=mem&amp;code=title'),
 					 4  => array ( '用户组管理'    , 'section=content&amp;act=group'         ),
 					 5  => array ( '激活会员管理'     , 'section=content&amp;act=mtools&amp;code=mod'  ),
 					 6  => array ( '帐号锁定管理'     	   , 'section=content&amp;act=mtools&amp;code=lock'  ),
@@ -94,10 +94,10 @@ $PAGES[] = array(
 					2 => array( '添加新 BBCode'        , 'section=content&amp;act=bbcode&amp;code=bbcode_add'    ),
 			       );
 			       
-$CATS[]  = array( '脏话过滤' );
+$CATS[]  = array( '词语过滤' );
 
 $PAGES[] = array(
-					1 => array( '管理脏话过滤', 'section=content&amp;act=babw&amp;code=badword'     ),
+					1 => array( '管理词语过滤', 'section=content&amp;act=babw&amp;code=badword'     ),
 					2 => array( '管理屏蔽'    , 'section=content&amp;act=babw&amp;code=ban'  ),
 			       );
 			       

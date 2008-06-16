@@ -52,7 +52,7 @@ class ad_warnlogs {
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Warn Logs' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '警告日志' );
 		
 		//-----------------------------------------
 

@@ -1448,7 +1448,7 @@ class ad_skin_sets
 							   <td width='60%' class='tablerow1'>style_images/ ".$this->ipsclass->adskin->form_dropdown('set_image_dir', $dirs, $row['set_image_dir'])."</td>
 							 </tr>
 							  <tr>
-							   <td width='40%' class='tablerow1'>图释包?<br /><span style='color:gray'>选择要关联到此主题的图释包.</span></td>
+							   <td width='40%' class='tablerow1'>表情图标包?<br /><span style='color:gray'>选择要关联到此主题的表情图标包.</span></td>
 							   <td width='60%' class='tablerow1'>style_emoticons/ ".$this->ipsclass->adskin->form_dropdown('set_emoticon_folder', $emodirs, $row['set_emoticon_folder'])."</td>
 							 </tr>
 							 </table>
