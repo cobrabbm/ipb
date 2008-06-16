@@ -62,8 +62,8 @@ class ad_emoticons {
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->page_detail = "";
-		$this->ipsclass->admin->page_title  = "图释管理";
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '图释管理' );
+		$this->ipsclass->admin->page_title  = "表情图标管理";
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '表情图标管理' );
 		
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_lookandfeel');
 
@@ -330,7 +330,7 @@ class ad_emoticons {
 		
 		$this->emoticon_rebuildcache();
 		
-		$this->ipsclass->main_msg = "图释已更新";
+		$this->ipsclass->main_msg = "表情图标已更新";
 		
 		$this->emoticon_manage();
 	
@@ -350,7 +350,7 @@ class ad_emoticons {
 		
 		if ($this->ipsclass->input['id'] != "default" )
 		{
-			$this->ipsclass->main_msg = "您只能从默认图释包中添加, 编辑和删除图释";
+			$this->ipsclass->main_msg = "您只能从默认表情图标包中添加, 编辑和删除表情图标";
 			$this->emoticon_start();
 		}		
 		
@@ -366,7 +366,7 @@ class ad_emoticons {
 		
 		$this->emoticon_rebuildcache();
 		
-		$this->ipsclass->main_msg = "图释已删除";
+		$this->ipsclass->main_msg = "表情图标已删除";
 		
 		$this->emoticon_manage();
 	}
@@ -643,7 +643,7 @@ class ad_emoticons {
 	{
 		if ( ! is_dir( CACHE_PATH. 'style_emoticons') )
 		{
-			$this->ipsclass->admin->error("找不到图释文件夹 - 确认 'style_emoticons' 文件夹在正确的路径");
+			$this->ipsclass->admin->error("找不到表情图标文件夹 - 确认 'style_emoticons' 文件夹在正确的路径");
 			$this->ipsclass->admin->output();
 		}
 		
@@ -709,7 +709,7 @@ class ad_emoticons {
 			if( $dir == 'default' )
 			{
 				$data['line_image'] = '';
-				$data['link_text'] = "图释管理";
+				$data['link_text'] = "表情图标管理";
 			}
 			else
 			{
@@ -737,7 +737,7 @@ class ad_emoticons {
 				}
 				
 				$data['icon']     = 'icon_can_write.gif';
-				$data['title']    = '此文件夹可以写入, 可以添加新图释';
+				$data['title']    = '此文件夹可以写入, 可以添加新表情图标';
 				$data['checkbox'] = "<input type='checkbox' name='dir_{$dir}' {$checked_def}value='1' />";
 			}
 			else
@@ -755,8 +755,8 @@ class ad_emoticons {
 		
 		$this->ipsclass->html .= $this->html->emoticon_overview_wrapper( $row_html );
 		
-		$this->ipsclass->admin->page_detail = "您可以在这里添加, 编辑或删除图释.";
-		$this->ipsclass->admin->page_title   = "图释管理";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加, 编辑或删除表情图标.";
+		$this->ipsclass->admin->page_title   = "表情图标管理";
 		
 		$this->ipsclass->admin->output();
 	
@@ -768,8 +768,8 @@ class ad_emoticons {
 	
 	function emoticon_setremove()
 	{
-		$this->ipsclass->admin->page_detail = "删除图释包.";
-		$this->ipsclass->admin->page_title  = "图释管理";
+		$this->ipsclass->admin->page_detail = "删除表情图标包.";
+		$this->ipsclass->admin->page_title  = "表情图标管理";
 		
 		if ( ! $this->ipsclass->input['id'] )
 		{
@@ -789,7 +789,7 @@ class ad_emoticons {
 		
 		$this->emoticon_rebuildcache();
 		
-		$this->ipsclass->main_msg = "图释文件夹已删除.";
+		$this->ipsclass->main_msg = "表情图标文件夹已删除.";
 		$this->emoticon_start();
 	}
 	
@@ -799,13 +799,13 @@ class ad_emoticons {
 	
 	function emoticon_pack_splash()
 	{
-		$this->ipsclass->admin->page_detail = "导入导出 IPB 图释包.";
-		$this->ipsclass->admin->page_title  = "图释管理";
-		$this->ipsclass->admin->nav[] 		= array( '', '导入导出图释包' );
+		$this->ipsclass->admin->page_detail = "导入导出 IPB 表情图标包.";
+		$this->ipsclass->admin->page_title  = "表情图标管理";
+		$this->ipsclass->admin->nav[] 		= array( '', '导入导出表情图标包' );
 		
 		if ( ! is_dir( CACHE_PATH. 'style_emoticons') )
 		{
-			$this->ipsclass->admin->error("无法找到图释文件夹 - 请确认“style_emoticons”文件夹在正确的路径");
+			$this->ipsclass->admin->error("无法找到表情图标文件夹 - 请确认“style_emoticons”文件夹在正确的路径");
 			$this->ipsclass->admin->output();
 		}
 		
@@ -859,10 +859,10 @@ class ad_emoticons {
 															     4 => array( 'section', $this->ipsclass->section_code ),
 													    )      );
 													  			
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导出图释包" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导出表情图标包" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													            "<b>选择要导出的图释组?</b><div style='color:gray'>IPB 图释包是一个包含图片和图释代码的 XML 文档 (例如 :smile:)</div>",
+													            "<b>选择要导出的表情图标组?</b><div style='color:gray'>IPB 表情图标包是一个包含图片和表情图标代码的 XML 文档 (例如 :smile:)</div>",
 													            $this->ipsclass->adskin->form_dropdown( 'emo_set', $emodd )
 													   )      );
 		
@@ -889,15 +889,15 @@ class ad_emoticons {
 														) , "uploadform", " enctype='multipart/form-data'"     );
 													
 													  			
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导入图释包" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "导入表情图标包" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													  		"<b>导入到图释组?</b><div style='color:gray'>IPB 图释包是一个包含图片和图释代码的 XML 文档 ( 例如 :smile:)</div>",
+													  		"<b>导入到表情图标组?</b><div style='color:gray'>IPB 表情图标包是一个包含图片和表情图标代码的 XML 文档 ( 例如 :smile:)</div>",
 													  		$this->ipsclass->adskin->form_dropdown( 'emo_set', $emodd )
 													   )      );
 													   
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													  		"<b><u>OR</u> 导入到新图释组:</b><div style='color:gray'>输入图释组名称.</div>",
+													  		"<b><u>OR</u> 导入到新表情图标组:</b><div style='color:gray'>输入表情图标组名称.</div>",
 													  		$this->ipsclass->adskin->form_input( 'new_emo_set' )
 													   )      );
 													   
@@ -907,7 +907,7 @@ class ad_emoticons {
 													   )      );
 													   
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array(
-													 		 "<b>上传 XML 图释文件</b><div style='color:gray'>文件名必须是 'ipb_emoticons.xml' 或 'ipb_emoticons.xml.gz'</div>",
+													 		 "<b>上传 XML 表情图标文件</b><div style='color:gray'>文件名必须是 'ipb_emoticons.xml' 或 'ipb_emoticons.xml.gz'</div>",
 													  		$this->ipsclass->adskin->form_upload(  )
 													   )      );
 		
@@ -944,7 +944,7 @@ class ad_emoticons {
 		
 		if ( ! $this->ipsclass->input['emo_set'] )
 		{
-			$this->ipsclass->main_msg = "您必须指定需要导出的图释组";
+			$this->ipsclass->main_msg = "您必须指定需要导出的表情图标组";
 		}
 		
 		//-----------------------------------------
@@ -1102,7 +1102,7 @@ class ad_emoticons {
 		
 		if ( ! $this->ipsclass->input['emo_set'] and ! $this->ipsclass->input['new_emo_set'] )
 		{
-			$this->ipsclass->main_msg = "您必须指定要导入的目标图释组";
+			$this->ipsclass->main_msg = "您必须指定要导入的目标表情图标组";
 		}
 		
 		$emo_set_dir = $this->ipsclass->input['emo_set'];
@@ -1222,7 +1222,7 @@ class ad_emoticons {
 		
 		$this->emoticon_rebuildcache();
                     
-		$this->ipsclass->main_msg = "图释 XML 文件导入完毕";
+		$this->ipsclass->main_msg = "表情图标 XML 文件导入完毕";
 		
 		$this->emoticon_start();
 	
@@ -1237,21 +1237,21 @@ class ad_emoticons {
 	{
 		$this->ipsclass->input['id'] = trim($this->ipsclass->input['id']);
 		
-		$this->ipsclass->admin->nav[] = array( '', '图释包 '.$this->ipsclass->input['id'] );
+		$this->ipsclass->admin->nav[] = array( '', '表情图标包 '.$this->ipsclass->input['id'] );
 		
 		if( $this->ipsclass->input['id'] == 'default' )
 		{
-			$this->ipsclass->admin->page_detail = "您可以在这里添加/编辑或删除图释.<br>";
+			$this->ipsclass->admin->page_detail = "您可以在这里添加/编辑或删除表情图标.<br>";
 		}
 		
-		$this->ipsclass->admin->page_detail .= "可点击指的是图释将出现在发帖界面的“可点击图释”表格内.";
+		$this->ipsclass->admin->page_detail .= "可点击指的是表情图标将出现在发帖界面的“可点击表情图标”表格内.";
 		
 		if( $this->ipsclass->input['id'] == 'default' )
 		{
-			$this->ipsclass->admin->page_detail = "<br /><strong>您不能在图释代码中使用字符 &quot;.";
+			$this->ipsclass->admin->page_detail = "<br /><strong>您不能在表情图标代码中使用字符 &quot;.";
 		}		
 
-		$this->ipsclass->admin->page_title  = "图释管理";
+		$this->ipsclass->admin->page_title  = "表情图标管理";
 		
 		//-----------------------------------------
 		// Get emoticons for this group
@@ -1284,7 +1284,7 @@ class ad_emoticons {
 		$td_width = 100 / $per_row;
 		
 		$this->ipsclass->html .= "<div class='tableborder'>
-							 <div class='tableheaderalt'>分配在图释组 '{$this->ipsclass->input['id']}' 中的图释</div>
+							 <div class='tableheaderalt'>分配在表情图标组 '{$this->ipsclass->input['id']}' 中的表情图标</div>
 							 <form action='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=emo_doedit&id={$this->ipsclass->input['id']}' method='post'>
 							 <input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' />
 							 <table cellpadding='4' cellspacing='0' border='0' width='100%'>
@@ -1357,7 +1357,7 @@ class ad_emoticons {
 		$this->ipsclass->html .= $smilies;
 		
 		$this->ipsclass->html .= "</table>
-							<div class='tablesubheader' align='center'><input type='submit' class='realbutton' value='更新图释' /></form></div></div><br />";
+							<div class='tablesubheader' align='center'><input type='submit' class='realbutton' value='更新表情图标' /></form></div></div><br />";
 		
 		
 		//-----------------------------------------
@@ -1424,7 +1424,7 @@ class ad_emoticons {
 			$this->ipsclass->html .= $smilies;
 			
 			$this->ipsclass->html .= "</table>
-								<div class='tablesubheader' align='center'><input type='submit' class='realbutton' value='添加选中的图释' />&nbsp;&nbsp;<input type='submit' name='addall' class='realbutton' value='添加全部图释' /></form></div></div>";
+								<div class='tablesubheader' align='center'><input type='submit' class='realbutton' value='添加选中的表情图标' />&nbsp;&nbsp;<input type='submit' name='addall' class='realbutton' value='添加全部表情图标' /></form></div></div>";
 		}
 		
 		$this->ipsclass->admin->output();

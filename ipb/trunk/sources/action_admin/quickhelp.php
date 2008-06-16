@@ -39,7 +39,7 @@ class ad_quickhelp {
 	function init_help_array()
 	{
 	
-		return array(	'mg_dohtml' => array( 'title' => "Posting HTML",
+		return array(	'mg_dohtml' => array( 'title' => "发表 HTML",
 											  'body'  => "This will allow all members of the group to post pure HTML in forums that have the ability to accept raw HTML. You can turn this on and off
 											  			  for each forum via the edit forum settings function. Note: When HTML in posts in quoted by a member who does not have the permission to post HTML, the
 											  			  post will be shown in unparsed HTML format with most of the formatting removed.<br />

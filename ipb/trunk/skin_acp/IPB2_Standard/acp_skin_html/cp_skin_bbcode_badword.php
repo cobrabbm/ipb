@@ -18,7 +18,7 @@ $IPBHTML .= <<<EOF
 						<div class="tableheaderalt">
 						<table cellpadding='0' cellspacing='0' border='0' width='100%'>
 				  <tr>
-				  <td align='left' width='100%' style='font-weight:bold;font-size:12px;color:#FFF'>您的自定义 BBCodes</td>
+				  <td align='left' width='100%' style='font-weight:bold;font-size:12px;color:#FFF'>您的自定义 BBCode</td>
 				  <td align='right' nowrap='nowrap' style='padding-right:6px'><img id='menumainone' src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /></td>
 				  </tr>
 				  </table> </div>
@@ -128,7 +128,7 @@ $IPBHTML .= <<<EOF
  <script type="text/javascript">
   menu_build_menu(
   "menumainone",
-  new Array( img_export   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=badword_export'>导出脏话过滤...</a>" ) );
+  new Array( img_export   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=badword_export'>导出词语过滤...</a>" ) );
  </script>
 EOF;
 
@@ -154,8 +154,8 @@ $IPBHTML .= <<<EOF
 <script type="text/javascript">
   menu_build_menu(
   "menu{$row['wid']}",
-  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=badword_edit&id={$row['wid']}'>编辑脏话过滤...</a>",
-  			 img_delete   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=badword_remove&id={$row['wid']}'>删除脏话过滤...</a>"
+  new Array( img_edit   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=badword_edit&id={$row['wid']}'>编辑词语过滤...</a>",
+  			 img_delete   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=badword_remove&id={$row['wid']}'>删除词语过滤...</a>"
 		    ) );
  </script>
 EOF;

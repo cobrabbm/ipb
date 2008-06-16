@@ -1928,7 +1928,7 @@ class ad_member
 	{
 		$this->ipsclass->admin->page_title = "会员等级设置";
 		$this->ipsclass->admin->page_detail = "您可以在这里添加, 修改或删除会员等级<br>如果您希望在会员的名称下面显示等级图片, 请输入等级图片代码. 如果您希望使用自定义图片, 只需要在相应空格输入文件名即可. 提示, 这些自定义图片必须存放在“style_images/{img_dir}/folder_team_icons”目录";
-		$this->ipsclass->admin->nav[] = array( '', 'Member Rank Set Up' );
+		$this->ipsclass->admin->nav[] = array( '', '会员等级设置' );
 		
 		//-----------------------------------------
 		
@@ -2146,7 +2146,7 @@ class ad_member
 	{
 		$this->ipsclass->admin->page_title = "会员等级设置";
 		$this->ipsclass->admin->page_detail = "如果您希望在会员的名称下面显示等级图片, 请输入等级图片代码.  如果您希望使用自定义图片, 只需要在相应空格输入文件名即可. 提示, 这些自定义图片必须存放在“style_images/{img_dir}/folder_team_icons”目录";
-		$this->ipsclass->admin->nav[] 		= array( '', 'Member Rank Set Up' );
+		$this->ipsclass->admin->nav[] 		= array( '', '会员等级设置' );
 		
 		if ( $mode == 'edit' )
 		{

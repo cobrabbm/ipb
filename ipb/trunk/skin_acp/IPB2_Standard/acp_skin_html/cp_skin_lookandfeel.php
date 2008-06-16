@@ -896,7 +896,7 @@ $IPBHTML .= <<<EOF
 <div class='tableheaderalt'>
  <table cellpadding='0' cellspacing='0' border='0' width='100%'>
  <tr>
-  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>当前表情文件夹</td>
+  <td align='left' width='95%' style='font-size:12px; vertical-align:middle;font-weight:bold; color:#FFF;'>当前表情图标文件夹</td>
   <td align='right' width='5%' nowrap='nowrap'>
    <img id="menumainone" src='{$this->ipsclass->skin_acp_url}/images/filebrowser_action.gif' border='0' alt='选项' class='ipd' /> &nbsp;
  </td>
@@ -905,7 +905,7 @@ $IPBHTML .= <<<EOF
 </div>
 
 <table width='100%' cellspacing='0' cellpadding='5' align='center' border='0'><tr>
-<td class='tablesubheader' width='50%' align='center'>表情文件夹</td>
+<td class='tablesubheader' width='50%' align='center'>表情图标文件夹</td>
 
 <td class='tablesubheader' width='5%' align='center'>上传</td>
 <td class='tablesubheader' width='20%' align='center'># 硬盘文件夹 </td>

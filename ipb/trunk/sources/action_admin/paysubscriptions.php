@@ -2311,7 +2311,7 @@ class ad_paysubscriptions
 	
 	function edit_transaction($type='edit', $error="")
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-tools', 'Manage Transactions' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=index-tools', '交易管理' );
 		$this->ipsclass->admin->nav[] = array( '', '添加/编辑交易' );
 		//-------------------------------------------
 		// Set up
@@ -2643,7 +2643,7 @@ class ad_paysubscriptions
 			$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "确认删除" );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>删除交易数量: $id_count</b><br /><br />删除这些交易将会使得相应的会员恢复到他们先前的用户组.
-												                                 请注意如果该用户组不存在, 他们将会被转移到论坛默认注册会员组. 税收将会被累积."
+												                                 请注意如果该用户组不存在, 他们将会被转移到论坛默认注册用户组. 税收将会被累积."
 									                                    )      );
 			
 			$this->ipsclass->html .= $this->ipsclass->adskin->end_form( "删除" );

@@ -766,7 +766,7 @@ class ad_groups
 		
 		$this->ipsclass->admin->page_title  = "版块访问许可管理 [ HOME ]";
 		$this->ipsclass->admin->page_detail = "您可以在这里管理您的论坛版块访问许可设置.";
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=permsplash', 'Manage Permissions' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code.'&code=permsplash', '权限管理' );
 								
 		//-----------------------------------------
 		// Get the names for the perm masks w/id

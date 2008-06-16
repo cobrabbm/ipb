@@ -85,7 +85,7 @@ class ad_administration
 							'multimod'      => '主题批处理',
 							'bbcode'        => "自定义 BBCode",
 							'settings'      => "论坛设置和变量",
-							'emoticons'     => '论坛图释',
+							'emoticons'     => '论坛表情图标',
 							'badwords'      => '论坛过滤',
 							'languages'     => '语言包',
 							'banfilters'    => '屏蔽的 IP 地址',
@@ -555,7 +555,7 @@ class ad_administration
 				
 				$this->emoticons->emoticon_rebuildcache();
 			
-				$this->ipsclass->main_msg = '图释缓存已更新';
+				$this->ipsclass->main_msg = '表情图标缓存已更新';
 				break;
 				
 			//-----------------------------------------

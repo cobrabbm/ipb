@@ -65,7 +65,7 @@ class ad_sql_module {
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'SQL Toolbox' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '数据库工具箱' );
 		
 		//-----------------------------------------
 		// Make sure we're a root admin, or else!
@@ -73,7 +73,7 @@ class ad_sql_module {
 		
 		if ($this->ipsclass->member['mgroup'] != $this->ipsclass->vars['admin_group'])
 		{
-			$this->ipsclass->admin->error("Sorry, these functions are for the root admin group only");
+			$this->ipsclass->admin->error("非常抱歉, 这些功能仅对系统管理员开放");
 		}
 		
 		//-----------------------------------------
