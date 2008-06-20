@@ -380,8 +380,8 @@ class ad_sql_module {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "简单备份" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>备份 MySQL 数据库</b><br><br>您点击下面的连接后, 请等待直到浏览器弹出对话框. 本操作需要的时间基于您的数据库大小.
-													<br><br>
+													"<b>备份 MySQL 数据库</b><br /><br />您点击下面的连接后, 请等待直到浏览器弹出对话框. 本操作需要的时间基于您的数据库大小.
+													<br /><br />
 													<b><a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=dosafebackup&create_tbl={$this->ipsclass->input['create_tbl']}&addticks={$this->ipsclass->input['addticks']}&skip={$this->ipsclass->input['skip']}&enable_gzip={$this->ipsclass->input['enable_gzip']}'>点击这里开始备份</a></b>"
 									     )      );
 									     
@@ -400,12 +400,12 @@ class ad_sql_module {
 		$this->ipsclass->admin->nav[] = array( '', 'MySQL 数据库备份' );
 		
 		$this->ipsclass->admin->page_detail = "您可以在这里备份您的数据库.
-							  <br><br><b>简单备份</b>
-							  <br>本功能将生成一个备份文件并提示您下载保存.本功能可以在 PHP 安全模式下运行, 不过只能使用于小数据库.
-							  <br><br>
+							  <br /><br /><b>简单备份</b>
+							  <br />本功能将生成一个备份文件并提示您下载保存.本功能可以在 PHP 安全模式下运行, 不过只能使用于小数据库.
+							  <br /><br />
 							  <b>高级备份</b>
-							  <br>本功能可以将备份文件分割为几个小文件.
-							  <br>提示, 本功能不能用于 PHP 安全模式.";
+							  <br />本功能可以将备份文件分割为几个小文件.
+							  <br />提示, 本功能不能用于 PHP 安全模式.";
 
 		$this->ipsclass->admin->page_title  = "mySQL ".$this->true_version." 备份";
 		
@@ -428,17 +428,17 @@ class ad_sql_module {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "简单备份" );
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>添加 'CREATE TABLE' 子句?</b><br>在表名前后添加引号?<br> (如果您遇到 MySQL 出错, 请打开本设置) <input type='checkbox' name='addticks' value=1>",
+													"<b>添加 'CREATE TABLE' 子句?</b><br />在表名前后添加引号?<br /> (如果您遇到 MySQL 出错, 请打开本设置) <input type='checkbox' name='addticks' value=1>",
 													$this->ipsclass->adskin->form_yes_no( 'create_tbl', 1),
 									     )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>跳过非核心数据?</b><br>将不会备份 ibf_sessions, ibf_admin_sessions, ibf_search_results, ibf_reg_anti_spam 数据.",
+													"<b>跳过非核心数据?</b><br />将不会备份 ibf_sessions, ibf_admin_sessions, ibf_search_results, ibf_reg_anti_spam 数据.",
 													$this->ipsclass->adskin->form_yes_no( 'skip', 1),
 									     )      );
 									     
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( 
-													"<b>GZIP 压缩数据?</b><br>打开后将会生成一个较小的 GZip 文件.",
+													"<b>GZIP 压缩数据?</b><br />打开后将会生成一个较小的 GZip 文件.",
 													$this->ipsclass->adskin->form_yes_no( 'enable_gzip', 0 ),
 									     )      );
 												 
@@ -608,7 +608,7 @@ class ad_sql_module {
 				
 				$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "SQL 查询完成" );
 				
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("查询: ".htmlspecialchars($sql)."<br>成功执行") );
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array("查询: ".htmlspecialchars($sql)."<br />成功执行") );
 			
 				$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 				
@@ -1003,7 +1003,7 @@ class ad_sql_module {
 		
 		if ( $this->mysql_version < 3232 )
 		{
-			$extra = "<br><b>提示: 您的 MySQL 版本有所限制, 部分功能无法运行</b>";
+			$extra = "<br /><b>提示: 您的 MySQL 版本有所限制, 部分功能无法运行</b>";
 		}
 	
 		$this->ipsclass->admin->page_detail = "您可以在这里管理您的 mySQL 数据库.$extra";
@@ -1154,7 +1154,7 @@ class ad_sql_module {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "执行查询" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>手工查询</b><br>仅供高级会员使用",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>手工查询</b><br />仅供高级会员使用",
 												  $this->ipsclass->adskin->form_textarea("query", "" ),
 												 )      );
 												 

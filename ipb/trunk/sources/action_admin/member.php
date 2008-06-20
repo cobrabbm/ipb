@@ -983,7 +983,7 @@ class ad_member
 									     		
 		$ban = $this->ipsclass->hdl_ban_line( $member['temp_ban'] );
 		
-		$units = array( 0 => array( 'h', 'Hours' ), 1 => array( 'd', 'Days' ) );
+		$units = array( 0 => array( 'h', '小时' ), 1 => array( 'd', '天' ) );
 		
 		//-----------------------------------------
 		// Start form
@@ -998,11 +998,11 @@ class ad_member
 												                 $this->ipsclass->adskin->form_input('timespan', $ban['timespan'], "text", "", '5' ) . '&nbsp;' . $this->ipsclass->adskin->form_dropdown('units', $units, $ban['units'] ),
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件提醒会员?</b><br>( 如果是, 您可以编辑下面的邮件 )" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件提醒会员?</b><br />( 如果是, 您可以编辑下面的邮件 )" ,
 												                 $this->ipsclass->adskin->form_yes_no( "send_email", 0 )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {membername} = 会员会员名, {date_end} = 锁定结束时间)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br />(Tags: {membername} = 会员会员名, {date_end} = 锁定结束时间)" ,
 												                 $this->ipsclass->adskin->form_textarea( "email_contents", $contents )
 									                    ), "", 'top'       );
 									     									     
@@ -1876,11 +1876,11 @@ class ad_member
 												                 $this->ipsclass->adskin->form_input( "new_name", $this->ipsclass->input['new_name'] )
 									                    )      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发送邮件提醒该会员?</b><br>( 如果是, 您可以在下面编辑邮件内容 )" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>发送邮件提醒该会员?</b><br />( 如果是, 您可以在下面编辑邮件内容 )" ,
 												                 $this->ipsclass->adskin->form_yes_no( "send_email", 1 )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br>(Tags: {old_name} = 旧会员名, {new_name} = 新会员名)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>邮件内容</b><br />(Tags: {old_name} = 旧会员名, {new_name} = 新会员名)" ,
 												                 $this->ipsclass->adskin->form_textarea( "email_contents", $contents )
 									                    )      );
 									     									     
@@ -1927,7 +1927,7 @@ class ad_member
 	function titles_start()
 	{
 		$this->ipsclass->admin->page_title = "会员等级设置";
-		$this->ipsclass->admin->page_detail = "您可以在这里添加, 修改或删除会员等级<br>如果您希望在会员的名称下面显示等级图片, 请输入等级图片代码. 如果您希望使用自定义图片, 只需要在相应空格输入文件名即可. 提示, 这些自定义图片必须存放在“style_images/{img_dir}/folder_team_icons”目录";
+		$this->ipsclass->admin->page_detail = "您可以在这里添加, 修改或删除会员等级<br />如果您希望在会员的名称下面显示等级图片, 请输入等级图片代码. 如果您希望使用自定义图片, 只需要在相应空格输入文件名即可. 提示, 这些自定义图片必须存放在“style_images/{img_dir}/folder_team_icons”目录";
 		$this->ipsclass->admin->nav[] = array( '', '会员等级设置' );
 		
 		//-----------------------------------------
@@ -2197,7 +2197,7 @@ class ad_member
 												  							 $this->ipsclass->adskin->form_input( "posts", $rank['posts'] )
 									     							)      );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>等级图片代码 (最大: 100)</b><br>(或文件名)" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>等级图片代码 (最大: 100)</b><br />(或文件名)" ,
 												  							 $this->ipsclass->adskin->form_input( "pips", $rank['pips'] )
 									     							)      );
 									     									     
@@ -3792,7 +3792,7 @@ EOF;
 		$form       = array();
 		$mem_group  = array();
 		$show_fixed = FALSE;
-		$units      = array( 0 => array( 'h', 'Hours' ), 1 => array( 'd', 'Days' ) );
+		$units      = array( 0 => array( 'h', '小时' ), 1 => array( 'd', '天' ) );
 		$lang_array = array();
 		$perm_masks = array();
 		$mod_arr    = array( 'timespan' => '', 'units' => '' );
@@ -4146,7 +4146,7 @@ EOF;
 		$form['warn_level']     = $this->ipsclass->adskin->form_input( "warn_level", $mem['warn_level'], 'text', '', '5' );
 		$form['member_title']   = $this->ipsclass->adskin->form_input( "title"     , $mem['title']);
 		$form['email']          = $this->ipsclass->adskin->form_input( "email"     , $mem['email'] );
-		$form['pp_gender']      = $this->ipsclass->adskin->form_dropdown( "pp_gender", array( 0 => array('none', 'Not Telling'), 1 => array( 'female', 'Female'), 2 => array( 'male', 'Male' ) ), $mem['pp_gender'] );
+		$form['pp_gender']      = $this->ipsclass->adskin->form_dropdown( "pp_gender", array( 0 => array('none', '未知'), 1 => array( 'female', '女性'), 2 => array( 'male', '男性' ) ), $mem['pp_gender'] );
 		$form['pp_bio_content'] = $this->ipsclass->adskin->form_textarea( "pp_bio_content", str_replace( '<br />', "\n",$mem['pp_bio_content'] ) );
 		
 		$form['_show_fixed']   = $show_fixed;
@@ -4197,22 +4197,22 @@ EOF;
 		$form['location']    = $this->ipsclass->adskin->form_input( "location", $mem['location'] );
 		$form['interests']   = $this->ipsclass->adskin->form_textarea( "interests", str_replace( '<br />', "\n",$mem['interests'] ) );
 
-		$bday_days 	= array( array( 0, 'Not Set' ) );
-		$bday_year	= array( array( 0, 'Not Set' ) );
+		$bday_days 	= array( array( 0, '未知' ) );
+		$bday_year	= array( array( 0, '未知' ) );
 		
-		$bday_mons	= array(	array( 0, 'Not Set' ),
-								array( 1, 'Jan' ),
-								array( 2, 'Feb' ),
-								array( 3, 'Mar' ),
-								array( 4, 'Apr' ),
-								array( 5, 'May' ),
-								array( 6, 'Jun' ),
-								array( 7, 'Jul' ),
-								array( 8, 'Aug' ),
-								array( 9, 'Sep' ),
-								array( 10, 'Oct' ),
-								array( 11, 'Nov' ),
-								array( 12, 'Dec' ),
+		$bday_mons	= array(	array( 0, '未知' ),
+								array( 1, '一月' ),
+								array( 2, '二月' ),
+								array( 3, '三月' ),
+								array( 4, '四月' ),
+								array( 5, '五月' ),
+								array( 6, '六月' ),
+								array( 7, '七月' ),
+								array( 8, '八月' ),
+								array( 9, '九月' ),
+								array( 10, '十月' ),
+								array( 11, '十一月' ),
+								array( 12, '十二月' ),
 							);
 		
 		for( $i=1; $i<=31; $i++ )

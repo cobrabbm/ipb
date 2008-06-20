@@ -1235,7 +1235,7 @@ class ad_languages {
 					$root = " ( <a href='{$this->ipsclass->base_url}&{$this->ipsclass->form_code}&code=makedefault&id=".urlencode($r['ldir'])."'>设置为默认语言</a> )";
 				}
 			
-				$show_array[ $r['lid'] ] .= stripslashes($r['lname'])."<br>";
+				$show_array[ $r['lid'] ] .= stripslashes($r['lname'])."<br />";
 			
 				if ( in_array( $r['lid'], $used_ids ) )
 				{

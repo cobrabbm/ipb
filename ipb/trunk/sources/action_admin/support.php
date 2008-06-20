@@ -51,7 +51,7 @@ class ad_support
 	
 	function auto_run()
 	{
-		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, 'Support' );
+		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '支持中心' );
 		
 		//-----------------------------------------
 

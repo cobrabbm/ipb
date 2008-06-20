@@ -50,7 +50,7 @@ class ad_skin_remap
 		$this->ipsclass->admin->page_detail = "该部分允许您强制一个主题与以下 URL 绑定.";
 		$this->ipsclass->admin->page_title  = "模板重测图";
 		
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'Skin Remapping Home' );
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, '模板重测图中心' );
 
 		//-----------------------------------------
 		// LOAD HTML

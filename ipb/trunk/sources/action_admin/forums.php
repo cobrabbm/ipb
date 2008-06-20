@@ -402,7 +402,7 @@ class ad_forums
 		
 		$form_element = $this->han_editor->show_editor( $forum['rules_text'], 'body' );
 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>规则正文</b><br>( HTML 编辑模式 )" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>规则正文</b><br />( HTML 编辑模式 )" ,
 																 $form_element
 														)      );
 									     
@@ -534,7 +534,7 @@ class ad_forums
 		
 		$this->ipsclass->admin->page_title = "清空版块 '{$forum['name']}'";
 		
-		$this->ipsclass->admin->page_detail = "将要删除版块内的全部主题, 帖子和投票.<br>版块本身不会被删除 - 继续前请确认您正在进行的操作.";
+		$this->ipsclass->admin->page_detail = "将要删除版块内的全部主题, 帖子和投票.<br />版块本身不会被删除 - 继续前请确认您正在进行的操作.";
 		
 		//-----------------------------------------
 		
@@ -1470,13 +1470,13 @@ class ad_forums
 			$perm_matrix = $this->build_group_perms(  $forum['show_perms'], $forum['read_perms'], $forum['start_perms'], $forum['reply_perms'], $forum['upload_perms'], $forum['download_perms'], 
 												  $this->ipsclass->forums->forum_by_id[ $forum['parent_id'] ]['name'].' &gt; '.$forum['name'].' &gt; '."访问许可设置" );
 												  
-			$this->ipsclass->admin->page_detail = "<b>版块访问许可</b><br>( 选中表示允许, 不选中表示不允许 )<br>如果您对某个访问许可集关闭了显示许可,  他们将看不到版块";
+			$this->ipsclass->admin->page_detail = "<b>版块访问许可</b><br />( 选中表示允许, 不选中表示不允许 )<br />如果您对某个访问权限组关闭了显示许可,  他们将看不到版块";
 		}
 		else
 		{
 			$perm_matrix = $this->build_group_cat_perms( $forum['show_perms'], $forum['name'].' &gt; '."访问许可设置" );
 			
-			$this->ipsclass->admin->page_detail = "<b>分类访问许可</b><br>( 选中表示允许, 不选中表示不允许 )<br>如果您没有选中某个许可集,  他们将看不到此分类中的版块.";
+			$this->ipsclass->admin->page_detail = "<b>分类访问许可</b><br />( 选中表示允许, 不选中表示不允许 )<br />如果您没有选中某个权限组,  他们将看不到此分类中的版块.";
 		}
 		
 		$this->ipsclass->html .= $this->html->forum_permission_form( $forum, $relative, $perm_matrix );

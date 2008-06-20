@@ -52,7 +52,7 @@ class ad_rssimport
 	function auto_run() 
 	{
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_rss');
-		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'RSS Import Manager' );
+		$this->ipsclass->admin->nav[] 		= array( $this->ipsclass->form_code, 'RSS 导入管理' );
 		
 		//--------------------------------------------
 		// Load classes

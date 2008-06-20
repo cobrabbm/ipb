@@ -16,7 +16,7 @@
 
 		<helpsections>
 			<key>tools_postoffice_mail_new</key>
-			<title>发送批量邮件</title>
+			<title>发送群发邮件</title>
 			<helptext>当您发送邮件的时候,论坛会触发一个邮件发送任务,请注意，这个操作是系统自动的.如果您发现系统并没有执行这个操作,请打开您的论坛,并且随意点击几个论坛功能,这样就能触发系统执行邮件发送.</helptext>
 		</helpsections>
 

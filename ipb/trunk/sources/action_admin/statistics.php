@@ -422,7 +422,7 @@ class ad_statistics
 	{
 		$this->ipsclass->admin->page_title = "统计中心";
 		$this->ipsclass->admin->nav[] = array( $this->ipsclass->form_code, '统计概览' );
-		$this->ipsclass->admin->page_detail = "请选择日期范围和其他统计条件.<br>提示: 统计基于您当前的数据库, 不计算被清理的帖子和会员等.";
+		$this->ipsclass->admin->page_detail = "请选择日期范围和其他统计条件.<br />提示: 统计基于您当前的数据库, 不计算被清理的帖子和会员等.";
 		
 		if ($mode == 'reg')
 		{

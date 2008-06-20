@@ -40,7 +40,7 @@ $IPBHTML .= <<<EOF
 			<td width='33%' valign='top'>
 				<div><a href='{$this->ipsclass->base_url}&section=tools' title='修改系统设置'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/settings.png' border='0' alt='修改系统设置' /> 修改系统设置</a></div>
 				<div><a href='{$this->ipsclass->base_url}&section=lookandfeel&act=sets' title='主题管理'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/skins.png' border='0' alt='主题管理' /> 主题管理</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=tools&act=postoffice' title='批量发送邮件'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/bulkmail.png' border='0' alt='批量发送邮件' /> 批量发送邮件</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=tools&act=postoffice' title='群发邮件'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/bulkmail.png' border='0' alt='群发邮件' /> 群发邮件</a></div>
 			</td>
 			<td width='33%' valign='top'>
 				<div><a href='{$this->ipsclass->base_url}&section=content&act=group' title='管理用户组'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/groups.png' border='0' alt='管理用户组' /> 管理用户组</a></div>

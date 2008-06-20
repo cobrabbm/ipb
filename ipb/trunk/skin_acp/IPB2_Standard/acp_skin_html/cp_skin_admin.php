@@ -167,7 +167,7 @@ $IPBHTML .= <<<EOF
     <td class='tablerow2'  width='50%'  valign='middle'><input type="text" id='entered_name' name="entered_name" size="30" autocomplete='off' style='width:210px' value="" tabindex="1" /></td>
   </tr>
   <tr>
-  <td align='center' class='tablesubheader' colspan='2' ><input type='submit' value='Proceed &gt;&gt;' class='realbutton' accesskey='s'></td>
+  <td align='center' class='tablesubheader' colspan='2' ><input type='submit' value='执行 &gt;&gt;' class='realbutton' accesskey='s'></td>
   </tr>
   </table>
 </div>
