@@ -304,9 +304,9 @@ class ad_help
 		$this->parser->parse_bbcode    = 1;
 		$text        					= $this->parser->pre_display_parse( $this->parser->pre_db_parse( $text ) );
 				
-		//$text  = preg_replace( "/\n/", "<br>", stripslashes($_POST['text'] ) );
-		//$title = preg_replace( "/\n/", "<br>", stripslashes($_POST['title'] ) );
-		//$desc  = preg_replace( "/\n/", "<br>", stripslashes($_POST['description'] ) );
+		//$text  = preg_replace( "/\n/", "<br />", stripslashes($_POST['text'] ) );
+		//$title = preg_replace( "/\n/", "<br />", stripslashes($_POST['title'] ) );
+		//$desc  = preg_replace( "/\n/", "<br />", stripslashes($_POST['description'] ) );
 		
 		$text  = preg_replace( "/\\\/", "&#092;", $text );
 		
@@ -445,7 +445,7 @@ class ad_help
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "20%" );
 		$this->ipsclass->adskin->td_header[] = array( "&nbsp;"  , "80%" );
 		
-		//$r['text'] = preg_replace( "/<br>/i", "\n", stripslashes($r['text']) );
+		//$r['text'] = preg_replace( "/<br />/i", "\n", stripslashes($r['text']) );
  		
  		//-----------------------------------------
 		
@@ -530,9 +530,9 @@ class ad_help
 		$text        					= $this->parser->pre_display_parse( $this->parser->pre_db_parse( $text ) );
 				
 		
-		//$text  = preg_replace( "/\n/", "<br>", stripslashes($_POST['text'] ) );
-		//$title = preg_replace( "/\n/", "<br>", stripslashes($_POST['title'] ) );
-		//$desc  = preg_replace( "/\n/", "<br>", stripslashes($_POST['description'] ) );
+		//$text  = preg_replace( "/\n/", "<br />", stripslashes($_POST['text'] ) );
+		//$title = preg_replace( "/\n/", "<br />", stripslashes($_POST['title'] ) );
+		//$desc  = preg_replace( "/\n/", "<br />", stripslashes($_POST['description'] ) );
 		
 		$text  = preg_replace( "/\\\/", "&#092;", $text );
 		
@@ -590,7 +590,7 @@ class ad_help
 			
 			while ( $r = $this->ipsclass->DB->fetch_row() )
 			{
-				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>".stripslashes($r['title'])."</b><br>".stripslashes($r['description']),
+				$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>".stripslashes($r['title'])."</b><br />".stripslashes($r['description']),
 														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=edit&id={$r['id']}'>编辑</a></center>",
 														  "<center><a href='".$this->ipsclass->base_url."&{$this->ipsclass->form_code}&code=remove&id={$r['id']}'>删除</a></center>",
 														  "<center>".$this->ipsclass->adskin->form_dropdown( 'order_'.$r['id'], $order_values, $r['order'] > 0 ? $r['order'] : $last )."</center>",

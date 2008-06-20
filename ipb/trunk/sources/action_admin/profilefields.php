@@ -425,7 +425,7 @@ class ad_profilefields {
 												                 $this->ipsclass->adskin->form_input("pf_input_format", $fields['pf_input_format'] )
 									                    )      );
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可选内容（用于下拉框）</b><div class='graytext'>每行一项内容<br>例如, 性别信息：<br>m=男<br>f=女<br>u=保密<br>显示效果为：<br><select name='pants'><option value='m'>男</option><option value='f'>女</option><option value='u'>保密</option></select><br>m、f 或 u 保存在数据库. 而在资料中显示时, 将使用等号后面的内容（f=女, 显示“女”）</div>" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>可选内容（用于下拉框）</b><div class='graytext'>每行一项内容<br />例如, 性别信息：<br />m=男<br />f=女<br />u=保密<br />显示效果为：<br /><select name='pants'><option value='m'>男</option><option value='f'>女</option><option value='u'>保密</option></select><br />m、f 或 u 保存在数据库. 而在资料中显示时, 将使用等号后面的内容（f=女, 显示“女”）</div>" ,
 												                 $this->ipsclass->adskin->form_textarea("pf_content", $fields['pf_content'] )
 									                    )      );
 		

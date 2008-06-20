@@ -327,7 +327,7 @@ class ad_skin_macros {
 							   <table cellspacing='0' width='500' align='center' cellpadding='6' style='background:#EEE;border:2px outset #555;'>
 							   <tr>
 								<td width='1%' nowrap='nowrap' valign='top'>
-								 <b>变量</b><br><input class='textinput' name='variable' type='text' size='20' />
+								 <b>变量</b><br /><input class='textinput' name='variable' type='text' size='20' />
 								 <br /><br />
 								 <center><input type='submit' class='realbutton' value='编辑宏' name='submitbutton' /> <input type='button' class='realdarkbutton' value='Close' onclick=\"togglediv('popbox');\" /></center>
 								</td>

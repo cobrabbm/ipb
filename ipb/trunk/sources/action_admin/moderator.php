@@ -632,7 +632,7 @@ class ad_moderator {
 		//										  $this->ipsclass->adskin->form_yes_no("edit_user", $mod['edit_user'] )
 		//							     )      );
 									   
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许使用主题批处理?</b><br>".$this->ipsclass->adskin->js_help_link('mod_mmod', '重要信息' ) ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>允许使用主题批处理?</b><br />".$this->ipsclass->adskin->js_help_link('mod_mmod', '重要信息' ) ,
 												  $this->ipsclass->adskin->form_yes_no("can_mm", $mod['can_mm'] )
 									     )      );						     
 									     

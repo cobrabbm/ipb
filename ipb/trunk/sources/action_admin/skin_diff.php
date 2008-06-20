@@ -210,7 +210,7 @@ class ad_skin_diff
 			
 			$row['diff_change_type'] ? $changed++ : $missing++;
 			
-			$row['diff_change_content'] = str_replace( "\n", "<br>", $row['diff_change_content']);
+			$row['diff_change_content'] = str_replace( "\n", "<br />", $row['diff_change_content']);
 			$row['diff_change_content'] = str_replace( "&gt;&lt;", "&gt;\n&lt;" ,$row['diff_change_content']);
 			$row['diff_change_content'] = preg_replace( "#(?<!(\<del|\<ins)) {1}(?!:style)#i", "&nbsp;" ,$row['diff_change_content']);
 
@@ -255,7 +255,7 @@ class ad_skin_diff
 			$this->ipsclass->admin->error( "No key found" );
 		}
 		
-		$diff_row['diff_change_content'] = str_replace( "\n", "<br>", $diff_row['diff_change_content']);
+		$diff_row['diff_change_content'] = str_replace( "\n", "<br />", $diff_row['diff_change_content']);
 		$diff_row['diff_change_content'] = str_replace( "&gt;&lt;", "&gt;\n&lt;" ,$diff_row['diff_change_content']);
 		$diff_row['diff_change_content'] = preg_replace( "#(?<!(\<del|\<ins)) {1}(?!:style)#i", "&nbsp;" ,$diff_row['diff_change_content']);
 		

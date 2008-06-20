@@ -339,7 +339,7 @@ class ad_multi_moderate
 									     )      );
 		
 									     
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用此方案的版块...</b><br>按住 Ctrl 复选" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>使用此方案的版块...</b><br />按住 Ctrl 复选" ,
 												  $forum_html
 									     )      );							     
 		
@@ -373,7 +373,7 @@ class ad_multi_moderate
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic( '帖子选项', 'left', 'tablesubheader' );
 	
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加一个回复?</b><br>HTML 可用" ,
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>添加一个回复?</b><br />HTML 可用" ,
 												  "添加回复? &nbsp;".$this->ipsclass->adskin->form_yes_no('topic_reply', $topic_mm['topic_reply'] )
 												  ."<br />"
 												  . $this->ipsclass->adskin->form_textarea("topic_reply_content", $topic_mm['topic_reply_content'] )

@@ -246,14 +246,14 @@ class ad_api
 		
 		if ( ! $api_user['api_user_id'] )
 		{
-			$this->ipsclass->main_msg = "该 API 会员无法找到.";
+			$this->ipsclass->main_msg = "该 API 账号无法找到.";
 			$this->api_list();
 			return;
 		}
 		
 		$this->ipsclass->DB->do_delete( 'api_users', 'api_user_id='.$api_user_id );
 		
-		$this->ipsclass->main_msg = "API 会员已经成功删除";
+		$this->ipsclass->main_msg = "API 账号已经成功删除";
 		$this->api_list();
 	}
 		
@@ -298,7 +298,7 @@ class ad_api
 		{
 			if ( ! $api_user_key )
 			{
-				$this->ipsclass->main_msg = "没有任何 API 会员键值通过!";
+				$this->ipsclass->main_msg = "没有任何 API 账号键值通过!";
 				$this->api_form( $type );
 				return;
 			}
@@ -311,7 +311,7 @@ class ad_api
 			
 			if ( ! $api_user['api_user_id'] )
 			{
-				$this->ipsclass->main_msg = "该 API 会员无法找到.";
+				$this->ipsclass->main_msg = "该 API 账号无法找到.";
 				$this->api_list();
 				return;
 			}
@@ -364,13 +364,13 @@ class ad_api
 			// Save it...
 			//-----------------------------------------
 			
-			$this->ipsclass->main_msg = "API 会员已经添加";
+			$this->ipsclass->main_msg = "API 账号已经添加";
 			
 			$this->ipsclass->DB->do_insert( 'api_users', $save );
 		}
 		else
 		{
-			$this->ipsclass->main_msg = "API 会员已经编辑";
+			$this->ipsclass->main_msg = "API 账号已经编辑";
 			
 			$this->ipsclass->DB->do_update( 'api_users', $save, 'api_user_id=' . $api_user_id );
 		}
@@ -405,8 +405,8 @@ class ad_api
 		if ( $type == 'add' )
 		{
 			$formcode  = 'api_add_save';
-			$title     = "创建新的 API 会员";
-			$button    = "创建新的 API 会员";
+			$title     = "创建新的 API 账号";
+			$button    = "创建新的 API 账号";
 			$api_user  = array();
 			$api_perms = array();
 		}
@@ -418,13 +418,13 @@ class ad_api
 			
 			if ( ! $api_user['api_user_id'] )
 			{
-				$this->ipsclass->main_msg = "该 API 会员无法找到.";
+				$this->ipsclass->main_msg = "该 API 账号无法找到.";
 				$this->api_list();
 				return;
 			}
 			
 			$formcode = 'api_edit_save';
-			$title    = "编辑 API 会员: ".$api_user['api_user_name'];
+			$title    = "编辑 API 账号: ".$api_user['api_user_name'];
 			$button   = "保存更改";
 			
 			$api_perms = unserialize( $api_user['api_user_perms'] );
@@ -512,7 +512,7 @@ class ad_api
 		$this->ipsclass->html .= $this->ipsclass->skin_acp_global->information_box( "XML-RPC 会员管理", "您可以在这里创建 API 回原来允许他们使用 XML-RPC 系统调用易维论坛数据" ) . "<br />";
 		$this->ipsclass->html .= $this->html->api_form( $form, $title, $formcode, $button, $api_user, $type, $permissions );
 		
-		$this->ipsclass->admin->nav[]       = array( "", "添加/编辑 API 会员" );
+		$this->ipsclass->admin->nav[]       = array( "", "添加/编辑 API 账号" );
 		$this->ipsclass->admin->output();
 	}
 	

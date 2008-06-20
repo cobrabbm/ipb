@@ -391,10 +391,10 @@ class ad_remote_template {
     	           <body topmargin='0' leftmargin='0' rightmargin='0' marginwidth='0' marginheight='0' alink='#000000' vlink='#000000'>
     	           <table border='1' width='95%' cellspacing='0' cellpadding='4' align='center'>
     	           <tr>
-    	            <td bgcolor='#EEEEEE' style='font-size:14px'><b>预览 CSS 元素 '$name'<br>样式表 '{$this_set['set_name']}'</b></td>
+    	            <td bgcolor='#EEEEEE' style='font-size:14px'><b>预览 CSS 元素 '$name'<br />样式表 '{$this_set['set_name']}'</b></td>
     	           </tr>
     	           </table>
-    	           <br>
+    	           <br />
     	           <table border='1' width='95%' cellspacing='0' cellpadding='4' align='center'>
     	           <tr>
     	            <td><b>预览</b></td>
@@ -403,7 +403,7 @@ class ad_remote_template {
     	           	<td $like>Cozy Lummux Gives Smart Squid Who Asks For Job Pen ([Indeed!])</td>
     	           	</tr>
     	           	</table>
-    	           	<br>
+    	           	<br />
     	           	<table border='1' width='95%' cellspacing='0' cellpadding='4' align='center'>
     	            <tr>
     	             <td colspan='2'><b>格式化 CSS 定义</b></td>
@@ -597,7 +597,7 @@ class ad_remote_template {
 	
 	function do_message($message="")
 	{
-		$this->ipsclass->html = "<tr><td id='tablerow1' height='100%' align='center' valign='middle'><br><br><b>$message</b><br><br>&nbsp;</td></tr>";
+		$this->ipsclass->html = "<tr><td id='tablerow1' height='100%' align='center' valign='middle'><br /><br /><b>$message</b><br /><br />&nbsp;</td></tr>";
 		
 		$this->ipsclass->admin->print_popup();
 		
@@ -619,7 +619,7 @@ class ad_remote_template {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table(  );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入要搜索的文本</b><br>".
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入要搜索的文本</b><br />".
 										                         $this->ipsclass->adskin->form_input( 'search' )
 										                )      );
 										 
@@ -753,7 +753,7 @@ class ad_remote_template {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "宏查阅" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入要查阅的宏</b><br>(例如: {ibf.skin.set_image_dir})",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>输入要查阅的宏</b><br />(例如: {ibf.skin.set_image_dir})",
 																 $this->ipsclass->adskin->form_input( 'lookup', $this->ipsclass->input['lookup'] )
 														)      );
 										 
@@ -891,7 +891,7 @@ class ad_remote_template {
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>宏类型</b>", $result )      );
 										 
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>结果</b><br>如果没有信息可能为空", $answer )      );
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>结果</b><br />如果没有信息可能为空", $answer )      );
 										 
 		$this->ipsclass->html .= $this->ipsclass->adskin->end_table();
 		
@@ -953,7 +953,7 @@ class ad_remote_template {
 				   <td align='center' style='font-family:verdana, arial;font-size:12px;color:white'>查看 [ <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=text' style='font-family:verdana, arial;font-size:12px;color:white'>文本</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=html' style='font-family:verdana, arial;font-size:12px;color:white'>HTML</a> | <a href='{$this->ipsclass->base_url}&act=rtempl&code=preview&suid={$this->ipsclass->input['suid']}&type=css' style='font-family:verdana, arial;font-size:12px;color:white'>带有 CSS 格式的 HTML</a> ]</td>
 				  </tr>
 				  </table>
-				  <br><br>
+				  <br /><br />
 				  ";
 		
 		if ($this->ipsclass->input['type'] == 'text')
@@ -983,7 +983,7 @@ class ad_remote_template {
 			$html = preg_replace( "#&lt;/([^&]+)&gt;#s"                            , "&lt;/<span style='color:blue'>\\1</span>&gt;"       , $html );   //Matches </tag>
 			$html = preg_replace( "!=(&quot;|')([^<>])(&quot;|')(\s|&gt;)!s"   , "=\\1<span style='color:purple'>\\2</span>\\3\\4"       , $html );   //Matches ='this'
 			
-			$html = str_replace( "\n", "<br>", str_replace("\r\n", "\n", $html ) );
+			$html = str_replace( "\n", "<br />", str_replace("\r\n", "\n", $html ) );
 			
 			print "<pre>".$html."</pre>";
 			exit();

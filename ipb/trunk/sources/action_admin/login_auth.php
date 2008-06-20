@@ -43,7 +43,7 @@ class ad_login_auth
 	function auto_run() 
 	{
 		$this->html = $this->ipsclass->acp_load_template('cp_skin_tools');
-		$this->ipsclass->admin->nav[]    = array( "{$this->ipsclass->form_code}", "Log In Manager" );
+		$this->ipsclass->admin->nav[]    = array( "{$this->ipsclass->form_code}", "登录管理" );
 		
 		switch($this->ipsclass->input['code'])
 		{

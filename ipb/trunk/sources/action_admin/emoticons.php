@@ -1241,7 +1241,7 @@ class ad_emoticons {
 		
 		if( $this->ipsclass->input['id'] == 'default' )
 		{
-			$this->ipsclass->admin->page_detail = "您可以在这里添加/编辑或删除表情图标.<br>";
+			$this->ipsclass->admin->page_detail = "您可以在这里添加/编辑或删除表情图标.<br />";
 		}
 		
 		$this->ipsclass->admin->page_detail .= "可点击指的是表情图标将出现在发帖界面的“可点击表情图标”表格内.";

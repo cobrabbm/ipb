@@ -288,7 +288,7 @@ class ad_warnlogs {
 		$this->ipsclass->adskin->td_header[] = array( "警告人"   , "15%" );
 		$this->ipsclass->adskin->td_header[] = array( "查看记录"   , "10%" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "Saved Warn Logs" );
+		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "已保存警告日志" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
 		
 		$days = array( 'd' => "Days", 'h' => "Hours" );
@@ -430,7 +430,7 @@ class ad_warnlogs {
 		$this->ipsclass->DB->cache_exec_query();
 		
 		$this->ipsclass->adskin->td_header[] = array( "类型"            , "5%" );
-		$this->ipsclass->adskin->td_header[] = array( "会员名称r"   , "25%" );
+		$this->ipsclass->adskin->td_header[] = array( "会员名称"   , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "联系?"      , "5%" );
 		$this->ipsclass->adskin->td_header[] = array( "日期"            , "25%" );
 		$this->ipsclass->adskin->td_header[] = array( "警告人"       , "25%" );
