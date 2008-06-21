@@ -291,7 +291,7 @@ class ad_warnlogs {
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "已保存警告日志" );
 		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_basic($links, 'right', 'tablesubheader');
 		
-		$days = array( 'd' => "Days", 'h' => "Hours" );
+		$days = array( 'd' => "天", 'h' => "小时" );
 		
 		if ( $this->ipsclass->DB->get_num_rows() )
 		{
@@ -302,7 +302,7 @@ class ad_warnlogs {
 				$row['wlog_date'] = $this->ipsclass->admin->get_date( $row['wlog_date'], 'LONG' );
 				
 				$type = ( $row['wlog_type'] == 'pos' )      ? '<span style="color:green;font-weight:bold">-</span>' : '<span style="color:red;font-weight:bold">+</span>';
-				$cont = ( $row['wlog_contact'] !=  'none' ) ? "<center><a href='javascript:pop_win(\"&{$this->ipsclass->form_code}&code=viewcontact&id={$row['wlog_id']}\",\"Log\", 400,400)'>View</a></center>" : '&nbsp;';
+				$cont = ( $row['wlog_contact'] !=  'none' ) ? "<center><a href='javascript:pop_win(\"&{$this->ipsclass->form_code}&code=viewcontact&id={$row['wlog_id']}\",\"Log\", 400,400)'>查看</a></center>" : '&nbsp;';
 				
 				$mod     = preg_match( "#<mod>(.+?)</mod>#is"        , $row['wlog_notes'], $mm );
 				$post    = preg_match( "#<post>(.+?)</post>#is"      , $row['wlog_notes'], $pm );

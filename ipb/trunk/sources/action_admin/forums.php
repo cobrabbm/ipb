@@ -222,7 +222,7 @@ class ad_forums
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->page_title  = "版块主题选项";
-		$this->ipsclass->admin->page_detail = "您可以为板块指定一个主题, 将会覆盖会员的选择.";
+		$this->ipsclass->admin->page_detail = "您可以为版块指定一个主题, 将会覆盖会员的选择.";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'   , 'doskinedit'),
 																			 2 => array( 'act'    , 'forum'  ),
@@ -356,7 +356,7 @@ class ad_forums
 		//-----------------------------------------
 		
 		$this->ipsclass->admin->page_title  = "版块规则";
-		$this->ipsclass->admin->page_detail = "您可以编辑, 添加, 删除或改变板块规则显示状态";
+		$this->ipsclass->admin->page_detail = "您可以编辑, 添加, 删除或改变版块规则显示状态";
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_form( array( 1 => array( 'code'   , 'dorules'),
 																			 2 => array( 'act'    , 'forum'  ),
@@ -1435,7 +1435,7 @@ class ad_forums
 		
 		if ( ! $this->ipsclass->input['f'] )
 		{
-			$this->ipsclass->admin->error("您没有选择要编辑的板块!");
+			$this->ipsclass->admin->error("您没有选择要编辑的版块!");
 		}
 		
 		//-----------------------------------------

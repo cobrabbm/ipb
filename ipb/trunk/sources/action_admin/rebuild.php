@@ -2891,7 +2891,7 @@ class ad_rebuild {
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "同步版块" );
 		
-		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>同步版块</b><div style='color:gray'>本操作将重新统计所有论坛板块的主题, 帖子, 和版块最后发表人.</div>",
+		$this->ipsclass->html .= $this->ipsclass->adskin->add_td_row( array( "<b>同步版块</b><div style='color:gray'>本操作将重新统计所有论坛版块的主题, 帖子, 和版块最后发表人.</div>",
 												  		        "每次循环同步&nbsp;".$this->ipsclass->adskin->form_simple_input( 'pergo', '50', 5 ). "&nbsp;个版块"
 										 			  )      );
 										 

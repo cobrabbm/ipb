@@ -171,7 +171,7 @@ class ad_statistics
 		//-----------------------------------------
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( "主题点击"
-										    ." ({$human_from_date['mday']} {$this->month_names[$human_from_date['mon']]} {$human_from_date['year']} to"
+										    ."从 ({$human_from_date['mday']} {$this->month_names[$human_from_date['mon']]} {$human_from_date['year']} 到"
 										    ." {$human_to_date['mday']} {$this->month_names[$human_to_date['mon']]} {$human_to_date['year']})"
 										  );
 		
@@ -275,7 +275,7 @@ class ad_statistics
 		}
 		else if ($mode == 'topic')
 		{
-			$table     = 'New Topic Statistics';
+			$table     = '新主题统计';
 			
 			$sql_table = 'topics';
 			$sql_field = 'start_date';
@@ -285,7 +285,7 @@ class ad_statistics
 		}
 		else if ($mode == 'post')
 		{
-			$table     = 'Post Statistics';
+			$table     = '新帖子统计';
 			
 			$sql_table = 'posts';
 			$sql_field = 'post_date';
@@ -295,7 +295,7 @@ class ad_statistics
 		}
 		else if ($mode == 'msg')
 		{
-			$table     = 'PM Sent Statistics';
+			$table     = '短消息统计';
 			
 			$sql_table = 'message_topics';
 			$sql_field = 'mt_date';
@@ -345,7 +345,7 @@ class ad_statistics
 		
 		$this->ipsclass->html .= $this->ipsclass->adskin->start_table( ucfirst($this->ipsclass->input['timescale'])
 										    ." ".$table
-										    ." ({$human_from_date['mday']} {$this->month_names[$human_from_date['mon']]} {$human_from_date['year']} to"
+										    ."从 ({$human_from_date['mday']} {$this->month_names[$human_from_date['mon']]} {$human_from_date['year']} 到"
 										    ." {$human_to_date['mday']} {$this->month_names[$human_to_date['mon']]} {$human_to_date['year']})"
 										  );
 		
