@@ -850,7 +850,7 @@ class ad_skin_css
 			
 			if ( $desc == "" )
 			{
-				$desc = 'None available';
+				$desc = '无有效信息';
 			}
 			
 			$name = $prop;

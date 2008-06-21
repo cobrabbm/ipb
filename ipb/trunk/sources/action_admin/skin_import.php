@@ -1411,10 +1411,10 @@ class ad_skin_import {
 															  4 => array( 'section', $this->ipsclass->section_code ),
 													 ) , "uploadform", " enctype='multipart/form-data'"     );
 													 
-		$import_dirs[] 	= array( '', '-None-' );
+		$import_dirs[] 	= array( '', '-没有选择-' );
 		$import_dirs 	= array_merge( $import_dirs, $dirs );
 		
-		$import_skins 	= "<option value='0'>-无-</option>".$skin_list;
+		$import_skins 	= "<option value='0'>-没有选择-</option>".$skin_list;
 		
 		$this->ipsclass->html .= "<div class='tableborder'>
 							 <div class='tableheaderalt'>导出...</div>

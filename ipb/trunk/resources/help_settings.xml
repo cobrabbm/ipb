@@ -203,10 +203,10 @@ Smalltown, BH 20015]]></helptext>
 
 		<helpsettings>
 			<key>forum_trash_can_id</key>
-			<title>设置一个论坛板块作为回收站</title>
-			<helptext><![CDATA[如果您没有已经存在的回收站板块,您可以使用<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=forum&code=new&type=forum", 1); return false;'>添加论坛板块</a>选项.<br /><br />
-这个论坛板块可以在论坛的任何分区.通常情况下回收站板块会默认安装,只有管理员能够访问.在这里您可以按需查看所有已经被删除的主题.]]></helptext>
-			<mouseover>设置一个论坛板块作为回收站.</mouseover>
+			<title>设置一个论坛版块作为回收站</title>
+			<helptext><![CDATA[如果您没有已经存在的回收站版块,您可以使用<a href="#" onclick='opener.ipsclass.location_jump("{base_url}&section=content&act=forum&code=new&type=forum", 1); return false;'>添加论坛版块</a>选项.<br /><br />
+这个论坛版块可以在论坛的任何分区.通常情况下回收站版块会默认安装,只有管理员能够访问.在这里您可以按需查看所有已经被删除的主题.]]></helptext>
+			<mouseover>设置一个论坛版块作为回收站.</mouseover>
 		</helpsettings>
 
 		<helpsettings>
@@ -227,7 +227,7 @@ Smalltown, BH 20015]]></helptext>
 		<helpsettings>
 			<key>guest_captcha</key>
 			<title>游客发帖控制</title>
-			<helptext><![CDATA[如果您的论坛<i>任何</i>板块都允许游客发帖,强烈建议此项设置为"高级".垃圾信息机器人一般会搜索允许游客发帖的论坛来进行他们的恶劣行为,但是他们中的大部分都不能通过此项"高级"设置,所以,选择"高级"以后他们就很难得逞.]]></helptext>
+			<helptext><![CDATA[如果您的论坛<i>任何</i>版块都允许游客发帖,强烈建议此项设置为"高级".垃圾信息机器人一般会搜索允许游客发帖的论坛来进行他们的恶劣行为,但是他们中的大部分都不能通过此项"高级"设置,所以,选择"高级"以后他们就很难得逞.]]></helptext>
 			<mouseover>游客发帖控制.</mouseover>
 		</helpsettings>
 
@@ -296,7 +296,7 @@ Smalltown, BH 20015]]></helptext>
 		<helpsettings>
 			<key>max_poll_questions</key>
 			<title>创建投票</title>
-			<helptext><![CDATA[投票系统是默认安装的.当您创建一个论坛板块的时候,请确认开启了投票功能.<br /><br />
+			<helptext><![CDATA[投票系统是默认安装的.当您创建一个论坛版块的时候,请确认开启了投票功能.<br /><br />
 当您创建投票的时候,主题描述的下面会有一条文字链接,点击即可创建投票.]]></helptext>
 			<mouseover>如何创建投票?</mouseover>
 		</helpsettings>

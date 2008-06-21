@@ -937,7 +937,7 @@ class ad_member
 		$this->ipsclass->admin->page_detail = "自动锁定会员帐户. 只需选择锁定的时间段然后提交表单";
 		$this->ipsclass->admin->nav[] 		= array( '', '锁定帐户' );
 		
-		$contents = "{membername},\n您在 at {$this->ipsclass->vars['board_name']} 的会员帐户被管理员锁定了.\n\n在您当地时间 {date_end} 之前, 您的帐户将无效 ,这是自动处理过程, 请耐心等待您的帐户恢复.\n\n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
+		$contents = "{membername},\n您在 {$this->ipsclass->vars['board_name']} 的会员帐户被管理员锁定了.\n\n在您当地时间 {date_end} 之前, 您的帐户将无效 ,这是自动处理过程, 请耐心等待您的帐户恢复.\n\n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
 		
 		if ($this->ipsclass->input['mid'] == "")
 		{
@@ -1832,7 +1832,7 @@ class ad_member
 			}
 		}
 		
-		$contents = "{old_name},\n {$this->ipsclass->vars['board_name']} 的管理员修改了您的会员名. \n\n您的新会员名是: {new_name}\n\n您下次登录时需要使用这个新会员名, 所以请您牢记. \n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
+		$contents = "{old_name},\n{$this->ipsclass->vars['board_name']} 的管理员修改了您的会员名称. \n\n您的新会员名称是: {new_name}\n\n您下次登录时需要使用这个新会员名称, 所以请您牢记. \n论坛地址: {$this->ipsclass->vars['board_url']}/index.php";
 		
 		//-----------------------------------------
 		// Redirect

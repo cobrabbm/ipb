@@ -149,7 +149,7 @@ $IPBHTML .= <<<EOF
    <td width='60%' class='tablerow2'>{$form['com_url_title']}</td>
  </tr>
  <tr>
-   <td width='40%' class='tablerow1'><strong>组建开启</strong></td>
+   <td width='40%' class='tablerow1'><strong>组件开启</strong></td>
    <td width='60%' class='tablerow2'>{$form['com_enabled']}</td>
  </tr>
  <tr>
@@ -230,7 +230,7 @@ $IPBHTML .= <<<EOF
  <script type="text/javascript">
   menu_build_menu(
   "menumainone",
-  new Array( img_add   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=component_add'>注册新组建...</a>" ) );
+  new Array( img_add   + " <a href='{$this->ipsclass->base_url}&amp;{$this->ipsclass->form_code}&amp;code=component_add'>注册新组件...</a>" ) );
  </script>
 EOF;
 

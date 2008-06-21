@@ -32,7 +32,7 @@
 		<helpsections>
 			<key>content_forum_new</key>
 			<title>权限设置</title>
-			<helptext><![CDATA[创建一个<b>新论坛板块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内.<br />
+			<helptext><![CDATA[创建一个<b>新论坛版块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内.<br />
 创建<b>新论坛分区</b>的时候,您也需要选择哪些用户组可以查看此论坛分区.
 ]]></helptext>
 		</helpsections>
@@ -40,15 +40,15 @@
 		<helpsections>
 			<key>content_forum_donew</key>
 			<title>权限设置</title>
-			<helptext><![CDATA[创建一个<b>新论坛板块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内..<br />
+			<helptext><![CDATA[创建一个<b>新论坛版块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内..<br />
 创建<b>新论坛分区</b>的时候,您也需要选择哪些用户组可以查看此论坛分区.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_</key>
 			<title>管理已经存在的论坛</title>
-			<helptext><![CDATA[当您需要 <b>编辑设置</b>,更改权限,或者删除一个已经存在的板块/分区的时候,您可以在您的目标板块/分区的右边,点击下拉菜单来执行操作.这在您决定谁是否能看查看目标板块/分区的时候显得特别有用.<br />
-如果您添需要加,删除,或者编辑已经存在的<b>版主</b>,最简单的方法就是点击下面的<i>显示版主</i>.已经存在的版主就会在他们管理的板块旁边显示出来.如果您需要为一个已经存在的板块添加版主,您可以选中此板块,滚动在页面的底部,在输入框内输入此版主的会员名字<i>为所有选择的板块添加版主(s)</i>.]]></helptext>
+			<helptext><![CDATA[当您需要 <b>编辑设置</b>,更改权限,或者删除一个已经存在的版块/分区的时候,您可以在您的目标版块/分区的右边,点击下拉菜单来执行操作.这在您决定谁是否能看查看目标版块/分区的时候显得特别有用.<br />
+如果您添需要加,删除,或者编辑已经存在的<b>版主</b>,最简单的方法就是点击下面的<i>显示版主</i>.已经存在的版主就会在他们管理的版块旁边显示出来.如果您需要为一个已经存在的版块添加版主,您可以选中此版块,滚动在页面的底部,在输入框内输入此版主的会员名字<i>为所有选择的版块添加版主(s)</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -87,7 +87,7 @@
 			<helptext><![CDATA[您可以在这里查看和更改您的论坛主题.您可以点击每一款主题右边的下拉菜单直接修改此主题. 如果您需要创建一个新的未编辑默认主题,您可以点击 <i>主题设置</i>右边的下拉菜单来实现.下面是页面图标的相关说明:<br />
 <img src="{skin_url}/images/skin_default.gif" alt="Defaul Skin" style="float:none;" /> - 这个图标显示出哪一款主题正在被用做论坛默认主题.您可以在其他的主题后面点亮此图标来设置此主题为默认主题.<br />
 <img src="{skin_url}/images/skin_visible.gif" alt="Visible Skin" style="float:none;" /> - 这个图标显示哪些论坛主题可用.您可以点击这个图标来隐藏或者显示会员可以自己选择的主题.<br />
-<img src="{skin_url}/images/skin_forums.gif" alt="Forum Skin" style="float:none;" /> - 这个图标显示此主题已经被某一个特殊的板块使用.
+<img src="{skin_url}/images/skin_forums.gif" alt="Forum Skin" style="float:none;" /> - 这个图标显示此主题已经被某一个特殊的版块使用.
 ]]></helptext>
 		</helpsections>
 
@@ -125,13 +125,13 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>content_multimod_</key>
 			<title>主题管理</title>
-			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛板块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
+			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛版块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_multimod_new</key>
 			<title>主题管理</title>
-			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛板块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
+			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛版块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -244,7 +244,7 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>content_group_</key>
 			<title>用户组</title>
-			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -283,14 +283,14 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>content_forum_frules</key>
 			<title>版规设置</title>
-			<helptext>您可以为您的板块设置使用规则.它会直接在板块上面显示出来或者只是显示链接.任何进入此版面的人都会看到版规,即使实在发表/回复主题的时候也一样.</helptext>
+			<helptext>您可以为您的版块设置使用规则.它会直接在版块上面显示出来或者只是显示链接.任何进入此版面的人都会看到版规,即使实在发表/回复主题的时候也一样.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_pedit</key>
 			<title>论坛访问权限</title>
 			<helptext><![CDATA[选中即可访问,反之则禁止访问.<br />
-如果您禁止访问,会员就看不见此板块.]]></helptext>
+如果您禁止访问,会员就看不见此版块.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -351,7 +351,7 @@ PHP 标签结束于:<br />
 			<title>注册状态统计</title>
 			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -359,7 +359,7 @@ PHP 标签结束于:<br />
 			<title>新主题统计</title>
 			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -367,7 +367,7 @@ PHP 标签结束于:<br />
 			<title>发帖统计</title>
 			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -375,7 +375,7 @@ PHP 标签结束于:<br />
 			<title>私人短消息统计</title>
 			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -383,7 +383,7 @@ PHP 标签结束于:<br />
 			<title>主题查看统计</title>
 			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛板块或者主题被删除等数据.]]></helptext>
+注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -554,7 +554,7 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>content_mem_deleteposts</key>
 			<title>删除会员帖子/主题</title>
-			<helptext><![CDATA[<b>提醒</b>:此项操作是<b><u><i>不可恢复</i></u></b>的.如果您选择运行,所有的会员帖子/主题都会丢失.您设置了一个<a href="{base_url}&section=tools&act=op&code=findsetting&key=trashcanset-up">回收站板块</a>的话,您可以选择<i>使用回收站?</i>来暂时存储以备将来查用.]]></helptext>
+			<helptext><![CDATA[<b>提醒</b>:此项操作是<b><u><i>不可恢复</i></u></b>的.如果您选择运行,所有的会员帖子/主题都会丢失.您设置了一个<a href="{base_url}&section=tools&act=op&code=findsetting&key=trashcanset-up">回收站版块</a>的话,您可以选择<i>使用回收站?</i>来暂时存储以备将来查用.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -873,13 +873,13 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>content_group_doadd</key>
 			<title>用户组管理</title>
-			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_dodelete</key>
 			<title>用户组管理</title>
-			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛板块内协助您管理您的论坛.]]></helptext>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>

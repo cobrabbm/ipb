@@ -457,7 +457,7 @@ class emailer {
 						# Try without args for safe mode peeps
 						if ( ! @mail( $this->to, $this->subject, $this->message, $this->rfc_headers ) )
 						{
-							$this->fatal_error("Could not send the email", "Failed at 'mail' command");
+							$this->fatal_error("无法发送邮件", "'发送邮件' 命令失败");
 						}
 					}
 				}

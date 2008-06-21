@@ -849,7 +849,7 @@ class ad_groups
 			}
 			else
 			{
-				$groups_used = "<center><i>None</i></center>";
+				$groups_used = "<center><i>没有信息</i></center>";
 			}			
 			
 			if ( isset($mems[ $id ]) AND $mems[ $id ] > 0 )

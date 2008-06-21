@@ -4816,7 +4816,7 @@ pm=短消息</conf_extra>
 		<setting>
 			<conf_id>208</conf_id>
 			<conf_title><![CDATA[自动调整大图]]></conf_title>
-			<conf_description><![CDATA[如果选择 "是",则任何用 [IMG] 标签发表的图片将会被调整大小以免撑破板块的布局.]]></conf_description>
+			<conf_description><![CDATA[如果选择 "是",则任何用 [IMG] 标签发表的图片将会被调整大小以免撑破版块的布局.]]></conf_description>
 			<conf_group>28</conf_group>
 			<conf_type>yes_no</conf_type>
 			<conf_key>resize_linked_img</conf_key>

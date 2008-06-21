@@ -404,7 +404,7 @@ class ad_skin_diff
 		
 		$this->ipsclass->DB->do_insert( 'template_diff_session', array( 'diff_session_togo'    		  => intval( $total_bits['count'] ),
 																		'diff_session_done'    		  => 0,
-																		'diff_session_title'   		  => "Comparison from skin set: ".$skin_set['set_name'],
+																		'diff_session_title'   		  => "模板差异比较: ".$skin_set['set_name'],
 																		'diff_session_updated'        => time(),
 																		'diff_session_ignore_missing' => 1 ) );
 																		

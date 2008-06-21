@@ -35,7 +35,7 @@ $IPBHTML .= <<<EOF
 			  <td width='33%' valign='top'>
 				<div><a href='{$this->ipsclass->base_url}&section=content&act=mem&code=search' title='管理会员'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/members.png' border='0' alt='管理会员' /> 管理会员</a></div>
 				<div><a href='{$this->ipsclass->base_url}&section=content&act=mtools&code=mod' title='处理等待验证会员'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/validating.png' border='0' alt='处理等待验证会员' /> 等待验证会员</a></div>
-				<div><a href='{$this->ipsclass->base_url}&section=content&act=forum' title='管理板块'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/forums.png' border='0' alt='管理板块' /> 管理板块</a></div>
+				<div><a href='{$this->ipsclass->base_url}&section=content&act=forum' title='管理版块'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/forums.png' border='0' alt='管理版块' /> 管理版块</a></div>
 			</td>
 			<td width='33%' valign='top'>
 				<div><a href='{$this->ipsclass->base_url}&section=tools' title='修改系统设置'><img src='{$this->ipsclass->skin_acp_url}/images/folder_components/index/settings.png' border='0' alt='修改系统设置' /> 修改系统设置</a></div>
@@ -80,7 +80,7 @@ $IPBHTML .= <<<EOF
 				 </tr>
 				 <tr>
 				  <td class='homepage_sub_row'>
-					<strong>编辑一个板块</strong> <span class='desctext' title='选择一个板块以修改'>?</span>
+					<strong>编辑一个版块</strong> <span class='desctext' title='选择一个版块以修改'>?</span>
 				    <br /><form name='newmem' id='newmem' action='{$this->ipsclass->adskin->base_url}&section=content&act=forum&code=edit' method='post'><input type='hidden' name='_admin_auth_key' value='{$this->ipsclass->_admin_auth_key}' /><select name='f'>{$f_dd}</select> <input type='submit' value='编辑...' class='realbutton' /></form></td>
 				 </tr>
 				 <tr>
