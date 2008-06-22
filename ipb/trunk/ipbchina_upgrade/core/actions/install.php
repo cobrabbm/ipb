@@ -790,11 +790,11 @@ class action_install
 				$our_output .= $this->install->ipsclass->adskin->end_table();
 			}
 
-			$this->install->ipsclass->adskin->td_header[] = array( "Table"    	, "30%" );
-			$this->install->ipsclass->adskin->td_header[] = array( "Status"  	, "20%" );
-			$this->install->ipsclass->adskin->td_header[] = array( "Fix"       	, "50%" );
+			$this->install->ipsclass->adskin->td_header[] = array( "数据表"    	, "30%" );
+			$this->install->ipsclass->adskin->td_header[] = array( "状态"  	, "20%" );
+			$this->install->ipsclass->adskin->td_header[] = array( "修复"       	, "50%" );
 
-			$our_output .= $this->install->ipsclass->adskin->start_table( "Database Table Results" );
+			$our_output .= $this->install->ipsclass->adskin->start_table( "数据库检查结果" );
 
 			$good_img = "<img src='{$this->install->ipsclass->skin_acp_url}/images/aff_tick.png' border='0' alt='YN' class='ipd' />";
 			$bad_img  = "<img src='{$this->install->ipsclass->skin_acp_url}/images/aff_cross.png' border='0' alt='YN' class='ipd' />";

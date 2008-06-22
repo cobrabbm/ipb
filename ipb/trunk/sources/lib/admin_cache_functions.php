@@ -360,7 +360,7 @@ class admin_cache_functions
 				
 				$return = 1;
 				
-				$this->messages[] = "Wrote skin_cache/cacheid_{$id}/{$group_name}.php";
+				$this->messages[] = "已写入 skin_cache/cacheid_{$id}/{$group_name}.php";
 			}
 		}
 		
@@ -994,7 +994,7 @@ class admin_cache_functions
 		foreach( $ids as $i )
 		{
 			$macros = $this->_get_macros($i['id'], $i['parent'], $root);
-			$this->messages[] = "Done.... (Macro ID: {$i['id']})...";
+			$this->messages[] = "已经完成.... (宏定义 ID: {$i['id']})...";
 			$this->ipsclass->DB->do_update( 'skin_sets', array( 'set_cache_macro' => $this->ipsclass->DB->add_slashes(serialize($macros)) ), 'set_skin_set_id='.$i['id'] );
 			
 			$ids_to_update[] = $i['id'];

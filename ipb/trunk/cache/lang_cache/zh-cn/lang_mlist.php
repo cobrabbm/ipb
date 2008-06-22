@@ -27,10 +27,10 @@ $lang = array (
 
 'm_views'               => "浏览次数",
 'm_view_profile'		=> "查看会员资料",
-'m_remove_friend'		=> "删除好友",
+'m_remove_friend'		=> "删除该好友",
 'm_add_friend'			=> "添加为好友",
 'm_send_message'		=> "发送短消息",
-'m_find_posts'			=> "查看该会员所有帖子",
+'m_find_posts'			=> "查看会员帖子",
 
 'button_quickjump' => '按会员名首字母排序...',
 'toggle_more'      => '更多选项...',

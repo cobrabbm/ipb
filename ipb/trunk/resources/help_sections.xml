@@ -6,70 +6,70 @@
 			<title>后台帮助系统</title>
 			<helptext><![CDATA[<b>欢迎来到后台帮助系统</b>
 <br />这个系统将提供您关于一些特殊设置和管理页面方面的更加完善的信息.
-<br />在其他相关的设置页面,您也会看到类似的帮助信息提示. 
-<br />默认设置下,帮助信息的边上都会有一个图标,表示这里有更多的信息供参考,您可以点击此图标获取.图标如下: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
+<br />在其他相关的设置页面, 您也会看到类似的帮助信息提示. 
+<br />默认设置下, 帮助信息的边上都会有一个图标, 表示这里有更多的信息供参考, 您可以点击此图标获取. 图标如下: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
 <br />
 <br />您可以点击帮助信息提示右上角的三角符号把此信息收缩起来:
 <br /><a href="{base_url}&section=tools&act=op&search=acp+help+system&code=setting_view">点击这里</a>可以关闭帮助信息提示功能.
-<br />通过点击 <i>工具设置</i>面板,点击<i>常规设置</i>,设置<i>ACP 帮助系统</i>为<i>否</i>即可.]]></helptext>
+<br />通过点击 <i>工具设置</i> 面板, 点击 <i>常规设置</i>, 设置 <i>ACP 帮助系统</i> 为 <i>否</i> 即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_postoffice_mail_new</key>
 			<title>发送群发邮件</title>
-			<helptext>当您发送邮件的时候,论坛会触发一个邮件发送任务,请注意，这个操作是系统自动的.如果您发现系统并没有执行这个操作,请打开您的论坛,并且随意点击几个论坛功能,这样就能触发系统执行邮件发送.</helptext>
+			<helptext>当您发送邮件的时候, 论坛会触发一个邮件发送任务, 请注意, 这个操作是系统自动的. 如果您发现系统并没有执行这个操作, 请打开您的论坛, 并且随意点击几个论坛功能, 这样就能触发系统执行邮件发送.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_sql_backup</key>
 			<title>我应该如何选择设置备份?</title>
 			<helptext><![CDATA[<b>简单备份</b><br />
-这项功能仅仅只提供了一个简单的备份方式,您可以通过对话框的提示来保存您的文件.小型数据库可以用这种方式备份.<br />
-通常情况下,备份结果的好坏跟设置是有很大关系的.如果您比较有经验,您也可以跳过非核心数据的备份并且打开 GZIP 压缩数据.<br />
-如果您的数据库比较大,那么这项操作可能需要很长时间.如果中间出现什么问题,您可以联系您的服务提供商,他们应该能够提供关于数据备份方面的帮助.如果您的网站有 SSH 链接,我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a> 提供了运用 SSH 手动备份的信息.]]></helptext>
+这项功能仅仅只提供了一个简单的备份方式, 您可以通过对话框的提示来保存您的文件. 小型数据库可以用这种方式备份.<br />
+通常情况下, 备份结果的好坏跟设置是有很大关系的. 如果您比较有经验, 您也可以跳过非核心数据的备份并且打开 GZIP 压缩数据.<br />
+如果您的数据库比较大, 那么这项操作可能需要很长时间. 如果中间出现什么问题, 您可以联系您的服务提供商, 他们应该能够提供关于数据备份方面的帮助. 如果您的网站有 SSH 链接, 我们的 <a href="{base_url}&section=help&act=support&code=kb">知识库</a> 提供了运用 SSH 手动备份的信息.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_new</key>
 			<title>权限设置</title>
-			<helptext><![CDATA[创建一个<b>新论坛版块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内.<br />
-创建<b>新论坛分区</b>的时候,您也需要选择哪些用户组可以查看此论坛分区.
+			<helptext><![CDATA[创建一个 <b>新论坛版块</b> 的时候, 请选择哪些用户组可以查看此论坛, 在此论坛投票, 上传/下载附件. 您可以在下面找到相关设置.如果您不设置的话, 任何人都不能查看此论坛, 包括管理员在内.<br />
+创建 <b>新论坛分区</b> 的时候, 您也需要选择哪些用户组可以查看此论坛分区.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_donew</key>
 			<title>权限设置</title>
-			<helptext><![CDATA[创建一个<b>新论坛版块</b>的时候,请选择哪些用户组可以查看此论坛,在此论坛投票,上传/下载附件.您可以在下面找到相关设置.如果您不设置的话,任何人都不能查看此论坛,包括管理员在内..<br />
-创建<b>新论坛分区</b>的时候,您也需要选择哪些用户组可以查看此论坛分区.]]></helptext>
+			<helptext><![CDATA[创建一个 <b>新论坛版块</b> 的时候, 请选择哪些用户组可以查看此论坛, 在此论坛投票, 上传/下载附件. 您可以在下面找到相关设置.如果您不设置的话, 任何人都不能查看此论坛, 包括管理员在内..<br />
+创建 <b>新论坛分区</b> 的时候, 您也需要选择哪些用户组可以查看此论坛分区.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_</key>
 			<title>管理已经存在的论坛</title>
-			<helptext><![CDATA[当您需要 <b>编辑设置</b>,更改权限,或者删除一个已经存在的版块/分区的时候,您可以在您的目标版块/分区的右边,点击下拉菜单来执行操作.这在您决定谁是否能看查看目标版块/分区的时候显得特别有用.<br />
-如果您添需要加,删除,或者编辑已经存在的<b>版主</b>,最简单的方法就是点击下面的<i>显示版主</i>.已经存在的版主就会在他们管理的版块旁边显示出来.如果您需要为一个已经存在的版块添加版主,您可以选中此版块,滚动在页面的底部,在输入框内输入此版主的会员名字<i>为所有选择的版块添加版主(s)</i>.]]></helptext>
+			<helptext><![CDATA[当您需要 <b>编辑设置</b>, 更改权限, 或者删除一个已经存在的版块/分区的时候, 您可以在您的目标版块/分区的右边, 点击下拉菜单来执行操作.这在您决定谁是否能看查看目标版块/分区的时候显得特别有用.<br />
+如果您添需要加, 删除, 或者编辑已经存在的 <b>版主</b>, 最简单的方法就是点击下面的 <i>显示版主</i>. 已经存在的版主就会在他们管理的版块旁边显示出来. 如果您需要为一个已经存在的版块添加版主, 您可以选中此版块, 滚动在页面的底部, 在输入框内输入此版主的会员名字 <i>为所有选择的版块添加版主(s)</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_search</key>
 			<title><![CDATA[查找清理会员]]></title>
-			<helptext><![CDATA[您可以在这里<b>搜索</b>您论坛里的任何会员.输入一个关键字就可以.您可以点击会员名称后面的下拉菜单来编辑会员资料.<br />
-如果您需要执行<b>批量删除/清理</b>会员,最简单的方法就是在<i>搜索类型</i>里选择<i>查找批量会员</i>.您只需要在条件选择里输入您想要匹配的查找条件即可.]]></helptext>
+			<helptext><![CDATA[您可以在这里 <b>搜索</b> 您论坛里的任何会员. 输入一个关键字就可以. 您可以点击会员名称后面的下拉菜单来编辑会员资料.<br />
+如果您需要执行 <b>批量删除/清理</b> 会员, 最简单的方法就是在 <i>搜索类型</i> 里选择 <i>查找批量会员</i>. 您只需要在条件选择里输入您想要匹配的查找条件即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_changepassword</key>
 			<title><![CDATA[密码策略 & 登录密匙]]></title>
-			<helptext>在通常情况下,您可以把这两项留空默认设置.他们只是在某一些用户登录数据的地方使用.</helptext>
+			<helptext>在通常情况下, 您可以把这两项留空默认设置. 他们只是在某一些用户登录数据的地方使用.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mtools_mod</key>
 			<title>用户在注册管理/更改队列邮件</title>
-			<helptext><![CDATA[这项功能允许您审核任何一个需要审核的会员申请.在需要审核的会员名称后面会出现<a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">管理审核</a>, <a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">邮件确认</a>, <a href="{base_url}&section=tools&act=op&code=findsetting&key=coppa">COPPA 验证</a>,或者,如果他们在等待一个确认审核通过修改邮件.<br /><br />
-您可以试用会员名称后面的点选框,还有表格下方的下拉菜单来决定是通过或者拒绝审核.<br /><br />
-如果会员不能收到您的确认邮件,您也可以选中会员名称以后在下拉菜单中选择"重发确认邮件".]]></helptext>
+			<helptext><![CDATA[这项功能允许您审核任何一个需要审核的会员申请. 在需要审核的会员名称后面会出现<a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">管理审核</a>, <a href="{base_url}&section=tools&act=op&search=New+registration+email+validation?&code=setting_view">邮件确认</a>, <a href="{base_url}&section=tools&act=op&code=findsetting&key=coppa">COPPA 验证</a>, 或者, 如果他们在等待一个确认审核通过修改邮件.<br /><br />
+您可以试用会员名称后面的点选框, 还有表格下方的下拉菜单来决定是通过或者拒绝审核.<br /><br />
+如果会员不能收到您的确认邮件, 您也可以选中会员名称以后在下拉菜单中选择 "重发确认邮件".]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -77,16 +77,16 @@
 			<title>版权移除</title>
 			<helptext><![CDATA[<b>请注意</b>:这与 IPB 许可文件<u>不同</u>.版权的移除是另外一项必须购买的功能.<br />
 <br />
-<b>购买</b>这个许可,请<a href="{base_url}&section=help&act=support&code=contact">联系我们的销售部门</a>.<br />
-如果您在添加版权移除许可的时候<b>遇到问题</b>,请<a href="{base_url}&section=help&act=support&code=support">提交一份新的援助申请</a>.请确认包含您的论坛地址,一个论坛总管理员帐号,和您使用的许可文件在内.]]></helptext>
+<b>购买</b> 这个许可, 请<a href="{base_url}&section=help&act=support&code=contact">联系我们的销售部门</a>.<br />
+如果您在添加版权移除许可的时候<b>遇到问题</b>, 请<a href="{base_url}&section=help&act=support&code=support">提交一份新的援助申请</a>.请确认包含您的论坛地址, 一个论坛总管理员帐号, 和您使用的许可文件在内.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_sets_</key>
 			<title>管理主题设置</title>
-			<helptext><![CDATA[您可以在这里查看和更改您的论坛主题.您可以点击每一款主题右边的下拉菜单直接修改此主题. 如果您需要创建一个新的未编辑默认主题,您可以点击 <i>主题设置</i>右边的下拉菜单来实现.下面是页面图标的相关说明:<br />
-<img src="{skin_url}/images/skin_default.gif" alt="Defaul Skin" style="float:none;" /> - 这个图标显示出哪一款主题正在被用做论坛默认主题.您可以在其他的主题后面点亮此图标来设置此主题为默认主题.<br />
-<img src="{skin_url}/images/skin_visible.gif" alt="Visible Skin" style="float:none;" /> - 这个图标显示哪些论坛主题可用.您可以点击这个图标来隐藏或者显示会员可以自己选择的主题.<br />
+			<helptext><![CDATA[您可以在这里查看和更改您的论坛主题. 您可以点击每一款主题右边的下拉菜单直接修改此主题. 如果您需要创建一个新的未编辑默认主题, 您可以点击 <i>主题设置</i>右边的下拉菜单来实现.下面是页面图标的相关说明:<br />
+<img src="{skin_url}/images/skin_default.gif" alt="Defaul Skin" style="float:none;" /> - 这个图标显示出哪一款主题正在被用做论坛默认主题. 您可以在其他的主题后面点亮此图标来设置此主题为默认主题.<br />
+<img src="{skin_url}/images/skin_visible.gif" alt="Visible Skin" style="float:none;" /> - 这个图标显示哪些论坛主题可用. 您可以点击这个图标来隐藏或者显示会员可以自己选择的主题.<br />
 <img src="{skin_url}/images/skin_forums.gif" alt="Forum Skin" style="float:none;" /> - 这个图标显示此主题已经被某一个特殊的版块使用.
 ]]></helptext>
 		</helpsections>
@@ -94,11 +94,11 @@
 		<helpsections>
 			<key>help_support_support</key>
 			<title>提交援助申请</title>
-			<helptext><![CDATA[当您在使用论坛软件遇到问题需要 IPS 提供援助的时候,您可以通过申请系统给我们提交申请. 您的申请可能需要 24-48 小时来处理.<br/>
+			<helptext><![CDATA[当您在使用论坛软件遇到问题需要 IPS 提供援助的时候, 您可以通过申请系统给我们提交申请. 您的申请可能需要 24-48 小时来处理.<br/>
 <br />
 请您提交申请的时候提供一个可用的联系方式.<br />
 <br />
-<b>提醒 - Internet Explorer 用户</b>: 在有些情况下, Internet Explorer 不允许使用外部框架.如果您登录出现问题,请直接点击这里:<a href="https://www.invisionpower.com/customer/" target="_blank">客户区域</a>.]]></helptext>
+<b>提醒 - Internet Explorer 用户</b>: 在有些情况下, Internet Explorer 不允许使用外部框架. 如果您登录出现问题, 请直接点击这里: <a href="https://www.invisionpower.com/customer/" target="_blank">客户服务区</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -115,9 +115,9 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>content_group_permsplash</key>
 			<title>论坛权限管理</title>
-			<helptext><![CDATA[您可以在这里设置您论坛的一些访问权限.您可以直接点击用户组右边的下拉菜单来设置哪些论坛会员可以查看,可以发表等等.<br />
+			<helptext><![CDATA[您可以在这里设置您论坛的一些访问权限. 您可以直接点击用户组右边的下拉菜单来设置哪些论坛会员可以查看, 可以发表等等.<br />
 <br />
-<b>用户组使用</b>显示与此权限有关的用户组.
+<b>用户组使用</b> 显示与此权限有关的用户组.
 <b>会员使用</b> 显示单独使用此权限的特殊会员.
 <b>预览</b> 提供一个方便快捷直观的权限预览图示.]]></helptext>
 		</helpsections>
@@ -125,212 +125,212 @@ a href="#" onclick='opener.ipsclass.location_jump("", 1); return false;'>]]></he
 		<helpsections>
 			<key>content_multimod_</key>
 			<title>主题管理</title>
-			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛版块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
+			<helptext><![CDATA[通过主题管理, 您可以轻松的合并几个主题. 例如, 如果您的论坛禁止发布广告, 您可以在论坛版块规则中写入禁止信息. 您可以很轻松的关闭一个主题或者给一个主题添加投票选项. 总之您的操作取决与您的需求.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_multimod_new</key>
 			<title>主题管理</title>
-			<helptext><![CDATA[通过主题管理,您可以轻松的合并几个主题.例如,如果您的论坛禁止发布广告,您可以在论坛版块规则中写入禁止信息.您可以很轻松的关闭一个主题或者给一个主题添加投票选项.总之您的操作取决与您的需求.]]></helptext>
+			<helptext><![CDATA[通过主题管理, 您可以轻松的合并几个主题. 例如, 如果您的论坛禁止发布广告, 您可以在论坛版块规则中写入禁止信息. 您可以很轻松的关闭一个主题或者给一个主题添加投票选项. 总之您的操作取决与您的需求.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_add</key>
 			<title>创建新会员</title>
-			<helptext>当您需要添加管理员帐号的时候建议直接用管理后台添加.这将省去您很多不必要的注册激活等步骤.</helptext>
+			<helptext>当您需要添加管理员帐号的时候建议直接用管理后台添加. 这将省去您很多不必要的注册激活等步骤.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_title</key>
 			<title>设置会员评分</title>
 			<helptext><![CDATA[评分的图标会显示在会员头像之下.<br />
-这项设置允许您更改,删除,或者添加评分.您可以选择星形图标的数量来评分.您可以自定义此显示图片.提醒,图片必须保存在 '/style_images/{img_dir}/folder_team_icons' 此安装目录.
+这项设置允许您更改、删除, 或者添加评分. 您可以选择星形图标的数量来评分. 您可以自定义此显示图片. 请注意, 图片必须保存在 '/style_images/{img_dir}/folder_team_icons' 此安装目录.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_gallery_show</key>
 			<title>IPB 图库</title>
-			<helptext><![CDATA[这是一个单独的论坛插件.它为您的论坛提供了一个图库,会员可以上传自己的图片来创建属于自己的相册.需要购买,请联系我们的<a href="{base_url}&section=help&act=support&code=contact">销售团队</a>. 如果您已经购买了此插件,需要IPS为您安装,请提交一份<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
+			<helptext><![CDATA[这是一个单独的论坛插件. 它为您的论坛提供了一个图库, 会员可以上传自己的图片来创建属于自己的相册. 需要购买, 请联系我们的 <a href="{base_url}&section=help&act=support&code=contact">销售团队</a>. 如果您已经购买了此插件, 需要 IPS 为您安装, 请提交一份 <a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_blog_show</key>
 			<title>IPB博客</title>
-			<helptext><![CDATA[这是一个单独的论坛插件.它为您的论坛提供了一个个人博客系统(网页博客).可以作为一个简单的个人日志记录工具.需要购买,请联系我们的<a href="{base_url}&section=help&act=support&code=contact">销售团队</a>.如果您已经购买了此插件,需要IPS为您安装,请提交一份<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
+			<helptext><![CDATA[这是一个单独的论坛插件. 它为您的论坛提供了一个个人博客系统 (网页博客). 可以作为一个简单的个人日志记录工具. 需要购买, 请联系我们的 <a href="{base_url}&section=help&act=support&code=contact">销售团队</a>. 如果您已经购买了此插件, 需要 IPS 为您安装, 请提交一份 <a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_chatpara_show</key>
 			<title>ParaChat 配置</title>
-			<helptext>ParaChat 是一个论坛可用的简易聊天软件.由第三方软件提供支持.您可以在下面看到此公司的一些信息. 如果您想要购买 ParaChat,请您填写他们提供的必要信息提交即可.</helptext>
+			<helptext>ParaChat 是一个论坛可用的简易聊天软件. 由第三方软件提供支持. 您可以在下面看到此公司的一些信息. 如果您想要购买 ParaChat, 请您填写他们提供的必要信息提交即可.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_chatsigma_show</key>
 			<title>AddOnChat 配置</title>
-			<helptext>AddOnChat 是一个论坛可用的聊天软件. 由第三方软件提供支持.您可以在下面看到此公司的一些信息. 如果您想要购买 ParaChat,请您填写他们提供的必要信息提交即可.</helptext>
+			<helptext>AddOnChat 是一个论坛可用的聊天软件. 由第三方软件提供支持. 您可以在下面看到此公司的一些信息. 如果您想要购买 ParaChat, 请您填写他们提供的必要信息提交即可.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_</key>
 			<title>提交帮助申请</title>
-			<helptext><![CDATA[如果您在使用 IPB 的过程中需要官方的援助或者支持,您就可以利用我们的申请系统提交一份申请.您的申请会在24-48小时内处理.<br/>
+			<helptext><![CDATA[如果您在使用 IPB 的过程中需要官方的援助或者支持, 您就可以利用我们的申请系统提交一份申请. 您的申请会在 24-48 小时内处理.<br/>
 <br />
 请您提交申请的时候提供一个可用的联系方式.<br />
 <br />
-<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="https://www.invisionpower.com/customer/" target="_blank">客户区域</a>访问.]]></helptext>
+<b>使用 Internet Explorer 的用户请注意</b>: 在某些情况下, Internet Explorer 不支持登录包含框架的网页. 如果您登录遇到问题, 请直接点击 <a href="https://www.invisionpower.com/customer/" target="_blank">客户服务区</a> 访问.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_kb</key>
 			<title>IPB 知识库</title>
-			<helptext><![CDATA[这里您可以解决通常情况下您所遇到的问题,获取更新程序,以及一些使用指南.
+			<helptext><![CDATA[这里您可以解决通常情况下您所遇到的问题, 获取更新程序, 以及一些使用指南.
 <br />
 <br />
-<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="https://www.invisionpower.com/customer/" target="_blank">客户区域</a>访问.]]></helptext>
+<b>使用 Internet Explorer 的用户请注意</b>: 在某些情况下, Internet Explorer 不支持登录包含框架的网页. 如果您登录遇到问题, 请直接点击 <a href="https://www.invisionpower.com/customer/" target="_blank">客户服务区</a> 访问.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_bugs</key>
 			<title>Bug 报告</title>
-			<helptext><![CDATA[您可以在我们的追踪栏目里提交并跟踪您所提交的所有 Bug,它将显示在下面.这里并<i>不</i> 包括发布的报告,仅仅只为了弥补我们的程序内部 Bug.
+			<helptext><![CDATA[您可以在我们的追踪栏目里提交并跟踪您所提交的所有 Bug, 它将显示在下面. 这里并 <i>不</i> 包括发布的报告, 仅仅只为了弥补我们的程序内部 Bug.
 <br />
 <br />
-<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">缺陷追踪</a> 访问.]]></helptext>
+<b>使用 Internet Explorer 的用户请注意</b>: 在某些情况下, Internet Explorer 不支持登录包含框架的网页. 如果您登录遇到问题, 请直接点击 <a href="http://forums.invisionpower.com/index.php?autocom=bugtracker" target="_blank">缺陷追踪</a> 访问.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_features</key>
 			<title>新功能建议</title>
-			<helptext><![CDATA[如果您需要一项新功能,或者在其他地方看到而 IPB 没有这些功能,那么您可以在这里反馈给我们.
+			<helptext><![CDATA[如果您需要一项新功能, 或者在其他地方看到而 IPB 没有这些功能, 那么您可以在这里反馈给我们.
 <br />
 <br />
-<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">意见建议</a>访问.
+<b>使用 Internet Explorer 的用户请注意</b>: 在某些情况下, Internet Explorer 不支持登录包含框架的网页. 如果您登录遇到问题, 请直接点击 <a href="http://forums.invisionpower.com/index.php?showforum=297" target="_blank">意见建议</a> 访问.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_resources</key>
 			<title>resources.invisionpower.com - 官方资源站点</title>
-			<helptext><![CDATA[resources.invisionpower.com 是一个全面的客户服务站点,在这里您可以找到很多有用的文章, 修正,主题,以及客户之间的互助信息.需要提醒的是在 resources.invisionpower.com 上所有的内容都是客户与客户之间的交流与互助信息,并不是 IPS 官方的支持信息.如果您想要与其他 IPB 使用者交流,或者获得其他客户分享出来的一些资源,那么,这里将是您的首选.<br />
+			<helptext><![CDATA[resources.invisionpower.com 是一个全面的客户服务站点, 在这里您可以找到很多有用的文章、修正、主题, 以及客户之间的互助信息. 需要提醒的是在 resources.invisionpower.com 上所有的内容都是客户与客户之间的交流与互助信息, 并不是 IPS 官方的支持信息. 如果您想要与其他 IPB 使用者交流, 或者获得其他客户分享出来的一些资源, 那么, 这里将是您的首选.<br />
 <br/>
 您可以使用您的客户端直接访问 resources.invisionpower.com.
 <br />
 <br />
-<b>使用 Internet Explorer 的用户请注意</b>:有时, Internet Explorer 不支持登录包含框架的网页.如果您登录遇到问题, 请直接点击<a href="http://resources.invisionpower.com" target="_blank">resources.invisionpower.com</a>访问.
+<b>使用 Internet Explorer 的用户请注意</b>: 在某些情况下, Internet Explorer 不支持登录包含框架的网页. 如果您登录遇到问题, 请直接点击 <a href="http://resources.invisionpower.com" target="_blank">resources.invisionpower.com</a> 访问.
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_doctor</key>
 			<title>IPB 文档中心</title>
-			<helptext>这里您可以下载一些 IPB 在线文档资源. 涵盖了包括一般使用者和管理员都需要的信息.对于皮肤和模板设计者,我们提供了全套 CSS 指导和开发文档.</helptext>
+			<helptext>这里您可以下载一些 IPB 在线文档资源. 涵盖了包括一般使用者和管理员都需要的信息. 对于皮肤和模板设计者, 我们提供了全套 CSS 指导和开发文档.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_support_contact</key>
 			<title>联系 IPS</title>
-			<helptext>如果您想要联系我们,您可以在下面找到我们当前的联系方式和回馈时间.</helptext>
+			<helptext>如果您想要联系我们, 您可以在下面找到我们当前的联系方式和回馈时间.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_</key>
 			<title><![CDATA[查找清理会员]]></title>
-			<helptext><![CDATA[您可以在这里<b>搜索</b>您论坛里的任何会员.输入一个关键字就可以.您可以点击会员名称后面的下拉菜单来编辑会员资料.<br />
-如果您需要执行<b>批量删除/清理</b>会员,最简单的方法就是在<i>搜索类型</i>里选择<i>查找批量会员</i>.您只需要在条件选择里输入您想要匹配的查找条件即可.]]></helptext>
+			<helptext><![CDATA[您可以在这里 <b>搜索</b> 您论坛里的任何会员. 输入一个关键字就可以. 您可以点击会员名称后面的下拉菜单来编辑会员资料.<br />
+如果您需要执行 <b>批量删除/清理</b> 会员, 最简单的方法就是在 <i>搜索类型</i> 里选择 <i>查找批量会员</i>. 您只需要在条件选择里输入您想要匹配的查找条件即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_</key>
 			<title>用户组</title>
-			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能. 有四个默认的用户组您无法删除 (待审核、游客、会员 和管理员), 但是您也可以修改他们的设置. 通常您可以添加一个非常有用的用户组 '版主', 他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mtools_lock</key>
 			<title>管理锁定的会员</title>
-			<helptext><![CDATA[这里您可以查看哪些会员被锁定.您也可以在这里解除会员的锁定.如果您锁定了 Ip 地址,那么所有使用这个地址的会员都将被锁定.<br />
-您可以<a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">点击这里</a>设置.]]></helptext>
+			<helptext><![CDATA[这里您可以查看哪些会员被锁定. 您也可以在这里解除会员的锁定. 如果您锁定了 IP 地址, 那么所有使用这个地址的会员都将被锁定.<br />
+您可以 <a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">点击这里</a> 设置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_field_add</key>
-			<title><![CDATA[关于"预输入模式"的提示]]></title>
-			<helptext><![CDATA[输入您输入<b>n</b>,体力,会员将只能输入<i>一个</i>数字.用它来控制一些输入时需要限制字数的地方.比如说,如果您需要一个(5字符) '压缩代码',那么您只要这样输入: <b>nnnnn</b><br/>
-超过5位之外的字符是没有任何作用的.]]></helptext>
+			<title><![CDATA[关于 "预输入模式" 的提示]]></title>
+			<helptext><![CDATA[输入您输入 <b>n</b>, 体力, 会员将只能输入<i>一个</i>数字. 用它来控制一些输入时需要限制字数的地方. 比如说, 如果您需要一个 (5 字符) '压缩代码', 那么您只要这样输入: <b>nnnnn</b><br/>
+超过 5 位之外的字符是没有任何作用的.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_field_</key>
 			<title>添加自定义属性</title>
-			<helptext>自定义属性在您注册或者编辑一个属性的时候有用.例如您想要记录在默认论坛上正在访问的会员名字.</helptext>
+			<helptext>自定义属性在您注册或者编辑一个属性的时候有用. 例如您想要记录在默认论坛上正在访问的会员名字.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_empty</key>
 			<title>清空论坛</title>
-			<helptext><![CDATA[<b>此操作将删除论坛所有主题,帖子和投票. 出现<u>否</u>撤销.</b><br />的论坛将不会选中
+			<helptext><![CDATA[<b>此操作将删除论坛所有主题、帖子和投票. </b><br />出现 <u>否</u> 的论坛将不会选中
  - 继续操作之前请再次确认.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_skinedit</key>
 			<title>为版面指定主题</title>
-			<helptext>您可以为版面添加或者删除指定主题.当您指定了主题的时候,所有会员都将使用这个主题,他们自己的设置将失效.</helptext>
+			<helptext>您可以为版面添加或者删除指定主题. 当您指定了主题的时候, 所有会员都将使用这个主题, 他们自己的设置将失效.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_frules</key>
 			<title>版规设置</title>
-			<helptext>您可以为您的版块设置使用规则.它会直接在版块上面显示出来或者只是显示链接.任何进入此版面的人都会看到版规,即使实在发表/回复主题的时候也一样.</helptext>
+			<helptext>您可以为您的版块设置使用规则. 它会直接在版块上面显示出来或者只是显示链接. 任何进入此版面的人都会看到版规, 即使实在发表/回复主题的时候也一样.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_pedit</key>
 			<title>论坛访问权限</title>
-			<helptext><![CDATA[选中即可访问,反之则禁止访问.<br />
-如果您禁止访问,会员就看不见此版块.]]></helptext>
+			<helptext><![CDATA[选中即可访问, 反之则禁止访问.<br />
+如果您禁止访问, 会员就看不见此版块.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_forum_edit</key>
 			<title>编辑论坛设置</title>
-			<helptext><![CDATA[如果您需要调整已经存在论坛的权限(谁可以阅读,发表,回复主题),在<i>论坛管理</i>页面点击'编辑权限'即可.<br />
-在此页面您可以开启发表选项,主题评分,投票, HTML,和其他的论坛功能.]]></helptext>
+			<helptext><![CDATA[如果您需要调整已经存在论坛的权限(谁可以阅读, 发表, 回复主题), 在<i>论坛管理</i>页面点击'编辑权限'即可.<br />
+在此页面您可以开启发表选项、主题评分、投票、HTML 帖子和其他的论坛功能.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_</key>
 			<title>IPB 诊断工具</title>
 			<helptext><![CDATA[<b>运行这些增强工具需要花费一些时间.</b><br />
-在系统概况里您将看到服务器的一些基本情况,包括您的 SQL 和 PHP 版本.您也可以查看此 IPB 的相关升级历史.<br /><br />
-如果您遇到 <b>IPS 驱动错误</b>,请运行<a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库检察</a>工具.如果您遇到<b>论坛缓慢</b>,确认您的<a href="{base_url}&section=help&act=diag&code=dbindex" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库索引</a>已经开启.如果您遇到<b>上传</b>方面的问题,请检查您的<a href="{base_url}&section=help&act=diag&code=filepermissions" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">文件权限</a>.最后,如果您遇到<b>空白页面</b>,请确认您的安装文件里面没有<a href="{base_url}&section=help&act=diag&code=whitespace" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">空白文件</a>.]]></helptext>
+在系统概况里您将看到服务器的一些基本情况, 包括您的 SQL 和 PHP 版本. 您也可以查看此 IPB 的相关升级历史.<br /><br />
+如果您遇到 <b>IPS 驱动错误</b>, 请运行 <a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库检察</a> 工具. 如果您遇到 <b>论坛缓慢</b>, 确认您的 <a href="{base_url}&section=help&act=diag&code=dbindex" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库索引</a> 已经开启. 如果您遇到 <b>上传</b> 方面的问题, 请检查您的 <a href="{base_url}&section=help&act=diag&code=filepermissions" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">文件权限</a>. 最后, 如果您遇到 <b>空白页面</b>, 请确认您的安装文件里面没有 <a href="{base_url}&section=help&act=diag&code=whitespace" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">空白文件</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_dbchecker</key>
 			<title>数据库检查</title>
-			<helptext><![CDATA[如果您遇到数据库方面的错误(通常都会显示<b> IPS 驱动错误</b>).请点击左边的链接开始检查修复.]]></helptext>
+			<helptext><![CDATA[如果您遇到数据库方面的错误 (通常都会显示 <b> IPS 驱动错误</b>). 请点击左边的链接开始检查修复.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_dbindex</key>
 			<title>数据库索引检查</title>
-			<helptext>数据库索引能让您的数据库更加快速有效的运行.如果索引出现任何错误,您的论坛可能会变得比预期的缓慢.请点击左边的链接开始检查修复.</helptext>
+			<helptext>数据库索引能让您的数据库更加快速有效的运行. 如果索引出现任何错误, 您的论坛可能会变得比预期的缓慢. 请点击左边的链接开始检查修复.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_filepermissions</key>
 			<title>文件权限检查</title>
-			<helptext><![CDATA[如果您的文件或者文件夹权限错误,论坛的某些附件,主题,和表情就不能正常上传.<br />
-IPB 在运行的时候对某一些文件或者文件夹会需要不同的权限设置来写入数据.在 Windows 系统下,您需要确认文件的"读/写" 权限, 如果是 Unix/Linux 您就需要确认文件的"777 属性".]]></helptext>
+			<helptext><![CDATA[如果您的文件或者文件夹权限错误, 论坛的某些附件、主题和表情就不能正常上传.<br />
+IPB 在运行的时候对某一些文件或者文件夹会需要不同的权限设置来写入数据. 在 Windows 系统下, 您需要确认文件的 "读/写" 权限, 如果是 Unix/Linux 您就需要确认文件的 "777 属性".]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>help_diag_whitespace</key>
 			<title>空格文件检查</title>
-			<helptext><![CDATA[如果在 PHP 标签之外出现空格,就会造成空白文件或者输入畸形的 HTML 结果.检查结束以后您需要删除 PHP 标签之外的空格或者空白换行.<br />
+			<helptext><![CDATA[如果在 PHP 标签之外出现空格, 就会造成空白文件或者输入畸形的 HTML 结果. 检查结束以后您需要删除 PHP 标签之外的空格或者空白换行.<br />
 <br />
 PHP 标签开始于:<br />
 <b>&lt;?php</b> or <b>&lt;?</b><br />
@@ -342,186 +342,186 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>admin_sql_</key>
 			<title>数据库管理</title>
-			<helptext><![CDATA[您可以在这里对您的数据库进行管理.对于初学者来说,除非您遇到<b>IPS 驱动错误</b>这种错误信息,否则，这里可以不用深入研究.如果您遇到了此类错误,请点击下列相关的数据表.如果您看到任何一行连一个数字都没有,那么请选中此表后面的点选框.然后在列表最下面的下拉菜单中选择"修复数据表."<br />
-如果您还是遇到<b>IPS 驱动错误</b>,请运行<a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库检查</a>.]]></helptext>
+			<helptext><![CDATA[您可以在这里对您的数据库进行管理. 对于初学者来说, 除非您遇到 <b>IPS 驱动错误</b> 这种错误信息, 否则,  这里可以不用深入研究. 如果您遇到了此类错误, 请点击下列相关的数据表. 如果您看到任何一行连一个数字都没有, 那么请选中此表后面的点选框.然后在列表最下面的下拉菜单中选择"修复数据表."<br />
+如果您还是遇到 <b>IPS 驱动错误</b>, 请运行 <a href="{base_url}&section=help&act=diag&code=dbchecker" onclick="xmlobj = new ajax_request();xmlobj.show_loading()">数据库检查</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_reg</key>
 			<title>注册状态统计</title>
-			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据, 从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
+注意: 这里显示的数据仅仅只当前数据库存储的静态数据, 它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_topic</key>
 			<title>新主题统计</title>
-			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据, 从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
+注意: 这里显示的数据仅仅只当前数据库存储的静态数据, 它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_post</key>
 			<title>发帖统计</title>
-			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据, 从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
+注意: 这里显示的数据仅仅只当前数据库存储的静态数据, 它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_msg</key>
 			<title>私人短消息统计</title>
-			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据, 从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
+注意: 这里显示的数据仅仅只当前数据库存储的静态数据, 它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_stats_views</key>
 			<title>主题查看统计</title>
-			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据,从私人段小心的发送数量到主题查看的数量等等.
+			<helptext><![CDATA[统计中心允许您查看有关您论坛的一些数据, 从私人段小心的发送数量到主题查看的数量等等.
 <br />
-注意:这里显示的数据仅仅只当前数据库存储的静态数据,它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
+注意: 这里显示的数据仅仅只当前数据库存储的静态数据, 它不会显示出论坛版块或者主题被删除等数据.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_components_</key>
 			<title>管理您的组件</title>
-			<helptext><![CDATA[所有安装过的组件都会在这里显示.您可以点击"允许"栏目下面的图标来快速开启或者禁用组件.<br /><br />
-<img src="{skin_url}/images/aff_tick.png" alt="Green Checkmark" style="float:none;" /> - 这个图标表示此组件已经在论坛被启用.点击它就可以禁用此组件.<br />
+			<helptext><![CDATA[所有安装过的组件都会在这里显示. 您可以点击 "允许" 栏目下面的图标来快速开启或者禁用组件.<br /><br />
+<img src="{skin_url}/images/aff_tick.png" alt="Green Checkmark" style="float:none;" /> - 这个图标表示此组件已经在论坛被启用. 点击它就可以禁用此组件.<br />
 <img src="{skin_url}/images/aff_cross.png" alt="Red X" style="float:none;" /> - 这个图标表示此组件已经在论坛禁用. 点击它就可以启用此组件.<br /><br />
-请访问<a href="{base_url}&section=components">组件</a>标签来设置您的组件.]]></helptext>
+请访问 <a href="{base_url}&section=components">组件</a> 标签来设置您的组件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_emaillog_</key>
 			<title>会员邮件日志</title>
-			<helptext>论坛所有会员的邮件这里都有记录.但是不会记录一些比较大的邮件,订阅邮件,和论坛的系统邮件.</helptext>
+			<helptext>论坛所有会员的邮件这里都有记录. 但是不会记录一些比较大的邮件、订阅邮件和论坛的系统邮件.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_adminlog_</key>
 			<title>管理员操作记录</title>
-			<helptext>您可以查看或者删除管理员话管理员在管理后台的一些操作记录(例如论坛面板,会员面板,群组面板,帮助文件,和版主操作记录).此操作不会再记录.</helptext>
+			<helptext>您可以查看或者删除管理员话管理员在管理后台的一些操作记录 (例如论坛面板、会员面板、群组面板、帮助文件和版主操作记录). 此操作不会再记录.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_emailerror_</key>
 			<title>邮件错误日志</title>
-			<helptext><![CDATA[当您使用邮件系统的时候遇到错误,错误信息会被记录在这里以备查看.如果论坛所有的邮件系统都出现错误,请确认您的<a href="{base_url}&section=tools&act=op&code=findsetting&key=emailset-up">邮件设置</a>是否正确.]]></helptext>
+			<helptext><![CDATA[当您使用邮件系统的时候遇到错误, 错误信息会被记录在这里以备查看. 如果论坛所有的邮件系统都出现错误, 请确认您的 <a href="{base_url}&section=tools&act=op&code=findsetting&key=emailset-up">邮件设置</a> 是否正确.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_spiderlog_</key>
 			<title>搜索引擎日志</title>
-			<helptext><![CDATA[如果您的论坛有搜索引擎蜘蛛访问,那么他们的操作将被记录在这里.需要提醒您的是此功能会使用服务器的大量存储资源来存储日志.建议您设置 <a href="{base_url}&section=tools&act=op&code=findsetting&key=log_prune">精简日志</a>来解决此问题.<br />
-想要记录哪些特殊的搜索引擎,请查看<a href="{base_url}&section=tools&act=op&code=findsetting&key=searchenginespiders">搜索引擎蜘蛛</a>配置页面.]]></helptext>
+			<helptext><![CDATA[如果您的论坛有搜索引擎蜘蛛访问, 那么他们的操作将被记录在这里. 需要提醒您的是此功能会使用服务器的大量存储资源来存储日志. 建议您设置 <a href="{base_url}&section=tools&act=op&code=findsetting&key=log_prune">精简日志</a> 来解决此问题.<br />
+想要记录哪些特殊的搜索引擎, 请查看 <a href="{base_url}&section=tools&act=op&code=findsetting&key=searchenginespiders">搜索引擎蜘蛛</a> 配置页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_warnlog_</key>
 			<title>警告日志</title>
-			<helptext><![CDATA[如果您设置了<a href="{base_url}&section=tools&act=op&code=findsetting&key=warnsetup">警告系统</a>,这里就会记录所有会员的警告记录.请注意,删除警告记录并不能降低会员的警告级别.]]></helptext>
+			<helptext><![CDATA[如果您设置了 <a href="{base_url}&section=tools&act=op&code=findsetting&key=warnsetup">警告系统</a>, 这里就会记录所有会员的警告记录. 请注意, 删除警告记录并不能降低会员的警告级别.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_loginlog_</key>
 			<title>管理员登录日志</title>
-			<helptext><![CDATA[这里显示每一次尝试登录管理后台的记录.会现实登录已经成功或者属于非法侵入.如果您发现了一个非法入侵的 IP 地址,建议您把这个地址添加到 <a href="{base_url}&section=content&act=babw&code=ban">过滤列表</a>里.<br />您也可以设置错误登录的次数,超过此数字自动执行操作.<a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">点击这里</a>进行设置.]]></helptext>
+			<helptext><![CDATA[这里显示每一次尝试登录管理后台的记录. 会现实登录已经成功或者属于非法侵入. 如果您发现了一个非法入侵的 IP 地址, 建议您把这个地址添加到 <a href="{base_url}&section=content&act=babw&code=ban">过滤列表</a> 里.<br />您也可以设置错误登录的次数, 超过此数字自动执行操作.<a href="{base_url}&section=tools&act=op&search=locked&code=setting_view">点击这里</a> 进行设置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_security_</key>
 			<title>安全中心</title>
-			<helptext><![CDATA[所有这些工具都不是必须的,<b><font color="red">强烈</font></b>建议您在运行它们之前先仔细阅读相关的说明.如果您不确定,请阅读我们的<a href="{base_url}&section=help&act=support&code=doctor">文档</a>.如果您有任何问题,请提交一份<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
+			<helptext><![CDATA[所有这些工具都不是必须的, <b><font color="red">强烈</font></b> 建议您在运行它们之前先仔细阅读相关的说明. 如果您不确定, 请阅读我们的 <a href="{base_url}&section=help&act=support&code=doctor">文档</a>. 如果您有任何问题, 请提交一份 <a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_security_list_admins</key>
 			<title>管理员列表</title>
-			<helptext><![CDATA[如果您在查看列表的时候发现不认识的帐号或者不该具有管理员权限的帐号,请立即移除他们的管理权限.您可以点击会员名字后面的"编辑"来移除.]]></helptext>
+			<helptext><![CDATA[如果您在查看列表的时候发现不认识的帐号或者不该具有管理员权限的帐号, 请立即移除他们的管理权限. 您可以点击会员名字后面的 "编辑" 来移除.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>admin_acpperms_acpp_list</key>
 			<title>管理面板权限设置</title>
-			<helptext>如果您需要能访问管理面板的管理员,但是他们不在总管理员组里,您可以限制他们在管理面板里的操作. 点击右边的下拉菜单选择搜索添加管理员.</helptext>
+			<helptext>如果您需要能访问管理面板的管理员, 但是他们不在总管理员组里, 您可以限制他们在管理面板里的操作. 点击右边的下拉菜单选择搜索添加管理员.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_index-gateways</key>
 			<title>支付网关管理</title>
-			<helptext><![CDATA[支付网关能让会员方便的支付论坛的付费项目.为了使用网关,您需要在对应的公司开设帐号.例如,如果您想使用 PayPal,您就必须先在<a href="https://www.paypal.com" target="_blank">PayPal 网站</a>注册一个帐号.<br />
-选择网关右边的下拉菜单 <i>设置支付网关...</i>来设置.]]></helptext>
+			<helptext><![CDATA[支付网关能让会员方便的支付论坛的付费项目. 为了使用网关, 您需要在对应的公司开设帐号. 例如, 如果您想使用 PayPal, 您就必须先在 <a href="https://www.paypal.com" target="_blank">PayPal 网站</a> 注册一个帐号.<br />
+选择网关右边的下拉菜单 <i>设置支付网关...</i> 来设置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_editmethod</key>
 			<title>订阅管理 - 编辑网关</title>
-			<helptext><![CDATA[这里设置关于支付网关的一些信息.如果您对此并不确认,例如 <i>出售者 ID</i>,<i>联合网关邮件地址</i>, <i>等等.</i>,请联系您的特殊网关提供商,他们会给您提供必要的帮助.]]></helptext>
+			<helptext><![CDATA[这里设置关于支付网关的一些信息. 如果您对此并不确认, 例如 <i>出售者 ID</i>, <i>联合网关邮件地址</i>, <i> 等等.</i>, 请联系您的特殊网关提供商, 他们会给您提供必要的帮助.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_index-packages</key>
 			<title>订阅管理 - 管理订阅包</title>
 			<helptext><![CDATA[订阅包裹一般包括:<br />
-设置会员每个月提升到另外一个用户组.如果您允许会员通过付费的方式成灰管理者,这也非常有用.<br />
-设置从不过期的<i>捐赠者</i>用户组.它则允许会员通过支付一些费用加入到您的论坛特殊组里.]]></helptext>
+设置会员每个月提升到另外一个用户组. 如果您允许会员通过付费的方式成灰管理者, 这也非常有用.<br />
+设置从不过期的 <i>捐赠者</i> 用户组. 它则允许会员通过支付一些费用加入到您的论坛特殊组里.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_currency</key>
 			<title>订阅管理 - 货币管理</title>
 			<helptext><![CDATA[<b>货币信息</b><br />
-货币是交易的基础.例如,您可以选择 USD 作为基础货币,输入一个数值 1.00 意味着这项订阅值 1.00 个 USD.如果您选择其他货币也是一样的道理.您同样需要设置交易的数值.<br />
+货币是交易的基础. 例如, 您可以选择 USD 作为基础货币, 输入一个数值 1.00 意味着这项订阅值 1.00 个 USD. 如果您选择其他货币也是一样的道理. 您同样需要设置交易的数值.<br />
 <br />
-最新的货币转换汇率,您可以查询<a href="http://www.xe.com" target="_blank">XE.com</a>.]]></helptext>
+最新的货币转换汇率, 您可以查询 <a href="http://www.xe.com" target="_blank">XE.com</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_addtransaction</key>
 			<title>订阅管理 - 手工添加交易</title>
-			<helptext><![CDATA[您可以为会员手工添加交易.请注意,添加以后这个会员不用为这个项目付费,但是他仍然拥有与付费会员一样的特权.<br />
-<b>提醒</b>:如果您需要恢复您刚才的操作,请确认添加他们到 <u>以前的</u><i>用户组</i>.]]></helptext>
+			<helptext><![CDATA[您可以为会员手工添加交易. 请注意, 添加以后这个会员不用为这个项目付费, 但是他仍然拥有与付费会员一样的特权.<br />
+<b>提醒</b>: 如果您需要恢复您刚才的操作, 请确认添加他们到 <u>以前的</u><i>用户组</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_msubs_install-index</key>
 			<title>订阅管理 - 添加新的支付网关</title>
 			<helptext><![CDATA[<b>提醒</b>:这个选项仅只提供给具有高级 PHP 使用与设置经验的用户使用.<br />
-安装您的支付网关模板,上传 'class_gw_{name}.php' 到 '/sources/classes/paymentgateways' 然后点击下面的 '安装'链接. 如果您看到模板显示为'已安装'则表示安装成功,您可以点击'<i>管理支付网关s</i>'链接来进行管理.]]></helptext>
+安装您的支付网关模板, 上传 'class_gw_{name}.php' 到 '/sources/classes/paymentgateways' 然后点击下面的 '安装'链接. 如果您看到模板显示为 '已安装' 则表示安装成功, 您可以点击 '<i>管理支付网关s</i>' 链接来进行管理.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_calendars_calendar_list</key>
 			<title>为日历添加权限</title>
-			<helptext>使用每一个日历右边的下拉菜单,您可以在这里设置它.您可以设置哪个用户组可以添加事件,查看事件, 等等.如果您希望您的会员有人能使用日历的话,您就需要在这里先设置.</helptext>
+			<helptext>使用每一个日历右边的下拉菜单, 您可以在这里设置它. 您可以设置哪个用户组可以添加事件、查看事件等等. 如果您希望您的会员有人能使用日历的话, 您就需要在这里先设置.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_badword</key>
 			<title>使用词语过滤器</title>
-			<helptext><![CDATA[词语过滤器可以过滤会员发帖,签名和发表主题时候的一些词汇.您可以在这里编辑/添加/删除这些需要过滤的词汇.需要注意的是,默认情况下管理员组是不受这项功能限制的.您可以通过修改<a href="{base_url}&section=content&act=group">管理用户组</a>页面来限制管理员的权限.<br />
+			<helptext><![CDATA[词语过滤器可以过滤会员发帖、签名和发表主题时候的一些词汇. 您可以在这里编辑/添加/删除这些需要过滤的词汇. 需要注意的是, 默认情况下管理员组是不受这项功能限制的. 您可以通过修改 <a href="{base_url}&section=content&act=group">管理用户组</a> 页面来限制管理员的权限.<br />
 <br />
-<b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
-<b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
-<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表.在我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a>里面有一个演示的例子.简单搜索<i>过滤词汇</i>即可.]]></helptext>
+<b>模糊匹配</b>: 如果您输入 'hell' 作为一个过滤词汇, 那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
+<b>精准匹配</b>: 如果您输入 'hell' 作为一个过滤词汇, 那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
+<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表. 在我们的 <a href="{base_url}&section=help&act=support&code=kb">知识库</a> 里面有一个演示的例子. 简单搜索 <i>过滤词汇</i> 即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_ban</key>
 			<title>封禁会员</title>
-			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的用户组切换到 <i>已封禁</i>用户组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
+			<helptext><![CDATA[封禁已经存在的会员, 请点击 <a href="{base_url}&section=content&act=mem&code=search">会员管理</a> 页面, 查找并且编辑他们的帐号, 最后把他们的用户组切换到 <i>已封禁</i>用户组. 这样他们登录以后就不能看到论坛. 想要封禁 IP 地址, 或者封禁邮件, 或者禁止会员登录, 在这里您都可以实现.<br />
 <br />
-<b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
+<b>提醒</b>: 您可以在会员名称, IP, 或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*). 但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_attach_types</key>
 			<title>添加新的附件类型</title>
-			<helptext><![CDATA[这里您可以添加一个新的允许上传附件类型.点击页面上'添加新的上传文件类型'按钮.如果您的论坛需要上传一些特别的文件类型这项设置就是非常有用的.]]></helptext>
+			<helptext><![CDATA[这里您可以添加一个新的允许上传附件类型. 点击页面上 '添加新的上传文件类型' 按钮. 如果您的论坛需要上传一些特别的文件类型这项设置就是非常有用的.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -529,194 +529,194 @@ PHP 标签结束于:<br />
 			<title>附件缩略图</title>
 			<helptext><![CDATA[缩略图片会存储在:<br />
 /style_images/<i>{imgdir}</i>/folder_mime_types/<br/><br/>
-例如,您可能需要输入下面的信息: <i>folder_mime_types/music.gif</i><br />
+例如, 您可能需要输入下面的信息: <i>folder_mime_types/music.gif</i><br />
 来手工分类您的上传文件缩略图类型.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_changename</key>
 			<title>更改登录名称</title>
-			<helptext><![CDATA[请注意,这是会员登录您的论坛使用的名称.并不一定是在论坛中显示的名称.选择下一页中的<i>编辑用户显示名称...</i>可以更改论坛中显示的名称.]]></helptext>
+			<helptext><![CDATA[请注意, 这是会员登录您的论坛使用的名称. 并不一定是在论坛中显示的名称. 选择下一页中的 <i>编辑用户显示名称...</i> 可以更改论坛中显示的名称.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_change_display_name</key>
 			<title>更改显示名称</title>
-			<helptext><![CDATA[请注意,这是会员在论坛中显示出来的名称.并不一定是会员的登录名称.选择上一页的 <i>Edit 编辑会员登录名称...</i>可以更改会员登录名称.]]></helptext>
+			<helptext><![CDATA[请注意, 这是会员在论坛中显示出来的名称. 并不一定是会员的登录名称. 选择上一页的 <i>编辑会员登录名称...</i> 可以更改会员登录名称.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_banmember</key>
 			<title>暂停会员</title>
-			<helptext>会员暂停系统是一个系统自动的操作.通常情况下,在管理者给会员添加一个警告等级的时候选择了暂停会员,此系统就会自动启用.一旦暂停时间到系统会自动解开会员.</helptext>
+			<helptext>会员暂停系统是一个系统自动的操作. 通常情况下, 在管理者给会员添加一个警告等级的时候选择了暂停会员, 此系统就会自动启用. 一旦暂停时间到系统会自动解开会员.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_mem_deleteposts</key>
 			<title>删除会员帖子/主题</title>
-			<helptext><![CDATA[<b>提醒</b>:此项操作是<b><u><i>不可恢复</i></u></b>的.如果您选择运行,所有的会员帖子/主题都会丢失.您设置了一个<a href="{base_url}&section=tools&act=op&code=findsetting&key=trashcanset-up">回收站版块</a>的话,您可以选择<i>使用回收站?</i>来暂时存储以备将来查用.]]></helptext>
+			<helptext><![CDATA[<b>提醒</b>: 此项操作是 <b><u><i>不可恢复</i></u></b> 的. 如果您选择运行, 所有的会员帖子/主题都会丢失. 您设置了一个 <a href="{base_url}&section=tools&act=op&code=findsetting&key=trashcanset-up">回收站版块</a> 的话, 您可以选择 <i>使用回收站?</i> 来暂时存储以备将来查用.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_calendars_calendar_add</key>
 			<title>日历权限</title>
-			<helptext><![CDATA[请确认<i>日历权限</i>被开启.否则没人可以使用日立,包括您在内.]]></helptext>
+			<helptext><![CDATA[请确认 <i>日历权限</i> 被开启. 否则没人可以使用日立, 包括您在内.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_add</key>
 			<title>创建一个新用户组</title>
-			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的用户组来使用这个权限.如果您第一次来到这里,请点击<a href="{base_url}&section=content&act=group&code=permsplash">权限管理</a>来访问权限设置页面.在您为某些特殊用户组创建了新的权限以后,可以点击<i>'应用权限到...'</i>,选择使用这个权限的用户组.现在,当您编辑论坛权限的时候,您的新权限也会出现.]]></helptext>
+			<helptext><![CDATA[您在设置了一个新的权限以后, 您就可以创建一个新的用户组来使用这个权限. 如果您第一次来到这里, 请点击 <a href="{base_url}&section=content&act=group&code=permsplash">权限管理</a> 来访问权限设置页面. 在您为某些特殊用户组创建了新的权限以后, 可以点击 <i>'应用权限到...'</i>, 选择使用这个权限的用户组. 现在, 当您编辑论坛权限的时候, 您的新权限也会出现.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_dopermadd</key>
 			<title>创建一个新用户组</title>
-			<helptext><![CDATA[您在设置了一个新的权限以后,您就可以创建一个新的用户组来使用这个权限,点击<a href="{base_url}&section=content&act=group&code=add">管理用户组</a>就可以进行操作.]]></helptext>
+			<helptext><![CDATA[您在设置了一个新的权限以后, 您就可以创建一个新的用户组来使用这个权限, 点击 <a href="{base_url}&section=content&act=group&code=add">管理用户组</a> 就可以进行操作.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>dashboard_dashboard_login-complete</key>
 			<title>管理面板帮助系统</title>
 			<helptext><![CDATA[<b>欢迎来到管理后台帮助系统</b>
-<br />这套系统将提供给您更多有用的高级设置信息,以便于您更好的利用这个管理面板.
+<br />这套系统将提供给您更多有用的高级设置信息, 以便于您更好的利用这个管理面板.
 <br />在包含更多设置信息的页面您将看到跟这里一样的帮助信息. 
-<br />在一些单独的设置选项中,在选项后面会有一个图标,您点击就可以获得更多的信息.图标是这样: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
+<br />在一些单独的设置选项中, 在选项后面会有一个图标, 您点击就可以获得更多的信息. 图标是这样: <img src="{skin_url}/images/about.png" alt="!" style="float:none;" />
 <br />
 <br />您可以点击表单右上角的三角按钮把这些信息隐藏.如果您想关闭帮助系统:
-<br /><a href="{base_url}&section=tools&act=op&search=acp+help+system&code=setting_view">点击这里</a>就会到达相关的设置页面.
-<br />此外,您也可以选择 <i>工具设置</i>项,点击 <i>常规配置</i>,然后选择<i>后台帮助系统</i>为<i>否</i>.]]></helptext>
+<br /><a href="{base_url}&section=tools&act=op&search=acp+help+system&code=setting_view">点击这里</a> 就会到达相关的设置页面.
+<br />此外, 您也可以选择 <i>工具设置</i>项, 点击 <i>常规配置</i>, 然后选择 <i>后台帮助系统</i> 为 <i>否</i>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_wrap_edit</key>
 			<title>编辑论坛顶部和底部显示内容</title>
-			<helptext><![CDATA[这里可以设置您论坛的基本排列方式. 您也可以开启或者删除某一些设置.例如,如果您愿意的话,您可以选择删除会员工具栏,等等.<br />
+			<helptext><![CDATA[这里可以设置您论坛的基本排列方式. 您也可以开启或者删除某一些设置. 例如, 如果您愿意的话, 您可以选择删除会员工具栏, 等等.<br />
 您也可以把这些设置拷贝到子模板里面.<br /><br />
-如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>站点.]]></helptext>
+如果您在模板自定义方面有问题, 请访问我们的 <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_templ_template-sections-list</key>
 			<title>编辑您的模板</title>
-			<helptext><![CDATA[您可以通过这里修改您的 HTML 模板.模板很多地方都是使用标准 HTML 格式.模板设置很多地方都是固定的 -- 例如,论坛头部设置在'所有全局 HTML' 这里,主题显示的控制代码在'主题显示'区,等等.
+			<helptext><![CDATA[您可以通过这里修改您的 HTML 模板. 模板很多地方都是使用标准 HTML 格式. 模板设置很多地方都是固定的 -- 例如, 论坛头部设置在 '所有全局 HTML' 这里, 主题显示的控制代码在 '主题显示' 区, 等等.
 <br /><br />
-如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>站点.]]></helptext>
+如果您在模板自定义方面有问题, 请访问我们的 <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_style_edit</key>
 			<title>编辑 CSS 表单/颜色</title>
-			<helptext><![CDATA[CSS 控制您的论坛显示颜色和外观.您可以用它编辑您的论坛显示样式.
-<br /><br /><b>需要帮助?</b>查看<a href="{skin_url}/colours.html" target="_blank"><b>在线颜色拾取器</b></a>查看色彩代码.我们的站点提供了一份全面的 CSS/色彩 使用<a href="{base_url}&section=help&act=support&code=doctor"><b>文档</b></a>.
-如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a>站点.]]></helptext>
+			<helptext><![CDATA[CSS 控制您的论坛显示颜色和外观. 您可以用它编辑您的论坛显示样式.
+<br /><br /><b>需要帮助?</b> 查看 <a href="{skin_url}/colours.html" target="_blank"><b>在线颜色拾取器</b></a> 查看色彩代码. 我们的站点提供了一份全面的 CSS/色彩 使用 <a href="{base_url}&section=help&act=support&code=doctor"><b>文档</b></a>.
+如果您在模板自定义方面有问题, 请访问我们的 <a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a> 站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_style_colouredit</key>
 			<title>编辑 CSS 表单/颜色</title>
-			<helptext><![CDATA[CSS 控制您的论坛显示颜色和外观.您可以用它编辑您的论坛显示样式.
-<br /><br /><b>需要帮助?</b> 查看<a href="{skin_url}/colours.html" target="_blank"><b>在线颜色拾取器</b></a>查看色彩代码.我们的站点提供了一份全面的 CSS/色彩 使用<a href="{base_url}&section=help&act=support&code=doctor"><b>文档</b></a>.
-如果您在模板自定义方面有问题,请访问我们的<a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a>站点.]]></helptext>
+			<helptext><![CDATA[CSS 控制您的论坛显示颜色和外观. 您可以用它编辑您的论坛显示样式.
+<br /><br /><b>需要帮助?</b> 查看 <a href="{skin_url}/colours.html" target="_blank"><b>在线颜色拾取器</b></a> 查看色彩代码. 我们的站点提供了一份全面的 CSS/色彩 使用<a href="{base_url}&section=help&act=support&code=doctor"><b>文档</b></a>.
+如果您在模板自定义方面有问题, 请访问我们的<a href="{base_url}&section=help&act=support&code=resources"><b>resources.invisionpower.com</b></a>站点.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_import_</key>
 			<title><![CDATA[导出 & 导入]]></title>
-			<helptext><![CDATA[您可以备份您的当前主题,或者导入一个新的论坛主题.<br /><br />
-<b>导出...</b>主题包括两个 XML 文件 - 模板主题 XML 和图片 XML.完整导出主题的时候需要两个都选中.特别是在您备份您的主题的时候特别重要.<br />
-<b>导入...</b> 这里可以导入新的论坛主题.您可以到网上下载一些新的论坛主题,例如 <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>.主题下载以后会有两个文件- 一个是模板主题,另一个就是图片文件.请确认这两个文件都完整,导入以后就能正确使用.]]></helptext>
+			<helptext><![CDATA[您可以备份您的当前主题, 或者导入一个新的论坛主题.<br /><br />
+<b>导出...</b> 主题包括两个 XML 文件 - 模板主题 XML 和图片 XML. 完整导出主题的时候需要两个都选中. 特别是在您备份您的主题的时候特别重要.<br />
+<b>导入...</b> 这里可以导入新的论坛主题. 您可以到网上下载一些新的论坛主题, 例如 <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>. 主题下载以后会有两个文件, 一个是模板主题, 另一个就是图片文件. 请确认这两个文件都完整, 导入以后就能正确使用.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skindiff_</key>
 			<title>模板主题 HTML 差异</title>
-			<helptext><![CDATA[如果您的主题与系统默认主题不同的话,这个工具就非常有用.请点击<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>,并且选中主题后面的下拉菜单,选择<i>常规差异性报告...</i>开始比较两个主题之间的差异. 
+			<helptext><![CDATA[如果您的主题与系统默认主题不同的话, 这个工具就非常有用. 请点击 <a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>, 并且选中主题后面的下拉菜单, 选择 <i>常规差异性报告...</i> 开始比较两个主题之间的差异. 
 ]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skinremap_</key>
 			<title>主题重测图</title>
-			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置.这里有您想要使用相同的主题设置<i>例子</i>:<br /><br />
-<b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
+			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置. 这里有您想要使用相同的主题设置 <i>例子</i>:<br /><br />
+<b>类型</b> 选择 <i>包含</i>. 意味着包含与您提供的 URL 相类似的内容.<b>URL</b> 输入 <i>showuser</i>.然后选择 <b>主题设置</b> 来选择要使用的主题. 现在任何人查看了 (在 URL 中包含了"showuser") 的属性页, 它就会显示出您已经选择的主题.<br />
 您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skinremap_remap_edit</key>
 			<title>主题重测图</title>
-			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置.这里有您想要使用相同的主题设置<i>例子</i>:<br /><br />
-<b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
+			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置. 这里有您想要使用相同的主题设置 <i>例子</i>:<br /><br />
+<b>类型</b> 选择 <i>包含</i>. 意味着包含与您提供的 URL 相类似的内容.<b>URL</b> 输入 <i>showuser</i> .然后选择 <b>主题设置</b> 来选择要使用的主题.现在任何人查看了(在 URL 中包含了 "showuser") 的属性页, 它就会显示出您已经选择的主题.<br />
 您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skinremap_remap_add</key>
 			<title>主题重测图</title>
-			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置.这里有您想要使用相同的主题设置<i>例子</i>:<br /><br />
-<b>类型</b>选择<i>包含</i>.意味着包含与您提供的 URL 相类似的内容.<b>URL</b>输入<i>showuser</i> .然后选择 <b>主题设置</b>来选择要使用的主题.现在任何人查看了(在 URL 中包含了"showuser")的属性页,它就会显示出您已经选择的主题.<br />
+			<helptext><![CDATA[这个选项允许您使用与您提供的 URL 地址像类似的强制设置. 这里有您想要使用相同的主题设置 <i>例子</i>:<br /><br />
+<b>类型</b> 选择 <i>包含</i>. 意味着包含与您提供的 URL 相类似的内容.<b>URL</b> 输入 <i>showuser</i>.然后选择 <b>主题设置</b> 来选择要使用的主题. 现在任何人查看了 (在 URL 中包含了 "showuser") 的属性页, 它就会显示出您已经选择的主题.<br />
 您仅仅只是需要输入您想要使用不同主题的页面即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_ban_add</key>
 			<title>封禁会员</title>
-			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的用户组切换到 <i>已封禁</i>用户组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
+			<helptext><![CDATA[封禁已经存在的会员, 请点击 <a href="{base_url}&section=content&act=mem&code=search">会员管理</a> 页面, 查找并且编辑他们的帐号, 最后把他们的用户组切换到 <i>已封禁</i> 用户组. 这样他们登录以后就不能看到论坛. 想要封禁 IP 地址, 或者封禁邮件, 或者禁止会员登录, 在这里您都可以实现.<br />
 <br />
-<b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
+<b>提醒</b>:您可以在会员名称, IP, 或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*). 但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_ban_delete</key>
 			<title>封禁会员</title>
-			<helptext><![CDATA[封禁已经存在的会员,请点击<a href="{base_url}&section=content&act=mem&code=search">会员管理</a>页面,查找并且编辑他们的帐号,最后把他们的用户组切换到 <i>已封禁</i>用户组.这样他们登录以后就不能看到论坛.想要封禁 IP 地址,或者封禁邮件,或者禁止会员登录,在这里您都可以实现.<br />
+			<helptext><![CDATA[封禁已经存在的会员, 请点击 <a href="{base_url}&section=content&act=mem&code=search">会员管理</a> 页面, 查找并且编辑他们的帐号, 最后把他们的用户组切换到 <i>已封禁</i> 用户组. 这样他们登录以后就不能看到论坛. 想要封禁 IP 地址, 或者封禁邮件, 或者禁止会员登录, 在这里您都可以实现.<br />
 <br />
-<b>提醒</b>:您可以在会员名称, IP,或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*).但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
+<b>提醒</b>: 您可以在会员名称, IP, 或者邮件过滤条件中中使用 * 通配符. (例如: 127.0.*, *@yahoo.com, bannedname*). 但是请注意在过滤条件中不要有空格 - 在有些情况下这会使某些过滤条件出现问题.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_skintools_easylogo</key>
 			<title>更改您的 LOGO</title>
-			<helptext><![CDATA[您可以您的主题中上传或者链接一个新的 logo.记得在您需要设置 logo 的主题下拉菜单中选择<i>应用到哪个模板?</i>.有时候某些自定义的第三方主题会使用自己的方式定制 logo.如果您在使用这些主题的时候遇到问题,请联系主题的原作者.]]></helptext>
+			<helptext><![CDATA[您可以您的主题中上传或者链接一个新的 logo. 记得在您需要设置 logo 的主题下拉菜单中选择 <i>应用到哪个模板?</i>. 有时候某些自定义的第三方主题会使用自己的方式定制 logo. 如果您在使用这些主题的时候遇到问题, 请联系主题的原作者.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_badword_add</key>
 			<title>使用论坛词语过滤器</title>
-			<helptext><![CDATA[词语过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理用户组</a>页面更改管理员组的权限.<br />
+			<helptext><![CDATA[词语过滤器可以替换某些您不希望会员发表帖子, 签名, 发表主题的时候出现的词汇. 您可以在这里添加/删除这些关键词.需要提醒的是, 默认情况下管理员不受这个过滤器限制. 您可以在 <a href="{base_url}&section=content&act=group">管理用户组</a> 页面更改管理员组的权限.<br />
 <br />
-<b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
-<b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
-<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表.在我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a>里面有一个演示的例子.简单搜索<i>过滤词汇</i>即可.]]></helptext>
+<b>模糊匹配</b>: 如果您输入 'hell' 作为一个过滤词汇, 那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
+<b>精准匹配</b>: 如果您输入 'hell' 作为一个过滤词汇, 那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
+<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表. 在我们的 <a href="{base_url}&section=help&act=support&code=kb">知识库</a> 里面有一个演示的例子. 简单搜索 <i>过滤词汇</i> 即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_babw_badword_remove</key>
 			<title>使用论坛词语过滤器</title>
-			<helptext><![CDATA[词语过滤器可以替换某些您不希望会员发表帖子,签名,发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词.需要提醒的是,默认情况下管理员不受这个过滤器限制.您可以在<a href="{base_url}&section=content&act=group">管理用户组</a>页面更改管理员组的权限.<br />
+			<helptext><![CDATA[词语过滤器可以替换某些您不希望会员发表帖子, 签名, 发表主题的时候出现的词汇.您可以在这里添加/删除这些关键词. 需要提醒的是, 默认情况下管理员不受这个过滤器限制. 您可以在 <a href="{base_url}&section=content&act=group">管理用户组</a> 页面更改管理员组的权限.<br />
 <br />
-<b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
-<b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇,那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
-<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表.在我们的<a href="{base_url}&section=help&act=support&code=kb">知识库</a>里面有一个演示的例子.简单搜索<i>过滤词汇</i>即可.]]></helptext>
+<b>模糊匹配</b>:如果您输入 'hell' 作为一个过滤词汇, 那么系统在有其他字符干扰的情况下会替换 'hell' 和 'hello' 等类似的词汇.<br />
+<b>精准匹配</b>:如果您输入 'hell' 作为一个过滤词汇, 那么系统在有其他字符干扰的情况下也仅仅只替换 'hell'.<br />
+<b>导入过滤词汇列表</b>: 如果您已经有一个 XML 格式的过滤词汇列表. 在我们的 <a href="{base_url}&section=help&act=support&code=kb">知识库</a> 里面有一个演示的例子.简单搜索 <i>过滤词汇</i> 即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_lang_import</key>
 			<title>导入语言包</title>
-			<helptext><![CDATA[在这个页面您可以导入您的论坛需要使用的新语言文件.在我们的网站<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>上已经有一些语言文件包供您选择.一旦您下载了 XML 语言文件包,您可以通过这里上传即可.添加过的语言文件可以在这里查看<a href="{base_url}&section=lookandfeel&act=lang">语言文件管理</a>.]]></helptext>
+			<helptext><![CDATA[在这个页面您可以导入您的论坛需要使用的新语言文件. 在我们的网站 <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a> 上已经有一些语言文件包供您选择.一旦您下载了 XML 语言文件包, 您可以通过这里上传即可. 添加过的语言文件可以在这里查看 <a href="{base_url}&section=lookandfeel&act=lang">语言文件管理</a>.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_lang_</key>
 			<title><![CDATA[管理 & 编辑语言]]></title>
-			<helptext><![CDATA[语言控制着您的论坛上所有的文字显示方式,包括论坛邮件等.这里允许您查看您默认安装的语言设置,编辑语言设置,查看有多少会员在使用这个语言,等等.<b>编辑</b>语言,请点击语言文件后的<i>编辑</i>链接.]]></helptext>
+			<helptext><![CDATA[语言控制着您的论坛上所有的文字显示方式, 包括论坛邮件等. 这里允许您查看您默认安装的语言设置, 编辑语言设置, 查看有多少会员在使用这个语言, 等等.<b>编辑</b> 语言, 请点击语言文件后的 <i>编辑</i> 链接.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_lang_edit</key>
 			<title>编辑语言文件</title>
-			<helptext><![CDATA[编辑语言文件是非常简单的.语言在论坛中如何显示,显示什么都由语言文件控制.例如,编辑首页全局的文字显示,您需要编辑 <i>lang_global</i> 文件. 为了编辑论坛发送邮件的语言,则是编辑 <i>lang_email_content</i> 文件.]]></helptext>
+			<helptext><![CDATA[编辑语言文件是非常简单的. 语言在论坛中如何显示, 显示什么都由语言文件控制. 例如, 编辑首页全局的文字显示, 您需要编辑 <i>lang_global</i> 文件. 为了编辑论坛发送邮件的语言, 则是编辑 <i>lang_email_content</i> 文件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -728,28 +728,28 @@ PHP 标签结束于:<br />
 		<helpsections>
 			<key>lookandfeel_emoticons_emo</key>
 			<title>表情图标管理</title>
-			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
-如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
-如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
-如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹, 也可以上传新表情.<br />
+如果需要 <b>编辑</b> 表情, 点击您想要设置的名字. 就会显示出当前的所有表情.<br />
+如果需要 <b>上传</b> 新表情, 请确认点中您想要上传的文件夹, 然后使用本页的表情上传工具. 请注意, 所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要 <b>为主体指派设置</b>, 访问 <a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>. 然后选择您想要设置表情的主题, 然后点击 <i>编辑设置</i> 进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_upload</key>
 			<title>表情图标管理</title>
-			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
-如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
-如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
-如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹, 也可以上传新表情.<br />
+如果需要 <b>编辑</b> 表情, 点击您想要设置的名字. 就会显示出当前的所有表情.<br />
+如果需要 <b>上传</b> 新表情, 请确认点中您想要上传的文件夹, 然后使用本页的表情上传工具. 请注意, 所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要 <b>为主体指派设置</b>, 访问 <a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>. 然后选择您想要设置表情的主题, 然后点击 <i>编辑设置</i> 进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setadd</key>
 			<title>表情图标管理</title>
-			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
-如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
-如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
-如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹, 也可以上传新表情.<br />
+如果需要 <b>编辑</b> 表情, 点击您想要设置的名字. 就会显示出当前的所有表情.<br />
+如果需要 <b>上传</b> 新表情, 请确认点中您想要上传的文件夹, 然后使用本页的表情上传工具. 请注意, 所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要 <b>为主体指派设置</b>, 访问 <a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>. 然后选择您想要设置表情的主题, 然后点击 <i>编辑设置</i> 进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -757,37 +757,37 @@ PHP 标签结束于:<br />
 			<title>编辑您的表情</title>
 			<helptext><![CDATA[表情引用的一般格式为:<br />
 :名称:<br />
-<b>提醒</b>:名称中不能包括这个字符: ","<br />它会使表情文件不能正常显示.
+<b>提醒</b>: 名称中不能包括这个字符: ", "<br />它会使表情文件不能正常显示.
 <br /><br />
-当发表一个帖子的时候,您可以设置直接引用表情文件,设置为<i>可点击</i>.添加一个没有被分配的表情到设置组,点击<i>添加</i>继续添加其他的表情.]]></helptext>
+当发表一个帖子的时候, 您可以设置直接引用表情文件, 设置为 <i>可点击</i>. 添加一个没有被分配的表情到设置组, 点击 <i>添加</i> 继续添加其他的表情.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setremove</key>
 			<title>表情图标管理</title>
-			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
-如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
-如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
-如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹, 也可以上传新表情.<br />
+如果需要 <b>编辑</b> 表情, 点击您想要设置的名字. 就会显示出当前的所有表情.<br />
+如果需要 <b>上传</b> 新表情, 请确认点中您想要上传的文件夹, 然后使用本页的表情上传工具. 请注意, 所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要 <b>为主体指派设置</b>, 访问 <a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>. 然后选择您想要设置表情的主题, 然后点击 <i>编辑设置</i> 进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_setedit</key>
 			<title>表情图标管理</title>
-			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
-如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
-如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
-如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹, 也可以上传新表情.<br />
+如果需要 <b>编辑</b> 表情, 点击您想要设置的名字. 就会显示出当前的所有表情.<br />
+如果需要 <b>上传</b> 新表情, 请确认点中您想要上传的文件夹, 然后使用本页的表情上传工具. 请注意, 所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要 <b>为主体指派设置</b>, 访问 <a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>. 然后选择您想要设置表情的主题, 然后点击 <i>编辑设置</i> 进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_doedit</key>
 			<title>编辑您的表情</title>
 			<helptext><![CDATA[表情引用的一般格式为:<br />
-:名称:<br />
-<b>提醒</b>:名称中不能包括这个字符: ","<br />它会使表情文件不能正常显示.
+: 名称:<br />
+<b>提醒</b>: 名称中不能包括这个字符: ", "<br />它会使表情文件不能正常显示.
 <br /><br />
-当发表一个帖子的时候,您可以设置直接引用表情文件,设置为<i>可点击</i>.添加一个没有被分配的表情到设置组,点击<i>添加</i>继续添加其他的表情.]]></helptext>
+当发表一个帖子的时候, 您可以设置直接引用表情文件, 设置为 <i>可点击</i>. 添加一个没有被分配的表情到设置组, 点击 <i>添加</i> 继续添加其他的表情.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -795,156 +795,156 @@ PHP 标签结束于:<br />
 			<title>编辑您的表情</title>
 			<helptext><![CDATA[表情引用的一般格式为:<br />
 :名称:<br />
-<b>提醒</b>:名称中不能包括这个字符: ","<br />它会使表情文件不能正常显示.
+<b>提醒</b>: 名称中不能包括这个字符: ", "<br />它会使表情文件不能正常显示.
 <br /><br />
-当发表一个帖子的时候,您可以设置直接引用表情文件,设置为<i>可点击</i>.添加一个没有被分配的表情到设置组,点击<i>添加</i>继续添加其他的表情.]]></helptext>
+当发表一个帖子的时候, 您可以设置直接引用表情文件, 设置为 <i>可点击</i>. 添加一个没有被分配的表情到设置组, 点击 <i>添加</i> 继续添加其他的表情.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_packimport</key>
 			<title>表情图标管理</title>
-			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹,也可以上传新表情.<br />
-如果需要<b>编辑</b>表情,点击您想要设置的名字.就会显示出当前的所有表情.<br />
-如果需要<b>上传</b>新表情,请确认点中您想要上传的文件夹,然后使用本页的表情上传工具.请注意,所有新添加的表情都将添加到默认表情栏目.<br />
-如果需要<b>为主体指派设置</b>,访问<a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>.然后选择您想要设置表情的主题,然后点击 <i>编辑设置</i>进行设置即可.]]></helptext>
+			<helptext><![CDATA[表情图标管理可以管理您的表情图标文件夹, 也可以上传新表情.<br />
+如果需要 <b>编辑</b> 表情, 点击您想要设置的名字.就会显示出当前的所有表情.<br />
+如果需要 <b>上传</b> 新表情, 请确认点中您想要上传的文件夹, 然后使用本页的表情上传工具. 请注意, 所有新添加的表情都将添加到默认表情栏目.<br />
+如果需要 <b>为主体指派设置</b>, 访问 <a href="{base_url}&section=lookandfeel&act=sets">主题管理</a>. 然后选择您想要设置表情的主题, 然后点击 <i>编辑设置</i> 进行设置即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>lookandfeel_emoticons_emo_packsplash</key>
 			<title><![CDATA[导入 & 导出表情]]></title>
-			<helptext><![CDATA[<b>导出</b>表情则会创建一份 XML 文件来备份您的表情.如果您想要在不同的论坛分享您的表情这就非常有用.<br />
-<b>导入</b>表情可以允许您一次导入很多表情图标.您也可以访问我们的网站<a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a>来获取已有的表情文件.]]></helptext>
+			<helptext><![CDATA[<b>导出</b> 表情则会创建一份 XML 文件来备份您的表情. 如果您想要在不同的论坛分享您的表情这就非常有用.<br />
+<b>导入</b> 表情可以允许您一次导入很多表情图标. 您也可以访问我们的网站 <a href="{base_url}&section=help&act=support&code=resources">resources.invisionpower.com</a> 来获取已有的表情文件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_task_</key>
 			<title>任务管理</title>
-			<helptext><![CDATA[任务管理可以管理您论坛的所有计划任务.请注意人物必须在您的论坛正常运行的情况下才能完成,所以'下次执行'时间仅仅作为一个参考,真正的运行情况还是取决于您的论坛运行状态.
+			<helptext><![CDATA[任务管理可以管理您论坛的所有计划任务. 请注意人物必须在您的论坛正常运行的情况下才能完成, 所以 '下次执行' 时间仅仅作为一个参考, 真正的运行情况还是取决于您的论坛运行状态.
 <br /><br />图标图例:</b><br />
-<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - 这个图标说明您可以设置这项任务重复执行.如果您的论坛不是经常运行,但是您希望这项任务能够正确完成,那么这个选项将非常有用.<br />
-<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - 如果这个图标是红色的,那就表示这项任务需要执行. 点击您想要执行的任务后面的图标即可.]]></helptext>
+<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - 这个图标说明您可以设置这项任务重复执行. 如果您的论坛不是经常运行, 但是您希望这项任务能够正确完成, 那么这个选项将非常有用.<br />
+<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - 如果这个图标是红色的, 那就表示这项任务需要执行. 点击您想要执行的任务后面的图标即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_task_task_run_now</key>
 			<title>任务管理</title>
-			<helptext><![CDATA[任务管理可以管理您论坛的所有计划任务.请注意人物必须在您的论坛正常运行的情况下才能完成,所以'下次执行'时间仅仅作为一个参考,真正的运行情况还是取决于您的论坛运行状态.
+			<helptext><![CDATA[任务管理可以管理您论坛的所有计划任务. 请注意人物必须在您的论坛正常运行的情况下才能完成, 所以 '下次执行' 时间仅仅作为一个参考, 真正的运行情况还是取决于您的论坛运行状态.
 <br /><br />图标图例:</b><br />
-<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - 这个图标说明您可以设置这项任务重复执行.如果您的论坛不是经常运行,但是您希望这项任务能够正确完成,那么这个选项将非常有用.<br />
-<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - 如果这个图标是红色的,那就表示这项任务需要执行. 点击您想要执行的任务后面的图标即可.]]></helptext>
+<img src="{skin_url}/images/task_cron.gif" alt="Cron Setup" style="float:none;" /> - 这个图标说明您可以设置这项任务重复执行. 如果您的论坛不是经常运行, 但是您希望这项任务能够正确完成, 那么这个选项将非常有用.<br />
+<img src="{skin_url}/images/task_run.gif" alt="Run Now" style="float:none;" /> - 如果这个图标是红色的, 那就表示这项任务需要执行. 点击您想要执行的任务后面的图标即可.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_</key>
 			<title>登录入口管理</title>
-			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录. 请注意, 这项功能是一项高级设置. 使用之前请仔细阅读开发者和管理员使用 <a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_login_add</key>
 			<title>登录入口管理</title>
-			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录. 请注意, 这项功能是一项高级设置. 使用之前请仔细阅读开发者和管理员使用 <a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_login_edit_details</key>
 			<title>登录入口管理</title>
-			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录. 请注意, 这项功能是一项高级设置. 使用之前请仔细阅读开发者和管理员使用 <a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_loginauth_login_diagnostics</key>
 			<title>登录入口管理</title>
-			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录.请注意,这项功能是一项高级设置.使用之前请仔细阅读开发者和管理员使用<a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
+			<helptext><![CDATA[登录入口管理允许您通过其他的数据库入口登录. 请注意, 这项功能是一项高级设置. 使用之前请仔细阅读开发者和管理员使用 <a href="{base_url}&section=help&act=support&code=doctor">文档</a> 页面.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_portal_</key>
 			<title>管理门户插件</title>
-			<helptext><![CDATA[门户插件是控制您的<a href="{base_url}&section=tools&act=op&code=findsetting&key=ipbportal">IPB 门户</a>页面显示模板的插件. 您可以通过点击每一个插件右边的下拉菜单来设置他们的功能.]]></helptext>
+			<helptext><![CDATA[门户插件是控制您的<a href="{base_url}&section=tools&act=op&code=findsetting&key=ipbportal">IPB 门户</a> 页面显示模板的插件. 您可以通过点击每一个插件右边的下拉菜单来设置他们的功能.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_postoffice_</key>
 			<title><![CDATA[先前 & 当前的群发邮件]]></title>
-			<helptext><![CDATA[这里可以查看任何过往的或者当前的所有群发邮件.您可以重发它们中的任何一封,或者管理正在执行中的发送任务.点击页面左侧的菜单 <i>创建新邮件</i>链接就可以发送一份新的群发邮件.]]></helptext>
+			<helptext><![CDATA[这里可以查看任何过往的或者当前的所有群发邮件. 您可以重发它们中的任何一封, 或者管理正在执行中的发送任务. 点击页面左侧的菜单 <i>创建新邮件</i> 链接就可以发送一份新的群发邮件.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_doadd</key>
 			<title>用户组管理</title>
-			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能. 有四个默认的用户组您无法删除 (待审核, 游客, 会员 和管理员), 但是您也可以修改他们的设置. 通常您可以添加一个非常有用的用户组 '版主', 他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_dodelete</key>
 			<title>用户组管理</title>
-			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能.有四个默认的用户组您无法删除(待审核,游客,会员 和管理员),但是您也可以修改他们的设置.通常您可以添加一个非常有用的用户组'版主',他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
+			<helptext><![CDATA[用户组管理是一项非常有用的论坛管理功能. 有四个默认的用户组您无法删除 (待审核, 游客, 会员 和管理员), 但是您也可以修改他们的设置. 通常您可以添加一个非常有用的用户组 '版主', 他们可以在各自允许的论坛版块内协助您管理您的论坛.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>content_group_delete</key>
 			<title>删除用户组</title>
-			<helptext><![CDATA[<b>提醒</b>:这项操作不可撤销.如果您删除了这个用户组,唯一可用的还原方法就是您手工一个一个的再把会员添加到这个组内.]]></helptext>
+			<helptext><![CDATA[<b>提醒</b>: 这项操作不可撤销.如果您删除了这个用户组, 唯一可用的还原方法就是您手工一个一个的再把会员添加到这个组内.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_rebuild_</key>
 			<title><![CDATA[重记 & 重建]]></title>
-			<helptext><![CDATA[请仔细阅读每一项描述.某一些工具是非常危险的,甚至没有人能够还原它的操作.例如<i>重建帖子内容</i>需要花费很长时间才能完成 - 在它完成之前请耐心等待,千万不要关闭页面退出.<br />
-<b>重建帖子内容</b>在您的论坛中某一些基础的功能不能正常使用的时候非常有用.如果您的 BB 代码,表情,或者格式显示不正常, 您就需要运行这个工具来调整.]]></helptext>
+			<helptext><![CDATA[请仔细阅读每一项描述. 某一些工具是非常危险的, 甚至没有人能够还原它的操作. 例如 <i>重建帖子内容</i> 需要花费很长时间才能完成 - 在它完成之前请耐心等待, 千万不要关闭页面退出.<br />
+<b>重建帖子内容</b> 在您的论坛中某一些基础的功能不能正常使用的时候非常有用. 如果您的 BB 代码, 表情, 或者格式显示不正常, 您就需要运行这个工具来调整.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_help_</key>
 			<title>论坛帮助文件</title>
-			<helptext><![CDATA[<i>帮助</i>链接会显示在论坛顶部右侧的会员工具栏里.那里有论坛使用的一般功能帮助.如果您有比较特殊的条款信息,您也可以自己添加上去.]]></helptext>
+			<helptext><![CDATA[<i>帮助</i> 链接会显示在论坛顶部右侧的会员工具栏里. 那里有论坛使用的一般功能帮助. 如果您有比较特殊的条款信息, 您也可以自己添加上去.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>tools_op_</key>
 			<title>系统设置</title>
-			<helptext><![CDATA[这里包括了论坛设置的主要部分,设置选项都进行了分组. 您可以在下面看到这些设置组信息. 如果您需要进行一些特殊设置, 您也可以使用下面窗口右上角的搜索功能来帮助您找到.<br />
-每一个设置组通常都有对应的帮助窗口.您也可以点击特殊设置边上的帮助图标(<img src="{skin_url}/images/about.png" alt="!" style="float:none;" />)来获取更多的信息.]]></helptext>
+			<helptext><![CDATA[这里包括了论坛设置的主要部分, 设置选项都进行了分组. 您可以在下面看到这些设置组信息. 如果您需要进行一些特殊设置, 您也可以使用下面窗口右上角的搜索功能来帮助您找到.<br />
+每一个设置组通常都有对应的帮助窗口. 您也可以点击特殊设置边上的帮助图标 (<img src="{skin_url}/images/about.png" alt="!" style="float:none;" />) 来获取更多的信息.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>settinggroup_cookies</key>
 			<title>登录有问题?</title>
-			<helptext><![CDATA[为了保证会员登录以后能正常使用论坛,他们的 Cookies 信息会被记录到他们登录的电脑上. 如果不知道怎么设置,请点击帮助图标.如果您的会员登录有问题,请点击:<br />
-<b>创建一个自动 cookie 记录点?</b> - 如果这项功能的说明一样,它提高了您的 cookies 安全性.但是,对于那些使用动态 IP 地址登录的会员来说又会遇到其他问题.您可以把这项功能关闭了试试看是否能帮助到他们.]]></helptext>
+			<helptext><![CDATA[为了保证会员登录以后能正常使用论坛, 他们的 Cookies 信息会被记录到他们登录的电脑上. 如果不知道怎么设置, 请点击帮助图标.如果您的会员登录有问题, 请点击:<br />
+<b>创建一个自动 cookie 记录点?</b> - 如果这项功能的说明一样, 它提高了您的 cookies 安全性. 但是, 对于那些使用动态 IP 地址登录的会员来说又会遇到其他问题. 您可以把这项功能关闭了试试看是否能帮助到他们.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>settinggroup_cpusaving</key>
 			<title>论坛显示繁忙? 或者变得很慢?</title>
-			<helptext>通过这里的设置将提高您的论坛承载性能.请仔细阅读每一个设置选项,并做出恰当的调整.</helptext>
+			<helptext>通过这里的设置将提高您的论坛承载性能. 请仔细阅读每一个设置选项, 并做出恰当的调整.</helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>settinggroup_log_prune</key>
 			<title>清理日志</title>
-			<helptext><![CDATA[在很多地方都有默认的日志记录.同时,日志会占用大量的数据库存储空间.建议您可以使用此项功能清理一些您的论坛不再需要的旧日志.]]></helptext>
+			<helptext><![CDATA[在很多地方都有默认的日志记录. 同时, 日志会占用大量的数据库存储空间. 建议您可以使用此项功能清理一些您的论坛不再需要的旧日志.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>settinggroup_ipbportal</key>
 			<title>创建门户首页</title>
-			<helptext><![CDATA[首先,您需要创建一个 PHP 页面.<b>如果您不擅长做这个,我们建议您<a href="{base_url}&section=help&act=support&code=support">提交原著申请</a>给我们的客服.</b><br /><br />
-在您的论坛根目录里找到<i>init.php</i>文件.打开它,找到这行:<br />
+			<helptext><![CDATA[首先, 您需要创建一个 PHP 页面. <b>如果您不擅长做这个, 我们建议您 <a href="{base_url}&section=help&act=support&code=support">提交原著申请</a> 给我们的客服.</b><br /><br />
+在您的论坛根目录里找到 <i>init.php</i>文件. 打开它, 找到这行:<br />
 <i><b>define( 'IPB_MAKE_PORTAL_HOMEPAGE', 0 );</b></i><br /><br />
 改成:<br />
 <i><b>define( 'IPB_MAKE_PORTAL_HOMEPAGE', 1 );</b></i>
 <br /><br />
-保存文件,并且上传到您的论坛空间.您的 IPB 门户就建立好了.]]></helptext>
+保存文件, 并且上传到您的论坛空间. 您的 IPB 门户就建立好了.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>settinggroup_securityandprivacy</key>
 			<title>安全设置</title>
-			<helptext><![CDATA[安全性是您论坛至关重要的部分.请仔细考虑并结合实际情况设置本页内容,并请点击帮助图标查看更加详细的帮助说明.<br />
+			<helptext><![CDATA[安全性是您论坛至关重要的部分. 请仔细考虑并结合实际情况设置本页内容, 并请点击帮助图标查看更加详细的帮助说明.<br />
 <br />
-这个设置组将帮助您实现会员激活,垃圾信息控制和其他安全私密性的功能.<br />如果您在查看了相关功能说明和帮助信息之后仍然不理解,那么请保留原来的默认设置不作更改.]]></helptext>
+这个设置组将帮助您实现会员激活, 垃圾信息控制和其他安全私密性的功能.<br />如果您在查看了相关功能说明和帮助信息之后仍然不理解, 那么请保留原来的默认设置不作更改.]]></helptext>
 		</helpsections>
 
 		<helpsections>
@@ -952,14 +952,14 @@ PHP 标签结束于:<br />
 			<title>附件迷您图</title>
 			<helptext><![CDATA[迷您图存放在:<br />
 /style_images/<i>{imgdir}</i>/folder_mime_types/<br/><br/>
-例如,像这样输入: <i>folder_mime_types/music.gif</i><br />
+例如, 像这样输入: <i>folder_mime_types/music.gif</i><br />
 请确认迷您图片已经上传到您需要的位置.]]></helptext>
 		</helpsections>
 
 		<helpsections>
 			<key>components_idm_show</key>
 			<title>IP.Downloads</title>
-			<helptext><![CDATA[这是 IP.Board 中很有用的一个插件.有了它您就可以与您的会员共享文件.您也可以创建不同的文件分类,设置一个空间上传,下载和共享所有格式的文件.购买这个插件,请联系我们的<a href="{base_url}&section=help&act=support&code=contact">销售部门</a>.如果您已经购买了这个插件,需要 IPS 为您安装它,请提交一份新的<a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
+			<helptext><![CDATA[这是 IP.Board 中很有用的一个插件. 有了它您就可以与您的会员共享文件. 您也可以创建不同的文件分类, 设置一个空间上传, 下载和共享所有格式的文件. 购买这个插件, 请联系我们的 <a href="{base_url}&section=help&act=support&code=contact">销售部门</a>. 如果您已经购买了这个插件, 需要 IPS 为您安装它, 请提交一份新的 <a href="{base_url}&section=help&act=support&code=support">援助申请</a>.]]></helptext>
 		</helpsections>
 	</helpsectionsgroup>
 

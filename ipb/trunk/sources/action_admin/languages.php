@@ -1283,7 +1283,7 @@ class ad_languages {
 				
 				if ($this->ipsclass->vars['default_language'] == $r['ldir'])
 				{
-					$root = "<span style='color:red;font-weight:bold'> ( 目前没有会员使用的语言包 )</span>";
+					$root = "<span style='color:red;font-weight:bold'> ( 默认语言 )</span>";
 				}
 				else
 				{
