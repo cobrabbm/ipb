@@ -171,7 +171,7 @@ class action_overview
 		}
 		if ( $this->install->last_poss_id != $this->install->current_version )
 		{
-			$error[] = "Your installation is up to date; no upgrade required";
+			$error[] = "版本不匹配, 如果您使用的是较早的英文版本. 请首先运行 upgrade 工具升级到 ".$this->install->versions[ $this->install->last_poss_id ]." 版本.";
 		}
 
 		$checkfiles = array( ROOT_PATH     ."resources/ipb_templates.xml",

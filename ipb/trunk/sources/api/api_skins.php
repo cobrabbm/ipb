@@ -719,7 +719,7 @@ class api_skins extends api_core
 		}
 		else
 		{
-			return array( 'completed' => 0, 'messages' => array( 'No more skins to rebuild' ) );
+			return array( 'completed' => 0, 'messages' => array( '没有需要重建的模板' ) );
 		}
 	}		
 	
