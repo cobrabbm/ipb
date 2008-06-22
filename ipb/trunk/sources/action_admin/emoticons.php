@@ -1395,8 +1395,8 @@ class ad_emoticons {
 								<legend><strong>{$image}</strong></legend>
 								<img src='style_emoticons/{$this->ipsclass->input['id']}/{$image}' border='0' />&nbsp;&nbsp;<b>添加</b> <input name='emo_add_{$master_count}' type='checkbox' value='1' />
 								<br />
-								Type: <input type='textinput' class='realbutton' size='10' name='emo_type_{$master_count}' value='$poss_name' />
-								<br /><br />Clickable? <input type='checkbox' name='emo_click_{$master_count}' value='1' />
+								代码: <input type='textinput' class='realbutton' size='10' name='emo_type_{$master_count}' value='$poss_name' />
+								<br /><br />可点击? <input type='checkbox' name='emo_click_{$master_count}' value='1' />
 								<input type='hidden' name='emo_image_{$master_count}' value='{$image}' />
 							  </fieldset>
 							 </td>";
