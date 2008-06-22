@@ -355,7 +355,7 @@ function my_error_handler( $errno, $errstr, $errfile, $errline )
 	switch ($errno)
 	{
   		case E_ERROR:
-   			echo "<b>IPB ERROR</b> [$errno] $errstr (Line: $errline of $errfile)<br />\n";
+   			echo "<b>易维论坛错误提示</b> [$errno] $errstr (行: $errline 在 $errfile 文件)<br />\n";
    			
    			if( is_object($ipsclass) )
    			{
@@ -369,10 +369,10 @@ function my_error_handler( $errno, $errstr, $errfile, $errline )
   			{
   				if ( IPB_THIS_SCRIPT != 'admin' )
   				{
-					echo "<div style='font-family:sans-serif'><b>IPB TEMPLATE ERROR:</b> Could not load the required template.
-						  <br /><br />First, try and remove any custom skin settings by clicking <a href='index.php?setskin&id=0'>here</a>
-						  <br /><br />Then, please visit your <a href='" . IPB_ACP_DIRECTORY . "/index.php'>Admin Control Panel</a> to repair this template.
-						  <br /><br /><span style='font-size:90%;color:gray'>Error: $errstr</span></div>";
+					echo "<div style='font-family:sans-serif'><b>易维论坛模板错误:</b> 无法加载所需的模板.
+						  <br /><br />首先, 请点击 <a href='index.php?setskin&id=0'>这里</a> 删除所有自定义设置
+						  <br /><br />然后, 请点击 <a href='" . IPB_ACP_DIRECTORY . "/index.php'>管理中心</a> 来修复这一模板.
+						  <br /><br /><span style='font-size:90%;color:gray'>错误: $errstr</span></div>";
 				}
 				else
 				{
@@ -381,7 +381,7 @@ function my_error_handler( $errno, $errstr, $errfile, $errline )
   			}
   			else
   			{
-   				echo "<b>IPB WARNING</b> [$errno] $errstr (Line: $errline of $errfile)<br />\n";
+   				echo "<b>易维论坛警告信息</b> [$errno] $errstr (行: $errline 在 $errfile 文件)<br />\n";
    			}
    		break;
  		default:
