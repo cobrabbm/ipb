@@ -182,7 +182,10 @@ class install_extra
 		
 		$table_type = $this->settings['mysql_tbl_type'] ? $this->settings['mysql_tbl_type'] : 'MyISAM';
 		
-		return preg_replace( "#\);$#", ") ENGINE=".$table_type.";", $query );
+		// Fix utf-8 encode by smartly@itbbs.cn
+		$db_charset = $this->settings['sql_charset'] ? $this->settings['sql_charset'] : 'utf8';
+		
+		return preg_replace( "#\);$#", ") ENGINE=".$table_type." DEFAULT CHARSET=".$db_charset.";", $query );
 	}
 	
 	/**
