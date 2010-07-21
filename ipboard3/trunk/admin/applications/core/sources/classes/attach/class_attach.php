@@ -315,7 +315,21 @@ class class_attach
 				}
 				else
 				{
-					header( "Content-Disposition: attachment; filename=\"{$attach['attach_file']}\"" );
+					//header( "Content-Disposition: attachment; filename=\"{$attach['attach_file']}\"" );
+					
+					// Fix IE attachment name bug
+					// Modified by Skylook -- begin
+					// If it is IE browser
+					if( (strpos($_SERVER["HTTP_USER_AGENT"],"MSIE 8.0"))  || (strpos($_SERVER["HTTP_USER_AGENT"],"MSIE 7.0")) || (strpos($_SERVER["HTTP_USER_AGENT"],"MSIE 6.0")) )
+					{
+						header( "Content-Disposition: attachment; filename=\"" . rawurlencode($attach['attach_file']) . "\"" );  
+					}
+					else
+					{
+						header( "Content-Disposition: attachment; filename=\"{$attach['attach_file']}\"" );
+					}
+					// Modified by Skylook -- end
+
 				}
 				
 				if( !ini_get('zlib.output_compression') OR ini_get('zlib.output_compression') == 'off' )
